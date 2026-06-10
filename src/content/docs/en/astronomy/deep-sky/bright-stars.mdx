@@ -1,0 +1,207 @@
+---
+title: Notable Stars and Stellar Nomenclature
+description: A systematic survey of stellar naming systems (Bayer, Flamsteed, variable-star designations, IAU proper names and the major catalogs), together with a table of the brightest stars across the whole sky and typical observing targets.
+difficulty: intermediate
+pillar: astronomy
+sidebar:
+  order: 1.5
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import Fig from '@/components/Fig.astro';
+
+A star's "name" is not a single system but a set of overlapping naming and numbering schemes built up over history from different needs: from Greek-letter labels in the naked-eye era, to the running numbers of photographic catalogs, to the high-precision catalogs of modern space astrometry missions. This page first reviews these naming systems and their coverage, then presents a table of the brightest stars across the whole sky, and finally introduces, one by one, several representative stars of both scientific significance and observational value. For the physical mechanisms see 〔[Stellar Physics](/en/astronomy/deep-sky/stellar-physics/)〕; for the classification of variable and binary stars see 〔[Variable and Multiple Stars](/en/astronomy/deep-sky/variable-multiple-stars/)〕; for constellations and the rules of the genitive case see 〔[Constellations](/en/astronomy/foundations/constellations/)〕.
+
+## Stellar Naming Systems
+
+### Bayer designation
+
+In his 1603 star atlas *Uranometria*, Johann Bayer introduced the practice of labeling the bright stars within each constellation using a Greek letter followed by the Latin genitive of the constellation name, for example Sirius as "α Canis Majoris."
+
+- **Ordering principle**: Within each constellation, stars are arranged roughly from brightest to faintest in the order of the Greek letters α, β, γ…, though this is not followed strictly. A frequently cited exception is Orion: Betelgeuse is labeled α Orionis, while the brighter Rigel is β Orionis.
+- **After the Greek letters are exhausted**: lowercase Latin letters (a, b, c…) and even uppercase letters (A, B…) are used. Because few constellations reach the uppercase Latin letters beyond Q, variable-star designations deliberately begin at R to avoid conflict (see below).
+- **Superscript numbering**: When several neighboring stars share the same letter, superscript digits distinguish them, as in π¹, π², π³, π⁴, π⁵, π⁶ Orionis along Orion's shield-shaped arc; the multiple star at the center of the Orion Nebula is designated θ¹ and θ² Orionis, with θ¹ Ori being the famous "Trapezium."
+- **Coverage**: It chiefly covers the brighter, naked-eye stars, typically several dozen per constellation, for a total of about 1,500 entries over the whole sky.
+
+### Flamsteed designation
+
+The star catalog of John Flamsteed, the first British Astronomer Royal, was published posthumously in 1725 and again issued in 1729 as the *Atlas Coelestis*, comprising 2,936 entries.
+
+- **Ordering principle**: Within each constellation the stars are numbered **by right ascension from west to east**, irrespective of brightness, for example "61 Cygni."
+- **Relation to Bayer names**: Many bright stars hold both a Bayer name and a Flamsteed number; for instance, Aldebaran is both α Tauri and 87 Tauri.
+- **Coverage**: It generally reaches fainter than the Bayer system, but is limited to the sky visible from Britain at the time, with incomplete coverage of the southern sky.
+
+### Variable-star designation (the Argelander system)
+
+Building on the Bayer system, Friedrich Argelander established the variable-star naming scheme still in use today. Each variable star is denoted by a group of prefix letters plus the constellation genitive, with the prefixes progressing as follows:
+
+| Stage | Prefix sequence | Cumulative capacity | Example |
+| --- | --- | --- | --- |
+| First group | R, S, T, U, V, W, X, Y, Z | 9 | R Andromedae |
+| Second group | RR…RZ, SS…SZ, …, ZZ | 54 cumulative | RR Lyrae (Lyrae RR, prototype pulsating variable) |
+| Third group | AA…AZ, BB…BZ, …, QZ (**J omitted**) | 334 cumulative | AB Aurigae, etc. |
+| Fourth group | V335, V336, V337… | unlimited | V838 Monocerotis |
+
+- **Why begin at R**: Because very few constellations use Bayer uppercase Latin letters beyond R, starting at R avoids confusion with Bayer names and with spectral-type letters. The popular claim that "R stands for the German *rot* (red)" is unfounded.
+- **Coverage**: Each constellation first uses the 334 letter combinations, then switches to a running numbering from V335 onward, so the capacity is effectively unlimited. Variable stars that already have a Bayer name or Flamsteed number usually keep their original name (e.g., Algol is still called β Persei).
+
+### IAU proper names
+
+Many bright stars carry proper names rooted in the traditions of ancient Greek, Latin, and especially Arabic astronomy, such as Sirius, Vega, and Betelgeuse. Historically these names varied in spelling and scope of application; since 2016 the International Astronomical Union's Working Group on Star Names (WGSN) has progressively reviewed and published the **official standard catalog of stellar proper names**, so that each name corresponds uniquely to one specific star.
+
+### Major catalog designations
+
+The photographic and space-astrometry eras produced several large-scale catalogs, allowing more precise retrieval of stars by number. When checking a star's basic data, the cross-identifications in the SIMBAD database are a good first reference.
+
+| Catalog | Abbreviation / prefix | Era and method | Scale | Example |
+| --- | --- | --- | --- | --- |
+| Bonn Survey | BD (Bonner Durchmusterung) | 1859–1862, visual | about 325,000 | BD+38°3238 |
+| Henry Draper Catalogue | HD | 1918–1924, spectral classification | about 225,000 | HD 48915 (Sirius) |
+| Bright Star Catalogue | HR / BSC | stars brighter than magnitude 6.5 | about 9,100 | HR 2491 (Sirius) |
+| Smithsonian Astrophysical Observatory Catalog | SAO | 1966, positions and proper motions | about 259,000 | SAO 151881 |
+| Hipparcos Catalogue | HIP | 1989–1993 space astrometry | about 118,000 | HIP 32349 (Sirius) |
+| Gaia Catalogue | Gaia DR3 | 2022 space astrometry | about 1.87 billion | Gaia DR3 + source ID |
+
+### Naming of double and multiple stars
+
+| Scheme | Meaning | Example |
+| --- | --- | --- |
+| Letter suffix | Component stars within one system are labeled A, B, C… by brightness | α Centauri A / B / C (C being Proxima Centauri) |
+| ADS | Aitken Double Star Catalogue | ADS number |
+| WDS | Washington Double Star Catalog, the most authoritative compilation of double stars today | WDS number includes the position angle and angular separation of the two components |
+
+<Aside title="Layering of naming schemes">
+A single star often holds several names at once. Take Sirius: the proper name Sirius, the Bayer name α Canis Majoris, the Bright Star Catalogue HR 2491, the Henry Draper Catalogue HD 48915, the Hipparcos number HIP 32349; its white-dwarf companion is designated Sirius B or α CMa B. When consulting the literature, be aware that different numbers may point to the same target.
+</Aside>
+
+## Table of the Brightest Stars in the Sky
+
+The table below lists about 25 of the brightest stars in order of apparent magnitude, with data based on Wikipedia and SIMBAD. Multiple-star systems are entered by their combined total brightness. Distances are given in light-years (ly). Apparent magnitudes marked "var" indicate variable stars, for which an approximate range or representative value is given.
+
+| Proper name | Bayer name | Constellation | Apparent magnitude V | Distance (ly) | Spectral type | Notes |
+| --- | --- | --- | --- | --- | --- | --- |
+| Sirius | α Canis Majoris | Canis Major | −1.46 | 8.6 | A0–A1 V | Brightest star in the sky; has a white-dwarf companion |
+| Canopus | α Carinae | Carina | −0.74 | 310 | A9 II | Bright southern star, a yellow-white bright giant |
+| Rigil Kent. | α Centauri | Centaurus | −0.27 | 4.34 | G2 V + K1 V | Nearest stellar system to the Sun |
+| Arcturus | α Boötis | Boötes | −0.05 | 37 | K1.5 III | Brightest northern star, an orange giant |
+| Vega | α Lyrae | Lyra | 0.03 | 25 | A0 V | Historical zero-magnitude standard star |
+| Capella | α Aurigae | Auriga | 0.08 | 43 | G + G giants | Actually a binary of two yellow giants |
+| Rigel | β Orionis | Orion | 0.13 | 860 | B8 Ia | Blue-white supergiant |
+| Procyon | α Canis Minoris | Canis Minor | 0.34 | 11 | F5 IV–V | Also has a white-dwarf companion |
+| Achernar | α Eridani | Eridanus | 0.46 | 140 | B3 V | Extremely fast-rotating, markedly oblate blue star |
+| Betelgeuse | α Orionis | Orion | 0.5 (var) | about 550–640 | M1–M2 Ia–ab | Red supergiant, a semiregular variable |
+| Hadar | β Centauri | Centaurus | 0.61 | 390 | B1 III | Blue giant, a multiple-star system |
+| Altair | α Aquilae | Aquila | 0.76 | 17 | A7 V | The "Cowherd" star, fast-rotating |
+| Acrux | α Crucis | Crux | 0.76 | 320 | B0.5 IV + B1 V | Brightest star in the Southern Cross |
+| Aldebaran | α Tauri | Taurus | 0.86 | 65 | K5 III | Orange giant, foreground to the Hyades cluster |
+| Antares | α Scorpii | Scorpius | 0.6–1.6 (var) | about 550 | M1.5 Iab–Ib | Red supergiant |
+| Spica | α Virginis | Virgo | 0.97 | 250 | B1 III–IV | Close binary, blue-white |
+| Pollux | β Geminorum | Gemini | 1.14 | 34 | K0 III | Orange giant, known to host a planet |
+| Fomalhaut | α Piscis Austrini | Piscis Austrinus | 1.16 | 25 | A3 V | Has a prominent dust disk |
+| Deneb | α Cygni | Cygnus | 1.25 | about 2600 | A2 Ia | Extremely luminous white supergiant |
+| Mimosa | β Crucis | Crux | 1.25 | 280 | B0.5 III | Blue giant, a β Cep–type variable |
+| Regulus | α Leonis | Leo | 1.39 | 79 | B8 IVn | Extremely fast-rotating, oblate |
+| Adhara | ε Canis Majoris | Canis Major | 1.50 | 430 | B2 II | Strong ultraviolet source |
+| Castor | α Geminorum | Gemini | 1.58 | 51 | A1 V | Sextuple-star system |
+| Shaula | λ Scorpii | Scorpius | 1.63 | 570 | B2 IV | Bright star in the Scorpion's tail |
+| Gacrux | γ Crucis | Crux | 1.64 | 89 | M3.5 III | One of the nearest red giants to Earth |
+
+<Aside type="note" title="On the apparent-magnitude values">
+The values in the table are the commonly cited V-band magnitudes; variable stars change over time, and the extreme or mean values given in the literature may differ slightly. Distances are mostly derived from Hipparcos or Gaia parallax measurements, and the uncertainties are large for distant stars (such as Deneb and Rigel). For the scale of brightness and how magnitudes are compared, see 〔[The Magnitude System](/en/astronomy/foundations/magnitude/)〕.
+</Aside>
+
+<div class="cols2">
+<Fig name="sirius" alt="Sirius A and its white-dwarf companion B" caption="Sirius A (the central bright star) and its white-dwarf companion Sirius B (the small dot at lower left). Their angular separation is about 3″–11″; the companion is buried in the glare of the primary, making it a challenging high-contrast imaging target." />
+<Fig name="star-sizes" alt="Schematic comparison of the sizes of stars of different spectral types" caption="Comparison of stellar radii by order of magnitude: from main-sequence dwarfs to red supergiants spans several orders of magnitude, corresponding to the difference in luminosity class from V to Ia in the table." />
+</div>
+
+## Representative Stars Worth Observing
+
+The following stars are representative in scientific significance, naming history, or astrophotography. Each entry gives position, distance, spectral type, and key features.
+
+### Sirius (α Canis Majoris)
+
+| Item | Data |
+| --- | --- |
+| Constellation / position | Canis Major, one vertex of the Winter Triangle |
+| Distance | 8.6 ly |
+| Apparent magnitude | Primary A −1.46; companion B 8.44 |
+| Spectral type | A: A0–A1 V; B: DA2 white dwarf |
+| Features | Binary, orbital period about 50.1 years, angular separation 3″–11″ |
+| Visibility | Brightest star in the sky, very easily seen with the naked eye |
+| Best season | Northern Hemisphere winter |
+
+Sirius B was one of the first white dwarfs to be confirmed, with a mass of about 1.0 solar masses compressed into a volume comparable to that of Earth. Because the primary is so bright, resolving the companion requires good seeing and high-contrast techniques. When Sirius is near the horizon it often twinkles intensely and shows shifting colors owing to atmospheric dispersion—a vivid example of atmospheric turbulence rather than any change in the star itself.
+
+### Betelgeuse (α Orionis)
+
+Betelgeuse lies in Orion and is one of the largest stars visible to the naked eye, a red supergiant of spectral type M1–M2 Ia–ab at a distance of about 550–640 ly (its parallax is difficult to measure and the value is disputed). As a semiregular variable, its brightness usually fluctuates between about magnitude 0.0 and 1.3.
+
+From October 2019 to February 2020, Betelgeuse underwent the famous "Great Dimming": its apparent magnitude fell from about 0.5 to a record low of about +1.6, perceptible to the naked eye. Subsequent studies indicate that the main cause was a large amount of material ejected outward by the star (a surface mass ejection, SME), which cooled and condensed into a dust cloud in the outer layers, obscuring part of the starlight; infrared observations showed no fundamental change in luminosity over the same period, supporting the "obscuration" explanation rather than an "internal upheaval."
+
+<Fig name="betelgeuse" alt="The disk of Betelgeuse imaged by VLT/SPHERE" caption="Betelgeuse is one of the few stars whose visible disk can be directly resolved; during the Great Dimming its surface brightness distribution was observed to be markedly uneven." />
+
+### Antares (α Scorpii)
+
+Antares is the red supergiant of Scorpius, of spectral type M1.5 Iab–Ib, at a distance of about 550 ly; as a slow irregular variable its brightness varies between about +0.6 and +1.6. Its name means "the rival of Mars," and it resembles Mars in both color and brightness. Antares illuminates the foreground ρ Ophiuchi cloud complex—the latter lies about 460 ly away and is one of the nearest star-forming regions to the Solar System, where dust in the cloud scatters starlight to form colorful nebular bands.
+
+<Fig name="rho-ophiuchi" alt="Antares and the ρ Ophiuchi cloud complex" caption="The ρ Ophiuchi cloud around Antares (the yellow-red bright star in the frame): red emission, yellow reflection, and blue reflection nebulae interwoven together—a classic target for wide-field astrophotography." />
+
+### Vega (α Lyrae)
+
+Vega lies in Lyra, 25 ly away, of spectral type A0 V, and is one vertex of the Summer Triangle. In the UBVRI photometric system it was long defined as the zero-point standard star with magnitudes approximately 0 in each band, giving it a special place in the history of photometric calibration. Because of the precession of Earth's axis, Vega was the pole star around 12,000 BC and will again approach the north celestial pole around AD 13,700. It was also among the first main-sequence stars observed to have an infrared excess (a dust disk).
+
+### Polaris (the North Star, α Ursae Minoris)
+
+| Item | Data |
+| --- | --- |
+| Constellation / position | Ursa Minor, near the north celestial pole |
+| Distance | about 430–450 ly |
+| Apparent magnitude | about 1.98 |
+| Spectral type | F7 Ib (supergiant) |
+| Type | Classical Cepheid variable (pulsation period about 4 days), the nearest Cepheid to Earth |
+| Angular distance from the pole | about 0.66° (2018), closest around AD 2100 at about 0.45° |
+
+Polaris is a multiple-star system whose primary is a classical Cepheid variable with a pulsation period of about 4 days. It currently lies less than 1° from the north celestial pole, making it a natural marker for locating the pole in the Northern Hemisphere, but it is **not located precisely at the pole**. Owing to precession, the pole is slowly approaching it (closest around AD 2100), after which it will move away.
+
+<Aside title="Polar alignment in astrophotography">
+For an equatorial mount, the diurnal apparent motion of the stars rotates about the **celestial pole**, not about Polaris. Precise polar alignment requires aiming the mount's polar axis at the true celestial pole, and since Polaris is offset from the pole by about 0.7°, you must compensate for this offset using the reticle of a polar scope, or the drift method / software assistance, in order to achieve accurate tracking under long exposures. In star-trail photography, all stars trace concentric arcs around the celestial pole, and Polaris traces a small circle of radius about 0.7° rather than a point.
+</Aside>
+
+### Canopus and Rigil Kentaurus (bright southern stars)
+
+- **Canopus (α Carinae)**: in Carina, about 310 ly away, spectral type A9 II, apparent magnitude −0.74, the second-brightest star in the sky. Its declination is far south, so from the low-latitude regions of southern China it can be glimpsed briefly near the southern horizon in winter.
+- **Rigil Kentaurus (α Centauri)**: in Centaurus, only 4.34 ly from the Solar System, the nearest stellar system to the Sun. It comprises two Sun-like stars of types G and K (A and B) plus the red dwarf Proxima (Proxima / α Cen C); Proxima is the nearest known single star to the Sun. Both lie in the southern sky and are invisible from most of the Northern Hemisphere.
+
+### Algol (β Persei)—an eclipsing variable
+
+Algol lies in Perseus, about 90 ly away, and is the most famous eclipsing binary. Its V magnitude, on a period of 2.867 days, drops from about magnitude 2.1 to about 3.4 when the primary is partly eclipsed by its companion; the whole event lasts only about 10 hours, and the change in brightness can be tracked with the naked eye over a few nights. It is a typical example of a star that already had a Bayer name before Argelander's variable-star designations and retained its original name.
+
+### Mira (ο Ceti)—a long-period variable
+
+Mira lies in Cetus and is the prototype of the Mira-type pulsating variables; its name means "the wonderful one." On a period of about 332 days, it varies greatly between about magnitude 2–3 (naked-eye visible) and about 9–10 (requiring a telescope), making it a target with an enormous pulsation amplitude that is easy for amateurs to monitor over the long term.
+
+### Mizar and Alcor—a visual double
+
+Mizar (ζ UMa, about magnitude 2.2) and Alcor (80 UMa, about magnitude 3.9), in the middle of the handle of the Big Dipper in Ursa Major, are separated by about 11.8′ (roughly 1/5 the diameter of the full Moon) and are the classic "eyesight-test stars" for checking naked-eye resolving power. Under a telescope Mizar itself can be resolved into component stars, and the whole system is actually a sextuple star.
+
+### Rigel (β Orionis)
+
+Rigel is the blue-white supergiant of Orion, of spectral type B8 Ia, about 860 ly away, with an apparent magnitude of about 0.13. Although its Bayer name is β, it is in fact brighter than α Betelgeuse—a famous illustration that Bayer designations do not strictly follow order of brightness. Its blue-white hue contrasts sharply with Betelgeuse's orange-red within the same constellation, providing a ready-made example for explaining the relationship between stellar color and temperature.
+
+<Aside type="tip" title="Stellar color and spectral type">
+The color in star photographs corresponds directly to surface temperature and spectral type: O/B types are bluish-white (above roughly ten to twenty thousand degrees), A/F types near white, G types yellow, K types orange, and M types red (about three to four thousand degrees). One corner of Orion can show the blue-white Rigel and the orange-red Betelgeuse at the same time. When imaging, maintaining accurate white balance and unsaturated star points is essential to faithfully record these colors; over-stretching or saturation will drive all bright stars toward white and lose the color-temperature information. For the distribution of spectral types on the Hertzsprung-Russell diagram, see the figure below and 〔[Stellar Physics](/en/astronomy/deep-sky/stellar-physics/)〕.
+</Aside>
+
+<Fig name="fig-hr-real" alt="Hertzsprung-Russell diagram based on real photometric data" caption="The HR diagram: the horizontal axis is spectral type / temperature, the vertical axis is luminosity. The stars on this page can be located on it—main-sequence dwarfs (such as Vega and Altair), the giant branch (Arcturus, Pollux), and the supergiant region (Rigel, Betelgeuse, Antares)." />
+
+For the overall arrangement of observing seasons and visibility, see 〔[Hemisphere Visibility](/en/astronomy/observing/hemisphere-visibility/)〕; for the designations and coordinates of various objects, consult 〔[Object Catalog](/en/reference/catalog/)〕; for explanations of specialized terms, see 〔[Glossary](/en/reference/glossary/)〕.
+
+## References
+
+- [List of brightest stars — Wikipedia](https://en.wikipedia.org/wiki/List_of_brightest_stars): a compilation of the apparent magnitudes, distances, and spectral types of the brightest stars in the sky, the main data source for the table on this page.
+- [Bayer designation — Wikipedia](https://en.wikipedia.org/wiki/Bayer_designation): the ordering principles, superscript numbering, and exceptions of Bayer designations (including π/θ Orionis, Betelgeuse and Rigel).
+- [Variable star designation — Wikipedia](https://en.wikipedia.org/wiki/Variable_star_designation): the complete recurrence rules of Argelander variable-star designations from R–Z and RR–QZ to V335.
+- [Sirius — Wikipedia](https://en.wikipedia.org/wiki/Sirius): the parameters of the Sirius A/B binary, the white-dwarf companion, and the orbital period.
+- [Betelgeuse — Wikipedia](https://en.wikipedia.org/wiki/Betelgeuse): the basic parameters of Betelgeuse and a review of the causes of the 2019–2020 Great Dimming event.
+- [Polaris — Wikipedia](https://en.wikipedia.org/wiki/Polaris): the Cepheid-variable nature of Polaris, its distance, and the change in its angular distance from the north celestial pole with precession.

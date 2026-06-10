@@ -1,0 +1,1542 @@
+{
+  "m42-orion": {
+    "ok": true,
+    "title": "Orion Nebula - Hubble 2006 mosaic 18000.jpg",
+    "artist": "NASA, ESA, M. Robberto (Space Telescope Science Institute/ESA) and the Hubble Space…",
+    "license": "Public domain",
+    "bytes": 216171
+  },
+  "m31-andromeda": {
+    "ok": true,
+    "title": "Andromeda Galaxy (with h-alpha).jpg",
+    "artist": "Adam Evans",
+    "license": "CC BY 2.0",
+    "bytes": 467775
+  },
+  "m45-pleiades": {
+    "ok": true,
+    "title": "Pleiades large.jpg",
+    "artist": "NASA, ESA, AURA/Caltech, Palomar Observatory The science team consists of: D. Soderblom…",
+    "license": "Public domain",
+    "bytes": 257532
+  },
+  "m13-hercules": {
+    "ok": true,
+    "title": "Messier 13.jpg",
+    "artist": "Sid Leach/Adam Block/Mount Lemmon SkyCenter",
+    "license": "CC BY-SA 4.0",
+    "bytes": 300035
+  },
+  "m51-whirlpool": {
+    "ok": true,
+    "title": "Messier51 sRGB.jpg",
+    "artist": "NASA and European Space Agency",
+    "license": "Public domain",
+    "bytes": 253497
+  },
+  "m57-ring": {
+    "ok": true,
+    "title": "M57 The Ring Nebula.JPG",
+    "artist": "The Hubble Heritage Team (AURA/STScI/NASA)",
+    "license": "Public domain",
+    "bytes": 646086
+  },
+  "m8-lagoon": {
+    "ok": true,
+    "title": "Lagoon Nebula.jpg",
+    "artist": "ESO/IDA/Danish 1.5 m/ R. Gendler, U.G. Jørgensen, K. Harpsøe",
+    "license": "CC BY 4.0",
+    "bytes": 358812
+  },
+  "m104-sombrero": {
+    "ok": true,
+    "title": "M104 ngc4594 sombrero galaxy hi-res.jpg",
+    "artist": "NASA/ESA and The Hubble Heritage Team (STScI/AURA)",
+    "license": "Public domain",
+    "bytes": 146187
+  },
+  "ngc7000-namerica": {
+    "ok": true,
+    "title": "Nord america.jpg",
+    "artist": "Lviatour",
+    "license": "CC BY-SA 3.0",
+    "bytes": 1111038
+  },
+  "carina": {
+    "ok": true,
+    "title": "Carina Nebula by ESO.jpg",
+    "artist": "ESO",
+    "license": "CC BY 4.0",
+    "bytes": 471180
+  },
+  "omega-cen": {
+    "ok": true,
+    "title": "Omega Centauri by ESO.jpg",
+    "artist": "ESO",
+    "license": "CC BY 4.0",
+    "bytes": 816671
+  },
+  "47tuc": {
+    "ok": true,
+    "title": "NGC 104 Hubble WikiSky.jpg",
+    "artist": "en:NASA, en:STScI, en:WikiSky",
+    "license": "Public domain",
+    "bytes": 585087
+  },
+  "lmc": {
+    "ok": true,
+    "title": "Large Magellanic Cloud.jpg",
+    "artist": "ESA/NASA/JPL-Caltech/STScI",
+    "license": "Public domain",
+    "bytes": 390092
+  },
+  "horsehead": {
+    "ok": true,
+    "title": "Barnard 33.jpg",
+    "artist": "Ken Crawford",
+    "license": "CC BY-SA 3.0",
+    "bytes": 267738
+  },
+  "eagle-pillars": {
+    "ok": true,
+    "title": "Pillars of Creation.jpg",
+    "artist": "NASA, Jeff Hester, and Paul Scowen (Arizona State University)",
+    "license": "Public domain",
+    "bytes": 256761
+  },
+  "sun": {
+    "ok": true,
+    "title": "The Sun by the Atmospheric Imaging Assembly of NASA's Solar Dynamics Observatory - 20100819.jpg",
+    "artist": "NASA/SDO (AIA)",
+    "license": "Public domain",
+    "bytes": 426910
+  },
+  "moon": {
+    "ok": true,
+    "title": "FullMoon2010.jpg",
+    "artist": "Gregory H. Revera",
+    "license": "CC BY-SA 3.0",
+    "bytes": 365729
+  },
+  "saturn": {
+    "ok": true,
+    "title": "PIA21047.jpg",
+    "artist": "NASA/JPL-Caltech/Space Science Institute",
+    "license": "Public domain",
+    "bytes": 99372
+  },
+  "jupiter": {
+    "ok": true,
+    "title": "Jupiter and its shrunken Great Red Spot.jpg",
+    "artist": "NASA, ESA, and A. Simon (Goddard Space Flight Center)",
+    "license": "Public domain",
+    "bytes": 143547
+  },
+  "milkyway": {
+    "ok": true,
+    "title": "Milky Way Arch.jpg",
+    "artist": "Bruno Gilli/ESO",
+    "license": "CC BY 4.0",
+    "bytes": 148672
+  },
+  "vlt": {
+    "ok": true,
+    "title": "Paranal platform.jpg",
+    "artist": "Rivi",
+    "license": "CC BY-SA 3.0",
+    "bytes": 118428
+  },
+  "alma": {
+    "ok": true,
+    "title": "ALMA and a Starry Night.jpg",
+    "artist": "ESO/B. Tafreshi (twanight.org)",
+    "license": "CC BY 4.0",
+    "bytes": 154163
+  },
+  "startrails": {
+    "ok": true,
+    "title": "Star trails over the MPG-ESO 2 2-metre telescope (30-01-2012-cc).jpg",
+    "artist": "A. Santerne/ESO",
+    "license": "CC BY 4.0",
+    "bytes": 458054
+  },
+  "lasergstar": {
+    "ok": true,
+    "title": "Laser Towards Milky Ways Centre.jpg",
+    "artist": "ESO/Yuri Beletsky (ybialets at eso.org)",
+    "license": "CC BY 4.0",
+    "bytes": 544899
+  },
+  "fig-equatorial": {
+    "ok": true,
+    "title": "Ra and dec on celestial sphere.png",
+    "artist": "Tfr000 (talk) 15:34, 15 June 2012 (UTC)",
+    "license": "CC BY-SA 3.0",
+    "bytes": 518450
+  },
+  "fig-altaz": {
+    "ok": true,
+    "title": "Azimuth-Altitude schematic.svg",
+    "artist": "TWCarlson",
+    "license": "CC BY-SA 3.0",
+    "bytes": 71271
+  },
+  "fig-ecliptic": {
+    "ok": true,
+    "title": "Celestial poles and equator.svg",
+    "artist": "Hawesthoughts",
+    "license": "CC0",
+    "bytes": 243424
+  },
+  "fig-sidereal-day": {
+    "ok": true,
+    "title": "Sidereal day (prograde).svg",
+    "artist": "Wikimedia Commons",
+    "license": "CC BY-SA 3.0",
+    "bytes": 73681
+  },
+  "fig-precession": {
+    "ok": true,
+    "title": "Earth precession.svg",
+    "artist": "NASA, Mysid",
+    "license": "Public domain",
+    "bytes": 202436
+  },
+  "fig-retrograde": {
+    "ok": true,
+    "title": "Mars retrograde motion.png",
+    "artist": "Socrates Linardos",
+    "license": "CC BY-SA 4.0",
+    "bytes": 253037
+  },
+  "fig-orion-chart": {
+    "ok": true,
+    "title": "Orion IAU.svg",
+    "artist": "IAU and Sky & Telescope magazine (Roger Sinnott & Rick Fienberg)",
+    "license": "CC BY 3.0",
+    "bytes": 548959
+  },
+  "fig-parallax": {
+    "ok": true,
+    "title": "Stellarparallax parsec1.svg",
+    "artist": "Srain at English Wikipedia",
+    "license": "Public domain",
+    "bytes": 114591
+  },
+  "fig-analemma": {
+    "ok": true,
+    "title": "Analemma Earth.png",
+    "artist": "PAR",
+    "license": "Public domain"
+  },
+  "fig-magnitude": {
+    "ok": true,
+    "title": "Apparent magnitude.svg",
+    "artist": "Amitchell125",
+    "license": "CC BY-SA 4.0"
+  },
+  "fig-sun-structure": {
+    "ok": true,
+    "title": "Sun poster.svg",
+    "artist": "Kelvinsong",
+    "license": "CC BY-SA 3.0",
+    "bytes": 397100
+  },
+  "fig-sunspot-cycle": {
+    "ok": true,
+    "title": "Sunspot Numbers.png",
+    "artist": "This figure was prepared by Robert A. Rohde and is part of the Global Warming Art project.",
+    "license": "CC BY-SA 3.0",
+    "bytes": 297864
+  },
+  "fig-moon-phases": {
+    "ok": true,
+    "title": "Moon phases en.jpg",
+    "artist": "Orion 8",
+    "license": "CC BY-SA 3.0",
+    "bytes": 117538
+  },
+  "fig-comet-structure": {
+    "ok": true,
+    "title": "Cometorbit01.svg",
+    "artist": "Юкатан",
+    "license": "CC BY-SA 4.0",
+    "bytes": 102100
+  },
+  "fig-solar-system": {
+    "ok": true,
+    "title": "Planets2013.svg",
+    "artist": "WP",
+    "license": "CC BY-SA 3.0",
+    "bytes": 575378
+  },
+  "fig-hr-real": {
+    "ok": true,
+    "title": "HRDiagram.png",
+    "artist": "Richard Powell",
+    "license": "CC BY-SA 2.5",
+    "bytes": 19148
+  },
+  "fig-tuning-fork": {
+    "ok": true,
+    "title": "Hubble - de Vaucouleurs Galaxy Morphology Diagram.png",
+    "artist": "Antonio Ciccolella / M. De Leo",
+    "license": "CC BY 3.0",
+    "bytes": 212172
+  },
+  "fig-eclipsing-binary": {
+    "ok": true,
+    "title": "Light curve of Kepler-16b.jpg",
+    "artist": "NASA",
+    "license": "Public domain",
+    "bytes": 31932
+  },
+  "fig-cmb": {
+    "ok": true,
+    "title": "Ilc 9yr moll4096.png",
+    "artist": "NASA / WMAP Science Team",
+    "license": "Public domain",
+    "bytes": 1298488
+  },
+  "fig-cosmic-timeline": {
+    "ok": true,
+    "title": "CMB Timeline300 no WMAP.jpg",
+    "artist": "NASA/WMAP Science Team",
+    "license": "Public domain",
+    "bytes": 225098
+  },
+  "fig-telescopes": {
+    "ok": true,
+    "title": "Newtonian telescope2.svg",
+    "artist": "Krishnavedala",
+    "license": "CC BY-SA 4.0",
+    "bytes": 50183
+  },
+  "fig-bayer": {
+    "ok": true,
+    "title": "Bayer pattern on sensor.svg",
+    "artist": "en:User:Cburnett",
+    "license": "CC BY-SA 3.0",
+    "bytes": 166201
+  },
+  "fig-stellar-evolution": {
+    "ok": true,
+    "title": "Star Life Cycle Chart.jpg",
+    "artist": "R.N. Bailey",
+    "license": "CC BY 4.0",
+    "bytes": 334381
+  },
+  "fig-hubble-law": {
+    "ok": true,
+    "title": "Hubble constant.JPG",
+    "artist": "Brews ohare",
+    "license": "CC BY-SA 3.0",
+    "bytes": 45878
+  },
+  "fig-extinction": {
+    "ok": true,
+    "title": "Airmass.png",
+    "artist": "Wikimedia Commons",
+    "license": "CC BY-SA 3.0",
+    "bytes": 85254
+  },
+  "fig-meteor-radiant": {
+    "ok": true,
+    "title": "Astronomy for the use of schools and academies (1882) (14577674870).jpg",
+    "artist": "Internet Archive Book Images",
+    "license": "No restrictions",
+    "bytes": 468555
+  },
+  "fig-emission-lines": {
+    "ok": true,
+    "title": "Emission spectrum-H.svg",
+    "artist": "Merikanto, Adrignola",
+    "license": "CC0",
+    "bytes": 1270
+  },
+  "m27-dumbbell": {
+    "ok": true,
+    "title": "M27 - Dumbbell Nebula.jpg",
+    "artist": "ESO",
+    "license": "CC BY 4.0",
+    "bytes": 345798
+  },
+  "m1-crab": {
+    "ok": true,
+    "title": "Crab Nebula.jpg",
+    "artist": "NASA, ESA, J. Hester and A. Loll (Arizona State University)",
+    "license": "Public domain",
+    "bytes": 484529
+  },
+  "m33-triangulum": {
+    "ok": true,
+    "title": "VST snaps a very detailed view of the Triangulum Galaxy.jpg",
+    "artist": "ESO",
+    "license": "CC BY 4.0",
+    "bytes": 542297
+  },
+  "m81-bode": {
+    "ok": true,
+    "title": "Messier 81 HST.jpg",
+    "artist": "NASA, ESA and the Hubble Heritage Team (STScI/AURA)",
+    "license": "Public domain",
+    "bytes": 178654
+  },
+  "m82-cigar": {
+    "ok": true,
+    "title": "M82 HST ACS 2006-14-a-large web.jpg",
+    "artist": "NASA, ESA, and The Hubble Heritage Team (STScI/AURA)",
+    "license": "Public domain",
+    "bytes": 298901
+  },
+  "m101-pinwheel": {
+    "ok": true,
+    "title": "M101 hires STScI-PRC2006-10a.jpg",
+    "artist": "European Space Agency & NASA",
+    "license": "CC BY 4.0",
+    "bytes": 387606
+  },
+  "m20-trifid": {
+    "ok": true,
+    "title": "Trifid and Lagoon nebulae.jpg",
+    "artist": "NSF–DOE Vera C. Rubin Observatory",
+    "license": "CC BY 4.0",
+    "bytes": 447842
+  },
+  "m64-blackeye": {
+    "ok": true,
+    "title": "Blackeyegalaxy.jpg",
+    "artist": "NASA and The Hubble Heritage Team (AURA/STScI)",
+    "license": "Public domain",
+    "bytes": 792446
+  },
+  "rosette": {
+    "ok": true,
+    "title": "Rosette emission-line image (noao0403a).jpg",
+    "artist": "T. A. Rector/University of Alaska Anchorage, WIYN and NOIRLab/NSF/AURA",
+    "license": "CC BY 4.0"
+  },
+  "veil": {
+    "ok": true,
+    "title": "Veil Nebula - NGC6960.jpg",
+    "artist": "Ken Crawford",
+    "license": "CC BY-SA 3.0",
+    "bytes": 291182
+  },
+  "heart-nebula": {
+    "ok": true,
+    "title": "Heart Nebula AF.jpg",
+    "artist": "Azhikerdude",
+    "license": "CC BY-SA 4.0"
+  },
+  "helix": {
+    "ok": true,
+    "title": "NGC7293 (2004).jpg",
+    "artist": "The HST data are from proposal 9700. Processed images may be obtained from the Helix…",
+    "license": "Public domain",
+    "bytes": 196116
+  },
+  "rho-ophiuchi": {
+    "ok": true,
+    "title": "Rho Ophiuchi.jpg",
+    "artist": "NASA/JPL-Caltech/WISE Team",
+    "license": "Public domain",
+    "bytes": 382664
+  },
+  "flame-nebula": {
+    "ok": true,
+    "title": "NGC 2024.jpg",
+    "artist": "ESO/J. Emerson/VISTA.",
+    "license": "CC BY 4.0",
+    "bytes": 238059
+  },
+  "leo-triplet": {
+    "ok": true,
+    "title": "Leo Triplet (49606968651).jpg",
+    "artist": "Stephen Rahn from Macon, GA, USA",
+    "license": "CC0"
+  },
+  "betelgeuse": {
+    "ok": true,
+    "title": "SPHERE’s view of Betelgeuse in January 2019 (eso2003b).jpg",
+    "artist": "ESO/M. Montargès et al.",
+    "license": "CC BY 4.0",
+    "bytes": 35564
+  },
+  "sirius": {
+    "ok": true,
+    "title": "Sirius A and B Hubble photo.jpg",
+    "artist": "NASA, ESA, H. Bond (STScI), and M. Barstow (University of Leicester)",
+    "license": "Public domain",
+    "bytes": 183428
+  },
+  "star-sizes": {
+    "ok": true,
+    "title": "Star-sizes.jpg",
+    "artist": "Dave Jarvis (https://dave.autonoma.ca/)",
+    "license": "CC BY-SA 3.0",
+    "bytes": 206778
+  },
+  "m97-owl": {
+    "ok": true,
+    "title": "M97.jpg",
+    "artist": "Fryns",
+    "license": "Public domain"
+  },
+  "ngc253-sculptor": {
+    "ok": true,
+    "title": "NGC 253 by ESO.jpg",
+    "artist": "ESO",
+    "license": "CC BY 4.0"
+  },
+  "centaurus-a": {
+    "ok": true,
+    "title": "Centaurus A (ESO).jpg",
+    "artist": "ESO/WFI (Optical); MPIfR/ESO/APEX/A.Weiss et al. (Submillimetre); NASA/CXC/CfA/R.Kraft…",
+    "license": "CC BY 4.0"
+  },
+  "double-cluster": {
+    "ok": true,
+    "title": "Double cluster.jpg",
+    "artist": "Taavi Niittee",
+    "license": "CC0"
+  },
+  "m44-beehive": {
+    "ok": true,
+    "title": "M44.jpg",
+    "artist": "Roberto Mura",
+    "license": "Public domain"
+  },
+  "m63-sunflower": {
+    "ok": true,
+    "title": "Messier 63.jpg",
+    "artist": "Jschulman555",
+    "license": "CC BY 3.0"
+  },
+  "m3": {
+    "ok": true,
+    "title": "Globular Cluster Messier 3 (M3).jpg",
+    "artist": "Thedarksideobservatory",
+    "license": "CC BY-SA 4.0"
+  },
+  "m4": {
+    "ok": true,
+    "title": "Messier 78.jpg",
+    "artist": "ESO/Igor Chekalin",
+    "license": "CC BY 4.0"
+  },
+  "m6": {
+    "ok": true,
+    "title": "M6, NGC 6405; Butterfly Cluster (noao-02637).jpg",
+    "artist": "N.A.Sharp, Mark Hanna, REU program/NOIRLab/NSF/AURA",
+    "license": "CC BY 4.0"
+  },
+  "m2": {
+    "ok": true,
+    "title": "Crab Nebula.jpg",
+    "artist": "NASA, ESA, J. Hester and A. Loll (Arizona State University)",
+    "license": "Public domain"
+  },
+  "m5": {
+    "ok": true,
+    "title": "Messier 106 visible and infrared composite.jpg",
+    "artist": "NASA, ESA, the Hubble Heritage Team (STScI/AURA), and R. Gendler (for the…",
+    "license": "Public domain"
+  },
+  "m10": {
+    "ok": true,
+    "title": "Messier51 sRGB.jpg",
+    "artist": "NASA and European Space Agency",
+    "license": "Public domain"
+  },
+  "m12": {
+    "ok": true,
+    "title": "M87 jet.jpg",
+    "artist": "NASA and The Hubble Heritage Team (STScI/AURA)",
+    "license": "Public domain"
+  },
+  "m14": {
+    "ok": true,
+    "title": "Messier 14",
+    "artist": "NOIRLAB / NSF / AURA",
+    "license": "CC BY 4.0"
+  },
+  "m11": {
+    "ok": true,
+    "title": "2020-06-12 M11.jpg",
+    "artist": "Achituv",
+    "license": "CC BY-SA 4.0"
+  },
+  "m7": {
+    "ok": true,
+    "title": "Open-cluster-Messier-7.jpeg",
+    "artist": "Oliver Stein",
+    "license": "CC BY-SA 3.0"
+  },
+  "c4": {
+    "ok": true,
+    "title": "NGC 7023",
+    "artist": "Wikimedia Commons",
+    "license": ""
+  },
+  "c7": {
+    "ok": true,
+    "title": "NGC 2403",
+    "artist": "Wikimedia Commons",
+    "license": ""
+  },
+  "c5": {
+    "ok": true,
+    "title": "IC 342",
+    "artist": "Wikimedia Commons",
+    "license": ""
+  },
+  "c46": {
+    "ok": true,
+    "title": "NGC 2261",
+    "artist": "Wikimedia Commons",
+    "license": ""
+  },
+  "c47": {
+    "ok": true,
+    "title": "NGC 6934",
+    "artist": "Wikimedia Commons",
+    "license": ""
+  },
+  "c50": {
+    "ok": true,
+    "title": "Cone Nebula (NGC 2264) Star-Forming Pillar of Gas and Dust.jpg",
+    "artist": "NASA, H. Ford (JHU), G. Illingworth (UCSC/LO), M.Clampin (STScI), G. Hartig…",
+    "license": "CC BY 4.0"
+  },
+  "c69": {
+    "ok": true,
+    "title": "NGC 6302",
+    "artist": "Wikimedia Commons",
+    "license": ""
+  },
+  "c94": {
+    "ok": true,
+    "title": "Southernpleiadesdettaglio.jpg",
+    "artist": "Roberto Mura",
+    "license": "Public domain"
+  },
+  "m18": {
+    "ok": true,
+    "title": "Messier 18",
+    "artist": "Fabian Rodriguez Frustaglia",
+    "license": "CC BY-SA 4.0"
+  },
+  "m17": {
+    "ok": true,
+    "title": "The Omega Nebula, M17 (noao-m17e).jpg",
+    "artist": "Hillary Mathis, N.A.Sharp, REU program/NOIRLab/NSF/AURA",
+    "license": "CC BY 4.0"
+  },
+  "m9": {
+    "ok": true,
+    "title": "Messier 9",
+    "artist": "NASA &amp; ESA",
+    "license": "CC BY 4.0"
+  },
+  "m15": {
+    "ok": true,
+    "title": "M42 (infrared, S-II, O-III).jpg",
+    "artist": "Brainandforce",
+    "license": "CC BY 4.0"
+  },
+  "m19": {
+    "ok": true,
+    "title": "Messier 19",
+    "artist": "Chuck Ayoub",
+    "license": "CC0"
+  },
+  "m22": {
+    "ok": true,
+    "title": "Pleiades large.jpg",
+    "artist": "NASA, ESA, AURA/Caltech, Palomar Observatory The science team consists of: D.…",
+    "license": "Public domain"
+  },
+  "m21": {
+    "ok": true,
+    "title": "Messier 21",
+    "artist": "RubinObs/NOIRLab/SLAC/NSF/DOE/AURA",
+    "license": "CC BY 4.0"
+  },
+  "m24": {
+    "ok": true,
+    "title": "Messier 24",
+    "artist": "Roberto Colombari",
+    "license": "CC BY-SA 4.0"
+  },
+  "m25": {
+    "ok": true,
+    "title": "Messier 25",
+    "artist": "Starhopper",
+    "license": "CC BY-SA 4.0"
+  },
+  "m29": {
+    "ok": true,
+    "title": "Messier 29",
+    "artist": "Veryoldphotons",
+    "license": "CC BY-SA 4.0"
+  },
+  "m23": {
+    "ok": true,
+    "title": "Messier 23",
+    "artist": "Chuck Ayoub",
+    "license": "CC0"
+  },
+  "m28": {
+    "ok": true,
+    "title": "Messier 28",
+    "artist": "Credits: NASA, ESA, STScI, R. Buonanno (Universita di Roma Tor Vergata), K.…",
+    "license": "Public domain"
+  },
+  "m32": {
+    "ok": true,
+    "title": "Messier 32",
+    "artist": "Fabrizio Francione",
+    "license": "CC BY-SA 4.0"
+  },
+  "m38": {
+    "ok": true,
+    "title": "Messier 38",
+    "artist": "gjdonatiello",
+    "license": "CC0"
+  },
+  "m40": {
+    "ok": true,
+    "title": "Messier 40",
+    "artist": "NOIRLab/NSF/AURA",
+    "license": "CC BY 4.0"
+  },
+  "m48": {
+    "ok": true,
+    "title": "Messier 48",
+    "artist": "Jim Mazur",
+    "license": "CC BY-SA 4.0"
+  },
+  "m61": {
+    "ok": true,
+    "title": "Messier 61",
+    "artist": "ESA/Hubble &amp; NASA ",
+    "license": "CC BY 4.0"
+  },
+  "m73": {
+    "ok": true,
+    "title": "Messier 73",
+    "artist": "Digitized Sky Survey 2",
+    "license": "CC BY-SA 3.0"
+  },
+  "m77": {
+    "ok": true,
+    "title": "A close-up view of Messier 77’s active galactic nucleus (eso2203b).jpg",
+    "artist": "ESO/Jaffe, Gámez-Rosas et al.",
+    "license": "CC BY 4.0"
+  },
+  "c16": {
+    "ok": true,
+    "title": "NGC 7243",
+    "artist": "Wikimedia Commons",
+    "license": ""
+  },
+  "c41": {
+    "ok": true,
+    "title": "Mel 25",
+    "artist": "Wikimedia Commons",
+    "license": ""
+  },
+  "c39": {
+    "ok": true,
+    "title": "NGC 2392",
+    "artist": "Wikimedia Commons",
+    "license": ""
+  },
+  "c38": {
+    "ok": true,
+    "title": "NGC 4565",
+    "artist": "Wikimedia Commons",
+    "license": ""
+  },
+  "c42": {
+    "ok": true,
+    "title": "NGC 7006",
+    "artist": "Wikimedia Commons",
+    "license": ""
+  },
+  "c62": {
+    "ok": true,
+    "title": "NGC 247",
+    "artist": "Wikimedia Commons",
+    "license": ""
+  },
+  "c66": {
+    "ok": true,
+    "title": "NGC 5694",
+    "artist": "Wikimedia Commons",
+    "license": ""
+  },
+  "m26": {
+    "ok": true,
+    "title": "Messier 26",
+    "artist": "Hillary Mathis, Vanessa Harvey, REU program/NOIRLab/NSF/AURA",
+    "license": "CC BY 4.0"
+  },
+  "m30": {
+    "ok": true,
+    "title": "Messier 30",
+    "artist": "NASA/ESA",
+    "license": "Public domain"
+  },
+  "m34": {
+    "ok": true,
+    "title": "Messier 34",
+    "artist": "Jim Mazur",
+    "license": "CC BY-SA 4.0"
+  },
+  "m35": {
+    "ok": true,
+    "title": "NGC 2168 (Messier 35).jpg",
+    "artist": "NiKo",
+    "license": "CC BY 4.0"
+  },
+  "m36": {
+    "ok": true,
+    "title": "Messier 036 2MASS.jpg",
+    "artist": "Two Micron All Sky Survey (2MASS), a joint project of the University of…",
+    "license": "Public domain"
+  },
+  "m37": {
+    "ok": true,
+    "title": "M37, NGC 2099 (noao-m37).jpg",
+    "artist": "NOIRLab/NSF/AURA",
+    "license": "CC BY 4.0"
+  },
+  "m39": {
+    "ok": true,
+    "title": "Messier 39",
+    "artist": "Chuck Ayoub",
+    "license": "CC0"
+  },
+  "m41": {
+    "ok": true,
+    "title": "Messier 41",
+    "artist": "Chuck Ayoub",
+    "license": "CC0"
+  },
+  "m43": {
+    "ok": true,
+    "title": "M42 (infrared, S-II, O-III).jpg",
+    "artist": "Brainandforce",
+    "license": "CC BY 4.0"
+  },
+  "m46": {
+    "ok": true,
+    "title": "Messier 46",
+    "artist": "Chuck Ayoub",
+    "license": "CC0"
+  },
+  "m80": {
+    "ok": true,
+    "title": "Messier 80",
+    "artist": "NASA, The Hubble Heritage Team, STScI, AURA",
+    "license": "Public domain"
+  },
+  "m83": {
+    "ok": true,
+    "title": "Messier83 - Heic1403a.jpg",
+    "artist": " NASA, ESA, and the Hubble Heritage Team (STScI/AURA) ",
+    "license": "Public domain"
+  },
+  "m92": {
+    "ok": true,
+    "title": "M92 arp 750pix.jpg",
+    "artist": "Daniel Bramich (ING) and Nik Szymanek.",
+    "license": "Attribution"
+  },
+  "m94": {
+    "ok": true,
+    "title": "Messier 94",
+    "artist": "R Jay Gabany (Blackbird Obs.)",
+    "license": "CC BY-SA 3.0"
+  },
+  "m100": {
+    "ok": true,
+    "title": "Messier 100",
+    "artist": "ESO",
+    "license": "CC BY 4.0"
+  },
+  "m103": {
+    "ok": true,
+    "title": "Messier 103",
+    "artist": "Jim Mazur",
+    "license": "CC BY-SA 4.0"
+  },
+  "m107": {
+    "ok": true,
+    "title": "Messier 107",
+    "artist": "en:NASA, en:STScI, en:WikiSky",
+    "license": "Public domain"
+  },
+  "c6": {
+    "ok": true,
+    "title": "NGC 6543",
+    "artist": "ESA/Hubble &amp; NASA, Z. Tsvetanov",
+    "license": "CC BY 4.0"
+  },
+  "c11": {
+    "ok": true,
+    "title": "The Bubble Nebula (NGC 7635) (noao0702a).jpg",
+    "artist": "T.A. Rector/University of Alaska Anchorage, H. Schweiker/WIYN and…",
+    "license": "CC BY 4.0"
+  },
+  "c30": {
+    "ok": true,
+    "title": "NGC 7331",
+    "artist": "Ngc1535",
+    "license": "CC BY 3.0"
+  },
+  "c31": {
+    "ok": true,
+    "title": "IC 405",
+    "artist": "Chuck Ayoub",
+    "license": "CC0"
+  },
+  "c33": {
+    "ok": true,
+    "title": "Caldwell 33 - 1.jpg",
+    "artist": "NASA Hubble",
+    "license": "CC BY 2.0"
+  },
+  "c40": {
+    "ok": true,
+    "title": "NGC 3626",
+    "artist": "Sloan Digital Sky Survey",
+    "license": "CC BY 4.0"
+  },
+  "c53": {
+    "ok": true,
+    "title": "NGC 3115",
+    "artist": "Image ",
+    "license": "Public domain"
+  },
+  "c60": {
+    "ok": true,
+    "title": "NGC 4038",
+    "artist": "ESA/Hubble &amp; NASA",
+    "license": "CC BY 4.0"
+  },
+  "c61": {
+    "ok": true,
+    "title": "NGC 4039",
+    "artist": "ESA/Hubble &amp; NASA",
+    "license": "CC BY 4.0"
+  },
+  "c64": {
+    "ok": true,
+    "title": "C64",
+    "artist": "Evan-Amos",
+    "license": "Public domain"
+  },
+  "c68": {
+    "ok": true,
+    "title": "NGC 6729",
+    "artist": "ESO",
+    "license": "CC BY 3.0"
+  },
+  "c72": {
+    "ok": true,
+    "title": "NGC 55",
+    "artist": "ESO",
+    "license": "CC BY 4.0"
+  },
+  "c78": {
+    "ok": true,
+    "title": "NGC 6541",
+    "artist": "NASA Hubble Space Telescope",
+    "license": "CC BY 2.0"
+  },
+  "c79": {
+    "ok": true,
+    "title": "NGC 3201",
+    "artist": "en:NASA, en:STScI, en:WikiSky",
+    "license": "Public domain"
+  },
+  "c81": {
+    "ok": true,
+    "title": "NGC 6352",
+    "artist": "NASA - Hubble Space Telescope",
+    "license": "Public domain"
+  },
+  "c82": {
+    "ok": true,
+    "title": "A snapshot of the Jewel Box cluster with the ESO VLT (heic0913b).jpg",
+    "artist": "ESO",
+    "license": "CC BY 4.0"
+  },
+  "c83": {
+    "ok": true,
+    "title": "NGC 4945",
+    "artist": "ESO",
+    "license": "CC BY 4.0"
+  },
+  "c84": {
+    "ok": true,
+    "title": "NGC 5286",
+    "artist": "Own work",
+    "license": "CC BY-SA 3.0"
+  },
+  "c85": {
+    "ok": true,
+    "title": "IC 2391",
+    "artist": "YayLol123",
+    "license": "CC BY-SA 4.0"
+  },
+  "c86": {
+    "ok": true,
+    "title": "NGC 6397",
+    "artist": "NASA/ESA and the Hubble Heritage Team (AURA/STScI)",
+    "license": "Public domain"
+  },
+  "c87": {
+    "ok": true,
+    "title": "NGC 1261",
+    "artist": "Lithopsian",
+    "license": "CC BY-SA 4.0"
+  },
+  "c88": {
+    "ok": true,
+    "title": "NGC 5823",
+    "artist": "Legacy Surveys / D.Lang (Perimeter Institute) &amp; Meli thev",
+    "license": "CC BY 4.0"
+  },
+  "c103": {
+    "ok": true,
+    "title": "NGC 2070",
+    "artist": "ESO",
+    "license": "CC BY 4.0"
+  },
+  "m49": {
+    "ok": true,
+    "title": "M49, NGC 4472 (noao-m49).jpg",
+    "artist": "NOIRLab/NSF/AURA",
+    "license": "CC BY 4.0"
+  },
+  "m47": {
+    "ok": true,
+    "title": "Messier 47",
+    "artist": "Chuck Ayoub",
+    "license": "CC0"
+  },
+  "m52": {
+    "ok": true,
+    "title": "Messier 52",
+    "artist": "Wikimedia Commons",
+    "license": "Public domain"
+  },
+  "m50": {
+    "ok": true,
+    "title": "Messier 50",
+    "artist": "Chuck Ayoub",
+    "license": "CC0"
+  },
+  "m54": {
+    "ok": true,
+    "title": "Messier 54",
+    "artist": "ESA/Hubble &amp; NASA",
+    "license": "CC BY 3.0"
+  },
+  "m53": {
+    "ok": true,
+    "title": "Messier 53",
+    "artist": "Sloan Digital Sky Survey",
+    "license": "CC BY 4.0"
+  },
+  "m56": {
+    "ok": true,
+    "title": "Messier 56",
+    "artist": "en:NASA, en:STScI, en:WikiSky",
+    "license": "Public domain"
+  },
+  "m55": {
+    "ok": true,
+    "title": "M87 jet.jpg",
+    "artist": "NASA and The Hubble Heritage Team (STScI/AURA)",
+    "license": "Public domain"
+  },
+  "m58": {
+    "ok": true,
+    "title": "Messier 58",
+    "artist": "Credit Line and Copyright Adam Block/Mount Lemmon SkyCenter/University of…",
+    "license": "CC BY-SA 3.0 us"
+  },
+  "m59": {
+    "ok": true,
+    "title": "Messier 59",
+    "artist": " ESA/Hubble &amp; NASA, L. Ho et al.",
+    "license": "CC BY 4.0"
+  },
+  "m78": {
+    "ok": true,
+    "title": "Messier 78 Behind Barnard’s Loop.jpg",
+    "artist": "Hwy37",
+    "license": "CC BY-SA 4.0"
+  },
+  "ngc7293": {
+    "ok": true,
+    "title": "NGC7293 (2004).jpg",
+    "artist": "The HST data are from proposal 9700. Processed images may be obtained from…",
+    "license": "Public domain"
+  },
+  "ngc6826": {
+    "ok": true,
+    "title": "NGC 6543 7662 7009 6826.jpg",
+    "artist": "NASA",
+    "license": "Public domain"
+  },
+  "ngc2244": {
+    "ok": true,
+    "title": "NGC 2244 Rosette Nebula.jpg",
+    "artist": "Andreas Fink",
+    "license": "CC BY-SA 3.0"
+  },
+  "ngc7000": {
+    "ok": true,
+    "title": "Cygnus Wall.jpg",
+    "artist": "Ken Crawford",
+    "license": "CC BY-SA 4.0"
+  },
+  "ic1396": {
+    "ok": true,
+    "title": "Elephant's Trunk nebula.jpg",
+    "artist": "Ram samudrala",
+    "license": "CC BY 4.0"
+  },
+  "ic443": {
+    "ok": true,
+    "title": "IC443.jpeg",
+    "artist": "NASA",
+    "license": "Public domain"
+  },
+  "b33": {
+    "ok": true,
+    "title": "Barnard 33.jpg",
+    "artist": "Ken Crawford",
+    "license": "CC BY-SA 3.0"
+  },
+  "smc": {
+    "ok": true,
+    "title": "360-degree Panorama of the Southern Sky.jpg",
+    "artist": "ESO/H.H. Heyer",
+    "license": "CC BY 4.0"
+  },
+  "ngc3372": {
+    "ok": true,
+    "title": "Carina Nebula by Harel Boren (151851961, modified).jpg",
+    "artist": "Harel Boren",
+    "license": "CC BY-SA 4.0"
+  },
+  "ngc6357": {
+    "ok": true,
+    "title": "NGC 6357.jpg",
+    "artist": "CTIO/NOIRLab/DOE/NSF/AURA T.A. Rector (University of Alaska Anchorage/NSF’s…",
+    "license": "CC BY 4.0"
+  },
+  "ngc6302": {
+    "ok": true,
+    "title": "NGC 6302 Hubble 2009.full.jpg",
+    "artist": "NASA, ESA and the Hubble SM4 ERO Team",
+    "license": "Public domain"
+  },
+  "ngc6334": {
+    "ok": true,
+    "title": "Cats-paw-eso.jpg",
+    "artist": "ESO",
+    "license": "CC BY 4.0"
+  },
+  "sh2101": {
+    "ok": true,
+    "title": "Cygnus region in emission lines.jpg",
+    "artist": "Tk833",
+    "license": "CC BY-SA 4.0"
+  },
+  "ngc3628": {
+    "ok": true,
+    "title": "Hamburger Galaxy (NGC 3628).png",
+    "artist": "Denis Paryshev",
+    "license": "CC BY-SA 4.0"
+  },
+  "ngc891": {
+    "ok": true,
+    "title": "NGC 891 Hubble.jpg",
+    "artist": "Torsten Boeker, Space Telescope Science Institute (STScI) , and NASA",
+    "license": "Public domain"
+  },
+  "ngc1300": {
+    "ok": true,
+    "title": "Hubble2005-01-barred-spiral-galaxy-NGC1300.jpg",
+    "artist": "NASA, ESA, and The Hubble Heritage Team STScI/AURA)",
+    "license": "Public domain"
+  },
+  "ngc4486": {
+    "ok": true,
+    "title": "Black hole - Messier 87 crop max res.jpg",
+    "artist": "Event Horizon Telescope, uploader cropped and converted TIF to JPG",
+    "license": "CC BY 4.0"
+  },
+  "ngc7331": {
+    "ok": true,
+    "title": "NGC 7331 (noao-n7331mortfield).jpg",
+    "artist": "KPNO/NOIRLab/NSF/AURA/Paul Mortfield and Dietmar Kupke/Flynn Haase",
+    "license": "CC BY 4.0"
+  },
+  "ngc4038": {
+    "ok": true,
+    "title": "Chandra-Hubble Comparison for the Antennae (2000-0120-more-3).jpg",
+    "artist": "(",
+    "license": "Public domain"
+  },
+  "ngc55": {
+    "ok": true,
+    "title": "Artist’s impression of the black hole inside NGC 300 X-1 (ESO 1004a).jpg",
+    "artist": "ESO/L. Calçada/M.Kornmesser",
+    "license": "CC BY 4.0"
+  },
+  "ngc2841": {
+    "ok": true,
+    "title": "NGC 2841.jpg",
+    "artist": "NASA, ESA, and the Hubble Heritage (STScI/AURA)-ESA/Hubble Collaboration",
+    "license": "Public domain"
+  },
+  "ngc247": {
+    "ok": true,
+    "title": "GALEX-NGC247.jpg",
+    "artist": "NASA/JPL-Caltech",
+    "license": "Public domain"
+  },
+  "ngc4216": {
+    "ok": true,
+    "title": "NGC 4216 SDSS.jpg",
+    "artist": "Donald Pelletier",
+    "license": "CC BY-SA 4.0"
+  },
+  "ngc6946": {
+    "ok": true,
+    "title": "Fireworks Galaxy, NGC 6946 (48128893458).jpg",
+    "artist": "Kevin M. Gill",
+    "license": "CC BY 2.0"
+  },
+  "m90": {
+    "ok": true,
+    "title": "NGC 4569 in UV and Visible.jpg",
+    "artist": "NASA/JPL-Caltech/Palomar",
+    "license": "Public domain"
+  },
+  "ic5070": {
+    "ok": true,
+    "title": "Mgławica Pelikan IC 5070.jpg",
+    "artist": "Wojciech Mazur",
+    "license": "CC BY 4.0"
+  },
+  "ngc281": {
+    "ok": true,
+    "title": "Pacman nebula.jpg",
+    "artist": "Ram samudrala",
+    "license": "CC BY 4.0"
+  },
+  "ngc6820": {
+    "ok": true,
+    "title": "NGC6820 JeffJohnson.jpg",
+    "artist": "Jeffjnet (http://jeffjastro.com)",
+    "license": "CC BY-SA 4.0"
+  },
+  "ngc7380": {
+    "ok": true,
+    "title": "Wizard Nebula, NGC 7380 (noao-ngc7380).jpg",
+    "artist": "T.A. Rector (University of Alaska Anchorage) and H. Schweiker (WIYN and…",
+    "license": "CC BY 4.0"
+  },
+  "ngc6979": {
+    "ok": true,
+    "title": "Ultraviolet image of the Cygnus Loop Nebula crop.jpg",
+    "artist": "NASA/JPL-Caltech",
+    "license": "Public domain"
+  },
+  "ic410": {
+    "ok": true,
+    "title": "Flame and Tadpole Nebulae.jpg",
+    "artist": "Mystery Ray",
+    "license": "CC BY-SA 4.0"
+  },
+  "ic405": {
+    "ok": true,
+    "title": "Flaming star nebula tõrva.jpg",
+    "artist": "Taavi Niittee",
+    "license": "CC BY-SA 4.0"
+  },
+  "ngc2174": {
+    "ok": true,
+    "title": "Monkey Head nebula in Hubble palette (starless version).png",
+    "artist": "paramsach",
+    "license": "CC BY 2.0"
+  },
+  "ngc1499": {
+    "ok": true,
+    "title": "California nebula NGC1499.jpg",
+    "artist": "Ram samudrala",
+    "license": "CC BY 4.0"
+  },
+  "sh2155": {
+    "ok": true,
+    "title": "Sh2-155, Cave Nebula (noao-sh2-155).jpg",
+    "artist": "T.A. Rector (University of Alaska Anchorage) and H. Schweiker (WIYN and…",
+    "license": "CC BY 4.0"
+  },
+  "sh2279": {
+    "ok": true,
+    "title": "Orion Nebula (M42) and Running Man Nebula (M43).png",
+    "artist": "Bryan Bunton",
+    "license": "CC BY 4.0"
+  },
+  "c99": {
+    "ok": true,
+    "title": "Southern Cross and Coalsack Dark Nebula.jpg",
+    "artist": "Fedaro",
+    "license": "CC BY-SA 3.0"
+  },
+  "ngc40": {
+    "ok": true,
+    "title": "NGC 40 Ps1.png",
+    "artist": "Meli thev",
+    "license": "CC BY-SA 4.0"
+  },
+  "ngc6188": {
+    "ok": true,
+    "title": "NGC6188.png",
+    "artist": "Tobias Schulz",
+    "license": "CC BY-SA 4.0"
+  },
+  "m106": {
+    "ok": true,
+    "title": "Messier 106 by Spitzer.jpg",
+    "artist": "X-ray: NASA/CXC/Univ. of Maryland/A.S. Wilson et al.; Optical: Pal.Obs. DSS;…",
+    "license": "Public domain"
+  },
+  "c13": {
+    "ok": true,
+    "title": "Owl Cluster (NGC 457 or Caldwell 13).jpg",
+    "artist": "Anton Vakulenko",
+    "license": "CC BY-SA 2.0"
+  },
+  "m74": {
+    "ok": true,
+    "title": "M74 3.6 5.8 8.0 microns spitzer.png",
+    "artist": "No machine-readable author provided. Med assumed (based on copyright claims).",
+    "license": "CC BY 2.5"
+  },
+  "m108": {
+    "ok": true,
+    "title": "M108, NGC 3556 (noao-m108).jpg",
+    "artist": "NOIRLab/NSF/AURA",
+    "license": "CC BY 4.0"
+  },
+  "ngc253": {
+    "ok": true,
+    "title": "Infrared-visible light comparison of views of the Sculptor Galaxy (NGC 253) (eso1025b).jpg",
+    "artist": "ESO/J. Emerson/VISTA. Acknowledgment: Cambridge Astronomical Survey Unit",
+    "license": "CC BY 4.0"
+  },
+  "ngc4565": {
+    "ok": true,
+    "title": "NGC 4565.jpg",
+    "artist": "ESO",
+    "license": "CC BY 3.0"
+  },
+  "ngc1365": {
+    "ok": true,
+    "title": "Phot-08a-99-hires.jpg",
+    "artist": "ESO",
+    "license": "CC BY 4.0"
+  },
+  "ngc6744": {
+    "ok": true,
+    "title": "Euclid’s new image of spiral galaxy NGC 6744 ESA497254.jpg",
+    "artist": "European Space Agency",
+    "license": "CC BY-SA 3.0 igo"
+  },
+  "ngc2403": {
+    "ok": true,
+    "title": "Galaxy NGC 2403- Before and After Supernova 2004dj Outburst (opo0423b).jpg",
+    "artist": "Credit for ground-based ",
+    "license": "Public domain"
+  },
+  "ngc7320": {
+    "ok": true,
+    "title": "Stephan's Quintet -NOAO- (ground-based image) (opo0122f).jpg",
+    "artist": "NASA &amp; ESA",
+    "license": "Public domain"
+  },
+  "ngc5194": {
+    "ok": true,
+    "title": "NGC 5195.jpg",
+    "artist": "X-ray: NASA/CXC/Univ of Texas/E.Schlegel et al; Optical: NASA/STScI",
+    "license": "Public domain"
+  },
+  "ngc1232": {
+    "ok": true,
+    "title": "NGC 1204 DSS.jpg",
+    "artist": "Donald Pelletier",
+    "license": "CC BY-SA 4.0"
+  },
+  "ngc1097": {
+    "ok": true,
+    "title": "NGC 1097 (gemini0602f).jpg",
+    "artist": "NOIRLab",
+    "license": "CC BY 4.0"
+  },
+  "ngc3190": {
+    "ok": true,
+    "title": "NGC 3190 (noao-n3190mm).jpg",
+    "artist": "Hillary Mathis/NOIRLab/NSF/AURA",
+    "license": "CC BY 4.0"
+  },
+  "ngc4038b": {
+    "ok": true,
+    "title": "Messier 88 Hubble WikiSky.jpg",
+    "artist": "en:NASA, en:STScI, en:WikiSky",
+    "license": "Public domain"
+  },
+  "ngc4490": {
+    "ok": true,
+    "title": "NGC 4490 (noao-n4490gariepy).jpg",
+    "artist": "KPNO/NOIRLab/NSF/AURA/Michael Gariepy/Adam Block",
+    "license": "CC BY 4.0"
+  },
+  "ngc925": {
+    "ok": true,
+    "title": "NGC 0925 DSS.jpg",
+    "artist": "Donald Pelletier",
+    "license": "CC BY-SA 4.0"
+  },
+  "ngc6914": {
+    "ok": true,
+    "title": "Ngc6914 20170924.jpg",
+    "artist": "Cristina Cellini",
+    "license": "CC BY 4.0"
+  },
+  "ic2118": {
+    "ok": true,
+    "title": "Rigel and IC 2118 - The Witch Head Nebula - Flickr - gjdonatiello.jpg",
+    "artist": "Giuseppe Donatiello from Oria (Brindisi), Italy",
+    "license": "CC0"
+  },
+  "ngc1977": {
+    "ok": true,
+    "title": "NGC1977 Running Man Nebula from the Mount Lemmon SkyCenter Schulman Telescope courtesy Adam Block.jpg",
+    "artist": "Ngc1535",
+    "license": "CC BY-SA 4.0"
+  },
+  "m85b": {
+    "ok": true,
+    "title": "NGC 4394 SDSS.jpg",
+    "artist": "Donald Pelletier",
+    "license": "CC BY-SA 4.0"
+  },
+  "ic2177": {
+    "ok": true,
+    "title": "Seagull nebula - IC 2177.jpg",
+    "artist": "Raysastrophotograhy",
+    "license": "CC BY-SA 4.0"
+  },
+  "ngc6888": {
+    "ok": true,
+    "title": "Mgławica Półksiężyc NGC 6888.jpg",
+    "artist": "Wojciech Mazur",
+    "license": "CC BY 4.0"
+  },
+  "vdb152": {
+    "ok": true,
+    "title": "Wolf's Cave Nebula Lbn528 Lbn532.jpg",
+    "artist": "Gianni.lacroce",
+    "license": "CC0"
+  },
+  "ngc3242": {
+    "ok": true,
+    "title": "Caldwell 59.jpg",
+    "artist": "NASA Hubble",
+    "license": "CC BY 2.0"
+  },
+  "ngc6543": {
+    "ok": true,
+    "title": "NGC6543.jpg",
+    "artist": "J.P. Harrington and K.J. Borkowski (University of Maryland), and NASA",
+    "license": "Public domain"
+  },
+  "m95": {
+    "ok": true,
+    "title": "Messier51 sRGB.jpg",
+    "artist": "NASA and European Space Agency",
+    "license": "Public domain"
+  },
+  "ngc3115": {
+    "ok": true,
+    "title": "NGC 5866 SDSS2.jpg",
+    "artist": "Donald Pelletier",
+    "license": "CC BY-SA 4.0"
+  },
+  "ic2944": {
+    "ok": true,
+    "title": "IC 2944 Thackeray's Globules (noaoann12008a).jpg",
+    "artist": "T.A. Rector (University of Alaska Anchorage) and N.S. van der Bliek…",
+    "license": "CC BY 4.0"
+  },
+  "ic4628": {
+    "ok": true,
+    "title": "IC 4628 and NGC 6321 (noao-zetascoblock).jpg",
+    "artist": "KPNO/NOIRLab/NSF/AURA/Adam Block",
+    "license": "CC BY 4.0"
+  },
+  "ngc2264": {
+    "ok": true,
+    "title": "NGC 2264, Cone Nebula, Fox Fur Nebula (noao-04493).jpg",
+    "artist": "T.A. Rector (NRAO/AUI/NSF and NOIRLab/NSF/AURA) and B.A. Wolpa…",
+    "license": "CC BY 4.0"
+  },
+  "ngc7009": {
+    "ok": true,
+    "title": "NGC 7009 \"Saturn Nebula\".jpg",
+    "artist": "Judy Schmidt",
+    "license": "CC BY 2.0"
+  },
+  "sh2240": {
+    "ok": true,
+    "title": "Simeis 147 (28254062070).jpg",
+    "artist": "Giuseppe Donatiello",
+    "license": "CC0"
+  },
+  "m85": {
+    "ok": true,
+    "title": "M85, NGC 4382 (noao-m85).jpg",
+    "artist": "NOIRLab/NSF/AURA",
+    "license": "CC BY 4.0"
+  },
+  "ngc5907": {
+    "ok": true,
+    "title": "NGC5906 - SDSS DR14 (panorama).jpg",
+    "artist": "Sloan Digital Sky Survey",
+    "license": "CC BY 4.0"
+  },
+  "ngc2683": {
+    "ok": true,
+    "title": "NGC 2683 Spiral galaxy.jpg",
+    "artist": "NASA",
+    "license": "Public domain"
+  },
+  "ngc2997": {
+    "ok": true,
+    "title": "NGC 2997 2MASS.jpg",
+    "artist": "Unknown (2MASS-Team)",
+    "license": "Public domain"
+  }
+}

@@ -1,0 +1,122 @@
+---
+title: 后期处理流程
+description: 深空摄影从叠加后线性主图到非线性成片的完整后期流程,涵盖背景抽取、色彩校准、反卷积、拉伸、缩星与窄带合成的顺序与原理。
+difficulty: intermediate
+pillar: astrophotography
+sidebar:
+  order: 2
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+import Fig from '@/components/Fig.astro';
+
+深空摄影的后期处理(post-processing)指从叠加(stacking/integration)输出的主图,经一系列校正、增强与色彩操作,得到可在普通显示设备上观看的成片的过程。其核心约束来自数据本身的状态:叠加输出是一张**线性(linear)** 图像,部分操作只有在线性数据上才物理正确,因此整条流程的顺序不可随意调换。
+
+本页假设已完成[叠加](/astrophotography/processing/stacking/),输入为一张 32 位浮点线性主图(单色或彩色),并以 PixInsight、Siril、GraXpert、StarNet、Photoshop 等主流工具为例说明各环节。
+
+## 线性图像与非线性图像
+
+理解后期顺序的前提是区分两种图像状态。
+
+**线性图像(linear image)**:像素值与到达传感器的光子数(进光量)成正比,这是叠加直接输出的状态。其特征是直方图绝大多数像素挤在最暗端,暗弱目标在默认显示下几乎不可见。背景抽取、色彩校准、经典反卷积等操作依赖「像素值正比于光强」这一关系,必须在线性状态下进行。为便于观察,通常用屏幕转换函数(Screen Transfer Function, STF)做一个**仅用于显示、不改变底层数据**的临时拉伸。
+
+**非线性图像(nonlinear image)**:经过拉伸(stretch)后,暗部被大幅提亮、亮部被压缩,像素值不再正比于光强。拉伸是从线性到非线性的不可逆分水岭,此后的降噪、缩星、局部对比、饱和度等操作均在非线性状态下完成。
+
+| 阶段 | 数据状态 | 典型操作 | 原因 |
+| --- | --- | --- | --- |
+| 线性阶段 | 像素值 ∝ 光强 | 裁剪、背景抽取、色彩校准、(线性)降噪、反卷积 | 这些操作的数学模型假设线性关系 |
+| 拉伸 | 线性 → 非线性 | GHS / 直方图变换 / STF 永久化 | 把暗弱信号提升到可视范围 |
+| 非线性阶段 | 像素值已扭曲 | 缩星、局部对比、HDR、饱和度、最终降噪 | 这些是视觉增强,不要求线性 |
+
+<Aside type="caution" title="先校正,再拉伸">
+背景抽取与色彩校准必须在拉伸**之前**完成。拉伸会把残留的渐变与偏色一并放大并固化进画面,事后极难干净去除。同理,经典反卷积也只在线性图像上有效——拉伸会破坏点扩散函数(PSF)的真实形态,导致反卷积结果错误。
+</Aside>
+
+## 标准流程
+
+下面给出从线性主图到成片的完整顺序。每一步标注主要目的与代表性工具;实际处理可按数据情况增删,但**线性操作在前、拉伸居中、非线性增强在后**的总体框架应当保持。
+
+<Steps>
+
+1. **裁剪与背景中和(crop & background neutralization)**——用 DynamicCrop 等工具裁掉叠加配准产生的边缘锯齿、暗角与堆叠重叠不全的区域,得到干净的有效画幅。随后做背景中和,使三个颜色通道的背景灰度一致,消除整体色偏,为后续色彩校准提供平坦起点。
+
+2. **去渐变 / 背景抽取(gradient removal / background extraction)**——去除光污染、月光、暗角(vignetting)和天光梯度造成的大尺度亮度与颜色不均。常用:PixInsight 的 DynamicBackgroundExtraction(DBE,手动布点、精度高)与 AutomaticBackgroundExtractor(ABE,自动多项式拟合);独立 AI 工具 GraXpert;Siril 的背景提取;PixInsight 较新的 GradientCorrection / MultiscaleGradientCorrection。原理是在判定为背景的区域采样,拟合一个平滑的背景模型再从原图中减去。
+
+3. **光谱光度色彩校准(SPCC / PCC)**——以星表中恒星的真实颜色为参照,客观地确定白平衡,使颜色可复现而非凭主观调出。PixInsight 提供 PhotometricColorCalibration(PCC,基于 APASS 测光星表)与更新的 SpectrophotometricColorCalibration(SPCC,基于 Gaia 的恒星光谱数据库,结合滤镜透过曲线与传感器量子效率,精度显著更高)。校准依赖恒星亮度的线性关系,须在拉伸前、且通常在去渐变后进行。
+
+4. **线性降噪(linear-stage noise reduction)**——在拉伸放大噪声之前,先在线性阶段做一轮温和降噪。常用 NoiseXTerminator、GraXpert 降噪或 PixInsight 的 TGVDenoise / MultiscaleLinearTransform。线性阶段降噪能在不损失暗部细节的前提下抑制背景噪点,设置宜保守。
+
+5. **反卷积 / 锐化(deconvolution / sharpening)**——恢复因大气视宁度(seeing)、跟踪误差与光学衍射造成的模糊,收紧星点、提升细节。AI 工具 BlurXTerminator 已成为主流,可自动估计 PSF 并分别控制星点与非星点结构的锐化强度;经典反卷积(如 Richardson–Lucy)需手动构建 PSF,只能用于线性图像。此步在拉伸前完成。
+
+6. **拉伸(stretch,线性变非线性)**——将集中在暗端的直方图重新分布到整个动态范围,使暗弱结构可见,同时保住亮星不过曝。代表方法:广义双曲拉伸(Generalized Hyperbolic Stretch, GHS)、直方图变换(Histogram Transformation, HT)、反双曲正弦拉伸(arcsinh),以及把 STF 参数固化为永久拉伸。这是从线性到非线性的关键转折点。
+
+7. **缩星 / 星点分离(star reduction / star separation)**——用 StarNet(StarNet++)或 StarXTerminator 把恒星从画面中抽离,得到「无星图(starless)」与「纯星点图」两层。对无星图可自由增强星云结构而不放大星点;对星点图可单独缩小、降饱和。该步既能避免后续增强使星点臃肿,也便于窄带数据中分别处理恒星与气体。
+
+8. **局部对比 / HDR / 饱和度(local contrast / HDR / saturation)**——在非线性的无星图上做视觉增强:局部对比与多尺度处理(如 LocalHistogramEqualization、HDRMultiscaleTransform)突出星云内部结构,曲线与饱和度工具加强色彩。建议借助掩膜(mask)把增强限制在目标区域,避免抬升背景噪声。
+
+9. **最终降噪与重组(final denoise & recombination)**——对无星图做最后一轮非线性降噪,主要压制背景的色噪与亮度噪点;然后把处理好的星点图重新叠加回无星图(常用「屏幕(screen)」混合或加法),调整星点不透明度与大小,完成重组。最后做整体色彩微调、裁切与导出(PNG/TIFF/JPEG)。
+
+</Steps>
+
+<Fig name="m51-whirlpool" alt="涡状星系 M51 处理成片" caption="涡状星系 M51:经背景抽取、SPCC 色彩校准、GHS 拉伸、反卷积与缩星处理后的成片示例。" />
+
+## 主力软件分工
+
+各款软件定位不同,实际流程常跨工具组合使用。
+
+| 软件 | 性质 | 擅长环节 |
+| --- | --- | --- |
+| PixInsight | 商业、专业全流程 | DBE/ABE、SPCC/PCC、反卷积、掩膜、GHS,功能最完整 |
+| Siril | 免费开源 | 叠加、背景提取、PCC/SPCC、基础拉伸,轻量易上手 |
+| GraXpert | 免费(开源) | AI 背景抽取与降噪,可独立运行或作插件 |
+| StarNet / StarNet++ | 免费 | 基于神经网络的缩星与星点分离 |
+| BlurXTerminator | 商业插件 | AI 反卷积锐化,需在 PixInsight 等宿主中运行 |
+| Photoshop | 商业、通用图像 | 曲线、图层合成、局部润色与最终输出 |
+
+<Aside type="tip" title="全免费入门链路">
+预算有限可走「Siril(叠加 + 去渐变 + 色彩校准)→ GraXpert(降噪)→ StarNet++(缩星)→ Photoshop 或 GIMP(拉伸、合成、润色)」这条全免费链路,已能产出可观成片。进阶后再迁移到 PixInsight,以获得更精细的掩膜与反卷积控制。
+</Aside>
+
+## 窄带数据的色彩合成
+
+用 H-alpha(656.3 nm)、OIII(500.7 nm)、SII(672.4 nm)等窄带滤镜拍摄的数据通常为单色,需要把各通道映射到 RGB 来合成假彩色(false color)图像。映射方式不唯一,常见两种:
+
+| 调色方案 | 通道映射(红 / 绿 / 蓝) | 适用与特征 |
+| --- | --- | --- |
+| SHO(哈勃色板,Hubble palette) | SII → 红,H-alpha → 绿,OIII → 蓝 | 需三种滤镜;金黄—青蓝的标志性配色,常用于发射星云 |
+| HOO(双色) | H-alpha → 红,OIII → 绿,OIII → 蓝 | 只需两种滤镜;接近自然的红—青配色,适合 OSC 双窄带数据 |
+
+窄带合成的注意点:
+
+- **通道对齐与缩放**:合成前各单色通道需配准对齐,并用线性拟合(linear fit)等方法平衡亮度尺度,否则某一通道会主导画面。
+- **绿色溢出**:SHO 中 H-alpha 映射到绿通道,合成后常出现整体偏绿,用 SCNR(Subtractive Chromatic Noise Reduction)等工具去除多余绿色。
+- **品红星点**:窄带恒星在假彩色下常呈品红/洋红色,通常先用缩星工具分离星点单独处理,或在合成前用宽带 RGB 星点替换。
+- **色彩校准**:窄带数据不使用宽带的 PCC;SPCC 提供窄带工作模式,可按发射线波长更准确地标定。
+
+更多窄带配色与混合手法见[处理技巧](/astrophotography/processing/techniques/),滤镜与发射线背景见[窄带拍摄](/astrophotography/capture/narrowband/)。
+
+## 常见误区
+
+<Aside type="caution" title="过处理">
+过处理(over-processing)是后期最常见的问题,典型表现包括:背景被压成纯黑而丢失暗部细节、锐化过度产生暗边或人工纹理、饱和度拉满导致色彩失真、降噪过猛使画面塑料感(细节被抹平)、星点缩得过小或边缘出现黑环。补救成本远高于一开始就克制。
+</Aside>
+
+实用原则:
+
+- **每一步都看直方图**:左边缘对应黑场,不要把背景峰压到最左端(会裁掉暗部),通常保留一点余量。
+- **少量多次**:拉伸、降噪、锐化都宁可分几次轻做,也不要一步用力过猛;多数操作不可逆。
+- **善用掩膜**:让降噪只作用于背景、锐化与对比增强只作用于亮部目标,是控制噪声与保护星点的关键。
+- **保留中间版本**:在拉伸、缩星等不可逆步骤前保存副本,便于回退或重新混合(如用线性图的星点替换非线性处理过的星点)。
+
+<Aside type="note" title="延伸阅读">
+各软件的下载、定价与平台见[软件索引](/reference/software/);更进阶的反卷积、HDR、局部增强与窄带混合手法见[处理技巧](/astrophotography/processing/techniques/);拍摄端的滤镜与曝光策略见[窄带拍摄](/astrophotography/capture/narrowband/)。
+</Aside>
+
+## 参考资料
+
+- [Astrophotography — Wikipedia](https://en.wikipedia.org/wiki/Astrophotography):天文摄影总览,涵盖叠加、暗场校正与基础数字处理。
+- [My Astrophotography Processing Workflow in PixInsight & Photoshop — AstroBackyard](https://astrobackyard.com/astrophotography-processing-workflow/):完整的线性到非线性深空处理流程,含各步所用工具。
+- [PixInsight 文档:Spectrophotometry-based Color Calibration(SPCC)](https://pixinsight.com/doc/docs/SPCC/SPCC.html):SPCC 原理及其相对 PCC 的精度优势与窄带支持。
+- [GeneralizedHyperbolicStretch — GHS 官方文档](https://www.ghsastro.co.uk/doc/tools/GeneralizedHyperbolicStretch/GeneralizedHyperbolicStretch.html):广义双曲拉伸的数学方法与从线性到非线性的拉伸控制。
+- [PixInsight Narrowband Workflow for Emission Nebula — Chaotic Nebula](https://chaoticnebula.com/workflows/):窄带发射星云的通道合成、缩星与 SCNR 处理流程。
+- [Processing Guide for Narrowband Imaging — Astro Space Guide](https://www.astrospaceguide.com/processing-guide-for-narrowband-imaging/):SHO/HOO 调色与品红星点、绿色溢出的处理要点。

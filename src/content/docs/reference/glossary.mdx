@@ -1,0 +1,168 @@
+---
+title: 术语表
+description: 天文与天文摄影常用术语中英对照速查,按主题分组,每条给出简明定义、单位与典型数值,并链接到对应正文页。
+difficulty: beginner
+pillar: index
+sidebar:
+  order: 3
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+本页收录天文观测与天文摄影中较常用的术语,按主题分组,中英对照。每条给出一句话定义,必要时附单位、取值范围、典型数值或公式;需要系统学习时,点击链接进入对应正文页。新手可从 [入门导航](/start/) 开始。术语后括号内为英文全称与缩写。
+
+<Aside type="tip" title="使用说明">
+公式以行内代码或代码块给出,变量含义在对应正文页有完整推导。同一术语在不同语境下可能有细微差别,以链接页的定义为准。
+</Aside>
+
+## 坐标与时间
+
+| 术语 | 英文 / 缩写 | 定义与说明 |
+| --- | --- | --- |
+| 赤经 | Right Ascension, RA | 沿天赤道自春分点向东量度的坐标,类比经度;以时分秒计(0h–24h,每 1h 对应 15°),见 [天球坐标系](/astronomy/foundations/celestial-coordinates/)。 |
+| 赤纬 | Declination, Dec | 天体相对天赤道的角距离,类比纬度;取值 −90°(南天极)至 +90°(北天极),天赤道为 0°。 |
+| 地平高度 | Altitude, Alt | 天体相对地平线的仰角,−90°(天底)至 +90°(天顶),0° 在地平。 |
+| 方位角 | Azimuth, Az | 沿地平线量度的方向角,通常自正北顺时针计;90° 为正东,180° 为正南。 |
+| 时角 | Hour Angle, HA | 天体相对当地子午线的角距离,以时计;`HA = 当地恒星时 − 赤经`,过中天时为 0。 |
+| 黄道 | Ecliptic | 太阳周年视运动在天球上的轨迹,与天赤道交角约 23.44°(黄赤交角)。 |
+| 春分点 | Vernal Equinox / First Point of Aries | 黄道与天赤道的升交点,是赤经的零点起算位置。 |
+| 中天 | Culmination / Meridian Transit | 天体经过当地子午线、达到最高地平高度的时刻,见 [周日视运动](/astronomy/foundations/apparent-motion/)。 |
+| 岁差 | Precession | 地轴缓慢进动导致春分点西移、坐标历元变化,周期约 25,800 年。 |
+| 历元 | Epoch | 坐标参照的特定时刻,当前标准为 J2000.0。 |
+| 恒星时 | Sidereal Time | 以恒星为参照的时间,数值等于当前过中天恒星的赤经,见 [时间系统](/astronomy/foundations/time-systems/)。 |
+| 当地恒星时 | Local Sidereal Time, LST | 观测者所在经度的恒星时,等于此刻位于子午线上的赤经。 |
+| 协调世界时 | Coordinated Universal Time, UTC | 全球统一的民用时间基准,天文记录与计划常以 UTC 标注。 |
+| 儒略日 | Julian Date, JD | 自公元前 4713 年起的连续计日数,便于精确计算时间差;JD 从正午起算。 |
+
+## 天体与物理量
+
+| 术语 | 英文 / 缩写 | 定义与说明 |
+| --- | --- | --- |
+| 视星等 | Apparent Magnitude, m | 从地球看到的天体亮度对数标度,数值越小越亮;太阳约 −26.8,肉眼极限约 +6.5,见 [星等与亮度](/astronomy/foundations/magnitude/)。 |
+| 绝对星等 | Absolute Magnitude, M | 把天体置于 10 秒差距处所呈现的视星等,反映内禀亮度。 |
+| 普森比 | Pogson Ratio | 星等与亮度的换算关系:相差 1 等约为 2.512 倍,相差 5 等恰为 100 倍,`亮度比 = 10^(0.4·Δm)`。 |
+| 面亮度 | Surface Brightness | 展源单位面积的亮度,以等/平方角秒计,决定弥散天体的可见性。 |
+| 极限星等 | Limiting Magnitude | 给定器材与天况下能探测到的最暗星等。 |
+| 光度 | Luminosity, L | 天体单位时间向各方向辐射的总能量,单位瓦(W),常以太阳光度 L☉ 表示。 |
+| 秒差距 | Parsec, pc | 周年视差为 1 角秒对应的距离,约 3.26 光年。 |
+| 视差 | Parallax | 因地球公转产生的近星位置周期性位移,用于三角测距。 |
+| 自行 | Proper Motion | 恒星在天球上垂直于视线方向的角位移率,以角秒/年计。 |
+| 红移 | Redshift, z | 谱线向长波移动,`z = Δλ/λ`,反映退行速度或宇宙膨胀,见 [宇宙学概览](/astronomy/cosmology/overview/)。 |
+| 光谱型 | Spectral Type | 按表面温度排列的恒星分类序列 O B A F G K M(由热到冷)。 |
+| 赫罗图 | Hertzsprung–Russell Diagram, H–R | 恒星光度对温度(或光谱型)的分布图,揭示演化阶段,见 [恒星物理](/astronomy/deep-sky/stellar-physics/)。 |
+| 主序 | Main Sequence | 赫罗图上由核心氢聚变恒星构成的主带,太阳位于其上。 |
+| 角直径 | Angular Diameter | 天体在天空中张开的角度,以角分或角秒计;满月约 31 角分。 |
+
+## 观测条件
+
+| 术语 | 英文 / 缩写 | 定义与说明 |
+| --- | --- | --- |
+| 视宁度 | Seeing | 大气湍流造成的星点抖动与模糊,以星点半高全宽(FWHM)的角秒计;1″ 或更优为良好,优良台址可达 0.4″ 以下,见 [观测条件](/astronomy/observing/conditions/)。 |
+| 透明度 | Transparency | 大气对星光的通透程度,受云、湿度、气溶胶影响,决定能看到的最暗星等。 |
+| 大气消光 | Atmospheric Extinction | 星光穿过大气被吸收散射而减弱,随气团数增大;低空目标更显著。 |
+| 气团数 | Airmass | 视线方向大气厚度的相对量,天顶为 1.0,随天顶距增大而增加。 |
+| 闪烁 | Scintillation | 大气湍流引起的恒星亮度快速起伏,即肉眼可见的「星星眨眼」。 |
+| 波特尔暗空分级 | Bortle Scale | 把夜空光污染分为 1–9 级,1 级为极暗原始夜空,9 级为市中心。 |
+| 天空背景亮度 | Sky Background / SQM | 夜空本底亮度,常以 SQM(等/平方角秒)量化,数值越大越暗。 |
+| 暗适应 | Dark Adaptation | 眼睛在黑暗中逐渐增敏的过程,约需 20–30 分钟,见 [目视技巧](/astronomy/observing/visual-techniques/)。 |
+| 余光视觉 | Averted Vision | 用眼角余光观察暗弱目标,利用视杆细胞更高的灵敏度。 |
+| 可见性 | Visibility / Observability | 目标在给定时间、纬度下能否升至足够高度,见 [南北半球可见性](/astronomy/observing/hemisphere-visibility/)。 |
+
+## 器材与光学
+
+| 术语 | 英文 / 缩写 | 定义与说明 |
+| --- | --- | --- |
+| 焦距 | Focal Length, FL | 光学系统汇聚平行光的距离,以毫米计,决定放大率与视场,见 [光学基础](/astrophotography/fundamentals/optics/)。 |
+| 口径 | Aperture | 主镜或物镜的有效直径,决定集光力(正比于面积)与衍射分辨率。 |
+| 焦比 | Focal Ratio, f/ | `f/ = 焦距 ÷ 口径`,数值越小越「快」,同曝光下面亮度更高。 |
+| 视场 | Field of View, FoV | 一次成像覆盖的天空角范围,由焦距与传感器尺寸共同决定。 |
+| 分辨率 / 角分辨率 | Resolution / Dawes Limit | 可分辨的最小角距离,受口径衍射限制;道斯极限约 `116″ ÷ 口径(mm)`。 |
+| 采样率 | Sampling / Image Scale | 每像素对应的角秒,`"/px ≈ 206.265 × 像素尺寸(µm) ÷ 焦距(mm)`,应与视宁度匹配。 |
+| 出瞳 | Exit Pupil | 目镜射出光束的直径,`出瞳 = 口径 ÷ 放大倍率`,目视效果的关键参数。 |
+| 赤道仪 | Equatorial Mount, EQ | 一轴对准天极的支架,可单轴跟踪抵消周日视运动,适合长曝光。 |
+| 经纬仪 | Alt-Azimuth Mount, AltAz | 沿高度与方位两轴运动的支架,结构简单但会产生场旋。 |
+| 极轴校准 | Polar Alignment | 使赤道仪极轴精确对准天极的过程,直接影响跟踪精度。 |
+| 平场镜 / 减焦镜 | Flattener / Reducer | 校正像场弯曲、或缩短焦距以扩大视场并提高焦比的光学附件。 |
+
+## 相机与传感器
+
+| 术语 | 英文 / 缩写 | 定义与说明 |
+| --- | --- | --- |
+| CMOS / CCD | CMOS / CCD | 两类成像传感器;当前天文多用低读出噪声、高帧率的 CMOS,见 [传感器](/astrophotography/fundamentals/sensors/)。 |
+| 单色 / 彩色 | Mono / One-Shot Color, OSC | 单色相机配滤镜分通道拍摄;彩色相机带拜耳阵列,一次出彩色。 |
+| 量子效率 | Quantum Efficiency, QE | 传感器把入射光子转换为电子的比例,以百分比计,越高越灵敏。 |
+| 读出噪声 | Read Noise | 每次读出像素引入的固有噪声电子数,影响短曝光与暗部信噪比,越低越好。 |
+| 增益 | Gain | 模拟信号到数字值(ADU)的放大倍数,提高增益通常降低读出噪声但压缩动态范围。 |
+| 满阱容量 | Full Well Capacity | 单像素饱和前可容纳的最大电子数,决定动态范围上限。 |
+| 动态范围 | Dynamic Range | 可同时记录的最亮与最暗信号之比,常以位深或档数表示。 |
+| 暗电流 | Dark Current | 无光照时热激发产生的电子流,随温度升高而增大,引入热噪声。 |
+| 制冷 | Cooling | 主动降温(常表述为环温下 ΔT)以压制暗电流与热噪声,利于长曝光深空成像。 |
+| 像素尺寸 | Pixel Size | 单个像素的物理边长(µm),与焦距共同决定采样率。 |
+| 位深 | Bit Depth | 每像素量化的比特数(如 12/14/16 bit),决定灰阶级数。 |
+
+## 拍摄技术
+
+| 术语 | 英文 / 缩写 | 定义与说明 |
+| --- | --- | --- |
+| 子帧 | Sub / Light Frame | 一张未叠加的原始曝光;多张叠加以提升信噪比,见 [深空入门](/astrophotography/capture/dso-basics/)。 |
+| 总积分时间 | Integration Time | 所有有效子帧曝光时长之和,深空成像常以小时计。 |
+| 抖动 | Dithering | 帧间略微移动构图,使坏点与固定模式噪声在叠加时被随机化抑制。 |
+| 跟踪 | Tracking | 支架按天球周日运动转动,使目标在曝光期间相对静止。 |
+| 导星 | Guiding | 用副镜或离轴导星器实时测量并纠正跟踪误差,保证长曝光星点圆。 |
+| 离轴导星 | Off-Axis Guiding, OAG | 从主镜光路分出一小束光导星,避免主副镜间的差动挠曲。 |
+| 幸运成像 | Lucky Imaging | 高速拍摄大量短帧、择优叠加以克服视宁度,常用于行星,见 [行星摄影](/astrophotography/capture/planetary/)。 |
+| 感兴趣区域 | Region of Interest, ROI | 只读出传感器局部以提高帧率,常用于行星与高速成像。 |
+| 视频堆栈 | Video / SER Stacking | 行星成像录制视频后逐帧筛选叠加的工作流。 |
+| 巴特尼夫掩膜 | Bahtinov Mask | 在镜前产生衍射光纹以辅助精确合焦的工具。 |
+
+## 滤镜
+
+| 术语 | 英文 / 缩写 | 定义与说明 |
+| --- | --- | --- |
+| 窄带 | Narrowband | 仅透过特定发射线(典型带宽 3–12 nm)的滤镜,穿透光污染突出星云,见 [窄带摄影](/astrophotography/capture/narrowband/)。 |
+| Hα | Hydrogen-Alpha | 电离氢的红色发射线(656.3 nm),勾勒发射星云与超新星遗迹的主体结构。 |
+| OIII | Oxygen-III | 双电离氧的蓝绿色发射线(约 500.7 nm),在行星状星云与高温区显著。 |
+| SII | Sulfur-II | 单电离硫的深红色发射线(约 672 nm),靠近 Hα,常勾勒激波与星云外缘。 |
+| SHO / HOO | SHO / HOO Palette | 把窄带通道映射到 RGB 的两种常见调色;SHO 即「哈勃调色」。 |
+| 双窄带 | Dual Narrowband | 单片同时透过 Hα+OIII,适合彩色相机在城市光污染下拍摄。 |
+| 宽带 / RGB | Broadband / RGB | 透过较宽波段的红绿蓝滤镜,用于自然色成像。 |
+| 光害滤镜 | Light Pollution Filter | 抑制人造灯光特征谱线、提升星云对比的宽频滤镜。 |
+| UV/IR 截止 | UV/IR Cut | 阻挡紫外与红外、保证可见光焦点一致与色彩准确的滤镜。 |
+
+## 后期处理
+
+| 术语 | 英文 / 缩写 | 定义与说明 |
+| --- | --- | --- |
+| 叠加 | Stacking | 对齐并合并多张子帧以提升信噪比,见 [叠加](/astrophotography/processing/stacking/)。 |
+| 配准 | Registration | 通过匹配星点对齐各帧,使其精确重合后再叠加。 |
+| 信噪比 | Signal-to-Noise Ratio, SNR | 信号与噪声之比;随帧数增长约为 `SNR ∝ √N`,见 [信噪比](/astrophotography/fundamentals/snr/)。 |
+| 拉伸 | Stretch | 非线性提亮暗部,把线性数据转为可视图像。 |
+| 去渐变 | Gradient Removal | 消除光污染或月光造成的背景明暗不均。 |
+| 反卷积 | Deconvolution | 基于点扩散函数的数学锐化,还原被模糊的细节。 |
+| 降噪 | Noise Reduction | 平滑随机噪声,同时尽量保留细节。 |
+| 缩星 | Star Reduction | 缩小过亮星点,突出星云与星系结构。 |
+| 色彩校准 | Color Calibration | 依据恒星或星场参照中性化背景与白平衡。 |
+| 通道合成 | Channel Combination | 将分通道(如 LRGB 或 SHO)合并为彩色图像的步骤。 |
+
+## 校准帧
+
+| 术语 | 英文 / 缩写 | 定义与说明 |
+| --- | --- | --- |
+| 暗场 | Dark Frame, Darks | 同温、同增益、同曝光的遮光帧,用于扣除暗电流热噪声与坏点,见 [校准帧](/astrophotography/calibration/calibration-frames/)。 |
+| 平场 | Flat Frame, Flats | 均匀光照下拍摄,用于校正暗角(渐晕)与灰尘阴影。 |
+| 偏置场 | Bias / Offset Frame | 极短曝光的遮光帧,记录传感器读出基底以供扣除。 |
+| 暗平场 | Flat Dark / Dark Flat | 与平场同曝光时间的遮光帧,用于校准平场。 |
+| 主校准帧 | Master Frame | 多张同类校准帧合并而成、噪声更低的标准帧。 |
+
+<Aside type="note" title="延伸查询">
+查找具体目标或天体编号见 [星表目录](/reference/catalog/);按梅西耶、NGC 等编号检索深空天体亦在该页。需要软件名词或工作流见 [软件工具](/reference/software/);想按路线系统学习见 [学习路径](/reference/learning-paths/)。
+</Aside>
+
+## 参考资料
+
+- [Right ascension — Wikipedia](https://en.wikipedia.org/wiki/Right_ascension) — 赤经的定义、单位(时分秒)与换算关系。
+- [Apparent magnitude — Wikipedia](https://en.wikipedia.org/wiki/Apparent_magnitude) — 视星等、绝对星等、普森比与典型数值。
+- [Astronomical seeing — Wikipedia](https://en.wikipedia.org/wiki/Astronomical_seeing) — 视宁度的 FWHM 定义、典型角秒值与弗里德参数。
+- [Right Ascension & Declination: Celestial Coordinates for Beginners — Sky & Telescope](https://skyandtelescope.org/astronomy-resources/right-ascension-declination-celestial-coordinates/) — 赤经赤纬与恒星时关系的通俗说明。
+- [Quantum Efficiency, Read Noise, and why they are important — Altair Astro](https://www.altairastro.help/info-instructions/cmos/quantum-efficiency-read-noise-and-why-they-are-important/) — 量子效率、读出噪声与增益的工程定义。
+- [The Ultimate Guide to Calibration Frames for Astrophotography — Celestron](https://www.celestron.com/blogs/knowledgebase/the-ultimate-guide-to-calibration-frames/) — 暗场、平场、偏置场的作用与拍摄要点。

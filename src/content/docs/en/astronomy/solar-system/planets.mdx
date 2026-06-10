@@ -1,0 +1,226 @@
+---
+title: Planets
+description: A systematic comparison of terrestrial planets and giant planets, the greatest elongations and phases of the inferior planets, opposition/conjunction/stationary points/retrograde motion and synodic periods of the superior planets, plus observing highlights and changes in brightness and apparent diameter for each planet.
+difficulty: beginner
+pillar: astronomy
+sidebar:
+  order: 3
+---
+
+import { Aside, CardGrid, Card, LinkCard } from '@astrojs/starlight/components';
+import Fig from '@/components/Fig.astro';
+
+The Solar System is currently recognized to contain eight major planets. By physical structure and chemical composition they fall into two broad classes: the inner-orbiting, rock- and metal-dominated, small but high-density **terrestrial planets**—Mercury, Venus, Earth, Mars; and the outer-orbiting, huge but low-density **giant planets** composed mainly of hydrogen and helium gas or of water, ammonia, and methane ices—among which Jupiter and Saturn are **gas giants** and Uranus and Neptune are **ice giants**. This page focuses on the classification, geometric configurations, and observing highlights of each planet as they relate to observation and astrophotography; for coordinate and orientation concepts, see [Celestial Coordinate Systems](/en/astronomy/foundations/celestial-coordinates/) and [Apparent Motion](/en/astronomy/foundations/apparent-motion/).
+
+<Fig name="fig-solar-system" alt="Size comparison of the eight major planets to true scale" caption="Relative sizes of the eight major planets: the four terrestrial planets are markedly smaller than the four giant planets (orbital spacing not to scale)." />
+
+## Comparison of the Two Planet Classes
+
+The two classes differ markedly in composition, density, moons, and ring systems. The table below gives a qualitative comparison; specific values appear in the physical-parameter table further on.
+
+| Characteristic | Terrestrial planets | Giant planets |
+| --- | --- | --- |
+| Examples | Mercury, Venus, Earth, Mars | Jupiter, Saturn, Uranus, Neptune |
+| Main composition | Silicate rock and iron-nickel metal | Hydrogen-helium gas (Jupiter, Saturn); water, ammonia, and methane ices (Uranus, Neptune) |
+| Mean density | About 3900–5500 kg/m³ | About 690–1640 kg/m³ |
+| Surface | A solid rocky surface, possibly with mountains, canyons, and impact craters | No solid surface; a small dense core wrapped in a thick gas layer |
+| Moons | Few: Earth 1, Mars 2; Mercury and Venus none | Numerous; each has dozens of known moons |
+| Planetary rings | None | All four have rings, but only Saturn's are easily seen from Earth |
+| Rotation period | Slower (about 24 hours to tens of days) | Very fast (about 10–17 hours) |
+
+Saturn's mean density is about 687 kg/m³, lower than that of water (1000 kg/m³), making it the least dense planet; Jupiter's mean density is about 1326 kg/m³. The terrestrial planets generally have densities more than 4–5 times that of water, owing to their large content of iron and rock.
+
+### Physical Parameters of the Eight Planets
+
+The data in the table below are compiled from the NASA Planetary Fact Sheet (values rounded by convention). Diameter is the equatorial diameter; distance from the Sun is the orbital semi-major axis; a negative sign in the sidereal rotation period indicates that the spin direction is opposite to the orbital direction (retrograde rotation).
+
+| Planet | Equatorial diameter (km) | Mass (Earth = 1) | Mean density (kg/m³) | Distance from Sun (AU) | Orbital period | Rotation period | Known moons |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Mercury | 4879 | 0.055 | 5429 | 0.39 | 88.0 days | 58.6 days | 0 |
+| Venus | 12104 | 0.815 | 5243 | 0.72 | 224.7 days | −243 days | 0 |
+| Earth | 12756 | 1.000 | 5514 | 1.00 | 365.2 days | 23.93 h | 1 |
+| Mars | 6792 | 0.107 | 3934 | 1.52 | 687 days | 24.62 h | 2 |
+| Jupiter | 142984 | 317.8 | 1326 | 5.20 | 11.86 years | 9.93 h | 90+ |
+| Saturn | 120536 | 95.2 | 687 | 9.58 | 29.46 years | 10.66 h | 140+ |
+| Uranus | 51118 | 14.5 | 1270 | 19.19 | 84.0 years | −17.24 h | 27+ |
+| Neptune | 49528 | 17.1 | 1638 | 30.07 | 164.8 years | 16.11 h | 14+ |
+
+<Aside type="note" title="Uranus's extreme rotation axis">
+Uranus's rotation axis lies almost "tipped over" within its orbital plane, with an axial tilt of about 98°, so it effectively orbits the Sun "lying on its side," and its polar regions experience polar day or polar night lasting about 42 years. Both Venus and Uranus rotate in the direction opposite to their orbital motion, which is called retrograde rotation.
+</Aside>
+
+## Inferior Planets: Greatest Elongation, Phases, and Transits
+
+Mercury and Venus orbit inside Earth's orbit and are called **inferior planets**. As seen from Earth, they never stray far from the Sun and can appear only in the eastern sky before sunrise (morning star) or in the western sky after sunset (evening star); they cannot culminate at midnight.
+
+### Greatest Elongation and Configurations
+
+**Greatest elongation**: the moment when a planet's angular separation from the Sun (its **elongation**) reaches a maximum—the best time to observe an inferior planet.
+
+- **Greatest eastern elongation**: the planet lies east of the Sun and appears low in the western sky after sunset (evening star).
+- **Greatest western elongation**: the planet lies west of the Sun and appears low in the eastern sky before sunrise (morning star).
+
+The elongation of an inferior planet is limited by its orbital radius:
+
+| Planet | Maximum elongation (range) | Visibility window |
+| --- | --- | --- |
+| Mercury | About 18°–28° | Briefly visible at dawn/dusk around greatest elongation; its large orbital eccentricity causes large variations in elongation |
+| Venus | About 45°–47° | Visible for several hours around greatest elongation; one of the easiest planets to observe |
+
+Inferior planets also have two conjunction configurations: **inferior conjunction**, when the planet passes between Earth and the Sun; and **superior conjunction**, when the planet passes behind the Sun. In both conjunctions the planet is lost in sunlight and is difficult to observe.
+
+### Changes of Phase
+
+Like the Moon, inferior planets display waxing and waning **phases**. This was key evidence used by Galileo in 1610 when he observed the phases of Venus to support the heliocentric model.
+
+- Near **superior conjunction** (the planet on the far side of the Sun) it shows a nearly "full" disk, but because it is far from Earth its apparent diameter is smallest.
+- Near **inferior conjunction** (the planet on the same side as Earth) it shows a large, slender crescent—its apparent diameter is largest, but the illuminated area is small.
+
+The apparent diameter of Venus varies between about 10″ (near superior conjunction) and about 66″ (near inferior conjunction), a difference of more than sixfold. Because the "illuminated fraction" and the "apparent size" trade off against each other, the peak brightness of Venus occurs in the slender-crescent stage at about 25% phase, not at full phase.
+
+<Aside type="tip" title="Key points for observing Venus">
+Venus is the brightest object in the sky apart from the Sun and Moon, reaching about magnitude −4.4 (for the concept of brightness, see [Magnitude](/en/astronomy/foundations/magnitude/)). As it approaches inferior conjunction it appears as a large, slender crescent, and its phase can be resolved with steadily supported binoculars or a small telescope. To judge whether the evening or morning star appears in the west or the east, review [Apparent Motion and Sky Orientation](/en/astronomy/foundations/apparent-motion/).
+</Aside>
+
+### Transits
+
+When an inferior planet reaches inferior conjunction exactly over the Sun's apparent disk, it crosses the solar disk as a small black dot, an event called a **transit**.
+
+- **Transits of Venus** occur in pairs about 8 years apart, with more than a century between successive pairs—extremely rare. The two most recent were in 2004 and 2012; the next will not come until 2117.
+- **Transits of Mercury** are more frequent, averaging about 13–14 per century; the most recent occurred in 2016 and 2019.
+
+<Aside type="caution" title="Transit observing safety">
+Observing any transit involves looking directly at the Sun. You must use a proper solar filter (Baader film or a dedicated solar telescope). Never look at the Sun with the naked eye or through an unfiltered telescope or binoculars, or you will cause irreversible retinal damage.
+</Aside>
+
+## Superior Planets: Opposition, Conjunction, Stationary Points, and Retrograde Motion
+
+Mars and the planets farther out orbit beyond Earth's orbit and are called **superior planets**. Their observing rhythm is governed by **opposition** and **conjunction**, and their elongation can take any value between 0° and 180°.
+
+### Opposition and Conjunction
+
+- **Opposition**: the Sun, Earth, and planet lie approximately in a straight line, with the planet's elongation about 180°. At this time the planet culminates at local midnight, is visible all night, is closest to Earth, has its largest apparent disk, and is brightest—it is the **best observing period** of the year.
+- **Conjunction**: the planet moves to the far side of the Sun, with an elongation of about 0°; it rises and sets with the Sun and is lost in sunlight, making observation impossible.
+- **Quadrature**: an elongation of 90° (eastern quadrature) or 270° (western quadrature), with the planet at a right angle to the Sun in the sky; as seen from Earth its phase is then slightly deficient.
+
+Superior planets also show phases, but because of their great distance and small phase angle the deficiency is very slight (it is most noticeable for Mars, reaching about 12%).
+
+### Stationary Points and Retrograde Motion
+
+A planet usually moves from west to east relative to the background stars (**prograde** motion). When Earth, on its inner orbit, "catches up to and overtakes" a superior planet, that planet temporarily appears to move from east to west in **retrograde motion**. Retrograde motion is not the planet actually moving backward but a visual effect produced by the relative motion of Earth and the planet.
+
+Before and after retrograde, the point at which the planet's direction of motion reverses appears stationary and is called a **stationary point (station)**. The full sequence is: prograde → station (prograde to retrograde) → retrograde → station (retrograde to prograde) → prograde. The midpoint of a superior planet's retrograde occurs exactly at the moment of **opposition**; the retrograde of an inferior planet occurs around **inferior conjunction**. The farther a planet is, the shorter its retrograde lasts and the smaller its retrograde arc.
+
+### Synodic Period
+
+The **synodic period** is the time a planet takes to return to the same configuration relative to the Sun (e.g., between two successive oppositions, or two successive conjunctions of the same kind). Its relationship to the planet's **sidereal period** and Earth's orbital period E (about 365.26 days) is:
+
+```
+Superior planet:  1/S = 1/E − 1/P
+Inferior planet:  1/S = 1/P − 1/E
+```
+
+where S is the synodic period and P is the planet's sidereal orbital period. The table below gives measured synodic periods for each planet:
+
+| Planet | Synodic period | Notes |
+| --- | --- | --- |
+| Mercury | About 116 days | Multiple greatest elongations per year |
+| Venus | About 584 days | About one cycle every 1.6 years; completes 5 synodic periods in 8 years |
+| Mars | About 780 days | An opposition roughly every 26 months; the most dramatic variation |
+| Jupiter | About 399 days | An opposition roughly every 13 months |
+| Saturn | About 378 days | An opposition roughly every 12.5 months |
+| Uranus | About 370 days | Nearly one opposition per year |
+| Neptune | About 367 days | Nearly one opposition per year, owing to its extremely slow orbital motion |
+
+The farther a superior planet is from the Sun, the slower it orbits and the closer its synodic period is to Earth's one year, so planets beyond Jupiter have a favorable observing window near opposition almost every year.
+
+## Observing Highlights for Each Planet
+
+<CardGrid>
+  <Card title="Mercury" icon="star">
+    The hardest planet to observe, visible only briefly low in the dawn or dusk sky around greatest elongation. A telescope shows Moon-like phase changes, but surface detail is nearly impossible to resolve. The rare transits of Mercury require observation with a safe solar filter.
+  </Card>
+  <Card title="Venus" icon="moon">
+    The brightest planet, showing a complete cycle of waxing and waning phases. Near inferior conjunction its disk is large and crescent-thin; near superior conjunction it is small and round. Its surface is covered by thick clouds, so no surface detail is visible through a telescope.
+  </Card>
+  <Card title="Opposition of Mars" icon="sun">
+    Around opposition it is red and bright, and one can make out the white **polar caps** (composed of water ice and dry ice), dark surface markings, and occasional dust storms. An opposition that also falls near perihelion is called a **perihelic (great) opposition**, when the apparent disk is largest—occurring about once every 15–17 years.
+  </Card>
+  <Card title="Jupiter" icon="rocket">
+    A telescope shows alternating light and dark **cloud bands** (belts and zones) and the **Great Red Spot**, a giant anticyclonic storm that has persisted for centuries; the four **Galilean moons** change their arrangement night to night and are visible even in binoculars.
+  </Card>
+  <Card title="Saturn" icon="star">
+    The most popular eyepiece target. The **rings of Saturn** and the **Cassini Division** within them are clearly visible in a medium-aperture telescope; the ring tilt changes from year to year, presenting an edge-on view about once every 15 years.
+  </Card>
+  <Card title="Uranus / Neptune" icon="moon">
+    Uranus is about magnitude 5.7 and barely visible to the naked eye under excellent conditions; Neptune is about magnitude 7.8 and requires a telescope. In a telescope both appear as tiny blue-green/blue disks and must be located by chart coordinates.
+  </Card>
+</CardGrid>
+
+### Mars
+
+Mars shows the largest variation in apparent diameter and brightness of all the planets: its apparent diameter ranges from about 3.5″ (near conjunction, far from Earth) to about 25″ (near perihelic opposition, close to Earth), and its brightness ranges from about magnitude +1.8 to about −2.9 (a brightness difference of about 75 times). The period around opposition is the only good opportunity to make out the polar caps and dark surface patches, usually requiring a magnification above 50×.
+
+### Jupiter and the Galilean Moons
+
+Jupiter is the second-brightest planet in the night sky (about magnitude −2.9 at opposition), with an apparent diameter of about 30″–50″, and it is the planet in which detail is easiest to see through a telescope. The Great Red Spot is about 1.3 Earth diameters wide and has been shrinking steadily over the past century. The **Galilean moons** are Io, Europa, Ganymede, and Callisto; at opposition they are about magnitude 4.6–5.6, arranged from inner to outer, and change their relative positions night to night. They can be resolved with binoculars, and one can often watch their transits across Jupiter, their shadow transits, and their occultations by Jupiter.
+
+### Saturn and Its Ring System
+
+Saturn's rings consist mainly of the A, B, and C rings. The **Cassini Division**, about 4500 km wide, between the A and B rings was cleared by orbital resonance with the moon Mimas and was discovered by Cassini in 1675. Saturn's brightness is about magnitude −0.5 to +1, with an apparent diameter (of the body) of about 16″–20″, reaching about 40″ overall including the rings. The tilt of the ring plane relative to Earth varies cyclically over Saturn's 29.5-year orbit: at maximum opening the rings spread wide like a disk, while about once every 15 years they appear nearly edge-on, when they thin to a bright line or even briefly vanish.
+
+Saturn's rings and Jupiter's cloud bands and Great Red Spot are the two most classic targets in planetary photography:
+
+<div class="cols2">
+  <Fig name="saturn" alt="Saturn and its rings, with the ring plane and the Cassini Division visible" caption="Saturn—the ring opening changes from year to year, with the Cassini Division visible between the A and B rings." />
+  <Fig name="jupiter" alt="Jupiter's disk, showing the cloud bands and the Great Red Spot" caption="Jupiter—alternating light and dark cloud bands and the Great Red Spot, which has persisted for centuries." />
+</div>
+
+### Changes in Planetary Brightness and Apparent Diameter
+
+Unlike the stars, planets do not have a constant brightness; their apparent diameter and brightness change markedly with the relative positions of the Sun, Earth, and planet. The table below gives approximate brightness ranges and maximum apparent diameters (for observing-expectation reference).
+
+| Planet | Brightness range (apparent magnitude) | Maximum apparent diameter | When brightest/largest |
+| --- | --- | --- | --- |
+| Mercury | About −2.5 to +5 | About 13″ | Brightest near superior conjunction but hard to see; largest disk near inferior conjunction |
+| Venus | About −3.9 to −4.9 | About 66″ | A slender crescent around inferior conjunction, peaking at about 25% phase |
+| Mars | About −2.9 to +1.8 | About 25″ | Near perihelic opposition |
+| Jupiter | About −2.9 to −1.6 | About 50″ | Near opposition |
+| Saturn | About −0.5 to +1.5 | About 20″ (body) | At opposition with the rings widely open |
+| Uranus | About +5.4 to +5.9 | About 4″ | Near opposition |
+| Neptune | About +7.8 to +8.0 | About 2.4″ | Near opposition |
+
+Observing conditions (atmospheric seeing, transparency, and altitude above the horizon) are equally critical to whether these details can be resolved; see [Observing Conditions](/en/astronomy/observing/conditions/). To judge how high a given planet rises at your latitude and whether it is visible all night, see [Hemisphere Visibility](/en/astronomy/observing/hemisphere-visibility/).
+
+## Planet-Moon Conjunctions and Planetary Alignments
+
+All the planets travel near the ecliptic, so they frequently "meet" the Moon or one another in the sky.
+
+- **Planet-Moon conjunction**: a planet and the Moon appear very close together in the sky (at the same right ascension or ecliptic longitude). Sometimes the Moon **occults** the planet (a lunar occultation of a planet), which makes a fine subject for wide-angle and medium-focal-length photography.
+- **Planet-planet conjunction**: two planets appear close in the sky, occasionally with an angular separation of less than 1°, so that they can be seen in the same telescope field of view.
+- **Planetary alignment**: several planets lie roughly on the same side of the sky over a period of time, arranged in an arc along the ecliptic. This is a **line-of-sight coincidence** as seen from Earth, not the planets actually lining up in space.
+
+<Aside type="caution" title="A common misconception about 'planetary alignment'">
+The claim that "planetary alignments trigger earthquakes, tsunamis, or other disasters" has no scientific basis. The tidal and gravitational perturbations the planets exert on Earth are far smaller than those of the Moon and the Sun, and an alignment is merely a visual arrangement rather than a physical one—it is purely a viewing spectacle.
+</Aside>
+
+Planetary positions change with the date; the specific dates of opposition, greatest elongation, and conjunction with the Moon should be looked up in the current year's astronomical almanac or in ephemeris software. For a quick reference of catalogs and terms, see the [Object Catalog](/en/reference/catalog/) and the [Glossary](/en/reference/glossary/).
+
+To capture planetary detail with a telescope, planetary photography uses the "short exposures, vast numbers of frames, stack and sharpen" approach (lucky imaging), which is entirely different from the long-exposure approach used for deep-sky objects.
+
+<LinkCard
+  title="Getting Started with Planetary Photography"
+  href="/en/astrophotography/capture/planetary/"
+  description="Use video capture plus frame extraction and stacking to capture Jupiter's cloud bands, Saturn's rings, and Mars surface detail."
+/>
+
+To learn more about the other members of the Solar System, head to the [Sun](/en/astronomy/solar-system/sun/), the [Moon](/en/astronomy/solar-system/moon/), and [Small Bodies](/en/astronomy/solar-system/small-bodies/).
+
+## References
+
+- [Terrestrial planet — Wikipedia](https://en.wikipedia.org/wiki/Terrestrial_planet) — Definition of the composition, density, and structure of terrestrial planets.
+- [NASA Planetary Fact Sheet](https://nssdc.gsfc.nasa.gov/planetary/factsheet/) — Authoritative values for the mass, diameter, density, orbit, and rotation of the eight planets.
+- [Elongation (astronomy) — Wikipedia](https://en.wikipedia.org/wiki/Elongation_(astronomy)) — Geometric definitions and angular values of elongation, greatest elongation, conjunction, opposition, and quadrature.
+- [Synodic period — Wikipedia](https://en.wikipedia.org/wiki/Synodic_period) — The relationship between the synodic period and the sidereal period and values for each planet.
+- [Apparent retrograde motion — Wikipedia](https://en.wikipedia.org/wiki/Apparent_retrograde_motion) — The cause of planetary stationary points and retrograde motion and their relationship to opposition and inferior conjunction.
+- [Galilean moons — Wikipedia](https://en.wikipedia.org/wiki/Galilean_moons) — The discovery, brightness, and visibility of the Galilean moons.

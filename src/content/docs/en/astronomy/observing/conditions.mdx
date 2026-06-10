@@ -1,0 +1,185 @@
+---
+title: Atmosphere and Observing Conditions
+description: A systematic overview of seeing, transparency, light pollution and the Bortle scale, atmospheric extinction and air mass, moonlight, humidity and other observing conditions, with definitions, units, typical values, and guidance for target selection.
+difficulty: beginner
+pillar: astronomy
+sidebar:
+  order: 1
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import Fig from '@/components/Fig.astro';
+import BortleScale from '@/components/diagrams/BortleScale.astro';
+
+For ground-based observing, once the equipment is fixed, image quality is determined mainly by the state of the Earth's atmosphere and the environment of the observing site. The factors that affect imaging fall into two broad categories: **seeing**, caused by atmospheric turbulence, and **transparency**, caused by atmospheric absorption and scattering. In addition there are **light pollution**, **atmospheric extinction**, moonlight, humidity, wind, and more. These factors differ in their dimensions, typical values, and mutual relationships, and must be understood separately so that you can judge what kind of target a given night is suitable for observing or imaging.
+
+## Seeing
+
+Astronomical seeing refers to the degradation of celestial images caused by atmospheric turbulence. Air parcels at different temperatures have different refractive indices, and turbulence makes the refractive index along the light path fluctuate randomly over time. The incoming plane wavefront is disturbed, causing star points on the image plane to undergo **image motion, blurring, and scintillation**.
+
+Seeing is usually measured by the angular diameter of the **seeing disk**, that is, the **full width at half maximum (FWHM)** of the intensity distribution of a stellar image under long exposure, in units of arcseconds (″).
+
+| Seeing disk FWHM | Rating | Notes |
+| --- | --- | --- |
+| < 0.4″ | Excellent | Seen only on the best nights at high-altitude premium sites |
+| ≈ 1.0″ | Good | The fine standard at typical observatory sites |
+| 2″–4″ | Average | Common values at most lowland suburban sites |
+| > 4″ | Poor | High magnification becomes meaningless |
+
+### Fried parameter
+
+Seeing can also be characterized by the **Fried parameter (r0)**. r0 is the characteristic scale of a "cell" of air within which the refractive index is approximately uniform in atmospheric turbulence; it is also equal to "the telescope aperture at which atmospheric disturbance begins to seriously limit resolution."
+
+- **Typical values**: in the visible band, about 10–20 cm at premium sites; at poorer sea-level sites it can be as low as about 5 cm; in the near-infrared (e.g., the I band, around 900 nm) it can reach 20–40 cm.
+- **Wavelength dependence**: r0 increases with wavelength, so large telescopes achieve slightly higher actual resolution at longer wavelengths.
+- **Relation to aperture**: when the telescope aperture is **smaller than r0**, resolution is diffraction-limited and inversely proportional to aperture; when the aperture is **larger than r0**, resolution is atmosphere-limited and essentially no longer improves with increasing aperture, instead plateauing at the level corresponding to "a telescope with aperture equal to r0."
+
+The approximate relation between the seeing disk angular diameter and r0 is (visible band, empirical):
+
+```
+seeing(arcsec) ≈ 0.98 × λ / r0      （λ 与 r0 取相同长度单位,如米）
+```
+
+For example, when λ = 0.5 μm and r0 = 0.1 m, the seeing disk is about 1″.
+
+### Temporal and angular scales
+
+- **Coherence time (t0)**: the characteristic time over which a turbulent wavefront remains coherent, ranging from about milliseconds to tens of milliseconds, proportional to r0 divided by the mean wind speed. It determines the correction speed required for adaptive optics and is also the physical basis for "lucky imaging," which selects the sharpest short-exposure frames.
+- **Isoplanatic angle**: the angular range over which image quality remains consistent, determined by the distribution of turbulence with altitude.
+
+### Relation to observing and imaging
+
+Seeing directly sets the **practical upper limit of angular resolution** achievable by a ground-based telescope, so it has the **greatest impact on high-resolution targets such as planets, the lunar surface, and double stars**—these targets depend on magnifying detail, and when seeing is poor, Jupiter's cloud belts, Saturn's Cassini division, and lunar craters all smear into a blur. For extended deep-sky objects (galaxies, nebulae), since they are already imaged as diffuse extended sources and individual exposures typically last seconds to minutes, the effect of seeing is relatively minor (mainly showing up as bloated stars and slightly lost detail).
+
+<Aside type="tip" title="Judging seeing by eye">
+Watch a bright star near the zenith: the more violently it scintillates, the stronger the high-altitude turbulence and the poorer the seeing. Stars near the horizon pass through a thicker layer of atmosphere and almost always scintillate violently, so they cannot be used as a criterion.
+</Aside>
+
+## Transparency
+
+Transparency refers to the degree to which the atmosphere **absorbs and scatters** starlight, influenced mainly by **water vapor, aerosols, dust, haze, smoke, and thin cloud**. When transparency is good, the faint light of dim objects reaches the detector relatively intact; when transparency is poor, even if the sky "looks" dark, faint light is scattered away by thin cloud and haze, while the skyglow background is raised and contrast drops.
+
+Transparency determines **how faint an object can be recorded**, so it is the key condition for **deep-sky imaging (especially of faint, low-surface-brightness targets)**. It is independent of seeing—and indeed often the opposite of it:
+
+| Quantity | Physical nature | Measure | Most affected objects |
+| --- | --- | --- | --- |
+| Seeing | Atmospheric turbulence (refractive index fluctuations) | Seeing disk FWHM (arcsec) / r0 (cm) | Planets, lunar surface, double stars, high-resolution detail |
+| Transparency | Atmospheric absorption and scattering (extinction) | Limiting magnitude / sky brightness / extinction coefficient | Faint galaxies, nebulae, and other low-surface-brightness extended sources |
+
+<Aside type="caution" title="The difference between seeing and transparency">
+The two often conflict. A windless, humid, slightly misty night tends to have a stable atmosphere and excellent seeing (good for planets), but water vapor and haze reduce transparency (bad for deep sky); after a cold front passes, the air is clear and transparency is good, yet turbulence often accompanies it and seeing is poor. So "good weather" does not equal "good sky," and you must first decide what type of target you are after that night.
+</Aside>
+
+## Light pollution and the Bortle scale
+
+Light pollution refers to the skyglow background formed when artificial light is scattered by the atmosphere; it raises sky brightness and lowers the contrast of celestial objects, drowning out faint targets. It is directly related to the number of faint objects visible to the naked eye and to the structure of the Milky Way, and is the primary consideration in site selection.
+
+### The Bortle dark-sky scale
+
+The **Bortle scale** was proposed by amateur astronomer John E. Bortle and published in the February 2001 issue of *Sky & Telescope*. It divides the night sky into nine grades, from Class 1 (pristine, extremely dark) to Class 9 (inner city), using criteria such as objects visible to the naked eye, Milky Way structure, and zodiacal light, and it corresponds roughly to the **naked-eye limiting magnitude (NELM)** and the **sky brightness (in mag/arcsec²)**.
+
+<BortleScale />
+
+| Class | Name | Naked-eye limiting magnitude | Sky brightness (mag/arcsec²) | Main characteristics |
+| --- | --- | --- | --- | --- |
+| 1 | Excellent dark sky | 7.6–8.0 | 21.8–22.0 | Zodiacal light vivid and colored, gegenschein visible, the Milky Way casts shadows, M33 directly visible to the naked eye |
+| 2 | Truly dark sky | 7.1–7.5 | 21.6–21.8 | Zodiacal light clearly yellowish and casting shadows, rich summer Milky Way structure, M33 easily seen |
+| 3 | Rural | 6.6–7.0 | 21.3–21.6 | Slight light pollution near the horizon, complex Milky Way, M33 visible with averted vision |
+| 4 | Brighter rural | 6.3–6.5 | 20.8–21.3 | Zodiacal light does not reach the zenith, Milky Way notable but with reduced detail |
+| 5 | Suburban | 5.6–6.0 | 19.3–20.3 | Faint zodiacal light only on the best nights, Milky Way vanishes near the horizon and is pale at the zenith |
+| 6 | Bright suburban | 5.1–5.5 | 18.5–19.3 | Zodiacal light invisible, a grayish-white glow within 35° of the horizon, Milky Way visible only at the zenith |
+| 7 | Suburban/urban transition | 4.6–5.0 | 18.0–18.5 | Sky is gray, Milky Way almost invisible, M31 and M44 barely glimpsed |
+| 8 | City | 4.1–4.5 | < 18.0 | Sky gray or orange, constellation outlines weakened, only bright Messier objects visible through a telescope |
+| 9 | Inner city | ≤ 4.0 | — | Most constellations invisible, only the Moon, planets, bright satellites, and a few bright star clusters observable |
+
+### Sky brightness and the SQM
+
+The **Sky Quality Meter (SQM)** directly measures the sky background brightness in units of **mag/arcsec²** (magnitudes per square arcsecond); **a larger value means a darker sky**. It provides repeatable, objective readings that can be compared over the long term, compensating for the subjectivity of the Bortle scale. Note that the SQM loses precision under very dark conditions (above about 21.5 mag/arcsec²), and its readings are also less stable under brighter conditions.
+
+<Aside type="note" title="The effect of light pollution on exposure">
+The ideal environment for deep-sky imaging is Bortle Class 1–4. The brighter the sky, the higher the background noise, and the exposure time needed to reach the same signal-to-noise ratio increases significantly; narrowband filters can suppress artificial light at specific wavelengths, partly recovering the loss when imaging emission nebulae in an urban environment, but they offer limited help for reflection nebulae, galaxies, and broadband continuum targets. This is also why remote platforms are mostly built in remote dark-sky locations.
+</Aside>
+
+## Atmospheric extinction and air mass
+
+**Atmospheric extinction** refers to the dimming of starlight, expressed in magnitudes, as it passes through the atmosphere due to scattering and absorption. The amount of extinction is proportional to the thickness of atmosphere the light traverses, which is measured by the **air mass (X)**.
+
+### Air mass
+
+Air mass is defined as the mass of atmosphere along the line of sight relative to that in the zenith direction, with **X = 1 at the zenith**. Under the plane-parallel approximation:
+
+```
+X = sec(z)        z 为天顶角(zenith angle)
+```
+
+This formula is usable within a zenith angle of about 60°–75° (at z = 60°, X ≈ 2, corresponding to an altitude of 30°), but it diverges to infinity near the horizon, contrary to reality. Accounting for the curvature of the Earth and refraction, the air mass at the horizon is actually about **38–40** (not infinite). More precise near-horizon formulas include those of Kasten & Young (1989) and Pickering (2002).
+
+| Altitude | Zenith angle z | Air mass X (approx.) |
+| --- | --- | --- |
+| 90° (zenith) | 0° | 1.0 |
+| 60° | 30° | 1.15 |
+| 30° | 60° | 2.0 |
+| 20° | 70° | 2.9 |
+| 10° | 80° | 5.6 |
+| 0° (horizon) | 90° | ≈ 38 |
+
+### Extinction coefficient and typical values
+
+The observed magnitude increases linearly with air mass:
+
+```
+m(X) = m0 + k · X
+```
+
+where `m0` is the magnitude outside the atmosphere and `k` is the extinction coefficient (magnitudes per air mass), depending on wavelength and the local atmosphere. At sea level, the total extinction in the visible band is about **0.28 mag/air mass**, of which Rayleigh scattering accounts for about 0.14, aerosol scattering about 0.12, and the rest is molecular absorption by ozone and others; extinction decreases with increasing altitude, being about 0.24, 0.21, and 0.16 mag/air mass at about 0.5 km, 1.0 km, and 2.0 km respectively. Because short wavelengths (blue light) scatter more strongly, low-altitude objects are also noticeably **reddened**.
+
+<Fig name="fig-extinction" alt="Diagram showing air mass increasing as altitude decreases, with extinction intensifying accordingly" caption="The closer an object is to the horizon, the thicker the atmosphere the line of sight passes through (the greater the air mass), and the more severe the extinction and dimming of starlight; star points also become redder and shakier." />
+
+### Atmospheric refraction
+
+The atmosphere also raises the apparent position of celestial objects, a phenomenon called **atmospheric refraction**. At the horizon the refraction is about **34′ (about 0.57°)**, slightly larger than the apparent diameter of the Sun or Moon, so when the Sun or Moon "touches the horizon" it is in fact already below the geometric horizon; the amount of refraction decreases rapidly with altitude and is zero at the zenith. Refraction also disperses low-altitude objects into a short spectrum (atmospheric dispersion), affecting high-resolution planetary imaging.
+
+<Aside type="caution" title="Low-altitude targets image worse">
+The closer an object is to the horizon, the greater the air mass, the stronger the extinction, and the redder the star points; at the same time the line of sight passes through a thicker turbulent layer, so seeing deteriorates correspondingly, and atmospheric dispersion becomes more pronounced. Therefore the same target should be observed as close as possible to **culmination (its highest point)**; below an altitude of about 30°, seeing, transparency, and extinction usually all worsen together. To time a target's culmination, combine this with [Hemisphere visibility and altitude](/en/astronomy/observing/hemisphere-visibility/); for the rules of the diurnal motion of stars, see [The apparent diurnal motion of celestial objects](/en/astronomy/foundations/apparent-motion/).
+</Aside>
+
+## Moonlight, humidity, and other factors
+
+| Factor | Effect on observing | Mitigation |
+| --- | --- | --- |
+| Moonlight | A full Moon is equivalent to adding strong light pollution across the entire sky, greatly reducing deep-sky contrast; the lunar phase changes daily, and the observing window is counted in "dark nights" | Prioritize the dark nights around new Moon for deep sky; when the Moon is bright, switch to the Moon, planets, and double stars, or use narrowband filters |
+| Humidity and dew | High humidity often accompanies a stable atmosphere (favorable for seeing), but lenses and correctors readily form **dew**, creating halos and ruined frames; excessive humidity also often means reduced transparency | Use a dew heater and dew shield; monitor the dew point |
+| Wind | Strong wind causes tube shake and tracking errors, ruining long exposures and high-resolution imaging | Lower the magnification, switch to wide-field imaging, or choose windless periods |
+| Cold and ice | Lenses and electronics frost and ice over, and battery life drops | Anti-frost heating, equipment insulation |
+| Altitude and jet stream | High-altitude sites sit above the atmospheric turbulence, with larger r0, less extinction, and more clear nights; when the high-altitude **jet stream** passes over, upper-level turbulence intensifies and seeing worsens | Choose high-altitude dark-sky sites; check the jet stream forecast and avoid it |
+
+### The effect of lunar phase on sky brightness
+
+A full Moon raises the sky brightness of a dark-sky site by several orders of magnitude, drowning out faint galaxies and nebulae that would otherwise be imageable; even at a dark site, near full Moon you should switch to high-brightness targets that are little affected by moonlight. Moonlight has the greatest impact on **broadband deep sky**, almost no impact on **planets and the Moon**, and relatively little impact on **narrowband emission nebulae**.
+
+## Site selection factors and target choice
+
+An ideal observing site should satisfy three conditions simultaneously: **dark** (low light pollution, low sky brightness), **stable** (good seeing, commonly found at high altitude and far from the jet stream), and **clear** (many clear nights, dry). Sites that combine all three are rare, which is also why professional observatories and dark-sky remote stations are mostly built in high-altitude, remote regions.
+
+<Fig name="startrails" alt="The diurnal motion of stars recorded in a long exposure" caption="A star-trail long exposure directly reflects a night's transparency and skyglow background: when transparency is good and skyglow is low, even the trails of faint stars can be clearly recorded." />
+
+Choose targets according to the conditions of the night:
+
+| Conditions of the night | Recommended targets | Main rationale |
+| --- | --- | --- |
+| Good seeing, average transparency | Planets, the Moon, double stars (high resolution) | Seeing determines detail, and these targets are bright in themselves and unfazed by mild light pollution |
+| Good transparency, dark sky (Bortle 1–4) | Faint galaxies, nebulae, wide-field Milky Way | Transparency and sky brightness determine whether low-surface-brightness extended sources can be recorded |
+| City or moonlit night, poor transparency | The Moon, planets; bright emission nebulae in narrowband | Bright targets are little affected by light pollution, and narrowband can suppress artificial light |
+| Poor seeing, windy | Lower the magnification for wide-field imaging, or do calibration / pause | High resolution is no longer feasible; avoid wasting exposures |
+
+<Aside type="tip" title="Pre-observing checklist">
+Before heading out, check three things: the night's seeing and transparency forecasts (e.g., Clear Outside, Meteoblue), the lunar phase and moonrise/moonset times, and the culmination time of the target. Only when all three align is it an ideal time for high-resolution or deep-sky imaging. For the concepts of celestial brightness and limiting magnitude, see [The magnitude system](/en/astronomy/foundations/magnitude/); for specific targets, refer to the [Deep-sky object catalog](/en/reference/catalog/).
+</Aside>
+
+## References
+
+- [Astronomical seeing — Wikipedia](https://en.wikipedia.org/wiki/Astronomical_seeing): the definition of seeing, seeing disk FWHM, the Fried parameter r0 and its wavelength/aperture dependence, coherence time, and isoplanatic angle.
+- [Fried parameter — Wikipedia](https://en.wikipedia.org/wiki/Fried_parameter): the rigorous definition of r0 and its typical values.
+- [Bortle scale — Wikipedia](https://en.wikipedia.org/wiki/Bortle_scale): the Bortle Class 1–9 grading, with the naked-eye limiting magnitude and SQM sky brightness for each class.
+- [Air mass (astronomy) — Wikipedia](https://en.wikipedia.org/wiki/Air_mass_(astronomy)): the definition of air mass, the sec(z) approximation and its breakdown, the near-horizon air mass of about 38–40, and atmospheric refraction of about 34′.
+- [Transparency and Atmospheric Extinction — Sky & Telescope](https://skyandtelescope.org/astronomy-resources/transparency-and-atmospheric-extinction/): the distinction between transparency and extinction, the extinction coefficient, and the effects near the horizon.

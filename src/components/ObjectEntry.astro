@@ -1,0 +1,42 @@
+---
+/**
+ * ObjectEntry — 单个深空天体条目:左图右文(移动端上下堆叠)。
+ * 用法:
+ *   <ObjectEntry img="m31-andromeda" name="仙女座星系 M31" facts="仙女座 · 约 250 万光年 · mag 3.4 · 旋涡星系 · 秋季 · 北天">
+ *     这里是介绍段落(支持 Markdown)。
+ *   </ObjectEntry>
+ */
+import { Image } from 'astro:assets';
+import { objImage, objCredit } from '@/lib/assets';
+
+interface Props {
+  img: string;
+  name: string;
+  facts?: string;
+  id?: string;
+}
+const { img, name, facts, id } = Astro.props;
+const anchor = id ?? `obj-${img}`;
+const m = objImage(img);
+const cr = objCredit(img);
+---
+
+<div class="dso-entry" id={anchor}>
+  <figure class="dso-entry__fig">
+    {m ? (
+      <Image src={m} alt={name} width={560} densities={[1, 2]} loading="lazy" />
+    ) : (
+      <div class="dso-entry__noimg">✦</div>
+    )}
+    {cr?.artist && (
+      <figcaption class="dso-entry__credit">
+        图源 {cr.artist}{cr.license ? ` · ${cr.license}` : ''}
+      </figcaption>
+    )}
+  </figure>
+  <div class="dso-entry__body">
+    <h3 class="dso-entry__name">{name}</h3>
+    {facts && <p class="dso-entry__facts">{facts}</p>}
+    <div class="dso-entry__desc"><slot /></div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+---
+/** 站名:中英并显(拾光记 + Lumina),两种语言模式下都显示。 */
+const { siteTitleHref } = Astro.locals.starlightRoute;
+---
+
+<a href={siteTitleHref} class="site-title brand" translate="no">
+  <span class="brand__zh">拾光记</span>
+  <span class="brand__en">Lumina</span>
+</a>
+
+<style>
+  .brand {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    text-decoration: none;
+    white-space: nowrap;
+    min-width: 0;
+  }
+  .brand__zh {
+    font-size: var(--sl-text-h4);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--sl-color-white);
+  }
+  .brand__en {
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sl-color-text-accent);
+  }
+  @media (max-width: 26em) {
+    .brand__en { display: none; }
+  }
+</style>

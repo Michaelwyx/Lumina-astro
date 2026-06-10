@@ -1,0 +1,182 @@
+---
+title: Cosmology Overview
+description: A systematic survey of the cosmological principle, large-scale structure, the Hubble–Lemaître law and redshift, the cosmic microwave background, the Big Bang timeline, dark matter and dark energy, and the ΛCDM standard model.
+difficulty: advanced
+pillar: astronomy
+sidebar:
+  order: 1
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import Fig from '@/components/Fig.astro';
+
+Cosmology is the branch of physics that studies the structure, origin, evolution, and ultimate fate of the universe as a whole. Using general relativity as its theoretical framework and observations such as galaxy surveys, the cosmic microwave background, and supernova distance measurements as its evidence, it places individual [galaxies](/en/astronomy/deep-sky/galaxies/) and [stars](/en/astronomy/deep-sky/stellar-physics/) within a single picture spanning roughly 13.8 billion years. This page surveys the main topics of cosmology: the cosmological principle, large-scale structure, cosmic expansion and redshift, the cosmic microwave background, the Big Bang timeline, dark matter and dark energy, and the ΛCDM standard model that unifies these observations.
+
+## The Cosmological Principle
+
+The cosmological principle is the fundamental assumption of modern cosmology, comprising two statements:
+
+- **Homogeneity**: On sufficiently large scales, the distribution of matter and the physical properties of the universe are the same everywhere; there is no special location.
+- **Isotropy**: On sufficiently large scales, the statistical properties of the universe are the same when viewed in any direction from any observation point; there is no special direction.
+
+"Sufficiently large scales" refers to roughly 100 Mpc (about 300 million light-years) and above; below this scale, the universe shows pronounced clustered structure (stars, galaxies, galaxy clusters). The most direct observational evidence for isotropy is the near-perfect uniformity of the cosmic microwave background once the dipole term is removed (with temperature fluctuations of only about one part in 100,000). The cosmological principle allows the metric describing the entire universe to be reduced to the Friedmann–Lemaître–Robertson–Walker (FLRW) metric, yielding the Friedmann equations that describe the expansion.
+
+<Aside type="note" title="A generalization of the Copernican principle">
+The cosmological principle can be viewed as a generalization of the Copernican principle (Earth does not occupy a special position) to cosmic scales: not only are Earth and the Solar System unremarkable, but the position of any observer is unremarkable in a statistical sense. It is an assumption rather than a theorem, but it is strongly supported by large-scale surveys and observations of the cosmic microwave background.
+</Aside>
+
+## Large-Scale Structure
+
+On scales below 100 Mpc, galaxies are not scattered at random but are organized by gravity into a hierarchical network known as the **cosmic web**. Its basic building blocks are as follows:
+
+| Structure | English | Typical scale | Description |
+| --- | --- | --- | --- |
+| Galaxy cluster | galaxy cluster | A few Mpc | Hundreds to thousands of gravitationally bound galaxies; the nodes of the network |
+| Supercluster | supercluster | Tens of Mpc | A loose collection of galaxy clusters, usually not gravitationally bound |
+| Filament | filament | Tens to hundreds of Mpc | Chain-like aggregations of galaxies forming the skeleton of the network |
+| Galaxy wall | galaxy wall | Hundreds of Mpc | Wall-like structures formed where filaments intersect |
+| Void | void | Tens to hundreds of Mpc | Low-density cavities almost devoid of galaxies |
+
+Representative giant structures include the **Sloan Great Wall**, about 400 million light-years long, confirmed by the Sloan Digital Sky Survey (SDSS) in 2003 and one of the largest known structures. Inside voids, the matter density is only about one-tenth of the cosmic average, and they can reach diameters of hundreds of millions of light-years.
+
+Large-scale structure is the result of the universe's early density fluctuations being amplified by gravitational instability: slightly overdense regions attract surrounding matter and gradually collapse into filaments and nodes, while underdense regions are drained to form voids. The statistical properties of this process (such as the galaxy two-point correlation function and the power spectrum) are key to testing cosmological models. Among them, **baryon acoustic oscillations (BAO)** leave a characteristic scale of about 150 Mpc imprinted in the galaxy distribution, originating from sound waves in the pre-recombination photon–baryon plasma, and can serve as a standard ruler for measuring the universe's expansion history.
+
+## The Hubble–Lemaître Law and Cosmic Expansion
+
+In 1927 Lemaître discovered theoretically, and in 1929 Hubble discovered observationally, that the recession velocity of galaxies is proportional to their distance. This relation is called the **Hubble–Lemaître law**:
+
+```
+v = H0 × d
+```
+
+Here `v` is the recession velocity (km/s), `d` is the distance (Mpc), and `H0` is the **Hubble constant**, in units of km/s/Mpc. `H0` describes the present expansion rate of the universe, and its reciprocal `1/H0` (the Hubble time) gives an order-of-magnitude estimate of the age of the universe (about 14.4 billion years; the true age is slightly smaller because of the expansion history).
+
+There are currently two classes of methods for measuring the Hubble constant, and their results disagree:
+
+| Method category | Representative observation | H0 (km/s/Mpc) |
+| --- | --- | --- |
+| Early universe (CMB) | Planck satellite + ΛCDM | 67.4 ± 0.5 |
+| Late universe (distance ladder) | SH0ES (Cepheids + Type Ia supernovae) | 73.0 ± 1.0 |
+
+The discrepancy between the two exceeds 5σ and is called the **Hubble tension**, one of the most closely watched unsolved problems in current cosmology. Its cause may be some systematic error, or it may indicate that the ΛCDM model needs revision (for example, early dark energy, new interactions in the dark sector, and so on).
+
+<Aside type="note" title="Expansion has no center">
+Cosmic expansion refers to the scale of space itself growing with time, not to galaxies flying outward through a static space. Every observer sees other galaxies receding, and the farther they are the faster they recede—this is precisely the inevitable consequence of homogeneous, isotropic expansion, and there is no special "center of the explosion." Gravitationally bound systems (such as the Local Group, the Solar System, and atoms) do not participate in the expansion.
+</Aside>
+
+### Cosmological Redshift and Doppler Redshift
+
+Observationally, the recession of galaxies appears as a shift of spectral lines toward longer wavelengths, known as **redshift (z)**, defined as:
+
+```
+z = (λ_obs − λ_emit) / λ_emit
+```
+
+Here `λ_obs` is the observed wavelength and `λ_emit` is the emitted wavelength. Two types of redshift must be distinguished:
+
+- **Doppler redshift**: Caused by the relative motion of the source through space (peculiar velocity), applicable to nearby, low-velocity cases.
+- **Cosmological redshift**: Caused by the expansion of space stretching the wavelength as light travels, independent of the local motion of the source. It satisfies `1 + z = a(t_obs) / a(t_emit)`, where `a` is the cosmic scale factor.
+
+For distant galaxies, the cosmological redshift is the dominant effect. The redshift `z` is both an indicator of distance and a scale of "lookback time": `z ≈ 1100` corresponds to the recombination epoch, and the most distant galaxies observed so far have redshifts exceeding `z = 14`. Tracing the expansion backward in time, all matter converges to an extremely hot, extremely dense state a finite time ago—this is the central inference of the **Big Bang**.
+
+<Fig name="fig-hubble-law" alt="Diagram of the linear relationship between galaxy redshift and distance" caption="The Hubble–Lemaître law: the recession velocity of galaxies (inferred from redshift) is approximately proportional to distance, with the slope being the Hubble constant" />
+
+## The Cosmic Microwave Background
+
+The **cosmic microwave background (CMB)** is microwave radiation that fills the entire sky and is one of the strongest pieces of observational evidence for the Big Bang model. It was discovered serendipitously in 1965 by Penzias and Wilson (who received the 1978 Nobel Prize in Physics). Its key properties:
+
+| Property | Value |
+| --- | --- |
+| Temperature | 2.7255 K (a near-perfect blackbody spectrum) |
+| Epoch of origin | Recombination / last scattering, about 380,000 years after the Big Bang |
+| Corresponding redshift | z ≈ 1100 |
+| Temperature at that time | About 3000 K |
+| Main anisotropy | About 18 μK (about one part in 100,000) |
+| Dipole term | About 3.4 mK, originating from the Solar System's peculiar velocity (about 370 km/s) |
+
+The CMB arises from **recombination**: about 380,000 years after the universe's birth, the temperature dropped to about 3000 K, free electrons combined with protons to form neutral hydrogen atoms, photons were no longer frequently scattered by free electrons, and the universe became transparent to radiation for the first time. The positions where photons scattered for the last time constitute the "surface of last scattering." After about 13.8 billion years of expansion, this light has had its wavelength stretched by about a factor of 1100, shifting from visible/infrared to the microwave band, with the temperature dropping to 2.7 K.
+
+The CMB is nearly isotropic, but its tiny temperature fluctuations of about one part in 100,000 correspond to slight variations in matter density at the recombination epoch—the very seeds that later formed filaments, galaxy clusters, and galaxies. The angular power spectrum of these fluctuations contains a series of **acoustic peaks** that record the acoustic oscillations of the pre-recombination plasma, precisely constraining the geometry of the universe (close to flat) and the proportions of its components. Precision measurements of the CMB were carried out by three generations of space missions: COBE (1989–1993), WMAP (2001–2010), and Planck (2009–2013).
+
+<Fig name="fig-cmb" alt="All-sky temperature fluctuation map of the cosmic microwave background" caption="The all-sky CMB map produced by the Planck satellite; colors represent temperature fluctuations on the order of one part in 100,000, the seeds of large-scale structure" />
+
+## The Big Bang Model and the Cosmic Timeline
+
+The Big Bang model describes the evolution of the universe as it expanded and cooled from a hot, dense initial state about 13.8 billion years ago to the present day. Its three classic observational pillars are: cosmic expansion (the Hubble–Lemaître law), the cosmic microwave background, and the abundance of light elements (Big Bang nucleosynthesis). The main stages are as follows:
+
+| Epoch | Time (from t=0) | Temperature scale | Main events |
+| --- | --- | --- | --- |
+| Planck epoch | < 10⁻⁴³ s | — | Quantum gravity dominates; known physics breaks down |
+| Inflation | ~10⁻³⁶ to 10⁻³² s | — | Space expands exponentially by about a factor of 10²⁶, smoothing out structure and amplifying quantum fluctuations |
+| Baryogenesis | Uncertain | — | A slight excess of matter over antimatter appears |
+| Quark epoch | ~10⁻¹² to 10⁻⁵ s | 10¹⁵–10¹² K | Quark–gluon plasma condenses into hadrons |
+| Big Bang nucleosynthesis | ~10 s to ~20 min | 10⁹–10⁷ K | Light nuclei form: helium-4 makes up about 25% (by mass), the rest hydrogen, with trace deuterium and lithium-7 |
+| Matter–radiation equality | ~47,000 years | ~10⁴ K | Matter density begins to exceed radiation density |
+| Recombination / last scattering | ~380,000 years | ~3000 K | Neutral atoms form, the universe becomes transparent, and the CMB is released |
+| Dark Ages | 380,000 years to ~150 million years | 3000–60 K | No luminous objects, only neutral hydrogen |
+| Cosmic dawn | ~100 to 400 million years | — | The first generation (Population III) of stars ignites, synthesizing heavy elements |
+| Reionization | ~200 million to 1 billion years | — | Ultraviolet radiation from stars and galaxies reionizes the neutral hydrogen |
+| Galaxy formation | From ~1 billion years | — | Gravitational clustering forms galaxies, galaxy clusters, and the cosmic web |
+| Dark energy domination | From ~9.8 billion years | — | Expansion shifts from decelerating to accelerating |
+| Today | ~13.8 billion years | 2.725 K | The cosmic web is widespread, and accelerating expansion continues |
+
+<Fig name="fig-cosmic-timeline" alt="Schematic timeline of cosmic evolution from the Big Bang to today" caption="The cosmic evolution timeline: from inflation, Big Bang nucleosynthesis, recombination, and the Dark Ages to the formation of stars and galaxies, with the horizontal axis being time (nonlinear)" />
+
+**Big Bang nucleosynthesis (BBN)** predicts a helium-4 mass abundance of about 25%, as well as abundances of deuterium and lithium-7, in close agreement with actual observations—independent evidence for the Big Bang model. **Reionization** marks the universe's transition from the Dark Ages to the modern structure filled with stars and galaxies.
+
+## Dark Matter
+
+**Dark matter** is a kind of matter that does not emit or absorb light and participates only through gravity (and possibly the weak interaction). It makes up about 27% of the universe's total mass-energy and about 85% of all matter. The main observational evidence:
+
+- **Galaxy rotation curve**: Vera Rubin and others found that the rotation velocities of stars at the outer edges of spiral galaxies do not decline with increasing radius but instead remain "flat." If there were only visible matter, the outer velocities should decline according to Kepler's law; a flat curve implies the existence of a large amount of invisible mass in a halo extending beyond the optical boundary.
+- **Galaxy cluster dynamics**: In 1933, Fritz Zwicky found that the velocity dispersion of member galaxies in the Coma Cluster was too large—the gravity of visible matter was insufficient to bind them—requiring the introduction of "dark matter."
+- **Gravitational lensing**: Galaxy clusters bend the light of background objects, and the total mass inferred from the degree of bending far exceeds the visible mass, with its distribution confirming the existence of dark matter halos.
+- **Bullet Cluster**: After two galaxy clusters collided, the mass center measured by gravitational lensing was clearly separated from the center of the X-ray-emitting hot gas (visible baryonic matter). This shows that the dominant mass (dark matter) passed through almost collisionlessly—strong evidence that dark matter exists and is distinct from modified gravity theories.
+- **CMB angular power spectrum** and **large-scale structure formation**: The observed relative heights of the acoustic peaks and the rate of structure clustering can be well fit only in the ΛCDM model containing about 27% cold dark matter.
+
+Candidate particles include weakly interacting massive particles (WIMPs), axions, sterile neutrinos, as well as compact-object candidates such as MACHOs and primordial black holes; to date, direct detection experiments have not yielded a confirmed signal.
+
+## Dark Energy
+
+**Dark energy** is an energy component that uniformly fills space, has negative pressure, and drives the accelerating expansion of the universe, making up about 68% of the universe's total mass-energy.
+
+In 1998, two independent teams—the High-z Supernova Search Team and the Supernova Cosmology Project—used **Type Ia supernovae** as standard candles (because their peak luminosity is nearly uniform, allowing distances to be measured) and found that distant supernovae were fainter than expected in a decelerating universe; that is, the expansion of the universe was not decelerating but **accelerating**. This discovery received the 2011 Nobel Prize in Physics (Perlmutter, Schmidt, Riess).
+
+In the standard model, dark energy is usually described by a **cosmological constant (Λ)**, with an equation-of-state parameter `w = p/(ρc²) ≈ −1`, meaning the pressure is negative and opposite in sign to the energy density. The negative pressure produces a repulsive gravitational effect in the Friedmann equations; after the matter density has been diluted by the expansion to a sufficiently low value (at about 9.8 billion years), it begins to dominate and shifts the expansion into acceleration. The physical nature of dark energy remains unclear, and whether it is strictly constant is a central question being tested by current observations (such as the DESI and Euclid surveys).
+
+<Aside type="caution" title="About 95% of the universe is fundamentally unknown">
+Dark matter and dark energy together account for about 95% of the universe's total mass-energy, yet the physical nature of both remains undetermined—one of the most significant unsolved problems in modern physics. Their names merely reflect that they are "non-luminous" and "not directly detectable," and do not imply that they are understood.
+</Aside>
+
+## The ΛCDM Standard Model and the Composition of the Universe
+
+The **ΛCDM model (Lambda Cold Dark Matter)** is the current standard model of cosmology (also called the "concordance model"), centered on the cosmological constant Λ (dark energy) plus cold dark matter. Within a single framework, it can quantitatively explain the CMB angular power spectrum, large-scale structure, light-element abundances, and accelerating expansion. The simplest form of the model requires only six independent parameters (baryon density, cold dark matter density, the angular scale of the acoustic features, the reionization optical depth, the amplitude of primordial perturbations, and the scalar spectral index); all other quantities (such as the Hubble constant and the age of the universe) are derived from these six parameters.
+
+According to the Planck 2018 results, the energy density composition of the present universe is approximately:
+
+| Component | Proportion (approx.) | Key evidence |
+| --- | --- | --- |
+| Dark energy | 68% | Type Ia supernovae, accelerating expansion, CMB |
+| Dark matter | 27% | Rotation curves, gravitational lensing, Bullet Cluster |
+| Ordinary (baryonic) matter | 5% | Stars, gas, galaxies, CMB acoustic peaks |
+
+"Cold" dark matter means that its motion at the moment of matter–radiation equality was far below the speed of light; this property determines the "bottom-up" (small structures first, then large) mode of clustering, in agreement with observations. ΛCDM also yields several key global figures:
+
+- **Age of the universe**: About 13.8 billion years (13.79 ± 0.02 Gyr).
+- **Spatial geometry**: Close to flat (total density parameter Ω ≈ 1).
+- **Radius of the observable universe**: About 46.5 billion light-years. Because of the expansion, this comoving radius is far larger than the 13.8 billion light-years given by "age × speed of light."
+
+Although ΛCDM is highly successful, it still faces challenges such as the Hubble tension, the unknown nature of dark matter and dark energy, and some small-scale structure problems, and it remains the subject of ongoing observational and theoretical testing.
+
+<Aside type="tip" title="Further reading">
+Understanding cosmology can begin with the basic units that make up the cosmic web: learn more about the classification and evolution of [galaxies](/en/astronomy/deep-sky/galaxies/), and how [stellar physics](/en/astronomy/deep-sky/stellar-physics/) forges elements inside stars and in supernovae. For terminology, see the [glossary](/en/reference/glossary/).
+</Aside>
+
+## References
+
+- [Lambda-CDM model — Wikipedia](https://en.wikipedia.org/wiki/Lambda-CDM_model): The standard model of cosmology, including the six parameters, the proportions of each component, and the Planck parameters.
+- [Cosmic microwave background — Wikipedia](https://en.wikipedia.org/wiki/Cosmic_microwave_background): The CMB temperature, the recombination epoch, anisotropies, and observational missions.
+- [Chronology of the universe — Wikipedia](https://en.wikipedia.org/wiki/Chronology_of_the_universe): The cosmic timeline from the Planck epoch to today, with the temperatures of each stage.
+- [Dark matter — Wikipedia](https://en.wikipedia.org/wiki/Dark_matter): Evidence for dark matter such as rotation curves, gravitational lensing, and the Bullet Cluster, along with candidate particles.
+- [Accelerating expansion of the universe — Wikipedia](https://en.wikipedia.org/wiki/Accelerating_expansion_of_the_universe): Type Ia supernovae, the discovery of accelerating expansion, and dark energy.
+- [The Hubble tension — CERN Courier](https://cerncourier.com/a/the-hubble-tension/): A review of the discrepancy between early- and late-universe H0 measurements (the Hubble tension).

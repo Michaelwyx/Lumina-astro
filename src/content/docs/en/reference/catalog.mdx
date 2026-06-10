@@ -1,0 +1,28 @@
+---
+title: Object Catalog
+description: A filterable index of Messier / NGC / IC deep-sky objects, with position, magnitude, type, visible hemisphere, season, and recommended focal length.
+difficulty: beginner
+pillar: index
+sidebar:
+  order: 1
+---
+
+import ObjectCatalog from '@/components/ObjectCatalog.astro';
+
+This is a data-driven index of deep-sky objects. Each object gets its own page, recording its **host constellation, right ascension / declination (RA/Dec), magnitude, type, visible hemisphere, season, recommended focal length**, and a brief description. To add a new object, just edit the data file—the detail page and the filterable index below update automatically.
+
+:::tip[How to use]
+Use the filters to narrow down by **type / hemisphere / season**, or search directly by catalog number (M42), name (Orion), or constellation. Detail pages estimate a target's visibility based on your latitude. For the principles behind hemispheres, see [Hemisphere Visibility](/en/astronomy/observing/hemisphere-visibility/).
+:::
+
+<ObjectCatalog lang="en" />
+
+---
+
+### Catalog Designation Cheat Sheet
+
+- **M (Messier)**—110 of the brighter deep-sky objects, often used as targets for beginning observers and astrophotographers.
+- **NGC / IC (New General Catalogue + Index Catalogue supplements)**—about 7840 + 5386 objects, offering broader coverage.
+- **Caldwell**—fills in bright objects that Messier omitted (especially in the southern sky).
+
+> Coordinates and magnitudes are commonly used approximations (J2000). For formal data entry, we recommend relying on [SIMBAD](https://simbad.u-strasbg.fr/) / Stellarium data.

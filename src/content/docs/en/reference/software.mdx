@@ -1,0 +1,130 @@
+---
+title: Software Index
+description: A categorized quick reference for software commonly used in astronomical observation and astrophotography—planning and star charts, capture control and guiding, stacking and preprocessing, post-processing, and community and databases—with each entry tagged by purpose, platform, and price.
+difficulty: beginner
+pillar: index
+sidebar:
+  order: 4
+---
+
+import { Aside, LinkCard } from '@astrojs/starlight/components';
+
+This page organizes the software commonly used in astronomical observation and astrophotography by stage in the workflow. Each tool is given a one-line purpose, the platforms it runs on, and the nature of its price (free / paid / partly paid). For the complete processing pipeline, see the [post-processing workflow](/en/astrophotography/processing/workflow/); if you use hosted equipment, the various remote platforms already bundle most of this capture and control software, see [remote platform comparison](/en/astrophotography/remote-platforms/platforms-comparison/).
+
+Pricing and platform information changes as versions are updated; the tables below reflect the situation at the time of writing (2026). Always check the official website before purchasing or downloading.
+
+<Aside type="tip" title="One free beginner pipeline">
+You don't need to install all of this software when starting out. One complete, entirely free pipeline is: Stellarium (choose targets, check visibility) → N.I.N.A. + PHD2 (automated capture and guiding) → Siril (calibration and stacking) → GraXpert + StarNet++ (gradient removal and star removal for post-processing). Once familiar with the workflow, bring in professional / paid tools such as PixInsight or BlurXTerminator as needed.
+</Aside>
+
+## Software categories and their place in the workflow
+
+Astrophotography software can be divided into five categories by its position in the workflow. There is overlap between them: some software (such as Siril and PixInsight) covers both stacking and post-processing, and some handheld devices (such as ASIAIR) integrate planning, capture, and guiding into the hardware.
+
+| Stage | Main task | Representative software |
+| --- | --- | --- |
+| Planning and star charts | Choose targets, check visibility, assess light pollution and weather | Stellarium, SkySafari, Telescopius, Clear Outside |
+| Capture control and guiding | Control camera / mount, automated sequences, guiding | N.I.N.A., ASIAIR, SharpCap, PHD2, FireCapture |
+| Stacking (preprocessing) | Calibrate, align, and stack sub-frames to improve signal-to-noise ratio | DeepSkyStacker, Siril, AutoStakkert!, PixInsight |
+| Post-processing | Stretch, gradient removal, noise reduction, star removal, sharpening, color grading | PixInsight, Photoshop, GraXpert, StarNet++ |
+| Community and databases | Image hosting, parameter lookup, target search | AstroBin, Telescopius |
+
+## Planning and star charts
+
+Used before observing or imaging to select targets, simulate framing, look up the visibility of celestial objects, and assess light pollution and weather windows. This stage works together with [observation planning](/en/astronomy/observing/planning/); the visibility assessment here can be understood alongside [hemisphere visibility](/en/astronomy/observing/hemisphere-visibility/) and [celestial coordinates](/en/astronomy/foundations/celestial-coordinates/).
+
+| Name | Purpose | Platform | Price |
+| --- | --- | --- | --- |
+| Stellarium | Open-source desktop virtual planetarium; simulates the sky, star charts, and framing for any time and location, and can control GoTo mounts | Win / Mac / Linux | Free (GPLv2) |
+| Stellarium Mobile | Mobile star chart; a subset of the desktop version's features | iOS / Android | Free / paid (Plus edition) |
+| SkySafari | Phone / tablet star chart; supports telescope GoTo control and real-time tracking | iOS / Android / Mac | Free / paid (by edition) |
+| Cartes du Ciel (SkyChart) | Open-source star chart; supports a large number of catalogs such as Gaia and UCAC, and can control mounts via ASCOM / INDI | Win / Mac / Linux | Free (GPLv2) |
+| Telescopius | Online deep-sky target library and framing tool (Telescope Simulator); filters by size, altitude, lunar distance, and other criteria and generates target lists | Web / iOS / Android | Free / paid (advanced) |
+| Light Pollution Map | Online light pollution map; overlays SQM and VIIRS data to look up the [Bortle scale](/en/astronomy/observing/conditions/) | Web | Free |
+| Clear Outside | Hour-by-hour weather forecast designed for astronomical observation; provides cloud cover (low / medium / high / total), moon phase, and sun and moon rise, set, and transit times | Web / iOS / Android | Free |
+
+<Aside type="note" title="Shared capabilities of star chart software">
+Desktop star charts (Stellarium, Cartes du Ciel) and mobile star charts (SkySafari) overlap heavily in features: all can render the sky by time and location, show the positions of planets and deep-sky objects, and slew a GoTo mount via ASCOM / INDI / vendor protocols. The differences are mainly in interaction (keyboard and mouse vs. touchscreen), catalog size, and offline availability. Pick one you're comfortable with—there's no need to learn several at once.
+</Aside>
+
+## Capture control and guiding
+
+Controls the camera, filter wheel, motorized focuser, and mount to run automated capture sequences; guiding software, meanwhile, monitors a reference star in real time to compensate for the mount's periodic error and polar alignment error, thereby extending the exposure time per frame. Deep sky (long exposures, few frames) and planetary / lunar / solar imaging (short exposures, high-frame-rate video) place markedly different demands on software.
+
+| Name | Purpose | Platform | Price |
+| --- | --- | --- | --- |
+| N.I.N.A. (Nighttime Imaging 'N' Astronomy) | Fully automated deep-sky capture: sequence orchestration, autofocus, meridian flip, plate solving, framing assistant | Win | Free (open source) |
+| ASIAIR | All-in-one handheld control box in the ZWO ecosystem (built-in Raspberry Pi); the app controls the camera, mount, guiding, polar alignment, and plate solving | iOS / Android (includes hardware) | Paid (with hardware) |
+| SharpCap | Live view, electronically assisted astronomy (EAA) live stacking, planetary capture, sensor-based polar alignment | Win | Free / paid (Pro) |
+| APT (Astro Photography Tool) | Capture automation suite for DSLR / astronomy cameras; works with PHD2 to perform dithering | Win | Paid (inexpensive single license) |
+| PHD2 Guiding | Open-source autoguiding (Push Here Dummy); compensates for tracking error to extend exposures, supports dithering | Win / Mac / Linux | Free (open source) |
+| FireCapture | High-frame-rate video capture for planetary / lunar / solar imaging; broadly compatible with ZWO, QHY, Altair, and other cameras | Win / Mac / Linux | Free |
+
+<Aside type="caution" title="Platform and ecosystem lock-in">
+Capture control software is often tied to a hardware ecosystem. N.I.N.A. supports most brands of equipment via ASCOM drivers but runs only on Windows; ASIAIR is convenient to operate but is essentially only compatible with ZWO's own cameras and supported mounts. Before choosing, confirm whether the software supports your camera, filter wheel, and mount interface (ASCOM / INDI / vendor-proprietary protocol) to avoid ending up with a combination that can't work together.
+</Aside>
+
+## Stacking (preprocessing)
+
+Aligns and stacks tens to hundreds of sub-frames after calibration (dark, flat, bias) to improve the signal-to-noise ratio (SNR)—stacking N frames theoretically reduces random noise by about a factor of `sqrt(N)`; for the principle, see [signal-to-noise ratio](/en/astrophotography/fundamentals/snr/). Deep sky uses long-exposure multi-frame stacking, while planetary / lunar imaging extracts and stacks the highest-quality frames from high-frame-rate video—that is, lucky imaging.
+
+| Name | Purpose | Platform | Price |
+| --- | --- | --- | --- |
+| DeepSkyStacker (DSS) | Entry-level deep-sky stacking tool; the workflow is intuitive and well suited to single-session datasets | Win | Free |
+| Siril | Open-source deep-sky calibration + stacking + basic post-processing; supports script automation and mosaic stitching | Win / Mac / Linux | Free (open source) |
+| AstroPixelProcessor (APP) | All-in-one tool from calibration to finished image; excels at mosaic stitching and background / gradient correction | Win / Mac / Linux | Paid (subscription or one-time purchase) |
+| AutoStakkert! (AS!3) | Planetary / lunar video frame extraction and multi-point alignment stacking (lucky imaging); the mainstream choice for planetary imaging | Win | Free |
+| PixInsight WBPP | PixInsight's built-in batch script (WeightedBatchPreprocessing); automatically performs calibration, registration, and weighted stacking | Win / Mac / Linux | Paid (with PixInsight) |
+
+<Aside type="note" title="Stacking quality depends on parameters, not the software">
+PixInsight, Siril, and APP have no absolute hierarchy in stacking quality; PixInsight's advantage lies in its very large number of adjustable parameters, allowing experienced users to fine-tune for their data. A common approach is to use Siril or DSS to quickly obtain a stacked result, then move to PixInsight, APP, or Photoshop for post-processing. When starting out, prefer the simpler workflow of DSS or Siril.
+</Aside>
+
+## Post-processing
+
+Processing after stacking: nonlinear stretch, removal of background gradients / light pollution gradients, noise reduction, star removal (to process the nebula separately), sharpening, and color balance. The post-processing path differs for deep sky and planetary imaging—deep sky focuses on gradients and noise reduction, while planetary focuses on wavelet and deconvolution sharpening.
+
+| Name | Purpose | Platform / host | Price |
+| --- | --- | --- | --- |
+| PixInsight | Professional astronomical image-processing platform; covers the full pipeline from calibration and stacking to deep-sky post-processing, with rich adjustable parameters | Win / Mac / Linux | Paid (one-time purchase) |
+| Photoshop | General-purpose image editor; often used for the final touch-up and layer compositing of deep-sky images | Win / Mac | Paid (subscription) |
+| GraXpert | AI gradient / light pollution gradient removal, plus AI noise reduction; runs standalone or as a plugin | Win / Mac / Linux | Free |
+| StarNet++ | AI star removal / star extraction, making it easier to process nebula detail separately; often used as a PixInsight plugin | Win / Mac / Linux | Free |
+| StarXTerminator | AI star removal with better preservation of nebula structure | PixInsight / Photoshop / Affinity | Paid |
+| BlurXTerminator | Deconvolution based on a deep neural network; sharpens stars and detail and corrects aberrations | PixInsight plugin only | Paid |
+| RegiStax | Classic wavelet sharpening tool for planetary / lunar imaging (now essentially discontinued) | Win | Free |
+| AstroSurface | All-in-one processing for planetary / lunar / solar imaging; integrates the PIPP + AutoStakkert + RegiStax workflow, with wavelets and RL deconvolution | Win | Free |
+
+<Aside type="caution" title="Host requirements of paid plugins and common misconceptions">
+The X-Terminator series from RC Astro has different host requirements: BlurXTerminator can only run as a PixInsight process module; StarXTerminator and NoiseXTerminator support both PixInsight and Photoshop (the Photoshop version can also be used in Affinity Photo). Before buying, confirm that you already have the corresponding host software.
+
+A common misconception: deconvolution sharpening (BlurXTerminator) and star removal (StarXTerminator) are two different operations and must not be confused; AI tools can improve results but cannot make up for raw data with insufficient exposure or poor tracking—the signal-to-noise ratio is still determined at the capture stage, see [signal-to-noise ratio](/en/astrophotography/fundamentals/snr/).
+</Aside>
+
+## Community and databases
+
+Used to host finished images, look up others' capture parameters, and search for deep-sky targets. AstroBin is both an image community and, in effect, a database of equipment and capture parameters; Telescopius combines target search and framing functions (already listed under "Planning and star charts").
+
+| Name | Purpose | Platform | Price |
+| --- | --- | --- | --- |
+| AstroBin | Astrophotography image hosting community; can publish / view full equipment, exposure, and processing parameters, with built-in plate solving | Web | Free (limited uploads) / paid (Lite / Premium / Ultimate tiers) |
+| Telescopius | Online deep-sky target library; supports search by catalog, coordinates, and visibility, and generates observation / framing plans | Web / iOS / Android | Free / paid (advanced) |
+
+<Aside type="note" title="Remote imaging doesn't require you to own all the software">
+If you don't have your own equipment, many remote observatory platforms already bundle the capture, guiding, and control software above; you only need to remotely submit an imaging plan and download the raw data, then do the stacking and post-processing locally. For a comparison of each platform's toolchain and pricing, see [remote platform comparison](/en/astrophotography/remote-platforms/platforms-comparison/).
+</Aside>
+
+<LinkCard
+  title="Post-processing workflow"
+  href="/en/astrophotography/processing/workflow/"
+  description="String the software above into a complete pipeline from sub-frames to finished image."
+/>
+
+## References
+
+- [Stellarium — Wikipedia](https://en.wikipedia.org/wiki/Stellarium_(software)) — The license, platforms (including Stellarium Mobile), and rendering features of the open-source star chart software.
+- [Cartes du Ciel — Wikipedia](https://en.wikipedia.org/wiki/Cartes_du_Ciel) — Catalog support and ASCOM / INDI telescope control details for the open-source star chart.
+- [Astrophotography Image Stacking Software — AstroBackyard](https://astrobackyard.com/astrophotography-image-stacking-software/) — A comparison of the purpose and platforms of stacking tools such as DeepSkyStacker, Siril, PixInsight, and APP.
+- [BlurXTerminator / StarXTerminator / NoiseXTerminator — RC Astro](https://www.rc-astro.com/) — The features and host (PixInsight / Photoshop / Affinity) requirements of the X-Terminator series of AI plugins.
+- [AstroBin Pricing](https://welcome.astrobin.com/pricing) — AstroBin's free quota and Lite / Premium / Ultimate subscription tiers.
+- [Clear Outside Forecast](https://clearoutside.com/forecast/) — The source of the hour-by-hour weather, cloud cover, and moon phase forecast data oriented toward astronomical observation.

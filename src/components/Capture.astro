@@ -1,0 +1,75 @@
+---
+/**
+ * Capture — AstroBin 风格的拍摄元数据卡片(配图 + 采集参数)。
+ * 用于展示示例图像的采集参数(设计文档 §6)。
+ */
+import { Image } from 'astro:assets';
+import creditsData from '../data/credits.json';
+
+const credits = creditsData as Record<
+  string,
+  { artist?: string; license?: string }
+>;
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '../assets/images/*.{jpg,jpeg,png,webp}',
+  { eager: true }
+);
+
+interface Props {
+  name: string; // 图片 key
+  alt: string;
+  target?: string; // 目标
+  scope?: string; // 主镜
+  mount?: string; // 赤道仪
+  camera?: string; // 相机
+  filters?: string; // 滤镜
+  exposure?: string; // 曝光,如 60×300s (5h)
+  location?: string; // 地点
+  bortle?: string; // 暗空等级
+  date?: string;
+  software?: string;
+}
+
+const { name, alt, ...meta } = Astro.props;
+const entry =
+  images[`../assets/images/${name}.jpg`] ??
+  images[`../assets/images/${name}.png`];
+const img = entry?.default;
+const cr = credits[name];
+
+const rows: [string, string | undefined][] = [
+  ['目标 Target', meta.target],
+  ['主镜 Optics', meta.scope],
+  ['赤道仪 Mount', meta.mount],
+  ['相机 Camera', meta.camera],
+  ['滤镜 Filters', meta.filters],
+  ['曝光 Exposure', meta.exposure],
+  ['地点 Location', meta.location],
+  ['暗空 Bortle', meta.bortle],
+  ['日期 Date', meta.date],
+  ['软件 Software', meta.software],
+];
+const shown = rows.filter(([, v]) => v);
+---
+
+<figure class="capture">
+  {img && (
+    <Image src={img} alt={alt} width={1100} densities={[1, 2]} loading="lazy" />
+  )}
+  <div class="capture__meta">
+    <dl>
+      {shown.map(([k, v]) => (
+        <div class="capture__row">
+          <dt>{k}</dt>
+          <dd>{v}</dd>
+        </div>
+      ))}
+    </dl>
+    {cr?.artist && (
+      <p class="capture__credit">
+        图源 {cr.artist}
+        {cr.license ? ` · ${cr.license}` : ''}
+      </p>
+    )}
+  </div>
+</figure>

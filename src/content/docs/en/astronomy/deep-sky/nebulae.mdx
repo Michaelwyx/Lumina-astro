@@ -1,0 +1,235 @@
+---
+title: Nebulae
+description: A systematic introduction to the interstellar medium and the five classes of nebulae—emission, reflection, planetary, dark, and supernova remnants—covering their ionization and recombination mechanisms, typical physical parameters, characteristic spectral lines, and the corresponding narrowband filter imaging essentials.
+difficulty: intermediate
+pillar: astronomy
+sidebar:
+  order: 4
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import Fig from '@/components/Fig.astro';
+
+A nebula is a relatively dense, morphologically distinct collection of gas and dust within the interstellar medium (ISM). The gas is dominated by hydrogen (about 90% by number), followed by helium, with trace amounts of heavier elements and solid dust grains mixed in. A nebula does not necessarily emit light on its own: it may radiate because it is ionized, it may reflect the starlight of nearby stars, or it may merely block light against a bright background to form a silhouette. Nebulae are the material reservoirs for star formation and also the final resting place of material ejected at the end of stellar evolution; they therefore appear both in regions of stellar birth and at the sites of stellar death.
+
+By radiation mechanism and morphology, nebulae are usually divided into five classes: **emission nebulae, reflection nebulae, planetary nebulae, dark nebulae, and supernova remnants**. Mechanistically, the latter three can also be grouped under "emission" or "extinction" categories, but because their morphology, origin, and observational characteristics are distinctive, they are conventionally listed separately. Understanding the radiation mechanism of each class directly determines which filters and processing approaches should be chosen in astrophotography.
+
+<div class="cols2">
+  <Fig name="m42-orion" alt="Orion Nebula M42" caption="Emission nebula M42: an HII region formed by massive young stars ionizing the surrounding hydrogen gas" />
+  <Fig name="m57-ring" alt="Ring Nebula M57" caption="Planetary nebula M57: a gas shell ejected by an intermediate-mass star in its late phase and ionized by the central white dwarf" />
+</div>
+
+## The Interstellar Medium and Its Relationship to Nebulae
+
+The interstellar medium is the tenuous matter that fills the space between stars, comprising gas (atoms, molecules, ions), dust, and cosmic rays, and permeated by the interstellar magnetic field and radiation field. Nebulae are localized condensations within the interstellar medium that have higher density and can be observationally resolved.
+
+The number density varies enormously across different environments; the table below gives an order-of-magnitude comparison (in particles per cubic centimeter).
+
+| Medium | Typical number density (cm⁻³) | Typical temperature (K) | Notes |
+| --- | --- | --- | --- |
+| Earth's sea-level atmosphere | about 2.5×10¹⁹ | about 290 | as an everyday reference |
+| Diffuse interstellar gas | 0.1 ~ 10 | thousands to tens of thousands | the tenuous background pervading the galactic disk |
+| Diffuse nebula / HII region | 10 ~ 10⁴ | about 10000 | ionized by stellar ultraviolet |
+| Giant molecular cloud | 10² ~ 10⁶ | 10 ~ 30 | cold, the birthplace of stars |
+| Ultracompact HII region | >10⁶ | about 10000 | around a newly ignited massive protostar |
+
+<Aside type="note" title="The Density Concept of Nebulae">
+Even a "dense" nebula has a density far lower than a laboratory vacuum. A typical nebular gas cloud equal in volume to the Earth would have a total mass of only a few kilograms. Nebulae are visible thanks to the emission or extinction effects accumulated over their enormous scale (often tens to hundreds of light-years), not because of the amount of matter per unit volume.
+</Aside>
+
+## Comparison of the Five Classes of Nebulae
+
+| Type | Luminous/visibility mechanism | Dominant spectral lines/hue | Typical objects | Imaging essentials |
+| --- | --- | --- | --- | --- |
+| Emission nebula (HII region) | hydrogen ionized by stars then recombines to emit | Hα 656.3nm (red) | M42, Lagoon M8, North America NGC 7000 | narrowband Hα/OIII/SII, strongly resistant to light pollution |
+| Reflection nebula | dust scatters the starlight of nearby stars | broadband continuum (bluish) | the region around the Pleiades M45 | broadband RGB, requires dark skies |
+| Planetary nebula | a central white dwarf ionizes the ejected gas shell | OIII 500.7nm (cyan-green) + Hα | Ring M57, Dumbbell M27, Helix | OIII primary, Hα secondary, long focal length for magnification |
+| Dark nebula | dust blocks background starlight/nebula | black silhouette | Horsehead, Coalsack, Barnard objects | broadband or Hα background contrast |
+| Supernova remnant | shock heating and ionization + recombination/synchrotron radiation | Hα + OIII, filamentary | Veil, Crab M1 | narrowband SHO/HOO |
+
+## Emission Nebulae (emission nebula / HII region)
+
+An emission nebula is a nebula whose interstellar gas, after being ionized, emits characteristic spectral lines on its own through recombination and transitions. Its most common form is the ionized hydrogen region, written in astronomy as the **HII region (H II region)**, where "H II" refers to the hydrogen ion that has lost its electron (neutral hydrogen is written H I).
+
+### Ionization and Recombination Mechanism
+
+The energy of an HII region comes from the **massive young stars** within or near it (types O and B, with surface temperatures of about 25000–50000 K). Such stars radiate a large number of ultraviolet photons with wavelengths shorter than 91.2nm, whose energy exceeds the ionization energy of hydrogen (13.6 eV), enough to ionize neutral hydrogen into protons and free electrons. The ionized gas does not remain ionized permanently: electrons and protons **recombine (recombination)**, releasing a series of spectral lines as they cascade back down to lower energy levels. The strongest and most representative of these is hydrogen's Balmer-series line **Hα (hydrogen-alpha)**, at a wavelength of **656.3nm**, in the red band—precisely why emission nebulae generally appear red. Next is Hβ (486.1nm, with an intensity about one-third that of Hα).
+
+Around each ionizing source star, there is a relatively sharp boundary between the ionized region and the neutral region; an idealized spherical ionized region is called a **Strömgren sphere**, whose radius is determined jointly by the star's ionizing-photon output rate and the density of the surrounding gas.
+
+### Typical Physical Parameters
+
+| Parameter | Typical value | Notes |
+| --- | --- | --- |
+| Electron temperature | about 10000 K | the characteristic temperature of the recombination-emitting region |
+| Electron density | a few to >10⁶ cm⁻³ | tenuous in giant regions, extremely high in ultracompact ones |
+| Scale | &lt;1 to several hundred light-years | from ultracompact regions to giant HII regions |
+| Mass | about 10² ~ 10⁵ solar masses | can give birth to thousands of stars |
+| Lifetime | on the order of a few million years | limited by the lifetime of the ionizing stars |
+
+### Characteristic Spectral Lines and Narrowband Imaging
+
+Because the radiation of an emission nebula is highly concentrated in a few narrow emission lines rather than a continuum, it is especially well suited to **narrowband imaging (narrowband)**. The three commonly used lines and their corresponding filters are listed in the table below.
+
+| Spectral line | Wavelength | Physical origin | Morphological indicator |
+| --- | --- | --- | --- |
+| Hα | 656.3nm (red) | recombination of ionized hydrogen | dense ionized gas, overall hydrogen distribution |
+| OIII | 500.7nm (cyan-green) | forbidden line of doubly ionized oxygen | highly excited, excited, or shocked regions |
+| SII | 671.6/673.1nm (deep red) | forbidden doublet of singly ionized sulfur | cooler, more diffuse, or older shock fronts |
+
+Both OIII and SII are **forbidden lines (forbidden line)**, which can only be produced in extremely low-density nebular environments; under ordinary laboratory conditions they are suppressed by collisional de-excitation, so they are sensitive probes of a nebula's physical state. The Orion Nebula M42, the Lagoon Nebula M8, and the North America Nebula NGC 7000 are all classic emission nebulae.
+
+<Aside type="tip" title="Why Narrowband Filters Resist Light Pollution">
+The full width at half maximum of a narrowband filter is often 3–12nm, passing only the nebula's emission lines while blocking almost all of the continuum stray light from city lights, moonlight, and the like outside the band. Therefore, even in heavily light-polluted urban areas, high signal-to-noise emission nebulae can be captured. See <a href="/en/astronomy/observing/conditions/">Observing Conditions</a> for details.
+</Aside>
+
+## Reflection Nebulae (reflection nebula)
+
+A reflection nebula is itself neither ionized nor emits spectral lines; instead, it **scatters** the starlight of nearby stars. Its energy-source star is usually not hot enough (its surface temperature is insufficient to emit large amounts of ionizing ultraviolet) to ionize the surrounding hydrogen, so the nebula can only reflect light.
+
+Scattering efficiency increases as wavelength shortens (short wavelengths are scattered more strongly by dust grains, by the same principle that makes the sky blue), so the continuum of a reflection nebula is bluish overall. The faint blue nebulosity around the Pleiades M45 is a typical reflection nebula. The spectrum of a reflection nebula is the scattered continuum of the star rather than emission lines, so it **can only be recorded with broadband RGB and demands darker skies**; a narrowband filter would instead filter out the vast majority of its scattered light.
+
+<Aside type="note" title="The Dual Faces of a Single Cloud">
+Whether it is emission or reflection essentially depends on the temperature of the illuminating star: if hot enough, it ionizes the gas, which emits red Hα (emission); if not hot enough, it merely scatters starlight, appearing blue (reflection). Many regions contain both components, such as the Trifid Nebula M20, which simultaneously displays a red emission region and a blue reflection region. To judge, you can refer to the star's <a href="/en/astronomy/foundations/magnitude/">brightness and spectrum</a> and <a href="/en/astronomy/deep-sky/stellar-physics/">stellar physics</a>.
+</Aside>
+
+## Planetary Nebulae (planetary nebula)
+
+The name "planetary nebula" is a historical misnomer: in early small telescopes it appeared as a disk resembling a planet, hence the name, although it has nothing to do with planets. It is the outer gas shell ejected by a **low-to-intermediate-mass star (about 0.8–8 solar masses) at the end of its evolution**.
+
+### Formation Process
+
+When such a star reaches the **asymptotic giant branch (AGB)** stage, it loses more than about half its mass through intense stellar winds and ultimately ejects its entire outer envelope, leaving behind only a hot, dense core. When the surface temperature of the exposed core rises above about 30000 K, its ultraviolet radiation begins to ionize the already-ejected gas shell; the core can continue heating to about 100000 K, then slowly cools to become a **white dwarf**. The emission mechanism of the ionized gas shell is the same as that of an HII region (ionization–recombination), but the cyan-green OIII forbidden line is often especially prominent.
+
+### Typical Physical Parameters
+
+| Parameter | Typical value | Notes |
+| --- | --- | --- |
+| Progenitor star mass | about 0.8 ~ 8 solar masses | those exceeding about 8 solar masses go to supernova |
+| Central star temperature | up to about 100000 K | an extremely strong ultraviolet source |
+| Gas shell scale | on the order of about 1 light-year | small in volume, high in surface brightness |
+| Expansion velocity | a few to tens of kilometers per second | far below supernova remnants |
+| Visible lifetime | on the order of about 10000 years | fades gradually as the gas shell disperses and thins |
+
+Planetary nebulae are **small in volume and high in surface brightness**, with both OIII and Hα signals being strong, making them suitable for imaging with a long focal length lens and OIII plus Hα filters. The Ring Nebula M57, the Dumbbell Nebula M27, and the Helix Nebula NGC 7293 are all classic targets. For how a star reaches this stage, see [Stellar Physics](/en/astronomy/deep-sky/stellar-physics/).
+
+## Dark Nebulae (dark nebula)
+
+A dark nebula is a dense cloud of dust and molecular gas that **neither emits nor reflects light, but instead blocks** the starlight or emission nebula behind it through dust **extinction**, outlining a black silhouette against a bright background. Its interior is extremely cold (about 10–30 K) and relatively dense, and it is the site where molecules (especially H₂ and CO) and new stars are nurtured. It is dark in visible light, but molecular radiation and protostars within it can be detected in the infrared and radio bands.
+
+The most famous is the **Horsehead Nebula** in Orion: the horse's head itself is a dark nebula, set against the red emission nebula IC 434 behind it. The southern **Coalsack** and many objects in the Barnard catalog also belong to this class.
+
+<div class="cols2">
+  <Fig name="horsehead" alt="Horsehead Nebula" caption="Dark nebula: the Horsehead silhouette set against the red emission nebula IC 434" />
+  <Fig name="eagle-pillars" alt="Pillars of Creation in the Eagle Nebula" caption="The Pillars of Creation in the Eagle Nebula: new stars are forming within the dense dust pillars" />
+</div>
+
+The key to imaging dark nebulae lies not in the nebula itself but in the **background contrast**: rely either on a bright emission nebula behind it (best contrasted with red Hα light) or on a dense Milky Way star field.
+
+## Supernova Remnants (supernova remnant, SNR)
+
+A supernova remnant is the structure formed after a **star dies in a supernova explosion**, as the ejecta expand outward at high speed and sweep up the interstellar medium. The initial velocity of the ejecta can reach about 10% of the speed of light (about 30000 km/s), forming a strong shock at the front that heats the surrounding plasma to over several million kelvin, producing X-rays; meanwhile, relativistic electrons in the magnetic field emit **synchrotron radiation** in the radio band. In the visible band, gas heated and ionized by the shock recombines to emit **Hα (red)** and **OIII (cyan)**, often forming delicate filamentary structures.
+
+### Evolutionary Stages and Morphology
+
+| Stage | Timescale | Characteristics |
+| --- | --- | --- |
+| Free expansion | tens to hundreds of years | the ejecta rush outward at nearly constant velocity |
+| Sedov-Taylor (adiabatic) stage | about a few thousand years | the shock sweeps up the medium, strong X-rays |
+| Snowplow (radiative cooling) stage | up to about tens of thousands of years | a cooled shell forms, visible-light filaments |
+| Merging into the interstellar medium | after about 30000 years | velocity drops below the sound speed, dispersing |
+
+By morphology, supernova remnants are divided into three classes: **shell-type** (such as Cassiopeia A), **filled-center/Crab-type (plerion)** (driven internally by a central pulsar, such as the Crab Nebula), and **composite type**. The **Veil Nebula (Veil, Cygnus Loop)** in Cygnus is a typical shell-type with visible-light filaments; the **Crab Nebula M1** in Taurus corresponds to the supernova SN 1054 recorded in the year 1054 CE and contains a pulsar within it.
+
+<Aside type="caution" title="Common Misconceptions">
+- Both planetary nebulae and supernova remnants are products of "stellar death," but their progenitor star masses and mechanisms differ: planetary nebulae come from the quiescent shell ejection of stars of about 0.8–8 solar masses, with expansion velocities of only a few kilometers per second; supernova remnants come from the violent explosion of more massive stars (or white dwarf accretion), with expansion velocities as high as tens of thousands of kilometers per second.
+- A "planetary nebula" has nothing to do with planets; it is merely a historical name.
+- The red color is not a "flame of heat and light," but the Hα spectral line emitted by hydrogen recombination; the color of a blue reflection nebula comes from the scattering of short wavelengths by dust.
+</Aside>
+
+## Summary of Filter and Imaging Strategies
+
+The radiative nature of different nebulae determines the optimal imaging approach; the table below summarizes the common correspondences.
+
+| Nebula type | Recommended filters | Color-mapping scheme | Key tips |
+| --- | --- | --- | --- |
+| Emission nebula / supernova remnant | narrowband Hα + OIII (+ SII) | SHO (Hubble palette) or HOO | strongest resistance to light pollution, can be shot in cities |
+| Planetary nebula | OIII primary, Hα secondary | HOO or dual narrowband | small target, requires long focal length for magnification |
+| Reflection nebula / wide-field star field | broadband RGB | natural color | dark skies are essential, narrowband not applicable |
+| Dark nebula | broadband RGB or Hα contrast | natural color / red background | relies on background brightness to contrast the silhouette |
+
+<Aside type="tip" title="The Difference Between SHO and HOO">
+**SHO** maps the three narrowband lines SII, Hα, and OIII to the red, green, and blue channels respectively, the famous "Hubble palette"; **HOO** uses only the two lines Hα and OIII, mapping Hα to red and OIII to both green and blue, yielding a red-cyan two-color image close to the object's true color, suitable for dual-narrowband or cases lacking SII data.
+</Aside>
+
+After understanding the classification and mechanisms of nebulae, you can further explore how they coexist with [star clusters](/en/astronomy/deep-sky/star-clusters/) in star-forming regions in the sky, how to locate targets with the help of the [celestial coordinate system](/en/astronomy/foundations/celestial-coordinates/), and how to assess their [visibility](/en/astronomy/observing/hemisphere-visibility/) across different hemispheres and plan an actual session of [deep-sky imaging](/en/astrophotography/capture/dso-basics/).
+
+## Common Targets
+
+Below, organized by the five mechanism classes, are representative nebulae commonly imaged with amateur equipment and searchable for location in the [celestial catalog](/en/reference/catalog/). Distances, apparent magnitudes, and host constellations follow Wikipedia / SIMBAD data; the distance of the same object often varies depending on the measurement method (for example, the stars within an emission nebula are diffuse, and parallax determination for planetary nebulae is difficult), so the table adopts the more commonly cited values, marked with "about." The morphology, origin, and observational details of each target can be further consulted in [Notable Objects](/en/astronomy/deep-sky/notable-objects/).
+
+### Emission Nebulae (HII Regions)
+
+This class is mostly star-forming regions formed by massive young stars ionizing the surrounding hydrogen gas, dominated by red Hα light and suitable for narrowband imaging.
+
+| Name | Constellation | Distance | Apparent magnitude | Type | Physical characteristics |
+| --- | --- | --- | --- | --- | --- |
+| Orion Nebula M42 | Orion | about 1340 ly (about 410 pc) | about 4.0 | HII region | the brightest diffuse nebula, with a quadruple star (Trapezium) at its core, visible to the naked eye as a fuzzy patch in the middle of the Sword region |
+| Lagoon Nebula M8 | Sagittarius | about 4100 ly (about 1250 pc) | about 6.0 | HII region | contains the open cluster NGC 6530, with an "Hourglass" high-excitation structure inside, visible in binoculars |
+| Trifid Nebula M20 | Sagittarius | about 4100 ly (about 1250 pc) | about 6.3 | emission + reflection | divided into three lobes by dark dust, with both red emission and blue reflection components |
+| Eagle Nebula M16 | Serpens | about 5700 ly (about 1740 pc) | about 6.4 | HII region + cluster | contains the "Pillars of Creation" dust pillars, nurturing new stars |
+| North America Nebula NGC 7000 | Cygnus | about 2590 ly (about 795 pc) | about 4.0 | HII region | resembles the outline of North America, enormous in area (about 2°), low in surface brightness, suited to narrowband wide-angle |
+| Rosette Nebula | Monoceros | about 5200 ly (about 1600 pc) | about 6.0 | HII region + cluster | the stellar wind from the central open cluster NGC 2244 has blown out a cavity, forming a wreath shape |
+| Carina Nebula (NGC 3372) | Carina | about 8500 ly (about 2600 pc) | about 1.0 | HII region | a giant southern star-forming region spanning about 460 ly, containing the high-luminosity variable star Eta Carinae (η Carinae) |
+
+### Planetary Nebulae (planetary nebula)
+
+Gas shells ejected by low-to-intermediate-mass stars in their late phase and ionized by the central white dwarf, small in volume and high in surface brightness, with prominent OIII signals, suited to long focal length magnification.
+
+| Name | Constellation | Distance | Apparent magnitude | Type | Physical characteristics |
+| --- | --- | --- | --- | --- | --- |
+| Ring Nebula M57 | Lyra | about 2570 ly (about 790 pc) | about 8.8 | planetary nebula | a classic ring shape, with a central white dwarf of about magnitude 15, visible in small telescopes as a smoke-ring-like halo |
+| Dumbbell Nebula M27 | Vulpecula | about 1360 ly (about 420 pc) | about 7.4 | planetary nebula | one of the brightest planetary nebulae in the sky, recognizable even in binoculars |
+| Helix Nebula (NGC 7293) | Aquarius | about 650 ly (about 200 pc) | about 7.6 | planetary nebula | one of the nearest planetary nebulae, with a large apparent size (about 25′) and relatively low surface brightness |
+
+### Dark / Reflection Nebulae (dark / reflection nebula)
+
+Dark nebulae outline a silhouette against a bright background through dust extinction; the Flame Nebula adjoins a dark dust lane and is itself an emission nebula, and the two often appear in the same frame as the Horsehead in Orion.
+
+| Name | Constellation | Distance | Apparent magnitude | Type | Physical characteristics |
+| --- | --- | --- | --- | --- | --- |
+| Horsehead Nebula Barnard 33 | Orion | about 1375 ly (about 420 pc) | not applicable (silhouette) | dark nebula | horsehead-shaped dust set against the red emission nebula IC 434, requires Hα for contrast |
+| Flame Nebula NGC 2024 | Orion | about 1350 ly (about 415 pc) | about 10 | emission nebula | divided into a flame shape by a foreground dust lane, adjacent to the bright star Alnitak |
+
+### Supernova Remnants (supernova remnant)
+
+Formed after a massive star explodes and its ejecta expand and sweep up the interstellar medium, appearing as delicate filaments, dominated by the two colors Hα and OIII.
+
+| Name | Constellation | Distance | Apparent magnitude | Type | Physical characteristics |
+| --- | --- | --- | --- | --- | --- |
+| Crab Nebula M1 | Taurus | about 6500 ly (about 2000 pc) | about 8.4 | supernova remnant | corresponds to SN 1054 in the year 1054, contains the Crab Pulsar, filled-center type (plerion) |
+| Veil Nebula (Cygnus Loop) | Cygnus | about 2400 ly (about 735 pc) | about 7.0 (per section) | supernova remnant | a shell-type remnant spanning about 3°, divided into multiple filamentary sections such as the Eastern and Western Veil |
+
+<div class="cols2">
+  <Fig name="rosette" alt="Rosette Nebula" caption="Emission nebula Rosette: the stellar wind from the central cluster NGC 2244 has blown out a cavity, surrounded by red Hα light" />
+  <Fig name="veil" alt="Veil Nebula" caption="Supernova remnant Veil (Cygnus Loop): Hα and OIII filaments formed by shock-ionized gas" />
+</div>
+
+<Aside type="note" title="Notes on Data Usage">
+The distances in the table adopt commonly cited values, with precision varying by measurement method. For example, the North America Nebula NGC 7000 is about 2590 ly after Gaia parallax correction (early estimates ranged between 1500–3000 ly), and the Carina Nebula has a wide range of cited distances due to the diffuseness of its stars. When verifying the precise coordinates and epoch data of an individual target, SIMBAD is recommended as the authority; for arranging observations by season and hemisphere, see <a href="/en/astronomy/observing/hemisphere-visibility/">Visibility</a>.
+</Aside>
+
+## References
+
+- [Nebula — Wikipedia](https://en.wikipedia.org/wiki/Nebula): the definition of nebulae, the order of magnitude of interstellar medium density, the five-class classification, and an overview of representative objects.
+- [H II region — Wikipedia](https://en.wikipedia.org/wiki/H_II_region): the ionization mechanism of HII regions, the Strömgren sphere, temperature-density scales, and spectral lines such as Hα 656.3nm.
+- [Planetary nebula — Wikipedia](https://en.wikipedia.org/wiki/Planetary_nebula): the progenitor star mass of planetary nebulae, AGB shell ejection, central white dwarf temperature, and the OIII 500.7nm forbidden line.
+- [Supernova remnant — Wikipedia](https://en.wikipedia.org/wiki/Supernova_remnant): the expansion velocity, shock heating, evolutionary stages, and shell-type/Crab-type classification of supernova remnants.
+- [Emission nebula vs reflection nebula — BBC Sky at Night Magazine](https://www.skyatnightmagazine.com/space-science/emission-reflection-nebula-difference): the differences in color and mechanism between emission and reflection nebulae, with an observational comparison.
+- [Mastering Narrowband Astrophotography: Ha, OIII, SII — Optical Mechanics](https://www.opticalmechanics.com/mastering-narrowband-astrophotography-ha-oiii-sii/): the physical meaning of the three narrowband lines Hα/OIII/SII and the application of SHO/HOO color mapping to different nebulae.
+- [Orion Nebula — Wikipedia](https://en.wikipedia.org/wiki/Orion_Nebula): parameters such as the distance of M42 (about 1340 ly), apparent magnitude of about 4.0, and the quadruple star, used for verification in the "Common Targets" section.
+- [North America Nebula — Wikipedia](https://en.wikipedia.org/wiki/North_America_Nebula): the basis for NGC 7000 being about 2590 ly after Gaia parallax correction, its host constellation Cygnus, and an apparent magnitude of about 4.
+- [Eagle Nebula — Wikipedia](https://en.wikipedia.org/wiki/Eagle_Nebula): M16 being located in Serpens, at a distance of about 5700 ly, an apparent magnitude of about 6.4, and information on the Pillars of Creation.
+- [Ring Nebula — Wikipedia](https://en.wikipedia.org/wiki/Ring_Nebula): M57's distance of about 2570 ly, apparent magnitude of about 8.8, and central white dwarf parameters.
+- [Crab Nebula — Wikipedia](https://en.wikipedia.org/wiki/Crab_Nebula): the data source for M1 corresponding to SN 1054, a distance of about 6500 ly, an apparent magnitude of about 8.4, and the pulsar.
+- [Veil Nebula — Wikipedia](https://en.wikipedia.org/wiki/Veil_Nebula): the distance, scale, and sectioned structure of the Veil Nebula (Cygnus Loop) as a shell-type supernova remnant.

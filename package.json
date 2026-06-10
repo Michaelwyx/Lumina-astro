@@ -1,0 +1,19 @@
+{
+  "name": "astro-astrophotography-wiki",
+  "type": "module",
+  "version": "0.1.0",
+  "description": "天文 & 天文摄影 Wiki — 双语图文知识库 (Astro + Starlight)",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "^0.39.3",
+    "astro": "^6.4.4",
+    "sharp": "^0.34.5",
+    "starlight-image-zoom": "^0.14.2"
+  }
+}

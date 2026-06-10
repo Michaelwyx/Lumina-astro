@@ -1,0 +1,193 @@
+---
+title: Apparent Motion of Celestial Bodies
+description: Diurnal and annual motion and planetary prograde/retrograde motion caused by Earth's rotation and revolution, plus precession, nutation, annual parallax, proper motion, and aberration; distinguishing apparent from real motion with key numerical values.
+difficulty: beginner
+pillar: astronomy
+sidebar:
+  order: 4
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import Fig from '@/components/Fig.astro';
+
+The vast majority of visible celestial motions in the sky are **apparent motion**, that is, changes in a body's position relative to the celestial sphere or to the background stars caused by the rotation, revolution, and slow change in the axis orientation of the observer's Earth, rather than the body's own real motion through space. Distinguishing **apparent motion** from a star's **real (space) motion** is a prerequisite for describing the dynamics of the sky, planning observations, and interpreting star catalogues. This page proceeds from shorter to longer time scales, presenting in turn diurnal motion, annual motion, planetary prograde/retrograde motion, precession, and nutation, as well as annual parallax, aberration, and proper motion arising from geometric effects or from the real motion of stars, and gives their definitions, units, periods, and typical values.
+
+## Diurnal Motion
+
+**Diurnal motion** refers to the daily rising in the east and setting in the west of celestial bodies relative to the horizon, caused by Earth's west-to-east rotation. Viewed from a reference frame outside Earth, it is Earth that turns; viewed by an observer on the ground, the entire celestial sphere appears to rotate in the opposite direction (east to west) about a fixed axis.
+
+- **Period**: one **sidereal day**, about 23 hours 56 minutes 4.09 seconds. The sidereal day is about 4 minutes shorter than the 24-hour solar day; the difference arises from Earth's revolution—each day Earth advances about 1° along its orbit and must rotate roughly 4 minutes longer to bring the Sun back to the same meridian position.
+- **Axis of rotation**: the axis of celestial rotation is the extension of Earth's axis, pointing toward the **celestial pole**. In the Northern Hemisphere this axis is currently almost aligned with **Polaris**, whose offset from true north is less than 1°.
+- **Angular velocity**: the celestial sphere rotates relative to the horizon at about **15°/hour** (15′/minute, 15″/second). A body's apparent rate of motion along the horizontal direction is approximately 15°/hour times the cosine of its declination, so bodies near the celestial equator move fastest while those near the celestial pole barely move at all.
+
+By their angular distance from the celestial pole, and for a given observing-site latitude φ, stars fall into three categories:
+
+| Category | Angular-distance condition relative to the pole | Diurnal behavior |
+| --- | --- | --- |
+| Circumpolar | Angular distance less than φ | Circle the celestial pole all night, never setting |
+| Rising-and-setting | Between the two | Rise in the east, set in the west |
+| Permanently invisible | Too far from the visible celestial pole | Always below the horizon, unable to rise |
+
+More specifically, a star of declination δ at northern latitude φ is circumpolar when `δ ≥ 90° − φ`, permanently invisible when `δ ≤ −(90° − φ)`, and rising-and-setting otherwise.
+
+As a body travels along its diurnal arc, it crosses the observer's **meridian (the great circle passing through the zenith, the celestial poles, and the north and south points)** twice:
+
+- **Upper culmination (upper transit)**: the instant the body crosses the meridian and reaches its greatest altitude of the day, usually the best time for observation.
+- **Lower culmination**: the instant the body is on the other side of the meridian at its lowest altitude; for a circumpolar star, the lower culmination still lies above the horizon.
+
+Whether a body is circumpolar, and its altitude at culmination, both depend on the observing-site latitude φ and the body's declination δ. When a body culminates south of the zenith, its altitude can be estimated by:
+
+```
+h = 90° − φ + δ
+```
+
+For specific rising-and-setting criteria and coordinate definitions, see the <a href="/en/astronomy/foundations/celestial-coordinates/">celestial coordinate systems</a>; for the visible portion of the sky and the circumpolar region at different latitudes, see <a href="/en/astronomy/observing/hemisphere-visibility/">hemispheric visibility</a>.
+
+<Fig name="startrails" alt="Long-exposure star trails in the night sky" caption="Diurnal motion recorded in a long exposure: star trails are concentric arcs centered on the celestial pole, with arc length proportional to exposure duration (about 15°/hour)." />
+
+<Aside type="note" title="Star trails and exposure duration">
+In a star-trail photograph, the bright star near the center of the circles that scarcely moves is Polaris; the angle subtended by the arcs directly reflects the exposure time (about 15° corresponds to roughly 1 hour). This relationship is often used to estimate the total duration of a single frame or a stack. For the definition of time scales, see <a href="/en/astronomy/foundations/time-systems/">time systems</a>.
+</Aside>
+
+## Annual Motion
+
+**Annual motion** refers to the day-by-day displacement of the Sun relative to the background stars caused by Earth's revolution around the Sun, as well as the seasonal turnover of the constellations in the night sky.
+
+- **Period**: one tropical year, about 365.2422 days (the slight difference between the tropical year and the sidereal year arises from precession; see below).
+- **Ecliptic**: as seen from Earth, over the course of a year the Sun traces a closed great circle against the background stars, namely the ecliptic; it is essentially the line of intersection between the plane of Earth's orbit and the celestial sphere. The Sun moves along the ecliptic **from west to east** at an average of about **1°/day**, completing 360° in one year. The constellations the ecliptic passes through form the zodiac (the twelve constellations).
+- **Obliquity of the ecliptic**: the angle between the plane of the ecliptic and the celestial equator is about **23.44°**, the fundamental cause of the seasons and of the annual variation in the Sun's declination. The ecliptic intersects the celestial equator at the vernal and autumnal equinoxes.
+- **Earlier rising of stars**: owing to Earth's revolution, a given star rises about **4 minutes earlier** each night than the night before (corresponding to the difference between the sidereal day and the solar day), and the accumulation makes the constellations turn over with the seasons—for example, the winter night sky shows <a href="/en/astronomy/foundations/constellations/">Orion</a>, while summer is dominated by Scorpius and the region around the Galactic center.
+
+| Motion | Cause | Period | Main phenomena |
+| --- | --- | --- | --- |
+| Diurnal motion | Earth's rotation | 1 sidereal day (about 23h56m) | Rising and setting, rotation about the pole, culmination |
+| Annual motion | Earth's revolution | 1 year | Sun moving eastward along the ecliptic, seasonal change of the starry sky |
+
+## Prograde and Retrograde Motion of the Planets
+
+The direction in which a planet moves relative to the background stars is not constant. A planet usually moves along the ecliptic **from west to east**, called **prograde (direct) motion**; but during certain intervals it moves in the reverse direction **from east to west**, called **apparent retrograde motion**. Retrograde motion is **apparent motion**: the planet does not actually reverse its orbit around the Sun. Rather, it is a geometric projection effect produced by the difference in orbital speeds between Earth and the planet.
+
+The cause can be likened to overtaking on a highway: when a faster vehicle passes a slower one, the slower one appears to move backward relative to the more distant background.
+
+- **Superior planets (Mars, Jupiter, Saturn, etc.)**: Earth's orbit is farther in and its revolution is faster; as Earth catches up on the inside and overtakes a superior planet, that planet appears to undergo retrograde motion relative to the background stars. The retrograde interval is centered on **opposition (when the planet and the Sun are 180° apart in the sky)**, at which point the planet is closest to Earth, at its brightest, and visible all night.
+- **Inferior planets (Mercury, Venus)**: retrograde motion occurs near **inferior conjunction (when the planet passes between Earth and the Sun)**.
+
+On the celestial sphere, the turning point at which a planet changes from prograde to retrograde, or from retrograde to prograde, is called a **stationary point**, and the overall path often forms a zigzag or a loop. The synodic period and retrograde duration differ markedly among the planets:
+
+| Planet | Synodic period | Retrograde duration | Center of retrograde |
+| --- | --- | --- | --- |
+| Mercury | About 116 days | About 20–24 days | Inferior conjunction |
+| Venus | About 584 days | About 41 days | Inferior conjunction |
+| Mars | About 780 days | About 72 days | Opposition |
+| Jupiter | About 399 days | About 121 days | Opposition |
+| Saturn | About 378 days | About 138 days | Opposition |
+
+Because Mars's orbital speed is closest to Earth's, its retrograde motion lasts the shortest (about 72 days); the farther a planet is from the Sun, the slower its revolution, the more its apparent motion is dominated by Earth's revolution, and the longer its retrograde motion lasts.
+
+<Fig name="fig-retrograde" alt="The retrograde loop of Mars against the background stars" caption="Schematic of Mars's retrograde motion: the planet first moves prograde (eastward), reverses to retrograde (westward) at a stationary point, then resumes prograde after a second stationary point; the path forms a loop or zigzag on the celestial sphere, with the center of the loop corresponding to opposition." />
+
+<Aside type="note" title="Retrograde motion and the history of geocentrism">
+Planetary retrograde motion was long a difficulty for planetary theory. Ptolemy's geocentric model reproduced the retrograde loops by superimposing an **epicycle on a deferent**; not until Copernicus's heliocentric model was the phenomenon naturally explained by the difference in orbital speeds between Earth and the planets. The word "planet" derives from the Greek for "wanderer," precisely reflecting the ancients' awareness of their irregular apparent motion. The variation in a planet's brightness between opposition and conjunction also affects its visibility; see <a href="/en/astronomy/foundations/magnitude/">magnitude</a>.
+</Aside>
+
+## Precession
+
+**Precession (specifically axial precession / equatorial precession)** refers to the slow conical rotation of the direction of Earth's rotation axis in inertial space.
+
+- **Cause**: Earth is not a perfect sphere but has an equatorial bulge; the Sun and the Moon exert gravitational torque on this bulge, causing the rotation axis to precess slowly about the ecliptic pole like a spinning top. This dominant component is called **lunisolar precession**.
+- **Period**: about **25772 years** (often approximated as roughly 26000 years) for one full circuit. The rotation axis traces out a circle on the celestial sphere with a radius approximately equal to the obliquity of the ecliptic (about 23.4°).
+- **Difference between tropical and sidereal years**: precession makes the vernal equinox drift westward along the ecliptic by about **50.3″** per year (about 1° in 71.6 years), making the tropical year about 20.4 minutes shorter than the sidereal year.
+
+The main observable consequences of precession:
+
+- **Shifting pole star**: the celestial pole moves slowly among the stars, so the pole star changes over time. The north celestial pole will be closest to today's Polaris around 2100 CE; about 4800 years ago (around 2800 BCE) the pole was aligned with Thuban in Draco; around 3100 CE it will approach Gamma Cephei (Errai); and around 14500 CE Vega will become the pole star (though still about 5° from the pole).
+- **Coordinate epoch**: the vernal equinox (the zero point of right ascension and declination) shifts with precession, causing the right ascension and declination of all stars to change slowly over time. Therefore the <a href="/en/astronomy/foundations/celestial-coordinates/">equatorial coordinate system</a> must specify an **epoch**, with the modern standard being J2000.0; coordinates given in <a href="/en/reference/catalog/">star catalogues</a> are referred to a particular epoch, and use across epochs requires a precession reduction.
+
+<Fig name="fig-precession" alt="The conical precession of Earth's rotation axis" caption="Schematic of precession: over about 26000 years Earth's axis traces a cone about the ecliptic pole, and the celestial pole moves accordingly along a circle of radius about 23.4°, so that the bright stars near the north celestial pole serve as pole star in succession." />
+
+## Nutation
+
+**Nutation** is a small periodic oscillation ("nodding") of the direction of the rotation axis superimposed on precession, produced by the gravitational torques of the Moon and the Sun varying as the relative positions of the bodies change.
+
+- **Main period**: about **18.6 years (6798 days)**, corresponding to the precession period of the Moon's line of nodes (the intersection of the lunar orbit and the ecliptic).
+- **Amplitude**: the principal term (principal nutation) is about ±17.2″ in ecliptic longitude and about ±9.2″ in the obliquity of the ecliptic.
+- **Discovery**: discovered in 1728 by the English astronomer James Bradley while searching for stellar parallax.
+
+Nutation and precession together are called the **precession–nutation** of the axis direction; together they determine the instantaneous celestial pole and the instantaneous vernal equinox, and high-precision astrometry and catalogue reduction must correct for both.
+
+<Aside type="note" title="Comparing the scales of precession and nutation">
+Precession is a large-scale, slow conical advance (about one circuit in 26000 years, radius about 23.4°) that takes thousands of years to be detected by the naked eye; nutation is a tiny oscillation superimposed on it (main period 18.6 years, amplitude about 9–17″) that appears only in precise measurements. Both are changes in the direction of Earth's axis and are fundamentally different from the real motion of the stars discussed below.
+</Aside>
+
+## Annual Parallax
+
+**Annual (stellar) parallax** refers to the annual angular displacement in direction of a nearby star relative to the more distant background stars, due to Earth's revolution. It is a geometric effect arising from the change in the observing baseline (Earth's orbit), but its magnitude depends simultaneously on the star's true distance, and it is therefore the basis for measuring stellar distances.
+
+- **Geometry**: using the semi-major axis of Earth's orbit (1 astronomical unit, AU) as a baseline, the same nearby star is observed from two ends of the orbit (half a year apart); half of the total angular shift of its apparent direction is the **parallax angle p**.
+- **Distance formula**: at small angles, distance and parallax angle are reciprocals,
+
+```
+d (parsec) = 1 / p (arcsec)
+```
+
+  The corresponding geometric relation is `tan p = 1 AU / d`.
+- **Parsec (pc)**: the distance corresponding to a parallax angle of exactly 1″, that is, **1 pc = 206265 AU ≈ 3.26 light-years**. The parsec is precisely the unit of distance defined for parallax-based distance measurement.
+- **Typical values**: the nearest star, Proxima Centauri, has a parallax of about **0.7685″**, corresponding to a distance of about **1.30 pc (about 4.24 light-years)**. The parallaxes of all stars are less than 1″, so they cannot be detected by the naked eye—which is also why the ancients were unable to use parallax to test heliocentrism.
+- **Measurement precision**: the Hipparcos satellite (1989) advanced parallax measurement to the milliarcsecond level; the Gaia satellite (from 2013) reaches about 10 microarcseconds for stars of suitable brightness, extending reliable parallax distances to thousands and even tens of thousands of light-years.
+
+Historically, the first successful measurements of stellar parallax were Bessel's observation of 61 Cygni, Henderson's of Alpha Centauri, and Struve's of Vega in 1838, providing for the first time a reliable distance scale for the stars.
+
+<Fig name="fig-parallax" alt="The geometric relationship between annual parallax and the parsec" caption="Schematic of annual parallax: Earth observes a nearby star from two ends of its orbit (half a year apart), and the star's apparent direction relative to the distant background changes; the distance corresponding to a parallax angle of 1″ is defined as 1 parsec (about 3.26 light-years)." />
+
+## Aberration of Light
+
+**Aberration of light** refers to the small offset of the apparent direction of starlight from its true direction, caused by the finite speed of light combined with the observer's motion with Earth, making a body appear slightly "tilted forward" in the direction of the observer's motion.
+
+- **Cause**: the offset angle is approximately proportional to the ratio v/c of the observer's speed to the speed of light. **Annual aberration** is caused by Earth's orbital speed (about 30 km/s); there is also **diurnal aberration** caused by Earth's rotation, which is largest at the equator at only about 0.32″.
+- **Constant of aberration (κ)**: the maximum displacement of annual aberration is about **20.49″**.
+- **Period and pattern**: the period is 1 year; as the direction of Earth's velocity changes, a star traces a small ellipse on the celestial sphere—stars on the ecliptic move back and forth along a line, stars at the ecliptic pole trace a circle, and those in between trace ellipses.
+- **Difference from parallax**: aberration depends on the **direction of Earth's velocity** (the displacement is greatest when Earth's direction of motion is perpendicular to the direction of the star), whereas parallax depends on Earth's **position** relative to the Sun; the two differ in phase by a quarter period and differ greatly in magnitude as well (aberration about 20.49″, parallax all less than 1″).
+- **Discovery**: discovered by Bradley during 1725–1728 while searching for stellar parallax, an early direct piece of evidence for Earth's revolution.
+
+## Proper Motion
+
+**Proper motion (μ)** refers to the angular rate of displacement of a star on the celestial sphere relative to the distant background, in the direction perpendicular to the line of sight, reflecting the star's **real transverse space motion** relative to the Sun (its paired component along the line of sight is the radial velocity, measured from the Doppler shift).
+
+- **Unit**: usually expressed in **arcseconds per year (″/yr)**.
+- **Typical values**: the proper motion of the vast majority of stars is extremely small, requiring thousands of years of accumulation to be discernible by the naked eye. The largest known proper motion belongs to **Barnard's Star**, about **10.3″/yr**—roughly equivalent to moving half the diameter of the full Moon across the celestial sphere over a human lifetime (several decades).
+- **Physical meaning**: proper motion combined with distance can be converted into a transverse linear velocity; Barnard's Star is about 1.83 pc from Earth, with a transverse velocity of about 90 km/s, and combined with a radial velocity of about −110 km/s, its space velocity is about 142.6 km/s.
+
+Proper motion and parallax both rely on precise, long-term monitoring of stellar positions, but the two are different in nature: proper motion is the cumulative one-way drift of a star's real motion across the celestial sphere, whereas parallax is the back-and-forth annual oscillation accompanying Earth's revolution. For the physical background of stars' real motion, see <a href="/en/astronomy/deep-sky/stellar-physics/">stellar physics</a>.
+
+## Distinguishing Apparent Motion from Real Motion
+
+The table below summarizes the nature, period, and typical magnitude of each effect on this page, to help distinguish apparent motion caused by Earth's motion from a star's own real motion.
+
+| Effect | Nature | Main cause | Period | Typical magnitude |
+| --- | --- | --- | --- | --- |
+| Diurnal motion | Apparent motion | Earth's rotation | 1 sidereal day | About 360°/day across the whole sky |
+| Annual motion | Apparent motion | Earth's revolution | 1 year | Sun about 1°/day |
+| Planetary retrograde motion | Apparent motion (geometric) | Difference in orbital speeds of Earth and planet | Each planet's synodic period | Reverse displacement over several tens of days |
+| Precession | Apparent motion (axis precession) | Lunisolar gravitational torque on the equatorial bulge | About 25772 years | Vernal equinox about 50.3″/year |
+| Nutation | Apparent motion (axis oscillation) | Periodic component of lunisolar gravitational torque | About 18.6 years | About 9–17″ |
+| Aberration of light | Apparent motion (geometric/velocity) | Finite speed of light + Earth's revolution | 1 year | About 20.49″ |
+| Annual parallax | Geometric effect (distance-dependent) | Earth's orbital baseline | 1 year | All < 1″ |
+| Proper motion | Real motion (transverse) | Star's space motion | One-way accumulation | Mostly very small, largest about 10.3″/yr |
+
+<Aside type="caution" title="How to identify apparent motion">
+To judge whether a phenomenon is apparent motion or real motion, ask: "If Earth neither rotated nor revolved and the direction of its axis were fixed, would it still occur?"
+<br />• Diurnal motion, annual motion, planetary retrograde motion, precession, nutation, and aberration would all vanish, so they are **apparent motion caused by Earth's motion**.
+<br />• Annual parallax would vanish, but its magnitude is determined by the star's true distance, so it is a **geometric effect** rather than stellar motion itself.
+<br />• Proper motion would not vanish, because it is the projection onto the celestial sphere of a star's **genuine space motion**.
+</Aside>
+
+Once you have mastered the various types of apparent motion above, you can predict the rising, setting, and culmination times of any target on a given night and choose the best observing window, which is the basis of observation planning and of assessing <a href="/en/astronomy/observing/conditions/">observing conditions</a>. For definitions of terms, consult the <a href="/en/reference/glossary/">glossary</a>.
+
+## References
+
+- [Diurnal motion — Wikipedia](https://en.wikipedia.org/wiki/Diurnal_motion): Definition of diurnal motion, the sidereal-day period, and the concepts of circumpolar stars and culmination.
+- [Apparent retrograde motion — Wikipedia](https://en.wikipedia.org/wiki/Apparent_retrograde_motion): Definition and cause of planetary prograde/retrograde motion, the synodic period and retrograde duration of each planet, and the historical background.
+- [Axial precession — Wikipedia](https://en.wikipedia.org/wiki/Axial_precession): The cause of axial precession, the period of about 25772 years, and the shifting of the pole star.
+- [Pole star — Wikipedia](https://en.wikipedia.org/wiki/Pole_star): The sequence of pole-star changes caused by precession and the stars corresponding to each era.
+- [Stellar parallax — Wikipedia](https://en.wikipedia.org/wiki/Stellar_parallax): The principle of parallax-based distance measurement, the definition of the parsec, and typical values such as those of Proxima Centauri.
+- [Aberration (astronomy) — Wikipedia](https://en.wikipedia.org/wiki/Aberration_(astronomy)): The cause of aberration, the constant of aberration of about 20.49″, and its distinction from parallax and nutation.

@@ -1,0 +1,198 @@
+---
+title: The Celestial Sphere and Coordinate Systems
+description: A systematic overview of the celestial sphere together with the equatorial, horizontal, ecliptic, and galactic coordinate systems—their definitions, units, ranges, typical values, and formulas—covering hour angle, precession and epochs, RA/Dec notation, and conversions between the systems.
+difficulty: beginner
+pillar: astronomy
+sidebar:
+  order: 1
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import Fig from '@/components/Fig.astro';
+import CoordSphere from '@/components/diagrams/CoordSphere.astro';
+import HemisphereViz from '@/components/diagrams/HemisphereViz.astro';
+
+To pin down the direction of a celestial object in the sky, point a telescope at it, or communicate its position precisely across different times and places, you need a well-defined **coordinate system**. Astronomy commonly uses four celestial coordinate systems: the equatorial, horizontal, ecliptic, and galactic systems. They differ in the **fundamental plane** and **primary direction** they adopt, and are therefore each suited to different observing, cataloging, and computational scenarios. The two angles given by any one coordinate system are enough to uniquely fix an object's direction on the celestial sphere.
+
+## The celestial sphere
+
+The **celestial sphere** is an imaginary spherical surface, centered on the observer (or on the Earth's center), with an arbitrarily large radius. All stars, galaxies, planets, and other objects are projected onto this surface. Because the vast majority of objects lie far beyond the scale that the unaided eye or a single telescope can resolve, their true distances can be ignored when fixing a direction; only their **direction** on the sphere—that is, two angular coordinates—matters.
+
+The celestial sphere has several reference elements that serve as the basis for defining the fundamental plane and primary direction of each subsequent coordinate system:
+
+| Element | English | Definition |
+| --- | --- | --- |
+| Celestial pole | celestial pole | The two points where the Earth's rotation axis, extended indefinitely at both ends, meets the celestial sphere: the north celestial pole (NCP) and the south celestial pole (SCP); the NCP currently lies near Polaris (the North Star) |
+| Celestial equator | celestial equator | The great circle where the plane of the Earth's equator, extended outward, intersects the celestial sphere, dividing it into northern and southern halves |
+| Ecliptic | ecliptic | The apparent path the Sun traces against the background stars over a year, i.e. the line where the plane of the Earth's orbit intersects the celestial sphere |
+| Zenith / nadir | zenith / nadir | The points on the celestial sphere directly overhead and directly underfoot for the observer, determined by the observer's location |
+| Meridian | meridian | The great circle passing through the zenith, nadir, and the north and south celestial poles, dividing the sky into eastern and western halves |
+| Equinox | equinox | The two points where the ecliptic crosses the celestial equator, the common origin of right ascension and ecliptic longitude |
+
+The celestial sphere rotates once about the celestial poles every **sidereal day (about 23h 56m 04s)**—a reflection of the Earth's rotation—producing the daily apparent motion in which stars "rise in the east and set in the west"; see [Diurnal and annual apparent motion](/en/astronomy/foundations/apparent-motion/) for details.
+
+<CoordSphere caption="The celestial sphere: the celestial poles, celestial equator, ecliptic, and the right ascension (RA) and declination (Dec) grid" />
+
+## The equatorial coordinate system
+
+The **equatorial coordinate system** takes the celestial equator as its fundamental plane and the **vernal (March) equinox** as its origin, and is the system most commonly used to catalog stars and deep-sky objects. It is essentially fixed relative to the background stars and rotates with the celestial sphere, unaffected by the Earth's diurnal rotation (only slowly affected by long-term effects such as precession). Its center may be taken at the Earth (geocentric) or at the Sun (heliocentric); everyday observing mostly uses geocentric equatorial coordinates.
+
+The two coordinates:
+
+- **Right ascension (RA, symbol α)**: analogous to terrestrial longitude, measured **eastward along the celestial equator** from the vernal equinox to the object's hour circle. It is usually expressed in **hours, minutes, and seconds (h m s)**, a full circle being 24h; it can also be converted to degrees (0°…360°).
+- **Declination (Dec, symbol δ)**: analogous to terrestrial latitude, measured from the celestial equator toward the poles along the hour circle. It is expressed in **degrees, arcminutes, and arcseconds (° ′ ″)**: the celestial equator is 0°, the north celestial pole +90°, the south celestial pole −90°, with a range of −90°…+90°.
+
+<Fig name="fig-equatorial" alt="The right ascension and declination grid on the celestial sphere" caption="The equatorial coordinate system: the celestial equator is the fundamental plane and the vernal equinox the origin; right ascension is measured eastward and declination toward the poles." />
+
+### Notation and conversion of RA and Dec
+
+Right ascension uses time units and declination uses angular units; the two **must not be mixed**. One full turn of the celestial equator corresponds to 24h and also to 360°, so the time units of right ascension can be converted directly into angle:
+
+```
+24h = 360°    1h = 15°    1m = 15′    1s = 15″
+```
+
+Note that here m and s are the "time minutes and time seconds" of right ascension (belonging to RA), whereas the ′ and ″ of declination are the angular "arcminutes and arcseconds" (belonging to Dec); they mean different things. Common conversion examples:
+
+| RA | Equivalent angle | Note |
+| --- | --- | --- |
+| 0h | 0° | Direction of the vernal equinox |
+| 6h | 90° | Near the summer solstice point |
+| 12h | 180° | Direction of the autumnal equinox |
+| 18h | 270° | Near the winter solstice point |
+| 1h 00m 00s | 15° | 1 hour of arc equals 15 degrees |
+| 0h 04m 00s | 1° | 4 time-minutes equal 1 degree |
+
+To convert RA to degrees, use `RA(°) = 15 × (h + m/60 + s/3600)`; to convert Dec to decimal degrees, use `Dec(°) = ±(d + ′/60 + ″/3600)` (the sign taken from north or south). For example, the J2000.0 coordinates of the Orion Nebula M42 are RA 05h 35m 17s, Dec −05° 23′ 28″, which in decimal form are about RA 83.82°, Dec −5.39°.
+
+### Hour angle and upper culmination
+
+The **hour angle (H or HA)** is another longitudinal coordinate of an object at a given moment and location, defined as the angle between the object's hour circle and the observer's meridian, **measured westward from the meridian**, and may be expressed in hours (0h…24h) or degrees (0°…360°). It is related to the **local sidereal time (LST)** and right ascension by:
+
+```
+H = LST − α
+```
+
+From this we see that when `H = 0` (the object is on the meridian), the object reaches **upper culmination (transit)**, at which point its altitude is highest and it is best placed for observation; a positive `H` means the object has passed the meridian and is to the west, and a negative `H` means it has not yet reached the meridian and is to the east. For a **circumpolar star**, it also passes **lower culmination (`H = 12h`)** below the meridian, where its altitude is lowest. The definition and computation of local sidereal time itself are covered in [Time systems](/en/astronomy/foundations/time-systems/); you can think of LST as "the right ascension value currently crossing the meridian."
+
+### Epoch and precession
+
+Under the gravitational influence of the Sun, Moon, and planets (the tidal torque), the Earth's rotation axis slowly precesses—this is called **precession**: the celestial pole traces a cone around the ecliptic pole, completing one circuit in about **25,772 years (often taken as roughly 26,000 years)**, while the vernal equinox **drifts westward along the ecliptic by about 50.3″/year**. Because both the fundamental plane (the celestial equator) and the origin (the vernal equinox) of equatorial coordinates move with it, the RA/Dec of the same object slowly change from year to year, so star catalogs must specify an **epoch**—the instant defining the celestial equator and vernal equinox to which the coordinates refer.
+
+| Epoch | Meaning | Status |
+| --- | --- | --- |
+| J2000.0 | Julian epoch, 2000 January 1.5 (TT, i.e. 2000-01-01 12:00 TT) | The common standard for modern catalogs and software |
+| B1950.0 | Besselian epoch 1950.0 | Common in older catalogs, gradually being retired |
+| Epoch of date | The true celestial equator and equinox of the day of observation | Used for high-precision pointing and astrometry |
+
+On top of precession, this long-term term, there is a smaller superimposed periodic oscillation called **nutation**, with a principal period of about 18.6 years. Precession means the pole star also changes: thousands of years ago the star near the north pole was Thuban (α Draconis), and in about twelve thousand years Vega will lie close to the pole.
+
+<Aside type="note" title="Why deep-sky objects use RA/Dec">
+Galaxies, nebulae, and star clusters move almost imperceptibly relative to the background stars, so giving them a set of equatorial coordinates referred to the J2000.0 epoch makes them usable for the long term, convenient for cataloging and lookup (see [Catalog index of celestial objects](/en/reference/catalog/)). Enter this set of numbers into an **equatorial mount** or GoTo system, and the telescope can work out its actual pointing from the current sidereal time. Horizontal coordinates change too quickly to serve as a permanent record of an object.
+</Aside>
+
+## The horizontal coordinate system
+
+The **horizontal coordinate system (also called the alt-az system or altitude–azimuth system)** takes the observer's local **horizon** as its fundamental plane and describes the direction of an object relative to the horizon here and now. It is centered on the observer and depends strongly on the time and place of observation.
+
+The two coordinates:
+
+- **Altitude (Alt, symbol a; also called elevation)**: the angle of an object above the horizon. 0° is the horizon, +90° the zenith, and below the horizon is negative, with a range of −90°…+90°. The complement of altitude (90° − a) is called the **zenith distance (z)**.
+- **Azimuth (Az, symbol A)**: the directional angle of the object's projection onto the horizon, with a range of 0°…360°. In astronomy and navigation it is usually **measured clockwise from due north** (north 0°, east 90°, south 180°, west 270°); some classical astronomy texts measure from due south, so the convention must be checked before applying formulas.
+
+<Fig name="fig-altaz" alt="Altitude and azimuth in the horizontal coordinate system" caption="The horizontal coordinate system: based on the observer's horizon, altitude is measured from the horizon toward the zenith, and azimuth along the horizon." />
+
+Horizontal coordinates are intuitive and easy to use ("altitude 40°, azimuth southeast" is enough to guide the naked eye or an alt-azimuth telescope), but because the celestial sphere rotates daily, **the altitude and azimuth of the same object change continuously with time**, and differ markedly at different latitudes. Whether an object rises, and how high it can rise, depends on the observer's **geographic latitude φ**—the altitude of an object at upper culmination satisfies:
+
+```
+a_max = 90° − |φ − δ|
+```
+
+From this we infer: an object rises when `δ > φ − 90°`; when `δ ≥ 90° − φ` (northern hemisphere) the object **never sets** and becomes circumpolar; and when `δ ≤ −(90° − φ)` the object **never rises**. The visibility of objects at different latitudes is covered in detail in [Hemisphere visibility](/en/astronomy/observing/hemisphere-visibility/), and in actual observation one must also account for atmospheric extinction, seeing, and other [observing conditions](/en/astronomy/observing/conditions/).
+
+<HemisphereViz />
+
+## The ecliptic coordinate system
+
+The **ecliptic coordinate system** takes the **plane of the ecliptic** as its fundamental plane and the vernal equinox as its origin, and is best suited to describing the motion of Solar System objects. Its center may be taken at the Earth or at the Sun.
+
+The two coordinates:
+
+- **Ecliptic longitude (symbol λ)**: measured eastward along the ecliptic from the vernal equinox, 0°…360°.
+- **Ecliptic latitude (symbol β)**: measured from the ecliptic toward the poles, −90°…+90°.
+
+The angle between the ecliptic plane and the celestial equator is called the **obliquity of the ecliptic (symbol ε)**, i.e. the tilt of the Earth's rotation axis relative to the normal of its orbital plane. Its precise value at the J2000.0 epoch is about **23° 26′ 21.4″ (i.e. 23.4393°, often written 23.44°)**, and it is slowly decreasing at about **46.8″/century**; on a timescale of millions of years, the obliquity varies periodically between about 22.1° and 24.5° (with a principal period of about 41,000 years). The obliquity of the ecliptic is the fundamental cause of the Earth's changing seasons.
+
+<Fig name="fig-ecliptic" alt="Illustration of the angle between the ecliptic and the celestial equator" caption="The ecliptic and the celestial equator intersect at the vernal and autumnal equinoxes; the angle between them is the obliquity of the ecliptic ε ≈ 23.44°." />
+
+The Sun, Moon, and major planets all move nearly along the ecliptic (planetary ecliptic latitudes are usually only a few degrees), so the ecliptic system is most natural for judging "conjunctions of a planet with the Moon," planetary tracks, or solar and lunar eclipses. The zodiac constellations are arranged along the ecliptic; see [Constellations and star names](/en/astronomy/foundations/constellations/).
+
+## The galactic coordinate system
+
+The **galactic coordinate system** takes the plane of the Milky Way disk (the **galactic plane**) as its fundamental plane, is centered on the Sun, and has its primary direction pointing toward the **galactic center (located in the direction of Sagittarius)**. It is suited to studying the structure of the Milky Way and the spatial distribution of stars.
+
+- **Galactic longitude (symbol l)**: measured eastward along the galactic plane from the direction of the galactic center, 0°…360°.
+- **Galactic latitude (symbol b)**: measured from the galactic plane toward the poles, −90°…+90°; `b = 0°` is the direction of the galactic disk, and `b = ±90°` points toward the galactic poles.
+
+This system was defined by the International Astronomical Union (IAU) in 1958 using the B1950.0 epoch; its north galactic pole (NGP) in J2000.0 equatorial coordinates is about RA 12h 51m (192.86°), Dec +27.13°. From this we can see that **the galactic plane is tilted by about 63° (precisely about 62.87°) relative to the celestial equator**. Galactic coordinates are commonly used in stellar physics and the study of objects within the Galaxy, for example to describe the height of a particular star above the galactic disk; see [Stellar physics](/en/astronomy/deep-sky/stellar-physics/) for details.
+
+## Coordinate conversion
+
+The four coordinate systems can be converted between one another. The additional quantities required depend on the source and target systems:
+
+| Conversion | Additional quantities needed | Key parameters |
+| --- | --- | --- |
+| Equatorial ↔ horizontal | Geographic latitude φ, local sidereal time LST | Mediated by the hour angle `H = LST − α` |
+| Equatorial ↔ ecliptic | Obliquity of the ecliptic ε ≈ 23.44° | Only ε needed, independent of time and place |
+| Equatorial ↔ galactic | Direction of the north galactic pole and the galactic longitude of the galactic center (fixed constants) | Independent of time and place |
+
+Equatorial coordinates describe "the direction of the object itself on the celestial sphere," while horizontal coordinates describe "the direction overhead for the observer right now." Converting between them first turns right ascension into hour angle `H = LST − α`, then uses the observer's latitude φ and the declination δ to compute the altitude a and azimuth A (the formulas below are given for the classical convention of **measuring from the south**; if software adopts measurement from the north, the origin must be adjusted accordingly):
+
+```
+sin a = sin φ sin δ + cos φ cos δ cos H
+tan A = sin H / (cos H sin φ − tan δ cos φ)
+```
+
+Between the equatorial and ecliptic systems, only the obliquity of the ecliptic ε is needed for conversion:
+
+```
+sin β = sin δ cos ε − cos δ sin ε sin α
+tan λ = (sin α cos ε + tan δ sin ε) / cos α
+```
+
+What the GoTo systems of modern telescopes and the star-map apps on phones run in the background is precisely this real-time conversion parameterized by sidereal time: taking the fixed RA/Dec from a catalog, combining it with the current time and observing location, and converting it into the actual horizontal pointing the telescope needs or the axis angles of the equatorial mount.
+
+<Aside type="caution" title="Common pitfalls">
+- Right ascension uses **hours, minutes, and seconds**, while declination uses **degrees, arcminutes, and arcseconds**; the units differ, so do not mix them. When converting, remember that 1h = 15°, and that the "minutes and seconds" of right ascension mean something different from the "arcminutes and arcseconds" of declination.
+- RA/Dec are not fixed forever; they depend on the epoch. Before comparing or combining coordinates from different sources, make sure they are all reduced to the same epoch (usually J2000.0).
+- The origin of azimuth (due north or due south) and the direction of measurement are conventionally defined differently in different sources, so the convention must be checked when citing a formula.
+- Horizontal coordinates change with time and place and cannot serve as a permanent identifier of an object.
+- "The ecliptic and the celestial equator differ by 23.44°" refers to the dihedral angle between the two planes (the obliquity of the ecliptic); do not confuse it with the radius of the precession cone or any other angle.
+</Aside>
+
+## Comparison of the four coordinate systems
+
+| Coordinate system | Fundamental plane | Origin | Two coordinates | Varies with time/place | Main use |
+| --- | --- | --- | --- | --- | --- |
+| Equatorial | Celestial equator | Vernal equinox | Right ascension α / declination δ | No (epoch specified, slowly affected by precession) | Cataloging stars and deep-sky objects, guiding |
+| Horizontal | Local horizon | North point (or south point) | Altitude a / azimuth A | Yes | Actual pointing, visual and alt-azimuth observing |
+| Ecliptic | Plane of the ecliptic | Vernal equinox | Ecliptic longitude λ / ecliptic latitude β | No | Solar System objects, planetary tracks, eclipses |
+| Galactic | Galactic plane | Direction of the galactic center | Galactic longitude l / galactic latitude b | No | Milky Way structure, distribution of objects within the Galaxy |
+
+## Summary
+
+- The celestial sphere projects the directions of objects onto a spherical surface, and two angular coordinates suffice to locate them; the four coordinate systems differ in their fundamental plane and origin.
+- **Equatorial coordinates (RA/Dec, with the J2000.0 epoch specified)** are essentially fixed relative to the stars and form the basis of cataloging and guiding; in actual observation their longitudinal coordinate is linked to horizontal coordinates through the hour angle `H = LST − α`.
+- **Horizontal coordinates (Alt/Az)** are intuitive but vary with time and place, corresponding to actual pointing and visual observation.
+- **Ecliptic coordinates** match the motion of Solar System objects and depend on the obliquity of the ecliptic ε ≈ 23.44°.
+- **Galactic coordinates** are based on the galactic disk and are used in studying the structure of the Milky Way.
+- Mastering the fundamental plane, origin, and required conversion quantities of all four lets you turn the numbers in a catalog into the real field of view in a telescope—the common foundation of all observing and astrophotography after [Getting started](/en/start/); for terminology reference, see the [Glossary](/en/reference/glossary/).
+
+## References
+
+- [Astronomical coordinate systems — Wikipedia](https://en.wikipedia.org/wiki/Astronomical_coordinate_systems) — The fundamental planes, coordinates, and mutual conversions of the four systems: horizontal, equatorial, ecliptic, and galactic.
+- [Equatorial coordinate system — Wikipedia](https://en.wikipedia.org/wiki/Equatorial_coordinate_system) — The definition of the equatorial coordinate system, the ranges of right ascension and declination, epochs, and precession.
+- [Right ascension — Wikipedia](https://en.wikipedia.org/wiki/Right_ascension) — The hours-minutes-seconds notation of right ascension and the 1h = 15° conversion.
+- [Hour angle — Wikipedia](https://en.wikipedia.org/wiki/Hour_angle) — The definition of hour angle, its westward measurement, and the relation `H = LST − α` to upper culmination.
+- [Axial tilt — Wikipedia](https://en.wikipedia.org/wiki/Axial_tilt) — The J2000.0 value of the obliquity of the ecliptic (23°26′21.4″), its long-term change of 46.8″/century, and its range of variation.
+- [Galactic coordinate system — Wikipedia](https://en.wikipedia.org/wiki/Galactic_coordinate_system) — The definition of galactic coordinates, the direction of the north galactic pole, and the ~63° tilt relative to the celestial equator.

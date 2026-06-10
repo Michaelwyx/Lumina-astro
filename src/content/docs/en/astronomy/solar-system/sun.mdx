@@ -1,0 +1,230 @@
+---
+title: The Sun
+description: The Sun's basic parameters, internal structure and outer atmosphere, the nuclear fusion energy source, sunspots and the 11-year activity cycle, prominences, flares and coronal mass ejections, and safety rules for solar observing.
+difficulty: beginner
+pillar: astronomy
+sidebar:
+  order: 1
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import Fig from '@/components/Fig.astro';
+
+The Sun is the central body of the Solar System and the star nearest to Earth. It is a main-sequence star of spectral type G2V, releasing energy through the nuclear fusion of hydrogen in its core. The Sun accounts for about 99.86% of the total mass of the Solar System, and its gravity governs the motions of the planets, dwarf planets, small bodies, and the interplanetary medium. Solar radiation is the fundamental source of Earth's energy, climate, and biological activity, and the Sun is also the only star whose surface activity humans can observe in detail, giving it a unique place in astronomy.
+
+<Fig name="sun" alt="Extreme-ultraviolet image of the Sun taken by SDO (Solar Dynamics Observatory), showing active regions and prominences" caption="Extreme-ultraviolet image of the Sun taken by SDO (Solar Dynamics Observatory); the bright areas are magnetically active regions" />
+
+<Aside type="danger" title="Observing Safety Notice">
+**Never** look directly at the Sun with the naked eye, an ordinary telescope, binoculars, or an attached "sun" eyepiece at the eyepiece end. Focused sunlight can cause permanent, painless retinal burns or even blindness within seconds. You must use a certified **dedicated solar filter** (Baader film or a glass white-light filter, mounted on the **front** of the objective) or a purpose-built hydrogen-alpha (Hα) solar telescope; for eclipse viewing, use solar viewing glasses compliant with ISO 12312-2. See "Observing Safety Rules" at the end of this page for details.
+</Aside>
+
+## Basic Parameters
+
+The table below gives the Sun's main physical parameters, with values taken from modern measurements and the definitions of astronomical constants.
+
+| Parameter | Value | Notes |
+| --- | --- | --- |
+| Radius (volumetric mean radius) | 695,700 km | About 109 times that of Earth |
+| Diameter | About 1,391,400 km | — |
+| Mass | 1.989×10³⁰ kg | About 333,000 times that of Earth |
+| Mean density | 1.408 g/cm³ | Slightly denser than water |
+| Surface gravitational acceleration | 274 m/s² | About 28 times that of Earth's surface |
+| Photospheric effective temperature | 5772 K (about 5500 ℃) | Determines the Sun's "color" and spectral type |
+| Core temperature | About 15.7 million K | Maintains the conditions for nuclear fusion |
+| Luminosity | 3.828×10²⁶ W | The standard solar luminosity, denoted L☉ |
+| Mean distance from Earth | 1.496×10⁸ km | Defined as 1 astronomical unit (au) |
+| Light travel time | About 8 min 19 s | Time for sunlight to reach Earth |
+| Rotation period | About 25 days at the equator, about 34 days at the poles | Differential rotation (see below) |
+| Apparent magnitude | −26.74 | The brightest object in the sky |
+| Absolute magnitude | +4.83 | Magnitude if moved to a distance of 10 parsecs |
+| Spectral class | G2V | Yellow main-sequence star |
+| Age | About 4.6 billion years | About halfway through its main-sequence lifetime |
+
+For the definition and conversion of magnitudes, see [Magnitude](/en/astronomy/foundations/magnitude/); for the Sun's annual apparent motion on the celestial sphere, see [Apparent Motion of Celestial Bodies](/en/astronomy/foundations/apparent-motion/).
+
+### Chemical Composition
+
+The Sun's chemical composition by mass can be broken down as in the table below, with the remainder being heavier elements (collectively called "metals" in astronomy). These proportions are foundational data for the study of stellar evolution and nucleosynthesis.
+
+| Element | Mass Fraction | Remarks |
+| --- | --- | --- |
+| Hydrogen (H) | About 73.5% | The "fuel" of nuclear fusion |
+| Helium (He) | About 24.9% | Both a fusion product and a primordial component |
+| Oxygen (O) | About 0.77% | — |
+| Carbon (C) | About 0.29% | — |
+| Iron (Fe) | About 0.16% | — |
+
+## Internal Structure
+
+The Sun's interior is divided into three main zones according to how energy is transferred. Because the Sun is opaque, these zones cannot be observed directly; their structure is inferred mainly from stellar models, helioseismology, and neutrino detection.
+
+| Zone | Range (in units of solar radius R☉) | Temperature | Main Process |
+| --- | --- | --- | --- |
+| Core | 0 ~ 0.25 R☉ | About 15.7 million K | Energy generation by nuclear fusion; density about 150 g/cm³ |
+| Radiative zone | 0.25 ~ 0.7 R☉ | 7 million → 2 million K | Energy transferred outward layer by layer as photon radiation |
+| Convective zone | 0.7 R☉ ~ surface | 2 million K → about 5772 K | Energy transported by convection (overturning) of matter |
+
+<Fig name="fig-sun-structure" alt="Diagram of the Sun's layered structure, from the core, radiative zone, and convective zone to the photosphere, chromosphere, and corona" caption="The Sun's layered structure: energy generated in the core is transported through the radiative and convective zones to the photosphere, with the chromosphere and corona forming the outer layers" />
+
+- **Core**: The temperature and density are high enough to sustain nuclear fusion. About 99% of the Sun's energy is generated within the inner 24% of its radius.
+- **Radiative zone**: The high-energy photons produced in the core undergo countless absorptions and re-emissions here, diffusing slowly outward along random paths. On average it takes a photon tens of thousands to about a million years to travel from the core to the base of the convective zone.
+- **Tachocline**: A thin transition layer between the radiative and convective zones, with near-rigid-body rotation on the inside and differential rotation on the outside; it is thought to be the key region for the Sun's magnetic dynamo.
+- **Convective zone**: The lower temperature makes the matter opaque, reducing the efficiency of radiative energy transfer, so convection takes over. Heated plasma rises, cools, and sinks, and this overturning appears at the photospheric surface as **granulation**.
+
+## Energy Source
+
+The Sun's energy comes from the **proton–proton chain** in its core, the main fusion pathway for energy generation in lower-mass stars, accounting for about 99% of the Sun's total energy output. Its net effect is the fusion of 4 hydrogen nuclei (protons) into 1 helium-4 nucleus:
+
+```
+4 ¹H → ⁴He + 2 e⁺ + 2 νₑ + energy
+```
+
+During the reaction, about 0.7% of the participating mass is converted into energy, in accordance with the mass–energy relation `E = m c²`. Each complete chain releases about **26.73 MeV** of energy, part of which is carried away by neutrinos (νₑ): neutrinos interact almost not at all with matter and escape directly out of the Sun.
+
+| Quantity | Value |
+| --- | --- |
+| Energy yield per chain | About 26.73 MeV |
+| Number of proton–proton chain reactions per second | About 9.2×10³⁷ |
+| Matter converted into energy per second | About 4×10⁶ tonnes (about 4.26 million tonnes/s) |
+| Mass fraction converted into energy | About 0.7% |
+| Time for photons to diffuse from the core to the surface | About 10,000 ~ 170,000 years |
+| Time for sunlight to travel from the surface to Earth | About 8 min 19 s |
+
+<Aside type="note" title="Neutrinos and the Solar Neutrino Problem">
+The electron neutrinos produced by the proton–proton chain can be captured by ground-based detectors. The solar neutrino flux measured in the 20th century was markedly lower than theoretical predictions—the "solar neutrino problem." It was later confirmed that this was due to neutrinos undergoing "flavor" oscillation (neutrino oscillation) during their propagation, rather than an error in the solar model. This discovery validated the theory of stellar nuclear fusion and revealed that neutrinos have mass.
+</Aside>
+
+For a deeper look at the mechanisms of stellar energy generation and evolution, see [Stellar Physics](/en/astronomy/deep-sky/stellar-physics/).
+
+## Outer Atmosphere
+
+Beyond the photosphere lies the Sun's atmosphere, divided from the inside outward into the photosphere, chromosphere, transition region, and corona. They present completely different appearances in different wavebands, which is the basis for choosing filters and wavebands in solar observing.
+
+| Layer | Thickness/Range | Temperature | Observational Features |
+| --- | --- | --- | --- |
+| Photosphere | Tens to hundreds of kilometers | About 5772 K | The visible "surface" to the naked eye, with granulation and sunspots |
+| Chromosphere | About 2000 km | Rising from a few thousand K to about 20,000 K | Visible in the Hα band or during a total solar eclipse, appearing rose-red |
+| Transition region | About 200 km | Surges from 20,000 K to about 1 million K | Extremely thin, with a sharp temperature rise |
+| Corona | Extends to several solar radii outward | 1 million ~ 2 million K (higher locally) | Visible as a pearly-white halo during a total solar eclipse |
+
+- **Photosphere**: The Sun's "visible surface," from which solar radiation is mainly emitted. The particle number density is about 10²³ m⁻³, with an ionization degree of only about 3%. Granulation is the surface manifestation of convection cells at the top of the convective zone; each granule is about 1000 km across and lasts a few minutes.
+- **Chromosphere**: A thin layer above the photosphere where the temperature rises outward. Prominences occur in this layer.
+- **Transition region**: Only about 200 km thick, where the temperature rises from about 20,000 K to about 1 million K over a very short distance.
+- **Corona**: The outermost, tenuous yet extremely hot atmosphere, with temperatures reaching the million-kelvin range. Normally drowned out by the intense light of the photosphere, it can only be observed during a total solar eclipse or with a coronagraph or space telescope.
+
+<Aside type="note" title="The Coronal Heating Problem">
+Moving outward from the photosphere at about 5772 K, the temperature first dips slightly and then surges in the transition region to the million-kelvin range of the corona. This contradicts the intuition of a temperature decreasing from the inside outward, and is called the "coronal heating problem." The mainstream explanation holds that magnetic reconnection and magnetohydrodynamic waves pump energy into the tenuous outer layers, but the specific mechanism remains a frontier topic in solar physics to this day.
+</Aside>
+
+## The Spectrum and Fraunhofer Lines
+
+When the Sun's continuous spectrum is dispersed, a large number of dark absorption lines become visible, called **Fraunhofer lines**, systematically observed and named by the German physicist Fraunhofer in 1814. Their cause is that the continuous spectrum emitted by the photosphere, while passing through the cooler solar atmosphere, is selectively absorbed by atoms of specific elements, leaving dark lines at the corresponding wavelengths.
+
+- Fraunhofer labeled the principal lines with the letters A to K, using other letters for weaker lines; about 25,000 absorption lines are now known in the solar spectrum.
+- The **D lines** are produced by sodium (Na), in the yellow band (about 589 nm); the **H and K lines** are produced by ionized calcium (Ca II), in the violet band.
+- Fraunhofer's C, F, G′, and h lines correspond to the Hα, Hβ, Hγ, and Hδ lines of the hydrogen Balmer series. Of these, Hα (656.3 nm) is the band most commonly used in solar observing.
+
+The Fraunhofer lines are the basis for stellar spectral classification (including the Sun's G2V type) and for determining chemical composition, and they are also the reason Hα solar telescopes use this band to observe the chromosphere.
+
+## Solar Rotation
+
+The Sun is a gaseous plasma and does not rotate as a single synchronized rigid body the way a solid does; instead it exhibits **differential rotation**: the equator rotates faster and the poles rotate more slowly.
+
+| Latitude | Rotation Period (sidereal frame) |
+| --- | --- |
+| Equator | About 25.05 days |
+| Mid-latitudes | About 28 days |
+| Polar regions | About 34.4 days |
+
+As seen from Earth, because Earth simultaneously orbits the Sun, the observed equatorial rotation period (synodic period) is about 27–28 days. Differential rotation continually twists and winds up the Sun's magnetic field lines, and is considered one of the fundamental driving mechanisms of sunspots and the solar activity cycle.
+
+## Sunspots and the 11-Year Activity Cycle
+
+**Sunspots** are temporary regions of very strong magnetic field on the photosphere that appear darker than their surroundings in visible light. Their temperature is about 3000–4500 K—still very high, but because blackbody radiation intensity is proportional to the fourth power of temperature, they appear dark relative to the 5772 K photosphere. The strong magnetic field suppresses convection there, making it hard for heat to be transported up from below, so the temperature is lower.
+
+<Fig name="fig-sunspot-cycle" alt="A curve of sunspot number versus time, and a butterfly diagram of the latitude distribution of sunspots" caption="The 11-year fluctuation of sunspot number over time (top) and the butterfly diagram formed by the latitude distribution of sunspots over time (bottom)" />
+
+Sunspots are structurally divided into two parts:
+
+| Part | Location | Features |
+| --- | --- | --- |
+| Umbra | The darkest central region | Magnetic field nearly perpendicular to the surface; lowest temperature |
+| Penumbra | The brighter region surrounding the umbra | More inclined magnetic field, with a filamentary structure |
+
+The typical physical quantities of sunspots are as follows:
+
+| Quantity | Typical Value |
+| --- | --- |
+| Magnetic field strength | A few thousand gauss (about 0.3 T; by comparison, the background magnetic field in the Sun's polar regions is only 1–2 gauss) |
+| Diameter | As small as about 1000 km, as large as 80,000 km |
+| Lifetime | Usually about two weeks; larger ones can last several months |
+
+### The Solar Activity Cycle
+
+Solar activity fluctuates with a period of about **11 years**, called the solar cycle or sunspot cycle. The sunspot number rises from solar minimum to solar maximum and then falls back. This 11-year cycle is actually half of the longer 22-year magnetic cycle (the magnetic polarity reverses every 11 years).
+
+The latitude distribution of sunspots follows a regular pattern over the cycle:
+
+- **Spörer's law**: At the start of each new cycle, sunspots appear mostly at middle-to-high latitudes (about ±30° to ±35°); as the cycle progresses, the latitude of appearance gradually migrates toward the equator.
+- **Butterfly diagram**: Plotting sunspot latitude against time produces paired triangles converging toward the equator, resembling butterfly wings—a classic illustration of solar magnetic activity.
+- **Wolf number (relative sunspot number)**: A standardized counting method that combines the number of sunspot groups and the number of individual sunspots, used to quantify the strength of solar activity over the long term.
+
+Historically there have been periods of unusually low activity, the most famous being the **Maunder Minimum of 1645–1715**, during which sunspots were extremely rare. This roughly coincided with the coldest phase of Europe's "Little Ice Age," suggesting that solar activity may influence Earth's climate.
+
+<Aside type="tip" title="Safely Counting Sunspots with the Projection Method">
+Beginners can safely observe sunspots using the "projection method": point the telescope at the Sun, aim the eyepiece end at a sheet of white paper, **do not look directly through the eyepiece**, and instead observe the Sun's image projected onto the paper. This method is both safe and allows the position, number, and migration of sunspots to be recorded day by day.
+</Aside>
+
+## Prominences, Flares, and Coronal Mass Ejections
+
+The Sun's strong magnetic field not only creates sunspots but also drives various violent forms of solar activity, which are often interrelated and concentrated near active regions of sunspots.
+
+- **Prominence**: A cool, dense plasma structure suspended above the chromosphere along magnetic field lines, appearing as a red arc or loop at the limb of the solar disk; when projected onto the disk it appears as a dark band, called a filament. The magnetic field strength of a prominence is about 10–100 gauss.
+- **Solar flare**: A sudden release of magnetic energy in an active region, erupting over a few to tens of minutes with intense radiation ranging from radio to X-rays and even γ-rays. The radiation from a flare reaches Earth at the speed of light, can ionize the upper atmosphere, and can disrupt shortwave radio communication and GPS positioning.
+- **Coronal mass ejection (CME)**: Billions of tonnes of plasma and magnetic field are hurled into interplanetary space. If directed toward Earth, it usually arrives 1–3 days later, triggering a geomagnetic storm, lighting up high-latitude auroras, and in severe cases endangering satellites, astronauts, communications, and power grids.
+
+## The Solar Wind and Space Weather
+
+The **solar wind** is a continuous outflow of plasma from the Sun's upper atmosphere, composed mainly of protons, electrons, and a small number of helium nuclei (α particles), carrying the solar magnetic field outward and filling the entire space of the Solar System to form the heliosphere.
+
+| Type | Speed | Source |
+| --- | --- | --- |
+| Slow wind | About 300–500 km/s | The streamer belt near the equator |
+| Fast wind | About 700–800 km/s | Coronal holes (regions of open magnetic field) |
+
+- **Density**: At 1 au (Earth's orbit), about 3–10 particles per cubic centimeter, with the density falling off as the inverse square of the distance from the Sun.
+- **Mass loss**: The Sun loses about 1.3–1.9 million tonnes of matter to the solar wind every second.
+- **Heliospheric boundary**: The point where the solar wind pressure balances the pressure of the interstellar medium is called the heliopause, about 120 au from the Sun; Voyager 1 has already crossed it.
+- **Alfvén surface**: The critical surface where the solar wind speed exceeds the local Alfvén wave speed, at about 18–20 solar radii; the Parker Solar Probe first crossed this surface and entered the corona in 2021.
+
+The solar wind, flares, and CMEs together constitute **space weather**. When charged particles are captured by Earth's magnetic field and enter the upper atmosphere over the poles along the magnetic field lines, exciting oxygen and nitrogen atoms to glow, they form the **aurora**—called the aurora borealis (northern lights) in the Northern Hemisphere and the aurora australis (southern lights) in the Southern Hemisphere. Space weather also affects satellite operations, aviation communications, and ground-based power transmission systems, and is therefore continuously monitored. The visibility of auroras depends on geographic latitude; see [Hemisphere Visibility](/en/astronomy/observing/hemisphere-visibility/).
+
+## Observing Safety Rules
+
+The Sun is one of the few celestial objects that can cause disability if observed improperly, and any observation directed at the Sun must place safety first.
+
+<Aside type="caution" title="Solar Observing Safety Checklist">
+- **The solar filter must be mounted on the front of the objective (tube)**, not at the eyepiece end. An eyepiece-end filter can shatter from the high heat of focused light, which is extremely dangerous.
+- Use only a **dedicated solar filter** (such as Baader AstroSolar film or a glass ND5 white-light filter) or a purpose-built **Hα solar telescope**.
+- Keep the filter in place throughout the entire process of finding and focusing the target; before each use, check the filter for scratches, pinholes, or light leaks.
+- Never use the "sun eyepiece" that came with old telescopes; such accessories crack very easily and should be discarded outright.
+- For eclipse viewing, use solar viewing glasses compliant with ISO 12312-2; ordinary sunglasses are ineffective.
+- Children must be supervised by an adult at all times.
+</Aside>
+
+Under safe conditions, a **white-light filter** lets you observe sunspots and granulation, while an **Hα telescope** lets you observe the dynamics of chromospheric prominences, filaments, and flares. For observing conditions such as weather and seeing, see [Observing Conditions](/en/astronomy/observing/conditions/); for more explanations of terms, see the [Glossary](/en/reference/glossary/).
+
+## Further Reading
+
+- The Sun is the center of the Solar System; continue to learn about the [Moon](/en/astronomy/solar-system/moon/) and the [Planets](/en/astronomy/solar-system/planets/).
+- To photograph the Sun, Moon, and planets, see [Planetary and Solar System Imaging](/en/astrophotography/capture/planetary/).
+- For why stars shine and how they evolve, see [Stellar Physics](/en/astronomy/deep-sky/stellar-physics/).
+
+## References
+
+- [Sun — Wikipedia](https://en.wikipedia.org/wiki/Sun): English Wikipedia, a comprehensive entry on the Sun's basic parameters, internal structure, atmospheric layering, rotation, and activity.
+- [NASA Sun Fact Sheet — NSSDCA](https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html): NASA's official solar parameter data sheet, providing authoritative values for mass, radius, luminosity, and more.
+- [太阳黑子 — 维基百科](https://zh.wikipedia.org/zh-hans/%E5%A4%AA%E9%98%B3%E9%BB%91%E5%AD%90): Chinese Wikipedia, on sunspot umbra/penumbra, temperature, magnetic field, the butterfly diagram, and Spörer's law.
+- [Proton–proton chain — Wikipedia](https://en.wikipedia.org/wiki/Proton%E2%80%93proton_chain): The reaction steps and energy yield (26.73 MeV) of the proton–proton chain fusion.
+- [Fraunhofer lines — Wikipedia](https://en.wikipedia.org/wiki/Fraunhofer_lines): The naming, cause, and element correspondence of the principal Fraunhofer absorption lines.
+- [Solar wind — Wikipedia](https://en.wikipedia.org/wiki/Solar_wind): The composition of the solar wind, fast and slow wind speeds, density, the heliosphere, and space weather.

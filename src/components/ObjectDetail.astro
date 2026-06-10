@@ -1,0 +1,94 @@
+---
+/** 天体详情页(中英双语共享)。只含配图 + 参数表 + 简介。 */
+import { Image } from 'astro:assets';
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { objImage, objCredit } from '@/lib/assets';
+
+interface Props {
+  o: any;
+  lang?: 'zh' | 'en';
+}
+const { o, lang = 'zh' } = Astro.props;
+const d = o.data;
+const en = lang === 'en';
+
+const TYPE_ZH: Record<string, string> = {
+  galaxy: '星系', 'dwarf-galaxy': '矮星系', 'emission-nebula': '发射星云',
+  'reflection-nebula': '反射星云', 'planetary-nebula': '行星状星云',
+  'dark-nebula': '暗星云', 'supernova-remnant': '超新星遗迹',
+  'open-cluster': '疏散星团', 'globular-cluster': '球状星团', 'star-cloud': '星云团',
+};
+const TYPE_EN: Record<string, string> = {
+  galaxy: 'Galaxy', 'dwarf-galaxy': 'Dwarf galaxy', 'emission-nebula': 'Emission nebula',
+  'reflection-nebula': 'Reflection nebula', 'planetary-nebula': 'Planetary nebula',
+  'dark-nebula': 'Dark nebula', 'supernova-remnant': 'Supernova remnant',
+  'open-cluster': 'Open cluster', 'globular-cluster': 'Globular cluster', 'star-cloud': 'Star cloud',
+};
+const HEMI: Record<string, [string, string]> = {
+  north: ['北天', 'Northern'], south: ['南天', 'Southern'], both: ['南北皆宜', 'Both hemispheres'],
+};
+const SEASON: Record<string, [string, string]> = {
+  spring: ['春季', 'Spring'], summer: ['夏季', 'Summer'], autumn: ['秋季', 'Autumn'],
+  winter: ['冬季', 'Winter'], all: ['全年', 'All year'],
+};
+const DIFF: Record<string, [string, string]> = {
+  beginner: ['容易', 'Easy'], intermediate: ['中等', 'Moderate'], advanced: ['困难', 'Hard'],
+};
+
+const pick = (zh: string, e: string) => (en ? e : zh);
+const title = `${d.id} · ${en ? d.nameEn : d.name}`;
+const intro = en ? (d.descriptionEn ?? d.description ?? d.summaryEn ?? d.summary)
+  : (d.description ?? d.summary);
+const typeLabel = en ? (TYPE_EN[d.type] ?? d.type) : (d.typeLabel || TYPE_ZH[d.type] || d.type);
+const catalogHref = en ? '/en/reference/catalog/' : '/reference/catalog/';
+
+const img = objImage(d.image);
+const cr = objCredit(d.image);
+
+const rows: [string, any][] = [
+  [pick('英文名', 'Chinese name'), en ? d.name : d.nameEn],
+  [pick('类型', 'Type'), typeLabel],
+  [pick('所在星座', 'Constellation'), en ? (d.constellation.replace(/[一-鿿]/g, '').trim() || d.constellation) : d.constellation],
+  [pick('赤经 RA', 'RA'), d.ra],
+  [pick('赤纬 Dec', 'Dec'), d.decLabel],
+  [pick('视星等', 'Apparent magnitude'), d.magnitude != null ? `${d.magnitude}ᵐ` : '—'],
+  [pick('可见半球', 'Hemisphere'), HEMI[d.hemisphere]?.[en ? 1 : 0]],
+  [pick('最佳季节', 'Best season'), SEASON[d.season]?.[en ? 1 : 0]],
+  [pick('拍摄难度', 'Difficulty'), DIFF[d.difficulty]?.[en ? 1 : 0]],
+  ...(d.focal ? [[pick('推荐焦距', 'Focal length'), d.focal] as [string, any]] : []),
+];
+---
+
+<StarlightPage
+  frontmatter={{ title, description: en ? (d.summaryEn ?? d.summary) : d.summary, tableOfContents: false, lastUpdated: false }}
+>
+  <p>
+    <a href={catalogHref}>← {pick('返回天体目录', 'Back to the catalog')}</a>
+  </p>
+
+  <div class="obj-hero">
+    {img ? (
+      <figure style="margin:0">
+        <Image src={img} alt={en ? d.nameEn : d.name} width={820} densities={[1, 2]} />
+        {cr?.artist && (
+          <figcaption class="fig__credit" style="margin-top:.4rem">
+            {pick('图源', 'Credit')} {cr.artist}{cr.license ? ` · ${cr.license}` : ''}
+          </figcaption>
+        )}
+      </figure>
+    ) : (
+      <div class="obj-card__noimg" style="border-radius:14px;min-height:220px">✦</div>
+    )}
+
+    <table class="obj-stats">
+      <tbody>
+        {rows.map(([k, v]) => (
+          <tr><th>{k}</th><td>{v}</td></tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <h2>{pick('简介', 'About')}</h2>
+  <p>{intro}</p>
+</StarlightPage>

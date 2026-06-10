@@ -1,0 +1,39 @@
+---
+/** 波特尔暗空分级 1–9:光污染从极暗(1)到市中心(9)。随语言切换标签。 */
+interface Props { caption?: string; }
+const en = Astro.url.pathname.startsWith('/en');
+const L = en
+  ? { cap: 'Bortle dark-sky scale: smaller numbers mean darker skies. Deep-sky imaging is best at classes 1–4.',
+      labels: ['Excellent dark sky', 'Typical truly dark sky', 'Rural sky', 'Rural/suburban transition',
+               'Suburban sky', 'Bright suburban', 'Suburban/urban transition', 'City sky', 'Inner-city sky'] }
+  : { cap: '波特尔(Bortle)暗空分级:数字越小天越暗。深空摄影理想在 1–4 级。',
+      labels: ['极暗原始天空', '典型真暗夜', '乡村天空', '乡村/郊区过渡', '郊区天空', '亮郊区', '郊区/城市过渡', '城市天空', '市中心天空'] };
+const { caption = L.cap } = Astro.props;
+const colors = ['#04060f', '#0a0f24', '#102045', '#1f3a63', '#3a5680', '#5b76a0', '#8499bd', '#b4c2dc', '#e3e9f5'];
+const items = colors.map((c, i) => [String(i + 1), L.labels[i], c] as const);
+---
+<figure class="diagram">
+  <div class="bortle">
+    {items.map(([n, label, c]) => (
+      <div class="bortle__cell" style={`--c:${c}`}>
+        <span class="bortle__n">{n}</span>
+        <span class="bortle__l">{label}</span>
+      </div>
+    ))}
+  </div>
+  <figcaption>{caption}</figcaption>
+</figure>
+
+<style>
+  .bortle { display: grid; grid-template-columns: repeat(9, 1fr); gap: 3px; border-radius: 10px; overflow: hidden; }
+  .bortle__cell {
+    background: var(--c); aspect-ratio: 1 / 1.5; position: relative;
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 0.4rem 0.3rem; min-height: 92px;
+  }
+  .bortle__n { font-weight: 800; font-size: 1.1rem; color: #fff; mix-blend-mode: difference; }
+  .bortle__l { font-size: 0.62rem; line-height: 1.2; color: #fff; mix-blend-mode: difference; }
+  @media (max-width: 640px) {
+    .bortle { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>

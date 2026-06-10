@@ -1,0 +1,46 @@
+---
+/** 窄带调色板:把 SII/Hα/OIII 三条发射线映射到 R/G/B 通道。 */
+interface Props { caption?: string; }
+const en = Astro.url.pathname.startsWith('/en');
+const L = en
+  ? { cap: 'Narrowband imaging maps three emission lines into the RGB channels. SHO is the “Hubble palette”; HOO looks more natural.',
+      sho: 'SHO (Hubble palette)', hoo: 'HOO (bi-color)', ch: 'channel' }
+  : { cap: '窄带成像把三条发射线分别塞进 RGB 通道。SHO=哈勃色,HOO 更接近自然。',
+      sho: 'SHO(哈勃色)', hoo: 'HOO(双窄)', ch: '通道' };
+const { caption = L.cap } = Astro.props;
+const palettes = [
+  { name: L.sho, map: [['SII', 'R', '#ff5252'], ['Hα', 'G', '#7CFC6B'], ['OIII', 'B', '#4aa3ff']] },
+  { name: L.hoo, map: [['Hα', 'R', '#ff5252'], ['OIII', 'G', '#39d3c4'], ['OIII', 'B', '#4aa3ff']] },
+];
+---
+<figure class="diagram">
+  <div class="sho">
+    {palettes.map((p) => (
+      <div class="sho__col">
+        <div class="sho__title">{p.name}</div>
+        {p.map.map(([line, ch, c]) => (
+          <div class="sho__row">
+            <span class="sho__line">{line}</span>
+            <span class="sho__arrow">→</span>
+            <span class="sho__chip" style={`--c:${c}`}>{ch} {L.ch}</span>
+          </div>
+        ))}
+      </div>
+    ))}
+  </div>
+  <figcaption>{caption}</figcaption>
+</figure>
+
+<style>
+  .sho { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+  .sho__col { border: 1px solid var(--sl-color-hairline); border-radius: 10px; padding: 0.8rem; background: #0a0d1a; }
+  .sho__title { font-weight: 700; color: #fff; margin-bottom: 0.6rem; text-align: center; font-size: 0.95rem; }
+  .sho__row { display: flex; align-items: center; gap: 0.5rem; margin: 0.4rem 0; }
+  .sho__line { width: 3.2rem; font-weight: 600; color: #cdd6ff; }
+  .sho__arrow { color: #6b78c8; }
+  .sho__chip {
+    flex: 1; text-align: center; padding: 0.3em 0.4em; border-radius: 6px;
+    background: color-mix(in srgb, var(--c) 26%, #0a0d1a); color: #fff;
+    border: 1px solid var(--c); font-size: 0.82rem; font-weight: 600;
+  }
+</style>

@@ -1,0 +1,36 @@
+---
+/** 信噪比叠加:SNR ∝ √N。展示叠加 N 张子帧后的信噪比增益曲线。 */
+interface Props { caption?: string; }
+const en = Astro.url.pathname.startsWith('/en');
+const L = en
+  ? { cap: 'Stacking N sub-frames: SNR grows as √N — about 4× from 1 to 16 frames, with diminishing returns.',
+      xaxis: 'Number of frames N', yaxis: 'Relative SNR (∝√N)' }
+  : { cap: '叠加 N 张子帧,信噪比按 √N 增长:从 1 张到 16 张提升约 4 倍,但回报递减。',
+      xaxis: '叠加张数 N', yaxis: '相对信噪比 (∝√N)' };
+const { caption = L.cap } = Astro.props;
+// 采样点 (N, sqrt(N)) 映射到画布
+const W = 540, H = 320, padL = 60, padB = 56, padT = 24, padR = 24;
+const maxN = 64, maxY = 8; // √64 = 8
+const x = (n: number) => padL + (n / maxN) * (W - padL - padR);
+const y = (v: number) => H - padB - (v / maxY) * (H - padB - padT);
+const pts = Array.from({ length: 65 }, (_, n) => `${x(n)},${y(Math.sqrt(n))}`).join(' ');
+const marks = [1, 4, 16, 36, 64];
+---
+<figure class="diagram">
+  <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="信噪比随叠加张数变化曲线">
+    <rect width={W} height={H} fill="#0a0d1a" rx="12" />
+    <line x1={padL} y1={H - padB} x2={W - padR} y2={H - padB} stroke="#3a4690" stroke-width="1.5" />
+    <line x1={padL} y1={padT} x2={padL} y2={H - padB} stroke="#3a4690" stroke-width="1.5" />
+    <text x={W / 2} y={H - 16} fill="#9aa6ff" font-size="13" text-anchor="middle">{L.xaxis}</text>
+    <text x="18" y={H / 2} fill="#9aa6ff" font-size="13" transform={`rotate(-90 18 ${H / 2})`}>{L.yaxis}</text>
+    <polyline points={pts} fill="none" stroke="#5fe3d2" stroke-width="3" />
+    {marks.map((n) => (
+      <g>
+        <circle cx={x(n)} cy={y(Math.sqrt(n))} r="4.5" fill="#ffd66e" />
+        <text x={x(n)} y={H - padB + 18} fill="#8a96d6" font-size="12" text-anchor="middle">{n}</text>
+        <text x={x(n) + 6} y={y(Math.sqrt(n)) - 8} fill="#ffd66e" font-size="11">×{Math.sqrt(n)}</text>
+      </g>
+    ))}
+  </svg>
+  <figcaption>{caption}</figcaption>
+</figure>

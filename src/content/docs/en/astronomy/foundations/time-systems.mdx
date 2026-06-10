@@ -1,0 +1,284 @@
+---
+title: Time Systems
+description: A systematic overview of sidereal and solar time, the equation of time and the analemma, Universal Time UT1/UTC and leap seconds, the Julian Date and MJD, and the dynamical time scales TAI/TT, with an explanation of how to determine when an object transits from the local sidereal time and right ascension.
+difficulty: beginner
+pillar: astronomy
+sidebar:
+  order: 2
+---
+
+import { Aside, Card, CardGrid } from '@astrojs/starlight/components';
+import Fig from '@/components/Fig.astro';
+
+One of the central questions in astronomical observation is "where in the sky is a given object at a given moment." To convert a calendar date and clock time into an object's position on the celestial sphere, we need a system of time that is more refined than ordinary civil clocks. This page surveys several time scales commonly used in astronomy and timekeeping: sidereal time and Universal Time, both referenced to the rotation of the Earth; solar time, referenced to the apparent motion of the Sun; Coordinated Universal Time and atomic time, referenced to atomic frequencies; and the Julian Date, used for continuous day counting. They are linked to one another through well-defined definitions and conversion relations.
+
+Before reading this page, it is advisable to first understand [the diurnal and annual motion of celestial objects](/en/astronomy/foundations/apparent-motion/) and [celestial coordinate systems](/en/astronomy/foundations/celestial-coordinates/), the latter of which defines the right ascension, declination, and hour angle used repeatedly below.
+
+## Classification of time scales
+
+Astronomical time scales can be divided into four categories according to their physical reference. Understanding this classification helps clarify the relationships between the scales and the direction of conversion among them.
+
+| Physical reference | Representative scale | Uniformity | Main use |
+| --- | --- | --- | --- |
+| Earth rotation (relative to vernal equinox) | Sidereal time | Non-uniform (rotation fluctuates) | Locating objects, determining hour angle |
+| Earth rotation (relative to mean Sun) | Universal Time UT1 | Non-uniform | Astronomical positioning, determining Earth rotation angle |
+| Apparent solar motion | Apparent solar time, mean solar time | Apparent solar time non-uniform, mean solar time approximately uniform | Civil timekeeping, sundials |
+| Atomic frequency | International Atomic Time TAI, Coordinated Universal Time UTC | Uniform | Time dissemination, precision timekeeping |
+| Equations of celestial motion | Ephemeris Time ET, Terrestrial Time TT | Uniform | Ephemerides, ephemeris computation |
+
+The rotation of the Earth is not strictly uniform: it exhibits a long-term slowing trend, as well as irregular fluctuations caused by tidal friction, motion of the core, and the redistribution of atmospheric and oceanic mass. As a result, sidereal time and UT1, which are referenced to rotation, are also non-uniform; this is precisely the fundamental reason for introducing atomic time and dynamical time.
+
+## Solar time
+
+**Solar time** is referenced to the apparent motion of the Sun and is the origin of civil timekeeping. It comes in two forms: apparent solar time and mean solar time.
+
+- **Apparent solar time**: the interval between two successive upper transits (passages across the local meridian) of the solar disk (the true Sun) defines one **apparent solar day**. A sundial reads apparent solar time, counted from the Sun's lower transit (midnight) as 0h. Because the Earth's orbit is elliptical and its rotation axis is tilted relative to the ecliptic, the length of the apparent solar day is not constant throughout the year, with a difference of about 51 seconds between the longest and shortest.
+- **Mean solar time**: to obtain a uniform civil time, one defines a fictitious "**mean Sun**" that moves uniformly along the celestial equator with the same average period as the true Sun. The interval between two successive upper transits of the mean Sun is the **mean solar day**, defined to be exactly 24 mean solar hours (86400 SI seconds, with a slight drift on the time scale of long-term changes in Earth's rotation). The "day" on a clock is the mean solar day.
+
+The difference between apparent solar time and mean solar time is called the equation of time; see "The equation of time and the analemma" below.
+
+## Sidereal time
+
+**Sidereal time** is referenced to the **vernal equinox (March equinox)**, not to some distant star itself. Its strict definition is:
+
+```
+Sidereal time = local hour angle of the vernal equinox
+```
+
+That is, the moment the vernal equinox crosses the local meridian (upper transit) is sidereal time 0h. The interval between two successive upper transits of the vernal equinox is one **sidereal day**. Sidereal time is measured in "hours," with 24 sidereal hours corresponding to the celestial sphere turning 360° relative to the meridian, so it can be converted directly into angle (`15° = 1h`, `1° = 4 minutes`).
+
+### Sidereal day and solar day
+
+A sidereal day is **about 3 minutes 56 seconds shorter** than a mean solar day. The cause lies in the fact that the Earth both rotates and revolves around the Sun: after the Earth has rotated a full turn relative to the vernal equinox (or to a distant star), it has simultaneously advanced about 1° along its orbit, so it must turn about 1° more before the Sun is again aligned with the meridian.
+
+<Fig name="fig-sidereal-day" alt="Diagram: after the Earth completes one rotation relative to the stars, it must turn about 1° more for the Sun to return to the meridian" caption="The difference between the sidereal day (relative to the vernal equinox/stars) and the solar day (relative to the Sun) arises from the Earth's orbital motion, accumulating about 3 minutes 56 seconds per day" />
+
+The specific values and relations are as follows:
+
+| Quantity | Value (in mean solar time) |
+| --- | --- |
+| One mean sidereal day | 23h 56m 04.0905s ≈ 86164.0905 seconds |
+| One mean solar day | 24h 00m 00s = 86400 seconds |
+| Difference per day | About 3m 55.9s ≈ 3 minutes 56 seconds |
+| Number of sidereal days per year | About 366.24 |
+| Number of solar days per year | About 365.24 |
+
+Over one year there is exactly one more sidereal day than solar days (366.24 − 365.24 = 1). This is because the Earth's revolution around the Sun makes the vernal equinox "turn one extra time" relative to the Sun. The conversion factor between the two time units is:
+
+```
+1 mean solar time interval ≈ 1.0027379 mean sidereal time intervals
+```
+
+The daily accumulation of 3 minutes 56 seconds also explains the annual variation of the night sky: each day a given star transits about 4 minutes earlier than the day before, about 2 hours earlier after about 30 days, returning to the original time after one year. This is precisely the fundamental reason why different constellations are visible in the night sky in different seasons; see [diurnal and annual motion](/en/astronomy/foundations/apparent-motion/).
+
+<Aside type="note" title="Difference between the sidereal day and the rotation period of the Earth">
+The sidereal day, referenced to the vernal equinox, is not the true rotation period of the Earth relative to the inertial frame (distant stars). Because the vernal equinox is affected by **precession**, it shifts westward along the ecliptic by about 50.3″ per year, completing one circuit in about 25800 years, which makes the sidereal day about 0.0084 seconds shorter than the Earth's true rotation period (called the **stellar day**), the latter being about 23h 56m 04.0989s. In everyday astronomical calculations there is usually no need to distinguish the two.
+</Aside>
+
+### Mean sidereal time and apparent sidereal time
+
+Like solar time, sidereal time also comes in uniform and non-uniform forms, the distinction being whether the reference vernal equinox includes nutation.
+
+- **Mean sidereal time**: referenced to the **mean equinox**, which is affected only by precession, and runs approximately uniformly.
+- **Apparent sidereal time**: referenced to the **true equinox**, which is affected by both precession and **nutation**.
+
+The difference between the two is called the **equation of the equinoxes**:
+
+```
+Equation of the equinoxes = apparent sidereal time − mean sidereal time
+```
+
+Its value is very small, on the order of within ±1.4 seconds, arising from the periodic perturbation of the equinox position by nutation. Apparent sidereal time is used when high precision is required, while mean sidereal time suffices for ordinary observation planning.
+
+### Greenwich sidereal time and local sidereal time
+
+Sidereal time depends on the observer's longitude, because the direction of the meridian differs at different longitudes.
+
+- **Greenwich Sidereal Time (GST)**: the sidereal time at the prime meridian, divided into Greenwich Mean Sidereal Time GMST and Greenwich Apparent Sidereal Time GAST.
+- **Local Sidereal Time (LST)**: the sidereal time at the observer's meridian, obtained by adding the observer's east longitude (converted to time units) to GST:
+
+```
+Local mean sidereal time = GMST + east longitude     Local apparent sidereal time = GAST + east longitude
+(east longitude positive, west longitude negative; 15° = 1h)
+```
+
+GMST can be computed from Universal Time UT1 via a standard polynomial (whose leading linear term reflects the 1.0027379 rate ratio between sidereal time and UT1), and GAST is then obtained by adding the equation of the equinoxes. Most astronomical software has these formulas built in.
+
+## The relationship between hour angle, right ascension, and local sidereal time
+
+The reason sidereal time is central to observation planning is that it directly connects celestial coordinates with "the sky at this moment." For any object on the celestial sphere, the following fundamental relation holds:
+
+```
+LST = H + RA
+```
+
+where `RA` is the object's right ascension, and `H` is the object's **hour angle**, that is, the angular distance of the object relative to the local meridian, positive toward the west, measured in time units. This relation links the two coordinates (right ascension and hour angle) through the local sidereal time. Rearranging gives:
+
+```
+H = LST − RA
+```
+
+From this several direct conclusions follow:
+
+| Condition | Meaning |
+| --- | --- |
+| `H = 0`, i.e. `LST = RA` | The object is **at upper transit** (crossing the meridian, at maximum altitude) |
+| `H < 0` (`LST < RA`) | The object is east of the meridian, has not yet transited, and is rising |
+| `H > 0` (`LST > RA`) | The object is west of the meridian, has already transited, and is setting |
+| `LST = 0h` (`= RA of vernal equinox`) | The vernal equinox is at upper transit, defining the origin of sidereal time |
+
+Thus "an object transits when its right ascension equals the local sidereal time" is merely the special case of `LST = H + RA` when `H = 0`. When planning deep-sky imaging, one usually wants to shoot during the period around the target's transit, when its altitude is highest and the line of sight passes through the thinnest atmosphere, minimizing extinction and seeing-induced jitter.
+
+<Aside type="tip" title="Determining the transit time from local sidereal time and right ascension">
+If the current LST and the target's right ascension RA are known, the target is still `RA − LST` away from upper transit (in sidereal time, taking the positive value in the range 0h–24h). To convert this into elapsed clock time, divide further by the factor 1.0027379 (sidereal time runs slightly faster than the clock). For example, `RA − LST = 3h` of sidereal time corresponds to transit after about `3h ÷ 1.0027379 ≈ 2h 59m` of clock time. Most astronomical software will give the transit time of each target directly. To combine visibility and position into a schedule, see [observation planning](/en/astronomy/observing/planning/).
+</Aside>
+
+## Universal Time UT0 / UT1 / UT2 and Coordinated Universal Time UTC
+
+**Universal Time (UT)** is a family of time scales referenced to the Earth's rotation and to the mean Sun; in essence it is the mean solar time at the Greenwich prime meridian. The common members are as follows:
+
+| Name | Definition | Notes |
+| --- | --- | --- |
+| UT0 | Obtained directly by a single station observing the Earth's rotation | Not corrected for polar motion, slightly different at each station, now largely abandoned |
+| UT1 | Universal Time after correcting UT0 for polar motion | Reflects the Earth's true rotation angle, the basis for astronomical positioning |
+| UT2 | UT1 further corrected for seasonal variations in rotation rate | Historically used for time dissemination, now rarely used |
+| UTC | Coordinated Universal Time, defined by atomic clocks and kept close to UT1 | The global civil and timekeeping standard |
+
+**UT1** corresponds directly to the Earth Rotation Angle (ERA) and is strictly tied to the Earth's hour angle and sidereal time; it is the scale that represents "where the Earth has actually rotated to" in astronomical positioning. But because rotation is non-uniform, UT1 is not a uniform time scale.
+
+**Coordinated Universal Time (UTC)** is defined by atomic time; its second equals the second of International Atomic Time TAI and is therefore uniform. At the same time, through **leap seconds**, it is kept always within ±0.9 seconds of UT1. The difference between the two is denoted:
+
+```
+DUT1 = UT1 − UTC     (|DUT1| < 0.9 s)
+```
+
+When the Earth's rotation has accumulated a deviation from atomic time such that `|DUT1|` approaches 0.9 seconds, the **International Earth Rotation and Reference Systems Service (IERS)** decides to insert a **positive leap second** at the end of June or December (after that day's 23:59:59 comes 23:59:60, then 00:00:00 of the next day), bringing UTC back close to UT1. Since the current leap-second system was established in 1972, all leap seconds have been positive (because the Earth's rotation is slowing in the long term); the system also allows removing one second (a negative leap second) if necessary, but this has never yet occurred. For everyday timekeeping that does not require precision better than 1 second, UTC can be used directly to approximate UT1.
+
+<Aside type="caution" title="Changes to the leap-second system">
+At the 2022 General Conference on Weights and Measures (CGPM) it was resolved to abolish the leap second by 2035 at the latest, instead allowing the difference between UTC and UT1 to grow to well over 1 second before being adjusted uniformly with some larger step. The reason is that leap seconds cause numerous engineering problems for computer timekeeping, financial trading, and network systems. After this change, astronomical calculations that require a high-precision Earth rotation angle should still use UT1 rather than UTC.
+</Aside>
+
+## International Atomic Time TAI and Ephemeris Time / Terrestrial Time
+
+To obtain truly uniform time scales decoupled from the Earth's rotation, scales based on atomic frequency and on the equations of celestial motion were introduced.
+
+- **International Atomic Time (TAI)**: a uniform time scale obtained as the weighted average of several hundred atomic clocks worldwide, its second defined by 9192631770 cycles of the hyperfine transition of the ground state of the cesium-133 atom. TAI contains no leap seconds and is continuous.
+- **Relationship between Coordinated Universal Time and TAI**: `UTC = TAI − n`, where `n` is the (integer) number of leap seconds accumulated since 1972. Since January 1, 2017, `n = 37 s`, and this value remains unchanged until a new leap second is inserted.
+- **Ephemeris Time (ET)**: historically a dynamical time defined to eliminate the effect of the Earth's non-uniform rotation on ephemeris computation, referenced to the Earth's revolution; from 1984 it was replaced by dynamical time and Terrestrial Time.
+- **Terrestrial Time (TT)**: the modern dynamical time scale used for ephemerides and tables, the continuation of ET. It differs from TAI only by a fixed constant:
+
+```
+TT = TAI + 32.184 s
+```
+
+This constant arises from the offset between TT and Ephemeris Time when they were joined at the beginning of 1977. High-precision calculations such as planetary ephemerides and precession-nutation models all use TT as the time argument. The difference between TT and UT1 is denoted `ΔT = TT − UT1`, currently on the order of 70 seconds; it changes slowly as the Earth's rotation varies and must be determined by observation.
+
+The following table summarizes the mutual offsets among several uniform time scales (as of the leap-second status from 2017):
+
+| Relation | Value | Nature |
+| --- | --- | --- |
+| `TAI − UTC` | 37 s | Integer, changes with leap seconds |
+| `TT − TAI` | 32.184 s | Fixed constant |
+| `TT − UTC` | 69.184 s | Changes with leap seconds |
+| `ΔT = TT − UT1` | About 70 s (2020s) | Determined by observation, changes slowly |
+
+## Time zones and local time
+
+For civil convenience, the world is divided by longitude into a number of **time zones**, with the same standard time used throughout each zone, usually UTC plus an integer number of hours (in a few regions, a half hour or 45 minutes):
+
+```
+Zone time (standard time) = UTC + time zone offset
+```
+
+Note the difference between zone time and an object's true position. Zone time is divided by integer hours (and administrative boundaries), whereas an object's position depends on the local time corresponding to the observer's **specific longitude**. For example, cities at the eastern and western ends of the same time zone can have true local times differing by tens of minutes or even more than an hour (with all of China using UTC+8 as a typical example). When making a precise observation plan, one should use the observer's true latitude and longitude to compute the local sidereal time and each object's transit time, rather than using zone time directly. In addition, regions that adopt daylight saving time add another hour on top of standard time, which must be noted separately.
+
+## Julian Date and Modified Julian Date
+
+The Gregorian calendar has discontinuities such as months of differing lengths, leap years, and year boundaries, making it difficult to perform time-difference arithmetic directly. The **Julian Date (JD)** solves this problem with a continuously increasing count of days.
+
+- **Julian Day Number (JDN)**: an integer count of days numbered continuously from a fixed starting point. The starting point is noon Greenwich on January 1, 4713 BC in the proleptic Julian calendar (corresponding to November 24, 4714 BC in the proleptic Gregorian calendar), i.e. JDN 0.
+- **Julian Date (JD)**: the Julian Day Number plus the fraction of a day elapsed since the previous noon. For example:
+  - `JD 2451545.0` = **January 1, 2000, 12:00 TT** (the epoch J2000.0, the standard reference epoch of modern astronomy).
+  - `JD 2451545.25` = January 1, 2000, 18:00.
+- The reason for **using noon as the day boundary** is that historically the astronomical day was counted from noon, which avoids splitting a whole night of observation across a date boundary.
+
+Because JD values are very large (seven-digit integers), the following simplified forms are commonly used:
+
+| Name | Definition | Starting point | Characteristics |
+| --- | --- | --- | --- |
+| Modified Julian Date MJD | `MJD = JD − 2400000.5` | November 17, 1858, 00:00 | Begins at midnight, shorter value, most common in modern use |
+| Reduced Julian Date RJD | `RJD = JD − 2400000` | November 16, 1858, 12:00 | Still bounded at noon |
+| Truncated Julian Date TJD | `floor(JD − 2440000.5)` | May 24, 1968 | Mainly used in spaceflight |
+
+<Aside type="note" title="Why use the Julian Date">
+The light-curve periods of variable stars, planetary ephemerides, orbital elements, satellite transits, and eclipse predictions almost all use JD or MJD as the time axis: finding "how many days apart" two events are requires only a subtraction, with no need to deal with month lengths and leap years. When higher precision is needed, there are also the **Heliocentric Julian Date (HJD)** and the **Barycentric Julian Date (BJD)**, which reduce the time of observation to the Sun or the barycenter of the Solar System, eliminating the light-travel-time difference of up to about 8.3 minutes (498 seconds) caused by the Earth's orbital position; they are commonly used for the precise determination of the timing of variable stars and exoplanet transits. When using JD, one should also state the corresponding time scale (such as based on UTC, TT, or TDB), otherwise confusion will arise at sub-second precision.
+</Aside>
+
+## The equation of time and the analemma
+
+Because the length of the apparent solar day is non-uniform, there is a seasonally varying offset between apparent solar time and mean solar time, called the **equation of time**:
+
+```
+Equation of time = apparent solar time − mean solar time
+```
+
+(Some references adopt the opposite sign, so the convention must be noted when using it. By this definition, when the equation of time is positive the sundial runs ahead of the clock.) The equation of time fluctuates over a year between about **−14 minutes and +16 minutes**, formed by the superposition of two independent causes:
+
+| Cause | Physical origin | Period | Amplitude |
+| --- | --- | --- | --- |
+| Orbital eccentricity | The Earth's orbital eccentricity is about 0.0167; it revolves faster near perihelion and slower near aphelion | One year | About ±7.66 minutes |
+| Obliquity of the ecliptic | The obliquity of the ecliptic is about 23.44°; the projection of the Sun's motion along the ecliptic onto the celestial equator is non-uniform in speed | Half a year | About ±9.87 minutes |
+
+The two components have different periods and phases, and their superposition gives an irregular curve. The eccentricity component crosses zero around early January and early July, and the obliquity component crosses zero near the equinoxes and solstices. The typical extrema and zero crossings near epoch 2000 are as follows:
+
+| Date (approximate) | Equation of time | Type |
+| --- | --- | --- |
+| About February 11 | About −14 min 15 s | Annual minimum |
+| About May 14 | About +3 min 41 s | Secondary maximum |
+| About July 26 | About −6 min 30 s | Secondary minimum |
+| About November 3 | About +16 min 25 s | Annual maximum |
+| About April 15, June 13, September 1, December 25 | 0 | Zero crossing (apparent and mean solar time equal) |
+
+If you photograph the Sun at the **same clock time** at the same location every day and superimpose the images over a whole year, the Sun traces a figure-eight curve in the sky, called the **analemma**: the horizontal offset comes from the equation of time (angular width about 7.7°), and the vertical variation comes from the seasonal change of the Sun's declination (±23.44°). The asymmetry of the figure-eight's two loops arises precisely from the superposition of the two causes, eccentricity and the obliquity of the ecliptic.
+
+<Fig name="fig-analemma" alt="The figure-eight analemma formed by superimposing the Sun's position at the same clock time throughout a year" caption="The analemma: the horizontal axis reflects the equation of time, the vertical axis reflects the seasonal change of the Sun's declination; the asymmetry of the figure-eight arises from the superposition of the two causes, eccentricity and the obliquity of the ecliptic" />
+
+<Aside type="note" title="A common misconception about the earliest sunset and the latest sunrise">
+The equation of time explains a frequently misunderstood phenomenon: **the earliest sunset and the latest sunrise do not occur exactly on the day of the winter solstice**. The times of sunrise and sunset are affected both by the Sun's declination (which determines day length) and by the equation of time (which determines the clock time of the Sun's transit); the extrema of the two do not fall on the same day, so (in the Northern Hemisphere) the earliest sunset usually occurs before the winter solstice and the latest sunrise after it, while the winter solstice itself is the day with the shortest daylight.
+</Aside>
+
+## Determining the visibility of objects from the time systems
+
+By combining the systems above, one can determine when an object transits and whether it is visible.
+
+<CardGrid>
+  <Card title="① Find the local sidereal time" icon="star">
+    From the current UTC (or UT1) and the observer's longitude, compute the present local sidereal time LST.
+  </Card>
+  <Card title="② Compare with right ascension" icon="setting">
+    When `LST ≈ object's right ascension RA` (hour angle H = 0), the object is at upper transit, in the best observing position.
+  </Card>
+  <Card title="③ Compute the transit altitude" icon="up-caret">
+    Combining the object's declination δ with the observer's latitude φ: `transit altitude ≈ 90° − |φ − δ|`.
+  </Card>
+  <Card title="④ Estimate the visibility window" icon="moon">
+    Require the altitude to be above the horizon and the time to be after astronomical twilight; the longer the night and the higher the target, the better.
+  </Card>
+</CardGrid>
+
+For example: the Andromeda Galaxy M31 has a right ascension of about `00h 43m`. When the local sidereal time is close to 00h43m it transits; on an autumn night at mid-northern latitudes this usually happens around midnight, which is a good time to image it. Visibility also depends on declination and the observing latitude; see [hemisphere visibility](/en/astronomy/observing/hemisphere-visibility/). For the target's brightness and the required exposure, refer to [magnitude](/en/astronomy/foundations/magnitude/) and [catalogs and naming](/en/reference/catalog/).
+
+<Aside type="caution" title="Zone time is not an object's position">
+The observing window is determined jointly by **sidereal time, the observer's latitude, and twilight times**, not by the zone time shown on a phone. For precise scheduling, one should use the specific latitude and longitude to compute LST and the transit time of each object; the vast majority of astronomical software performs these conversions automatically.
+</Aside>
+
+Once you understand the time systems, you can go further and combine them with an object's position to judge which targets are visible at your latitude and when they are highest. Continue reading [observing conditions](/en/astronomy/observing/conditions/) and [observation planning](/en/astronomy/observing/planning/) to integrate time and position into a complete observation plan.
+
+## References
+
+- [Sidereal time — Wikipedia](https://en.wikipedia.org/wiki/Sidereal_time): the sidereal day 86164.0905s, mean/apparent sidereal time, the 0.0084s difference of the stellar day, GMST/GAST/LST and the `LST = H + RA` relation.
+- [Hour angle — Wikipedia](https://en.wikipedia.org/wiki/Hour_angle): definition of the hour angle and its relationship with local sidereal time and right ascension, the transit criterion.
+- [Universal Time — Wikipedia](https://en.wikipedia.org/wiki/Universal_Time): definitions of UT0/UT1/UT2 and UTC, DUT1, |DUT1| < 0.9s, and the Earth rotation angle.
+- [International Atomic Time — Wikipedia](https://en.wikipedia.org/wiki/International_Atomic_Time): definition of TAI, `TT = TAI + 32.184 s`, and the 37-second leap-second accumulation from 2017.
+- [Julian day — Wikipedia](https://en.wikipedia.org/wiki/Julian_day): the JD epoch, J2000.0 = JD 2451545.0, MJD and various simplified forms, the HJD/BJD light-travel-time difference.
+- [Equation of time — Wikipedia](https://en.wikipedia.org/wiki/Equation_of_time): the two main causes of the equation of time (eccentricity 7.66min, obliquity of the ecliptic 9.87min), annual extrema and zero crossings, and the cause of the analemma.

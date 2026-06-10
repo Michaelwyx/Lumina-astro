@@ -1,0 +1,83 @@
+---
+title: 入门导航
+description: 本站内容结构说明:天文知识、天文摄影、索引页和推荐阅读顺序。
+difficulty: beginner
+pillar: index
+sidebar:
+  order: 0
+---
+
+import { Aside, CardGrid, LinkCard } from '@astrojs/starlight/components';
+import Fig from '@/components/Fig.astro';
+
+<div class="hero-fig">
+  <Fig name="milkyway" alt="夜空中横跨天际的银河拱桥" caption="银河拱桥。暗空环境下的银河结构,也是广角天文摄影最经典的题材。" />
+</div>
+
+本站面向中文读者,整理天文观测和天文摄影的基础概念、常用流程和资料索引。阅读时不需要按目录顺序从头读完;可以先按目标选择入口,再补充相关概念。
+
+## 内容组织
+
+整站分为两个主题区和一个索引区:
+
+- **天文知识(Astronomy)**:坐标与时间、太阳系、恒星与深空天体、宇宙学、观测条件和观测规划。
+- **天文摄影(Astrophotography)**:光学与曝光、传感器、拍摄控制、校准帧、叠加处理、后期流程和远程成像平台。
+- **索引(Reference)**:术语表、天体目录、天文台、软件、学习路径与外部资源。
+
+## 从哪开始
+
+根据当前目标选择入口:
+
+<CardGrid>
+  <LinkCard
+    title="从观测基础开始"
+    href="/astronomy/observing/hemisphere-visibility/"
+    description="先理解纬度、季节和地平高度如何影响可见目标,再学习天球坐标。"
+  />
+  <LinkCard
+    title="从深空摄影开始"
+    href="/astrophotography/remote-platforms/overview/"
+    description="先了解远程成像和原始数据获取方式,再学习校准、叠加和基础后期。"
+  />
+  <LinkCard
+    title="查找目标天体"
+    href="/reference/catalog/"
+    description="查询 Messier / NGC 编号、坐标、最佳观测季节、半球和拍摄建议。"
+  />
+  <LinkCard
+    title="按路线阅读"
+    href="/reference/learning-paths/"
+    description="按目标查看推荐阅读顺序,适合不知道下一篇该读什么时使用。"
+  />
+</CardGrid>
+
+<Aside type="note" title="三条最常用的入门链路">
+1. 新手认星:[半球可见性](/astronomy/observing/hemisphere-visibility/) → [天球坐标](/astronomy/foundations/celestial-coordinates/) → [星座](/astronomy/foundations/constellations/)。
+2. 拍深空:[远程平台总览](/astrophotography/remote-platforms/overview/) → [深空拍摄基础](/astrophotography/capture/dso-basics/) → [叠加处理](/astrophotography/processing/stacking/)。
+3. 查与备:[天体目录](/reference/catalog/) ↔ [术语表](/reference/glossary/) ↔ [软件](/reference/software/)。
+</Aside>
+
+## 三类入口
+
+### 天文知识
+
+基础部分包括[天球坐标](/astronomy/foundations/celestial-coordinates/)、[时间系统](/astronomy/foundations/time-systems/)和[星等](/astronomy/foundations/magnitude/)。随后可阅读[太阳系](/astronomy/solar-system/planets/)、[恒星物理](/astronomy/deep-sky/stellar-physics/)、[深空天体](/astronomy/deep-sky/nebulae/)和[宇宙学概览](/astronomy/cosmology/overview/)。出门观测前,建议先查[观测条件](/astronomy/observing/conditions/)和[观测规划](/astronomy/observing/planning/)。
+
+### 天文摄影
+
+摄影部分从[光学](/astrophotography/fundamentals/optics/)、[曝光](/astrophotography/fundamentals/exposure/)、[传感器](/astrophotography/fundamentals/sensors/)和[信噪比](/astrophotography/fundamentals/snr/)开始,再进入[广角](/astrophotography/capture/widefield/)、[深空](/astrophotography/capture/dso-basics/)、[行星](/astrophotography/capture/planetary/)和[窄带](/astrophotography/capture/narrowband/)拍摄。数据处理部分包括[校准帧](/astrophotography/calibration/calibration-frames/)和[后期工作流](/astrophotography/processing/workflow/)。
+
+### 索引
+
+| 索引 | 用途 |
+| --- | --- |
+| [天体目录](/reference/catalog/) | 按编号查目标的坐标、季节与推荐焦距 |
+| [术语表](/reference/glossary/) | 不懂的名词随手一查 |
+| [天文台](/reference/observatories/) | 著名台址与远程机位参考 |
+| [软件](/reference/software/) | 规划、拍摄、叠加、后期各环节工具 |
+| [学习路径](/reference/learning-paths/) | 成体系的进阶路线 |
+| [资源](/reference/resources/) | 优质书籍、网站与社区 |
+
+<Aside type="tip" title="建议">
+如果暂时没有明确目标,先读[半球可见性](/astronomy/observing/hemisphere-visibility/)和[天球坐标](/astronomy/foundations/celestial-coordinates/),再到[天体目录](/reference/catalog/)选择一个当季目标。
+</Aside>

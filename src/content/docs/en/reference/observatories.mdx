@@ -1,0 +1,120 @@
+---
+title: Famous Observatories
+description: An overview of the world's research-grade ground-based observatories, listing name, location, latitude, elevation, and flagship instruments by northern/southern hemisphere, with a systematic discussion of the three site-selection criteria—dark, steady, clear—and the special status of the Atacama Desert.
+difficulty: beginner
+pillar: index
+sidebar:
+  order: 2
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import Fig from '@/components/Fig.astro';
+
+This page summarizes the world's major **professional ground-based observatories**: large observing facilities operated by universities, national agencies, or international consortia and dedicated to frontier astronomical research. The scope is limited to ground-based optical/infrared and radio (including millimeter/submillimeter) observatories; it excludes space telescopes, as well as commercial remote-imaging sites that rent observing time to hobbyists—the distinction between the two is covered in the disambiguation note at the end of this page.
+
+Each observatory is described by four key pieces of information: geographic **latitude (φ)** determines the region of sky it can cover (see [Celestial Coordinate Systems](/en/astronomy/foundations/celestial-coordinates/) and [Hemisphere Visibility](/en/astronomy/observing/hemisphere-visibility/)); **elevation/altitude** determines the amount of residual atmosphere and water vapor overhead; **flagship instruments** are typically measured by the primary mirror's **aperture (D)**, which gauges light-collecting power—the larger the aperture, the larger the collecting area (proportional to `D²`), and the fainter the objects that can be detected.
+
+<div class="cols2">
+  <Fig name="vlt" alt="The four Unit Telescopes of the Very Large Telescope at Paranal" caption="The four 8.2 m Unit Telescopes of the Very Large Telescope (VLT) at Paranal, Chile" />
+  <Fig name="alma" alt="The ALMA millimeter-wave antenna array on the Chajnantor plateau" caption="The ALMA millimeter/submillimeter antenna array on the Chajnantor plateau, Chile" />
+</div>
+
+## Major Observatories of the Northern Hemisphere
+
+The Northern Hemisphere's top large telescopes are concentrated at three classes of high-elevation, arid sites: Mauna Kea in Hawaii, La Palma in the Canary Islands, and the mountains of the southwestern United States (Arizona, California, New Mexico). In the table below, latitudes are given as positive values for north, and elevations are approximate.
+
+| Observatory | Location / Elevation | Latitude | Flagship Instruments |
+| --- | --- | --- | --- |
+| Mauna Kea | Big Island, Hawaii, USA, approx. 4205 m | +19.8° | Keck twin 10 m; Subaru 8.2 m; Gemini North 8.1 m; CFHT 3.6 m; JCMT 15 m (submillimeter) |
+| Roque de los Muchachos | La Palma, Spain, approx. 2400 m | +28.8° | GTC / GranTeCan 10.4 m (largest single-aperture optical telescope in operation); WHT 4.2 m; MAGIC Cherenkov telescopes |
+| Kitt Peak | Arizona, USA, approx. 2100 m | +32.0° | Mayall 4 m (now hosting the DESI dark-energy survey spectrograph); a national observatory campus hosting many small and medium telescopes |
+| Palomar | California, USA, approx. 1712 m | +33.4° | Hale 200-inch / 5.1 m; 48-inch Schmidt telescope (now hosting the ZTF transient survey) |
+| Apache Point | New Mexico, USA, approx. 2788 m | +32.8° | SDSS Sloan Digital Sky Survey 2.5 m dedicated survey telescope |
+
+Additional notes:
+
+- **Mauna Kea** is the Northern Hemisphere's best all-around optical/infrared site, and one of the world's premier submillimeter sites. Its advantages come from high elevation, low humidity, dark skies, and a persistent inversion layer overhead that suppresses turbulence. Beyond the table above, it also hosts more than a dozen instruments including UKIRT, IRTF, and the SMA.
+- **La Palma** is generally regarded as the Northern Hemisphere's second-best optical/infrared site after Mauna Kea, perched on a windward ridge above the cloud layer with stable air. The GTC (Gran Telescopio Canarias) 10.4 m primary mirror is assembled from 36 hexagonal segments and is currently the **largest single-aperture** optical telescope in operation.
+- **Kitt Peak** and **CTIO** (see below) both belong to the U.S. National Optical-Infrared Astronomy Research Laboratory (NOIRLab); the Mayall 4 m's current core mission is to use DESI to measure the redshifts of tens of millions of galaxies and study dark energy.
+- **Palomar**'s Hale Telescope is discussed in the tip below; Apache Point's SDSS 2.5 m is a dedicated survey machine, famed for systematically mapping the northern sky with a wide field of view.
+
+<Aside type="note" title="The Historical Significance of the Hale 200-inch">
+Palomar's Hale Telescope achieved first light in 1949, with a primary mirror aperture of 5.08 m (200 inches). From first light until the Soviet BTA-6 (6 m) was completed in 1976—and, in terms of effective observing capability, well into the 1990s until the Keck telescopes appeared—it was one of the most important optical telescopes in the world, dominating the study of galaxies and quasars in the mid-20th century. Its construction was championed by the astronomer George Ellery Hale.
+</Aside>
+
+## Major Observatories of the Southern Hemisphere
+
+The heart of Southern Hemisphere research observing is the **Atacama Desert in northern Chile**, where a substantial share of the world's top large telescopes and newly built extremely large telescopes are concentrated today; in addition, Australia and South Africa each have important sites. In the table below, latitudes are given as negative values for south.
+
+| Observatory | Location / Elevation | Latitude | Flagship Instruments |
+| --- | --- | --- | --- |
+| Paranal / VLT | Atacama, Chile (Cerro Paranal), approx. 2635 m | −24.6° | VLT four 8.2 m Unit Telescopes (combinable for interferometry); the 39 m ELT under construction on nearby Cerro Armazones |
+| ALMA | Llano de Chajnantor, Chile, approx. 5000 m | −23.0° | 66 millimeter/submillimeter antennas (54 × 12 m + 12 × 7 m) |
+| Las Campanas | Atacama, Chile, approx. 2380 m | −29.0° | Magellan twin 6.5 m (Baade, Clay); the Giant Magellan Telescope (GMT) ~25 m under construction |
+| La Silla | Chile, approx. 2400 m | −29.3° | ESO 3.6 m (hosting the HARPS exoplanet radial-velocity spectrograph); NTT 3.58 m |
+| Cerro Tololo (CTIO) | Chile, approx. 2200 m | −30.2° | Blanco 4 m (hosting the DECam Dark Energy Camera); nearby Cerro Pachón hosts Gemini South and the Rubin Observatory |
+| Siding Spring | New South Wales, Australia, approx. 1165 m | −31.3° | Anglo-Australian Telescope (AAT) 3.9 m |
+| SAAO Sutherland | Northern Cape, South Africa, approx. 1798 m | −32.4° | SALT 11 m (largest single-aperture optical telescope in the Southern Hemisphere) |
+
+Additional notes:
+
+- **Paranal VLT** is operated by the European Southern Observatory (ESO); its four 8.2 m Unit Telescopes are named Antu, Kueyen, Melipal, and Yepun. They can work individually or combine with four 1.8 m Auxiliary Telescopes to form the VLT Interferometer (VLTI). About 20 km away, Cerro Armazones (elevation approx. 3046 m) is the site for the **Extremely Large Telescope (ELT)** under construction, with a 39 m primary mirror assembled from nearly 800 hexagonal segments; once completed, it will be the largest optical/infrared telescope on the ground.
+- **ALMA** (Atacama Large Millimeter/submillimeter Array) is an international collaboration of ESO, the U.S. NSF/NRAO, Japan's NAOJ, and others, operating at wavelengths of about 0.32–3.6 mm (frequencies of 31–1000 GHz). It comprises 66 antennas forming a reconfigurable interferometric array whose baselines can vary from a few hundred meters to 16 km, synthesizing the angular resolution of a large aperture. The 5000 m Chajnantor plateau was chosen precisely to minimize the water vapor overhead—water vapor strongly absorbs millimeter/submillimeter radiation.
+- **Las Campanas** is operated by the Carnegie Institution for Science; the Magellan twin 6.5 m telescopes are renowned for observations of supernova 1987A and the optical counterpart of the GW170817 gravitational-wave event. The **Giant Magellan Telescope (GMT)** under construction consists of seven 8.4 m segments, with an effective aperture of about 24.5 m.
+- **La Silla** was ESO's first site in Chile; HARPS on the ESO 3.6 m is a benchmark instrument for radial-velocity detection of low-mass exoplanets, while the NTT 3.58 m pioneered active optics technology.
+- **CTIO** (Cerro Tololo Inter-American Observatory) also belongs to NOIRLab; the DECam carried by the Blanco 4 m completed the Dark Energy Survey (DES). Nearby Cerro Pachón also hosts Gemini South 8.1 m and the newly built **Vera C. Rubin Observatory** (LSST 8.4 m survey telescope).
+- **Siding Spring** lies within Warrumbungle National Park in Australia; the Anglo-Australian Telescope (AAT) 3.9 m has long been an important spectroscopic survey platform in the Southern Hemisphere. **SAAO Sutherland**'s SALT (Southern African Large Telescope) uses a fixed-altitude design similar to the Hobby–Eberly Telescope; its 11.1 m × 9.8 m spherical segmented primary mirror makes it the largest single-aperture optical telescope in the Southern Hemisphere.
+
+<div class="cols2">
+  <Fig name="lasergstar" alt="A telescope projecting a laser guide star toward the Galactic center" caption="Laser guide star (LGS): provides an artificial reference star for adaptive optics, compensating for atmospheric jitter in real time" />
+  <Fig name="milkyway" alt="The Milky Way arch and Galactic center visible from the Southern Hemisphere" caption="Southern Hemisphere sites can observe the Galactic center at high elevation angles" />
+</div>
+
+<Aside type="note" title="Two Classes of Technique for Improving Angular Resolution">
+The "flagship instruments" in the tables repeatedly feature two classes of key technology: **adaptive optics (AO)** uses a deformable mirror to cancel, in real time, the wavefront distortions introduced by atmospheric turbulence, often paired with a laser guide star (LGS) to generate an artificial reference point, allowing a single large telescope to approach its diffraction limit; **interferometry** coherently combines signals from multiple telescopes/antennas, with the effective aperture set by the longest baseline. The VLTI and ALMA both rely on interferometry to achieve angular resolution far beyond that of a single telescope.
+</Aside>
+
+## Three Site-Selection Criteria: Dark, Steady, Clear
+
+The site selection for a research-grade optical/infrared observatory revolves mainly around three mutually independent yet equally important conditions. Together they determine the limiting magnitude (see [The Magnitude System](/en/astronomy/foundations/magnitude/)) and image sharpness achievable by an instrument of a given aperture.
+
+| Criterion | Physical Meaning | Key Metric | Favorable Conditions |
+| --- | --- | --- | --- |
+| Dark (dark sky) | The lower the night-sky background, the better the signal-to-noise discrimination between faint objects and the background | Zenith night-sky surface brightness (mag/arcsec²) | Far from urban light pollution, moonless, low aerosols, low airglow |
+| Steady (seeing) | Atmospheric turbulence spreads out star images and blurs the picture | Seeing (in arcseconds, ″); top sites can reach about 0.6″–0.8″ | High elevation, smooth laminar flow, stable inversion layer, unobstructed upwind terrain |
+| Clear & dry | The number of clear nights determines usable observing time; low water vapor determines infrared/millimeter transparency | Number of usable clear nights per year (top sites have about 300+ nights), precipitable water vapor (PWV) | Arid climate, year-round subsiding air, far from oceanic moisture |
+
+The intrinsic relationships among the three:
+
+- **Elevation improves both "steady" and "clear" at once.** The higher the telescope, the thinner the residual air mass, turbulence layer, and water-vapor column overhead. The reason Mauna Kea (approx. 4205 m) and the Chajnantor plateau (approx. 5000 m) became top optical/infrared and millimeter sites, respectively, comes down to exactly this—they "stand above most of the atmosphere."
+- **"Dark" comes mainly from being far from human activity.** Extremely low population density and the absence of industrial lighting give the Atacama, La Palma, the Australian interior, and similar places a near-natural night-sky background.
+- **"Clear" carries different weight for different wavebands.** Optical observing depends on the number of clear nights; near-infrared and millimeter/submillimeter observing, however, are extremely sensitive to precipitable water vapor (PWV), because water vapor strongly absorbs these bands—this is precisely why ALMA had to be built on an extremely dry plateau.
+
+<Aside type="caution" title="Why the Atacama Concentrates Top Large Telescopes">
+The Atacama Desert in northern Chile is one of the driest non-polar deserts on Earth. Dominated year-round by the subtropical high and prevailing stable subsiding air, it combines high elevation, extremely low humidity, very little cloud cover, and extremely low population density, satisfying all three criteria—dark, steady, and clear—at once. As a result, in-operation facilities such as the VLT, ALMA, Magellan, La Silla, and CTIO, along with the ELT (39 m), GMT (~25 m), and Rubin Observatory under construction, are all concentrated here. It is fair to say that the center of gravity of 21st-century ground-based optical/infrared astronomy has tilted markedly toward northern Chile. A word of caution: even under such favorable conditions, these sites sit at elevations that are high for the human body (ALMA's work areas approach 5000 m), and on-site work requires precautions against altitude sickness.
+</Aside>
+
+## The Difference From "Remote Imaging Platforms"
+
+In Chinese, "observing station/observatory" is easily conflated with the astrophotography community's "remote platforms," but the two are entirely different in nature and need to be clearly distinguished.
+
+| Aspect | Research Observatory (this page) | Remote Imaging Platform |
+| --- | --- | --- |
+| Operator | Universities, national agencies, international consortia | Commercial companies or dark-sky hosting bases |
+| Primary Purpose | Frontier astronomical research | Renting observing time to astrophotography hobbyists |
+| Typical Aperture | Mostly 4–10 m, up to 25–39 m under construction | Mostly telescopes from a few centimeters to a few tens of centimeters |
+| Mode of Use | Through competitive observing-time proposals; ordinary hobbyists cannot book it | Pay to remotely control the equipment and obtain your own imaging data |
+| Data Ownership | Public research data / survey products | The user's personal work |
+
+If your goal is to capture deep-sky images yourself, it is the latter you should learn about—its site-selection logic (likewise pursuing dark, steady, clear) and equipment scale are entirely different from those of large research telescopes; see [Remote Platform Comparison](/en/astrophotography/remote-platforms/platforms-comparison/).
+
+To further understand how latitude determines "which part of the sky you can see from a given location," combine [Celestial Coordinate Systems](/en/astronomy/foundations/celestial-coordinates/) with [Hemisphere Visibility](/en/astronomy/observing/hemisphere-visibility/); for a systematic look at the weather and seeing factors that affect imaging, see [Observing Conditions](/en/astronomy/observing/conditions/).
+
+## References
+
+- [Mauna Kea Observatories — Wikipedia](https://en.wikipedia.org/wiki/Mauna_Kea_Observatories): Mauna Kea site coordinates, elevation, and a list of telescope apertures.
+- [Paranal Observatory — Wikipedia](https://en.wikipedia.org/wiki/Paranal_Observatory): Overview of the VLT's four Unit Telescopes, the Auxiliary Telescopes, and the nearby ELT.
+- [Location | ELT | ESO](https://elt.eso.org/about/location/): The site and elevation of the Extremely Large Telescope (39 m) on Cerro Armazones.
+- [Atacama Large Millimeter Array — Wikipedia](https://en.wikipedia.org/wiki/Atacama_Large_Millimeter_Array): ALMA's 66-antenna configuration, wavelength range, and the reasons for the plateau site.
+- [Roque de los Muchachos Observatory — Wikipedia](https://en.wikipedia.org/wiki/Roque_de_los_Muchachos_Observatory): The GTC 10.4 m and other instruments, plus notes on the Northern Hemisphere site ranking.
+- [Las Campanas Observatory — Wikipedia](https://en.wikipedia.org/wiki/Las_Campanas_Observatory): Parameters of the Magellan twin 6.5 m and the GMT under construction.

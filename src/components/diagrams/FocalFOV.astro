@@ -1,0 +1,39 @@
+---
+/** 焦距 vs 视场:同一相机不同焦距下,目标在画面里的大小差异。 */
+interface Props { caption?: string; }
+const en = Astro.url.pathname.startsWith('/en');
+const L = en
+  ? { cap: 'Longer focal length means a narrower field and a larger target. Wide field for large nebulae; long focal length for small galaxies/planets.',
+      f1: 'Wide field: the whole North America Nebula', f2: 'Medium: M31 well-framed', f3: 'Long: small galaxies / planets' }
+  : { cap: '焦距越长视场越窄、目标越大。广角拍大星云,长焦拍小星系/行星。',
+      f1: '广角:整片北美洲星云', f2: '中焦:M31 满构图', f3: '长焦:小星系 / 行星' };
+const { caption = L.cap } = Astro.props;
+const frames = [
+  { f: '135mm', label: L.f1, boxW: 150, target: 120, tcolor: '#ff8fa3' },
+  { f: '550mm', label: L.f2, boxW: 150, target: 70, tcolor: '#5fe3d2' },
+  { f: '2000mm', label: L.f3, boxW: 150, target: 26, tcolor: '#ffd66e' },
+];
+---
+<figure class="diagram">
+  <div class="fov">
+    {frames.map((fr) => (
+      <div class="fov__cell">
+        <svg viewBox="0 0 150 110" role="img" aria-label={`${fr.f} 视场`}>
+          <rect x="2" y="2" width="146" height="96" rx="6" fill="#070a16" stroke="#2a335f" />
+          <ellipse cx="75" cy="50" rx={fr.target} ry={fr.target * 0.62} fill={fr.tcolor} opacity="0.45" />
+          <ellipse cx="75" cy="50" rx={fr.target * 0.6} ry={fr.target * 0.38} fill={fr.tcolor} opacity="0.5" />
+          <text x="75" y="106" fill="#8a96d6" font-size="11" text-anchor="middle">{fr.f}</text>
+        </svg>
+        <div class="fov__label">{fr.label}</div>
+      </div>
+    ))}
+  </div>
+  <figcaption>{caption}</figcaption>
+</figure>
+
+<style>
+  .fov { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; }
+  .fov__cell { text-align: center; }
+  .fov__cell svg { width: 100%; height: auto; border-radius: 8px; }
+  .fov__label { margin-top: 0.4rem; font-size: var(--sl-text-sm); color: var(--sl-color-gray-3); }
+</style>

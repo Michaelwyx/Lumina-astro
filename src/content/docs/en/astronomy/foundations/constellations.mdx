@@ -1,0 +1,238 @@
+---
+title: Star Charts and Constellations
+description: A systematic introduction to the 88 modern IAU constellations and their precise 1930 boundaries, the zodiac and circumpolar constellations, the Chinese system of asterisms (Three Enclosures, Four Symbols, and Twenty-Eight Mansions), the Bayer/Flamsteed/variable-star designation schemes, a brief history of star catalogues, and the star-hopping method for locating objects.
+difficulty: beginner
+pillar: astronomy
+sidebar:
+  order: 3
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+import Fig from '@/components/Fig.astro';
+
+A constellation is a recognizable pattern formed by stars whose apparent positions on the celestial sphere lie close together, together with the region of sky thereby delineated. It must be emphasized that the stars within a single constellation usually have no physical connection to one another: their distances from Earth can differ by hundreds or even thousands of light-years, and the so-called "pattern" is merely the projection of these stars along Earth's line of sight. The main purpose of constellations is to provide a naming and partitioning framework for locating celestial objects; used together with the [right ascension and declination coordinate system](/en/astronomy/foundations/celestial-coordinates/), they allow the position of any target on the celestial sphere to be uniquely specified.
+
+A concept related to but distinct from a "constellation" is the **asterism**: an asterism is any widely recognized pattern of stars. It may be smaller than a constellation (such as Orion's Belt or the Big Dipper) or it may span several constellations (such as the Summer Triangle, which crosses Lyra, Aquila, and Cygnus). An asterism is not a formal division of the sky, whereas a constellation in modern astronomy is a sky region with precise boundaries.
+
+## The 88 Modern IAU Constellations
+
+At its first General Assembly in 1922, the International Astronomical Union (IAU) established the list of modern constellations covering the entire celestial sphere, and assigned each constellation a **three-letter abbreviation** based on its Latin name (for example, Orion is abbreviated Ori, Lyra is Lyr, and Centaurus is Cen). These three-letter abbreviations are widely used in star catalogues and the literature, avoiding the ambiguity of the full Latin names and their genitive forms.
+
+### Historical Origins
+
+This system was not designed all at once but accumulated over more than two thousand years. Its historical origins can be divided into four parts:
+
+| Source | Number and content | Period and notes |
+| --- | --- | --- |
+| Ptolemy's 48 constellations | The ancient Greek *Almagest* records about 1022 stars and 48 constellations | Around the 2nd century CE; mostly classical constellations of the northern sky and near the ecliptic, dominating Western and Arabic astronomy for over eight centuries |
+| New southern constellations | Plancius, together with the navigators Keyser and de Houtman, added about 12 based on Southern Hemisphere observations | Late 16th to early 17th century; filling in the southern sky unseen by the ancient Greeks, such as Apus, Pavo, and Tucana |
+| Lacaille's southern constellations | Lacaille added 14, mostly named after scientific instruments | Mid-18th century; such as Telescopium, Microscopium, Norma, and Antlia |
+| Constellation splitting | Lacaille split Ptolemy's Argo Navis into three parts: Carina, Puppis, and Vela | This is why the 89 abbreviations originally established in 1922 were ultimately reduced to 88 |
+
+The final 88 modern constellations can be broadly grouped into three thematic categories: **42 animals, 29 inanimate objects, and 17 human or mythological figures**. Historically there were also many constellations now obsolete (such as Quadrans Muralis and Felis), whose vestiges survive only in names such as the Quadrantid meteor shower (Quadrantids).
+
+### The Precise Boundaries of 1930
+
+What was established in 1922 was merely the list of constellation names; there were as yet no uniform boundaries between constellations, and which constellation a given star belonged to often varied from chart to chart. **The precise boundaries were given in *Délimitation scientifique des constellations* (Scientific Delineation of the Constellations), adopted by the IAU in 1928, compiled by the Belgian astronomer Eugène Delporte, and officially published in 1930.** Its key features:
+
+- The boundaries run along **lines of right ascension and declination**, that is, they are assembled from "vertical" and "horizontal" arc segments, dividing the celestial sphere seamlessly into 88 non-overlapping regions that together cover the entire sky.
+- The boundaries use right ascension and declination coordinates of the **B1875.0 epoch**. This epoch was chosen to align with observations already available at the time, such as the Argentine *Córdoba* catalogue. Because [precession](/en/astronomy/foundations/celestial-coordinates/) causes the coordinate grid to rotate slowly over time, on the J2000 charts commonly used today these boundaries no longer appear strictly horizontal or vertical, but are slightly tilted.
+- The IAU at the time required that the delineation guarantee that all known **variable stars** remained within the constellations to which they had previously been assigned, so that variable-star designations (see below) would not lose their referents.
+- From then on, every star and every deep-sky object belongs uniquely to one constellation; saying "a certain object is in Cygnus" has a clear and unambiguous meaning in terms of sky region.
+
+<Fig name="fig-orion-chart" alt="Official IAU star chart of Orion" caption="Official star chart of Orion: the outer broken line is the constellation boundary laid out along right ascension and declination, the principal bright stars are labeled with Bayer Greek letters, and the grid shows right ascension and declination graduations" />
+
+### Constellation Areas and Extremes
+
+The solid angle of the entire celestial sphere is about **41,253 square degrees** (corresponding to 4π steradians), giving an average of about **469 square degrees** per constellation, but the actual areas vary enormously, the largest being about 19 times the smallest.
+
+| Category | Constellation | Area (square degrees) |
+| --- | --- | --- |
+| Largest | Hydra | 1302.8 |
+| Second largest | Virgo | 1294.4 |
+| Third largest | Ursa Major | 1279.7 |
+| Third smallest | Sagitta | 79.9 |
+| Second smallest | Equuleus | 71.6 |
+| Smallest | Crux | 68.4 |
+
+<Aside type="note" title="The difference between constellation boundaries and constellation stick figures">
+The "stick figures" on a star chart that connect bright stars into patterns are not officially defined; different books draw them differently. What truly has official status are the **sky-region boundaries** delineated in 1930. When we say a star "belongs to" a constellation, the basis is which boundary box it falls within, not whether it takes part in any particular stick figure. For example, the Big Dipper is only an asterism within Ursa Major; the actual boundary of Ursa Major is far larger than the Dipper.
+</Aside>
+
+## Zodiacal and Circumpolar Constellations
+
+### Zodiacal Constellations
+
+The **ecliptic** is the apparent path the Sun traces across the celestial sphere over the course of a year. From an astronomical standpoint, the ecliptic passes through **13 constellations**: Aries, Taurus, Gemini, Cancer, Leo, Virgo, Libra, Scorpius, Sagittarius, Capricornus, Aquarius, Pisces, and additionally **Ophiuchus**.
+
+Astrology takes only 12 of these, because in the first millennium BCE the Babylonians divided the ecliptic by ecliptic longitude into 12 "signs" of 30° each, to match the roughly 12 synodic months in a year; Ophiuchus was omitted because it did not fit conveniently into this equal-division scheme. Two points must be distinguished:
+
+- The astrological "signs" are equal segments of ecliptic longitude, and their boundaries do not coincide with the IAU sky-region boundaries of the actual constellations.
+- Astronomically, the Sun spends different lengths of time in each constellation: about 45 days within Virgo, but only about 7 days within the IAU boundary of Scorpius, and conversely about 18 days within Ophiuchus (the Sun lies in the direction of Ophiuchus from about November 30 to December 18).
+
+<Aside type="note" title="The signs and the actual constellations are out of step">
+Because of precession, the "vernal equinox" drifts westward relative to the stars by about 50.3 arcseconds per year. Astrology continues to use the signs defined some two thousand years ago, which today differ from the constellation the Sun is actually in by about one constellation. Therefore the "sign" of your horoscope often does not match the constellation the Sun is truly in on your birthday.
+</Aside>
+
+### Circumpolar Constellations
+
+A **circumpolar constellation** is one that never sets below the horizon at a given observing latitude, rotating around the celestial pole and remaining visible all year. Whether a constellation is circumpolar depends on the observer's geographic latitude. Let the latitude be φ and the object's declination be δ:
+
+```text
+Never sets in the Northern Hemisphere (upper circumpolar):  δ > 90° − φ
+Never rises in the Northern Hemisphere (lower circumpolar):  δ < −(90° − φ)
+```
+
+- Common circumpolar constellations at mid-northern latitudes include Ursa Minor, Ursa Major, Cassiopeia, Cepheus, and Draco.
+- The higher the latitude, the more circumpolar constellations there are; near the poles nearly half the celestial sphere is visible year-round, while at the equator no constellation is circumpolar and all constellations rise in the east and set in the west.
+- The circumpolar region overlaps closely with the ancient Chinese "Purple Forbidden Enclosure," which is precisely the region around the north celestial pole that is visible all year.
+
+The visibility of the various constellations at different latitudes can be further assessed in conjunction with [hemisphere visibility](/en/astronomy/observing/hemisphere-visibility/).
+
+<div class="cols2"><Fig name="fig-orion-chart" alt="Star chart of Orion" caption="Orion lies near the celestial equator and is visible from both the Northern and Southern Hemispheres, making it a representative cross-hemisphere constellation" /><Fig name="m45-pleiades" alt="The Pleiades M45" caption="The Pleiades lie in Taurus and are a famous open cluster near the ecliptic" /></div>
+
+## The Ancient Chinese System of Asterisms
+
+By no later than the 5th century BCE, China had independently developed a system of **asterisms** (also rendered as "Chinese constellations"), known in Chinese as *xingguan* ("star officials") or *xingxiu* ("lodges"). Its method of partitioning and connecting stars is entirely different from the ancient Greek tradition, and the asterisms are generally smaller and contain fewer stars than Western constellations. The Suzhou stone-carved astronomical chart of the Song dynasty (13th century) records **283 asterisms with a total of about 1565 stars**, far more than Ptolemy's 48 constellations and 1022 stars. This system consists of the "Three Enclosures" and the "Four Symbols and Twenty-Eight Mansions." In the late Ming dynasty, Xu Guangqi and others added about 23 near-southern asterisms to fill in the southern sky, based on European star charts.
+
+### The Three Enclosures
+
+The **Three Enclosures** are three regions surrounding the north celestial pole, each bounded by two wall-like asterisms (the left and right walls, collectively called an "enclosure"), symbolizing the imperial court, government offices, and marketplace of the heavens.
+
+| Three Enclosures | Meaning | Roughly corresponding Western constellations |
+| --- | --- | --- |
+| Purple Forbidden Enclosure | The dwelling of the Celestial Emperor; the circumpolar region around the north celestial pole | Ursa Minor, Draco, Camelopardalis, Cepheus, Cassiopeia, etc. |
+| Supreme Palace Enclosure | The imperial court and government offices, named after official posts and venues | Virgo, Coma Berenices, and part of Leo |
+| Heavenly Market Enclosure | The marketplace, named after goods and feudal states | Ophiuchus, Hercules, Serpens, Aquila, and part of Corona Borealis |
+
+### The Four Symbols and the Twenty-Eight Mansions
+
+Around the celestial equator and the ecliptic, twenty-eight groups of asterisms (called "mansions") are divided into four directions, seven mansions per direction, collectively called the **Four Symbols**, each associated with a mythical creature and a color:
+
+| Four Symbols | Direction/Season | Names of the seven mansions |
+| --- | --- | --- |
+| Azure Dragon of the East | East, spring | Jiao, Kang, Di, Fang, Xin, Wei, Ji |
+| Black Tortoise of the North | North, winter | Dou, Niu, Nü, Xu, Wei, Shi, Bi |
+| White Tiger of the West | West, autumn | Kui, Lou, Wei, Mao, Bi, Zi, Shen |
+| Vermilion Bird of the South | South, summer | Jing, Gui, Liu, Xing, Zhang, Yi, Zhen |
+
+The **Twenty-Eight Mansions (Twenty-Eight Mansions / Lunar Mansions)** are essentially a system of stellar reference points along the ecliptic (equator), used to record the positions through which the Moon passes night by night as it moves eastward over a synodic month, hence the name "mansion" (meaning a posting station or place to spend the night). Each mansion has a **determinative star** that serves as the reference for reckoning that mansion; the difference in right ascension between two adjacent determinative stars is the "equatorial extension" of that mansion. This lunar-station system, based on the Moon's motion, corresponds functionally to the Indian *nakshatras* and the Arabic lunar stations (*manazil*).
+
+### Comparison with Western Constellations
+
+| Chinese asterism | Western counterpart | Notes |
+| --- | --- | --- |
+| Xin Su Er (the second star of the Heart mansion) | Scorpius α (Antares) | The determinative star of the Heart mansion; a red bright star of summer nights |
+| Shen mansion (in part) | ζ/ε/δ Ori etc. of Orion's Belt | "Shen" corresponds to the central section of Orion |
+| Mao mansion | The Pleiades (Pleiades, M45) in Taurus | The Western Pleiades |
+| The Big Dipper | The seven stars of Ursa Major | Used in China to fix the seasons, determine direction, and tell time |
+
+<Aside type="note" title="Two systems dividing the same region of sky">
+The Chinese asterisms and the Western constellations cover the same region of sky, but their boundaries and connecting lines do not correspond: Orion's Belt belongs to the "Shen mansion" in China, while the tail of Western Scorpius falls under the "Azure Dragon of the East" among the Four Symbols. Mastering the comparison of the two systems aids both in reading ancient astronomical texts and in memorizing the sky regions. Related terms can be found in the [glossary](/en/reference/glossary/).
+</Aside>
+
+## Stellar Designations
+
+Apart from a few that have proper names, stars are mainly identified through several standard designation systems. A single bright star often carries simultaneously a proper name, a Bayer letter designation, a Flamsteed number, and several catalogue numbers (for example, Deneb = Cygnus α = Cygnus 50 = HR 7924). The common systems and their rules are as follows.
+
+### Bayer Designation (1603)
+
+The German astronomer Johann Bayer, in *Uranometria* (1603), proposed naming the bright stars within each constellation using a **Greek letter + the Latin genitive of the constellation**.
+
+- The ordering is roughly by magnitude class: first-magnitude stars take the earlier letters (α, β, γ, …), but there are many exceptions, and the order is not strictly by apparent magnitude.
+- The genitive indicates "which constellation it belongs to," such as Orionis = of Orion, Lyrae = of Lyra, Centauri = of Centaurus.
+- After the Greek alphabet (24 letters) is exhausted, lowercase and then uppercase Latin letters may follow; multiple stars under the same letter are distinguished by superscript numbers, such as π¹, π² Orionis.
+
+```text
+Betelgeuse(Shen Su Si) = Orion α = α Orionis
+Rigel(Shen Su Qi)     = Orion β = β Orionis   # actually slightly brighter than α, confirming the ordering is not strict
+Vega(Zhi Nü Yi)      = Lyra α = α Lyrae
+```
+
+### Flamsteed Numbers
+
+The numerical designations in John Flamsteed's catalogue (the catalogue was published in 1712/1725, but the numbers were actually compiled and added by the French astronomer Lalande in 1783) number the stars within each constellation by **increasing right ascension from west to east**, regardless of brightness.
+
+```text
+61 Cygni(Cygnus 61)   # a famous nearby high-proper-motion double star
+51 Pegasi(Pegasus 51)  # the first Sun-like star found to host a planet
+```
+
+When the Greek letters run out, or when a star is too faint to have received a Bayer letter, the Flamsteed number is especially useful.
+
+### Variable-Star Designations
+
+**Variable stars** without a Bayer letter use the special designation scheme devised by F. W. Argelander, assigned within each constellation in order **by order of discovery**:
+
+- Single letters: `R S T U V W X Y Z` (9 in all). R was chosen as the starting letter because few constellations have uppercase-Latin-letter Bayer names beyond Q, thus avoiding conflict with letter-Bayer names and spectral-type letters (it is not taken from "red").
+- Double letters: `RR…RZ, SS…SZ, …, ZZ`, followed by `AA…AZ, BB…BZ, …, QZ`. Neither position uses J (because the system originated in Germany where blackletter type was used, and uppercase I and J are hard to distinguish), giving 325 double-letter combinations in all.
+- After all 334 single- and double-letter combinations are exhausted, numbering continues in the numeric form `V335, V336, …`.
+
+```text
+R Andromedae   RR Lyrae   V603 Aquilae
+```
+
+### Proper Names and Catalogue Numbers
+
+| System | Form and meaning | Example |
+| --- | --- | --- |
+| IAU star names | Official proper names approved by the IAU Working Group on Star Names (WGSN); about 330-plus as of early 2019, mostly naked-eye bright stars, often derived from Arabic | Sirius, Betelgeuse, Vega |
+| HD | Henry Draper Catalogue number, containing about 359,000 stars | HD 209458 |
+| HIP | Number in the Hipparcos space-astrometry catalogue | HIP 27989 |
+| HR | Number in the Bright Star Catalogue, about 9100 naked-eye-visible stars | HR 2061 |
+
+The apparent brightness of a star is measured by its [apparent magnitude](/en/astronomy/foundations/magnitude/); Bayer ordering is related to it but not entirely consistent with it.
+
+## A Brief History of Star Charts and Catalogues
+
+| Period | Achievement | Content |
+| --- | --- | --- |
+| 2nd century BCE | The catalogue of Hipparchus | The earliest known attempt at a systematic all-sky catalogue, also founding the concept of magnitude |
+| About 2nd century CE | Ptolemy's *Almagest* | Records about 1022 stars and 48 constellations, dominating Western and Arabic astronomy for over eight centuries |
+| 1603 | Bayer's *Uranometria* | Introduced the Greek-letter Bayer designation |
+| 1712/1725 | Flamsteed's *Historia Coelestis Britannica* | Flamsteed numbers were later compiled from it |
+| 1771–1781 | The Messier catalogue | About 110 deep-sky objects, with M numbers |
+| 1888 | The New General Catalogue (NGC, compiled by Dreyer) | About 7840 deep-sky objects |
+| 1895–1908 | The Index Catalogue (IC) | A supplement to the NGC, adding about 5000-plus objects |
+
+Of these, the **Messier catalogue** deserves comment: Messier was originally a comet hunter, and it was to avoid mistaking fixed fuzzy objects for comets that he numbered and recorded them one by one. As a result, the M objects are mostly bright nebulae, clusters, and galaxies well suited to small instruments (such as M31 the Andromeda Galaxy, M42 the Orion Nebula, and M45 the Pleiades), and remain classic targets for beginning observers to this day. The **NGC/IC**, by contrast, is far more systematic, covering the vast majority of deep-sky objects visible to the naked eye or through a small telescope, and forms the basis of modern catalogues and [object catalogues](/en/reference/catalog/). The physical nature of deep-sky objects is discussed in [stellar physics and evolution](/en/astronomy/deep-sky/stellar-physics/).
+
+## The Right Ascension and Declination Grid of Star Charts
+
+Modern star charts are overlaid with a grid of the [equatorial coordinate system](/en/astronomy/foundations/celestial-coordinates/), used to read positions precisely:
+
+- **Right ascension (RA)**: analogous to "longitude" on the celestial sphere, measured along the celestial equator in hours, minutes, and seconds (0h–24h), increasing eastward. On star charts it appears as approximately vertical curves.
+- **Declination (Dec)**: analogous to "latitude," running from the celestial equator (0°) northward to +90° and southward to −90°. On star charts it appears as approximately horizontal curves.
+- Constellation boundaries are precisely laid out along the lines of right ascension and declination of B1875.0, so on a star chart marked with a J2000 grid there is a small angular offset between the boundaries and the grid due to precession.
+- Star charts usually mark RA/Dec graduations along the edges, and use dots of different sizes to represent magnitudes, with larger dots indicating brighter stars.
+
+## Locating with the Star-Hopping Method
+
+To the naked eye or through a small telescope, many deep-sky objects are very faint and hard to point to directly. The classic **star-hopping** method uses a star chart, starting from a conspicuous bright star and gradually "hopping" toward the target along a recognizable chain of stars.
+
+<Steps>
+
+1. Identify a stepping-stone bright star: first use the naked eye to find a bright star or easily recognized pattern near the target (such as the Big Dipper or the Summer Triangle) as a starting point.
+
+2. Check the field-of-view scale: confirm that the field-of-view circle on the star chart matches the true field of view of your finder or eyepiece, and estimate how many "hops" are needed.
+
+3. Advance hop by hop: move the telescope group by group along the chain of stars marked on the chart, comparing the direction against the actual view at each hop.
+
+4. Confirm the target: once in position, first use low power to look for the faint smudge, then switch to high power for a closer look after confirming.
+
+</Steps>
+
+The star-hopping method is rather sensitive to observing conditions: when [observing conditions](/en/astronomy/observing/conditions/) are poor (light pollution, low transparency), the faint stars that could serve as stepping stones may not be visible, and one must choose a brighter chain of stars or switch to a larger-aperture finder.
+
+<Aside type="caution" title="Latitude and season determine which constellations are visible">
+Whether a given constellation can be seen depends on the observer's latitude and the season. At mid-northern latitudes, Orion and Taurus are visible at midnight in winter, and Scorpius and Sagittarius in summer; the farther south the latitude, the more southern constellations and the fewer northern constellations are visible. Before planning observations, you should judge whether the target rises and to what altitude it rises by combining your own geographic latitude with the target's declination. See also [the diurnal and annual apparent motion of celestial objects](/en/astronomy/foundations/apparent-motion/).
+</Aside>
+
+## References
+
+- [IAU designated constellations — Wikipedia](https://en.wikipedia.org/wiki/IAU_designated_constellations): The history of the 88 modern constellations, their establishment in 1922, the Ptolemaic and Lacaille sources, and the 1930 Delporte boundary delineation.
+- [IAU designated constellations by solid angle — Wikipedia](https://en.wikipedia.org/wiki/IAU_designated_constellations_by_solid_angle): The ranking of constellations by area and the data for the total solid angle of the whole sky.
+- [Stellar designations and names — Wikipedia](https://en.wikipedia.org/wiki/Stellar_designations_and_names): An overview of the Bayer, Flamsteed, and IAU proper-name systems and the various catalogue-numbering systems.
+- [Variable-star designation — Wikipedia](https://en.wikipedia.org/wiki/Variable-star_designation): The complete letter sequence and rules of Argelander's variable-star designation scheme.
+- [Chinese constellations — Wikipedia](https://en.wikipedia.org/wiki/Chinese_constellations): The Three Enclosures, the Four Symbols, the Twenty-Eight Mansions asterism system, the concept of determinative stars, and the comparison with Western constellations.
+- [The Constellations — IAU](https://iauarchive.eso.org/public/themes/constellations/): The IAU's authoritative official account of the definition, abbreviations, and boundaries of the constellations.

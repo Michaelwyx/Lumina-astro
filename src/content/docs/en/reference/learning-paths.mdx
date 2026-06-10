@@ -1,0 +1,189 @@
+---
+title: Learning Paths
+description: Recommended reading order organized by learning goal, stringing pages from across topics into ordered routes covering observing fundamentals, remote deep-sky, your own gear, planetary imaging, and narrowband deep-sky.
+difficulty: beginner
+pillar: index
+sidebar:
+  order: 5
+---
+
+import { Aside, Card, CardGrid, Steps } from '@astrojs/starlight/components';
+import Fig from '@/components/Fig.astro';
+import Capture from '@/components/Capture.astro';
+import CoordSphere from '@/components/diagrams/CoordSphere.astro';
+import SNRChart from '@/components/diagrams/SNRChart.astro';
+import SHOPalette from '@/components/diagrams/SHOPalette.astro';
+
+This site is organized as a topic tree (astronomy fundamentals, observing, deep-sky objects, astrophotography, reference), but learning a single skill usually requires reading pages scattered across different branches in a particular order. This page strings those pages into five ordered learning paths and serves as a navigation hub: each path corresponds to a clear goal, lists the pages to read in sequence along with in-site links, and explains the problem each step solves.
+
+Each path lists only the key pages, so you can decide "what to read next"; the extended concepts within each page are developed further by that page's own links. The five paths can be chained together: after completing the observing fundamentals, you can move straight into any of the astrophotography paths.
+
+<Aside type="tip" title="How to choose a starting point">
+First decide on your current goal, then choose a path: to get to know the night sky with just your eyes or binoculars, choose Path 1; if you have no gear but want to obtain deep-sky images, choose Path 2; if you have already bought an equatorial mount and a camera, choose Path 3; to image the planets, the Moon, or the Sun, choose Path 4; to image emission nebulae under light pollution and do channel combination, choose Path 5. If you cannot decide, start with the [Getting Started guide](/en/start/).
+</Aside>
+
+## Overview of the five paths
+
+The table below gives the goal, required gear, and output for the five paths, for easy side-by-side comparison.
+
+| Path | Goal | Required gear | Main output |
+| --- | --- | --- | --- |
+| 1 Observing fundamentals | Recognize the night sky, understand apparent motion and visibility | None (binoculars optional) | Sense of orientation and the ability to plan observations |
+| 2 Remote deep-sky | Acquire deep-sky data without buying gear | None (rent a remote platform) | One processed deep-sky image |
+| 3 Deep-sky with your own gear | Build a complete workflow with an equatorial mount and camera | Equatorial mount, telescope, camera | A deep-sky image acquired and processed yourself |
+| 4 Planetary imaging | Record surface detail of the planets, the Moon, and the Sun | Long focal length, Barlow, high-speed camera | High-resolution planetary/lunar images |
+| 5 Narrowband deep-sky | Image emission nebulae under light pollution and color them | Mono camera, filter wheel, narrowband filters | SHO/HOO-combined nebula images |
+
+<CardGrid>
+  <Card title="Path 1 Observing fundamentals" icon="star">
+    Constellations, apparent motion, magnitude, coordinates, and hemisphere visibility. No telescope or camera required; it is the shared prerequisite for the other paths.
+  </Card>
+  <Card title="Path 2 Remote deep-sky" icon="camera">
+    Rent a remote platform to acquire raw data, focusing on choosing targets, delivering FITS, calibration, and stacking, while bypassing gear and weather.
+  </Card>
+  <Card title="Path 3 Deep-sky with your own gear" icon="setting">
+    Build the full workflow from acquisition to final image through optics, sensors, exposure, capture, calibration, stacking, and post-processing.
+  </Card>
+  <Card title="Path 4 Planetary imaging" icon="moon">
+    The lucky-imaging workflow: framing at very long effective focal length, high-frame-rate video, frame selection and stacking, and wavelet sharpening.
+  </Card>
+  <Card title="Path 5 Narrowband deep-sky" icon="puzzle">
+    Narrowband filters, mono cameras, per-channel acquisition, and SHO/HOO channel combination.
+  </Card>
+</CardGrid>
+
+## Path 1: Observing fundamentals
+
+Goal: be able to recognize common constellations and understand the apparent motion, magnitude, coordinates, and visibility of celestial objects. No gear is required; binoculars can serve as an optional aid. This path is the shared foundation for the following four paths: choosing targets and judging "can I image it tonight" both rely on the concepts here.
+
+<Steps>
+
+1. [Recognizing the constellations](/en/astronomy/foundations/constellations/) — Use bright stars and constellations to build a sense of orientation, and understand how the 88 International Astronomical Union (IAU) constellations divide the whole sky.
+2. [Apparent motion of celestial objects](/en/astronomy/foundations/apparent-motion/) — Diurnal motion (Earth's rotation, a sidereal day of about 23h56m) and annual motion (Earth's revolution), which explain why objects rise in the east and set in the west and why the starry sky changes with the seasons.
+3. [The magnitude system](/en/astronomy/foundations/magnitude/) — Apparent magnitude (m) is a logarithmic scale where smaller values are brighter and a difference of 5 magnitudes corresponds to a brightness ratio of 100; the naked-eye limit is about magnitude 6, used to judge target visibility.
+4. [Celestial coordinates](/en/astronomy/foundations/celestial-coordinates/) — Right ascension (RA) and declination (Dec) form the equatorial coordinate system, the "latitude and longitude" for locating celestial objects; together with hour angle and the altitude-azimuth system they describe an object's position in the sky.
+5. [Hemisphere visibility](/en/astronomy/observing/hemisphere-visibility/) — From the observing latitude φ and the target declination δ, judge whether an object can rise: `δ > 90° − φ` is circumpolar (never sets), `δ < φ − 90°` never rises.
+6. [Visual observing techniques](/en/astronomy/observing/visual-techniques/) — Dark adaptation (about 20–30 minutes), averted vision, recording methods, and using star charts.
+
+</Steps>
+
+<CoordSphere caption="The equatorial coordinate system: right ascension/declination act like the sky's latitude and longitude, and are central to step 4 of Path 1 and to all target-selection operations." />
+
+<Aside type="note" title="Where the time system fits in">
+If you need to predict precisely when an object transits the meridian or when it rises and sets, you can follow this path with [Time systems](/en/astronomy/foundations/time-systems/) to understand the conversion between sidereal time and local time; it is the basis for drawing up an [observing plan](/en/astronomy/observing/planning/).
+</Aside>
+
+## Path 2: Remote deep-sky (no gear)
+
+Goal: without buying a telescope, acquire raw deep-sky data using professional-grade gear rented through a remote platform, and complete the full process from choosing a target to a finished image. This path bypasses gear purchase, setup, polar alignment, dark-sky locations, and weather watches, making it ideal for first confirming your interest and quickly obtaining your first deep-sky image.
+
+<Steps>
+
+1. [Introduction to remote platforms](/en/astrophotography/remote-platforms/overview/) — Understand how "renting a telescope in the cloud" works: the platform deploys equipment at dark-sky sites, and users issue imaging jobs online and download the data.
+2. [Platform comparison](/en/astrophotography/remote-platforms/platforms-comparison/) — Choose a provider based on budget, gear specifications, the site's Bortle class, and the billing model.
+3. [Choosing a target from the object catalog](/en/reference/catalog/) — From catalogs such as Messier (M), NGC, and IC, choose a target that is visible this season and beginner-friendly (e.g. M31, M42, M45).
+4. **Submit the imaging job** — Set the target coordinates, filters, sub-exposure length, and number of frames as the platform requires, then wait for the raw sub-frames (usually in FITS format) to be delivered. Most platforms handle tracking and guiding, so the user mainly handles the exposure parameters.
+5. [Pre-processing and stacking](/en/astrophotography/processing/stacking/) — After registering dozens of sub-frames, integrate them using methods such as sigma clipping to reject outliers like satellites and aircraft and improve the signal-to-noise ratio.
+6. [Post-processing workflow](/en/astrophotography/processing/workflow/) — On the stacked master, perform background gradient correction, nonlinear stretching, color calibration, and noise reduction.
+
+</Steps>
+
+<Aside type="note" title="Why we recommend starting with remote">
+A remote platform hands the gear and weather problems to the operator, so beginners can first focus on the three most experience-dependent steps — target selection, judging data quality, and post-processing — before deciding whether to invest in their own gear. The trade-off is lower flexibility and less control over the whole process, plus billing by time or by frame.
+</Aside>
+
+## Path 3: Deep-sky with your own gear
+
+Goal: use an equatorial mount and a camera to build a complete deep-sky imaging workflow from acquisition to processing. Compared with the remote path, this path requires mastering the principles of the gear and field operations item by item, in exchange for full control over the whole process.
+
+<Steps>
+
+1. [Optics fundamentals](/en/astrophotography/fundamentals/optics/) — Focal length, aperture, and focal ratio (`f-ratio = focal length ÷ aperture`) determine the field of view, light-gathering power, and required exposure; the size of the image circle determines the range of targets that can fit.
+2. [Sensor fundamentals](/en/astrophotography/fundamentals/sensors/) — CMOS pixel size, quantum efficiency (QE), read noise, and full-well capacity; the trade-offs between color (OSC) and mono cameras.
+3. [Exposure and gain](/en/astrophotography/fundamentals/exposure/) — The trade-off among sub-exposure length, gain, and the number of sub-frames; the goal is to make the background signal swamp the read noise while avoiding overexposing bright stars.
+4. [DSO capture in practice](/en/astrophotography/capture/dso-basics/) — Polar alignment, composition and framing, focusing with a Bahtinov mask, autoguiding (e.g. PHD2), and dithered acquisition sequences.
+5. [Calibration frames](/en/astrophotography/calibration/calibration-frames/) — Darks remove thermal noise and dark current, flats correct vignetting and dust shadows, and bias frames record the read-out floor, used to calibrate each sub-frame before stacking.
+6. [Stacking](/en/astrophotography/processing/stacking/) — Register the calibrated sub-frames and integrate them into a single high-SNR master.
+7. [Post-processing workflow](/en/astrophotography/processing/workflow/) — Background correction, stretching, color balance, star treatment, and noise reduction to produce the finished image.
+
+</Steps>
+
+<Aside type="caution" title="The mount and polar alignment are the foundational investment">
+The sharpness of long deep-sky exposures depends first on tracking accuracy. An equatorial mount must first be polar-aligned so that its rotation axis points at the celestial pole to cancel out Earth's rotation; poor polar alignment or tracking causes star trailing that no amount of post-processing can rescue. In your gear budget, the mount usually deserves higher priority than the lens or camera.
+</Aside>
+
+<Capture name="m31-andromeda" alt="Sample image of the Andromeda Galaxy M31" target="M31 Andromeda Galaxy" scope="William Optics RedCat 51 (250mm f/4.9)" mount="ZWO AM5 equatorial mount" camera="ZWO ASI2600MC Pro" filters="L-Pro light pollution filter" exposure="80×180s (4h)" location="High-altitude dark-sky camp" bortle="3" date="2025-09" software="APP + PixInsight" />
+
+## Path 4: Advanced planetary imaging
+
+Goal: record Saturn's rings, Jupiter's cloud belts, lunar craters, and surface detail on the Sun. Planetary imaging is the opposite of deep-sky imaging in method: the targets are bright but small in angular diameter, requiring very long effective focal lengths and high magnification, and using lucky imaging — recording high-frame-rate video, then using software to select and stack the few sharpest frames by sharpness, in order to counter the jitter caused by atmospheric seeing.
+
+<Steps>
+
+1. [Optics: focal length and the Barlow](/en/astrophotography/fundamentals/optics/) — Planets need a very high effective focal ratio (commonly `f/15` to `f/30`), extending the effective focal length with a Barlow or teleconverter; since the targets are bright, magnification does not risk underexposure.
+2. [Imaging planets, the Moon, and the Sun](/en/astrophotography/capture/planetary/) — High-frame-rate video (tens to hundreds of fps), ROI cropping to read out only the target region for higher speed, and catching the short windows when the atmosphere is steady; the Sun must use a dedicated solar filter or a Herschel wedge.
+3. **Key post-processing** — Use AutoStakkert! to automatically score and select the sharpest batch of frames to stack, then use wavelet sharpening (e.g. the corresponding tools in RegiStax or PixInsight) to extract detail layer by layer; Jupiter rotates fast, so long sequences require derotation. See [post-processing techniques](/en/astrophotography/processing/techniques/) for details.
+
+</Steps>
+
+<div class="cols2">
+  <Fig name="saturn" alt="Image of Saturn, showing the rings and the disk" caption="Saturn: the brightness difference between the rings and the disk is pronounced, so wavelet sharpening must control the strength of each layer to avoid artifacts and amplified noise." />
+  <Fig name="jupiter" alt="Image of Jupiter, showing the cloud belts and the Great Red Spot" caption="Jupiter: with a rotation period of about 9.9 hours and abundant cloud-belt detail, it is often used to practice lucky imaging and derotation stacking." />
+</div>
+
+<Aside type="caution" title="Seeing sets the upper limit on planetary resolution">
+The primary factor affecting planetary sharpness is atmospheric seeing — the disturbance of the star image by atmospheric turbulence. Aperture and focal length determine the theoretical resolution, but when seeing is poor the detail cannot be rendered stably; lucky imaging exists precisely to filter out the frames degraded by turbulence. Before imaging, you should assess the observing conditions; see [observing conditions](/en/astronomy/observing/conditions/) for details. Imaging the Sun carries an irreversible risk of blindness, so you must use a certified dedicated filter.
+</Aside>
+
+## Path 5: Mastering narrowband deep-sky
+
+Goal: use narrowband filters to acquire the specific emission lines of emission nebulae (Hα, OIII, SII), obtain high-contrast signal in light-polluted environments, and master per-channel combination and SHO/HOO color mapping. This path builds on the gear and workflow of Path 3 and is a dedicated deepening for emission nebula targets.
+
+<Steps>
+
+1. [Signal-to-noise ratio (SNR)](/en/astrophotography/fundamentals/snr/) — Understand `SNR ∝ √N`: the signal-to-noise ratio grows with the square root of the number of usable sub-frames N. Narrowband filters have a narrow pass band (often 3–7 nm) and weak signal, which is the theoretical basis for their need for very long total exposures.
+2. [Sensors (mono)](/en/astrophotography/fundamentals/sensors/) — Narrowband typically uses a mono camera with a motorized filter wheel for per-channel acquisition; a mono sensor has no Bayer array, giving higher sensitivity and resolution than a color camera of the same model.
+3. [Narrowband imaging](/en/astrophotography/capture/narrowband/) — Acquire Hα (656.3 nm, ionized hydrogen, the strongest signal), OIII (about 500.7 nm, doubly ionized oxygen, blue-green), and SII (about 671.6 nm, singly ionized sulfur, the weakest signal) separately; moonlight and urban light pollution have little effect on narrowband, so you can image outside the new-moon period.
+4. [Nebulae](/en/astronomy/deep-sky/nebulae/) — Learn about the physical mechanisms and typical narrowband targets of emission nebulae, planetary nebulae, and supernova remnants.
+5. [Key post-processing techniques](/en/astrophotography/processing/techniques/) — SHO channel mapping (SII→R, Hα→G, OIII→B, the "Hubble palette") and HOO mapping, green spill suppression (SCNR), star separation, and channel combination.
+
+</Steps>
+
+<SNRChart caption="The signal-to-noise ratio grows with the square root of the number of sub-frames N. This explains why narrowband imaging (especially SII, the weakest signal) usually requires very long cumulative exposure times." />
+
+<SHOPalette caption="Narrowband SHO color mapping: mapping SII / Hα / OIII to R / G / B yields the iconic Hubble palette; HOO instead maps Hα to red and OIII to green and blue." />
+
+<Aside type="note" title="The noise problem of the SII channel">
+In SHO combination, SII is almost always the weakest signal and is mapped to the red channel; if SII is underexposed, the red channel will show pronounced grainy noise. Hα is usually the strongest and is mapped to the green channel, so the combined image often needs green spill suppression (SCNR) to remove an overall green cast. When planning exposures, you should allot more time to SII.
+</Aside>
+
+## After the paths
+
+After completing any one path, the index pages below are for continued depth and lateral expansion.
+
+<CardGrid>
+  <Card title="Target selection" icon="list-format">
+    In the [object catalog](/en/reference/catalog/), pick your next target by season, declination, and difficulty.
+  </Card>
+  <Card title="Tools and software" icon="laptop">
+    The [software index](/en/reference/software/) collects common tools for planetarium use, acquisition, guiding, and post-processing.
+  </Card>
+  <Card title="Quick term lookup" icon="open-book">
+    When you encounter an unfamiliar term, check the [glossary](/en/reference/glossary/).
+  </Card>
+  <Card title="More resources" icon="external">
+    [Resources and community](/en/reference/resources/) gathers advanced tutorials and channels for discussion.
+  </Card>
+</CardGrid>
+
+<Aside type="tip" title="Connections between paths">
+Observing fundamentals (Path 1) is the shared prerequisite for the other four paths; narrowband deep-sky (Path 5) builds on the own-gear workflow (Path 3). If your goal is not yet clear, start with the [Getting Started guide](/en/start/) before choosing a path.
+</Aside>
+
+## References
+
+- [Astrophotography — Wikipedia](https://en.wikipedia.org/wiki/Astrophotography) — An overview of the categories of astrophotography, tracking and guiding, stacking, lucky imaging, and narrowband filters.
+- [Deep-Sky Astrophotography Walkthrough (AstroBackyard)](https://astrobackyard.com/deep-sky-astrophotography-walkthrough/) — The complete deep-sky workflow steps, from polar alignment, focusing, and guiding to acquisition and processing.
+- [Narrowband Imaging Primer (AstroBackyard)](https://astrobackyard.com/narrowband-imaging/) — An introduction to Hα/OIII/SII filters, mono cameras with filter wheels, and the Hubble palette.
+- [AutoStakkert! — Lucky Imaging Stacking Software](https://www.autostakkert.com/) — The frame-selection and stacking tool for planetary lucky imaging, the core step of planetary post-processing.
+- [A Free Tool for Lucky Imaging (Sky & Telescope)](https://skyandtelescope.org/astronomy-resources/astrophotography-tips/a-free-tool-for-lucky-imaging/) — An explanation of the planetary imaging method of high-frame-rate video, frame-selection stacking, and wavelet sharpening.

@@ -1,0 +1,19 @@
+---
+title: "后期处理 · 概览"
+description: "从预处理叠加到完整后期流程与关键技术,把原始 FITS 数据变成一张可信的成片。"
+sidebar:
+  label: 概览
+  order: 0
+---
+
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+本部分介绍天文摄影的后期处理流程,涵盖校准与叠加、从线性主图到成片的处理顺序,以及去渐变、色彩、拉伸、反卷积、降噪与缩星等关键技术。它位于「采集」之后、「成片」之前,是把原始 FITS 数据转换为最终图像的环节。
+
+## 本章涵盖
+
+<CardGrid>
+  <LinkCard title="预处理与叠加" href="/astrophotography/processing/stacking/" description="从原始 light 与校准帧到一张干净的 32 位线性叠加图。" />
+  <LinkCard title="后期处理流程" href="/astrophotography/processing/workflow/" description="从线性主图到非线性成片的完整后期顺序与原理。" />
+  <LinkCard title="关键后期技术" href="/astrophotography/processing/techniques/" description="去渐变、色彩、拉伸、反卷积、降噪与缩星的参数与边界。" />
+</CardGrid>

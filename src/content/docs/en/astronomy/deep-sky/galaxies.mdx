@@ -1,0 +1,214 @@
+---
+title: Galaxies
+description: Hubble morphological classification and the tuning-fork diagram, galaxy structure and dark matter halos, the Local Group, active galactic nuclei and quasars, galaxy clusters and the cosmic web, redshift and Hubble's law, plus key points for imaging galaxies.
+difficulty: advanced
+pillar: astronomy
+sidebar:
+  order: 5
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+import Fig from '@/components/Fig.astro';
+
+A galaxy is a large-scale system of stars, interstellar gas, dust, and dark matter held together by gravity. Its stellar population ranges from fewer than a thousand stars in dwarf galaxies to roughly 10^14 stars in giant ellipticals, with diameters mostly between 1,000 and 100,000 parsecs (about 3,000 to 300,000 light-years). The observable universe is estimated to contain hundreds of billions to trillions of galaxies. Galaxies are the basic units in the organization of cosmic matter, and they are also among the more challenging targets in deep-sky astrophotography.
+
+<Fig name="m31-andromeda" alt="The Andromeda Galaxy M31" caption="The spiral galaxy M31, about 2.5 million light-years from the Milky Way, is the most massive member of the Local Group and one of the most distant objects visible to the naked eye." />
+
+## Hubble morphological classification and the tuning-fork diagram
+
+In 1926, Edwin Hubble proposed a system for classifying galaxies by morphology, known as the Hubble sequence. Its diagram is called the tuning-fork diagram because the elliptical galaxies on the left form the handle while the two branches of spiral galaxies on the right form the forked arms, resembling a tuning fork. This is a morphological classification rather than an evolutionary sequence, but by convention the left end of the sequence is called "early-type" and the right end "late-type."
+
+| Type | Designation | Main characteristics |
+| --- | --- | --- |
+| Elliptical | E0–E7 | Ellipsoidal, with a smooth, featureless light distribution; lacking spiral arms, cold gas, and dust; dominated by old red stars |
+| Lenticular | S0 / SB0 | Has a bulge and disk but no obvious spiral arms; low gas content and weak star formation; located at the fork of the diagram |
+| Spiral | Sa–Sd | Has a bulge and a disk with spiral arms; rich in gas and dust and young blue stars |
+| Barred spiral | SBa–SBd | A bar-shaped structure at the core, with spiral arms extending from the ends of the bar |
+| Irregular | Irr (Im / IBm) | No regular disk or ellipsoidal structure; mostly low-mass or gravitationally disturbed galaxies |
+
+### Subdivision of elliptical galaxies
+
+The numeral in an elliptical galaxy's designation indicates its ellipticity, defined from the semi-major axis `a` and semi-minor axis `b` as the rounded value of `n = 10 × (1 − b/a)`. E0 is nearly spherical, while E7 is the flattest (`b/a ≈ 0.3`). Note that this number reflects the apparent projected shape, not the galaxy's true three-dimensional shape. Elliptical galaxies span an enormous range: from dwarf ellipticals containing only a few million stars to giant ellipticals (cD galaxies) at the centers of galaxy clusters containing over a trillion stars.
+
+### Subdivision of spiral and barred spiral galaxies
+
+The lettered suffix of a spiral galaxy (a→b→c→d) simultaneously reflects three related trends:
+
+| Suffix | Bulge size relative to disk | Tightness of spiral arms | Clumpiness/brightness of arms |
+| --- | --- | --- | --- |
+| Sa / SBa | Large | Tightly wound | Smooth |
+| Sb / SBb | Medium | Moderate | Moderate |
+| Sc / SBc | Small | Loosely wound | Bright and clumpy |
+| Sd / SBd | Very small | Very loosely wound | Individual star clusters resolvable |
+
+About half of all spiral galaxies have a central bar structure. In 1959, Gérard de Vaucouleurs extended Hubble's scheme, subdividing the bar into SA (no bar), SAB (weak bar), and SB (strong bar), and further described ring structures with the notation `(r)` (with a ring), `(s)` (without a ring), and `(rs)` (transitional). He also introduced the numerical morphological stage `T` (from about −6 for E to +10 for Im), where a smaller `T` indicates a larger fraction of stellar mass in the bulge.
+
+<Aside type="note" title="How to read the tuning-fork diagram">
+The handle of the tuning fork is the elliptical galaxies (E0→E7), the fork point is the lenticular galaxies S0, the upper arm is the normal spirals (Sa→Sd), the lower arm is the barred spirals (SBa→SBd), and the ends connect to the irregular galaxies. The Milky Way is a barred spiral galaxy of roughly type SBbc. Once more for emphasis: a galaxy's position in the sequence indicates only its morphology and does not mean the galaxy evolves along the sequence.
+</Aside>
+
+<Fig name="fig-tuning-fork" alt="The Hubble tuning-fork diagram of galaxy classification" caption="The Hubble tuning-fork diagram: ellipticals E0–E7 on the left, S0 at the fork, and the upper and lower arms holding normal spirals Sa–Sc and barred spirals SBa–SBc, respectively." />
+
+<div class="cols2"><Fig name="m51-whirlpool" alt="The Whirlpool Galaxy M51" caption="The spiral galaxy M51 (type Sc), seen face-on with a clear spiral-arm structure, currently interacting with its companion galaxy NGC 5195." /><Fig name="m104-sombrero" alt="The Sombrero Galaxy M104" caption="The Sombrero Galaxy M104, seen nearly edge-on, showing a bright bulge and a dark dust lane in front of the disk." /></div>
+
+## Galaxy structure
+
+A typical spiral galaxy can be divided into the following components, from the inside outward:
+
+| Component | Name | Description |
+| --- | --- | --- |
+| Bulge | bulge | A central, dense, nearly ellipsoidal concentration of stars, mostly old; a supermassive black hole usually resides at its center |
+| Disk | disk | A thin, rotating, flattened structure containing stars, gas, and dust; the primary site of star formation |
+| Spiral arms | spiral arms | Density-wave structures in the disk where young blue stars, ionized hydrogen regions (HII), and dust lanes gather |
+| Bar | bar | An elongated stellar structure at the core of some galaxies that can funnel gas toward the center |
+| Stellar halo | stellar halo | Old stars and globular clusters distributed in a nearly spherical region outside the disk |
+| Dark matter halo | dark matter halo | Invisible mass extending far beyond the visible part, dominating the galaxy's total mass |
+
+The Milky Way is a barred spiral galaxy with a disk about 30 kiloparsecs across (roughly 100,000 light-years), containing about 100 to 400 billion stars and with a total mass (including the dark matter halo) of roughly 10^12 solar masses. At its center is the supermassive black hole Sagittarius A*, with a mass of about 4 million solar masses. The Sun lies on the Orion Arm, about 8 kiloparsecs from the Galactic center. For the disk structure of the Milky Way and the origins of its bar and spiral arms, see [Stellar Physics](/en/astronomy/deep-sky/stellar-physics/) and the discussion of the Milky Way band in [Constellations and the Celestial Sphere](/en/astronomy/foundations/constellations/).
+
+## Galaxy rotation curves and dark matter
+
+A galaxy rotation curve describes how the orbital speed `v` of material in the disk around the center varies with radius `r`. If a galaxy's mass were concentrated in the visible luminous matter, Newtonian dynamics would predict that the speed at the outer edge should fall off as `v ∝ r^(−1/2)` (a Keplerian decline similar to that of planets).
+
+But beginning in the 1970s, observations by Vera Rubin and Kent Ford of dozens of spiral galaxies showed that rotation curves do not fall off at the outer edge but instead become flat—stars at the edge orbit at almost the same speed as those in the inner region. Their 1980 paper presented flat rotation curves for 21 spiral galaxies, and the sample was later extended to more than 75 galaxies with consistent results.
+
+From `v^2 = G M(r) / r`, a constant speed implies that the enclosed mass `M(r)` grows approximately linearly with `r`, meaning that a large amount of non-luminous mass is distributed beyond the visible disk. This mass is called dark matter; its total amount is roughly 5–10 times that of visible matter and is concentrated in a nearly spherical dark matter halo. Flat rotation curves are among the most important observational evidence for the existence of dark matter, with independent corroboration from gravitational lensing, galaxy cluster dynamics (Fritz Zwicky inferred "missing mass" in 1933 from the velocity dispersion of the Coma Cluster), and the cosmic microwave background.
+
+<Aside type="note" title="What flat rotation curves mean">
+If only the visible stars and gas are counted, the speed of stars at a galaxy's outer edge should decline with radius, yet measurements show it stays constant. This means the galaxy's true mass is far greater than the visible part, and this mass extends well beyond the optical disk. This is the central basis for the conclusion that "the matter we see makes up only a small fraction of a galaxy's mass."
+</Aside>
+
+## The Local Group
+
+The Milky Way is not isolated. Together with the Andromeda Galaxy and more than 130 other known members, it forms the Local Group, which spans about 5 megaparsecs (roughly 17 million light-years) and has a gravitationally bound total mass of about 2×10^12 solar masses. The Local Group is centered gravitationally on its two large spiral galaxies, the Milky Way and Andromeda, each accompanied by a group of satellite dwarf galaxies. The barycenter lies between the two, slightly toward the Andromeda side.
+
+| Member | Type | Distance from Milky Way | Notes |
+| --- | --- | --- | --- |
+| Andromeda Galaxy M31 | Spiral (SA(s)b) | About 2.5 million light-years | Most massive member of the group, about 150,000 light-years across |
+| Milky Way | Barred spiral (SBbc) | — | Second most massive member of the group |
+| Triangulum Galaxy M33 | Spiral (SA(s)cd) | About 2.7 million light-years | Third most massive member of the group, seen face-on |
+| Large Magellanic Cloud (LMC) | Irregular/dwarf | About 160,000 light-years | The Milky Way's most prominent satellite galaxy, visible in the southern sky |
+| Small Magellanic Cloud (SMC) | Irregular/dwarf | About 200,000 light-years | Companion galaxy of the LMC |
+
+The Andromeda Galaxy is approaching the Milky Way at about 110–120 km/s, and dynamical estimates suggest the two may begin to merge in about 4.5 billion years. The vast majority of Local Group members are low-luminosity dwarf ellipticals and dwarf irregulars, most of which are simply too faint to observe or image. To determine whether a given target is visible at your latitude, see [Hemisphere Visibility](/en/astronomy/observing/hemisphere-visibility/).
+
+<Fig name="lmc" alt="The Large Magellanic Cloud" caption="The Large Magellanic Cloud (LMC), the Milky Way's largest satellite galaxy, an irregular/dwarf galaxy that contains the famous Tarantula Nebula (30 Doradus)." />
+
+## Active galactic nuclei and quasars
+
+The center of most galaxies is merely a concentration of stars, but a few percent of galaxies have unusually bright centers known as active galactic nuclei (AGN). Their energy comes not from nuclear fusion but from the accretion of surrounding matter by a central supermassive black hole (with a mass of 10^6–10^10 solar masses): the matter heats up through friction in an accretion disk and radiates enormous energy from radio to gamma rays within a very small region, with total luminosities reaching on the order of 10^48 erg/s in some cases.
+
+The standard components of an AGN include the supermassive black hole, a hot accretion disk, a region of high-speed gas producing broad emission lines (the broad-line region), an outer narrow-line region, a dust torus obscuring the core, and, in some systems, a relativistic jet ejected at nearly the speed of light.
+
+| Type | Name | Characteristics |
+| --- | --- | --- |
+| Seyfert galaxy | Seyfert galaxy | Low-luminosity AGN whose hosts are mostly spiral galaxies; Type 1 shows both broad and narrow emission lines, Type 2 shows only narrow lines |
+| Radio galaxy | radio galaxy | An elliptical galaxy that is radio-strong, often with large-scale jets and radio lobes |
+| Quasar | quasar / QSO | An extremely luminous, point-like, distant AGN whose luminosity can exceed that of its entire host galaxy |
+| Blazar | blazar (BL Lac, OVV) | An AGN whose jet points almost directly at Earth, with sharp variations in brightness |
+| LINER | LINER | A weakly active nucleus dominated by low-ionization emission lines |
+
+By radio strength, AGN are further divided into two broad classes: radio-quiet (such as most Seyferts and quasars) and radio-loud (such as radio galaxies and blazars). The unified model holds that the apparent differences between Type 1 and Type 2 Seyferts, radio galaxies, and blazars arise largely from the differing orientations of the dust torus and jet relative to the observer—the same central engine appears different depending on viewing angle. Quasars are mostly located more than ten billion light-years away at very high redshifts, recording the state of the early universe.
+
+A distinction worth drawing is the starburst galaxy: its unusual brightness comes from intense star formation (often triggered by galaxy interactions) rather than black-hole accretion, a different mechanism from an AGN, even though the two may appear similar in the infrared.
+
+<Aside type="tip" title="Different viewing angles of the same engine">
+Seyferts, radio galaxies, quasars, and blazars differ greatly in observation, but the unified model can explain most categories with "the same kind of supermassive black hole engine + different viewing angles and jet orientations." When the line of sight passes through the dust torus, only narrow lines are seen (Type 2); when the core is seen face-on, broad lines appear (Type 1); and when looking straight down the jet, it becomes a blazar.
+</Aside>
+
+## Galaxy clusters and the cosmic web
+
+Under gravity, galaxies are distributed in clusters, forming a hierarchical structure:
+
+| Scale | Name | Membership | Typical diameter |
+| --- | --- | --- | --- |
+| Group | group | Tens to hundreds of galaxies | About 1 million to 10 million light-years |
+| Cluster | cluster | Hundreds to thousands of galaxies | About 10 million to 30 million light-years |
+| Supercluster | supercluster | Tens of thousands of galaxies | Hundreds of millions of light-years |
+
+The Local Group belongs to the Virgo Supercluster (also called the Local Supercluster), which is centered on the Virgo Cluster. A 2014 study further placed it within the still larger Laniakea Supercluster, which is about 520 million light-years across and contains about 100,000 galaxies; its gravitational convergence center is called the Great Attractor.
+
+On the largest scales, galaxies are not uniformly distributed but cluster along the filamentary "cosmic web": matter concentrates on filaments and sheet-like walls, galaxy clusters lie where filaments intersect, and between them are vast voids almost empty of galaxies. This large-scale structure is a central subject of cosmology.
+
+## Redshift and Hubble's law
+
+When observing extragalactic galaxies, one finds that—apart from near neighbors such as those in the Local Group—the spectral lines of the vast majority of galaxies are shifted as a whole toward the red end. This is called redshift (`z`), defined as
+
+```
+z = (λ_obs − λ_emit) / λ_emit
+```
+
+where `λ_obs` and `λ_emit` are the observed and emitted wavelengths, respectively. In 1929, Hubble discovered that a galaxy's recession velocity `v` is proportional to its distance `D`, that is, Hubble's law:
+
+```
+v = H0 × D
+```
+
+Here `H0` is the Hubble constant, in units of km/s/Mpc. Its current value is still disputed: "late-universe" measurements based on the cosmic distance ladder give about 73 km/s/Mpc, while "early-universe" measurements based on the cosmic microwave background give about 67.4 km/s/Mpc. This inconsistency is known as the Hubble tension. `1/H0` (the Hubble time) is about 14 billion years, close to the age of the universe of about 13.8 billion years, but not exactly equal because of the accelerating expansion.
+
+It should be emphasized that the cosmological redshift arises from space itself stretching as the universe expands, and is not a Doppler effect produced by galaxies moving through space. Hubble's law is direct evidence for the expansion of the universe and is also the basic tool for measuring the distances of remote galaxies.
+
+<Aside type="caution" title="Redshift is not a true velocity">
+For nearby galaxies, redshift can be roughly treated as a Doppler recession velocity (`v ≈ cz`); but for high-redshift galaxies, `cz` would exceed the speed of light and this formula no longer holds. In that case the redshift reflects the cumulative stretching of space along the light's path during its travel, and must be converted into a distance using a specific cosmological model—it cannot simply be understood as a "speed of flying away from us."
+</Aside>
+
+## Imaging considerations
+
+The vast majority of galaxies have small angular sizes and low surface brightness, making them among the harder targets in deep-sky astrophotography. Galaxies emit a continuum spectrum that is the sum of their stars, so they are imaged primarily with broadband.
+
+<Steps>
+
+1. **Long focal length optics**: Apart from a few large targets such as M31 and M33, most galaxies have angular sizes of only a few arcminutes, and usually require a focal length of 800 mm or more to bring out detail in the spiral arms and bulge. See [Optics Fundamentals](/en/astrophotography/fundamentals/optics/).
+
+2. **Dark skies and long integration**: The signal from a galaxy's spiral arms and outer halo is faint, so imaging should be done under Bortle 1–4 dark skies, accumulating several hours of total exposure to improve the signal-to-noise ratio (SNR). You can combine this with [Observing Conditions](/en/astronomy/observing/conditions/) to choose the right time to shoot.
+
+3. **Broadband first**: Galaxies are mainly imaged with LRGB broadband filters; narrowband (such as H-alpha) is used only to enhance ionized hydrogen regions or tidal structures within a galaxy.
+
+4. **Precise tracking and guiding**: A long focal length magnifies any tracking error, so a stable equatorial mount paired with guiding is needed to keep star points round under long exposures.
+
+</Steps>
+
+<Aside type="caution" title="The difference between integrated magnitude and surface brightness">
+A bright integrated magnitude for a galaxy does not mean it is easy to image. The Triangulum Galaxy M33 has an integrated magnitude of about 5.7 and seems bright, but its light is spread over a very large apparent area, giving it extremely low surface brightness; in practice it is harder to image than many "fainter" small galaxies. When choosing targets, you should consider both angular size and surface brightness, not just integrated magnitude. For the definition of magnitude, see [The Magnitude System](/en/astronomy/foundations/magnitude/); common galaxy targets can be looked up in the [Deep-Sky Object Catalog](/en/reference/catalog/).
+</Aside>
+
+## Common targets
+
+The table below summarizes representative galaxies that are common in the Northern Hemisphere and the southern sky and are suitable for visual observation or imaging. Distances and apparent magnitudes vary somewhat with measurement method, and the values below are taken from common figures on Wikipedia/SIMBAD; the apparent magnitude refers to the integrated magnitude, while the actual difficulty of visual observation and imaging also depends on surface brightness and angular size (see the tip under "Imaging considerations" above).
+
+| Name | Constellation | Distance | Apparent magnitude | Type (morphology) | Main characteristics |
+| --- | --- | --- | --- | --- | --- |
+| Andromeda Galaxy M31 | Andromeda | About 2.5 million ly | About 3.4 | Spiral (SA(s)b) | Most massive member of the Local Group, about 150,000 light-years across, visible to the naked eye under dark skies |
+| Triangulum Galaxy M33 | Triangulum | About 2.7 million ly | About 5.7 | Spiral (SA(s)cd) | Seen face-on, the group's third most massive member; bright integrated magnitude but low surface brightness, requires very dark skies |
+| Bode's Galaxy M81 | Ursa Major | About 11.7 million ly | About 6.9 | Spiral (SA(s)ab) | A grand-design spiral galaxy, in the same field as M82, visible with binoculars |
+| Cigar Galaxy M82 | Ursa Major | About 12 million ly | About 8.4 | Irregular/starburst (I0, edge-on) | One of the nearest starburst galaxies to Earth, with intense star formation in its core, appearing elongated when seen edge-on |
+| Whirlpool Galaxy M51 | Canes Venatici | About 23–31 million ly | About 8.4 | Spiral (SA(s)bc pec) | A classic grand-design spiral, currently interacting with its companion galaxy NGC 5195 |
+| Sombrero Galaxy M104 | Virgo | About 31 million ly | About 8.0 | Spiral/lenticular (SA(s)a) | Seen nearly edge-on, with a bright bulge and a prominent dark dust lane in front of the disk |
+| Pinwheel Galaxy M101 | Ursa Major | About 21 million ly | About 7.9 | Spiral (SAB(rs)cd) | A large face-on spiral with a disk about 170,000 light-years across; low surface brightness |
+| Black Eye Galaxy M64 | Coma Berenices | About 17 million ly | About 8.5 | Spiral ((R)SA(rs)ab) | A prominent dark dust lane in front of the bulge, giving it the name "Black Eye" |
+| Leo Triplet | Leo | About 35 million ly | About 9–10 (each member) | Group of spiral galaxies | The three galaxies M65, M66, and NGC 3628 share one field and can be imaged together |
+| Sculptor Galaxy NGC 253 | Sculptor | About 11.4 million ly | About 8.0 | Spiral/starburst (SAB(s)c) | A large, nearly edge-on starburst galaxy, higher in the southern sky; also called the "Silver Coin Galaxy" |
+| Large Magellanic Cloud LMC | Dorado/Mensa | About 160,000 ly | About 0.9 | Irregular/dwarf (SB(s)m) | The Milky Way's largest satellite galaxy, visible to the naked eye in the southern sky, containing the Tarantula Nebula |
+
+<div class="cols2"><Fig name="m31-andromeda" alt="The Andromeda Galaxy M31" caption="The Andromeda Galaxy M31, the most massive spiral galaxy in the Local Group, visible to the naked eye under dark skies." /><Fig name="m81-bode" alt="Bode's Galaxy M81" caption="Bode's Galaxy M81, a grand-design spiral galaxy in Ursa Major, sharing a single telescope field with the Cigar Galaxy M82." /></div>
+
+Most of these targets lie in spring regions of the sky such as Ursa Major, Leo, and Virgo, and are easiest to observe when the Northern Hemisphere's spring sky rises to high altitude; M31 and M33 are best in autumn, while the LMC and NGC 253 lie farther south and are better suited to Southern Hemisphere observation. To determine a target's visibility at your latitude, see [Hemisphere Visibility](/en/astronomy/observing/hemisphere-visibility/); for descriptions of more targets, see [Notable Objects](/en/astronomy/deep-sky/notable-objects/), and for coordinates and quick-reference data, see the [Deep-Sky Object Catalog](/en/reference/catalog/).
+
+<Aside type="note" title="Cross-checking data and discrepancies">
+The distances and apparent magnitudes in the table are common approximate values. Different sources often differ by 10%–30% because of differing distance-measurement methods (Cepheid variables, the Tully–Fisher relation, surface brightness fluctuations, etc.); for example, the distance to M51 and M104 is commonly quoted in the range of 23 million to 31 million light-years. When precise parameters are needed, it is best to rely on the measured values in the SIMBAD database.
+</Aside>
+
+## References
+
+- [Galaxy morphological classification — Wikipedia](https://en.wikipedia.org/wiki/Galaxy_morphological_classification): The Hubble sequence, the elliptical ellipticity formula, and the morphological-classification details of the de Vaucouleurs system.
+- [Local Group — Wikipedia](https://en.wikipedia.org/wiki/Local_Group): The Local Group's member count, scale, total mass, and the parameters of its major galaxies.
+- [Active galactic nucleus — Wikipedia](https://en.wikipedia.org/wiki/Active_galactic_nucleus): The energy mechanism, components, unified model, and definitions of the various types of AGN.
+- [Galaxy rotation curve / Vera Rubin — Wikipedia](https://en.wikipedia.org/wiki/Galaxy_rotation_curve): Flat rotation curves and the observational evidence for dark matter.
+- [Hubble's law — Wikipedia](https://en.wikipedia.org/wiki/Hubble%27s_law): The definition of redshift, Hubble's law, the Hubble constant, and the Hubble tension.
+- [Laniakea Supercluster — Wikipedia](https://en.wikipedia.org/wiki/Laniakea_Supercluster): Galaxy clusters, superclusters, and the large-scale structure of the cosmic web.
+- [Messier 81 — Wikipedia](https://en.wikipedia.org/wiki/Messier_81): The distance, apparent magnitude, morphology (SA(s)ab), and constellation of Bode's Galaxy M81.
+- [Messier 82 — Wikipedia](https://en.wikipedia.org/wiki/Messier_82): The starburst nature, distance, and apparent magnitude of the Cigar Galaxy M82.
+- [Pinwheel Galaxy — Wikipedia](https://en.wikipedia.org/wiki/Pinwheel_Galaxy): The distance, apparent magnitude, disk diameter, and morphology of the Pinwheel Galaxy M101.
+- [Black Eye Galaxy — Wikipedia](https://en.wikipedia.org/wiki/Black_Eye_Galaxy): The distance, apparent magnitude (8.52), and morphology ((R)SA(rs)ab) of the Black Eye Galaxy M64.
+- [Leo Triplet — Wikipedia](https://en.wikipedia.org/wiki/Leo_Triplet): The distances and membership of the Leo Triplet (M65, M66, NGC 3628).
+- [Sculptor Galaxy — Wikipedia](https://en.wikipedia.org/wiki/Sculptor_Galaxy): The distance, apparent magnitude, and starburst nature of the Sculptor Galaxy NGC 253.

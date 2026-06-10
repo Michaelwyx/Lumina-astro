@@ -1,0 +1,202 @@
+---
+title: Pre-processing and Stacking
+description: From raw light and calibration frames to a clean 32-bit linear stack, a systematic walkthrough of the full principles and parameters of calibration, debayering, registration, frame selection, pixel rejection, and integration.
+difficulty: intermediate
+pillar: astrophotography
+sidebar:
+  order: 1
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+import Fig from '@/components/Fig.astro';
+
+Pre-processing and stacking (also called integration) is the standard pipeline that converts a batch of raw sub-frames (light frames) and calibration frames into a single high signal-to-noise linear master image (master light). It comprises several mutually independent stages in a fixed order: calibration, debayer (color cameras only), registration, frame quality selection, pixel-level rejection, and integration. This page explains the principle, parameters, and typical values of each stage one by one; the output is a 32-bit linear image ready for [post-processing stretching](/en/astrophotography/processing/workflow/).
+
+<Fig name="m42-orion" alt="Orion Nebula M42" caption="M42: after multiple sub-frames are calibrated, registered, and integrated, the signal-to-noise ratio of the faint nebula detail improves markedly." />
+
+## The Statistical Basis of Stacking
+
+The signal in a single frame is overlaid with several kinds of random noise: read noise, dark current noise, and the shot noise of the photons themselves. Random noise is uncorrelated between frames, whereas the target signal is correlated between frames. When you average N frames pixel by pixel, the signal accumulates linearly while the noise accumulates only as the square root of N, so the signal-to-noise ratio (SNR) increases with the number of frames:
+
+```
+SNR ∝ √N
+```
+
+Several commonly used conclusions follow from this:
+
+- Stacking 4 frames doubles the SNR; stacking 16 frames improves it 4-fold.
+- Doubling the total integration time (doubling the number of frames) improves the SNR by about 41% (that is, √2 − 1 ≈ 0.41).
+- The SNR gain follows a law of diminishing returns: the benefit of going from 4 to 16 frames is far greater than that of going from 100 to 112 frames.
+
+This rule is the foundation of exposure strategy in deep-sky imaging; see [signal-to-noise ratio](/en/astrophotography/fundamentals/snr/) for details. Besides suppressing random noise, stacking also uses per-pixel statistics to reject outliers (aircraft, satellite trails, cosmic ray hits, hot pixels not fully removed by the dark frame).
+
+<Aside type="note" title="Reference Orders of Magnitude for Integration Time">
+Broadband targets (galaxies, reflection nebulae) often require 6–12 hours of total integration; narrowband targets (emission nebulae) often require 10–20 hours or more. Under suburban skies, individual sub-frames typically run about 60–180 seconds for broadband and 180–600 seconds for narrowband, depending on the focal ratio, camera gain, and sky background.
+</Aside>
+
+## Calibration
+
+Calibration uses three classes of calibration frames — bias, dark, and flat — to subtract the **fixed (non-random) errors** introduced by the sensor and the optical path. The shooting methods and principles of each class of calibration frame are covered in [calibration frames](/en/astrophotography/calibration/calibration-frames/); here we only discuss their mathematical role in the stacking pipeline.
+
+| Calibration frame | Corrects for | Shooting requirements | Combination method |
+| --- | --- | --- | --- |
+| Bias frame (bias / offset) | The fixed bias level of the readout circuit | Shortest exposure, light blocked, same gain | Average or sigma-clip into a master bias |
+| Dark frame (dark) | Dark current, hot pixels, amp glow | Same exposure, gain, and temperature as the light, light blocked | Sigma-clip into a master dark |
+| Flat frame (flat) | Vignetting, dust rings, pixel response non-uniformity | Same focus and optical-path orientation, uniform illumination | Sigma-clip into a master flat |
+| Flat-dark frame (flat-dark) | The dark current and bias corresponding to the flat exposure | Same exposure and gain as the flat | Used to calibrate the flat; especially important for CMOS |
+
+The core of calibration is per-pixel arithmetic. After each frame has had its own dark/bias terms subtracted, the standard calibration formula is:
+
+```
+calibrated = (light − master_dark) / master_flat
+```
+
+Here, the dark subtraction removes additive errors such as dark current and hot pixels (they depend on exposure time and temperature, so the dark must match the light), while dividing by the flat removes multiplicative errors such as vignetting and dust rings (which is why the flat must be shot without changing focus or equipment orientation). The dark frames of CMOS sensors usually already include the bias, so some pipelines do not use a master bias separately and instead calibrate the flat with a flat-dark.
+
+<Aside type="caution" title="Consequences of Mismatched Calibration Frames">
+If the dark exposure/temperature does not match the light, dark subtraction will be too aggressive or insufficient, leaving residual bright/dark hot pixels; if the flat's orientation or focus changes, the vignetting and dust rings will not line up, and dividing by the flat will actually introduce new ring-shaped gradients. Matching the calibration frames matters more than their quantity.
+</Aside>
+
+## Debayer (Color Cameras)
+
+The sensor of a one-shot color (OSC) camera is covered by a color filter array (CFA / Bayer pattern), so each pixel records only one of the red, green, or blue channels. **Debayer / demosaicing** reconstructs the full RGB for every pixel by interpolating from neighboring pixels.
+
+Where debayering falls in the pipeline depends on whether Bayer Drizzle is used:
+
+- Conventional pipeline: debayer immediately after calibration, then register and stack the color images.
+- Bayer Drizzle pipeline: **do not** debayer after calibration (keep the raw CFA layout); color reconstruction is performed by Drizzle during the integration stage, see below.
+
+Mono cameras (which shoot separate channels through a filter wheel) do not involve debayering; each channel is stacked separately and combined in post-processing.
+
+## Registration
+
+Tracking errors, periodic error, wind gusts, and intentionally applied dither cause the star positions in each frame to shift, or even rotate, at the pixel level. **Registration (alignment)** detects stars and matches their geometry to compute the transform of each frame relative to a reference frame (translation, rotation, scaling, and even distortion), then resamples so that all frames are aligned pixel by pixel.
+
+- The software first detects a set of stars in each frame and uses the relative geometry of the stars (triangle matching, etc.) to establish correspondences between frames.
+- From these correspondences it fits a geometric transform; the model used ranges from a similarity transform to a polynomial with distortion correction.
+- Good registration automatically compensates for the whole-frame shifts produced by dithering, so that subsequent per-pixel statistics land on the same patch of sky.
+
+The reference frame is usually chosen as the highest-quality frame; field rotation, mosaic stitching, or integrating multiple sessions requires more sophisticated global registration.
+
+## Frame Quality Selection
+
+Not every sub-frame is worth keeping. Clouds, gusts, and loss of tracking lock produce trailing, defocused, or suddenly brightened backgrounds — reject frames whose inclusion would drag down the overall quality. **Frame selection (culling)** rejects or down-weights frames based on several objective metrics:
+
+| Metric | Meaning | Preferred direction |
+| --- | --- | --- |
+| Full width at half maximum (FWHM) | Star sharpness (pixels or arcseconds) | The smaller the better |
+| Eccentricity (eccentricity / roundness) | Star roundness, reflecting trailing and aberrations | The closer to 0 the better |
+| Background | Sky background brightness, reflecting clouds, moonlight, light pollution | The lower and more stable the better |
+| SNR / noise | Single-frame signal-to-noise ratio | The higher the better |
+| Star count | Number of detectable stars, reflecting transparency | The more the better |
+
+Empirically, rejecting the worst roughly 10%–30% of sub-frames often yields a cleaner result than keeping all frames. More advanced pipelines do not reject frames directly but assign each frame a weight by quality (weighting), so that sharper, higher-SNR frames contribute more during integration — for example, PixInsight's PSF Signal Weight.
+
+## Pixel Rejection
+
+Frame culling addresses whole-frame problems; **pixel rejection** addresses local outliers within a single frame — aircraft/satellite trails, cosmic ray hits, hot pixels not fully removed by the dark frame. It performs statistics pixel by pixel across the same-position pixels of all frames, excludes values that deviate too far, and then integrates, so it **rejects only individual pixels and does not discard whole frames**.
+
+Before rejection, **normalization** is usually required, that is, scaling the overall brightness of each frame to be consistent, to compensate for background differences caused by transparency variations; otherwise the statistical criteria would be distorted.
+
+Common rejection algorithms:
+
+| Algorithm | Mechanism | Suitable for |
+| --- | --- | --- |
+| Sigma / Kappa-Sigma clipping | Iteratively computes the mean and standard deviation, rejecting pixels that deviate by more than κ times the standard deviation | General-purpose, good at satellite/aircraft trails |
+| Winsorized Sigma clipping | First uses the Winsor method to robustly estimate the statistics, then clips; more robust against contamination | Better than ordinary sigma when the frame count is limited |
+| Linear Fit Clipping | Fits a straight line across frames for each pixel and rejects values that deviate from the fit | Many frames with gradual variation present |
+| GESD / percentile clipping | Generalized extreme Studentized deviate or percentile threshold | Many frames and a relatively clean image |
+
+The criterion for Kappa-Sigma clipping can be written as: for the set of frame values at a given pixel position, keep the pixels satisfying `|xi − mean| ≤ κ · σ`, iterating a number of rounds until convergence; κ (kappa) is the clipping threshold, often set separately as a low-end `low_sigma` and a high-end `high_sigma`, which must be tuned to the data.
+
+<Aside type="tip" title="Pairing Dithering with Pixel Rejection">
+Intentional dithering means nudging the telescope's pointing by a few pixels every several frames, so that the same hot pixel or bad pixel lands on different sky pixels in different frames. This way it appears as an outlier in the per-pixel statistics and gets rejected, while also breaking up fixed-pattern noise. Dithering combined with sigma-type rejection is the key means of cleaning up hot pixels and residual bad pixels.
+</Aside>
+
+## Integration
+
+For each pixel position, integration combines all the frame values that survived rejection into a single final value. The combination method determines the trade-off between outlier resistance and signal-to-noise ratio.
+
+| Method | Outlier resistance | SNR | Use case |
+| --- | --- | --- | --- |
+| Average | Poor | Best | Few frames and an extremely clean image |
+| Median | Good | Slight loss | Few frames (&lt;10) but with a few trails |
+| Average after Kappa-Sigma clipping | Good | Close to average | Most routine deep-sky projects (≥15–20 frames) |
+| Weighted average | Depends on rejection | Better than equal weighting | When frame quality varies widely |
+| Entropy weighted | — | — | Used on already-stacked high-SNR images to produce high dynamic range |
+
+In practice, **first rejecting outlier pixels with a sigma-type algorithm and then taking a (weighted) average of the remaining pixels** is the mainstream approach that balances outlier resistance and signal-to-noise ratio. Although the median is robust, it loses about 20% of the SNR, so it is usually used only when the frame count is very small.
+
+<Aside type="tip" title="Matching the Algorithm to the Frame Count">
+With fewer than 10 frames, average or median is safer; with 10–20 or more frames, prefer Kappa-Sigma or Winsorized Sigma clipping. GESD performs well when there are many frames and the image is clean, but if there are many aircraft/satellites, Kappa-Sigma is more reliable because it rejects only outlier pixels rather than whole frames.
+</Aside>
+
+## Drizzle and Super-resolution
+
+Drizzle (variable-pixel linear reconstruction) was originally developed for the Hubble Deep Field and proposed by the Space Telescope Science Institute (STScI), to reconstruct a higher-resolution image from multiple **undersampled** and dithered frames. When the pixels are too large to adequately sample the resolving power of the optical system (undersampling), ordinary interpolation cannot recover the detail, whereas Drizzle, when combined with dithering, can partially achieve super-resolution.
+
+Its principle is to "drizzle" each input pixel onto an output grid finer than the original image according to a geometric transform, with the landing point determined by that frame's registration transform; intentional dithering offsets the drizzle landing points of different frames, thereby filling in information on the finer grid. Key parameters:
+
+| Parameter | Meaning | Values and effects |
+| --- | --- | --- |
+| Scale factor (scale) | The linear magnification of the output grid relative to the input | 2.0 means twice the edge length and four times the pixel count; the larger it is, the fewer frames accumulate per output pixel and the higher the noise |
+| Pixel shrink ratio (pixfrac / drop shrink) | The shrink ratio of the droplet relative to the original pixel before drizzling | 0 is equivalent to interlacing, 1 is equivalent to shift-and-add; empirically take about the reciprocal of the scale factor |
+| Kernel | The droplet shape | square (default, flux-preserving), gaussian (preserves the point spread function), point (minimal correlated noise but prone to leaving holes), etc. |
+
+For OSC cameras you can use **Bayer Drizzle**: keep the CFA layout after calibration (do not debayer), and during Drizzle drizzle each pixel onto the corresponding output channel according to its color filter, thereby bypassing the false color and resolution loss of traditional debayer interpolation.
+
+<Aside type="caution" title="The Cost and Prerequisites of Drizzle">
+Drizzle's resolution gain comes at the cost of noise: the finer the grid, the fewer frames accumulate per output pixel, the higher the noise, and it introduces correlated noise between adjacent output pixels. It requires sufficient dithering and a large enough number of frames (generally more than 10, with Bayer Drizzle or higher scaling requiring more); otherwise hole pixels and moiré patterns appear. It is only worth using when the data are genuinely undersampled and abundant.
+</Aside>
+
+## Common Software
+
+<Steps>
+
+1. **DeepSkyStacker (DSS)** — free, Windows. Can automatically perform calibration, debayer, registration, and stacking; has built-in average, median, Kappa-Sigma, Median Kappa-Sigma, adaptive weighted average, entropy weighted average, and other combination methods; supports Drizzle. Its algorithms are somewhat dated and its batch and scripting capabilities are weak.
+
+2. **Siril** — free, open-source, cross-platform. Modern algorithms, supports **scripts (.ssf)** to run the full OSC/mono pre-processing pipeline with one click; has built-in conventional and Bayer Drizzle and multiple kernels; and can perform background extraction and photometric color calibration in post-processing, making it the mainstay of current free solutions.
+
+3. **AstroPixelProcessor (APP)** — paid. Excellent at multi-session integration, mosaic stitching, and gradient removal; suitable for advanced and large-format projects.
+
+4. **PixInsight WBPP** — paid, the industry standard. Weighted Batch Preprocessing automatically chains together calibration, cosmetic correction, debayer, registration, local normalization, weighting, pixel rejection, integration, Drizzle, and edge cropping; by default it weights by PSF Signal Weight, with rejection options including Winsorized Sigma, Linear Fit, GESD, etc., chosen adaptively by frame count.
+
+</Steps>
+
+## Output: 32-bit Linear Image
+
+Regardless of which software you use, the integration result should be saved as a **32-bit floating-point, linear** FITS or TIFF, and **no stretching or color adjustment should be done at this stage**. The reasons are as follows:
+
+- Linear data preserve the full dynamic range, avoiding the amplification of quantization errors in post-processing.
+- All brightening (non-linear stretching), background gradient removal, color calibration, and noise reduction should be performed on the linear master image; see [post-processing workflow](/en/astrophotography/processing/workflow/).
+- 8/16-bit integer formats may be insufficient to represent subtle low-bit information after stacking many frames; 32-bit floating-point is safer.
+
+<Aside type="tip" title="Using Data from Remote Platforms">
+Remote observatory platforms usually provide already-calibrated (and sometimes already-debayered) sub-frames directly; after downloading you only need to register and stack, and you can skip the step of shooting calibration frames locally. See [remote platforms overview](/en/astrophotography/remote-platforms/overview/) for details.
+</Aside>
+
+## Common Pitfalls
+
+- **More sub-frames vs. longer sub-frames**: provided you do not overexpose, increasing the number of frames is safer than lengthening sub-frames indefinitely, as it both suppresses random noise and leaves a statistical sample for pixel rejection; but each sub-frame must also be long enough for the target signal to exceed the read noise.
+- **Median is not always better**: the median resists outliers but loses signal-to-noise; when there are enough frames, switch to average after Kappa-Sigma clipping.
+- **Using Drizzle without dithering**: without dithering, Drizzle cannot achieve super-resolution and merely adds noise and file size.
+- **Calibration frame quantity over matching**: if the dark temperature/exposure or the flat orientation does not match, no amount of quantity will help and will introduce new errors.
+- **Color adjustment during stacking**: the integration output must remain linear; any stretching/color adjustment belongs to post-processing.
+
+## Summary
+
+- The pipeline order is fixed: **calibration → (debayer) → registration → frame selection → pixel rejection → integration**.
+- Noise is suppressed by frame count, `SNR ∝ √N`; doubling the total integration time increases the SNR by about 41%.
+- Calibration subtracts fixed errors (`(light − dark) / flat`), and pixel rejection combined with dithering removes outliers.
+- For routine projects, prefer **average after Kappa-Sigma / Winsorized Sigma clipping**, which balances outlier resistance and signal-to-noise.
+- When the data are undersampled and abundant, Drizzle can partially achieve super-resolution, at the cost of noise and file size.
+- Output a **32-bit linear image**, leaving all stretching and beautification to post-processing.
+
+## References
+
+- [Drizzle (image processing) — Wikipedia](https://en.wikipedia.org/wiki/Drizzle_(image_processing)) — The origin (Hubble Deep Field), principle, and characteristics of Drizzle / variable-pixel linear reconstruction.
+- [Drizzle — Siril Documentation](https://siril.readthedocs.io/en/latest/preprocessing/drizzle.html) — Implementation details of pixfrac, scale factor, kernels, and Bayer Drizzle.
+- [DeepSkyStacker Technical / Stacking Methods](http://deepskystacker.free.fr/english/technical.htm) — Definitions and applicable frame counts for average, median, Kappa-Sigma, and other combination methods.
+- [Mastering Deep-Sky Astrophotography Processing — Optical Mechanics](https://www.opticalmechanics.com/mastering-deep-sky-astrophotography-processing/) — The complete pipeline order and parameter recommendations for calibration, registration, rejection, and integration.
+- [Improve Your Astrophotography with Weighted Batch Preprocessing — Utah Desert Remote](https://utahdesertremote.com/improve-your-astrophotography-with-weighted-batch-preprocessing/) — The steps, weighting, and rejection algorithms of PixInsight WBPP.
+- [Siril Script Files — Siril Documentation](https://siril.readthedocs.io/en/latest/scripts/Script-files.html) — The directory structure and one-click pipeline of OSC/mono pre-processing scripts.

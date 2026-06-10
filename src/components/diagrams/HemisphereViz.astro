@@ -1,0 +1,126 @@
+---
+/**
+ * 交互式半球可见性:拖动纬度滑块,实时显示拱极区 / 永不升起区的赤纬界限。随语言切换标签。
+ * 统一公式(φ 北纬为正):
+ *   拱极:φ≥0 → Dec>90−φ;φ<0 → Dec<−90−φ
+ *   永不升起:φ≥0 → Dec<φ−90;φ<0 → Dec>90+φ
+ */
+interface Props { caption?: string; }
+const en = Astro.url.pathname.startsWith('/en');
+const L = en
+  ? { cap: 'Set your latitude φ with the slider: blue = circumpolar (never sets), teal = rises and sets, purple = never rises.',
+      latLabel: 'Your latitude φ =', decAxis: 'Declination Dec',
+      legCirc: 'Circumpolar (never sets)', legVis: 'Rises and sets', legNever: 'Never rises',
+      circN: 'circumpolar >', floorN: 'rise limit', circS: 'S-circumpolar <', ceilS: 'rise limit',
+      aria: 'Hemisphere visibility diagram' }
+  : { cap: '拖动滑块设置你的纬度 φ:蓝=拱极整夜不落,青=会升落,紫=永不升起。',
+      latLabel: '你的纬度 φ =', decAxis: '天体赤纬 Dec',
+      legCirc: '拱极(整夜不落)', legVis: '会升落(可见)', legNever: '永不升起',
+      circN: '拱极 >', floorN: '升起下限', circS: '南天拱极 <', ceilS: '升起上限',
+      aria: '半球可见性示意图' };
+const { caption = L.cap } = Astro.props;
+---
+<figure class="diagram hemi-viz" data-hemi>
+  <div class="hemi-controls">
+    <label>{L.latLabel} <strong data-lat-out>40°N</strong></label>
+    <input type="range" min="-80" max="80" value="40" step="1" data-lat aria-label={L.latLabel} />
+  </div>
+  <svg viewBox="0 0 520 300" role="img" aria-label={L.aria}>
+    <rect width="520" height="300" fill="#0a0d1a" rx="12" />
+    <g data-dyn></g>
+    <line x1="80" y1="20" x2="80" y2="280" stroke="#3a4690" stroke-width="1.5" />
+    <text x="34" y="25" fill="#9aa6ff" font-size="12">+90°</text>
+    <text x="44" y="154" fill="#9aa6ff" font-size="12">0°</text>
+    <text x="38" y="284" fill="#9aa6ff" font-size="12">−90°</text>
+    <text x="14" y="158" fill="#6b78c8" font-size="11" transform="rotate(-90 18 154)">{L.decAxis}</text>
+  </svg>
+  <ul class="hemi-legend">
+    <li><span class="sw sw-circ"></span> {L.legCirc}<b data-circ></b></li>
+    <li><span class="sw sw-vis"></span> {L.legVis}<b data-vis></b></li>
+    <li><span class="sw sw-never"></span> {L.legNever}<b data-never></b></li>
+  </ul>
+  <figcaption>{caption}</figcaption>
+</figure>
+
+<style>
+  .hemi-controls { display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 0.6rem; }
+  .hemi-controls input[type='range'] { width: 100%; accent-color: var(--sl-color-accent); }
+  .hemi-legend {
+    list-style: none; padding: 0; margin: 0.7rem 0 0;
+    display: flex; flex-wrap: wrap; gap: 0.4rem 1.3rem; font-size: var(--sl-text-sm);
+  }
+  .hemi-legend li { display: flex; align-items: center; gap: 0.45rem; }
+  .hemi-legend .sw { width: 14px; height: 14px; border-radius: 3px; display: inline-block; }
+  .sw-circ { background: #5e74ff; }
+  .sw-vis { background: rgba(95, 227, 210, 0.4); }
+  .sw-never { background: #3a2342; border: 1px solid #5a2a44; }
+  .hemi-legend b { color: var(--sl-color-white); margin-left: 0.35rem; }
+</style>
+
+<script is:inline define:vars={{ T: L }}>
+  (function () {
+    const NS = 'http://www.w3.org/2000/svg';
+    const X = 80, W = 360, TOP = 20, BOT = 280;
+    const decToY = (d) => TOP + ((90 - d) / 180) * (BOT - TOP);
+    const fmt = (d) => { const r = Math.round(d); return r > 0 ? `+${r}°` : r < 0 ? `−${-r}°` : '0°'; };
+
+    document.querySelectorAll('[data-hemi]').forEach((root) => {
+      const slider = root.querySelector('[data-lat]');
+      const g = root.querySelector('[data-dyn]');
+      const out = root.querySelector('[data-lat-out]');
+      const circOut = root.querySelector('[data-circ]');
+      const visOut = root.querySelector('[data-vis]');
+      const neverOut = root.querySelector('[data-never]');
+
+      const band = (decHi, decLo, fill, op = '1') => {
+        const y1 = decToY(decHi), y2 = decToY(decLo);
+        const r = document.createElementNS(NS, 'rect');
+        r.setAttribute('x', String(X)); r.setAttribute('y', String(Math.min(y1, y2)));
+        r.setAttribute('width', String(W)); r.setAttribute('height', String(Math.abs(y2 - y1)));
+        r.setAttribute('fill', fill); r.setAttribute('fill-opacity', op);
+        g.appendChild(r);
+      };
+      const dline = (dec, color, label) => {
+        const y = decToY(dec);
+        const l = document.createElementNS(NS, 'line');
+        l.setAttribute('x1', String(X)); l.setAttribute('x2', String(X + W));
+        l.setAttribute('y1', String(y)); l.setAttribute('y2', String(y));
+        l.setAttribute('stroke', color); l.setAttribute('stroke-width', '2');
+        l.setAttribute('stroke-dasharray', '6 3'); g.appendChild(l);
+        const t = document.createElementNS(NS, 'text');
+        t.setAttribute('x', String(X + W - 6)); t.setAttribute('y', String(y - 5));
+        t.setAttribute('fill', color); t.setAttribute('font-size', '12'); t.setAttribute('text-anchor', 'end');
+        t.textContent = label; g.appendChild(t);
+      };
+
+      function render() {
+        const phi = Number(slider.value);
+        out.textContent = phi >= 0 ? `${phi}°N` : `${-phi}°S`;
+        g.replaceChildren();
+        if (phi >= 0) {
+          const circ = 90 - phi, floor = phi - 90;
+          band(90, circ, '#5e74ff', '0.85');
+          band(circ, floor, '#5fe3d2', '0.32');
+          band(floor, -90, '#3a2342', '0.92');
+          dline(circ, '#aab4ff', `${T.circN} ${fmt(circ)}`);
+          dline(floor, '#ff9ec0', `${T.floorN} ${fmt(floor)}`);
+          circOut.textContent = `Dec > ${fmt(circ)}`;
+          visOut.textContent = `${fmt(floor)} ~ ${fmt(circ)}`;
+          neverOut.textContent = `Dec < ${fmt(floor)}`;
+        } else {
+          const circ = -90 - phi, ceil = 90 + phi;
+          band(-90, circ, '#5e74ff', '0.85');
+          band(circ, ceil, '#5fe3d2', '0.32');
+          band(ceil, 90, '#3a2342', '0.92');
+          dline(circ, '#aab4ff', `${T.circS} ${fmt(circ)}`);
+          dline(ceil, '#ff9ec0', `${T.ceilS} ${fmt(ceil)}`);
+          circOut.textContent = `Dec < ${fmt(circ)}`;
+          visOut.textContent = `${fmt(circ)} ~ ${fmt(ceil)}`;
+          neverOut.textContent = `Dec > ${fmt(ceil)}`;
+        }
+      }
+      slider.addEventListener('input', render);
+      render();
+    });
+  })();
+</script>

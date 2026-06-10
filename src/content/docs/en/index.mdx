@@ -1,0 +1,81 @@
+---
+title: Lumina
+description: An English/Chinese knowledge base on astronomy and astrophotography — covering fundamental concepts, observation planning, deep-sky targets, remote imaging and post-processing.
+template: splash
+hero:
+  title: "拾光记 Lumina"
+  tagline: Gathering starlight — an astronomy & astrophotography knowledge base
+  actions:
+    - text: Start reading
+      link: /en/start/
+      icon: right-arrow
+      variant: primary
+    - text: Object catalog
+      link: /en/reference/catalog/
+      icon: open-book
+      variant: secondary
+    - text: Learning paths
+      link: /en/reference/learning-paths/
+      icon: list-format
+      variant: minimal
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+import Fig from '@/components/Fig.astro';
+
+## Why we look up at the stars
+
+The universe began about 13.8 billion years ago and has been cooling ever since. Some 380,000 years in, it grew cold enough for electrons to join atomic nuclei and for light to travel freely for the first time. That faint afterglow is what we still detect today as the cosmic microwave background. Then came long ages of darkness, until gas drew together under gravity, collapsed, and ignited: the first stars lit the void.
+
+Inside stars, hydrogen and helium are forged into heavier elements. When those stars burn out as supernovae, or collide as neutron stars, that material is scattered back into space and gathered into the next generation of stars and planets. Round after round, the carbon, oxygen, and iron in your body all came from some star that died long ago. We are, quite literally, a span of cosmic time made flesh.
+
+So when we look up, we are not seeing a distant elsewhere but our own origin. This site is built for that curiosity and that sense of belonging: from learning a single star and reading a star chart to capturing the faint light of the deep sky yourself. It is here to help you come to know the night sky, and the universe we are part of, the cosmos finding a way to know itself.
+
+<div class="pillars">
+  <a class="pillar-card" href="/en/astronomy/foundations/celestial-coordinates/">
+    <h3>Astronomy</h3>
+    <p>Celestial coordinates, time systems, magnitudes, the Solar System, stars, deep-sky objects, cosmology, and observing conditions.</p>
+  </a>
+  <a class="pillar-card" href="/en/astrophotography/remote-platforms/overview/">
+    <h3>Astrophotography</h3>
+    <p>Optics, sensors, exposure, calibration frames, deep-sky and planetary capture, remote imaging, and post-processing workflows.</p>
+  </a>
+</div>
+
+## Knowledge index
+
+<CardGrid>
+  <LinkCard title="Object Catalog" href="/en/reference/catalog/" description="A filterable index of Messier / NGC / IC targets: position, magnitude, hemisphere, season, and recommended focal length." />
+  <LinkCard title="Observatories" href="/en/reference/observatories/" description="Research-grade observatories, major instruments, and site conditions." />
+  <LinkCard title="Glossary" href="/en/reference/glossary/" description="Bilingual definitions of common astronomy and astrophotography terms." />
+  <LinkCard title="Software" href="/en/reference/software/" description="Planning, capture, guiding, stacking, and post-processing tools." />
+  <LinkCard title="Remote platforms" href="/en/astrophotography/remote-platforms/platforms-comparison/" description="Positioning, pricing, and use cases of AstroBin, iTelescope, SkyShare and others." />
+  <LinkCard title="Learning paths" href="/en/reference/learning-paths/" description="Reading orders organized by goal, starting from an entry page." />
+</CardGrid>
+
+## Where to start
+
+<CardGrid>
+  <LinkCard
+    title="Observing from scratch →"
+    href="/en/astronomy/observing/hemisphere-visibility/"
+    description="Learn how latitude and season decide what you can see (hemisphere visibility), then move on to celestial coordinates to locate targets."
+  />
+  <LinkCard
+    title="Getting into deep-sky imaging →"
+    href="/en/astrophotography/remote-platforms/overview/"
+    description="Start with remote imaging for how data is acquired, then move on to stacking for basic post-processing."
+  />
+</CardGrid>
+
+## Image gallery
+
+Images on this site come from public-domain or openly licensed sources such as NASA, ESO, ESA/Hubble, and Wikimedia Commons. Click anywhere below to open the guide to notable deep-sky objects and browse them all.
+
+<a class="gallery-link" href="/en/astronomy/deep-sky/notable-objects/#obj-m31-andromeda">
+  <div class="cols2">
+    <Fig name="m42-orion" alt="The Orion Nebula M42" caption="M42, the Orion Nebula, a bright emission nebula commonly seen in the northern winter sky." />
+    <Fig name="carina" alt="The Carina Nebula" caption="NGC 3372, the Carina Nebula, a large southern emission nebula and star-forming region." />
+  </div>
+  <span class="gallery-cta">Browse all notable deep-sky objects →</span>
+</a>

@@ -1,0 +1,2543 @@
+# 精选天体目录 —— 视觉效果突出、热门天文摄影目标(参考 AstroBin / Telescope Live)。
+# 每个天体含较完整介绍与彩色配图。坐标/星等为近似值,以 SIMBAD 为准。
+
+- id: B33
+  name: "马头星云(暗星云 B33)"
+  nameEn: "Barnard 33"
+  catalog: Other
+  type: dark-nebula
+  typeLabel: "暗星云"
+  constellation: "猎户座 Ori"
+  ra: "05h41m"
+  dec: -2
+  decLabel: "−02°"
+  magnitude: null
+  hemisphere: both
+  season: winter
+  difficulty: advanced
+  summary: "马头剪影本体的暗星云编号。"
+  summaryEn: "Dark dust forming the iconic Horsehead silhouette against IC 434's red glow."
+  description: "马头星云的暗尘本体在巴纳德暗星云表中编号为 B33,距地球约 1500 光年,位于猎户座参宿一(Alnitak)东南方。它是一团致密的冷分子尘埃,本身不发光,只因衬在 IC 434 明亮的红色氢发射带前才显出形如马头的剪影。这团尘埃属于规模庞大的猎户座分子云复合体,内部正孕育着新恒星,顶部边缘已被附近高温恒星的紫外辐射逐渐侵蚀。它是天空中最著名、最具辨识度的暗星云,几乎总与背后的红色辉光同框出现。拍摄时常将其与下方的火焰星云(NGC 2024)一并收入,是猎户座最经典也颇具挑战的目标之一。"
+  descriptionEn: "Barnard 33 is the catalog designation for the dark dust that forms the Horsehead Nebula, lying about 1,500 light-years away southeast of Alnitak in Orion. This dense column of cold molecular dust gives off no light of its own; it shows up only as a horse-head silhouette against the bright red hydrogen emission of IC 434 behind it. It belongs to the vast Orion Molecular Cloud Complex, with new stars forming inside while its crest is slowly eroded by ultraviolet radiation from nearby hot stars. It is among the most recognizable dark nebulae in the entire sky, almost always imaged together with that red backdrop. Photographers usually frame it alongside the Flame Nebula (NGC 2024) below, making it one of Orion's most classic yet demanding targets."
+  focal: "中长焦 800–1200mm"
+  image: b33
+- id: C99
+  name: "煤袋星云"
+  nameEn: "Coalsack Nebula"
+  catalog: Caldwell
+  type: dark-nebula
+  typeLabel: "暗星云"
+  constellation: "南十字座 Cru"
+  ra: "12h50m"
+  dec: -62
+  decLabel: "−62°"
+  magnitude: null
+  hemisphere: south
+  season: spring
+  difficulty: advanced
+  summary: "南十字旁最显眼的暗星云。"
+  summaryEn: "The most prominent dark nebula in the southern sky, beside the Southern Cross."
+  description: "煤袋星云是南天最显眼的暗星云,距地球约 600 光年,横跨南十字座、半人马座与苍蝇座三个星座,视面约 7°×5°。它本质上是一团致密的星际尘埃与分子气体,遮挡了后方密集的银河星光,在明亮的银盘上呈现出一块醒目的黑斑,被南半球原住民视作天空中的「黑色剪影」图腾。它的消光高达数个星等,内部正孕育着未来的恒星。观测时需以广角镜头连同周围银河一同入画,才能展现这片「星空中的黑洞」般的轮廓,是南天肉眼即可辨认的标志性目标。"
+  descriptionEn: "The Coalsack is the most prominent dark nebula in the southern sky, lying roughly 600 light-years away and spanning some 7° by 5° across Crux, Centaurus and Musca. It is a dense cloud of interstellar dust and molecular gas that blots out the rich Milky Way starlight behind it, appearing as a striking black void against the glowing band. Its extinction reaches several magnitudes, and the cloud likely harbors the early stages of future star formation. Many southern indigenous cultures recognized it as a dark celestial figure. Photographing it requires a wide-field lens to capture the silhouette together with the surrounding Milky Way."
+  focal: "广角 24–135mm"
+  image: c99
+- id: IC434
+  name: "马头星云"
+  nameEn: "Horsehead Nebula"
+  catalog: IC
+  type: dark-nebula
+  typeLabel: "暗星云"
+  constellation: "猎户座 Ori"
+  ra: "05h41m"
+  dec: -2
+  decLabel: "−02°"
+  magnitude: 6.8
+  hemisphere: both
+  season: winter
+  difficulty: intermediate
+  summary: "红色辉光前的标志性马头剪影。"
+  summaryEn: "Glowing red emission ridge behind the iconic Horsehead silhouette."
+  description: "IC 434 是猎户座参宿一附近一条明亮的红色氢发射带,距地球约 1500 光年,由附近的炽热恒星 σ Orionis 电离产生。著名的马头星云(暗星云 Barnard 33)正是衬托在这片红色辉光前形成的剪影。这条发射带是更庞大的猎户座分子云复合体的一部分,内部仍在孕育新恒星。它的红光来自氢原子的 Hα 谱线,使整个区域在窄带或彩色长曝下呈现浓郁的玫红色。常与下方的火焰星云 NGC 2024 同框,是冬季猎户座最经典也最具挑战的拍摄目标之一。"
+  descriptionEn: "IC 434 is a bright ridge of glowing hydrogen near Alnitak in Orion, about 1,500 light-years away, ionized by the nearby hot star Sigma Orionis. The famous Horsehead Nebula (dark nebula Barnard 33) is silhouetted against this red glow. The ridge belongs to the vast Orion molecular cloud complex and is still forming new stars. Its red color comes from the hydrogen-alpha line, giving the whole region a deep rose hue in long exposures. Often framed with the Flame Nebula below, it is one of winter Orion's most iconic yet challenging targets."
+  focal: "中长焦 800–1200mm"
+  image: horsehead
+- id: LMC
+  name: "大麦哲伦云"
+  nameEn: "Large Magellanic Cloud"
+  catalog: Other
+  type: dwarf-galaxy
+  typeLabel: "矮星系"
+  constellation: "剑鱼座 Dor"
+  ra: "05h24m"
+  dec: -70
+  decLabel: "−70°"
+  magnitude: 0.9
+  hemisphere: south
+  season: winter
+  difficulty: beginner
+  summary: "银河系最大的卫星星系。"
+  summaryEn: "The Milky Way's largest satellite galaxy, naked-eye in southern skies."
+  description: "大麦哲伦云距地球约 16 万光年,是银河系最大的卫星矮星系,在南天肉眼可见为一片孤立的云状光斑,因麦哲伦环球航行的记述而得名。它含有数百亿颗恒星,内部恒星形成极为活跃,孕育出整个本星系群中最壮观的恒星诞生区——蜘蛛星云(剑鱼座30)。1987 年它还爆发了现代最近的一颗肉眼可见超新星 SN 1987A,具有重大科学意义。它正与小麦哲伦云一同绕银河系运动,二者之间由「麦哲伦流」气体桥相连。广角镜头能收纳整体云团,长焦则可深挖其中无数星云与星团,是南半球天文摄影不可错过的目标。"
+  descriptionEn: "The Large Magellanic Cloud lies about 160,000 light-years away and is the Milky Way's largest satellite dwarf galaxy, visible to the naked eye as an isolated patch of haze in southern skies. Home to tens of billions of stars, it harbors the Tarantula Nebula (30 Doradus), the most spectacular star-forming region in the entire Local Group. It also hosted SN 1987A, the closest naked-eye supernova of modern times and a milestone for astrophysics. The LMC orbits the Milky Way together with the Small Magellanic Cloud, the two linked by the gaseous Magellanic Stream. A wide field captures the whole cloud, while longer focal lengths reveal countless embedded nebulae and clusters, making it an essential southern-hemisphere imaging target."
+  focal: "广角 24–135mm"
+  image: lmc
+- id: SMC
+  name: "小麦哲伦云"
+  nameEn: "Small Magellanic Cloud"
+  catalog: Other
+  type: dwarf-galaxy
+  typeLabel: "矮星系"
+  constellation: "杜鹃座 Tuc"
+  ra: "00h53m"
+  dec: -73
+  decLabel: "−73°"
+  magnitude: 2.7
+  hemisphere: south
+  season: autumn
+  difficulty: beginner
+  summary: "银河系第二大卫星星系。"
+  summaryEn: "The Milky Way's second-largest satellite galaxy, naked-eye in the south."
+  description: "小麦哲伦云距地球约 20 万光年,是银河系的一个不规则矮卫星星系,南天肉眼可见为一片细长的云状光斑,横跨杜鹃座与水蛇座。它的真实直径约 1.9 万光年,视面达 4° 以上,内含数亿颗恒星以及众多发射星云与星团。它与大麦哲伦云、银河系之间存在引力潮汐相互作用,正被逐渐撕扯并拖出一条「麦哲伦流」气体桥。它在天空中与壮丽的前景球状星团杜鹃座 47(实际位于银河系内)紧邻同框,构成南天摄影的经典构图。广角镜头下尤为上镜,是南半球深空巡礼的必拍目标。"
+  descriptionEn: "The Small Magellanic Cloud lies about 200,000 light-years away and is an irregular dwarf satellite galaxy of the Milky Way, visible to the naked eye as an elongated cloud spanning Tucana and Hydrus. Roughly 19,000 light-years across and over 4° in apparent size, it contains hundreds of millions of stars along with many emission nebulae and clusters. Gravitational interaction with the Large Magellanic Cloud and our Galaxy is tearing it apart and drawing out the Magellanic Stream. In the sky it sits beside the brilliant foreground globular cluster 47 Tucanae, forming a classic southern composition. It is highly photogenic in wide-field shots and a must-image target from the southern hemisphere."
+  focal: "广角 24–135mm"
+  image: smc
+- id: C49
+  name: "玫瑰星云"
+  nameEn: "Rosette Nebula"
+  catalog: Caldwell
+  type: emission-nebula
+  typeLabel: "发射星云"
+  constellation: "麒麟座 Mon"
+  ra: "06h32m"
+  dec: 5
+  decLabel: "+05°"
+  magnitude: 9
+  hemisphere: both
+  season: winter
+  difficulty: intermediate
+  summary: "中心镶嵌星团的红色玫瑰。"
+  summaryEn: "Vast red rose-shaped nebula encircling young cluster NGC 2244."
+  description: "玫瑰星云距地球约 5200 光年,是一团直径达 130 光年的巨大红色发射星云,位于麒麟座。它环绕着中心年轻的疏散星团 NGC 2244,星团内炽热 O 型恒星的强紫外辐射与恒星风电离并吹空了中央气体,塑造出完美的玫瑰花环造型。星云总质量约相当于一万个太阳,是银河系中活跃的恒星育婴室之一。窄带 SHO 拍摄能呈现层次丰富的花瓣结构与暗博克球。它视面比满月还大,是冬季宽视场摄影的明星目标。"
+  descriptionEn: "The Rosette Nebula lies about 5,200 light-years away in Monoceros and spans some 130 light-years across. It surrounds the young open cluster NGC 2244, whose hot O-type stars ionize the gas and have blown out a central cavity, sculpting the perfect rose-like ring. Containing the mass of roughly 10,000 Suns, it is one of the Galaxy's active stellar nurseries. Narrowband SHO imaging reveals rich petal structure and dark Bok globules. Larger than the full Moon on the sky, it is a star target for winter wide-field astrophotography."
+  focal: "中焦 400–800mm"
+  image: rosette
+- id: C92
+  name: "船底座大星云"
+  nameEn: "Carina Nebula"
+  catalog: Caldwell
+  type: emission-nebula
+  typeLabel: "发射星云"
+  constellation: "船底座 Car"
+  ra: "10h45m"
+  dec: -59
+  decLabel: "−59°"
+  magnitude: 1
+  hemisphere: south
+  season: spring
+  difficulty: beginner
+  summary: "南天最壮观的巨型发射星云。"
+  summaryEn: "The southern sky's largest, brightest emission nebula, home to volatile Eta Carinae."
+  description: "船底座大星云(NGC 3372,Caldwell 92)距地球约 7500 光年,是南天最大、最亮的发射星云,跨度超过 300 光年,规模远超北天的猎户座大星云。它内部藏有银河系最不稳定的特超巨星之一——海山二(Eta Carinae),这颗恒星在 19 世纪 40 年代曾爆发性增亮成为全天第二亮星,并喷出哑铃状的「侏儒星云」。星云中还有哈勃拍摄的著名尘埃柱「神秘山」。整片区域恒星形成极为活跃,O III 与 Hα 信号都极强,色彩与结构震撼无比。它是南半球深空摄影的王牌目标,广角即可拍出全貌,长焦可特写海山二与神秘山。"
+  descriptionEn: "The Carina Nebula (NGC 3372, Caldwell 92) lies about 7,500 light-years away and is the largest and brightest emission nebula in the southern sky, spanning over 300 light-years and dwarfing the northern Orion Nebula. It contains Eta Carinae, one of the Milky Way's most unstable supergiants, which flared into the sky's second-brightest star in the 1840s and ejected the dumbbell-shaped Homunculus Nebula. The region also holds the famous Hubble dust pillar known as the Mystic Mountain. Star formation rages throughout, with intense O III and Hα emission yielding overwhelming color and structure. A premier southern-hemisphere deep-sky target, it fits in a wide field while long focal lengths isolate Eta Carinae and the Mystic Mountain."
+  focal: "中焦 400–800mm"
+  image: carina
+- id: IC405
+  name: "烈焰之星星云"
+  nameEn: "Flaming Star Nebula"
+  catalog: IC
+  type: emission-nebula
+  typeLabel: "发射星云"
+  constellation: "御夫座 Aur"
+  ra: "05h16m"
+  dec: 34
+  decLabel: "+34°"
+  magnitude: 6
+  hemisphere: north
+  season: winter
+  difficulty: beginner
+  summary: "红蓝交织、燃烧着的恒星之云。"
+  summaryEn: "A flaming star lit by runaway AE Aurigae, mixing red emission and blue reflection."
+  description: "烈焰之星星云距地球约 1500 光年,位于御夫座,由一颗高温的逃逸恒星 AE Aurigae 照亮。这颗 O 型蓝巨星数百万年前在猎户座区域因双星弹射而被高速抛出,如今正穿越一片与其无关的尘埃云。它罕见地同时呈现红色发射星云(氢气被恒星紫外辐射电离)与蓝色反射星云(尘埃散射星光),色彩交织如同恒星被火焰包裹,因而得名。星云视面约 30 角分,跨度约 5 光年。强烈的红蓝对比使它成为御夫座冬季宽场摄影的视觉亮点,常与邻近的 IC 410 蝌蚪星云同框。"
+  descriptionEn: "The Flaming Star Nebula lies about 1,500 light-years away in Auriga and is illuminated by the hot runaway star AE Aurigae. This blue O-type star was ejected from the Orion region millions of years ago and is now plowing through an unrelated cloud of dust. The nebula rarely combines both red emission (hydrogen ionized by the star's ultraviolet light) and blue reflection (starlight scattered by dust), giving it the look of a star wrapped in flames. It spans roughly 30 arcminutes, about 5 light-years across. The vivid red-and-blue contrast makes it a winter wide-field highlight, often framed with the neighboring IC 410 Tadpoles Nebula."
+  focal: "中焦 400–800mm"
+  image: ic405
+- id: IC410
+  name: "蝌蚪星云"
+  nameEn: "Tadpoles Nebula"
+  catalog: IC
+  type: emission-nebula
+  typeLabel: "发射星云"
+  constellation: "御夫座 Aur"
+  ra: "05h22m"
+  dec: 33
+  decLabel: "+33°"
+  magnitude: 7.5
+  hemisphere: north
+  season: winter
+  difficulty: intermediate
+  summary: "内含两条「蝌蚪」尘埃柱。"
+  summaryEn: "Red emission nebula holding two comet-like dust 'tadpoles'."
+  description: "蝌蚪星云距地球约 12000 光年,是御夫座中一片巨大的红色发射星云,环绕着年轻疏散星团 NGC 1893。星云内部有两条被恒星风与辐射雕琢、拖着尾巴的致密尘埃团,形似游动的蝌蚪,长约 10 光年,正朝远离星团的方向被推开。星团成员的强辐射不断电离周围氢气,使其发出明亮红光。它常与邻近的 IC 405 烈焰之星星云同框出现。红色氢气主导、结构鲜明,是御夫座窄带摄影的人气目标。"
+  descriptionEn: "IC 410 lies about 12,000 light-years away in Auriga, a large red emission nebula surrounding the young open cluster NGC 1893. Inside it are two dense, sculpted dust knots trailing tails like swimming tadpoles, each roughly 10 light-years long and being pushed away from the cluster by stellar winds. Intense radiation from the cluster stars continually ionizes the surrounding hydrogen, making it glow bright red. It often shares the frame with the nearby Flaming Star Nebula (IC 405). Hydrogen-dominated and rich in structure, it is a favorite Auriga narrowband target."
+  focal: "中长焦 800–1200mm"
+  image: ic410
+- id: IC1396
+  name: "象鼻星云"
+  nameEn: "Elephant's Trunk Nebula"
+  catalog: IC
+  type: emission-nebula
+  typeLabel: "发射星云"
+  constellation: "仙王座 Cep"
+  ra: "21h39m"
+  dec: 57
+  decLabel: "+57°"
+  magnitude: 3.5
+  hemisphere: north
+  season: autumn
+  difficulty: beginner
+  summary: "蜿蜒尘埃柱中的恒星育婴室。"
+  summaryEn: "A winding dark dust pillar and stellar nursery within the vast IC 1396 complex."
+  description: "象鼻星云是巨大发射星云 IC 1396 内一条蜿蜒的暗尘埃柱,整片复合体距地球约 2400 光年,位于仙王座的造父变星石榴石星附近。这条「象鼻」(IC 1396A)是正在引力坍缩、孕育新恒星的稠密分子区,其明亮的卷边被中央高温多星系统 HD 206267 的强辐射照亮和侵蚀。整个 IC 1396 跨度超过 100 光年,视面积达数个满月宽,以红色氢发射为主并夹杂蓝色反射成分。它表面亮度较低,适合宽场窄带长曝光,是仙王座秋季摄影中色彩与结构兼备的人气目标。"
+  descriptionEn: "The Elephant's Trunk Nebula is a sinuous dark dust pillar within the vast emission nebula IC 1396, the whole complex lying about 2,400 light-years away in Cepheus near the Garnet Star. This trunk (IC 1396A) is a dense, gravitationally collapsing region forming new stars, its bright rim lit and eroded by intense radiation from the central hot multiple star HD 206267. The entire IC 1396 spans over 100 light-years and covers several full-moon widths, dominated by red hydrogen emission with bluish reflection mixed in. Its low surface brightness suits wide-field narrowband exposures, making it a popular autumn Cepheus target rich in both color and structure."
+  focal: "广角/中焦 135–400mm"
+  image: ic1396
+- id: IC1805
+  name: "心形星云"
+  nameEn: "Heart Nebula"
+  catalog: IC
+  type: emission-nebula
+  typeLabel: "发射星云"
+  constellation: "仙后座 Cas"
+  ra: "02h33m"
+  dec: 61
+  decLabel: "+61°"
+  magnitude: 6.5
+  hemisphere: north
+  season: autumn
+  difficulty: intermediate
+  summary: "轮廓如心的巨大红色星云。"
+  summaryEn: "A vast heart-shaped emission nebula sculpted by the cluster Melotte 15."
+  description: "心形星云距地球约 7500 光年,位于仙后座,因整体轮廓酷似一颗心而得名,实际跨度超过 200 光年。它的中央坐落着年轻疏散星团 Melotte 15,团中几颗大质量 O 型恒星以强烈的星风与辐射雕琢出标志性的尘埃柱、亮边与中央空腔。星云主体由被电离的氢气发出深红色辉光,在窄带影像中层次极其丰富。它常与东侧、形似人脑的胚胎星云(灵魂星云 IC 1848)组成「心与灵魂」星云对。作为宽场窄带摄影的人气目标,它适合用中焦镜头连同周边星场一同记录。"
+  descriptionEn: "The Heart Nebula lies about 7,500 light-years away in Cassiopeia and is named for its overall heart-like outline, spanning more than 200 light-years. At its center sits the young open cluster Melotte 15, whose massive O-type stars carve the signature dust pillars, bright rims and central cavity with their fierce winds and radiation. The nebula's body glows deep red from ionized hydrogen and reveals rich structure in narrowband imaging. It is often paired with the brain-shaped Soul Nebula (IC 1848) to its east as the 「Heart and Soul.」 A favorite for wide-field narrowband work, it suits a medium focal length that captures it alongside the surrounding star field."
+  focal: "广角/中焦 135–400mm"
+  image: heart-nebula
+- id: IC5070
+  name: "鹈鹕星云"
+  nameEn: "Pelican Nebula"
+  catalog: IC
+  type: emission-nebula
+  typeLabel: "发射星云"
+  constellation: "天鹅座 Cyg"
+  ra: "20h51m"
+  dec: 44
+  decLabel: "+44°"
+  magnitude: 8
+  hemisphere: north
+  season: summer
+  difficulty: intermediate
+  summary: "与北美洲星云相伴的鹈鹕轮廓。"
+  summaryEn: "Pelican-shaped emission region beside the North America Nebula."
+  description: "鹈鹕星云距地球约 2000 光年,位于天鹅座,与北美洲星云隔着一条暗尘带相望,整体轮廓形似一只鹈鹕。它与北美洲星云实为同一片巨大的电离氢区,由附近一颗炽热恒星照亮,只是被前景尘埃分隔成两块。星云内有活跃的恒星形成区和蜿蜒的电离前沿,著名的「鹈鹕之冠」就是一道正被新生恒星侵蚀的发光气体脊。窄带拍摄下细节极为丰富,红色氢气中点缀着金色亮边。它是天鹅座银河区域最受欢迎的中焦目标之一。"
+  descriptionEn: "The Pelican Nebula lies about 2,000 light-years away in Cygnus, facing the North America Nebula across a dark dust lane, its outline resembling a pelican. The two are actually one large ionized hydrogen region lit by a nearby hot star, merely split apart by foreground dust. It hosts active star-forming regions and winding ionization fronts, including the famous 'Pelican's Crown,' a glowing ridge being eroded by newborn stars. Narrowband imaging reveals abundant detail, with golden rims threaded through red hydrogen. It is one of the most popular mid-focal-length targets in the Cygnus Milky Way."
+  focal: "中焦 400–800mm"
+  image: ic5070
+- id: M8
+  name: "礁湖星云"
+  nameEn: "Lagoon Nebula"
+  catalog: Messier
+  type: emission-nebula
+  typeLabel: "发射星云"
+  constellation: "人马座 Sgr"
+  ra: "18h04m"
+  dec: -24
+  decLabel: "−24°"
+  magnitude: 6
+  hemisphere: south
+  season: summer
+  difficulty: beginner
+  summary: "人马座中巨大明亮的红色恒星育婴室。"
+  summaryEn: "A vast, bright red stellar nursery in Sagittarius split by a dark dust lane."
+  description: "礁湖星云(M8,NGC 6523)是夏季银河中最壮观的发射星云之一,距地球约 4100 光年,位于人马座,横跨约三个满月的宽度。它明亮的红色氢气云被一条醒目的暗尘「礁湖」一分为二,故而得名。星云核心藏有沙漏状的高温恒星形成区(Hourglass),由炽热的 O 型恒星电离照亮,内部还镶嵌着年轻的疏散星团 NGC 6530。它表面亮度高、肉眼可见为一团朦胧光斑,是少数无需暗夜就能轻松观测的深空天体。常与邻近的三裂星云 M20 同框,是南天夏季最上镜的拍摄明星之一。"
+  descriptionEn: "The Lagoon Nebula (M8, NGC 6523) is one of the most spectacular emission nebulae in the summer Milky Way, lying about 4,100 light-years away in Sagittarius and spanning roughly three full-moon widths. Its bright red hydrogen cloud is bisected by a prominent dark dust lane, the namesake \"lagoon.\" At its core lies the Hourglass, a hot star-forming region ionized by searing O-type stars, with the young open cluster NGC 6530 embedded nearby. High in surface brightness and visible to the naked eye as a hazy patch, it is one of the few deep-sky objects easily observed without dark skies. Often framed with the neighboring Trifid Nebula (M20), it is among the most photogenic stars of the southern summer sky."
+  focal: "中焦 400–800mm"
+  image: m8-lagoon
+- id: M16
+  name: "鹰状星云"
+  nameEn: "Eagle Nebula"
+  catalog: Messier
+  type: emission-nebula
+  typeLabel: "发射星云"
+  constellation: "巨蛇座 Ser"
+  ra: "18h19m"
+  dec: -14
+  decLabel: "−14°"
+  magnitude: 6
+  hemisphere: both
+  season: summer
+  difficulty: beginner
+  summary: "哈勃「创生之柱」所在的星云。"
+  summaryEn: "Home of Hubble's iconic Pillars of Creation, a stellar nursery in Serpens."
+  description: "鹰状星云距地球约 5700 光年(早期估计约 7000 光年,后经盖亚数据修正),位于巨蛇座,因哈勃望远镜 1995 年拍摄的「创生之柱」而举世闻名。这些高耸数光年的气体尘埃柱是恒星正在诞生的孵化场,顶端常嵌有正在凝聚的「蒸发气态球」(EGGs)。星云整体跨度约 70×55 光年,周围被疏散星团 NGC 6611 中炽热的年轻恒星电离成明亮的红色,星云本体在星表中又编号为 IC 4703。它在小望远镜中即可见星团,长焦窄带拍摄则能还原标志性的柱状结构。它是夏季银河深处最具科学意义与观赏价值的目标之一。"
+  descriptionEn: "The Eagle Nebula lies about 5,700 light-years away in Serpens (an older estimate of 7,000 ly was revised down with Gaia data) and is world-famous for Hubble's 1995 「Pillars of Creation.」 These towering columns of gas and dust, several light-years tall, are active stellar nurseries whose tips hold collapsing evaporating gaseous globules (EGGs). The nebula spans roughly 70 by 55 light-years, ionized into a glowing red by the hot young stars of cluster NGC 6611; the nebulosity itself is catalogued as IC 4703. The cluster is visible in small telescopes, while long-focus narrowband imaging recovers the iconic pillars. It is among the most scientifically meaningful and rewarding targets in the summer Milky Way."
+  focal: "中长焦 800–1200mm"
+  image: eagle-pillars
+- id: M17
+  name: "欧米伽星云"
+  nameEn: "Omega Nebula"
+  catalog: Messier
+  type: emission-nebula
+  typeLabel: "发射星云"
+  constellation: "人马座 Sgr"
+  ra: "18h21m"
+  dec: -16
+  decLabel: "−16°"
+  magnitude: 6
+  hemisphere: both
+  season: summer
+  difficulty: beginner
+  summary: "形似天鹅的明亮恒星形成区。"
+  summaryEn: "Bright swan-shaped star-forming region, one of the Galaxy's brightest."
+  description: "欧米伽星云又名天鹅星云,距地球约 5500 光年,位于人马座,是银河系中质量最大、最明亮的恒星形成区之一。明亮的核心区呈天鹅游水般的弧形,因而又得名天鹅星云;弧形其实是一大片电离氢区被前景尘埃遮挡后露出的发光边缘。星云内部恒星形成异常活跃,藏有上千颗年轻恒星与浓密的分子云。它表面亮度很高,即便用小口径望远镜也能轻松看到那道明亮的弧。色彩丰富、对比鲜明,是夏季银河中人气极高的观测与拍摄目标。"
+  descriptionEn: "The Omega Nebula, also called the Swan Nebula, lies about 5,500 light-years away in Sagittarius and is among the most massive and luminous star-forming regions in the Galaxy. Its bright core forms a swimming-swan arc, the glowing edge of a large ionized hydrogen region revealed where foreground dust thins. Star formation is intense here, hiding over a thousand young stars within dense molecular clouds. Its high surface brightness makes the bright arc easy to see even in small telescopes. Colorful and high in contrast, it is a hugely popular summer Milky Way target for both observers and imagers."
+  focal: "中长焦 800–1200mm"
+  image: m17
+- id: M20
+  name: "三裂星云"
+  nameEn: "Trifid Nebula"
+  catalog: Messier
+  type: emission-nebula
+  typeLabel: "发射星云"
+  constellation: "人马座 Sgr"
+  ra: "18h02m"
+  dec: -23
+  decLabel: "−23°"
+  magnitude: 6.3
+  hemisphere: south
+  season: summer
+  difficulty: intermediate
+  summary: "红蓝相间、暗带三分的经典星云。"
+  summaryEn: "Classic three-lobed nebula combining red emission, blue reflection and dark dust."
+  description: "三裂星云(M20)因被三条暗尘带分割成数瓣而得名,距地球约 4100 光年,与礁湖星云同处人马座恒星密集区。它罕见地在同一视场内汇集了三种星云:红色发射星云、蓝色反射星云与勾勒分界的暗星云,色彩对比极其上镜。其红色部分由中央的多星系统 HD 164492 电离发光,这些年轻恒星仅形成约三十万年。星云北侧的蓝色反射成分则由尘埃散射星光而成。它常与邻近的礁湖星云 M8 同框,是夏季人马座最具标志性的中长焦目标之一。"
+  descriptionEn: "The Trifid Nebula (M20) takes its name from the dark dust lanes that split it into several lobes, lying about 4,100 light-years away in the same crowded Sagittarius region as the Lagoon. It rarely combines three nebula types in one field: red emission, blue reflection, and the dark dust outlining their boundaries, giving striking photographic contrast. The red portion is ionized by the central multiple star HD 164492, whose young stars formed only about 300,000 years ago. The blue reflection component to the north arises from dust scattering starlight. Frequently framed with the neighboring Lagoon Nebula (M8), it is one of the most iconic medium-to-long focal targets of the summer Sagittarius sky."
+  focal: "中长焦 800–1200mm"
+  image: m20-trifid
+- id: M42
+  name: "猎户座大星云"
+  nameEn: "Orion Nebula"
+  catalog: Messier
+  type: emission-nebula
+  typeLabel: "发射星云"
+  constellation: "猎户座 Ori"
+  ra: "05h35m"
+  dec: -5
+  decLabel: "−05°"
+  magnitude: 4
+  hemisphere: both
+  season: winter
+  difficulty: beginner
+  summary: "全天最亮的弥漫星云,新手首选。"
+  summaryEn: "The brightest diffuse nebula in the sky and the top beginner target."
+  description: "猎户座大星云距地球约 1340 光年,是离我们最近的大质量恒星诞生地,也是夜空中最亮、最易拍摄的弥漫星云,肉眼即可在猎户腰带下方看到。它是一片直径约 24 光年的电离氢区,核心的四合星(Trapezium)以强紫外辐射电离并照亮周围气体,呈现明亮的红粉与蓝绿色调。星云内藏有数百颗新生恒星与原行星盘(proplyds),是研究恒星与行星系统形成的天然实验室。它表面亮度高、动态范围极大,短曝光即可出片,深曝则需多重曝光合成以保留核心细节。它是天文摄影入门的第一目标,几乎所有器材都能拍出令人惊艳的结果。"
+  descriptionEn: "The Orion Nebula lies about 1,340 light-years away and is the nearest region of massive star birth, as well as the brightest and easiest diffuse nebula to photograph, visible to the naked eye below Orion's Belt. It is an ionized hydrogen region roughly 24 light-years across, lit and ionized by the Trapezium multiple star at its core, glowing in vivid pink-red and blue-green hues. The nebula hosts hundreds of forming stars and protoplanetary disks (proplyds), making it a natural laboratory for studying star and planet formation. Its high surface brightness and enormous dynamic range yield images in short exposures, though deep shots need HDR blending to preserve the core. It is the classic first target in astrophotography, delivering striking results with almost any equipment."
+  focal: "中焦 400–800mm"
+  image: m42-orion
+- id: M43
+  name: "德梅伦星云"
+  nameEn: "De Mairan's Nebula"
+  catalog: Messier
+  type: emission-nebula
+  typeLabel: "发射星云"
+  constellation: "猎户座 Ori"
+  ra: "05h35m"
+  dec: -5
+  decLabel: "−05°"
+  magnitude: 9
+  hemisphere: both
+  season: winter
+  difficulty: intermediate
+  summary: "紧邻 M42 的逗号状发射星云。"
+  summaryEn: "Comma-shaped emission nebula just north of the Orion Nebula."
+  description: "M43 又称德梅伦星云,是猎户座大星云北侧被一条暗尘带分隔出的一块独立发射星云,距地球约 1340 光年,与 M42 同属猎户座大星云复合体。它由 18 世纪法国天文学家德梅伦发现,围绕年轻恒星 NU Orionis 形成逗号般的弧形结构。虽然常被明亮得多的 M42 抢去风头,但它本身也是活跃的恒星形成区。它的色彩与 M42 同样浓郁,呈红粉与蓝绿色调。在拍摄猎户座大星云时,它是构图中不可或缺的组成部分。"
+  descriptionEn: "M43, De Mairan's Nebula, is a distinct emission nebula north of the Orion Nebula, separated from M42 by a dark dust lane and lying about 1,340 light-years away within the same Orion complex. Discovered by the 18th-century French astronomer De Mairan, it forms a comma-shaped arc around the young star NU Orionis. Though usually overshadowed by the far brighter M42, it is an active star-forming region in its own right. Its colors are as rich as M42's, glowing in pink-red and teal. When imaging the Orion Nebula, it is an essential part of the composition."
+  focal: "中焦 400–800mm"
+  image: m43
+- id: NGC281
+  name: "吃豆人星云"
+  nameEn: "Pacman Nebula"
+  catalog: NGC
+  type: emission-nebula
+  typeLabel: "发射星云"
+  constellation: "仙后座 Cas"
+  ra: "00h53m"
+  dec: 56
+  decLabel: "+56°"
+  magnitude: 7.4
+  hemisphere: north
+  season: autumn
+  difficulty: intermediate
+  summary: "暗尘缺口形似吃豆人的红色星云。"
+  summaryEn: "Red emission nebula whose dark dust notch resembles the arcade character Pac-Man."
+  description: "吃豆人星云(NGC 281)距地球约 9200 光年,位于仙后座,因一道暗尘缺口使整体轮廓酷似游戏角色「吃豆人」而得名。星云中央镶嵌着年轻疏散星团 IC 1590,团中的炽热多星系统释放强紫外辐射,电离周围气体并使其发出红光。星云边缘点缀着被辐射雕琢、轮廓清晰的暗博克球(Bok globules)——正是新恒星诞生的孵化场。它以红色氢发射为主,跨度约 50 光年。该天体非常适合 SHO 窄带合成,能凸显经典的「吃豆人」造型,是仙后座秋季人气目标。"
+  descriptionEn: "The Pacman Nebula (NGC 281) lies about 9,200 light-years away in Cassiopeia, named for a dark dust notch that makes its outline resemble the arcade character Pac-Man. Embedded at its center is the young open cluster IC 1590, whose hot multiple-star system pours out ultraviolet radiation that ionizes the surrounding gas and makes it glow red. Its edges are dotted with sharply sculpted dark Bok globules, the very cradles where new stars are born. Dominated by red hydrogen emission, the nebula spans roughly 50 light-years. It suits SHO narrowband processing well, which accentuates the classic Pac-Man shape, making it a popular autumn Cassiopeia target."
+  focal: "中长焦 800–1200mm"
+  image: ngc281
+- id: NGC1499
+  name: "加州星云"
+  nameEn: "California Nebula"
+  catalog: NGC
+  type: emission-nebula
+  typeLabel: "发射星云"
+  constellation: "英仙座 Per"
+  ra: "04h03m"
+  dec: 36
+  decLabel: "+36°"
+  magnitude: 5
+  hemisphere: north
+  season: winter
+  difficulty: beginner
+  summary: "轮廓酷似加州的细长红云。"
+  summaryEn: "A long red emission nebula shaped strikingly like the state of California."
+  description: "加州星云距地球约 1000 光年,位于英仙座,因细长的轮廓酷似美国加利福尼亚州的地图形状而得名,长度超过 2.5°(约满月的五倍)。它是一片巨大的电离氢区,主要由附近的炽热蓝巨星 Menkib(船尾座 ξ Per,实为英仙座)激发氢气发出红光。它表面亮度很低,肉眼几乎不可见,但视面巨大,非常适合用宽视场镜头或加 Hα、双窄带滤镜拍摄。拍摄时既可作为单一主体,也可连同恒星 Menkib 与周边星场构图。它是冬季北天宽场与窄带摄影的人气目标。"
+  descriptionEn: "The California Nebula lies about 1,000 light-years away in Perseus and is named for its elongated outline, which strikingly resembles the map of the U.S. state of California, stretching more than 2.5° (about five Moon-widths). It is a large ionized-hydrogen region glowing red, excited mainly by the nearby hot blue giant Menkib (xi Persei). Its surface brightness is very low and it is barely visible to the eye, but its huge apparent size makes it ideal for wide-field lenses or H-alpha and dual-narrowband filters. It can be framed as a standalone subject or composed with Menkib and the surrounding star field. It is a popular winter target for northern wide-field and narrowband imaging."
+  focal: "广角/中焦 135–400mm"
+  image: ngc1499
+- id: NGC2024
+  name: "火焰星云"
+  nameEn: "Flame Nebula"
+  catalog: NGC
+  type: emission-nebula
+  typeLabel: "发射星云"
+  constellation: "猎户座 Ori"
+  ra: "05h41m"
+  dec: -1
+  decLabel: "−01°"
+  magnitude: 2
+  hemisphere: both
+  season: winter
+  difficulty: beginner
+  summary: "暗尘分割的橙红「火焰」。"
+  summaryEn: "Orange-red 'flame' split by dark dust beside Alnitak."
+  description: "火焰星云距地球约 1400 光年,紧邻猎户腰带的左端亮星参宿一(Alnitak)。明亮的橙红色氢气被前景一道分叉的暗尘带切割,使整体看上去像一团跳动的火焰,因而得名。参宿一发出的强紫外辐射电离了背后的气体,使其持续发光。星云内部隐藏着一个被尘埃遮蔽的年轻星团,在红外波段可见数百颗新生恒星。它常与马头星云组成猎户座经典的双星云构图,是冬季中长焦拍摄的热门对象。"
+  descriptionEn: "The Flame Nebula lies about 1,400 light-years away, right next to Alnitak, the easternmost belt star of Orion. Its bright orange-red hydrogen is cut by a forking dark dust lane, giving it the look of dancing flames. Intense ultraviolet radiation from Alnitak ionizes the gas behind it, keeping it aglow. Hidden within is a dust-shrouded young star cluster, with hundreds of newborn stars visible in the infrared. Often paired with the Horsehead Nebula in a classic Orion two-nebula composition, it is a popular winter target at medium-to-long focal lengths."
+  focal: "中长焦 800–1200mm"
+  image: flame-nebula
+- id: NGC2174
+  name: "猴头星云"
+  nameEn: "Monkey Head Nebula"
+  catalog: NGC
+  type: emission-nebula
+  typeLabel: "发射星云"
+  constellation: "猎户座 Ori"
+  ra: "06h09m"
+  dec: 20
+  decLabel: "+20°"
+  magnitude: 6.8
+  hemisphere: both
+  season: winter
+  difficulty: intermediate
+  summary: "轮廓形似猴头的红色星云。"
+  summaryEn: "Red emission nebula sculpted into the profile of a monkey's head."
+  description: "猴头星云(NGC 2174)距地球约 6400 光年,位于猎户座北部边缘,因被恒星辐射雕琢出的尘埃轮廓形似一只猴子的侧脸而得名。它是一处活跃的恒星形成区,内部年轻的疏散星团释放强烈的星风与紫外辐射,在气体中吹出空腔并塑造出密集发光的尘埃柱与亮边。星云以红色氢发射为主,跨度约数十光年。哈勃望远镜曾对其内部的尘埃柱拍摄过著名特写。它适合冬季 SHO 窄带拍摄,是色彩与结构兼具的上镜目标。"
+  descriptionEn: "The Monkey Head Nebula (NGC 2174) lies about 6,400 light-years away on the northern edge of Orion, named for dust contours sculpted by stellar radiation into the profile of a monkey's face. It is an active star-forming region where a young embedded open cluster drives powerful winds and ultraviolet radiation, carving cavities in the gas and shaping dense, glowing dust pillars and bright rims. Dominated by red hydrogen emission, it spans several tens of light-years. Hubble has captured a famous close-up of its interior pillars. It suits winter SHO narrowband imaging well and is a photogenic target rich in both color and structure."
+  focal: "中长焦 800–1200mm"
+  image: ngc2174
+- id: NGC3372
+  name: "海山二与神秘山"
+  nameEn: "Eta Carinae / Mystic Mountain"
+  catalog: NGC
+  type: emission-nebula
+  typeLabel: "发射星云"
+  constellation: "船底座 Car"
+  ra: "10h45m"
+  dec: -59
+  decLabel: "−59°"
+  magnitude: 1
+  hemisphere: south
+  season: spring
+  difficulty: beginner
+  summary: "船底星云核心的爆发恒星区。"
+  summaryEn: "The explosive core of the Carina Nebula, home of the supergiant Eta Carinae."
+  description: "NGC 3372 是船底座大星云的正式编号,核心区藏有著名的特超巨星海山二(Eta Carinae)。海山二是一对极不稳定的大质量双星,在 19 世纪 40 年代曾爆发性增亮成全天第二亮星,随后喷出哑铃状的「侏儒星云」(Homunculus Nebula),如今仍在向两侧膨胀。星云距地球约 7500 光年,整体跨度超过 300 光年,远大于猎户座大星云,内部还有著名的「神秘山」——一根约三光年高、被辐射雕琢的尘埃柱。该区域是南天最大、最亮的发射星云中最戏剧化、最上镜的细节,色彩与结构极其震撼。它适合用长焦做特写,展现海山二与侏儒星云的爆发遗迹。"
+  descriptionEn: "NGC 3372 is the formal designation of the Carina Nebula, whose core harbors the famous luminous supergiant Eta Carinae. Eta Carinae is a wildly unstable massive binary that flared into the sky's second-brightest star in the 1840s, then ejected the dumbbell-shaped Homunculus Nebula that is still expanding today. The nebula lies about 7,500 light-years away and spans over 300 light-years, far larger than the Orion Nebula, and also contains the celebrated 「Mystic Mountain,」 a radiation-sculpted dust pillar about three light-years tall. This is the most dramatic and photogenic detail within the largest, brightest emission nebula in the southern sky, with stunning color and structure. It rewards long-focus close-ups that reveal Eta Carinae and its eruptive remnant."
+  focal: "中长焦 800–1200mm"
+  image: ngc3372
+- id: NGC6188
+  name: "天坛座龙之斗星云"
+  nameEn: "Fighting Dragons of Ara"
+  catalog: NGC
+  type: emission-nebula
+  typeLabel: "发射星云"
+  constellation: "天坛座 Ara"
+  ra: "16h40m"
+  dec: -49
+  decLabel: "−49°"
+  magnitude: 5.2
+  hemisphere: south
+  season: summer
+  difficulty: beginner
+  summary: "尘埃雕成「双龙对峙」的星云。"
+  summaryEn: "Sculpted emission nebula shaped like two fighting dragons in Ara."
+  description: "NGC 6188 距地球约 4000 光年,位于南天的天坛座,是一片被辐射雕琢的发射星云。其暗尘脊与亮边交错的轮廓形似两条对峙的巨龙,故称「天坛座斗龙」。星云的物质源自巨大的分子云,被附近年轻星协 Ara OB1 中的炽热大质量恒星吹散并照亮。这些恒星仅几百万年历史,其紫外辐射不断侵蚀尘埃、激发新一轮恒星诞生。红色发射星云中起伏的暗尘脊极具立体感,是南天窄带摄影的人气结构目标。"
+  descriptionEn: "NGC 6188 lies about 4,000 light-years away in the southern constellation Ara, an emission nebula sculpted by radiation. Its interlocking dark ridges and bright rims resemble two confronting dragons, earning the name the Fighting Dragons of Ara. The material comes from a giant molecular cloud, blown out and lit by hot massive stars in the nearby young association Ara OB1. Only a few million years old, those stars erode the dust with ultraviolet light and trigger fresh star birth. The undulating dark ridges set against red emission give it strong depth, a favorite southern narrowband structure target."
+  focal: "中长焦 800–1200mm"
+  image: ngc6188
+- id: NGC6334
+  name: "猫掌星云"
+  nameEn: "Cat's Paw Nebula"
+  catalog: NGC
+  type: emission-nebula
+  typeLabel: "发射星云"
+  constellation: "天蝎座 Sco"
+  ra: "17h20m"
+  dec: -36
+  decLabel: "−36°"
+  magnitude: 5.5
+  hemisphere: south
+  season: summer
+  difficulty: beginner
+  summary: "形似猫爪印的红色发射星云。"
+  summaryEn: "A prolific massive-star nursery whose red lobes resemble a cat's paw print."
+  description: "猫掌星云(NGC 6334)距地球约 5500 光年,位于天蝎座,因几团明亮的红色发射区排布形似一只猫的脚掌印而得名。它是银河系中产生大质量恒星最旺盛的恒星育婴室之一,造星速度甚至超过著名的猎户座大星云。内部多个嵌埋的恒星形成区已电离出数片 H II 区,新生的大质量恒星每颗约为太阳的十倍,以强辐射在气体中吹胀出一个个发光气泡。星云跨度约 50 光年,红光极其浓郁。它是南天夏季天蝎座中色彩饱满、上镜的窄带目标。"
+  descriptionEn: "The Cat's Paw Nebula (NGC 6334) lies about 5,500 light-years away in Scorpius, named for several bright red emission lobes arranged like the print of a cat's paw. It is one of the Milky Way's most prolific nurseries of massive stars, forming new stars even faster than the famous Orion Nebula. Multiple embedded star-forming regions have ionized several H II zones, and newborn massive stars, each roughly ten times the Sun's mass, inflate glowing bubbles in the gas with their intense radiation. The nebula spans about 50 light-years and glows an intense red. It is a richly colored, photogenic narrowband target in the southern summer Scorpius sky."
+  focal: "中长焦 800–1200mm"
+  image: ngc6334
+- id: NGC6357
+  name: "战争与和平星云"
+  nameEn: "War and Peace Nebula"
+  catalog: NGC
+  type: emission-nebula
+  typeLabel: "发射星云"
+  constellation: "天蝎座 Sco"
+  ra: "17h25m"
+  dec: -34
+  decLabel: "−34°"
+  magnitude: 6.4
+  hemisphere: south
+  season: summer
+  difficulty: intermediate
+  summary: "含「龙虾」造型的恒星形成区。"
+  summaryEn: "A star-forming nebula with the hot cluster Pismis 24, aka the Lobster."
+  description: "战争与和平星云(又称龙虾星云)距地球约 5500–8000 光年,是天蝎座中一处大质量恒星诞生的发射星云,常与邻近的猫掌星云 NGC 6334 同框。它的「战争与和平」之名源自中途空间实验(MSX)的红外影像——西部形似和平鸽,东部状如骷髅;在可见光中则因气体云的轮廓得「龙虾」之称。星云中央嵌有疏散星团 Pismis 24,团中含有银河系已知最炽热、最大质量的几颗恒星,其强烈辐射雕琢出复杂的气体尘埃柱与空腔。红光浓郁、结构丰富,是南天夏季窄带 SHO 摄影的精彩目标。"
+  descriptionEn: "The War and Peace Nebula (also the Lobster Nebula) lies about 5,500–8,000 light-years away in Scorpius, a region of massive star birth often framed with the neighboring Cat's Paw Nebula (NGC 6334). Its 「War and Peace」 name comes from Midcourse Space Experiment infrared images, in which the western part resembles a dove and the eastern part a skull, while in visible light its cloud outline earned the 「Lobster」 nickname. At its center sits the open cluster Pismis 24, home to some of the hottest, most massive stars known in the Milky Way, whose fierce radiation carves intricate dust pillars and cavities. Richly red and structured, it is a rewarding target for southern summer SHO narrowband imaging."
+  focal: "中长焦 800–1200mm"
+  image: ngc6357
+- id: NGC6820
+  name: "象鼻状的 NGC 6820"
+  nameEn: "NGC 6820"
+  catalog: NGC
+  type: emission-nebula
+  typeLabel: "发射星云"
+  constellation: "狐狸座 Vul"
+  ra: "19h43m"
+  dec: 23
+  decLabel: "+23°"
+  magnitude: 8
+  hemisphere: north
+  season: summer
+  difficulty: intermediate
+  summary: "含柱状结构的发射星云与星团。"
+  summaryEn: "Emission nebula with a star-forming dust pillar pointing at NGC 6823."
+  description: "NGC 6820 是环绕疏散星团 NGC 6823 的发射星云,位于狐狸座,距地球约 6000 光年。星云中一根醒目的尘埃柱(俗称小象鼻)指向中央星团,长约 4 光年,顶端在中央恒星的辐射压下正被压缩并孕育新恒星。NGC 6823 星团仅约两百万年历史,是这片区域的能量来源。红色氢气背景衬托着被雕琢出的柱状亮边,层次丰富。它表面亮度不高,适合用中长焦窄带长曝拍摄出柱状结构的细节。"
+  descriptionEn: "NGC 6820 is an emission nebula surrounding the open cluster NGC 6823 in Vulpecula, about 6,000 light-years away. A striking dust pillar (a small 'trunk') roughly four light-years long points toward the central cluster, its tip being compressed by radiation pressure and birthing new stars. The cluster NGC 6823, only about two million years old, powers the region. Sculpted bright-rimmed pillars stand out against a background of red hydrogen, rich in layering. Its modest surface brightness suits long narrowband exposures at medium-to-long focal lengths to draw out the pillar detail."
+  focal: "中长焦 800–1200mm"
+  image: ngc6820
+- id: NGC7000
+  name: "北美洲星云"
+  nameEn: "North America Nebula"
+  catalog: NGC
+  type: emission-nebula
+  typeLabel: "发射星云"
+  constellation: "天鹅座 Cyg"
+  ra: "20h59m"
+  dec: 44
+  decLabel: "+44°"
+  magnitude: 4
+  hemisphere: north
+  season: summer
+  difficulty: beginner
+  summary: "轮廓酷似北美大陆的巨型红云。"
+  summaryEn: "Huge red emission cloud shaped like the North American continent in Cygnus."
+  description: "北美洲星云(NGC 7000)距地球约 2600 光年,位于天鹅座天津四附近的银河之中,因整体轮廓酷似北美大陆而得名,其中标志性的「墨西哥湾」由前景的暗尘带 LDN 935 勾勒。它视面积比满月大十倍,是天空中最大的发射星云之一,以红色氢发射为主。它与隔着同一条暗尘带的鹈鹕星云(IC 5070)实为同一片巨大电离氢云,可能由天津四或某颗隐藏的高温恒星照亮。表面亮度适中,适合广角连同银河同拍,也可用窄带凸显细节,是夏季天鹅座最上镜的大视场目标。"
+  descriptionEn: "The North America Nebula (NGC 7000) lies about 2,600 light-years away in the Milky Way of Cygnus near Deneb, named for an outline resembling the North American continent, with its signature \"Gulf of Mexico\" carved by the foreground dark dust band LDN 935. Covering ten times the area of the full moon, it is one of the sky's largest emission nebulae, dominated by red hydrogen emission. It and the Pelican Nebula (IC 5070) across the same dust lane are actually one vast ionized hydrogen cloud, likely lit by Deneb or a hidden hot star. Of moderate surface brightness, it suits wide-field imaging alongside the Milky Way or narrowband work to bring out detail, making it Cygnus's most photogenic large-field summer target."
+  focal: "广角/中焦 135–400mm"
+  image: ngc7000
+- id: NGC7380
+  name: "巫师星云"
+  nameEn: "Wizard Nebula"
+  catalog: NGC
+  type: emission-nebula
+  typeLabel: "发射星云"
+  constellation: "仙王座 Cep"
+  ra: "22h47m"
+  dec: 58
+  decLabel: "+58°"
+  magnitude: 7.2
+  hemisphere: north
+  season: autumn
+  difficulty: intermediate
+  summary: "形似巫师侧影的发射星云。"
+  summaryEn: "An emission nebula shaped like a robed wizard, around cluster NGC 7380."
+  description: "巫师星云距地球约 7200 光年,位于仙王座,环绕年轻疏散星团 NGC 7380,因气体与尘埃的整体轮廓形似一位戴尖帽、张开斗篷的巫师而得名。星团年龄仅数百万年,其大质量恒星以强烈的星风和紫外辐射电离周围氢气并塑造出密集的尘埃柱与电离亮边。星云主体由发射红光的氢气主导,跨度约 100 光年,在窄带 SHO 影像中结构层次丰富。它表面亮度中等,适合中长焦配合窄带滤镜拍摄。它是仙王座秋季银河中颇受欢迎的造型类目标。"
+  descriptionEn: "The Wizard Nebula lies about 7,200 light-years away in Cepheus and surrounds the young open cluster NGC 7380, named for the way its gas and dust resemble a robed, pointy-hatted wizard. The cluster is only a few million years old, and its massive stars ionize the surrounding hydrogen and sculpt dense dust pillars and bright ionization rims with their strong winds and ultraviolet radiation. The nebula's body is dominated by red-emitting hydrogen, spans roughly 100 light-years, and shows rich layered structure in SHO narrowband images. With moderate surface brightness, it suits a medium-to-long focal length paired with narrowband filters. It is a popular shape-based target in the autumn Cepheus Milky Way."
+  focal: "中长焦 800–1200mm"
+  image: ngc7380
+- id: Sh2-101
+  name: "郁金香星云"
+  nameEn: "Tulip Nebula"
+  catalog: Other
+  type: emission-nebula
+  typeLabel: "发射星云"
+  constellation: "天鹅座 Cyg"
+  ra: "20h00m"
+  dec: 35
+  decLabel: "+35°"
+  magnitude: 9
+  hemisphere: north
+  season: summer
+  difficulty: intermediate
+  summary: "形似郁金香花苞的发射星云。"
+  summaryEn: "Tulip-shaped emission nebula near the black hole Cygnus X-1."
+  description: "郁金香星云(Sh2-101)距地球约 6000 光年,位于天鹅座,因明亮的红色氢气勾勒出郁金香花苞般的轮廓而得名。它由附近一颗炽热的 O 型恒星 HDE 227018 电离发光,是天鹅座 OB3 星协的一部分。星云视野内就坐落着银河系著名的恒星级黑洞天鹅座 X-1——黑洞从伴星吸积物质并喷出高速气流,在星云气体中激波出一道弧形结构。窄带拍摄可呈现花瓣层次与 OIII 蓝绿色调。它是夏季天鹅座中精致的中长焦目标。"
+  descriptionEn: "The Tulip Nebula (Sh2-101) lies about 6,000 light-years away in Cygnus, named for the red hydrogen that outlines a tulip-bud shape. It is ionized by the nearby hot O-type star HDE 227018 and belongs to the Cygnus OB3 association. Within the same field sits the famous stellar-mass black hole Cygnus X-1, which accretes gas from a companion and drives a jet that shocks an arc into the nebula's gas. Narrowband imaging reveals petal layering and teal OIII tones. It is a refined medium-to-long-focal-length target in summer Cygnus."
+  focal: "中长焦 800–1200mm"
+  image: sh2101
+- id: Sh2-155
+  name: "洞穴星云"
+  nameEn: "Cave Nebula"
+  catalog: Other
+  type: emission-nebula
+  typeLabel: "发射星云"
+  constellation: "仙王座 Cep"
+  ra: "22h57m"
+  dec: 62
+  decLabel: "+62°"
+  magnitude: 7.7
+  hemisphere: north
+  season: autumn
+  difficulty: intermediate
+  summary: "暗尘勾勒出洞穴口的发射星云。"
+  summaryEn: "A red H II region whose curved dark dust frames a cave-like opening in Cepheus."
+  description: "洞穴星云(Sh2-155)距地球约 2400 光年,位于仙王座,因一道弧形暗尘埃在明亮的红色氢气前勾勒出洞穴入口般的轮廓而得名。它位于规模庞大的仙王座 B 分子云边缘,是一处活跃的电离氢恒星形成区,亮边由邻近高温恒星的辐射激发的电离前沿构成,内部还埋藏着年轻的恒星和原恒星。星云中红色发射与蓝色反射成分并存,色彩与结构层次丰富。它表面亮度偏低,适合中长焦窄带长曝光,是仙王座秋季颇具看点的目标。"
+  descriptionEn: "The Cave Nebula (Sh2-155) lies about 2,400 light-years away in Cepheus, named for a curved dark dust band that frames a cave-like opening against bright red hydrogen gas. Sitting on the edge of the large Cepheus B molecular cloud, it is an active H II star-forming region whose bright rim is an ionization front excited by radiation from nearby hot stars, with young stars and protostars embedded within. The nebula combines red emission and blue reflection components, rich in color and layered structure. Of relatively low surface brightness, it suits medium-to-long focal narrowband exposures, making it a rewarding autumn Cepheus target."
+  focal: "中长焦 800–1200mm"
+  image: sh2155
+- id: M31
+  name: "仙女座大星系"
+  nameEn: "Andromeda Galaxy"
+  catalog: Messier
+  type: galaxy
+  typeLabel: "旋涡星系"
+  constellation: "仙女座 And"
+  ra: "00h43m"
+  dec: 41
+  decLabel: "+41°"
+  magnitude: 3.4
+  hemisphere: north
+  season: autumn
+  difficulty: beginner
+  summary: "全天最亮旋涡星系,肉眼可见,业余首选。"
+  summaryEn: "The brightest spiral galaxy in the sky, naked-eye and a top beginner target."
+  description: "仙女座大星系距地球约 250 万光年,是离银河系最近的大型旋涡星系,也是本星系群中质量最大的成员,直径约 22 万光年,在天空中跨度达 3° 多(约六个满月宽)。它视面积巨大、核心明亮,旋臂中清晰可见暗尘带与粉红色的 H II 区,身旁还伴有椭圆矮星系 M32 与 M110。它正以约每秒 110 公里的速度朝银河系接近,预计约 45 亿年后两者将开始并合。它是肉眼可见最遥远的天体之一,短焦镜头即可拍下整个星系及其伴星系。它是星系摄影的入门标杆,也是研究星系结构的经典对象。"
+  descriptionEn: "The Andromeda Galaxy lies about 2.5 million light-years away and is the nearest large spiral galaxy to the Milky Way, the most massive member of the Local Group, about 220,000 light-years across and spanning over 3° in the sky (roughly six Moon-widths). Its large apparent size, bright core and spiral arms reveal clear dust lanes and pink H II regions, accompanied by the dwarf elliptical satellites M32 and M110. It is approaching the Milky Way at about 110 km/s and is expected to begin merging with our Galaxy in roughly 4.5 billion years. One of the most distant objects visible to the naked eye, it fits a short focal length that captures the whole galaxy with its companions. It is the benchmark beginner galaxy and a classic subject for studying galactic structure."
+  focal: "短焦 135–400mm"
+  image: m31-andromeda
+- id: M33
+  name: "三角座星系"
+  nameEn: "Triangulum Galaxy"
+  catalog: Messier
+  type: galaxy
+  typeLabel: "旋涡星系"
+  constellation: "三角座 Tri"
+  ra: "01h34m"
+  dec: 30
+  decLabel: "+30°"
+  magnitude: 5.7
+  hemisphere: north
+  season: autumn
+  difficulty: beginner
+  summary: "本星系群第三大成员,旋臂遍布粉红星云。"
+  summaryEn: "Third-largest Local Group galaxy, spiral arms dotted with pink nebulae."
+  description: "三角座星系距地球约 270 万光年,是本星系群中第三大成员,仅次于仙女座大星系和银河系。它几乎完全面朝我们,展开的旋臂中布满粉红色 H II 区,其中巨大的 NGC 604 是本星系群中最大的恒星形成区之一,直径近 1500 光年。它与仙女座星系可能存在引力联系,在暗夜下肉眼勉强可见。它表面亮度较低、视面大,需要暗天与长曝光。中焦镜头深曝能拍出绚丽的恒星诞生地与蓝色星团,极具观赏性。"
+  descriptionEn: "The Triangulum Galaxy lies about 2.7 million light-years away, the third-largest member of the Local Group after Andromeda and the Milky Way. It is nearly face-on, its sprawling arms studded with pink H II regions, including giant NGC 604, one of the largest star-forming regions in the Local Group at nearly 1,500 light-years across. It may be gravitationally linked to Andromeda and is faintly visible to the naked eye under dark skies. Its low surface brightness and large angular size demand dark skies and long exposures. Deep mid-focal-length imaging captures gorgeous stellar nurseries and blue clusters, making it highly rewarding."
+  focal: "中焦 400–800mm"
+  image: m33-triangulum
+- id: M49
+  name: "M49 星系"
+  nameEn: "Messier 49"
+  catalog: Messier
+  type: galaxy
+  typeLabel: "椭圆星系"
+  constellation: "室女座 Vir"
+  ra: "12h30m"
+  dec: 8
+  decLabel: "+08°"
+  magnitude: 8.4
+  hemisphere: both
+  season: spring
+  difficulty: intermediate
+  summary: "室女团中最亮的巨椭圆星系。"
+  summaryEn: "The brightest giant elliptical galaxy in the Virgo Cluster."
+  description: "M49(NGC 4472)距地球约 5600 万光年,是室女座星系团中最亮的成员,一个巨型椭圆星系,也是该团的主导星系之一。它质量惊人,拥有约六千个球状星团,远多于银河系。外形虽呈平滑无结构的金黄色光斑,但极为明亮硕大,是 1771 年梅西耶最早收录的椭圆星系。它身旁伴有一个正被其引力撕扯的矮星系,中心还藏有超大质量黑洞。M49 常作为室女团星系巡礼的锚点,周围散布众多更小的星系,是春季长焦深空摄影的标志性目标。"
+  descriptionEn: "M49 (NGC 4472) lies about 56 million light-years away and is the brightest member of the Virgo Cluster, a giant elliptical and one of the cluster's dominant galaxies. Remarkably massive, it hosts roughly 6,000 globular clusters, far more than the Milky Way. Though it appears as a smooth, featureless golden glow, it is extremely bright and large, and was the first elliptical galaxy Messier cataloged, in 1771. A dwarf galaxy being tidally disrupted lies beside it, and a supermassive black hole lurks at its core. M49 often serves as an anchor for tours of the Virgo Cluster, surrounded by many smaller galaxies, making it a landmark long-focal deep-sky target in spring."
+  focal: "长焦 1000mm+"
+  image: m49
+- id: M51
+  name: "涡状星系"
+  nameEn: "Whirlpool Galaxy"
+  catalog: Messier
+  type: galaxy
+  typeLabel: "旋涡星系"
+  constellation: "猎犬座 CVn"
+  ra: "13h30m"
+  dec: 47
+  decLabel: "+47°"
+  magnitude: 8.4
+  hemisphere: north
+  season: spring
+  difficulty: intermediate
+  summary: "经典正面旋涡,正吞噬一个小伴星系。"
+  summaryEn: "The classic face-on grand-design spiral interacting with companion NGC 5195."
+  description: "涡状星系距地球约 2300 万光年,位于猎犬座,是最著名的面朝我们的「宏伟设计」旋涡星系。它规整明亮的旋臂正与小伴星系 NGC 5195 发生引力相互作用,后者从其旋臂后方穿过,留下一条连接二者的恒星与气体桥——正是这场近距离邂逅激发并强化了 M51 壮丽的双臂结构。旋臂上点缀着粉红色 H II 区和蓝色年轻星团,是恒星诞生活跃的标志。它是 1845 年罗斯勋爵首次辨认出旋涡结构的星系,在天文史上意义非凡。长焦深曝下旋臂细节与潮汐桥极为丰富,是星系摄影的标志性目标。"
+  descriptionEn: "The Whirlpool Galaxy lies about 23 million light-years away in Canes Venatici and is the most famous face-on 「grand-design」 spiral. Its bright, orderly arms are gravitationally interacting with the small companion NGC 5195, which is passing behind one arm and leaving a bridge of stars and gas connecting the two—this close encounter is what triggered and amplified M51's magnificent two-arm structure. The arms are studded with pink H II regions and blue young clusters, signatures of active star birth. It was the first galaxy in which spiral structure was recognized, by Lord Rosse in 1845, giving it great historical significance. Deep long-focus imaging reveals abundant arm detail and the tidal bridge, making it an iconic galaxy target."
+  focal: "长焦 1000mm+"
+  image: m51-whirlpool
+- id: M63
+  name: "向日葵星系"
+  nameEn: "Sunflower Galaxy"
+  catalog: Messier
+  type: galaxy
+  typeLabel: "旋涡星系"
+  constellation: "猎犬座 CVn"
+  ra: "13h16m"
+  dec: 42
+  decLabel: "+42°"
+  magnitude: 8.6
+  hemisphere: north
+  season: spring
+  difficulty: intermediate
+  summary: "絮状旋臂密集缠绕,状如向日葵。"
+  summaryEn: "Flocculent spiral with petal-like arms resembling a sunflower."
+  description: "向日葵星系距地球约 2700 万光年,位于猎犬座,属于絮状旋涡星系。它没有连贯的宏伟旋臂,而是由众多短而密集的旋臂段缠绕成花瓣状,因而得名向日葵。它是 M51 星系群的成员之一,黄色核球与遍布蓝色星团、尘埃斑的盘面对比鲜明。深度曝光还能拍出环绕星系的暗弱恒星流,那是它过去吞并矮星系留下的潮汐残骸。长焦下纹理细腻、质感丰富,是春季猎犬座区域颇受欢迎的星系。"
+  descriptionEn: "The Sunflower Galaxy lies about 27 million light-years away in Canes Venatici and is a flocculent spiral. Instead of grand sweeping arms, it has many short, tightly wound arm segments knit into a petal-like pattern, hence its name. A member of the M51 group, it contrasts a golden bulge against a disk peppered with blue clusters and dust patches. Deep exposures reveal faint stellar streams encircling it, tidal remnants of dwarf galaxies it has absorbed. Finely textured at long focal lengths, it is a popular spring galaxy in Canes Venatici."
+  focal: "长焦 1000mm+"
+  image: m63-sunflower
+- id: M64
+  name: "黑眼睛星系"
+  nameEn: "Black Eye Galaxy"
+  catalog: Messier
+  type: galaxy
+  typeLabel: "旋涡星系"
+  constellation: "后发座 Com"
+  ra: "12h57m"
+  dec: 21
+  decLabel: "+21°"
+  magnitude: 8.5
+  hemisphere: north
+  season: spring
+  difficulty: intermediate
+  summary: "核心前方一道暗黑尘埃带,如黑眼圈。"
+  summaryEn: "Spiral galaxy with a dramatic dark dust lane and counter-rotating disks."
+  description: "黑眼睛星系(M64)距地球约 1700 万光年,位于后发座,因核心前方一道醒目的暗黑尘埃带形似黑眼圈而得名,又称「睡美人星系」。它最奇特之处在于内外两个盘以相反方向旋转:内盘半径约 3000 光年,外盘延伸至约 4 万光年,二者交界处气体激烈碰撞、压缩,触发剧烈的恒星形成。这种反向旋转很可能源于约十亿年前并合了一个小卫星星系。那道标志性的尘埃带正是尚未沉降的并合残骸物质。长焦拍摄能突出这只独特的「黑眼睛」,对比强烈、极富戏剧性。"
+  descriptionEn: "The Black Eye Galaxy (M64) lies about 17 million light-years away in Coma Berenices, named for a striking dark dust band in front of its core that resembles a black eye, also called the Sleeping Beauty Galaxy. Its most peculiar feature is two disks rotating in opposite directions: an inner disk about 3,000 light-years in radius and an outer disk extending to roughly 40,000 light-years, with gas colliding and compressing at their boundary to trigger vigorous star formation. This counter-rotation likely arose from the merger of a small satellite galaxy about a billion years ago, and the signature dust lane is debris from that event not yet settled. Long-focal imaging emphasizes this unique \"black eye,\" yielding strong, dramatic contrast."
+  focal: "长焦 1000mm+"
+  image: m64-blackeye
+- id: M65
+  name: "M65 星系"
+  nameEn: "Messier 65"
+  catalog: Messier
+  type: galaxy
+  typeLabel: "旋涡星系"
+  constellation: "狮子座 Leo"
+  ra: "11h19m"
+  dec: 13
+  decLabel: "+13°"
+  magnitude: 9.3
+  hemisphere: both
+  season: spring
+  difficulty: advanced
+  summary: "狮子三重奏成员,近侧向的优雅旋涡。"
+  summaryEn: "A near-edge-on spiral and member of the Leo Triplet."
+  description: "M65 距地球约 3500 万光年,位于狮子座,是著名的「狮子三重奏」星系群成员之一。它呈近乎侧向的细长旋涡形态,盘面一侧有一道清晰的暗尘带勾勒出旋臂边缘,核球呈温暖的黄色,显示其恒星以年老恒星为主。相比受到潮汐扰动、形态略显凌乱的邻居 M66,M65 结构平整规整,恒星形成相对宁静。它与 M66、汉堡星系 NGC 3628 三者同框,构成春季星系摄影的招牌画面。它表面亮度偏低,适合用长焦镜头配合较暗的天空长曝拍摄。"
+  descriptionEn: "M65 lies about 35 million light-years away in Leo and is one of the members of the famous 「Leo Triplet」 galaxy group. It appears as a slender, near-edge-on spiral, with a clear dust lane tracing one side of the disk and a warm yellow core that reflects its older stellar population. Compared with its tidally disturbed, somewhat messy neighbor M66, M65 is smooth and orderly with relatively quiet star formation. Framed together with M66 and the Hamburger Galaxy (NGC 3628), it forms a signature spring galaxy composition. Its modest surface brightness rewards a long focal length and long exposures under dark skies."
+  focal: "长焦 1000mm+"
+  image: leo-triplet
+- id: M74
+  name: "幻影星系"
+  nameEn: "Phantom Galaxy"
+  catalog: Messier
+  type: galaxy
+  typeLabel: "旋涡星系"
+  constellation: "双鱼座 Psc"
+  ra: "01h37m"
+  dec: 16
+  decLabel: "+16°"
+  magnitude: 9.4
+  hemisphere: both
+  season: autumn
+  difficulty: advanced
+  summary: "对称完美的宏伟旋涡,表面暗淡。"
+  summaryEn: "Textbook grand-design spiral, faint but perfectly symmetric."
+  description: "幻影星系距地球约 3200 万光年,位于双鱼座,是教科书级的「宏伟设计」旋涡星系。两条对称而清晰的旋臂从核心优雅展开,旋臂上点缀着粉红色 H II 区和蓝色年轻星团。它含约一千亿颗恒星,几乎完全正对我们,结构工整对称。它表面亮度很低,是梅西耶天体中目视难度最高的之一,需要极暗的天空与长曝光。它是哈勃与 JWST 的经典成像目标,后者的红外影像揭示出旋臂中丝缕分明的尘埃骨架。"
+  descriptionEn: "The Phantom Galaxy lies about 32 million light-years away in Pisces, a textbook grand-design spiral. Two symmetric, well-defined arms sweep gracefully from the core, dotted with pink H II regions and blue young clusters. Containing roughly 100 billion stars, it is nearly perfectly face-on and tidily symmetric. Its very low surface brightness makes it one of the hardest Messier objects to see visually, demanding very dark skies and long exposures. A classic Hubble and JWST imaging target, the latter's infrared view revealed a delicate filamentary dust skeleton in the arms."
+  focal: "长焦 1000mm+"
+  image: m74
+- id: M77
+  name: "M77 星系"
+  nameEn: "Messier 77"
+  catalog: Messier
+  type: galaxy
+  typeLabel: "棒旋星系"
+  constellation: "鲸鱼座 Cet"
+  ra: "02h43m"
+  dec: 0
+  decLabel: "−00°"
+  magnitude: 8.9
+  hemisphere: both
+  season: autumn
+  difficulty: intermediate
+  summary: "最亮塞弗特星系,核心异常明亮活跃。"
+  summaryEn: "The brightest, archetypal Seyfert galaxy with a fiercely active nucleus."
+  description: "M77(NGC 1068)距地球约 4700 万光年,位于鲸鱼座,是最亮、最著名的塞弗特活动星系核星系之一,也是 II 型塞弗特星系的原型。它中心藏有一个被尘埃环遮蔽的超大质量黑洞,正剧烈吞噬物质并向外辐射强烈能量;2022 年中微子天文台 IceCube 还从其核心探测到高能中微子,进一步证实了活跃核区的剧烈活动。它紧凑明亮的核球外围环绕着布满恒星形成区的旋臂,直径约 17 万光年,属于最大的梅西耶星系之一。长焦拍摄能展现明亮核心与缠绕旋臂的鲜明对比。"
+  descriptionEn: "M77 (NGC 1068) lies about 47 million light-years away in Cetus and is one of the brightest and most famous Seyfert active galactic nuclei, the prototype of the Type II Seyfert class. Its core hosts a supermassive black hole shrouded by a torus of dust, voraciously accreting matter and radiating enormous energy; in 2022 the IceCube observatory even detected high-energy neutrinos from its center, confirming the violent activity within. A compact, bright bulge is surrounded by spiral arms peppered with star-forming regions, and at roughly 170,000 light-years across it ranks among the largest Messier galaxies. Long-focal imaging brings out the sharp contrast between the brilliant core and the winding arms."
+  focal: "长焦 1000mm+"
+  image: m77
+- id: M81
+  name: "波德星系"
+  nameEn: "Bode's Galaxy"
+  catalog: Messier
+  type: galaxy
+  typeLabel: "旋涡星系"
+  constellation: "大熊座 UMa"
+  ra: "09h56m"
+  dec: 69
+  decLabel: "+69°"
+  magnitude: 6.9
+  hemisphere: north
+  season: spring
+  difficulty: intermediate
+  summary: "结构完美的大旋涡,常与雪茄星系同框。"
+  summaryEn: "A perfect grand-design spiral, often framed with the Cigar Galaxy M82."
+  description: "波德星系距地球约 1170 万光年,位于大熊座,是 M81 星系群的主导成员,以德国天文学家约翰·波德的名字命名。它拥有对称工整的宏伟旋臂与明亮的黄色核球,核心藏有一个约 7000 万倍太阳质量的超大质量黑洞,是大旋涡星系的典范。它与近旁剧烈的星暴星系 M82(雪茄星系)仅相距半度多,二者间的引力相互作用激发了 M82 的星暴,二者可在同一画面中合拍。在宽视场长曝光下,还能记录到环绕二者、淡如薄纱的银河系内星际尘埃流(IFN)。它结构清晰、核心明亮,是中焦星系摄影的人气目标。"
+  descriptionEn: "Bode's Galaxy lies about 11.7 million light-years away in Ursa Major and is the dominant member of the M81 Group, named after the German astronomer Johann Bode. It boasts symmetric, well-ordered grand-design arms and a bright yellow bulge, with a supermassive black hole of roughly 70 million solar masses at its core, making it a textbook large spiral. It sits barely half a degree from the violent starburst galaxy M82 (the Cigar Galaxy), whose gravitational interaction with M81 triggered that starburst, and the two can be imaged in a single frame. Deep wide-field exposures also capture the faint integrated flux nebula (IFN), galactic dust drifting around both. With clear structure and a bright core, it is a popular medium-focal-length galaxy target."
+  focal: "中焦 600–1000mm"
+  image: m81-bode
+- id: M82
+  name: "雪茄星系"
+  nameEn: "Cigar Galaxy"
+  catalog: Messier
+  type: galaxy
+  typeLabel: "星暴星系"
+  constellation: "大熊座 UMa"
+  ra: "09h56m"
+  dec: 70
+  decLabel: "+70°"
+  magnitude: 8.4
+  hemisphere: north
+  season: spring
+  difficulty: intermediate
+  summary: "边缘朝向的星暴星系,核心喷出红色氢气。"
+  summaryEn: "Edge-on starburst galaxy venting red hydrogen from its core."
+  description: "雪茄星系距地球约 1200 万光年,位于大熊座,是离我们最近的星暴星系之一,也是 M81 星系群第二大成员。它与大旋涡星系 M81 的引力相互作用激发了狂暴的恒星形成,核心区造星速率比整个银河系快约十倍。其细长侧向的盘面中心向两侧喷出红色的电离氢外流,延伸达上万光年,这道星系风由众多超新星与恒星风共同驱动。加 Hα 滤镜拍摄能突出这股壮观的红色喷流。它与 M81 仅相距半度多,常被一框同拍,是相互作用星系中最上镜的目标之一。"
+  descriptionEn: "The Cigar Galaxy lies about 12 million light-years away in Ursa Major, one of the nearest starburst galaxies and the second-largest member of the M81 group. Gravitational interaction with the grand spiral M81 has triggered furious star formation, with the core forming stars roughly ten times faster than the entire Milky Way. From the center of its slim edge-on disk, red ionized-hydrogen outflows vent tens of thousands of light-years to either side, a galactic wind driven by supernovae and stellar winds. Hydrogen-alpha imaging highlights this spectacular red plume. Just over half a degree from M81, the two are often framed together, making it one of the most photogenic interacting galaxies."
+  focal: "中焦 600–1000mm"
+  image: m82-cigar
+- id: M83
+  name: "南风车星系"
+  nameEn: "Southern Pinwheel Galaxy"
+  catalog: Messier
+  type: galaxy
+  typeLabel: "棒旋星系"
+  constellation: "长蛇座 Hya"
+  ra: "13h37m"
+  dec: -30
+  decLabel: "−30°"
+  magnitude: 7.5
+  hemisphere: south
+  season: spring
+  difficulty: intermediate
+  summary: "南天最美棒旋,旋臂红蓝交织。"
+  summaryEn: "The southern sky's most spectacular face-on barred spiral, rich in star formation."
+  description: "南风车星系(M83,NGC 5236)距地球约 1500 万光年,位于长蛇座,是南天最壮观的面朝我们的棒旋星系之一,又因外形得名「南风车」。它恒星形成异常活跃,旋臂上布满粉红色 H II 区与蓝色年轻星团,中心横亘一道明亮的恒星棒。过去一百年间它已爆发六颗超新星,是观测到超新星最多的星系之一,哈勃影像还揭示出近三百个超新星遗迹气泡。色彩饱满、结构清晰、视面较大,中焦即可拍出宏伟全貌,是南半球星系摄影最受欢迎的明星目标之一。"
+  descriptionEn: "The Southern Pinwheel Galaxy (M83, NGC 5236) lies about 15 million light-years away in Hydra and is one of the southern sky's most spectacular face-on barred spirals. Star formation runs intensely high, with arms studded with pink H II regions and blue young clusters and a bright stellar bar crossing the center. Six supernovae have erupted in it over the past century, among the most of any galaxy, and Hubble imagery has revealed nearly 300 supernova-remnant bubbles. Saturated in color, clear in structure, and fairly large on the sky, it shows its grand sweep even at medium focal lengths, making it one of the most popular southern-hemisphere galaxy targets."
+  focal: "中焦 600–1000mm"
+  image: m83
+- id: M101
+  name: "风车星系"
+  nameEn: "Pinwheel Galaxy"
+  catalog: Messier
+  type: galaxy
+  typeLabel: "旋涡星系"
+  constellation: "大熊座 UMa"
+  ra: "14h03m"
+  dec: 54
+  decLabel: "+54°"
+  magnitude: 7.9
+  hemisphere: north
+  season: spring
+  difficulty: intermediate
+  summary: "巨大正面旋涡,旋臂上巨型红色星云遍布。"
+  summaryEn: "A giant face-on spiral with many bright pink H II regions along its arms."
+  description: "风车星系距地球约 2100 万光年,位于大熊座,直径约 17 万光年,是面朝我们的特大旋涡星系,体量明显大于银河系。它略不对称的旋臂(可能源自与近旁星系的引力相互作用)上散布着众多明亮的巨型 H II 区,如 NGC 5471 等,呈现绚丽的粉红色恒星诞生地。它视面积大、表面亮度尚可、细节丰富,中焦镜头即可拍出壮观全貌。2023 年 5 月,业余天文学家在其旋臂中发现了超新星 SN 2023ixf,使它一度成为全球瞩目的焦点。它是春季北天最具观赏价值的旋涡星系之一。"
+  descriptionEn: "The Pinwheel Galaxy lies about 21 million light-years away in Ursa Major, about 170,000 light-years across, a giant face-on spiral noticeably larger than the Milky Way. Its slightly asymmetric arms—likely shaped by interaction with nearby galaxies—are dotted with many bright giant H II regions such as NGC 5471, glowing as vivid pink stellar nurseries. Its large apparent size, decent surface brightness and rich detail let a medium focal length capture a spectacular full view. In May 2023 amateur astronomers discovered the supernova SN 2023ixf in one of its arms, briefly making it a focus of worldwide attention. It is one of the most rewarding spiral galaxies of the northern spring sky."
+  focal: "中焦 600–1000mm"
+  image: m101-pinwheel
+- id: M104
+  name: "草帽星系"
+  nameEn: "Sombrero Galaxy"
+  catalog: Messier
+  type: galaxy
+  typeLabel: "旋涡星系"
+  constellation: "室女座 Vir"
+  ra: "12h40m"
+  dec: -11
+  decLabel: "−11°"
+  magnitude: 8
+  hemisphere: both
+  season: spring
+  difficulty: intermediate
+  summary: "明亮核球加一道贯穿盘面的尘埃带,似草帽。"
+  summaryEn: "Edge-on spiral with a bright bulge and a hat-brim dust lane."
+  description: "草帽星系距地球约 3100 万光年,位于室女座,因近乎侧向的盘面与一道贯穿前方的浓黑尘埃带,加上巨大明亮的核球,形似宽边墨西哥草帽而得名。这条尘埃带其实是一圈环绕核球的对称尘埃环,是星系内主要的恒星形成场所。它拥有约两千个球状星团,是银河系的十倍,核心还藏有一个质量约十亿太阳的超大质量黑洞。它视星等约 8 等,是较亮的旋涡星系。长焦拍摄能清晰勾勒出标志性的尘埃带与发光晕,是最具辨识度的星系之一。"
+  descriptionEn: "The Sombrero Galaxy lies about 31 million light-years away in Virgo, named for its nearly edge-on disk, a thick dark dust lane crossing the front, and a large bright bulge that together resemble a wide-brimmed sombrero. That dust lane is actually a symmetric ring around the bulge and the galaxy's main site of star formation. It hosts about 2,000 globular clusters, ten times the Milky Way's, and a supermassive black hole of roughly a billion solar masses at its core. At magnitude 8, it is one of the brighter spirals. Long-focal-length imaging clearly traces its iconic dust lane and glowing halo, making it one of the most recognizable galaxies."
+  focal: "长焦 1000mm+"
+  image: m104-sombrero
+- id: M106
+  name: "M106 星系"
+  nameEn: "Messier 106"
+  catalog: Messier
+  type: galaxy
+  typeLabel: "旋涡星系"
+  constellation: "猎犬座 CVn"
+  ra: "12h19m"
+  dec: 47
+  decLabel: "+47°"
+  magnitude: 8.4
+  hemisphere: north
+  season: spring
+  difficulty: intermediate
+  summary: "拥有活动星系核与异常红色旋臂。"
+  summaryEn: "Spiral galaxy with an active nucleus, megamasers and anomalous arms."
+  description: "M106(NGC 4258)距地球约 2350 万光年,位于猎犬座,是一个拥有活动星系核的旋涡星系。其核心藏有质量约 4000 万倍太阳的超大质量黑洞,周围吸积盘中的水分子超脉泽使天文学家得以极精确地测定其距离与黑洞质量,M106 因此成为标定宇宙距离尺度的关键基准星系之一。黑洞喷流将气体加热,在 Hα 与 X 射线波段产生了两条独特的「异常旋臂」。明亮规整的恒星旋臂、尘埃带与周边众多小星系,使它成为长焦深空摄影的热门佳作。"
+  descriptionEn: "M106 (NGC 4258) lies about 23.5 million light-years away in Canes Venatici and is a spiral galaxy with an active galactic nucleus. Its core hosts a supermassive black hole of about 40 million solar masses, and water megamasers in the surrounding accretion disk let astronomers measure both its distance and black-hole mass with exceptional precision, making M106 a key benchmark for calibrating the cosmic distance scale. The black hole's jets heat gas to produce two distinctive \"anomalous arms\" seen in Hα and X-rays. Its bright, well-ordered stellar arms, dust lanes, and many small companion galaxies make it a popular long-focal deep-sky subject."
+  focal: "长焦 1000mm+"
+  image: m106
+- id: M108
+  name: "冲浪板星系"
+  nameEn: "Surfboard Galaxy"
+  catalog: Messier
+  type: galaxy
+  typeLabel: "旋涡星系"
+  constellation: "大熊座 UMa"
+  ra: "11h12m"
+  dec: 55
+  decLabel: "+55°"
+  magnitude: 10
+  hemisphere: north
+  season: spring
+  difficulty: advanced
+  summary: "近侧向旋涡,盘面斑驳如冲浪板。"
+  summaryEn: "A near-edge-on, mottled spiral resembling a surfboard, paired with M97."
+  description: "M108 距地球约 4600 万光年,位于大熊座,是一个近乎侧向的旋涡星系。它细长的盘面上布满斑驳的暗尘埃云、明亮的恒星结与 H II 区,却缺乏明显的核球,整体形似一块漂浮的冲浪板。它属于大熊座星系云,内部恒星形成活跃,X 射线观测显示其拥有热气体晕。它与著名的行星状星云猫头鹰星云 M97 在天空中相距仅约 0.75°,二者可同框构图,是大熊座的经典搭配。它表面亮度较低,适合长焦镜头在暗夜下长曝,以呈现盘面的复杂纹理。"
+  descriptionEn: "M108 lies about 46 million light-years away in Ursa Major and is a near-edge-on spiral galaxy. Its slender disk is mottled with dark dust clouds, bright stellar knots and H II regions yet lacks an obvious bulge, giving it the look of a floating surfboard. A member of the Ursa Major galaxy cloud, it shows active star formation and an X-ray-emitting halo of hot gas. It sits only about 0.75° from the famous Owl Nebula (M97) in the sky, so the two can share a frame as a classic Ursa Major pairing. Its low surface brightness rewards a long focal length and long exposures under dark skies to reveal the disk's complex texture."
+  focal: "长焦 1000mm+"
+  image: m108
+- id: NGC55
+  name: "NGC 55"
+  nameEn: "NGC 55"
+  catalog: Caldwell
+  type: galaxy
+  typeLabel: "旋涡星系"
+  constellation: "玉夫座 Scl"
+  ra: "00h15m"
+  dec: -39
+  decLabel: "−39°"
+  magnitude: 7.9
+  hemisphere: south
+  season: autumn
+  difficulty: intermediate
+  summary: "近邻侧向棒旋,盘面斑驳不对称。"
+  summaryEn: "Nearby asymmetric edge-on barred spiral in the Sculptor group."
+  description: "NGC 55 距地球约 650 万光年,位于玉夫座,是玉夫座星系群中离我们最近的成员之一。它呈侧向且高度不对称的棒旋形态,盘面散布着明亮的恒星结与红色 H II 区,明亮的核区偏向盘面一端,形态与大麦哲伦云相似。作为本星系群外的近邻,它视面积大、表面亮度高,中焦镜头即可拍出丰富纹理。深曝能记录到盘面中纵横的尘埃与点点恒星形成区。它是南天一个迷人而常被忽视的近邻星系。"
+  descriptionEn: "NGC 55 lies about 6.5 million light-years away in Sculptor, one of the nearest members of the Sculptor galaxy group. It appears as a highly asymmetric, edge-on barred spiral, its disk strewn with bright stellar knots and red H II regions and its bright core offset toward one end, much like the Large Magellanic Cloud. As a close neighbor just outside the Local Group, it has a large angular size and high surface brightness, yielding rich texture even at medium focal lengths. Deep exposures capture crisscrossing dust and scattered star-forming regions across the disk. It is a charming and often overlooked southern neighbor."
+  focal: "中焦 600–1000mm"
+  image: ngc55
+- id: NGC247
+  name: "NGC 247"
+  nameEn: "NGC 247"
+  catalog: Caldwell
+  type: galaxy
+  typeLabel: "旋涡星系"
+  constellation: "鲸鱼座 Cet"
+  ra: "00h47m"
+  dec: -20
+  decLabel: "−20°"
+  magnitude: 9.1
+  hemisphere: both
+  season: autumn
+  difficulty: advanced
+  summary: "近邻倾斜旋涡,盘内有著名空洞。"
+  summaryEn: "A nearby tilted spiral with a curious star-poor void in its disk."
+  description: "NGC 247(Caldwell 62)距地球约 1100 万光年,位于鲸鱼座,是邻近的玉夫座星系群(Sculptor Group)成员之一。它呈高度倾斜的旋涡形态,最引人注目的是盘面北侧有一个奇特的巨大「空洞」——一片几乎没有恒星的稀疏区域,成因至今仍有争议。星系视面积较大、表面亮度偏低,纹理柔和,松散的旋臂上散布着暗弱的恒星结与 H II 区。它是南天值得长曝光的低表面亮度旋涡星系,常与同群的玉夫座星系 NGC 253 一并巡览。"
+  descriptionEn: "NGC 247 (Caldwell 62) lies about 11 million light-years away in Cetus and is a member of the nearby Sculptor Group of galaxies. Seen at a high tilt, its most striking feature is a curious large \"void\" on the northern side of the disk, a sparse region almost devoid of stars whose origin is still debated. The galaxy is fairly large on the sky but low in surface brightness, with soft texture and loose arms dotted by faint stellar knots and H II regions. It is a rewarding low-surface-brightness spiral for long exposures in southern skies, often toured alongside its group companion, the Sculptor Galaxy NGC 253."
+  focal: "中焦 600–1000mm"
+  image: ngc247
+- id: NGC253
+  name: "玉夫座星系"
+  nameEn: "Sculptor Galaxy"
+  catalog: NGC
+  type: galaxy
+  typeLabel: "星暴星系"
+  constellation: "玉夫座 Scl"
+  ra: "00h47m"
+  dec: -25
+  decLabel: "−25°"
+  magnitude: 7.2
+  hemisphere: south
+  season: autumn
+  difficulty: intermediate
+  summary: "明亮的侧向星暴星系,尘埃纹理丰富。"
+  summaryEn: "A bright nearby edge-on starburst galaxy with rich dust texture."
+  description: "玉夫座星系距地球约 1140 万光年,是离我们最近的星暴星系之一,又称「银币星系」,位于玉夫座,是玉夫座星系群的主导成员。它斜侧向的盘面布满纵横交错的暗尘埃带与明亮恒星结,核区正剧烈形成新恒星并向外吹出炽热的气体外流(超级星风)。它视星等约 7.2、视面积大,是肉眼边缘可见、双筒镜中即可辨认的明亮星系。它明亮且大,中焦镜头即可拍出细腻的尘埃纹理,深曝还能记录核区的红色外流。它是南天秋季最受欢迎的星系摄影目标之一。"
+  descriptionEn: "The Sculptor Galaxy lies about 11.4 million light-years away and is one of the nearest starburst galaxies, also called the Silver Coin Galaxy, the dominant member of the Sculptor Group in the constellation Sculptor. Its near-edge-on disk is crisscrossed with dark dust lanes and bright stellar knots, while the core vigorously forms new stars and drives a hot gaseous outflow (a superwind). At magnitude 7.2 and large in apparent size, it is faintly visible to the naked eye and easy in binoculars. Bright and large, it shows fine dust texture even at a medium focal length, with deep exposures capturing the red core outflow. It is one of the most popular galaxy targets of the southern autumn sky."
+  focal: "中焦 600–1000mm"
+  image: ngc253
+- id: NGC891
+  name: "NGC 891"
+  nameEn: "NGC 891"
+  catalog: NGC
+  type: galaxy
+  typeLabel: "旋涡星系"
+  constellation: "仙女座 And"
+  ra: "02h23m"
+  dec: 42
+  decLabel: "+42°"
+  magnitude: 9.9
+  hemisphere: north
+  season: autumn
+  difficulty: advanced
+  summary: "侧向旋涡,尘埃带中喷出垂直细丝。"
+  summaryEn: "Edge-on spiral with vertical dust filaments rising from its lane."
+  description: "NGC 891 距地球约 3000 万光年,位于仙女座,是一个近乎完美侧向的旋涡星系,中央贯穿一道厚重的暗尘埃带。深度曝光能显现从盘面垂直喷出的尘埃细丝,这些细丝由盘内剧烈的恒星形成驱动的气体外流抛起,高度可达数千光年。它的尺度与结构都与银河系相近,因此常被视为从侧面看银河系的样板。它视星等约 10 等,表面亮度不高但形态优雅。长焦深曝是侧向星系摄影的经典挑战目标。"
+  descriptionEn: "NGC 891 lies about 30 million light-years away in Andromeda, a nearly perfectly edge-on spiral split by a thick dark dust lane. Deep exposures reveal dust filaments rising vertically from the disk, lofted thousands of light-years high by outflows driven by intense star formation. Similar in size and structure to the Milky Way, it is often treated as a model for how our own galaxy looks edge-on. At magnitude 10 its surface brightness is modest but its form is elegant. Deep long-focal-length imaging makes it a classic edge-on-galaxy challenge target."
+  focal: "长焦 1000mm+"
+  image: ngc891
+- id: NGC925
+  name: "NGC 925"
+  nameEn: "NGC 925"
+  catalog: NGC
+  type: galaxy
+  typeLabel: "棒旋星系"
+  constellation: "三角座 Tri"
+  ra: "02h27m"
+  dec: 33
+  decLabel: "+33°"
+  magnitude: 10.1
+  hemisphere: north
+  season: autumn
+  difficulty: advanced
+  summary: "不对称棒旋,旋臂松散布满星云。"
+  summaryEn: "An asymmetric nearby barred spiral with loose, star-forming arms."
+  description: "NGC 925 距地球约 3000 万光年,位于三角座,是一个外形不对称的中型棒旋星系。它的中央恒星棒一端连接着一条较显著的旋臂,另一端则较为松散凌乱,整体结构松散,是「SBd」型晚期棒旋的典型代表。盘面上散布着粉红色 H II 区与蓝色年轻星团,显示出活跃的恒星形成。它属于本星系群外围、邻近的 NGC 1023 星系群,曾被哈勃望远镜用作测定造父变星周光关系、标定哈勃常数的重要目标。表面亮度偏低,是秋季三角座中值得长曝光的近邻旋涡。"
+  descriptionEn: "NGC 925 lies about 30 million light-years away in Triangulum and is a mid-sized, asymmetric barred spiral. One end of its central bar connects to a more prominent arm while the other trails off loosely, giving an overall ragged structure typical of a late-type SBd barred spiral. Its disk is dotted with pink H II regions and blue young clusters, signs of active star formation. A member of the nearby NGC 1023 Group on the fringe of the Local Group, it was an important Hubble Space Telescope target for calibrating the Cepheid period-luminosity relation and the Hubble constant. Low in surface brightness, it is a rewarding nearby spiral for long exposures in the autumn Triangulum sky."
+  focal: "长焦 1000mm+"
+  image: ngc925
+- id: NGC1097
+  name: "NGC 1097"
+  nameEn: "NGC 1097"
+  catalog: Caldwell
+  type: galaxy
+  typeLabel: "棒旋星系"
+  constellation: "天炉座 For"
+  ra: "02h46m"
+  dec: -30
+  decLabel: "−30°"
+  magnitude: 9.5
+  hemisphere: south
+  season: autumn
+  difficulty: advanced
+  summary: "棒旋带活动核,核心有恒星形成环。"
+  summaryEn: "A barred Seyfert spiral with a starburst ring, jets and a companion galaxy."
+  description: "NGC 1097 距地球约 4500 万光年,位于天炉座,是一个壮观的棒旋星系,也是一个塞弗特活动星系。它的核心藏有约 1.4 亿倍太阳质量的超大质量黑洞,黑洞外围环绕着一圈直径约 5000 光年、正在剧烈造星的明亮星环,是研究核区恒星形成的经典对象。它身旁有矮椭圆伴星系 NGC 1097A,正与主星系发生相互作用。深度曝光还揭示出四条神秘的、由恒星组成的暗弱光学喷流从核心向外延伸。棒、环、喷流、伴星系俱全,使它成为南天极具看点的长焦深空目标。"
+  descriptionEn: "NGC 1097 lies about 45 million light-years away in Fornax and is a spectacular barred spiral that is also a Seyfert active galaxy. Its core harbors a supermassive black hole of roughly 140 million solar masses, surrounded by a bright ring about 5,000 light-years across that is vigorously forming stars, making it a classic subject for studying nuclear star formation. It interacts with the dwarf elliptical companion NGC 1097A nearby. Deep exposures also reveal four mysterious faint optical jets made of stars extending from the nucleus. With a bar, ring, jets and a companion all present, it is a richly rewarding long-focus deep-sky target in the southern sky."
+  focal: "长焦 1000mm+"
+  image: ngc1097
+- id: NGC1232
+  name: "NGC 1232"
+  nameEn: "NGC 1232"
+  catalog: NGC
+  type: galaxy
+  typeLabel: "旋涡星系"
+  constellation: "波江座 Eri"
+  ra: "03h10m"
+  dec: -20
+  decLabel: "−20°"
+  magnitude: 9.9
+  hemisphere: both
+  season: winter
+  difficulty: advanced
+  summary: "面朝大旋涡,旋臂繁复对比鲜明。"
+  summaryEn: "Grand face-on spiral with intricate arms and a distorted satellite."
+  description: "NGC 1232 距地球约 6000 万光年,位于波江座,是一个壮观的面朝我们的中介型旋涡星系。众多旋臂从黄色核球向外铺展,蓝色年轻星团与粉红色恒星形成区点缀其间,外围还有暗弱旋臂延伸。星系一侧伴有一个被引力扭曲、形似字母的小卫星星系 NGC 1232A。欧洲南方天文台甚大望远镜(VLT)曾为它拍摄了一幅极著名的高分辨彩色全景。它视星等约 10 等,结构繁复对比鲜明,是冬季波江座中富有看点的长焦目标。"
+  descriptionEn: "NGC 1232 lies about 60 million light-years away in Eridanus, a spectacular face-on intermediate spiral. Numerous arms unfurl from a yellow bulge, peppered with blue young clusters and pink star-forming regions, with faint outer arms extending further. To one side lies a small, gravitationally distorted satellite, NGC 1232A. ESO's Very Large Telescope captured a famous high-resolution color portrait of it. At magnitude 10, its intricate, high-contrast structure makes it a rewarding long-focal-length target in winter Eridanus."
+  focal: "长焦 1000mm+"
+  image: ngc1232
+- id: NGC1300
+  name: "NGC 1300"
+  nameEn: "NGC 1300"
+  catalog: NGC
+  type: galaxy
+  typeLabel: "棒旋星系"
+  constellation: "波江座 Eri"
+  ra: "03h20m"
+  dec: -19
+  decLabel: "−19°"
+  magnitude: 11
+  hemisphere: both
+  season: winter
+  difficulty: advanced
+  summary: "结构完美的棒旋,哈勃经典肖像。"
+  summaryEn: "The textbook archetype of a barred spiral, immortalized by a Hubble portrait."
+  description: "NGC 1300 距地球约 6900 万光年,位于波江座,是棒旋星系的标准原型,被视为该类星系最完美的样板之一。一条笔直的恒星棒贯穿明亮核心,两端各连接着一条对称缠绕的宏伟旋臂。它最奇特之处在于核区还内嵌着一段直径仅约 3300 光年的微缩「宏伟设计」螺旋结构,这在棒旋星系中颇为罕见。哈勃望远镜曾为它拍摄了一幅极著名的高清全景肖像,展现出令人惊叹的旋臂与尘埃细节。它表面亮度偏低,是春冬之交长焦深空摄影中结构精美绝伦的挑战性目标。"
+  descriptionEn: "NGC 1300 lies about 69 million light-years away in Eridanus and is the textbook archetype of a barred spiral, regarded as one of the finest examples of its kind. A straight stellar bar runs through the bright core, with a symmetric, tightly wound grand-design arm springing from each end. Its most unusual feature is a miniature \"grand-design\" spiral only about 3,300 light-years across nested within the nucleus, rare among barred spirals. Hubble captured a famous high-resolution portrait of it, revealing stunning arm and dust detail. Low in surface brightness, it is an exquisitely structured yet challenging long-focal deep-sky target around the turn of winter to spring."
+  focal: "长焦 1000mm+"
+  image: ngc1300
+- id: NGC1365
+  name: "大棒旋星系"
+  nameEn: "Great Barred Spiral Galaxy"
+  catalog: NGC
+  type: galaxy
+  typeLabel: "棒旋星系"
+  constellation: "天炉座 For"
+  ra: "03h33m"
+  dec: -36
+  decLabel: "−36°"
+  magnitude: 9.6
+  hemisphere: south
+  season: winter
+  difficulty: advanced
+  summary: "天炉座的双棒旋涡,棒旋典范。"
+  summaryEn: "One of the largest, most archetypal barred spirals, a Seyfert in Fornax."
+  description: "大棒旋星系距地球约 5600 万光年,位于天炉座,是天空中最大、最典型的棒旋星系之一,直径约 20 万光年。一条贯穿全盘的巨大恒星棒末端连接着两条优雅展开的旋臂,结构教科书般标准。它是天炉座星系团的成员,核心藏有一个约 200 万倍太阳质量、快速自转的超大质量黑洞,属于塞弗特活动星系。沿棒延伸的尘埃带将气体输送至核心,驱动着核区的恒星形成与黑洞活动。它结构清晰、棒旋分明,是棒旋星系摄影的标杆,适合长焦深曝展现旋臂与尘埃细节。"
+  descriptionEn: "The Great Barred Spiral Galaxy lies about 56 million light-years away in Fornax and is one of the largest and most archetypal barred spirals in the sky, roughly 200,000 light-years across. A huge stellar bar spans the disk, its ends connecting to two elegantly sweeping arms in textbook-perfect form. A member of the Fornax Cluster, it harbors a fast-spinning supermassive black hole of about 2 million solar masses and is a Seyfert active galaxy. Dust lanes along the bar funnel gas toward the core, driving nuclear star formation and black-hole activity. With clear, well-defined bar-and-arm structure, it is the benchmark for barred-spiral imaging and rewards deep long-focus shots of its arm and dust detail."
+  focal: "长焦 1000mm+"
+  image: ngc1365
+- id: NGC2403
+  name: "NGC 2403"
+  nameEn: "NGC 2403"
+  catalog: Caldwell
+  type: galaxy
+  typeLabel: "旋涡星系"
+  constellation: "鹿豹座 Cam"
+  ra: "07h37m"
+  dec: 65
+  decLabel: "+65°"
+  magnitude: 8.9
+  hemisphere: north
+  season: winter
+  difficulty: intermediate
+  summary: "M33 翻版,旋臂遍布红色星云。"
+  summaryEn: "M33-like spiral with arms full of pink H II regions."
+  description: "NGC 2403 距地球约 1000 万光年,位于鹿豹座,是 M81 星系群的外围成员,也是离本星系群最近的星系之一。它外貌酷似三角座星系 M33,松散的旋臂上散布着大量明亮的粉红色 H II 区,是恒星形成活跃的中介型旋涡星系。它是首批在本星系群之外确认含造父变星的星系之一,对早期宇宙距离尺度的测定意义重大。它视面积较大、表面亮度尚可,中焦长曝能拍出绚丽的恒星诞生地。它是北天一个被低估的佳作。"
+  descriptionEn: "NGC 2403 lies about 10 million light-years away in Camelopardalis, an outlying member of the M81 group and one of the closest galaxies to the Local Group. It strongly resembles the Triangulum Galaxy M33, its loose arms strewn with many bright pink H II regions, an active star-forming intermediate spiral. It was among the first galaxies beyond the Local Group confirmed to contain Cepheid variables, important for early distance-scale measurements. With a fairly large angular size and decent surface brightness, deep mid-focal-length imaging captures gorgeous stellar nurseries. It is an underrated northern gem."
+  focal: "中焦 600–1000mm"
+  image: ngc2403
+- id: NGC2841
+  name: "NGC 2841"
+  nameEn: "NGC 2841"
+  catalog: NGC
+  type: galaxy
+  typeLabel: "旋涡星系"
+  constellation: "大熊座 UMa"
+  ra: "09h22m"
+  dec: 51
+  decLabel: "+51°"
+  magnitude: 9.2
+  hemisphere: north
+  season: spring
+  difficulty: advanced
+  summary: "絮状旋臂精致缠绕的“虎眼”星系。"
+  summaryEn: "The archetypal flocculent spiral, nicknamed the \"Tiger's Eye\" galaxy."
+  description: "NGC 2841 距地球约 4600 万光年,位于大熊座,是「絮状旋涡星系」(flocculent spiral)的典范。它没有贯通的宏伟旋臂,取而代之的是众多由尘埃勾勒、短而细密的旋臂段紧致地缠绕在金黄色核球周围,呈现出锐利如丝的纹理,因而被昵称为「虎眼」。它恒星形成相对温和,缺乏大量明亮的 H II 区,色调偏暖。哈勃望远镜的高分辨影像曾细腻展现其复杂的尘埃花纹。它是长焦高分辨深空摄影的精致目标,适合在春季大熊座区域深曝以呈现层层旋臂。"
+  descriptionEn: "NGC 2841 lies about 46 million light-years away in Ursa Major and is the archetype of a flocculent spiral galaxy. Instead of continuous grand-design arms, it shows many short, fine, dust-traced arm segments tightly wound around a golden bulge, giving a sharp, silky texture that earns it the nickname \"Tiger's Eye.\" Star formation is comparatively gentle, lacking abundant bright H II regions, and its tones run warm. Hubble's high-resolution imaging has finely displayed its intricate dust patterns. It is a refined target for high-resolution long-focal deep-sky imaging, rewarding deep exposures in the spring Ursa Major region to reveal its layered arms."
+  focal: "长焦 1000mm+"
+  image: ngc2841
+- id: NGC3190
+  name: "希克森44星系群"
+  nameEn: "Hickson 44 Group"
+  catalog: NGC
+  type: galaxy
+  typeLabel: "相互作用星系群"
+  constellation: "狮子座 Leo"
+  ra: "10h18m"
+  dec: 21
+  decLabel: "+21°"
+  magnitude: 11
+  hemisphere: north
+  season: spring
+  difficulty: advanced
+  summary: "四星系紧凑成团,形态各异。"
+  summaryEn: "A compact group of four interacting galaxies led by the warped spiral NGC 3190."
+  description: "希克森致密星系群 44(HCG 44)距地球约 8000 万光年,位于狮子座,是天空中最显眼的致密星系群之一,由四个紧凑成团的星系组成。其中最大的成员是侧向旋涡 NGC 3190,它有一道明显弯曲、扭曲变形的暗尘带,显示出群内成员间的引力相互作用;同框的还有棒旋星系 NGC 3185、椭圆星系 NGC 3193 与旋涡 NGC 3187,形态各异。这些星系彼此距离很近,正经历潮汐扰动。一框之内多个星系互动,层次丰富,是致密星系群长焦摄影的精彩目标。它较暗,需要暗夜与长曝光。"
+  descriptionEn: "Hickson Compact Group 44 (HCG 44) lies about 80 million light-years away in Leo and is one of the most striking compact galaxy groups in the sky, made of four closely clustered galaxies. Its largest member is the edge-on spiral NGC 3190, whose conspicuously bent and warped dust lane reveals gravitational interaction within the group; sharing the frame are the barred spiral NGC 3185, the elliptical NGC 3193 and the spiral NGC 3187, each different in form. Lying close together, these galaxies are undergoing tidal disturbance. With several interacting galaxies in a single frame, it is a richly layered, rewarding compact-group target for long-focus imaging. It is faint and needs dark skies and long exposures."
+  focal: "长焦 1000mm+"
+  image: ngc3190
+- id: NGC3628
+  name: "汉堡星系"
+  nameEn: "Hamburger Galaxy"
+  catalog: NGC
+  type: galaxy
+  typeLabel: "旋涡星系"
+  constellation: "狮子座 Leo"
+  ra: "11h20m"
+  dec: 13
+  decLabel: "+13°"
+  magnitude: 9.5
+  hemisphere: both
+  season: spring
+  difficulty: advanced
+  summary: "侧向旋涡,厚尘埃带状如汉堡。"
+  summaryEn: "Edge-on spiral with a thick dust lane and a long tidal tail."
+  description: "汉堡星系距地球约 3500 万光年,位于狮子座,是「狮子三重奏」的第三位成员,与 M65、M66 同框。它以完全侧向的盘面和一道贯穿中央、略带膨出的厚尘埃带而得名,形似夹层汉堡。它拖着一条长达约三十万光年、由邻近星系潮汐作用拉出的暗弱恒星流,从盘面一端伸出。这条壮观的潮汐尾是星系间引力扰动的直接证据。它视星等约 9.5 等,深度曝光才能记录下完整的潮汐尾,是春季狮子座中富有挑战的长焦目标。"
+  descriptionEn: "The Hamburger Galaxy lies about 35 million light-years away in Leo, the third member of the Leo Triplet alongside M65 and M66. It is named for its fully edge-on disk crossed by a thick, slightly bulging central dust lane, resembling a layered hamburger. It trails a faint stellar stream roughly 300,000 light-years long, drawn out by tidal interaction with its neighbors and extending from one end of the disk. This spectacular tidal tail is direct evidence of gravitational disturbance between galaxies. At magnitude 9.5, deep exposures are needed to record the full tail, making it a challenging spring target in Leo."
+  focal: "长焦 1000mm+"
+  image: ngc3628
+- id: NGC4038
+  name: "触须星系"
+  nameEn: "Antennae Galaxies"
+  catalog: Caldwell
+  type: galaxy
+  typeLabel: "相互作用星系"
+  constellation: "乌鸦座 Crv"
+  ra: "12h02m"
+  dec: -19
+  decLabel: "−19°"
+  magnitude: 10.5
+  hemisphere: both
+  season: spring
+  difficulty: advanced
+  summary: "两星系正面碰撞,拖出长长触须。"
+  summaryEn: "A pair of colliding galaxies flinging out long tidal \"antennae\" of stars."
+  description: "触须星系(NGC 4038/4039,Caldwell 60/61)距地球约 4500 万光年,位于乌鸦座,是一对正在剧烈并合的星系,堪称研究星系碰撞的最经典样本。两个曾经独立的旋涡星系约六亿年前彼此穿越,猛烈的碰撞压缩气体云,点燃了爆发式的恒星形成,孕育出大量明亮的蓝色超星团。潮汐力还把恒星甩出星系外,拉出两条长长的恒星「触须」,得名由此而来。哈勃影像清晰展现了核心碰撞区与众多新生星团。长焦深曝能同时记录核心碰撞区与外延的触须,极具动感。"
+  descriptionEn: "The Antennae Galaxies (NGC 4038/4039, Caldwell 60/61) lie about 45 million light-years away in Corvus and are a pair of violently merging galaxies, the classic showcase for studying galactic collisions. The two once-separate spirals passed through each other roughly 600 million years ago, and the violent encounter compressed gas clouds to ignite a burst of star formation, spawning many bright blue super star clusters. Tidal forces have flung stars beyond the galaxies into two long stellar \"antennae,\" giving the pair its name. Hubble imagery clearly shows the colliding cores and numerous newborn clusters. Long-focal deep exposures capture both the central collision zone and the extended antennae, conveying real dynamism."
+  focal: "长焦 1500mm+"
+  image: ngc4038
+- id: NGC4038B
+  name: "M88 星系"
+  nameEn: "Messier 88"
+  catalog: Messier
+  type: galaxy
+  typeLabel: "旋涡星系"
+  constellation: "后发座 Com"
+  ra: "12h32m"
+  dec: 14
+  decLabel: "+14°"
+  magnitude: 9.6
+  hemisphere: both
+  season: spring
+  difficulty: advanced
+  summary: "室女团中精致倾斜的宏伟旋涡。"
+  summaryEn: "An elegant inclined grand-design spiral in the Virgo Cluster."
+  description: "M88 距地球约 5000 万光年,位于后发座,是室女座星系团中最美的旋涡星系之一,呈优雅的倾斜角度。它的多条对称缠绕的旋臂上布满清晰的尘埃带与粉红色恒星形成区,核球明亮紧凑。它是一个塞弗特星系,核心藏有活动的超大质量黑洞。它正以高速冲入室女团的炽热团内介质,前缘气体因此被剥离,显示出星系与团环境相互作用的痕迹。长焦拍摄下旋臂层次丰富、纹理细腻,是后发座春季星系群中颇受欢迎的亮点。"
+  descriptionEn: "M88 lies about 50 million light-years away in Coma Berenices and is one of the most beautiful spiral galaxies in the Virgo Cluster, seen at an elegant inclination. Its many symmetric, tightly wound arms are lined with clear dust lanes and pink star-forming regions around a bright, compact bulge. It is a Seyfert galaxy with an active supermassive black hole at its core. Plunging at high speed into the cluster's hot intracluster medium, its leading gas is being stripped, a visible sign of galaxy-cluster interaction. Under long focal lengths it shows rich, finely textured arms, a popular highlight of the spring Coma galaxy fields."
+  focal: "长焦 1000mm+"
+  image: ngc4038b
+- id: NGC4216
+  name: "NGC 4216"
+  nameEn: "NGC 4216"
+  catalog: NGC
+  type: galaxy
+  typeLabel: "旋涡星系"
+  constellation: "室女座 Vir"
+  ra: "12h16m"
+  dec: 13
+  decLabel: "+13°"
+  magnitude: 10
+  hemisphere: both
+  season: spring
+  difficulty: advanced
+  summary: "侧向旋涡,深曝显现潮汐恒星流。"
+  summaryEn: "Edge-on Virgo spiral wreathed in faint tidal stellar streams."
+  description: "NGC 4216 距地球约 4000 万光年,位于室女座,是室女座星系团中一个明亮的侧向中介型旋涡星系。它的盘面有清晰的暗尘埃带,核球明亮硕大。深度曝光揭示出它正吞并周围矮星系而产生的多条巨大潮汐恒星流,如幽灵般缠绕在星系周身,使它成为研究星系等级式生长的绝佳样本。它在室女团中亮度较高,常与邻近的两个侧向星系同框。它是研究星系吸积与并合的人气深空摄影目标。"
+  descriptionEn: "NGC 4216 lies about 40 million light-years away in Virgo, a bright edge-on intermediate spiral in the Virgo cluster. Its disk shows a clear dark dust lane and a large, bright bulge. Deep exposures reveal multiple giant tidal stellar streams from dwarf galaxies it is absorbing, wreathing the galaxy like ghosts and making it an excellent example of hierarchical galaxy growth. Among the brighter members of the Virgo cluster, it often shares the frame with two neighboring edge-on galaxies. It is a popular deep-sky target for studying galactic accretion and merging."
+  focal: "长焦 1000mm+"
+  image: ngc4216
+- id: NGC4486
+  name: "M87 星系"
+  nameEn: "Messier 87"
+  catalog: Messier
+  type: galaxy
+  typeLabel: "椭圆星系"
+  constellation: "室女座 Vir"
+  ra: "12h31m"
+  dec: 12
+  decLabel: "+12°"
+  magnitude: 8.6
+  hemisphere: both
+  season: spring
+  difficulty: intermediate
+  summary: "室女团巨椭圆,首张黑洞照片主角。"
+  summaryEn: "A giant elliptical and the subject of the first-ever black hole image."
+  description: "M87(NGC 4486)距地球约 5300 万光年,位于室女座星系团中心,是一个超巨型椭圆星系,质量惊人,拥有上万个球状星团——远超银河系的数百个。它核心的超大质量黑洞质量约为太阳的 65 亿倍,射出一道长达约 5000 光年、由相对论性等离子体构成的蓝色喷流,这是早在 1918 年就被发现的著名特征。2019 年事件视界望远镜(EHT)正是以这个黑洞拍下了人类首张黑洞照片。长焦深曝能捕捉到那道著名的蓝色喷流,是室女团中最具科学传奇色彩的目标。"
+  descriptionEn: "M87 (NGC 4486) lies about 53 million light-years away at the heart of the Virgo Cluster and is a supergiant elliptical galaxy of staggering mass, hosting over ten thousand globular clusters, far more than the Milky Way's few hundred. Its central supermassive black hole weighs about 6.5 billion solar masses and launches a blue relativistic-plasma jet roughly 5,000 light-years long, a famous feature noted as early as 1918. In 2019 the Event Horizon Telescope used this black hole to capture humanity's first-ever image of a black hole. Long-focal deep exposures can record that famous blue jet, making it the most scientifically legendary target in the Virgo Cluster."
+  focal: "长焦 1000mm+"
+  image: ngc4486
+- id: NGC4490
+  name: "茧状星系"
+  nameEn: "Cocoon Galaxy"
+  catalog: NGC
+  type: galaxy
+  typeLabel: "相互作用星系"
+  constellation: "猎犬座 CVn"
+  ra: "12h31m"
+  dec: 42
+  decLabel: "+42°"
+  magnitude: 9.8
+  hemisphere: north
+  season: spring
+  difficulty: advanced
+  summary: "扭曲星暴星系拖着小伴星系。"
+  summaryEn: "A tidally disturbed starburst galaxy towing the small companion NGC 4485."
+  description: "茧状星系距地球约 2500 万光年,位于猎犬座,是一个被引力扰动而剧烈造星的星暴星系。它正与一个较小的伴星系 NGC 4485 相互作用,二者间有一条由恒星与气体构成的桥相连,潮汐力将主星系拉扯成一头大、一头尖的茧状不规则外形,因而得名。强烈的恒星形成使其旋臂泛蓝并布满红色 H II 区,核区还向晕中喷出富含氢的气体。它扭曲不规则的外形极富动感,是研究星系相互作用与星暴的良好样本。长焦深曝可同时记录主星系、伴星系与连接桥。"
+  descriptionEn: "The Cocoon Galaxy lies about 25 million light-years away in Canes Venatici and is a tidally disturbed galaxy undergoing vigorous starburst activity. It is interacting with the smaller companion NGC 4485, linked by a bridge of stars and gas, with tidal forces stretching the main galaxy into a cocoon-like irregular shape—broad at one end, tapered at the other—that gives it its name. Intense star formation turns its arms blue and fills them with red H II regions, while the core drives hydrogen-rich gas out into the halo. Its warped, irregular form is full of dynamism, a fine sample for studying galaxy interaction and starbursts. Deep long-focus imaging captures the main galaxy, companion and connecting bridge together."
+  focal: "长焦 1000mm+"
+  image: ngc4490
+- id: NGC4565
+  name: "针状星系"
+  nameEn: "Needle Galaxy"
+  catalog: NGC
+  type: galaxy
+  typeLabel: "旋涡星系"
+  constellation: "后发座 Com"
+  ra: "12h36m"
+  dec: 26
+  decLabel: "+26°"
+  magnitude: 9.6
+  hemisphere: north
+  season: spring
+  difficulty: advanced
+  summary: "完美侧向旋涡,细长如针带尘埃带。"
+  summaryEn: "Spectacular edge-on spiral, slim as a needle with a central dust lane."
+  description: "针状星系距地球约 3000 至 5000 万光年,位于后发座,是天空中最壮观的侧向旋涡星系之一。它的盘面极薄而细长,视面长达约 16 角分,一道清晰的暗尘埃带横贯全长,中央拱起一个明亮硕大的核球。它实际直径约 10 万光年,与银河系相当,被誉为从侧面看银河系的「镜像」。它视星等约 10 等,是较亮且容易辨认的侧向星系。长焦拍摄锐利如针、几何美感极强,是后发座春季星系摄影的标志性目标。"
+  descriptionEn: "The Needle Galaxy lies roughly 30 to 50 million light-years away in Coma Berenices, one of the most spectacular edge-on spirals in the sky. Its disk is extremely thin and elongated, spanning about 16 arcminutes, with a clear dark dust lane running its full length and a large, bright bulge arching at the center. About 100,000 light-years across like the Milky Way, it is often called a 'mirror' of our galaxy seen edge-on. At magnitude 10 it is a relatively bright, easily recognized edge-on system. Razor-sharp and geometrically striking at long focal lengths, it is a signature spring galaxy target in Coma Berenices."
+  focal: "长焦 1000mm+"
+  image: ngc4565
+- id: NGC5194
+  name: "NGC 5195"
+  nameEn: "NGC 5195"
+  catalog: NGC
+  type: galaxy
+  typeLabel: "相互作用星系"
+  constellation: "猎犬座 CVn"
+  ra: "13h30m"
+  dec: 47
+  decLabel: "+47°"
+  magnitude: 9.6
+  hemisphere: north
+  season: spring
+  difficulty: advanced
+  summary: "涡状星系的小伴星系,正被其旋臂勾连。"
+  summaryEn: "The dwarf companion tugging on the Whirlpool Galaxy M51's grand arms."
+  description: "NGC 5195 距地球约 2500 万光年,位于猎犬座,是涡状星系 M51 的矮伴星系,通常与 M51 同框拍摄。它正从 M51 旋臂后方穿过并与之发生引力相互作用,二者由一条恒星与气体的桥相连。正是这场跨越数亿年的近距离邂逅,潮汐拉扯出了 M51 那对壮丽而规整的宏伟旋臂,使其成为面朝我们的旋涡星系中最上镜的一个。NGC 5195 本身是一个矮椭圆/透镜状星系,核区因相互作用而活跃。它与 M51 共同演绎了星系互动最经典的案例,是春季长焦深空摄影的标志性组合。"
+  descriptionEn: "NGC 5195 lies about 25 million light-years away in Canes Venatici and is the dwarf companion of the Whirlpool Galaxy M51, usually imaged together with it. It is passing behind M51's arms and interacting gravitationally, the two linked by a bridge of stars and gas. It is precisely this close encounter, spanning hundreds of millions of years, that tidally drew out M51's magnificent, well-ordered grand-design arms, making it the most photogenic of face-on spirals. NGC 5195 itself is a dwarf elliptical/lenticular galaxy with an active core stirred by the interaction. Together with M51 it stages the classic case study of galactic interaction, a landmark long-focal deep-sky pairing in spring."
+  focal: "长焦 1000mm+"
+  image: ngc5194
+- id: NGC6744
+  name: "孔雀座星系"
+  nameEn: "Pavo Galaxy"
+  catalog: Caldwell
+  type: galaxy
+  typeLabel: "旋涡星系"
+  constellation: "孔雀座 Pav"
+  ra: "19h10m"
+  dec: -64
+  decLabel: "−64°"
+  magnitude: 8.5
+  hemisphere: south
+  season: summer
+  difficulty: intermediate
+  summary: "银河系的孪生兄弟,巨大絮状棒旋。"
+  summaryEn: "A giant flocculent barred spiral often called a twin of the Milky Way."
+  description: "孔雀座星系距地球约 3000 万光年,位于南天的孔雀座,是一个巨大的棒旋星系,因结构酷似银河系而被称为「银河系的孪生兄弟」。它的直径约 17.5 万光年,比银河系还大,絮状的旋臂松散展开、缠绕复杂,核区呈拉长的棒状。它身旁带有一个酷似麦哲伦云的扭曲小伴星系 NGC 6744A,二者间存在引力相互作用。它视面积大、面朝我们,中焦镜头即可拍出宏伟全貌,深曝则能展现旋臂中细密的尘埃与恒星形成区。它是南天最上镜的大型旋涡星系之一。"
+  descriptionEn: "The Pavo Galaxy lies about 30 million light-years away in the southern constellation Pavo and is a giant barred spiral often called a 「twin of the Milky Way」 for its similar structure. About 175,000 light-years across—larger than our Galaxy—it has loosely spread, intricately wound flocculent arms and an elongated barred core. It is accompanied by the distorted little companion NGC 6744A, reminiscent of a Magellanic Cloud, with which it gravitationally interacts. Large in apparent size and face-on, it shows a magnificent full view even at a medium focal length, while deep exposures reveal fine dust and star-forming regions in the arms. It is one of the most photogenic large spirals in the southern sky."
+  focal: "中焦 600–1000mm"
+  image: ngc6744
+- id: NGC6946
+  name: "烟花星系"
+  nameEn: "Fireworks Galaxy"
+  catalog: Caldwell
+  type: galaxy
+  typeLabel: "旋涡星系"
+  constellation: "仙王座 Cep"
+  ra: "20h35m"
+  dec: 60
+  decLabel: "+60°"
+  magnitude: 8.8
+  hemisphere: north
+  season: summer
+  difficulty: intermediate
+  summary: "面朝旋涡,超新星频发如放烟花。"
+  summaryEn: "Face-on spiral with frequent supernovae, hence 'fireworks'."
+  description: "烟花星系距地球约 2500 万光年,横跨仙王座与天鹅座边界,是一个面朝我们的中介型旋涡星系。过去一百年间,它已爆发了十颗以上超新星,频率远高于一般星系,因而被称为烟花星系。它的旋臂上布满粉红色 H II 区和蓝色星团,恒星形成异常活跃。由于位置紧贴银河系盘面,前景密布银河系恒星,画面繁星点点。它表面亮度因银河系尘埃遮挡而偏暗,中焦深曝能拍出其活跃的旋臂与点缀其间的星点。它是夏季北天的人气星系目标。"
+  descriptionEn: "The Fireworks Galaxy lies about 25 million light-years away on the Cepheus-Cygnus border, a face-on intermediate spiral. Over the past century it has produced more than ten supernovae, far more often than typical galaxies, earning its name. Its arms are studded with pink H II regions and blue clusters, marking intense star formation. Lying close to the plane of the Milky Way, its field is densely sprinkled with foreground stars. Dimmed somewhat by intervening Galactic dust, deep mid-focal-length imaging brings out its active arms and the scattered stars across them. It is a popular summer galaxy target in the northern sky."
+  focal: "中焦 600–1000mm"
+  image: ngc6946
+- id: NGC7320
+  name: "史蒂芬五重奏"
+  nameEn: "Stephan's Quintet"
+  catalog: Other
+  type: galaxy
+  typeLabel: "相互作用星系群"
+  constellation: "飞马座 Peg"
+  ra: "22h36m"
+  dec: 33
+  decLabel: "+33°"
+  magnitude: 13
+  hemisphere: north
+  season: autumn
+  difficulty: advanced
+  summary: "五星系紧凑成团,潮汐撕扯激烈。"
+  summaryEn: "Famous compact group whose foreground member NGC 7320 is a chance projection."
+  description: "史蒂芬五重奏是天空中最著名的致密星系群,由五个星系组成,位于飞马座。其中四个成员(NGC 7317、7318A、7318B、7319)真正成团,距地球约 2.9 亿光年,正在引力撕扯下扭曲变形,彼此碰撞激发出巨大的冲击波与潮汐尾。而前景的 NGC 7320 其实只是一个距地球约 4000 万光年的偶然投影星系,比群体近七倍,这一发现曾解开关于该群本质的长期争论。它是 JWST 首批公开影像之一,需长焦深曝,呈现遥远宇宙中群体碰撞的壮观一幕。"
+  descriptionEn: "Stephan's Quintet is the sky's most famous compact galaxy group, five galaxies in Pegasus. Four of them (NGC 7317, 7318A, 7318B, and 7319) form a true group about 290 million light-years away, distorting under gravitational tugs and colliding to drive vast shock waves and tidal tails. The foreground galaxy NGC 7320, however, is merely a chance projection about 40 million light-years away, some seven times closer than the group, a discovery that resolved a long-standing debate over the group's nature. It was among the first JWST images released to the public, and rewards long-focal deep exposures with a spectacular view of group collisions in the distant universe."
+  focal: "长焦 1500mm+"
+  image: ngc7320
+- id: NGC7331
+  name: "NGC 7331"
+  nameEn: "NGC 7331"
+  catalog: Caldwell
+  type: galaxy
+  typeLabel: "旋涡星系"
+  constellation: "飞马座 Peg"
+  ra: "22h37m"
+  dec: 34
+  decLabel: "+34°"
+  magnitude: 9.5
+  hemisphere: north
+  season: autumn
+  difficulty: advanced
+  summary: "银河系样板,身后伴有一群远方星系。"
+  summaryEn: "A tilted Milky Way look-alike spiral with a deer of distant background galaxies."
+  description: "NGC 7331 距地球约 4000 万光年,位于飞马座,是一个高度倾斜的大旋涡星系,因外形酷似银河系而常被称为「银河系样板」。它明亮的黄色核球前方散布着清晰的尘埃带,核球异常明亮,内部存在反向旋转的恒星盘。它的视线方向上还散布着四个遥远得多的小星系(常被合称为「鹿群」),营造出真实的深空距离层次。著名的致密星系群史蒂芬五重奏就在其附近半度内,可一并入画。一框之内远近星系成群,极具深空层次感,是秋季长焦星系摄影的人气目标。"
+  descriptionEn: "NGC 7331 lies about 40 million light-years away in Pegasus and is a highly inclined large spiral often called a 「Milky Way analog」 for its resemblance to our Galaxy. Clear dust lanes lie in front of its bright yellow bulge, which is unusually luminous and contains a counter-rotating inner stellar disk. Along the same line of sight scatter four far more distant background galaxies (collectively nicknamed the 「Deer Lick Group」), creating a real sense of deep-space depth. The famous compact group Stephan's Quintet sits within half a degree and can share the frame. With near and far galaxies grouped in one field, it offers striking deep-sky depth and is a popular autumn long-focus galaxy target."
+  focal: "长焦 1000mm+"
+  image: ngc7331
+- id: C80
+  name: "半人马ω星团"
+  nameEn: "Omega Centauri"
+  catalog: Caldwell
+  type: globular-cluster
+  typeLabel: "球状星团"
+  constellation: "半人马座 Cen"
+  ra: "13h27m"
+  dec: -47
+  decLabel: "−47°"
+  magnitude: 3.9
+  hemisphere: south
+  season: spring
+  difficulty: beginner
+  summary: "全天最大最亮的球状星团。"
+  summaryEn: "The Galaxy's largest, brightest globular—likely a stripped dwarf core."
+  description: "半人马ω星团距地球约 1.7 万光年,位于半人马座,是银河系最大、最亮的球状星团,含约一千万颗恒星,总质量约四百万太阳。它肉眼可见为一团星状光斑,视面接近满月大小。它的成员星年龄与金属丰度并不一致,因此被认为很可能是一个被银河系吞并的矮星系残留的核心。星团中心异常致密,甚至可能藏有一个中等质量黑洞。南天观测者用长焦能分解出令人窒息的密集星海,是南半球深空摄影的瑰宝。"
+  descriptionEn: "Omega Centauri lies about 17,000 light-years away in Centaurus, the largest and brightest globular cluster in the Galaxy, holding some ten million stars with a mass near four million Suns. Visible to the naked eye as a fuzzy star, it spans nearly the size of the full Moon. Its member stars span a range of ages and metallicities, so it is widely thought to be the stripped core of a dwarf galaxy absorbed by the Milky Way. Its core is unusually dense and may even harbor an intermediate-mass black hole. Southern observers can resolve a breathtaking sea of stars at long focal lengths, a jewel of southern deep-sky imaging."
+  focal: "中长焦 800–1200mm"
+  image: omega-cen
+- id: C106
+  name: "杜鹃座47"
+  nameEn: "47 Tucanae"
+  catalog: Caldwell
+  type: globular-cluster
+  typeLabel: "球状星团"
+  constellation: "杜鹃座 Tuc"
+  ra: "00h24m"
+  dec: -72
+  decLabel: "−72°"
+  magnitude: 4.1
+  hemisphere: south
+  season: autumn
+  difficulty: beginner
+  summary: "全天第二亮的壮丽球状星团。"
+  summaryEn: "The sky's second-brightest globular cluster, a golden swarm near the SMC."
+  description: "杜鹃座47(C106,NGC 104)距地球约 1.3 万光年,是仅次于半人马ω的全天第二亮球状星团,肉眼可见为一团明亮的星状光斑。它含有数百万颗恒星,核心极度致密,星密度向中心急剧攀升,整体呈温暖的金黄色调。团中还藏有大量毫秒脉冲星和可能的中等质量黑洞,是研究恒星动力学的重要实验室。它在天空中正位于小麦哲伦云附近,二者常在南天深空广角中同框,是南半球摄影里相映成趣的瑰宝。长焦下可分解出令人窒息的密集星海。"
+  descriptionEn: "47 Tucanae (C106, NGC 104) lies about 13,000 light-years away and is the second-brightest globular cluster in the entire sky after Omega Centauri, visible to the naked eye as a bright star-like glow. It contains millions of stars and an extremely dense core where stellar density climbs steeply toward the center, glowing an overall warm gold. The cluster hosts many millisecond pulsars and a possible intermediate-mass black hole, making it a key laboratory for stellar dynamics. It sits near the Small Magellanic Cloud on the sky, the two often framed together in southern wide-field deep-sky shots, a complementary jewel of southern-hemisphere imaging. Long focal lengths resolve a breathtakingly dense sea of stars."
+  focal: "中长焦 800–1200mm"
+  image: 47tuc
+- id: M3
+  name: "猎犬座球状星团"
+  nameEn: "Messier 3"
+  catalog: Messier
+  type: globular-cluster
+  typeLabel: "球状星团"
+  constellation: "猎犬座 CVn"
+  ra: "13h42m"
+  dec: 28
+  decLabel: "+28°"
+  magnitude: 6.2
+  hemisphere: north
+  season: spring
+  difficulty: intermediate
+  summary: "富含变星的明亮球状星团。"
+  summaryEn: "A bright, rich globular cluster famous for its many RR Lyrae variables."
+  description: "M3 距地球约 3.4 万光年,位于猎犬座,是天空中最明亮、星数最多的球状星团之一,包含约 50 万颗恒星。它以拥有数百颗(已确认约 274 颗)天琴座 RR 型变星而著称,数量在所有球状星团中名列前茅,这些标准烛光对测定宇宙距离意义重大。它年龄约 115 亿年,结构对称、核心高度密集明亮,边缘星点逐渐散开。它视星等约 6.2,双筒镜中即可见为模糊光斑,中等口径望远镜可分解出外围成员星。它是春季夜空中长焦摄影的人气球团,适合长焦高分辨拍摄。"
+  descriptionEn: "M3 lies about 34,000 light-years away in Canes Venatici and is one of the brightest, richest globular clusters in the sky, containing roughly 500,000 stars. It is famous for its hundreds of RR Lyrae variables (about 274 confirmed), among the most of any globular, standard candles vital for measuring cosmic distances. Around 11.5 billion years old, it is symmetric with a densely concentrated, bright core whose stars thin out toward the edges. At magnitude 6.2 it shows as a fuzzy patch in binoculars, while medium telescopes resolve its outer stars. It is a popular long-focus globular of the spring sky, rewarding high-resolution imaging."
+  focal: "长焦 1000mm+"
+  image: m3
+- id: M13
+  name: "武仙座大球状星团"
+  nameEn: "Hercules Globular Cluster"
+  catalog: Messier
+  type: globular-cluster
+  typeLabel: "球状星团"
+  constellation: "武仙座 Her"
+  ra: "16h41m"
+  dec: 36
+  decLabel: "+36°"
+  magnitude: 5.8
+  hemisphere: north
+  season: summer
+  difficulty: beginner
+  summary: "北天最壮观的球状星团。"
+  summaryEn: "The northern sky's grandest globular, target of the Arecibo message."
+  description: "M13 又称武仙座大球状星团,距地球约 2.2 万光年,是北半球最壮丽的球状星团,包含约三十万颗恒星。它在暗夜下肉眼可见为一团朦胧光斑,中心高度密集,边缘的星点呈链状向外散开。1974 年,人类曾通过阿雷西博射电望远镜向 M13 发射了著名的「阿雷西博信息」。它视星等约 5.8 等,是球状星团摄影的首选目标,长焦下可分解出成千上万颗成员星。它是夏季武仙座中最受欢迎的观测对象。"
+  descriptionEn: "M13, the Great Hercules Globular Cluster, lies about 22,000 light-years away and is the most magnificent globular in the northern sky, containing roughly 300,000 stars. Visible to the naked eye as a hazy patch under dark skies, it has a densely packed core with chains of stars trailing from its edges. In 1974, the famous Arecibo message was beamed toward M13 from the Arecibo radio telescope. At magnitude 5.8 it is the premier globular-cluster imaging target, resolving into tens of thousands of member stars at long focal lengths. It is the most popular observing object in summer Hercules."
+  focal: "长焦 1000mm+"
+  image: m13-hercules
+- id: M15
+  name: "飞马座球状星团"
+  nameEn: "Messier 15"
+  catalog: Messier
+  type: globular-cluster
+  typeLabel: "球状星团"
+  constellation: "飞马座 Peg"
+  ra: "21h30m"
+  dec: 12
+  decLabel: "+12°"
+  magnitude: 6.2
+  hemisphere: both
+  season: autumn
+  difficulty: intermediate
+  summary: "核心极致密的明亮球状星团。"
+  summaryEn: "A dense, core-collapsed globular hosting the planetary nebula Pease 1."
+  description: "M15(NGC 7078)距地球约 3.3 万光年,位于飞马座,是已知核心最致密的球状星团之一。它的中心曾发生「核心坍缩」,恒星密度向中心急剧聚拢形成尖锐的密度峰,核区可能藏有一个中等质量黑洞。它还是少数内含行星状星云的球状星团——团中的 Pease 1 是 1928 年发现的、首个在球状星团里确认的行星状星云。M15 年龄约 120 亿年,含数十万颗恒星与上百颗变星。结构对称明亮,肉眼勉强可见,是秋季长焦球团摄影中富有看点的目标。"
+  descriptionEn: "M15 (NGC 7078) lies about 33,000 light-years away in Pegasus and is one of the densest-core globular clusters known. Its center has undergone \"core collapse,\" with stellar density spiking sharply toward a tight cusp, and the core may harbor an intermediate-mass black hole. It is also one of the few globulars to contain a planetary nebula: Pease 1, discovered in 1928, was the first planetary nebula confirmed within a globular cluster. About 12 billion years old, M15 contains hundreds of thousands of stars and over a hundred variables. Symmetric and bright, just glimpsed with the naked eye, it is a rewarding autumn target for long-focal globular-cluster imaging."
+  focal: "长焦 1000mm+"
+  image: m15
+- id: M22
+  name: "人马座球状星团"
+  nameEn: "Messier 22"
+  catalog: Messier
+  type: globular-cluster
+  typeLabel: "球状星团"
+  constellation: "人马座 Sgr"
+  ra: "18h36m"
+  dec: -23
+  decLabel: "−23°"
+  magnitude: 5.1
+  hemisphere: south
+  season: summer
+  difficulty: beginner
+  summary: "北半球可见最亮的球状星团之一。"
+  summaryEn: "One of the nearest, brightest globular clusters, set in the Sagittarius Milky Way."
+  description: "M22 距地球约 1 万光年,位于人马座,是离我们最近、最明亮的球状星团之一,也是最早被发现的球状星团(1665 年)。它视面大、视星等约 5.1,在黑暗天空下肉眼可见为模糊光斑,星点稀疏明亮、容易分解。它是少数已知内含行星状星云的球状星团之一,还可能藏有两个恒星级黑洞。它镶嵌在人马座密集的银河背景中,周围繁星点点。由于位于黄道附近,行星偶尔会从其附近经过。它是夏季长焦摄影的人气目标,适合在南天地平较高时拍摄。"
+  descriptionEn: "M22 lies about 10,000 light-years away in Sagittarius and is one of the nearest and brightest globular clusters, as well as one of the first discovered (1665). Large in apparent size at magnitude 5.1, it is visible to the naked eye as a fuzzy patch under dark skies and its bright, loosely packed stars are easy to resolve. It is one of the few globulars known to contain a planetary nebula and may also host two stellar-mass black holes. It is embedded in the rich Sagittarius Milky Way, surrounded by dense star fields, and lying near the ecliptic it is occasionally passed by planets. It is a popular summer long-focus target, best shot when high above the southern horizon."
+  focal: "长焦 1000mm+"
+  image: m22
+- id: C13
+  name: "猫头鹰星团"
+  nameEn: "Owl Cluster"
+  catalog: Caldwell
+  type: open-cluster
+  typeLabel: "疏散星团"
+  constellation: "仙后座 Cas"
+  ra: "01h19m"
+  dec: 58
+  decLabel: "+58°"
+  magnitude: 6.4
+  hemisphere: north
+  season: autumn
+  difficulty: intermediate
+  summary: "群星排布形似猫头鹰/外星人。"
+  summaryEn: "Open cluster shaped like an owl or wide-armed alien (the ET Cluster)."
+  description: "猫头鹰星团(NGC 457,又称外星人星团或 ET 星团)距地球约 7900 光年,位于仙后座,是一个明亮有趣的疏散星团。两颗醒目的亮星如同一对眼睛,延伸出的星链则像展开的双臂,整体形似猫头鹰或张臂的外星人 ET。其中那颗最亮的「眼睛」是黄超巨星仙后座 φ,可能并非星团真实成员。星团含数十颗成员星,年龄约两千一百万年。色彩明亮、造型生动,是仙后座秋季中焦摄影与目视都讨喜的人气目标。"
+  descriptionEn: "The Owl Cluster (NGC 457, also called the Alien or ET Cluster) lies about 7,900 light-years away in Cassiopeia, a bright and whimsical open cluster. Two prominent stars form a pair of eyes, while trailing star chains look like outstretched arms, giving it the look of an owl or a wide-armed alien. The brightest 'eye,' the yellow supergiant Phi Cassiopeiae, may not actually be a true cluster member. The cluster holds a few dozen stars and is about 21 million years old. Bright and characterful, it is a crowd-pleasing autumn target in Cassiopeia for both imaging and visual observing."
+  focal: "中焦 400–800mm"
+  image: c13
+- id: C14
+  name: "英仙双星团"
+  nameEn: "Double Cluster"
+  catalog: Caldwell
+  type: open-cluster
+  typeLabel: "疏散星团"
+  constellation: "英仙座 Per"
+  ra: "02h20m"
+  dec: 57
+  decLabel: "+57°"
+  magnitude: 3.8
+  hemisphere: north
+  season: autumn
+  difficulty: beginner
+  summary: "两团璀璨星团同框相依。"
+  summaryEn: "Two brilliant young open clusters side by side in Perseus."
+  description: "英仙双星团(C14,NGC 869 与 NGC 884)距地球约 7500 光年,位于英仙座,是两个年轻而明亮的疏散星团并肩相依,可在同一视场中尽收眼底,肉眼下即是英仙座银河中一团显眼的光斑。两团各含数百颗恒星,年龄仅约一千多万年,以炽热的蓝白色超巨星为主,其间点缀着几颗醒目的橙红色超巨星,冷暖色彩对比迷人。它们同属英仙座 OB1 星协,在天空中相距不到半度。早在古希腊喜帕恰斯时代便有记载,是秋季最上镜、最适合入门拍摄的疏散星团目标之一。"
+  descriptionEn: "The Double Cluster (C14, NGC 869 and NGC 884) lies about 7,500 light-years away in Perseus, two young, brilliant open clusters side by side that fit in a single field and appear to the naked eye as a conspicuous glow in the Perseus Milky Way. Each holds several hundred stars only about 12-13 million years old, dominated by hot blue-white supergiants accented by a few striking orange-red supergiants, a charming contrast of warm and cool. Both belong to the Perseus OB1 association and lie less than half a degree apart on the sky. Recorded as far back as the Greek Hipparchus, it is among the most photogenic and beginner-friendly open-cluster targets of autumn."
+  focal: "中焦 400–800mm"
+  image: double-cluster
+- id: C50
+  name: "圣诞树星团"
+  nameEn: "Christmas Tree Cluster"
+  catalog: Caldwell
+  type: open-cluster
+  typeLabel: "疏散星团"
+  constellation: "麒麟座 Mon"
+  ra: "06h41m"
+  dec: 9
+  decLabel: "+09°"
+  magnitude: 3.9
+  hemisphere: both
+  season: winter
+  difficulty: beginner
+  summary: "群星排列如圣诞树的星团。"
+  summaryEn: "Stars arranged like a Christmas tree, pointing toward the Cone Nebula."
+  description: "圣诞树星团是疏散星团 NGC 2264 的星团部分,距地球约 2700 光年,位于麒麟座。它因明亮成员星的排布形似一棵倒置的圣诞树而得名,树尖正对着南方的锥状星云(Cone Nebula)。星团年龄仅约数百万年,内部恒星仍在形成,最亮的麒麟座 S 星位于「树干」基部。它嵌在红色的发射星云与蓝色的狐皮反射星云中,周围还有著名的雪人星云。它是冬季麒麟座区域上镜的星团与星云组合,适合中长焦窄带或宽带拍摄,以同时呈现星团与周边星云的丰富结构。"
+  descriptionEn: "The Christmas Tree Cluster is the cluster portion of NGC 2264, lying about 2,700 light-years away in Monoceros. It is named for the way its bright stars trace an inverted Christmas tree, whose tip points toward the Cone Nebula to the south. Only a few million years old, the cluster is still forming stars, with the bright S Monocerotis at the base of the 「trunk.」 It is set within red emission nebulosity and the blue Fox Fur reflection nebula, near the famous Snowflake region. A photogenic cluster-and-nebula combination in the winter Monoceros field, it suits medium-to-long focal lengths in narrowband or broadband to capture both the cluster and the rich surrounding nebulae."
+  focal: "中长焦 800–1200mm"
+  image: c50
+- id: C94
+  name: "南天宝盒/南昴星团"
+  nameEn: "Southern Pleiades"
+  catalog: Caldwell
+  type: open-cluster
+  typeLabel: "疏散星团"
+  constellation: "船底座 Car"
+  ra: "10h43m"
+  dec: -64
+  decLabel: "−64°"
+  magnitude: 1.9
+  hemisphere: south
+  season: spring
+  difficulty: beginner
+  summary: "南天明亮的疏散星团。"
+  summaryEn: "Bright nearby open cluster, the southern counterpart to the Pleiades."
+  description: "南昴星团(IC 2602,又称南天宝盒或船底座θ星团)距地球约 480 光年,位于船底座,是一个明亮而年轻的疏散星团。它因显眼程度堪比北天的昴星团而得名南昴星团,以全天第三亮的疏散星团位列其中。以其最亮成员、二等星船底座θ为首,群星散布在约一度的天区内,肉眼清晰可见。星团年龄约三千万年,含数十颗炽热的蓝白色恒星。它视面大、星点明亮,是南半球春季宽场与广角摄影的人气目标。"
+  descriptionEn: "The Southern Pleiades (IC 2602, anchored by Theta Carinae) lies about 480 light-years away in Carina, a bright, young open cluster. It earns its name by rivaling the northern Pleiades in prominence and ranks among the brightest open clusters in the sky. Led by its brightest member, the 2nd-magnitude star Theta Carinae, its stars scatter across about a degree of sky and are easily seen with the naked eye. Around 30 million years old, it holds a few dozen hot blue-white stars. Large in angular size with bright stars, it is a popular wide-field target in the southern spring sky."
+  focal: "中焦 400–800mm"
+  image: c94
+- id: M6
+  name: "蝴蝶星团"
+  nameEn: "Butterfly Cluster"
+  catalog: Messier
+  type: open-cluster
+  typeLabel: "疏散星团"
+  constellation: "天蝎座 Sco"
+  ra: "17h40m"
+  dec: -32
+  decLabel: "−32°"
+  magnitude: 4.2
+  hemisphere: south
+  season: summer
+  difficulty: beginner
+  summary: "群星排布如展翅蝴蝶。"
+  summaryEn: "An open cluster in Scorpius whose bright stars trace a butterfly's wings."
+  description: "蝴蝶星团(M6,NGC 6405)距地球约 1600 光年,位于天蝎座尾部,因明亮成员星的排布形似一只展翅的蝴蝶而得名。它含有约八十颗较亮的恒星,多数为炽热的蓝白色 B 型星,而其中最亮的一颗——船尾座 BM 是颗橙色的半规则变星,在一片蓝白群星中格外醒目。星团年龄约一亿年,镶嵌在天蝎座银河最密集、最丰富的星野背景之中,肉眼可见。它是南天夏季易于拍摄的明亮疏散星团,适合中焦呈现群星璀璨与翅膀造型。"
+  descriptionEn: "The Butterfly Cluster (M6, NGC 6405) lies about 1,600 light-years away in the tail of Scorpius, named for bright member stars arranged like a butterfly with open wings. It contains about eighty brighter stars, mostly hot blue-white B-type stars, while its brightest member, BM Scorpii, is an orange semiregular variable that stands out vividly amid the blue-white throng. Around 100 million years old, the cluster is set against the densest, richest star fields of the Scorpius Milky Way and is visible to the naked eye. It is an easy, bright open cluster to image in the southern summer sky, well suited to medium focal lengths that bring out the glittering stars and wing shape."
+  focal: "中焦 400–800mm"
+  image: m6
+- id: M7
+  name: "托勒密星团"
+  nameEn: "Ptolemy Cluster"
+  catalog: Messier
+  type: open-cluster
+  typeLabel: "疏散星团"
+  constellation: "天蝎座 Sco"
+  ra: "17h54m"
+  dec: -35
+  decLabel: "−35°"
+  magnitude: 3.3
+  hemisphere: south
+  season: summer
+  difficulty: beginner
+  summary: "天蝎尾部肉眼可见的亮星团。"
+  summaryEn: "A bright naked-eye open cluster in the Scorpion's tail, noted by Ptolemy."
+  description: "托勒密星团距地球约 980 光年,位于天蝎座尾部,是一个明亮的疏散星团,早在公元 130 年就被古希腊天文学家托勒密记录下来,因而得名,是有记载最早被识别的星团之一。它视星等约 3.3,视面达 1.3°(约满月的两倍多),肉眼下是天蝎尾部一团显眼的星群。它包含约 80 颗恒星,年龄约 2 亿年,以蓝白色亮星为主。它镶嵌在人马座方向密集的银河背景中,周围繁星与暗尘交织。它是南天夏季宽场摄影的上佳对象,适合广角到中焦拍摄,展现星团与银河的整体景观。"
+  descriptionEn: "The Ptolemy Cluster lies about 980 light-years away in the tail of Scorpius and is a bright open cluster recorded as early as 130 AD by the Greek astronomer Ptolemy, giving it its name as one of the earliest star clusters ever identified. At magnitude 3.3 and spanning 1.3° (over twice the Moon's width), it is a conspicuous knot of stars to the naked eye in the Scorpion's tail. It contains roughly 80 stars about 200 million years old, dominated by blue-white luminaries. Embedded in the rich Milky Way toward Sagittarius, it is interwoven with dense star fields and dark dust. It is an excellent southern summer wide-field subject, suiting wide-angle to medium focal lengths that frame the cluster within the Milky Way."
+  focal: "广角/中焦 135–400mm"
+  image: m7
+- id: M37
+  name: "御夫座 M37 星团"
+  nameEn: "Messier 37"
+  catalog: Messier
+  type: open-cluster
+  typeLabel: "疏散星团"
+  constellation: "御夫座 Aur"
+  ra: "05h52m"
+  dec: 32
+  decLabel: "+32°"
+  magnitude: 5.6
+  hemisphere: north
+  season: winter
+  difficulty: beginner
+  summary: "御夫座中最丰富的疏散星团。"
+  summaryEn: "The richest of Auriga's open clusters, ~500 stars with an orange giant."
+  description: "M37 距地球约 4500 光年,位于御夫座,是御夫座三个梅西耶疏散星团中最丰富、最明亮的一个,含约五百颗恒星。它年龄约四到五亿年,中心一颗橙红色的巨星在众多蓝白群星中格外醒目。星点密集均匀,如同撒落的盐粒铺满视场,在小望远镜中观感极佳。它视星等约 5.6 等,镶嵌在冬季银河丰富的星场中。它是冬季御夫座中赏心悦目、易于拍摄与观测的星团目标。"
+  descriptionEn: "M37 lies about 4,500 light-years away in Auriga, the richest and brightest of the constellation's three Messier open clusters, holding roughly 500 stars. Aged around 400 to 500 million years, it features a prominent orange-red giant standing out among many blue-white members. Its dense, even star field looks like scattered salt grains filling the eyepiece, lovely in small telescopes. At magnitude 5.6 it is embedded in the rich star fields of the winter Milky Way. It is a delightful, easy cluster target in winter Auriga for both imaging and visual observing."
+  focal: "中焦 400–800mm"
+  image: m37
+- id: M44
+  name: "蜂巢星团"
+  nameEn: "Beehive Cluster"
+  catalog: Messier
+  type: open-cluster
+  typeLabel: "疏散星团"
+  constellation: "巨蟹座 Cnc"
+  ra: "08h40m"
+  dec: 19
+  decLabel: "+19°"
+  magnitude: 3.7
+  hemisphere: both
+  season: winter
+  difficulty: beginner
+  summary: "巨蟹座中肉眼可见的疏散星团。"
+  summaryEn: "One of the nearest open clusters, a naked-eye swarm in Cancer."
+  description: "蜂巢星团(M44,鬼星团 Praesepe)距地球约 580 光年,位于巨蟹座,是离我们最近的疏散星团之一,肉眼下呈一团朦胧光斑,自古便为人所知。它包含约一千颗恒星,视面积比满月大三倍,年龄约六亿年。有趣的是,它与著名的毕星团(Hyades)年龄相近、自行方向一致,被认为可能源自同一片星云。团中已发现多颗系外行星。因其分布开阔而明亮,适合广角到中焦拍摄出群星璀璨的效果,是春季夜空中老少咸宜的人气目标。"
+  descriptionEn: "The Beehive Cluster (M44, Praesepe) lies about 580 light-years away in Cancer and is one of the nearest open clusters to us, appearing to the naked eye as a hazy patch known since antiquity. It contains roughly a thousand stars, covers three times the area of the full moon, and is about 600 million years old. Intriguingly, it shares a similar age and common proper motion with the famous Hyades, suggesting both may have formed from the same cloud. Several exoplanets have been found among its stars. Open and bright in its distribution, it suits wide-field to medium focal imaging that brings out a glittering field of stars, a crowd-pleasing spring target."
+  focal: "广角/中焦 135–400mm"
+  image: m44-beehive
+- id: M45
+  name: "昴星团"
+  nameEn: "Pleiades"
+  catalog: Messier
+  type: open-cluster
+  typeLabel: "疏散星团"
+  constellation: "金牛座 Tau"
+  ra: "03h47m"
+  dec: 24
+  decLabel: "+24°"
+  magnitude: 1.6
+  hemisphere: north
+  season: winter
+  difficulty: beginner
+  summary: "七姊妹蓝色星团裹着蓝色尘埃。"
+  summaryEn: "The Seven Sisters, a bright blue cluster veiled in blue reflection nebulosity."
+  description: "昴星团又称七姊妹,距地球约 444 光年,位于金牛座,是最著名、最易辨认的疏散星团,肉眼可见六到七颗亮星。它是一个相对年轻(约 1 亿年)的星团,包含上千颗恒星,其中最亮的为炽热的蓝白色 B 型巨星。这些明亮恒星正穿过一片偶然相遇的星际尘埃云,星光被尘埃散射出梦幻的蓝色反射星云,深曝光下尘埃丝缕分明。它在世界各地的神话与历法中都有重要地位,日本称之为「昴」(Subaru)。它视面约 2°,适合中焦镜头拍摄,是冬季最上镜的入门目标之一。"
+  descriptionEn: "The Pleiades, also called the Seven Sisters, lie about 444 light-years away in Taurus and form the most famous and recognizable open cluster, with six or seven stars visible to the naked eye. A relatively young cluster (about 100 million years old), it contains over a thousand stars, the brightest being hot blue-white B-type giants. These luminous stars are passing through a chance-encountered interstellar dust cloud, scattering their light into a dreamy blue reflection nebula whose filaments emerge in deep exposures. It holds an important place in mythologies and calendars worldwide and is called Subaru in Japan. Spanning about 2°, it suits a medium focal length and is one of winter's most photogenic beginner targets."
+  focal: "中焦 400–800mm"
+  image: m45-pleiades
+- id: NGC2244
+  name: "玫瑰星团"
+  nameEn: "NGC 2244"
+  catalog: NGC
+  type: open-cluster
+  typeLabel: "疏散星团"
+  constellation: "麒麟座 Mon"
+  ra: "06h32m"
+  dec: 5
+  decLabel: "+05°"
+  magnitude: 4.8
+  hemisphere: both
+  season: winter
+  difficulty: beginner
+  summary: "点亮玫瑰星云的年轻星团。"
+  summaryEn: "Young cluster powering and hollowing out the Rosette Nebula."
+  description: "NGC 2244 是位于玫瑰星云中心的疏散星团,距地球约 5200 光年,年龄仅约两百万年,十分年轻。星团中炽热的 O 型与 B 型恒星释放出强烈的紫外辐射与恒星风,电离并吹空了周围的气体,从而塑造出玫瑰星云标志性的中央空腔与花环造型。它含数十颗成员星,其中几颗是质量极大的蓝白色亮星。明亮的成员星与红色背景星云对比鲜明,肉眼即可见到星团本身。它是冬季麒麟座中焦摄影的人气目标,常与整个玫瑰星云一同入镜。"
+  descriptionEn: "NGC 2244 is the open cluster at the heart of the Rosette Nebula, about 5,200 light-years away and very young at only about two million years old. Its hot O- and B-type stars pour out intense ultraviolet radiation and stellar winds, ionizing and blowing out the surrounding gas to sculpt the Rosette's signature central cavity and ring. It holds a few dozen members, including several very massive blue-white luminaries. Its bright stars contrast sharply with the red background nebula, and the cluster itself is visible to the naked eye. It is a popular winter mid-focal-length target in Monoceros, usually framed with the whole Rosette."
+  focal: "中焦 400–800mm"
+  image: ngc2244
+- id: M27
+  name: "哑铃星云"
+  nameEn: "Dumbbell Nebula"
+  catalog: Messier
+  type: planetary-nebula
+  typeLabel: "行星状星云"
+  constellation: "狐狸座 Vul"
+  ra: "19h59m"
+  dec: 22
+  decLabel: "+22°"
+  magnitude: 7.5
+  hemisphere: north
+  season: summer
+  difficulty: intermediate
+  summary: "最亮最大的行星状星云之一。"
+  summaryEn: "The brightest, largest planetary nebula, the first ever discovered."
+  description: "哑铃星云(M27,NGC 6853)距地球约 1360 光年,位于狐狸座,是天空中最亮、视面最大的行星状星云,也是 1764 年梅西耶发现的、人类记录的第一个行星状星云。它由一颗垂死的恒星抛出的气壳构成,呈双瓣的哑铃(或苹果核)形状,正面对着我们。星云呈青绿色的氧 III 与红粉色的氢双色调,中心是一颗正逐渐冷却的炽热白矮星。它表面亮度高、易于观测和拍摄,是入门行星状星云摄影的理想目标,长焦下色彩与对称结构尤为迷人。"
+  descriptionEn: "The Dumbbell Nebula (M27, NGC 6853) lies about 1,360 light-years away in Vulpecula and is the brightest, largest planetary nebula in the sky, as well as the first ever recorded, discovered by Messier in 1764. Built from the gas shell cast off by a dying star, it shows a two-lobed dumbbell (or apple-core) shape presented face-on. The nebula glows in twin tones of teal O III and red-pink hydrogen, with a hot, slowly cooling white dwarf at its center. High in surface brightness and easy to observe and image, it is an ideal beginner's planetary-nebula target, its color and symmetric structure especially captivating at long focal lengths."
+  focal: "长焦 1000mm+"
+  image: m27-dumbbell
+- id: M57
+  name: "环状星云"
+  nameEn: "Ring Nebula"
+  catalog: Messier
+  type: planetary-nebula
+  typeLabel: "行星状星云"
+  constellation: "天琴座 Lyr"
+  ra: "18h54m"
+  dec: 33
+  decLabel: "+33°"
+  magnitude: 8.8
+  hemisphere: north
+  season: summer
+  difficulty: intermediate
+  summary: "教科书般的烟圈状行星状星云。"
+  summaryEn: "The textbook smoke-ring planetary nebula in Lyra."
+  description: "环状星云距地球约 2300 光年,位于天琴座,是最著名的行星状星云,形如一缕完美的彩色烟圈。它是一颗类太阳恒星演化末期抛出的气壳:垂死恒星的外层被吹离,留下的炽热核心(白矮星)以紫外辐射使气壳发光。气壳由内向外呈现蓝绿色(双电离氧 O III)到橙红色(氮、氢)的渐变环,中心是逐渐冷却的白矮星。它视面虽小(约 1 角分),但表面亮度高,小望远镜中即可见为烟圈状。长焦下其色彩与对称结构极为迷人,深曝还能记录外围暗淡的氢晕。它是夏季行星状星云摄影的经典目标。"
+  descriptionEn: "The Ring Nebula lies about 2,300 light-years away in Lyra and is the most famous planetary nebula, shaped like a perfect colored smoke ring. It is the shell of gas cast off by a dying Sun-like star: the star's outer layers were expelled, and the hot remnant core (a white dwarf) lights the shell with ultraviolet radiation. The shell grades from blue-green (doubly ionized oxygen, O III) inward to orange-red (nitrogen and hydrogen) outward, with the cooling white dwarf at its center. Though small (about 1 arcminute), its high surface brightness makes the ring visible even in small telescopes. Under long focal lengths its color and symmetry are captivating, and deep exposures reveal the faint outer hydrogen halo. It is a classic summer planetary-nebula target."
+  focal: "长焦 1500mm+"
+  image: m57-ring
+- id: M97
+  name: "猫头鹰星云"
+  nameEn: "Owl Nebula"
+  catalog: Messier
+  type: planetary-nebula
+  typeLabel: "行星状星云"
+  constellation: "大熊座 UMa"
+  ra: "11h15m"
+  dec: 55
+  decLabel: "+55°"
+  magnitude: 9.9
+  hemisphere: north
+  season: spring
+  difficulty: advanced
+  summary: "两只暗眼睛构成的猫头鹰之脸。"
+  summaryEn: "Planetary nebula whose two dark patches form an owl's face."
+  description: "猫头鹰星云距地球约 2030 光年,位于大熊座北斗七星附近,因内部两个对称的暗区形似猫头鹰的双眼而得名。它是一个面状的行星状星云,直径约三光年,由一颗垂死恒星抛出的气壳构成,年龄约八千年。主体呈青绿色的氧光,外围还有一层暗淡的红色氢晕,中心是一颗逐渐冷却的白矮星。它视星等约 9.9 等,表面亮度低,目视较为暗淡。它适合长焦窄带长曝,以拍出标志性的「双眼」结构,是春季大熊座的经典行星状星云。"
+  descriptionEn: "The Owl Nebula lies about 2,030 light-years away in Ursa Major, near the Big Dipper, named for two symmetric dark patches that resemble an owl's eyes. It is a face-on planetary nebula about three light-years across, formed from gas shed by a dying star roughly 8,000 years ago. Its body glows teal from oxygen, ringed by a faint red hydrogen halo, with a cooling white dwarf at its center. At magnitude 9.9 its low surface brightness makes it faint visually. It suits long narrowband exposures to bring out the signature 'eyes,' a classic spring planetary nebula in Ursa Major."
+  focal: "长焦 1500mm+"
+  image: m97-owl
+- id: NGC40
+  name: "蝴蝶结星云"
+  nameEn: "Bow-Tie Nebula"
+  catalog: NGC
+  type: planetary-nebula
+  typeLabel: "行星状星云"
+  constellation: "仙王座 Cep"
+  ra: "00h13m"
+  dec: 72
+  decLabel: "+72°"
+  magnitude: 11.4
+  hemisphere: north
+  season: autumn
+  difficulty: advanced
+  summary: "红色气壳包裹亮星的行星状星云。"
+  summaryEn: "A small planetary nebula wrapping a hot dying star in a warm red shell."
+  description: "蝴蝶结星云(NGC 40,Caldwell 2)距地球约 3500 光年,位于仙王座,是一个小巧的行星状星云。它中央一颗温度高达约 5 万度的明亮垂死恒星,被一圈温暖的红色气壳环绕——这层气体由恒星早先抛出,如今正被中央恒星的强辐射加热而发光。然而星云气体的温度实际上比中央恒星更高,是研究行星状星云物理的有趣样本。哈勃影像显示,约三万年后这层气壳将冷却、消散于星际空间。它长焦下呈现别致而温暖的红橙色调,是仙王座深秋的小型挑战目标。"
+  descriptionEn: "The Bow-Tie Nebula (NGC 40, Caldwell 2) lies about 3,500 light-years away in Cepheus and is a small planetary nebula. At its center sits a bright dying star around 50,000 degrees, wrapped in a warm red gas shell that the star expelled earlier and now heats to a glow with its intense radiation. Curiously, the nebula's gas is actually hotter than the central star itself, making it an interesting case for planetary-nebula physics. Hubble imagery indicates that in roughly 30,000 years this shell will cool and disperse into interstellar space. It shows a distinctive warm red-orange hue at long focal lengths, a small challenging target in the late autumn Cepheus sky."
+  focal: "长焦 1500mm+"
+  image: ngc40
+- id: NGC6302
+  name: "虫状星云"
+  nameEn: "Bug Nebula"
+  catalog: NGC
+  type: planetary-nebula
+  typeLabel: "行星状星云"
+  constellation: "天蝎座 Sco"
+  ra: "17h13m"
+  dec: -37
+  decLabel: "−37°"
+  magnitude: 7.1
+  hemisphere: south
+  season: summer
+  difficulty: intermediate
+  summary: "双极蝴蝶状的行星状星云。"
+  summaryEn: "A dramatic bipolar planetary nebula with butterfly-wing lobes in Scorpius."
+  description: "虫状星云(又称蝴蝶星云)距地球约 3400 光年,位于天蝎座,是已知最复杂、最壮丽的双极行星状星云之一。它的中心恒星是已知温度最高的白矮星之一,表面温度高达约 25 万度,被一圈致密的尘埃环遮挡,正是这道尘埃环将喷出的气体约束成对称展开的「蝴蝶翅膀」。垂死恒星向两侧高速喷出炽热气体,翅膀跨度超过 3 光年,内部还含有罕见的矿物尘埃如方解石。它视星等约 7.1,长焦高分辨拍摄下细节惊艳。它是哈勃望远镜的经典成像目标,也是南天夏季行星状星云摄影的精品。"
+  descriptionEn: "The Bug Nebula (also the Butterfly Nebula) lies about 3,400 light-years away in Scorpius and is one of the most complex and spectacular bipolar planetary nebulae known. Its central star is one of the hottest white dwarfs known, with a surface temperature near 250,000 K, hidden behind a dense dust torus that channels the ejected gas into symmetric 「butterfly wings.」 The dying star drives hot gas outward at high speed, the wings spanning over 3 light-years and containing rare mineral dust such as calcite. At magnitude 7.1, it shows stunning detail under high-resolution long-focus imaging. A classic Hubble target, it is a gem of southern summer planetary-nebula photography."
+  focal: "长焦 1500mm+"
+  image: ngc6302
+- id: NGC6826
+  name: "闪视行星状星云"
+  nameEn: "Blinking Planetary"
+  catalog: NGC
+  type: planetary-nebula
+  typeLabel: "行星状星云"
+  constellation: "天鹅座 Cyg"
+  ra: "19h45m"
+  dec: 50
+  decLabel: "+50°"
+  magnitude: 8.8
+  hemisphere: north
+  season: summer
+  difficulty: intermediate
+  summary: "目视会「闪烁」的青色行星状星云。"
+  summaryEn: "Teal planetary nebula that appears to 'blink' at the eyepiece."
+  description: "闪视行星状星云距地球约 2200 光年,位于天鹅座,是一个明亮小巧的行星状星云。它因中央恒星异常明亮,使观测者在直视与侧视(余光)之间切换时,星云似乎在明灭闪烁,因而得名「闪视行星状星云」。其主体呈青绿色圆盘,由垂死恒星抛出的气壳构成。哈勃影像揭示出星云两侧有一对红色的「快速低电离发射区」结点(FLIERs),正以超音速向外喷射。它视星等约 8.8 等,是天鹅座中精致而上镜的长焦目标。"
+  descriptionEn: "The Blinking Planetary lies about 2,200 light-years away in Cygnus, a bright, compact planetary nebula. Its central star is so bright that the nebula seems to flicker on and off as an observer switches between direct and averted vision, hence its name. Its body is a teal disk formed from gas shed by a dying star. Hubble imaging revealed a pair of red Fast Low-Ionization Emission Regions (FLIERs) flanking it, shooting outward at supersonic speeds. At magnitude 8.8 it is a refined and photogenic long-focal-length target in Cygnus."
+  focal: "长焦 1500mm+"
+  image: ngc6826
+- id: NGC7293
+  name: "螺旋星云"
+  nameEn: "Helix Nebula"
+  catalog: NGC
+  type: planetary-nebula
+  typeLabel: "行星状星云"
+  constellation: "宝瓶座 Aqr"
+  ra: "22h30m"
+  dec: -21
+  decLabel: "−21°"
+  magnitude: 7.6
+  hemisphere: south
+  season: autumn
+  difficulty: intermediate
+  summary: "离地最近的「上帝之眼」行星状星云。"
+  summaryEn: "The nearest bright planetary nebula, the eye-like \"Eye of God.\""
+  description: "螺旋星云(NGC 7293,Caldwell 63)距地球仅约 650 光年,位于宝瓶座,是离我们最近的明亮行星状星云之一,因酷似一只巨大的眼睛而被称为「上帝之眼」。它视面接近满月大小,是一颗类太阳恒星走向终点时抛出的气壳。蓝绿色的氧 III 内盘与红色的氢、氮外缘层层环绕,内壁还密布着数千个朝向中央白矮星的「彗状结」(cometary knots),每个都比太阳系还大,极具科学价值。因离我们近且视面大,中长焦即可拍出宏伟全貌与丰富细节,是秋季南天最上镜的行星状星云。"
+  descriptionEn: "The Helix Nebula (NGC 7293, Caldwell 63) lies only about 650 light-years away in Aquarius and is one of the nearest bright planetary nebulae, nicknamed the \"Eye of God\" for its resemblance to a giant eye. Spanning nearly the size of the full moon, it is the gas shell cast off by a Sun-like star reaching its end. A teal O III inner disk is ringed by layers of red hydrogen and nitrogen, and its inner walls bristle with thousands of \"cometary knots\" pointing toward the central white dwarf, each larger than our solar system and of great scientific interest. Being close and large on the sky, it reveals its grand form and rich detail even at medium-to-long focal lengths, the most photogenic planetary nebula of the southern autumn."
+  focal: "中长焦 800–1200mm"
+  image: ngc7293
+- id: M78
+  name: "M78 反射星云"
+  nameEn: "Messier 78"
+  catalog: Messier
+  type: reflection-nebula
+  typeLabel: "反射星云"
+  constellation: "猎户座 Ori"
+  ra: "05h47m"
+  dec: 0
+  decLabel: "+00°"
+  magnitude: 8.3
+  hemisphere: both
+  season: winter
+  difficulty: intermediate
+  summary: "猎户座中最亮的蓝色反射星云。"
+  summaryEn: "The brightest reflection nebula in the sky, a blue glow in Orion."
+  description: "M78 是全天最亮的反射星云之一,距地球约 1350 光年,位于猎户座大星云东北的猎户座分子云复合体内。两颗炽热的年轻 B 型恒星照亮周围的尘埃,尘埃散射星光散射出醒目的钴蓝色光辉。星云内夹杂着蜿蜒的暗尘带,并藏有数十个赫比格-哈罗天体——年轻恒星喷流撞击周围气体产生的发光结点,是恒星诞生的证据。它附近还有 NGC 2071 等伴随星云。拍摄时常与周边广阔的红色 Hα 发射区域形成冷暖对比,适合中长焦拍摄,是猎户座区域上镜的反射星云。"
+  descriptionEn: "M78 is one of the brightest reflection nebulae in the sky, lying about 1,350 light-years away within the Orion molecular cloud complex northeast of the Orion Nebula. Two hot young B-type stars illuminate the surrounding dust, which scatters their light into a striking cobalt-blue glow. Winding dark dust lanes thread the nebula, which hosts dozens of Herbig-Haro objects—glowing knots where young-star jets slam into surrounding gas, evidence of star birth. Nearby companion nebulae such as NGC 2071 share the region. Images often play its cool blue against broad red H-alpha emission around it, suiting a medium-to-long focal length, making it a photogenic reflection nebula in the Orion field."
+  focal: "中长焦 800–1200mm"
+  image: m78
+- id: Sh2-279
+  name: "奔跑人星云"
+  nameEn: "Running Man Nebula"
+  catalog: Other
+  type: reflection-nebula
+  typeLabel: "反射星云"
+  constellation: "猎户座 Ori"
+  ra: "05h35m"
+  dec: -4
+  decLabel: "−04°"
+  magnitude: 7
+  hemisphere: both
+  season: winter
+  difficulty: intermediate
+  summary: "蓝色尘埃中的奔跑人影。"
+  summaryEn: "Blue reflection nebula whose dark dust traces a running figure."
+  description: "奔跑人星云(Sh2-279)距地球约 1500 光年,位于猎户座大星云正北方,是猎户座大星云复合体的一部分。它主要是一片蓝色反射星云,其中嵌着一小块红色发射区;暗尘的分布酷似一个奔跑的人形,因而得名。蓝色光辉来自年轻恒星照亮并被周围尘埃散射的星光。它常与南侧的 M42 同框拍摄,形成红蓝相邻的冷暖色调对比。它视星等约 7 等,是猎户座区域中上镜而易拍的反射星云。"
+  descriptionEn: "The Running Man Nebula (Sh2-279) lies about 1,500 light-years away just north of the Orion Nebula, part of the same Orion complex. It is chiefly a blue reflection nebula with a small embedded red emission patch, and its dark dust traces the shape of a running figure, hence the name. The blue glow is starlight from young stars scattered by surrounding dust. It is often framed with M42 to the south, creating a cool-warm contrast of adjacent blue and red. At magnitude 7 it is a photogenic and accessible reflection nebula in the Orion region."
+  focal: "中长焦 800–1200mm"
+  image: sh2279
+- id: C33
+  name: "东面纱星云"
+  nameEn: "Eastern Veil Nebula"
+  catalog: Caldwell
+  type: supernova-remnant
+  typeLabel: "超新星遗迹"
+  constellation: "天鹅座 Cyg"
+  ra: "20h56m"
+  dec: 31
+  decLabel: "+31°"
+  magnitude: 7
+  hemisphere: north
+  season: summer
+  difficulty: intermediate
+  summary: "面纱星云东侧的丝状遗迹。"
+  summaryEn: "The bright, lace-like eastern half of the Cygnus Loop supernova remnant."
+  description: "东面纱星云(C33,NGC 6992)是天鹅座环超新星遗迹的东半部,距地球约 2400 光年,位于天鹅座。整个天鹅座环源自约一万至两万年前一颗大质量恒星的超新星爆发,膨胀的激波至今仍以每秒上百公里的速度扫过星际介质,被加热的气体发出纤细如蕾丝的丝状辉光。它呈红色氢与青色氧的双色调,前者来自较冷区域,后者来自高温激波前沿。整个遗迹视面达 6 个满月宽,而东面纱是其中最明亮、最细密的一段。窄带拍摄下细丝层次极为震撼,是夏秋之交的明星遗迹。"
+  descriptionEn: "The Eastern Veil Nebula (C33, NGC 6992) is the eastern half of the Cygnus Loop supernova remnant, lying about 2,400 light-years away in Cygnus. The whole Cygnus Loop stems from the supernova of a massive star some 10,000 to 20,000 years ago, and its expanding shock still sweeps through the interstellar medium at hundreds of kilometers per second, the heated gas glowing in delicate, lace-like filaments. It shows twin tones of red hydrogen and teal oxygen, the former from cooler zones and the latter from the hot shock front. The full remnant spans six full-moon widths, and the Eastern Veil is its brightest, finest section. Narrowband imaging reveals stunning layers of filaments, making it a star remnant of late summer into autumn."
+  focal: "中焦 400–800mm"
+  image: c33
+- id: C34
+  name: "西面纱星云"
+  nameEn: "Western Veil Nebula"
+  catalog: Caldwell
+  type: supernova-remnant
+  typeLabel: "超新星遗迹"
+  constellation: "天鹅座 Cyg"
+  ra: "20h46m"
+  dec: 30
+  decLabel: "+30°"
+  magnitude: 7
+  hemisphere: north
+  season: summer
+  difficulty: intermediate
+  summary: "穿过亮星的「女巫扫帚」丝带。"
+  summaryEn: "The western half of the Cygnus Loop, the Witch's Broom past 52 Cygni."
+  description: "西面纱星云(NGC 6960)是天鹅座环超新星遗迹的西半部,距地球约 2400 光年,位于天鹅座。它因恰好穿过明亮的前景恒星 52 Cygni、形似一把扫帚而又称「女巫扫帚」星云。它与东面纱星云同属约一万至两万年前一颗大质量恒星爆发的遗迹,膨胀的激波在与星际介质碰撞中被激发,呈现出红色氢(Hα)与青色氧(O III)交织的精细丝状结构。整个天鹅座环视面达约 3°(约 6 个满月宽),亮度低但结构极其精致。它是宽场窄带摄影的杰作,适合中焦镜头配合双窄带滤镜拍摄。"
+  descriptionEn: "The Western Veil Nebula (NGC 6960) is the western half of the Cygnus Loop supernova remnant, lying about 2,400 light-years away in Cygnus. Because it passes across the bright foreground star 52 Cygni and resembles a broom, it is also called the Witch's Broom Nebula. Like the Eastern Veil, it is the remnant of a massive star that exploded roughly 10,000–20,000 years ago, its expanding shock wave excited as it collides with the interstellar medium to glow in interwoven red hydrogen (H-alpha) and cyan oxygen (O III) filaments. The whole Cygnus Loop spans about 3° (some six Moon-widths), faint but exquisitely structured. It is a wide-field narrowband masterpiece, suiting a medium focal length with dual-narrowband filters."
+  focal: "中焦 400–800mm"
+  image: veil
+- id: IC443
+  name: "水母星云"
+  nameEn: "Jellyfish Nebula"
+  catalog: IC
+  type: supernova-remnant
+  typeLabel: "超新星遗迹"
+  constellation: "双子座 Gem"
+  ra: "06h17m"
+  dec: 22
+  decLabel: "+22°"
+  magnitude: 12
+  hemisphere: north
+  season: winter
+  difficulty: advanced
+  summary: "拖着触须的水母状超新星遗迹。"
+  summaryEn: "Jellyfish-shaped supernova remnant trailing filamentary tendrils."
+  description: "水母星云距地球约 5000 光年,位于双子座,是一处约三万年前爆发的超新星遗迹。它因弧形的激波带拖着丝状的「触须」、整体形似一只水母而得名。爆发抛出的气体仍在以高速膨胀,与周围星际介质碰撞激波,产生红色的氢与青绿色的氧发射丝。遗迹中心据信留有一颗中子星。它视星等约 12 等,表面亮度低、目视极难。窄带拍摄会呈现层次分明的激波细丝,是冬季双子座中富有挑战又极上镜的窄带目标。"
+  descriptionEn: "The Jellyfish Nebula lies about 5,000 light-years away in Gemini, a supernova remnant from an explosion roughly 30,000 years ago. It is named for its arc-shaped shock front trailing filamentary 'tendrils,' giving it the look of a jellyfish. Gas flung out by the blast still expands at high speed, shocking against the surrounding interstellar medium to produce red hydrogen and teal oxygen filaments. A neutron star is thought to remain at its center. At magnitude 12 its low surface brightness makes it very hard visually. Narrowband imaging reveals finely layered shock filaments, making it a challenging yet highly photogenic winter target in Gemini."
+  focal: "中长焦 800–1200mm"
+  image: ic443
+- id: M1
+  name: "蟹状星云"
+  nameEn: "Crab Nebula"
+  catalog: Messier
+  type: supernova-remnant
+  typeLabel: "超新星遗迹"
+  constellation: "金牛座 Tau"
+  ra: "05h35m"
+  dec: 22
+  decLabel: "+22°"
+  magnitude: 8.4
+  hemisphere: north
+  season: winter
+  difficulty: intermediate
+  summary: "1054 年超新星爆发的著名残骸。"
+  summaryEn: "The famous remnant of the supernova recorded in 1054 AD."
+  description: "蟹状星云(M1,NGC 1952)是公元 1054 年那颗被中国、日本等多地天文学家记录的「客星」超新星爆发后留下的残骸,距地球约 6500 光年,位于金牛座。它是首个被确认与历史超新星对应的天体,梅西耶 1758 年观测它时萌生了编纂星云星团表的想法,使之成为梅西耶天体表的第一号。星云由丝状的红色发射气体与弥漫的蓝色同步辐射构成,中心是一颗每秒自转约 30 次、剧烈跳动的蟹状星云脉冲星(中子星)。作为历史最著名的超新星遗迹,它在长焦下细节惊人,科学与观赏价值兼具。"
+  descriptionEn: "The Crab Nebula (M1, NGC 1952) is the remnant of the \"guest star\" supernova recorded in 1054 AD by astronomers in China, Japan and elsewhere, lying about 6,500 light-years away in Taurus. It was the first object confirmed to match a historical supernova, and Messier's 1758 observation of it sparked the idea for his catalog, making it entry number one. The nebula combines filamentary red emission gas with diffuse blue synchrotron radiation, and at its center beats the Crab Pulsar, a neutron star spinning about 30 times per second. As the most famous supernova remnant in history, it shows astonishing detail at long focal lengths, prized for both science and beauty."
+  focal: "长焦 1500mm+"
+  image: m1-crab
+- id: NGC6979
+  name: "皮克林三角"
+  nameEn: "Pickering's Triangle"
+  catalog: NGC
+  type: supernova-remnant
+  typeLabel: "超新星遗迹"
+  constellation: "天鹅座 Cyg"
+  ra: "20h50m"
+  dec: 32
+  decLabel: "+32°"
+  magnitude: 7
+  hemisphere: north
+  season: summer
+  difficulty: intermediate
+  summary: "面纱星云中央的三角丝带。"
+  summaryEn: "The faint triangular filaments at the heart of the Cygnus Loop."
+  description: "皮克林三角是天鹅座环超新星遗迹中央偏北的一片较暗的三角形丝状结构,距地球约 2400 光年,位于天鹅座。它得名于哈佛天文台台长爱德华·皮克林,实际由其助手威廉敏娜·弗莱明在底片上发现。它连接着东、西面纱星云,与它们同属约一万多年前一颗大质量恒星爆发的遗迹,呈现纤细的红色氢与青色氧激波丝。它表面亮度较低,在三段面纱结构中最为暗淡,是宽场拍摄整个天鹅座环时不可或缺的中段细节。它适合中焦镜头配合窄带滤镜,在暗夜下长曝呈现其精细丝状结构。"
+  descriptionEn: "Pickering's Triangle is a fainter triangular patch of filaments north of center in the Cygnus Loop supernova remnant, lying about 2,400 light-years away in Cygnus. It is named for Harvard Observatory director Edward Pickering, though it was actually discovered on photographic plates by his assistant Williamina Fleming. It bridges the Eastern and Western Veil and shares their origin in a massive star that exploded over 10,000 years ago, showing delicate red hydrogen and cyan oxygen shock filaments. With the lowest surface brightness of the three Veil sections, it is an essential middle piece when imaging the whole Cygnus Loop wide-field. It suits a medium focal length with narrowband filters and long exposures under dark skies to reveal its fine filamentary structure."
+  focal: "中焦 400–800mm"
+  image: ngc6979
+- id: NGC6914
+  name: "NGC 6914 反射星云"
+  nameEn: "NGC 6914"
+  catalog: NGC
+  type: reflection-nebula
+  typeLabel: "反射星云"
+  constellation: "天鹅座 Cyg"
+  ra: "20h24m"
+  dec: 42
+  decLabel: "+42°"
+  magnitude: null
+  hemisphere: north
+  season: summer
+  difficulty: advanced
+  summary: "红色氢区中的蓝色反射星云群。"
+  summaryEn: "Blue reflection nebulae set in a red hydrogen field."
+  description: "NGC 6914 距地球约 6000 光年,位于天鹅座 γ 星附近的广阔发射星云带中。它是一组蓝色反射星云,被年轻炽热恒星照亮,镶嵌在大片红色氢发射背景与暗尘埃之上,蓝红对比鲜明。需结合宽带与 H-alpha 才能同时呈现反射的蓝与发射的红,是夏季富色彩的进阶目标。"
+  descriptionEn: "About 6,000 light-years away near Gamma Cygni's broad emission complex, NGC 6914 is a group of blue reflection nebulae lit by hot young stars and set against a large red hydrogen background laced with dark dust. Combining broadband and H-alpha is needed to render both the reflected blue and emitted red, a colorful advanced summer target."
+  focal: "中焦 500–1000mm"
+  image: ngc6914
+- id: IC2118
+  name: "女巫头星云"
+  nameEn: "Witch Head Nebula"
+  catalog: IC
+  type: reflection-nebula
+  typeLabel: "反射星云"
+  constellation: "波江座 Eri"
+  ra: "05h02m"
+  dec: -7
+  decLabel: "−07°"
+  magnitude: null
+  hemisphere: both
+  season: winter
+  difficulty: advanced
+  summary: "参宿七照亮的蓝色女巫侧脸。"
+  summaryEn: "A blue reflection profile lit by the star Rigel."
+  description: "女巫头星云 IC 2118 距地球约 900 光年,位于波江座,是一团暗淡的蓝色反射星云,被附近的亮星参宿七(猎户座 β)照亮。其轮廓酷似一张仰望的女巫侧脸而得名。星云表面暗弱,需深曝光与暗夜才能呈现淡雅的蓝色尘埃质感,是冬季考验信噪比的反射星云目标。"
+  descriptionEn: "About 900 light-years away in Eridanus, the Witch Head Nebula (IC 2118) is a faint blue reflection nebula illuminated by the nearby bright star Rigel (Beta Orionis). Its outline resembles the profile of a witch's face gazing upward. Faint in surface brightness, it needs deep exposure and dark skies to reveal its soft blue dust, a winter test of signal-to-noise."
+  focal: "短—中焦 300–600mm"
+  image: ic2118
+- id: NGC1977
+  name: "奔跑的人星云"
+  nameEn: "Running Man Nebula"
+  catalog: NGC
+  type: reflection-nebula
+  typeLabel: "反射星云"
+  constellation: "猎户座 Ori"
+  ra: "05h35m"
+  dec: -4
+  decLabel: "−04°"
+  magnitude: 7
+  hemisphere: both
+  season: winter
+  difficulty: intermediate
+  summary: "猎户大星云上方的蓝色反射星云。"
+  summaryEn: "A blue reflection nebula just above the Orion Nebula."
+  description: "奔跑的人星云 NGC 1977 距地球约 1500 光年,位于猎户大星云(M42)正上方,是一团醒目的蓝色反射星云。暗尘埃在蓝色辉光中勾勒出一个奔跑人形的剪影而得名。它几乎总与 M42、M43 同框,蓝红对比强烈,是冬季宽视场摄影中极受欢迎的配景。"
+  descriptionEn: "About 1,500 light-years away just above the Orion Nebula (M42), the Running Man Nebula (NGC 1977) is a striking blue reflection nebula. Dark dust within the blue glow traces the silhouette of a running figure, giving it its name. Almost always framed with M42 and M43, its blue-red contrast makes it a favorite companion in wide-field winter imaging."
+  focal: "中焦 500–1000mm"
+  image: ngc1977
+- id: M10
+  name: "M10 球状星团"
+  nameEn: "Messier 10"
+  catalog: Messier
+  type: globular-cluster
+  typeLabel: "球状星团"
+  constellation: "蛇夫座 Oph"
+  ra: "16h57m"
+  dec: -4
+  decLabel: "−04°"
+  magnitude: 6.6
+  hemisphere: both
+  season: summer
+  difficulty: intermediate
+  summary: "蛇夫座明亮的球状星团。"
+  summaryEn: "A bright globular cluster in Ophiuchus."
+  description: "M10 距地球约 14000 光年,是蛇夫座一个明亮的球状星团,直径约 80 光年。它核心致密、外缘恒星渐疏,在中等口径中即可分解出大量成员。常与邻近的 M12 同框出现在蛇夫座宽视场中。长焦拍摄能将密集的金色星点逐一分辨,是夏季的经典球状星团目标。"
+  descriptionEn: "About 14,000 light-years away, M10 is a bright globular cluster in Ophiuchus roughly 80 light-years across. With a dense core fading to scattered outer stars, it resolves into many members in modest apertures. It often appears with the nearby M12 in a wide Ophiuchus field. Long-focal imaging resolves the dense golden stars individually, a classic summer globular target."
+  focal: "长焦 1000mm+"
+  image: m10
+- id: M12
+  name: "M12 球状星团"
+  nameEn: "Messier 12"
+  catalog: Messier
+  type: globular-cluster
+  typeLabel: "球状星团"
+  constellation: "蛇夫座 Oph"
+  ra: "16h47m"
+  dec: -2
+  decLabel: "−02°"
+  magnitude: 6.7
+  hemisphere: both
+  season: summer
+  difficulty: intermediate
+  summary: "结构较松散的蛇夫座球状星团。"
+  summaryEn: "A loosely concentrated globular in Ophiuchus."
+  description: "M12 距地球约 16000 光年,是蛇夫座一个相对松散的球状星团,核心不如多数球状星团致密,因而成员更易分辨。它与 M10 仅相距 3 度,常被一同观测拍摄。长焦下可见从核心到外缘均匀展开的金色星点,是夏季蛇夫座球状星团群中的耐看目标。"
+  descriptionEn: "About 16,000 light-years away, M12 is a relatively loose globular cluster in Ophiuchus whose core is less concentrated than most globulars, making its stars easier to resolve. Only 3 degrees from M10, the two are often observed and imaged together. At long focal length its golden stars spread evenly from core to edge, a rewarding member of the summer Ophiuchus globulars."
+  focal: "长焦 1000mm+"
+  image: m12
+- id: M55
+  name: "M55 球状星团"
+  nameEn: "Messier 55"
+  catalog: Messier
+  type: globular-cluster
+  typeLabel: "球状星团"
+  constellation: "人马座 Sgr"
+  ra: "19h40m"
+  dec: -31
+  decLabel: "−31°"
+  magnitude: 6.3
+  hemisphere: south
+  season: summer
+  difficulty: intermediate
+  summary: "松散而易分解的人马座球状星团。"
+  summaryEn: "A loose, easily resolved Sagittarius globular."
+  description: "M55 距地球约 17000 光年,是人马座一个大而松散的球状星团,核心不甚密集,因而即使小望远镜也能分解出大量成员。它在南天银河附近呈一团均匀铺开的金色星点,视直径较大。长焦广视场拍摄能完整收纳其舒展的星海,是夏季南天耐看的球状星团目标。"
+  descriptionEn: "About 17,000 light-years away, M55 is a large, loose globular cluster in Sagittarius with a relatively diffuse core, so even small telescopes resolve many of its members. Near the southern Milky Way it appears as an evenly spread field of golden stars with a large apparent size. A long-focal wide field captures its sprawling star sea, a rewarding summer southern globular target."
+  focal: "长焦 800–1500mm"
+  image: m55
+- id: M85B
+  name: "M85 卫星 NGC 4394"
+  nameEn: "NGC 4394"
+  catalog: NGC
+  type: galaxy
+  typeLabel: "星系"
+  constellation: "后发座 Com"
+  ra: "12h26m"
+  dec: 18
+  decLabel: "+18°"
+  magnitude: 11
+  hemisphere: both
+  season: spring
+  difficulty: advanced
+  summary: "与 M85 同框的棒旋星系。"
+  summaryEn: "A barred spiral framed alongside M85."
+  description: "NGC 4394 距地球约 5300 万光年,位于后发座,是室女座星系团的成员,与透镜星系 M85 共处一个视场。它是一个清晰的棒旋星系,中央短棒延伸出近乎环状的内旋臂,被认为正受 M85 的引力影响。作为 M85 的天然伴景,长焦深拍能把这对一旋一椭的星系收入同一画面。"
+  descriptionEn: "NGC 4394 lies about 53 million light-years away in Coma Berenices and is a Virgo Cluster member sharing a field of view with the lenticular galaxy M85. It is a clear barred spiral whose central bar feeds near-ring inner arms, and it is thought to be gravitationally influenced by M85. As a natural companion to M85, long-focal-length imaging captures this spiral-plus-lenticular pair in a single frame."
+  focal: "长焦 1000–2000mm"
+  image: m85b
+- id: IC2177
+  name: "海鸥星云"
+  nameEn: "Seagull Nebula"
+  catalog: IC
+  type: emission-nebula
+  typeLabel: "发射星云"
+  constellation: "麒麟座 Mon"
+  ra: "07h05m"
+  dec: -10
+  decLabel: "−10°"
+  magnitude: null
+  hemisphere: both
+  season: winter
+  difficulty: advanced
+  summary: "横跨麒麟与大犬的红色海鸥。"
+  summaryEn: "A red seagull-shaped emission complex across two constellations."
+  description: "海鸥星云距地球约 3800 光年,是横跨麒麟座与大犬座边界的一大片红色氢发射区,形似展翅飞鸟,翼展达 2.5 度以上。明亮的圆形「头部」IC 2177 与延展的「翅膀」由年轻恒星电离而发光。视场极大,适合短焦相机镜头或宽幅望远镜配合 H-alpha 滤镜整体拍摄。"
+  descriptionEn: "Some 3,800 light-years away, the Seagull Nebula is a large red hydrogen emission complex straddling the Monoceros–Canis Major border, shaped like a bird in flight with a wingspan over 2.5 degrees. Its bright rounded head, IC 2177, and sweeping wings glow under ionization from hot young stars. The huge field favors short focal lengths or wide refractors with an H-alpha filter."
+  focal: "短—中焦 200–500mm"
+  image: ic2177
+- id: NGC6888
+  name: "新月星云"
+  nameEn: "Crescent Nebula"
+  catalog: NGC
+  type: emission-nebula
+  typeLabel: "发射星云"
+  constellation: "天鹅座 Cyg"
+  ra: "20h12m"
+  dec: 38
+  decLabel: "+38°"
+  magnitude: 7.4
+  hemisphere: north
+  season: summer
+  difficulty: intermediate
+  summary: "天鹅座的沃尔夫-拉叶星风泡。"
+  summaryEn: "A Wolf–Rayet wind bubble in Cygnus."
+  description: "新月星云距地球约 5000 光年,是由中心沃尔夫-拉叶星 WR 136 抛出的炽热气壳。这颗濒死大质量恒星的高速星风撞上早先抛出的物质,吹出一个约 25 光年宽的发光气泡。窄带 SHO 拍摄能呈现氧三蓝绿外壳与氢红丝缕交织的层次,周边还浸在巨大的 OIII 弧中。它是天鹅座银河带上最受欢迎的窄带目标之一。"
+  descriptionEn: "About 5,000 light-years away, the Crescent Nebula is a shell blown by the dying Wolf–Rayet star WR 136. Its fast stellar wind slams into earlier ejecta, inflating a glowing bubble roughly 25 light-years across. Narrowband SHO imaging reveals teal OIII shells laced with red hydrogen filaments, set within a vast surrounding OIII arc. It is one of the most popular narrowband targets along the Cygnus Milky Way."
+  focal: "中—长焦 700–1200mm"
+  image: ngc6888
+- id: vdB152
+  name: "vdB 152 反射星云"
+  nameEn: "vdB 152"
+  catalog: Other
+  type: reflection-nebula
+  typeLabel: "反射星云"
+  constellation: "仙王座 Cep"
+  ra: "22h14m"
+  dec: 70
+  decLabel: "+70°"
+  magnitude: null
+  hemisphere: north
+  season: autumn
+  difficulty: advanced
+  summary: "暗尘埃尽头的幽蓝反射星云。"
+  summaryEn: "A ghostly blue reflection nebula at a dark dust's tip."
+  description: "vdB 152 距地球约 1400 光年,位于仙王座一条长长的暗尘埃丝带末端,是一团幽淡的蓝色反射星云,又称「幽灵星云」。尘埃挡住后方星光形成暗带,末端被一颗恒星照亮成蓝色。表面极暗,需暗夜深曝光呈现其幽蓝与棕褐尘埃的对比,是秋季考验功力的反射星云。"
+  descriptionEn: "About 1,400 light-years away at the end of a long dark dust filament in Cepheus, vdB 152 is a faint blue reflection nebula nicknamed the 'Ghost Nebula.' The dust blocks background starlight to form a dark lane, with its tip lit blue by a star. Very faint in surface brightness, it needs dark skies and deep exposure to show the blue against the brown dust, an advanced autumn target."
+  focal: "中焦 400–900mm"
+  image: vdb152
+- id: NGC3242
+  name: "木魂星云"
+  nameEn: "Ghost of Jupiter"
+  catalog: NGC
+  type: planetary-nebula
+  typeLabel: "行星状星云"
+  constellation: "长蛇座 Hya"
+  ra: "10h25m"
+  dec: -18
+  decLabel: "−18°"
+  magnitude: 7.7
+  hemisphere: both
+  season: spring
+  difficulty: intermediate
+  summary: "形如木星的蓝绿行星状星云。"
+  summaryEn: "A blue-green planetary nebula the size of Jupiter's disk."
+  description: "木魂星云距地球约 4500 光年,是长蛇座一颗濒死恒星抛出的行星状星云。它呈明亮的蓝绿色椭圆双层结构,角径与木星圆面相近因而得名。中心白矮星清晰可见,周围环以暗淡的外晕。本体小而亮,需长焦高分辨率才能展现内外壳层,是春季的高放大率目标。"
+  descriptionEn: "About 4,500 light-years away in Hydra, the Ghost of Jupiter is a planetary nebula ejected by a dying star. It shows a bright blue-green double-shell ellipse roughly the apparent size of Jupiter's disk, hence its name. The central white dwarf is clearly visible, surrounded by a faint outer halo. Small and bright, it needs long focal length and high resolution to show its shells, a spring high-magnification target."
+  focal: "长焦 1500mm+"
+  image: ngc3242
+- id: NGC6543
+  name: "猫眼星云"
+  nameEn: "Cat's Eye Nebula"
+  catalog: NGC
+  type: planetary-nebula
+  typeLabel: "行星状星云"
+  constellation: "天龙座 Dra"
+  ra: "17h58m"
+  dec: 66
+  decLabel: "+66°"
+  magnitude: 8.1
+  hemisphere: north
+  season: summer
+  difficulty: intermediate
+  summary: "层次复杂的明亮行星状星云。"
+  summaryEn: "A bright planetary with intricate nested shells."
+  description: "猫眼星云距地球约 3300 光年,是天龙座一颗濒死恒星抛出的行星状星云,以结构极其复杂著称。其明亮的核心呈猫眼状蓝绿色,外围环以一层层同心气壳与喷流。本体明亮但角径小,长焦能展现核心精细的结构,深曝光可拍出巨大的暗淡外晕,是夏季高人气的行星状星云。"
+  descriptionEn: "About 3,300 light-years away in Draco, the Cat's Eye Nebula is a planetary nebula ejected by a dying star, famous for its extremely intricate structure. Its bright blue-green core has a cat's-eye shape ringed by concentric shells and jets. Bright but small, it reveals fine core detail at long focal length, while deep exposure shows a huge faint outer halo, a popular summer planetary."
+  focal: "长焦 1500mm+"
+  image: ngc6543
+- id: M11
+  name: "野鸭星团"
+  nameEn: "Wild Duck Cluster"
+  catalog: Messier
+  type: open-cluster
+  typeLabel: "疏散星团"
+  constellation: "盾牌座 Sct"
+  ra: "18h51m"
+  dec: -6
+  decLabel: "−06°"
+  magnitude: 5.8
+  hemisphere: both
+  season: summer
+  difficulty: beginner
+  summary: "致密如鸭群的丰富疏散星团。"
+  summaryEn: "A rich open cluster shaped like a flight of ducks."
+  description: "野鸭星团 M11 距地球约 6200 光年,位于盾牌座银河浓密处,是已知最丰富、最致密的疏散星团之一,包含近 3000 颗恒星。其明亮成员排成 V 字形,似一群飞翔的野鸭而得名。背景银河繁星密布,中焦拍摄能呈现星团与银河尘埃的丰富层次,是夏季上镜的疏散星团。"
+  descriptionEn: "About 6,200 light-years away in a dense part of the Scutum Milky Way, the Wild Duck Cluster (M11) is one of the richest and most compact open clusters known, with nearly 3,000 stars. Its bright members form a V-shape resembling a flight of ducks. Against a star-strewn Milky Way background, mid-focal imaging shows rich layering of cluster and dust, a photogenic summer open cluster."
+  focal: "中焦 500–1000mm"
+  image: m11
+- id: M35
+  name: "M35 疏散星团"
+  nameEn: "Messier 35"
+  catalog: Messier
+  type: open-cluster
+  typeLabel: "疏散星团"
+  constellation: "双子座 Gem"
+  ra: "06h09m"
+  dec: 24
+  decLabel: "+24°"
+  magnitude: 5.3
+  hemisphere: north
+  season: winter
+  difficulty: beginner
+  summary: "与小星团 NGC 2158 同框的大疏散星团。"
+  summaryEn: "A large open cluster paired with compact NGC 2158."
+  description: "M35 距地球约 2800 光年,位于双子座足部,是一个明亮而舒展的大型疏散星团,肉眼可见为一片朦胧光斑。它最迷人之处是旁边一个更古老、更致密、更遥远的小星团 NGC 2158,二者大小与密度对比鲜明,同框极具观赏性。中焦广视场即可完美收纳,是冬季人气星团。"
+  descriptionEn: "About 2,800 light-years away at the foot of Gemini, M35 is a bright, sprawling open cluster visible to the naked eye as a hazy patch. Its charm lies in the nearby older, denser, more distant cluster NGC 2158, whose striking contrast in size and density makes a captivating pair. A mid-focal wide field frames both perfectly, a popular winter cluster."
+  focal: "中焦 400–800mm"
+  image: m35
+- id: M95
+  name: "M95 棒旋星系"
+  nameEn: "Messier 95"
+  catalog: Messier
+  type: galaxy
+  typeLabel: "星系"
+  constellation: "狮子座 Leo"
+  ra: "10h44m"
+  dec: 11
+  decLabel: "+11°"
+  magnitude: 9.7
+  hemisphere: both
+  season: spring
+  difficulty: advanced
+  summary: "狮子座的环状棒旋星系。"
+  summaryEn: "A ringed barred spiral in the Leo I group."
+  description: "M95 距地球约 3300 万光年,是狮子座 I 星系群的成员,呈一个近乎正面的棒旋星系。其中央短棒两端连接着一圈近乎完美的恒星形成环,使它在长焦下呈现「希腊字母 θ」般的几何美感。星系亮度中等,适合作为狮子座春季星系巡游的进阶目标。"
+  descriptionEn: "M95 lies about 33 million light-years away as a member of the Leo I group and is a nearly face-on barred spiral. Its central bar connects to an almost perfect circular ring of star formation, giving it a striking theta-shaped geometry at long focal lengths. Moderately bright, it is a fine intermediate target during a spring tour of Leo's galaxies."
+  focal: "长焦 1000–2000mm"
+  image: m95
+- id: NGC3115
+  name: "纺锤星系 NGC 3115"
+  nameEn: "Spindle Galaxy"
+  catalog: NGC
+  type: galaxy
+  typeLabel: "星系"
+  constellation: "六分仪座 Sex"
+  ra: "10h05m"
+  dec: -8
+  decLabel: "−08°"
+  magnitude: 9.9
+  hemisphere: both
+  season: spring
+  difficulty: advanced
+  summary: "藏有十亿太阳质量黑洞的纺锤。"
+  summaryEn: "A spindle hosting a billion-solar-mass black hole."
+  description: "NGC 3115 距地球约 3200 万光年,位于六分仪座,是一个侧向呈现的透镜状星系,因细长纺锤形而得名。它的核心藏有一个约 20 亿太阳质量的超大质量黑洞,是已知离地球最近的十亿级黑洞。星系平滑泛黄、两端尖锐,长焦可拍出其优雅对称的纺锤剪影。"
+  descriptionEn: "NGC 3115 lies about 32 million light-years away in Sextans and is an edge-on lenticular galaxy named for its tapered spindle shape. At its core lurks a supermassive black hole of roughly two billion solar masses, the nearest billion-solar-mass black hole known. Smooth and golden with sharply pointed ends, it presents an elegant symmetric spindle silhouette at long focal lengths."
+  focal: "长焦 1000–2000mm"
+  image: ngc3115
+- id: IC2944
+  name: "奔跑的鸡星云"
+  nameEn: "Running Chicken Nebula"
+  catalog: IC
+  type: emission-nebula
+  typeLabel: "发射星云"
+  constellation: "半人马座 Cen"
+  ra: "11h36m"
+  dec: -63
+  decLabel: "−63°"
+  magnitude: 4.5
+  hemisphere: south
+  season: spring
+  difficulty: beginner
+  summary: "南天含波克球的红色星云。"
+  summaryEn: "Southern red nebula dotted with Bok globules."
+  description: "奔跑的鸡星云距地球约 6500 光年,是半人马座 λ 周围的一大片红色发射星云,因整体轮廓似一只奔跑的鸡而得名。星云中嵌有著名的瑟克斯波克球——一群致密的暗尘埃团块,被周围炽热恒星侵蚀。南天视场宽阔,SHO 与 HOO 窄带都能拍出丰富细节。"
+  descriptionEn: "About 6,500 light-years away, the Running Chicken Nebula is a large red emission region around Lambda Centauri, named for an outline resembling a running fowl. It hosts the famous Thackeray's Globules — dense dark dust clumps being eroded by surrounding hot stars. The wide southern field renders beautifully in both SHO and HOO narrowband."
+  focal: "短—中焦 300–600mm"
+  image: ic2944
+- id: IC4628
+  name: "对虾星云"
+  nameEn: "Prawn Nebula"
+  catalog: IC
+  type: emission-nebula
+  typeLabel: "发射星云"
+  constellation: "天蝎座 Sco"
+  ra: "16h57m"
+  dec: -40
+  decLabel: "−40°"
+  magnitude: 7.3
+  hemisphere: south
+  season: summer
+  difficulty: intermediate
+  summary: "天蝎尾部的巨大红色对虾。"
+  summaryEn: "A huge red prawn-shaped emission cloud in Scorpius."
+  description: "对虾星云距地球约 6000 光年,位于天蝎座尾部附近,是一片直径约 250 光年的巨大红色发射星云,因形似一只对虾而得名。它富含氢气,被内部年轻星团电离发光,夹杂众多暗尘埃带。位于银河浓密区,常与周边疏散星团同框,适合宽视场窄带拍摄。"
+  descriptionEn: "Roughly 6,000 light-years away near the tail of Scorpius, the Prawn Nebula is a vast red emission cloud some 250 light-years across, named for its shrimp-like shape. Rich in hydrogen and ionized by embedded young clusters, it is threaded with dark dust lanes. Set in a dense Milky Way field, it pairs well with nearby open clusters for wide-field narrowband work."
+  focal: "短—中焦 300–700mm"
+  image: ic4628
+- id: NGC2264
+  name: "锥状星云与圣诞树星团"
+  nameEn: "Cone Nebula & Christmas Tree Cluster"
+  catalog: NGC
+  type: emission-nebula
+  typeLabel: "发射星云"
+  constellation: "麒麟座 Mon"
+  ra: "06h41m"
+  dec: 9
+  decLabel: "+09°"
+  magnitude: 3.9
+  hemisphere: both
+  season: winter
+  difficulty: beginner
+  summary: "锥状暗柱、圣诞树星团与狐皮星云。"
+  summaryEn: "Cone pillar, Christmas Tree cluster and Fox Fur Nebula."
+  description: "NGC 2264 距地球约 2700 光年,是麒麟座一处集多种天体于一身的恒星形成区。它包含三角形的圣诞树星团、其尖端下方著名的锥状暗尘柱,以及波浪般的「狐皮星云」反射/发射结构。红色氢气、蓝色反射光与暗尘交织,层次极为上镜,是冬季中焦的人气目标。"
+  descriptionEn: "About 2,700 light-years away in Monoceros, NGC 2264 is a star-forming region packing several icons into one frame: the triangular Christmas Tree Cluster, the dark Cone Nebula pillar at its apex, and the swirling Fox Fur Nebula. Red hydrogen, blue reflection light and dark dust interweave into a richly layered, highly photogenic winter target."
+  focal: "中焦 500–900mm"
+  image: ngc2264
+- id: NGC7009
+  name: "土星星云"
+  nameEn: "Saturn Nebula"
+  catalog: NGC
+  type: planetary-nebula
+  typeLabel: "行星状星云"
+  constellation: "宝瓶座 Aqr"
+  ra: "21h04m"
+  dec: -11
+  decLabel: "−11°"
+  magnitude: 8
+  hemisphere: both
+  season: autumn
+  difficulty: intermediate
+  summary: "带侧向喷流形似土星的行星状星云。"
+  summaryEn: "A planetary nebula with jets resembling Saturn's rings."
+  description: "土星星云距地球约 5000 光年,是宝瓶座一颗中心白矮星抛出的行星状星云。它呈明亮的青绿色椭圆,两侧伸出尖细的喷流状「ansae」,使其在小望远镜中酷似带环的土星。本体明亮但角径很小,需大口径长焦或自适应处理才能展现喷流细节,是高放大率行星状星云目标。"
+  descriptionEn: "About 5,000 light-years away in Aquarius, the Saturn Nebula is a planetary nebula ejected by a central white dwarf. It shows a bright blue-green ellipse with thin jet-like 'ansae' protruding from each end, making it resemble ringed Saturn in small telescopes. Bright but tiny, it needs large aperture and long focal length to reveal the jet detail, a high-magnification planetary target."
+  focal: "长焦 1500mm+"
+  image: ngc7009
+- id: Sh2-240
+  name: "意面星云(Simeis 147)"
+  nameEn: "Spaghetti Nebula (Simeis 147)"
+  catalog: Other
+  type: supernova-remnant
+  typeLabel: "超新星遗迹"
+  constellation: "金牛座 Tau"
+  ra: "05h39m"
+  dec: 28
+  decLabel: "+28°"
+  magnitude: null
+  hemisphere: north
+  season: winter
+  difficulty: advanced
+  summary: "巨大暗弱的意面状超新星遗迹。"
+  summaryEn: "A huge, faint spaghetti-like supernova remnant."
+  description: "意面星云 Simeis 147(Sh2-240)距地球约 3000 光年,横跨金牛座与御夫座边界,是约 4 万年前超新星爆发留下的遗迹。它直径达 3 度,纤细的红蓝丝缕如一团乱面般缠绕。表面极其暗弱,需极暗夜空、宽视场短焦与多夜窄带积累才能呈现丝缕全貌,是冬季终极挑战目标之一。"
+  descriptionEn: "About 3,000 light-years away across the Taurus–Auriga border, the Spaghetti Nebula (Simeis 147, Sh2-240) is the remnant of a supernova roughly 40,000 years ago. Spanning 3 degrees, its thin red and blue filaments tangle like a plate of spaghetti. Extremely faint in surface brightness, it needs very dark skies, a wide short-focal field and many nights of narrowband integration to reveal the full web, an ultimate winter challenge."
+  focal: "短—中焦 200–500mm"
+  image: sh2240
+- id: M36
+  name: "M36 疏散星团"
+  nameEn: "Messier 36"
+  catalog: Messier
+  type: open-cluster
+  typeLabel: "疏散星团"
+  constellation: "御夫座 Aur"
+  ra: "05h36m"
+  dec: 34
+  decLabel: "+34°"
+  magnitude: 6
+  hemisphere: north
+  season: winter
+  difficulty: beginner
+  summary: "御夫座年轻明亮的蓝色疏散星团。"
+  summaryEn: "A young, bright blue open cluster in Auriga."
+  description: "M36 距地球约 4100 光年,是御夫座三大疏散星团之一,以年轻明亮的蓝白色恒星为主。它结构紧凑、成员炽热,在银河背景上格外醒目。常与 M37、M38 共同出现在御夫座银河带的宽视场构图中,中焦拍摄即能展现其干净的蓝色星点,是冬季常见的星团目标。"
+  descriptionEn: "About 4,100 light-years away, M36 is one of Auriga's three prominent open clusters, dominated by young, bright blue-white stars. Compact with hot members, it stands out vividly against the Milky Way. It often appears with M37 and M38 in wide-field compositions of the Auriga Milky Way, and mid-focal imaging cleanly shows its blue stars, a common winter cluster."
+  focal: "中焦 400–800mm"
+  image: m36
+- id: M85
+  name: "M85 透镜星系"
+  nameEn: "Messier 85"
+  catalog: Messier
+  type: galaxy
+  typeLabel: "星系"
+  constellation: "后发座 Com"
+  ra: "12h25m"
+  dec: 18
+  decLabel: "+18°"
+  magnitude: 9.1
+  hemisphere: both
+  season: spring
+  difficulty: advanced
+  summary: "室女团北端的透镜状星系。"
+  summaryEn: "A lenticular galaxy at the northern edge of Virgo."
+  description: "M85 距地球约 6000 万光年,位于室女座星系团的北端边界,是一个平滑泛黄的透镜状(S0)星系。它没有明显旋臂,核心明亮、外缘逐渐隐没,常与旋涡星系 NGC 4394 同框形成对比。亮度中等而结构简洁,适合作为室女团巡游的衬景目标。"
+  descriptionEn: "M85 lies about 60 million light-years away at the northern boundary of the Virgo Cluster and is a smooth, yellowish lenticular (S0) galaxy. It lacks distinct spiral arms, showing a bright core that fades into a diffuse halo, and often shares the frame with the spiral NGC 4394. Moderately bright and clean in form, it makes a fine companion target on a Virgo Cluster tour."
+  focal: "长焦 1000–2000mm"
+  image: m85
+- id: NGC5907
+  name: "裂片星系 NGC 5907"
+  nameEn: "Splinter Galaxy"
+  catalog: NGC
+  type: galaxy
+  typeLabel: "星系"
+  constellation: "天龙座 Dra"
+  ra: "15h16m"
+  dec: 56
+  decLabel: "+56°"
+  magnitude: 11.1
+  hemisphere: north
+  season: summer
+  difficulty: advanced
+  summary: "纤薄如刀刃的侧向旋涡星系。"
+  summaryEn: "An ultra-thin edge-on spiral, knife-edge sharp."
+  description: "NGC 5907 距地球约 5000 万光年,是一个极其纤薄的侧向旋涡星系,因细长锐利的外形被称为「裂片」或「刀刃」星系。它几乎完美地侧向我们,中央贯穿一条笔直的暗尘带。极深曝光揭示出环绕星系的巨大恒星潮汐环流,那是被瓦解的矮星系遗迹,是高阶玩家追求的极限暗弱细节。"
+  descriptionEn: "NGC 5907 lies about 50 million light-years away and is an extremely thin edge-on spiral, nicknamed the Splinter or Knife Edge Galaxy for its slender, razor-sharp profile. It presents almost perfectly edge-on, bisected by a straight dark dust lane. Very deep exposures reveal enormous looping stellar tidal streams around it, the shredded remains of a dwarf galaxy, a prized faint detail for advanced imagers."
+  focal: "长焦 1000–2000mm"
+  image: ngc5907
+- id: NGC2683
+  name: "UFO 星系 NGC 2683"
+  nameEn: "UFO Galaxy"
+  catalog: NGC
+  type: galaxy
+  typeLabel: "星系"
+  constellation: "天猫座 Lyn"
+  ra: "08h53m"
+  dec: 33
+  decLabel: "+33°"
+  magnitude: 10.6
+  hemisphere: north
+  season: winter
+  difficulty: advanced
+  summary: "形似飞碟的侧向旋涡星系。"
+  summaryEn: "An edge-on spiral resembling a flying saucer."
+  description: "NGC 2683 距地球约 3000 万光年,位于天猫座,是一个近乎侧向的旋涡星系,因其圆盘外形酷似飞碟而被称为「UFO 星系」。它有一个明亮泛黄的核球,盘面前缘点缀着斑驳的尘埃带。明亮紧凑、轮廓鲜明,使它成为冬末春初颇受欢迎的侧向星系摄影目标。"
+  descriptionEn: "NGC 2683 lies about 30 million light-years away in Lynx and is a nearly edge-on spiral nicknamed the UFO Galaxy for its saucer-like disk. It shows a bright yellowish bulge with mottled dust lanes silhouetted across the near side of the disk. Bright, compact, and sharply defined, it is a popular edge-on imaging target in late winter and early spring."
+  focal: "长焦 1000–2000mm"
+  image: ngc2683
+- id: NGC2997
+  name: "NGC 2997 旋涡星系"
+  nameEn: "NGC 2997"
+  catalog: NGC
+  type: galaxy
+  typeLabel: "星系"
+  constellation: "唧筒座 Ant"
+  ra: "09h46m"
+  dec: -31
+  decLabel: "−31°"
+  magnitude: 9.5
+  hemisphere: south
+  season: spring
+  difficulty: advanced
+  summary: "南天最美的正向大旋涡星系。"
+  summaryEn: "A magnificent face-on grand-design spiral in the south."
+  description: "NGC 2997 距地球约 3500 万光年,位于南天的唧筒座,是一个正向呈现的宏伟大旋涡星系。它拥有缠绕优雅的旋臂,沿臂分布着一连串粉红色的恒星形成区,核心被一圈年轻星团环绕。盘面大而明亮,是南半球深空摄影中最上镜的正向星系之一。"
+  descriptionEn: "NGC 2997 lies about 35 million light-years away in the southern constellation Antlia and is a magnificent face-on grand-design spiral. Its gracefully sweeping arms are studded with strings of pink star-forming regions, and a ring of young clusters encircles the core. Large and bright in face-on view, it is one of the most photogenic spirals of the southern sky."
+  focal: "长焦 1000–2000mm"
+  image: ngc2997

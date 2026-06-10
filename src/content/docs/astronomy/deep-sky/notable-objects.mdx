@@ -1,0 +1,249 @@
+---
+title: 常见深空天体导览
+description: 业余观测与深空摄影最常拍摄的代表性深空天体导览,按星系、发射星云、行星状星云、暗与反射星云、超新星遗迹、星团分类,逐项配图并给出星座、距离、视星等、类型与最佳观测季节。
+difficulty: beginner
+pillar: astronomy
+sidebar:
+  order: 6
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import ObjectEntry from '@/components/ObjectEntry.astro';
+
+本页是一份导览性质的清单,逐项介绍业余天文观测与深空摄影中最常被选作目标的代表性天体,每个天体配一张图与一段说明,涵盖形态、可见性与观测建议。距离、视星等(apparent magnitude)与类型等数值以 Wikipedia 与 SIMBAD 数据为准,因测量方法不同常有一定范围,正文取常用值。
+
+完整、可按星座/类型/星等筛选的数据列表,见〔[天体目录](/reference/catalog/)〕。各类天体的物理机制分别见〔[星系](/astronomy/deep-sky/galaxies/)〕〔[星云](/astronomy/deep-sky/nebulae/)〕〔[星团](/astronomy/deep-sky/star-clusters/)〕;判断目标在你所在纬度能否升起,见〔[南北半球可见性](/astronomy/observing/hemisphere-visibility/)〕;星等的含义见〔[星等系统](/astronomy/foundations/magnitude/)〕。
+
+<Aside type="note" title="关于「视星等」与「可见性」">
+下文中的视星等多为总星等(integrated magnitude),即天体全部光集中为一个点时的亮度。星云与大星系把光摊在很大的视面积上,表面亮度(surface brightness)远低于这个数字,因此「总星等亮」不等于「肉眼或小镜易见」。
+</Aside>
+
+{/* dso-guide:start */}
+
+## 天体编号与命名
+
+深空天体往往同时拥有多套目录编号。**M** 指梅西耶目录(Messier Catalogue),由 18 世纪法国天文学家梅西耶整理,共 110 个明亮、适合业余观测的天体;**NGC** 是《星云星团新总表》(New General Catalogue,1888 年),收录约 7840 个天体,是目前使用最广的编号;**IC** 是其后续补编(Index Catalogue,约 5386 个);**Caldwell(C)** 由 Patrick Moore 补充梅西耶未收录的亮天体。此外还有按类型划分的专项目录,如 **Sh2**(Sharpless 发射星云表)、**B**(Barnard 暗星云表)、**Cr / Mel**(Collinder、Melotte 疏散星团表)。同一天体常有多个编号,例如猎户座大星云 = M42 = NGC 1976。
+
+## 为什么这些天体是彩色的
+
+肉眼通过望远镜看深空天体,大多只能看到灰白色的轮廓——这并不是因为它们没有颜色,而是它们的**面亮度太低**。视网膜里负责颜色的视锥细胞(cone)需要较强的光才能工作;弱光下只剩对颜色不敏感的视杆细胞(rod)还在响应(暗视觉,scotopic vision),于是一切都呈灰白。照片则不同:相机在几分钟到几十小时的曝光里**持续累积光子**,把肉眼无法察觉的微弱色彩一点点记录下来。这些颜色对应真实的物理过程,主要有以下几类来源。
+
+### 发射星云:电离气体的发射线
+
+发射星云(如猎户、礁湖、北美)本质是**电离氢区(H II 区)**。星云内部炽热的 O / B 型恒星发出大量紫外光,把氢等原子**电离**;当自由电子重新与离子复合、并逐级跃迁回低能级时,会按量子化的能级差放出**特定波长**的光子——这就是发射线。最主要的几条:
+
+| 发射线 | 波长 | 颜色 | 物理成因 |
+| --- | --- | --- | --- |
+| Hα | 656.3 nm | 深红 | 氢原子电子 n=3→2 跃迁(巴尔末系),发射星云最强的红色 |
+| Hβ | 486.1 nm | 青蓝 | 氢原子 n=4→2 跃迁 |
+| OIII | 495.9 / 500.7 nm | 青绿 | **两次电离氧 O²⁺** 的禁线,行星状星云与高激发区的标志色 |
+| SII | 671.6 / 673.1 nm | 更深的红 | 一次电离硫 S⁺ 的发射 |
+
+不同元素、不同电离态各自发出固定波长的光,叠加起来就是星云照片里红、粉、青的来源。
+
+### 反射星云:尘埃散射
+
+反射星云(如昴星团周围的蓝雾)本身不发光,而是**尘埃颗粒散射**附近亮星的光。与地球天空偏蓝同理(散射对短波更有效),散射后的星云偏**蓝**。
+
+### 行星状星云与超新星遗迹
+
+行星状星云(环状、哑铃)是中小质量恒星晚年抛出的电离气壳,OIII 往往很强,因而常呈青绿;超新星遗迹(面纱、蟹状)既有 Hα / OIII 发射线,也有高速电子在磁场中产生的**同步辐射**。
+
+### 星系:恒星族群与尘埃
+
+星系的颜色来自其中的**恒星族群**:核球里年老恒星偏黄红,旋臂上年轻的大质量恒星与 H II 区偏蓝,夹杂的尘埃带呈暗褐。这是接近"真实"的宽带色彩。单颗**恒星**的颜色则由表面温度决定(近似黑体,维恩定律):蓝白最热(O / B 型,数万度),黄色居中(如太阳约 5800 K),橙红最冷(K / M 型)。
+
+### 颜色是怎么"拍"出来的
+
+真实信号变成成片,取决于采集与处理方式,常见三条路线:
+
+1. **单次彩色(OSC)相机**:传感器前覆盖拜耳(Bayer)红绿蓝滤镜阵列,一次曝光即得彩色,接近自然色,门槛最低。
+2. **单色相机 + RGB 滤镜**:分别拍红、绿、蓝三组再合成,配合恒星光度做**色彩校准(SPCC)**,得到尽量接近真实的色彩,细节也更好。
+3. **单色相机 + 窄带滤镜(Hα / OIII / SII)**:每片滤镜只放行一条发射线,极大压制光污染、突出气体结构,城市与月夜也能拍。由于只有三条线,需要把它们**映射**到 RGB 通道,得到「代表色」而非真实色——最常见的 **SHO(哈勃配色)**把 SII→红、Hα→绿、OIII→蓝,**HOO** 则更接近自然。
+
+最后,叠加好的原始数据是"线性"的、几乎全黑,必须经过**拉伸(stretch)**把暗弱信号提亮才看得见,再做色彩校准与降噪。所以深空照片的颜色都对应真实的物理信号,但经过了拉伸与配色,与肉眼直接所见并不相同。窄带与配色的细节见〔[窄带成像](/astrophotography/capture/narrowband/)〕与〔[后期处理流程](/astrophotography/processing/workflow/)〕。
+
+<nav class="dso-toc" aria-label="星体导览目录">
+<div class="dso-toc__title">星体导览目录</div>
+<div class="dso-toc__group"><div class="dso-toc__cat">星系</div><ul class="dso-toc__list"><li><a href="#obj-m31-andromeda">仙女座星系 M31</a></li><li><a href="#obj-m33-triangulum">三角座星系 M33</a></li><li><a href="#obj-m81-bode">波德星系 M81</a></li><li><a href="#obj-m82-cigar">雪茄星系 M82</a></li><li><a href="#obj-m51-whirlpool">涡状星系 M51(Whirlpool Galaxy)+ 伴星系 NGC 5195</a></li><li><a href="#obj-m104-sombrero">草帽星系 M104</a></li><li><a href="#obj-m101-pinwheel">风车星系 M101</a></li><li><a href="#obj-m64-blackeye">黑眼星系 M64</a></li><li><a href="#obj-leo-triplet">狮子三重奏</a></li><li><a href="#obj-ngc253-sculptor">玉夫座星系 NGC 253</a></li><li><a href="#obj-centaurus-a">半人马座 A</a></li><li><a href="#obj-lmc">大麦哲伦云</a></li></ul></div>
+<div class="dso-toc__group"><div class="dso-toc__cat">发射星云与恒星形成区</div><ul class="dso-toc__list"><li><a href="#obj-m42-orion">猎户座大星云 M42</a></li><li><a href="#obj-m8-lagoon">礁湖星云 M8</a></li><li><a href="#obj-m20-trifid">三叶星云 M20</a></li><li><a href="#obj-eagle-pillars">鹰状星云 M16</a></li><li><a href="#obj-ngc7000-namerica">北美洲星云 NGC 7000</a></li><li><a href="#obj-rosette">玫瑰星云 NGC 2237 / 2244</a></li><li><a href="#obj-heart-nebula">心脏星云 IC 1805</a></li><li><a href="#obj-carina">船底座星云 NGC 3372</a></li></ul></div>
+<div class="dso-toc__group"><div class="dso-toc__cat">行星状星云</div><ul class="dso-toc__list"><li><a href="#obj-m57-ring">环状星云 M57</a></li><li><a href="#obj-m27-dumbbell">哑铃星云 M27</a></li><li><a href="#obj-helix">螺旋星云 NGC 7293</a></li><li><a href="#obj-m97-owl">猫头鹰星云 M97</a></li></ul></div>
+<div class="dso-toc__group"><div class="dso-toc__cat">暗星云与反射星云</div><ul class="dso-toc__list"><li><a href="#obj-horsehead">马头星云 IC 434 / B33</a></li><li><a href="#obj-flame-nebula">火焰星云 NGC 2024</a></li><li><a href="#obj-rho-ophiuchi">ρ 蛇夫座云复合体</a></li></ul></div>
+<div class="dso-toc__group"><div class="dso-toc__cat">超新星遗迹</div><ul class="dso-toc__list"><li><a href="#obj-m1-crab">蟹状星云 M1</a></li><li><a href="#obj-veil">面纱星云 NGC 6960 / 6992</a></li></ul></div>
+<div class="dso-toc__group"><div class="dso-toc__cat">星团</div><ul class="dso-toc__list"><li><a href="#obj-m45-pleiades">昴星团 M45</a></li><li><a href="#obj-m13-hercules">武仙座大球状星团 M13</a></li><li><a href="#obj-omega-cen">半人马座 ω</a></li><li><a href="#obj-47tuc">杜鹃座 47</a></li><li><a href="#obj-double-cluster">英仙座双星团 NGC 869 / 884</a></li></ul></div>
+</nav>
+
+{/* dso-guide:end */}
+
+## 星系
+
+星系(galaxy)是深空摄影中较具挑战的一类:多数视直径小、表面亮度低,以宽带成像为主。除 M31、M33 视直径很大、可用短焦镜头甚至广角拍摄外,其余多数仅几角分,通常需 800 mm 以上焦距才能呈现旋臂与核球。类型采用德沃古勒(de Vaucouleurs)形态分类。
+
+<ObjectEntry img="m31-andromeda" name="仙女座星系 M31(Andromeda Galaxy)" facts="仙女座 · 约 250 万光年 · mag 3.4 · SA(s)b 旋涡星系 · 秋季 · 北天为主">
+M31 是本星系群质量最大的成员,含约一万亿颗恒星,盘面直径约 15 万光年,正以约每秒 110 公里的速度向银河系靠近,约 45 亿年后将与之并合。它是暗空下肉眼可见的最远天体之一,在仙女座方向呈一团狭长光斑。视直径约为满月的六倍,适合用 200–400 mm 焦距连同两个矮卫星星系 M32、M110 一同入镜。
+</ObjectEntry>
+
+<ObjectEntry img="m33-triangulum" name="三角座星系 M33(Triangulum Galaxy)" facts="三角座 · 约 288 万光年 · mag 5.7 · SA(s)cd 旋涡星系 · 秋季 · 北天为主">
+M33 是本星系群第三大成员,面向我们的螺旋盘面展现出松散的旋臂与众多 HII 区。其总星等虽达 5.7,但光摊在大面积上使表面亮度很低,需在暗空下才能用肉眼或双筒望远镜辨认。摄影上适合中焦距,长积分可记录旋臂中粉红色的恒星形成区,如著名的 NGC 604。
+</ObjectEntry>
+
+<ObjectEntry img="m81-bode" name="波德星系 M81(Bode's Galaxy)" facts="大熊座 · 约 1200 万光年 · mag 6.9 · SA(s)ab 宏象旋涡 · 春季 · 北天为主">
+M81 是一个对称的宏象旋涡(grand-design spiral),核球明亮,中小型望远镜即可见其中心区域。它与 M82 同处一个视场,二者正发生引力相互作用。这是大熊座方向常见的「双星系」组合,可用中焦距将两者同框拍摄,适合作为入门级星系目标。
+</ObjectEntry>
+
+<ObjectEntry img="m82-cigar" name="雪茄星系 M82(Cigar Galaxy)" facts="大熊座 · 约 1200 万光年 · mag 8.4 · I0 不规则星暴星系 · 春季 · 北天为主">
+M82 是一个侧向(edge-on)的不规则星暴星系(starburst galaxy),与 M81 的引力相互作用触发了剧烈的恒星形成。其盘面被尘埃带分割,中心向外喷出由超新星与恒星风驱动的红色 H-alpha 外流物,在窄带成像中尤为醒目。它与 M81 同框,是检验中焦距设备分辨力的良好目标。
+</ObjectEntry>
+
+<ObjectEntry img="m51-whirlpool" name="涡状星系 M51(Whirlpool Galaxy)+ 伴星系 NGC 5195" facts="猎犬座 · 约 2300 万光年 · mag 8.4 · SA(s)bc pec 旋涡 · 春季 · 北天为主">
+M51 是面向我们的宏象旋涡,旋臂结构清晰,正与小型伴星系 NGC 5195 发生引力相互作用,后者位于其一条旋臂末端。这次相互作用增强了 M51 的旋臂与恒星形成。它是最易拍出旋涡结构的星系之一,但视直径较小,需较长焦距与暗空才能充分展现旋臂细节。
+</ObjectEntry>
+
+<ObjectEntry img="m104-sombrero" name="草帽星系 M104(Sombrero Galaxy)" facts="室女座 · 约 3100 万光年 · mag 8.0 · SA(s)a(分类有争议) · 春季 · 南北皆宜">
+M104 近乎侧向,明亮的核球加上一条贯穿盘面前景的暗尘埃带,构成了「草帽」般的轮廓。它拥有庞大的球状星团系统与一个超大质量黑洞。该星系紧凑明亮、轮廓鲜明,即使在中等口径望远镜中也能辨认出尘埃带,是春季室女座方向的代表目标。
+</ObjectEntry>
+
+<ObjectEntry img="m101-pinwheel" name="风车星系 M101(Pinwheel Galaxy)" facts="大熊座 · 约 2100 万光年 · mag 7.9 · SAB(rs)cd 旋涡 · 春季 · 北天为主">
+M101 是面向我们的大型旋涡,盘面直径约 17 万光年,约为银河系的两倍,旋臂松散而不对称,散布大量 HII 区。因表面亮度低,在亮空下难以察觉,需暗空与较长积分时间。它视直径较大,适合中焦距宽带成像,长曝光可记录旋臂中的恒星形成区。
+</ObjectEntry>
+
+<ObjectEntry img="m64-blackeye" name="黑眼星系 M64(Black Eye Galaxy)" facts="后发座 · 约 1700 万光年 · mag 8.5 · (R)SA(rs)ab 旋涡 · 春季 · 北天为主">
+M64 核心一侧覆盖着一条显著的暗尘埃带,在小型望远镜中形如一只「黑眼」而得名。其内层气体与恒星的旋转方向相反,通常解释为吸收了一个小星系的结果。这条尘埃带是该星系最易辨认的特征,需要较高分辨率才能清晰呈现。
+</ObjectEntry>
+
+<ObjectEntry img="leo-triplet" name="狮子三重奏(Leo Triplet:M65 / M66 / NGC 3628)" facts="狮子座 · 约 3500 万光年 · mag 8.9–9.5 · 旋涡星系群 · 春季 · 南北皆宜">
+狮子三重奏是由 M65、M66 与侧向的 NGC 3628 组成的小型星系群,三者可同框拍摄。其中 M66 最亮,旋臂因潮汐扰动而不对称;NGC 3628(汉堡星系,Hamburger Galaxy)盘面被尘埃带贯穿,并拖出一条长达数十万光年的潮汐尾。这是春季「星系季」最具代表性的同框目标,适合中焦距广域成像。
+</ObjectEntry>
+
+<ObjectEntry img="ngc253-sculptor" name="玉夫座星系 NGC 253(Sculptor Galaxy)" facts="玉夫座 · 约 1140 万光年 · mag 8.0 · SAB(s)c 星暴星系 · 秋季 · 南天为主">
+NGC 253 是玉夫座星系群的主要成员,近乎侧向,盘面明亮且尘埃斑驳,内部恒星形成活跃,属星暴星系。它是全天最亮的星系之一,南天与中低纬北半球均可观测,中等口径望远镜即可见其纺锤形轮廓。摄影上适合中焦距,长积分能展现盘面丰富的尘埃与亮结。
+</ObjectEntry>
+
+<ObjectEntry img="centaurus-a" name="半人马座 A(Centaurus A,NGC 5128)" facts="半人马座 · 约 1100–1300 万光年 · mag 6.8 · S0/E pec 透镜状 · 春季 · 南天为主">
+半人马座 A 是离我们最近的强射电星系之一,被认为由一次星系并合形成,横亘其上的醒目暗尘埃带正源于此。它的中心超大质量黑洞驱动着延伸至星系外的相对论性喷流。作为南天明亮目标,中等口径望远镜即可辨认其尘埃带,是南半球春季的代表性星系。
+</ObjectEntry>
+
+<ObjectEntry img="lmc" name="大麦哲伦云(LMC,Large Magellanic Cloud)" facts="剑鱼座/山案座 · 约 16 万光年 · mag 0.1 · SB(s)m 麦哲伦型 · 全年 · 南天为主">
+大麦哲伦云是银河系最大的卫星星系,在南天呈一团肉眼显眼的弥散光斑。其中蕴含本星系群最活跃的恒星形成区——蜘蛛星云(Tarantula Nebula,30 Doradus),以及大量星团与超新星遗迹。它视直径极大,适合短焦镜头或广角拍摄整体,也可用长焦深入蜘蛛星云等局部区域。
+</ObjectEntry>
+
+## 发射星云与恒星形成区
+
+发射星云(emission nebula)是被邻近高温年轻恒星电离的氢气云,即 HII 区,在 H-alpha 波段尤为明亮,适合窄带成像。表面亮度较低的目标常配合 H-alpha、OIII、SII 窄带滤镜在城市光污染下成像。
+
+<ObjectEntry img="m42-orion" name="猎户座大星云 M42(Orion Nebula)" facts="猎户座 · 约 1340 光年 · mag 4.0 · 发射/反射星云 HII 区 · 冬季 · 南北皆宜">
+M42 是离地球最近的大质量恒星形成区,位于猎户腰带下方,肉眼即可见为一团模糊光斑。其中心的猎户四边形星团(Trapezium)发出的紫外辐射电离了周围气体使其发光。它是全天最亮的发射星云,也是入门观测与摄影的首选目标;因明暗反差极大,拍摄时常用多重曝光合成以兼顾核心与外围。
+</ObjectEntry>
+
+<ObjectEntry img="m8-lagoon" name="礁湖星云 M8(Lagoon Nebula)" facts="人马座 · 约 4100 光年 · mag 4.6 · 发射星云 HII 区 · 夏季 · 南北皆宜">
+M8 是人马座银河方向的明亮 HII 区,也是中纬度肉眼可见的两个恒星形成区之一。星云中部一条暗尘埃带形如「礁湖」,其中嵌有疏散星团 NGC 6530 与正在形成的恒星。它视直径大、亮度高,适合中焦距成像,夏季银河带上常与三叶星云 M20 一同出现。
+</ObjectEntry>
+
+<ObjectEntry img="m20-trifid" name="三叶星云 M20(Trifid Nebula)" facts="人马座 · 约 4100 光年 · mag 6.3 · 发射+反射+暗星云复合体 · 夏季 · 南北皆宜">
+M20 是少见的同时包含发射、反射与暗星云三种成分的复合体:红色的发射区被三条暗尘埃带分割为数瓣,故名「三叶」,其外缘还有一片蓝色反射星云。它与礁湖星云 M8 相距很近,可同框拍摄。彩色成像能同时呈现红、蓝两种色调,是夏季人马座方向的经典目标。
+</ObjectEntry>
+
+<ObjectEntry img="eagle-pillars" name="鹰状星云 M16(Eagle Nebula,创生之柱)" facts="巨蛇座 · 约 5700 光年 · mag 6.4 · 发射星云 HII 区 · 夏季 · 南北皆宜">
+M16 因哈勃太空望远镜 1995 年拍摄的「创生之柱」(Pillars of Creation)而闻名——那是几根由气体与尘埃构成的高大柱状结构,顶端正孕育新生恒星。星云本体是一片活跃的 HII 区,内含一个年轻疏散星团。整体可用中焦距拍摄,创生之柱等核心细节则需长焦与良好分辨率才能展现。
+</ObjectEntry>
+
+<ObjectEntry img="ngc7000-namerica" name="北美洲星云 NGC 7000(North America Nebula)" facts="天鹅座 · 约 2590 光年 · mag 4 · 发射星云 HII 区 · 夏秋季 · 北天为主">
+NGC 7000 因轮廓酷似北美大陆而得名,位于天鹅座天津四(Deneb)附近,视面积超过满月的十倍。它表面亮度低,肉眼难辨,但在 H-alpha 窄带或暗空长曝光下结构丰富,东侧的「墨西哥湾」区域尤为醒目。其视场极大,适合短焦镜头或广角拍摄整体。
+</ObjectEntry>
+
+<ObjectEntry img="rosette" name="玫瑰星云 NGC 2237 / 2244(Rosette Nebula)" facts="麒麟座 · 约 5200 光年 · mag 9.0 · 发射星云 HII 区 · 冬季 · 南北皆宜">
+玫瑰星云是一片环状 HII 区,中心由疏散星团 NGC 2244 的年轻恒星电离发光,星团的恒星风在云中吹出一个空腔。整体形如一朵盛开的花,视直径约为满月的两倍多。因表面亮度低,常用 H-alpha、OIII、SII 窄带滤镜成像,是冬季麒麟座方向的代表性窄带目标。
+</ObjectEntry>
+
+<ObjectEntry img="heart-nebula" name="心脏星云 IC 1805(Heart Nebula)" facts="仙后座 · 约 7500 光年 · mag 6.5 · 发射星云 HII 区 · 秋冬季 · 北天为主">
+IC 1805 是位于英仙臂(Perseus Arm)的大型 HII 区,整体轮廓形似心脏,由中心的疏散星团 Melotte 15 电离发光。它表面亮度很低,需窄带滤镜与长积分才能呈现细节,常与邻近的「胚胎星云」IC 1848 一同被纳入广域构图。其视场较大,适合短焦镜头或小型折射镜拍摄。
+</ObjectEntry>
+
+<ObjectEntry img="carina" name="船底座星云 NGC 3372(Carina Nebula)" facts="船底座 · 约 8500 光年 · mag 1.0 · 发射星云 HII 区 · 全年 · 南天为主">
+NGC 3372 是南天最大、最亮的发射星云之一,视直径远超猎户座大星云。其中含有著名的高光度变星海山二(η Carinae),它在 19 世纪曾爆发为全天第二亮星,周围由抛出物形成的侏儒星云(Homunculus Nebula)清晰可辨。该星云与南十字同区,是南半球的标志性目标,适合中焦距宽视场成像。
+</ObjectEntry>
+
+## 行星状星云
+
+行星状星云(planetary nebula)是中低质量恒星演化末期抛出的外层气壳,被中心白矮星电离而发光,与行星无关——这一名称源于早期望远镜中它们呈现的圆盘状外观。多数视直径很小,适合长焦镜头,在 OIII 与 H-alpha 窄带下对比鲜明。
+
+<ObjectEntry img="m57-ring" name="环状星云 M57(Ring Nebula)" facts="天琴座 · 约 2570 光年 · mag 8.8 · 行星状星云 · 夏季 · 北天为主">
+M57 位于织女星附近天琴座的两颗亮星之间,极易定位,在小型望远镜中即呈现为一个小巧的烟圈状光环。这个环是一颗类太阳恒星抛出的气壳,中心白矮星很暗。它视直径很小,适合长焦或行星相机放大成像,是夏季最受欢迎的行星状星云之一。
+</ObjectEntry>
+
+<ObjectEntry img="m27-dumbbell" name="哑铃星云 M27(Dumbbell Nebula)" facts="狐狸座 · 约 1360 光年 · mag 7.5 · 行星状星云 · 夏季 · 北天为主">
+M27 是人类发现的第一个行星状星云,由梅西耶于 1764 年记录。它亮度较高、视直径较大,双筒望远镜即可辨认其哑铃形的双瓣结构。这是入门级行星状星云目标,中焦距即可拍出主体形态,OIII 窄带下还能记录外围更暗的气壳。
+</ObjectEntry>
+
+<ObjectEntry img="helix" name="螺旋星云 NGC 7293(Helix Nebula)" facts="宝瓶座 · 约 655 光年 · mag 7.6 · 行星状星云 · 秋季 · 南北皆宜">
+NGC 7293 是离地球最近的亮行星状星云之一,视直径接近半个满月。正因光摊在大面积上,其表面亮度偏低,在亮空下反而不易察觉。其内缘排列着大量指向中心的彗状气体结(cometary knot)。它需暗空与窄带滤镜成像,因视直径大,中短焦距即可容纳。
+</ObjectEntry>
+
+<ObjectEntry img="m97-owl" name="猫头鹰星云 M97(Owl Nebula)" facts="大熊座 · 约 2030 光年 · mag 9.9 · 行星状星云 · 春季 · 北天为主">
+M97 位于大熊座北斗七星天枢附近,因星云内两个对称的暗斑形似猫头鹰的双眼而得名。它表面亮度较低,需较暗的天空与一定口径才能辨认双眼结构。摄影上属偏暗的小目标,适合长焦配合 OIII 窄带成像;它与旋涡星系 M108 相距很近,可一同入镜。
+</ObjectEntry>
+
+## 暗星云与反射星云
+
+暗星云(dark nebula)是不发光的致密尘埃云,只在背后明亮气体或恒星的衬托下显出剪影;反射星云(reflection nebula)则散射邻近恒星的星光而呈蓝色。
+
+<ObjectEntry img="horsehead" name="马头星云 IC 434 / B33(Horsehead Nebula)" facts="猎户座 · 约 1375 光年 · mag — · 暗星云(衬于 IC 434 之前) · 冬季 · 南北皆宜">
+马头星云是一团马头状的致密尘埃云(巴纳德目录编号 B33),衬在背景发射星云 IC 434 的红光之前显出剪影。它位于猎户腰带最东端的参宿一(Alnitak)附近。这是经典而颇具挑战的摄影目标,本体不发光,需依靠背景红光形成反差,常用 H-alpha 窄带突出剪影,并与邻近的火焰星云一同入镜。
+</ObjectEntry>
+
+<ObjectEntry img="flame-nebula" name="火焰星云 NGC 2024(Flame Nebula)" facts="猎户座 · 约 1350 光年 · mag — · 发射星云+暗尘埃 · 冬季 · 南北皆宜">
+NGC 2024 紧邻猎户腰带东端的亮星参宿一(Alnitak),被一条前景暗尘埃带分割成数瓣,形似跳动的火焰。星云中嵌有一个被尘埃遮蔽的年轻星团,主要靠红外才能观测到。它与马头星云同处一个视场,二者常一同拍摄;参宿一极亮,成像时需注意控制其光晕与衍射尖。
+</ObjectEntry>
+
+<ObjectEntry img="rho-ophiuchi" name="ρ 蛇夫座云复合体(Rho Ophiuchi Cloud Complex)" facts="蛇夫座 · 约 460 光年 · mag — · 暗+反射+发射混合复合体 · 夏季 · 南北皆宜">
+ρ 蛇夫云是离太阳系最近的恒星形成区之一,也是夏季银心方向色彩最丰富的广域目标。区内黄色的心宿二(Antares)周围环绕着金色尘埃,蓝色反射星云、红色发射区与黑色暗尘埃交织一处。它视场极大,适合短焦镜头或广角的宽域彩色摄影,在暗空下尤其出彩。
+</ObjectEntry>
+
+## 超新星遗迹
+
+超新星遗迹(supernova remnant, SNR)是大质量恒星爆发后抛出的高速膨胀气壳,常呈丝状或环状结构,在 H-alpha 与 OIII 窄带下细节丰富。
+
+<ObjectEntry img="m1-crab" name="蟹状星云 M1(Crab Nebula)" facts="金牛座 · 约 6500 光年 · mag 8.4 · 超新星遗迹+脉冲星风云 · 冬季 · 南北皆宜">
+M1 是梅西耶目录的第一号天体,对应公元 1054 年中、日、阿拉伯天文记录中的「客星」——一次被广泛记载的超新星爆发。其中心残留一颗快速自转的蟹状脉冲星(Crab Pulsar),驱动着周围的脉冲星风云。它在双筒望远镜中可辨为一团模糊光斑,摄影上适合长焦,窄带能呈现其特有的丝状结构。
+</ObjectEntry>
+
+<ObjectEntry img="veil" name="面纱星云 NGC 6960 / 6992(Veil Nebula)" facts="天鹅座 · 约 2400 光年 · mag — · 超新星遗迹(丝状) · 夏秋季 · 北天为主">
+面纱星云是一团巨大的超新星遗迹,整体视直径约 3 度(约六个满月),为约一万年前的一次爆发所遗留。其中最亮的两部分是西面纱 NGC 6960(女巫扫帚,Witch's Broom,靠近前景星 52 Cygni)与东面纱 NGC 6992。这是 OIII 窄带成像的标志性目标,丝状结构纤细而繁复,视场大,适合中短焦距宽域拍摄。
+</ObjectEntry>
+
+## 星团
+
+星团(star cluster)分为成员稀疏、年轻的疏散星团(open cluster)与成员密集、年老的球状星团(globular cluster)两类。多数星团视直径较大、表面亮度高,是双筒望远镜与短焦镜头的理想目标。
+
+<ObjectEntry img="m45-pleiades" name="昴星团 M45(Pleiades)" facts="金牛座 · 约 444 光年 · mag 1.6 · 疏散星团 · 冬季 · 南北皆宜">
+M45 是全天最显眼的疏散星团,年龄约 1 亿年,拥有逾千成员,肉眼即可见六七颗亮蓝星。长曝光会显出包裹其中的蓝色反射星云——这是星团恰好穿越一片尘埃云时星光被散射所致,而非星团形成时的残留物质。它视直径大、亮度高,适合短焦镜头拍摄,是入门摄影的理想目标。
+</ObjectEntry>
+
+<ObjectEntry img="m13-hercules" name="武仙座大球状星团 M13(Great Hercules Cluster)" facts="武仙座 · 约 2.2–2.5 万光年 · mag 5.8 · 球状星团 · 夏季 · 北天为主">
+M13 是北天最壮观的球状星团,含数十万颗恒星,年龄超过一百亿年,位于武仙座「拱形」(Keystone)一侧,暗空下肉眼勉强可辨。中等口径望远镜即可将其外围分解为点点繁星。它是北半球观测者最易欣赏的球状星团,摄影上中焦距即可呈现密集的成员恒星。
+</ObjectEntry>
+
+<ObjectEntry img="omega-cen" name="半人马座 ω(Omega Centauri,NGC 5139)" facts="半人马座 · 约 1.7 万光年 · mag 3.9 · 球状星团 · 春季 · 南天为主">
+半人马座 ω 是银河系最大、最亮的球状星团,约含一千万颗恒星,质量与结构异常,常被推测为一个被银河系吞并的矮星系残核。它肉眼即可见为一颗模糊的「恒星」,因而早期被误编入恒星目录。作为南天目标,北半球中高纬难以观测,在南半球则是最壮观的球状星团之一。
+</ObjectEntry>
+
+<ObjectEntry img="47tuc" name="杜鹃座 47(47 Tucanae,NGC 104)" facts="杜鹃座 · 约 1.45 万光年 · mag 4.1 · 球状星团 · 全年 · 南天为主">
+NGC 104 是全天第二亮的球状星团,仅次于半人马座 ω,核心高度致密。它在天球上紧邻小麦哲伦云,但实际距离近得多,属银河系成员。其内部含有大量毫秒脉冲星与蓝离散星(blue straggler)。作为南天目标,中等口径望远镜即可分解其密集核心,是南半球的代表性球状星团。
+</ObjectEntry>
+
+<ObjectEntry img="double-cluster" name="英仙座双星团 NGC 869 / 884(Double Cluster)" facts="英仙座 · 约 7500 光年 · mag 3.7 / 3.8 · 疏散星团对 · 秋冬季 · 北天为主">
+英仙双星团由两个相邻的年轻疏散星团 NGC 869 与 NGC 884 组成,二者均仅约一两千万岁,同处一个视场,暗空下肉眼可辨为银河中的一团亮斑。它们富含高光度的蓝白色巨星,色彩对比鲜明。这是秋冬季双筒望远镜的经典目标,摄影上适合短焦距同框拍摄两个星团。
+</ObjectEntry>
+
+<Aside type="tip" title="如何挑选第一批目标">
+入门时优先选总星等亮、视直径大、表面亮度高的目标:M42、M45、M31、M13、英仙双星团。这些对器材和天空条件要求低,双筒望远镜或短焦镜头即可获得满意结果。低面亮度的发射星云(心脏、玫瑰、北美)和小而暗的星系(狮子三重奏、M101)更适合在积累经验、配齐窄带滤镜或长焦设备后再尝试。各目标的可拍季节与升起时间可结合〔[南北半球可见性](/astronomy/observing/hemisphere-visibility/)〕与〔[天体目录](/reference/catalog/)〕查询。
+</Aside>
+
+## 参考资料
+
+- [Andromeda Galaxy — Wikipedia](https://en.wikipedia.org/wiki/Andromeda_Galaxy):M31 的距离、视星等、形态分类与直径数据。
+- [Messier object — Wikipedia](https://en.wikipedia.org/wiki/Messier_object):梅西耶目录全表,逐项核对各 M 编号目标的星座、距离与星等。
+- [Orion Nebula — Wikipedia](https://en.wikipedia.org/wiki/Orion_Nebula):M42 的距离(约 1340 光年)、视星等与恒星形成区性质。
+- [Crab Nebula — Wikipedia](https://en.wikipedia.org/wiki/Crab_Nebula):M1 的距离、超新星遗迹与 1054 年客星历史记录。
+- [Omega Centauri — Wikipedia](https://en.wikipedia.org/wiki/Omega_Centauri):银河系最大球状星团的距离、视星等与成员数。
+- [SIMBAD Astronomical Database](https://simbad.u-strasbg.fr/simbad/):按编号查询各天体的坐标、星等与交叉证认的专业数据库。

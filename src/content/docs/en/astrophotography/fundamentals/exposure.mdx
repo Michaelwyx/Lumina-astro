@@ -1,0 +1,204 @@
+---
+title: Exposure, Gain, and ISO
+description: A systematic explanation of the exposure constraints in astrophotography, the equivalence between gain and ISO, unity gain, how read noise and dynamic range vary with gain, sky-limited exposure and histogram interpretation, and ISO invariance.
+difficulty: beginner
+pillar: astrophotography
+sidebar:
+  order: 2
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+import Capture from '@/components/Capture.astro';
+
+Exposure refers to the amount of light a sensor receives during a single integration. Daytime photography balances image brightness through the "exposure triangle" of aperture, shutter speed, and ISO, but deep-sky objects are extremely faint, and the entire capture process is constrained by tracking accuracy and sky background light. The logic behind exposure decisions is therefore fundamentally different from daytime photography. This page explains the physical constraints of astronomical exposure, the relationship between gain and ISO, the trade-offs among noise metrics, and how to use the histogram to judge whether a single exposure is adequate.
+
+## Differences Between Astronomical Exposure and Daytime Photography
+
+Astrophotography and daytime photography differ in three fundamental constraints.
+
+| Parameter | Daytime photography | Deep-sky photography |
+| --- | --- | --- |
+| Aperture / focal ratio | Adjustable at any time within the lens aperture range | Essentially fixed, determined by aperture and focal length |
+| Single exposure duration | 1/1000 second to a few seconds | Tens of seconds to several minutes |
+| Total integration time | A single frame is enough to form an image | Many frames stacked, often reaching several hours |
+| ISO / gain | Controls overall brightness | Mainly affects read noise and dynamic range |
+
+For an astronomical telescope or a prime lens, the focal ratio (denoted `f/`, equal to `focal length ÷ entrance pupil aperture`) is fixed at the factory and cannot be stopped down to change the rate of light collection as in daytime photography. Therefore, only two variables are actually adjustable in astronomical exposure: the **single exposure duration** and the **gain / ISO**.
+
+Another key difference from daytime photography is "long integration." The surface brightness of deep-sky targets is far below the sky background, and a single short exposure records almost no usable signal. Signal must be accumulated on the sensor through long integration, and the signal-to-noise ratio must be further improved by stacking many frames. The goal of exposure is not to make a single frame bright, but to make the signal reliably distinguishable from the noise. For the related optical constraints, see [Optics Fundamentals](/en/astrophotography/fundamentals/optics/); for coordinates and target visibility, see [Celestial Coordinate Systems](/en/astronomy/foundations/celestial-coordinates/) and [Hemisphere Visibility](/en/astronomy/observing/hemisphere-visibility/).
+
+## Limits on Single Exposure Duration
+
+In theory, a single ultra-long exposure could accumulate all the signal at once, but in practice the single-frame duration is limited by multiple factors and is usually held to between tens of seconds and several minutes.
+
+- **Tracking and guiding accuracy**: An equatorial mount has periodic error and residual polar-alignment error. The longer the exposure, the more pronounced the star trailing. Guiding can extend a single frame to several minutes, but its accuracy is limited and not without an upper bound.
+- **Sky background saturation**: In a light-pollution environment, the sky background itself continuously accumulates signal on the sensor. An overly long exposure brings the background close to or even into saturation, compressing the usable dynamic range and drowning out faint targets. The heavier the light pollution, the shorter the usable single-frame duration. For the effect of the observing environment, see [Observing Conditions](/en/astronomy/observing/conditions/).
+- **Bright star saturation**: Bright stars in the field enter saturation first as the exposure lengthens, and the star cores overflow into white blobs, losing color and recoverable detail. For the relationship between magnitude and brightness, see [The Magnitude System](/en/astronomy/foundations/magnitude/).
+- **Risk of accidental loss**: Airplanes, satellites, gusts of wind, and sudden clouds can all ruin a single exposure. The longer the single frame, the more usable time is lost when a frame is discarded.
+
+## The Trade-off Between Stacking Many Short Exposures and a Single Long Exposure
+
+The standard practice in astrophotography is to shoot many medium-to-short exposures and stack them, rather than taking a single ultra-long exposure. This choice is based on the statistical behavior of the signal-to-noise ratio (SNR).
+
+In an ideal imaging system, the signal-to-noise ratio is proportional to the square root of the total number of photons collected. For stacking, the SNR grows with the square root of the effective number of frames:
+
+```
+SNR_total ∝ √N    (N is the number of sub-frames in the stack, with each frame under identical conditions)
+```
+
+A more complete per-pixel signal-to-noise model (the Clark expression) is:
+
+```
+SNR = S·N / √( N·(S + a + r² + d) )
+```
+
+where `S` is the target signal (electrons), `a` is the sky background signal, `r` is the read noise (electrons), `d` is the dark-current contribution, and `N` is the number of sub-frames. Both the numerator and the denominator contain `N`, so the relative influence of the `r²` term is diluted as the number of frames increases.
+
+This leads to a key conclusion: **as long as the single exposure is long enough that the sky background noise clearly dominates the read noise, then stacking N frames of T seconds each yields a final signal-to-noise ratio nearly equivalent to a single exposure of N·T seconds.** Under this premise, choosing many short exposures incurs almost no SNR loss while gaining robustness against trailing, saturation, and discarded frames. For the complete principles of stacking, see [Signal-to-Noise Ratio and Stacking](/en/astrophotography/fundamentals/snr/).
+
+<Aside type="caution" title="Common misconception: stacking short exposures loses signal-to-noise">
+"The longer the single exposure, the higher the signal-to-noise ratio" holds only while the single frame has not yet reached the sky-limited regime (see below). Once a single exposure makes the background noise dominate the read noise, further lengthening the single frame usually improves the final stacked result by less than 5%, while the risk of discarded frames, trailing, and saturation rises significantly. What determines the final signal-to-noise ratio is the "total integration time" and the "number of sub-frames," not whether the single frame is extremely long.
+</Aside>
+
+## The Relationship Between Gain and ISO
+
+ISO is the term used for DSLR / mirrorless cameras, and gain is the term used for astronomical CMOS cameras; the two are essentially the same: both are the amplification factor applied to the signal **before** analog-to-digital conversion. Raising gain / ISO amplifies both signal and noise simultaneously, but does **not** make the sensor collect more photons. What truly determines the amount of signal is the aperture, the exposure duration, and the transparency of the sky. The physical meaning of gain is to change the "conversion gain," that is, how many electrons correspond to one ADU.
+
+<Aside type="caution" title="Amplification is not the same as collecting more light">
+Gain / ISO only amplifies the signal that has already been recorded; it does not change the number of photons entering the sensor. Turning up the gain is often mistaken for "increasing sensitivity," but the sensor's quantum efficiency does not change; what changes is only the scale at which the signal is digitized, along with downstream metrics such as read noise, dynamic range, and the saturation point. For sensor structure and noise sources, see [Sensors and Noise](/en/astrophotography/fundamentals/sensors/).
+</Aside>
+
+### Unity Gain, Conversion Gain, and Bit Depth
+
+Digital cameras express the integer value read out from each pixel in ADU (Analog-to-Digital Unit, also called DN). The range of ADU values is determined by the bit depth:
+
+| Bit depth | Maximum ADU | Quantization levels |
+| --- | --- | --- |
+| 12-bit | 4095 | 4096 |
+| 14-bit | 16383 | 16384 |
+| 16-bit | 65535 | 65536 |
+
+Conversion gain is defined as the number of electrons corresponding to each ADU (e⁻/ADU). **Unity gain** refers to the gain setting at which the conversion gain is exactly 1, that is, for every 1 electron the sensor captures, it outputs exactly 1 ADU. Unity gain is often used as a "starting point for the compromise between read noise and dynamic range," but it is not the optimal default for every target.
+
+Quantization error illustrates the significance of unity gain. Take, for example, a pixel with a full well capacity of 16,000 electrons read out by a 12-bit ADC (4096 levels): the conversion gain is about 4 e⁻/ADU, meaning that signals differing by less than about 4 electrons cannot be distinguished. Raising the gain can lower the e⁻/ADU, reducing quantization error and read noise, but it simultaneously lowers the recordable full-well ceiling of a single frame, making highlights more prone to saturation.
+
+### How Read Noise and Dynamic Range Vary with Gain
+
+The read noise of a CMOS sensor consists of two components: one introduced before amplification, which is relatively suppressed as gain increases; and another that is a fixed amount after amplification. The net effect is that read noise is highest at zero gain, decreases as gain increases, and levels off after a certain gain value specified by the manufacturer.
+
+Dynamic range is defined as the ratio of full well capacity to read noise, often expressed in decibels or stops:
+
+```
+DR ≈ full well capacity (electrons) / read noise (electrons)
+```
+
+Raising the gain lowers both the read noise and the full-well ceiling, and these have opposite effects on dynamic range, so the relationship between gain and dynamic range is not monotonic. The table below summarizes the trade-offs at the two extremes.
+
+| Gain setting | Read noise | Single-frame full well / dynamic range | Suitable scenarios |
+| --- | --- | --- | --- |
+| Low gain | Higher | Large full well, large dynamic range, highlights less prone to overexposure | Dark-sky long exposures, bright targets, planetary nebula cores |
+| High gain | Lower | Small full well, highlights prone to saturation | Faint targets, short exposures, narrowband |
+
+A typical modern astronomical CMOS sensor has a read noise of about 1–3 electrons at common gain settings, significantly lower than the 8–10 electrons of early CCDs; this is precisely why CMOS single exposures can be made shorter without loss of quality (see sky-limited exposure below).
+
+<Aside type="note" title="Rules of thumb for choosing gain">
+When light pollution is heavy or short exposures are required, raise the gain appropriately to suppress read noise; in dark skies where long exposures are possible, use a lower gain to gain greater dynamic range and preserve recoverable detail in bright star cores and galaxy cores. Narrowband imaging, because the signal is so faint, commonly uses higher gain.
+</Aside>
+
+## Sky-Limited Exposure
+
+Sky-limited exposure (also called background-noise limited, or sky-noise limited) is the core criterion for judging whether a single exposure is long enough: **the single exposure must be long enough that the shot noise of the sky background clearly dominates the camera's read noise.** Once this condition is met, the share of read noise in the total noise budget becomes very small, and further lengthening the single frame almost no longer improves the final stacked quality.
+
+The single-frame duration required to become sky-limited is proportional to the square of the read noise and inversely proportional to the accumulation rate of the sky background:
+
+```
+required single-frame duration ∝ read noise² / sky background rate
+```
+
+Therefore, the lower the read noise (modern CMOS at 1–3 electrons), the shorter the required single frame; and the brighter the sky (the heavier the light pollution), the faster the background accumulates, so the single frame required to reach the sky-limited condition is actually shorter. A common criterion is to limit the relative increase that read noise contributes to the total noise of the final stack, for example no more than 5% or 10%. Tools such as SharpCap's Smart Histogram express this criterion intuitively with color zones:
+
+| Zone | Read noise as a fraction of total noise | Meaning |
+| --- | --- | --- |
+| Red zone | Greater than 50% | Underexposed, read-noise dominated |
+| Orange zone | 10%–50% | Transition zone, still acceptable |
+| Green zone | Less than 10% | Sky-limited, near optimal |
+
+<Aside type="note" title="Practical implications of sky-limited exposure">
+Within the sky-limited regime, stacking N short exposures is approximately equivalent to a single long exposure of the same total duration. Once the background peak rises clear of the read-noise floor, exposing a single frame beyond the recommended value often brings only about a 5% additional improvement while significantly increasing the risk of discarded frames and saturation. Investing the exposure budget in "more sub-frames / longer total integration time" is usually more worthwhile than blindly lengthening the single frame.
+</Aside>
+
+## Histogram Interpretation
+
+Judging whether a single exposure is adequate does not rely on visually inspecting the preview brightness, but on the histogram. The horizontal axis of the histogram is ADU (from 0 to the bit-depth limit), and the vertical axis is the pixel count. A raw deep-sky frame is almost entirely a black background, and the histogram appears as a sharp peak concentrated on the left side; that peak is the location of the sky background.
+
+<Steps>
+
+1. **Locate the background peak**: The tallest and most concentrated peak on the left side of the histogram is the sky background peak.
+
+2. **Read the position of the peak**: The background peak falling at roughly the left 1/4 to 1/3 of the entire horizontal axis usually corresponds to being sky-limited while retaining ample dynamic range. This rule of thumb applies to modern sensors with a read noise of about 2–4 electrons.
+
+3. **Interpret and adjust**:
+   - The peak hugging the leftmost edge (close to the bias level) → underexposed; the signal is buried in read noise, so lengthen the single frame or raise the gain.
+   - The peak at roughly 1/4 to 1/3 → sky-limited, exposure is adequate.
+   - The peak shifted to the right of center → overexposed, wasting dynamic range and the bright star cores may saturate, so shorten the single frame.
+
+</Steps>
+
+The absolute position of the histogram peak is measured in ADU. A commonly used formula for estimating the target ADU is:
+
+```
+target ADU ≈ bias + 10·r² / g
+```
+
+where `r` is the read noise (electrons), `g` is the conversion gain (e⁻/ADU), and `bias` is the camera's baseline level. This formula gives the background level at which the background noise is about several times the read noise, corroborating the 1/4–1/3 histogram rule of thumb.
+
+## Number of Sub-frames and Total Integration Time
+
+The final image quality is mainly determined by the total integration time, not by whether the single frame is extremely long. The total integration time equals the product of the number of sub-frames and the single-frame duration:
+
+```
+total integration time = number of sub-frames N × single exposure duration T
+```
+
+Under the sky-limited premise, for a given total integration time, different combinations of N and T yield approximately equal final signal-to-noise ratios. In practice, the tendency is toward "more sub-frames, moderate single exposures," for three reasons: with more sub-frames, the statistical rejection during stacking (removing hot pixels, cosmic rays, and satellite/airplane trails) is more robust; a single frame that is not too long reduces the risk of trailing and saturation; and the loss from an individual discarded frame is smaller. To double the signal-to-noise ratio, the total integration time must be increased to about four times.
+
+The example below shows a set of typical parameters.
+
+<Capture
+  name="m31-andromeda"
+  alt="Example image of the Andromeda Galaxy M31, annotated with typical exposure parameters"
+  target="Andromeda Galaxy M31"
+  scope="80mm APO refractor f/6"
+  mount="Equatorial mount + guiding"
+  camera="Cooled CMOS camera"
+  filters="L-Pro light pollution filter"
+  exposure="60×300s (5h)"
+  location="Bortle 4 suburbs"
+  bortle="4"
+  date="2025-01"
+  software="Siril + GraXpert"
+/>
+
+The parameter `60×300s (5h)` means 60 frames, 300 seconds (5 minutes) each, for a combined total integration time of 5 hours, not a single 5-hour exposure. The single frame of 300 seconds is determined jointly by guiding accuracy and the sky-limited condition, and the 60 sub-frames provide robust stacking statistics and tolerance for discarded frames. For the actual capture workflow, see [Getting Started with Deep-Sky Photography](/en/astrophotography/capture/dso-basics/).
+
+## ISO Invariance
+
+ISO invariance (also called ISO-less) describes a class of sensors on which underexposing at a lower ISO and then brightening in post-processing yields approximately the same noise level as raising the ISO directly during capture.
+
+The mechanism lies in where the read noise is introduced. Read noise can be divided into upstream noise introduced before amplification and downstream noise introduced after amplification. When the downstream read noise is extremely low, doing analog amplification in the camera (raising ISO) and doing digital brightening in post-processing have almost identical effects on the noise floor, and the sensor behaves as ISO-invariant. Conversely, if the downstream noise is not negligible, brightening after underexposing at low ISO exposes more noise, and in that case raising the ISO in the camera is more advantageous.
+
+The practical significance for astrophotography:
+
+- On an ISO-invariant camera, you can shoot at a lower ISO / gain to protect the highlights (avoiding saturation of bright stars and galaxy cores) and then brighten the shadows in post-processing at almost no additional noise cost.
+- Many cameras are not ISO-invariant across the entire range, but only become invariant above a certain ISO threshold; below that threshold you still need to raise the ISO appropriately to clear the downstream noise.
+- ISO invariance does not change the amount of signal, nor does it substitute for adequate exposure duration and total integration time; it only relaxes the constraint that "the ISO / gain must be precisely chosen at capture time."
+
+For more on read noise, dark current, and sensor metrics, see [Sensors and Noise](/en/astrophotography/fundamentals/sensors/); for terminology definitions, see the [Glossary](/en/reference/glossary/).
+
+## References
+
+- [Astrophotography and Exposure — Clarkvision](https://clarkvision.com/articles/astrophotography.and.exposure/) — Provides a quantitative analysis of the signal-to-noise model, the sky-limited criterion, and the 1/4–1/3 histogram rule of thumb.
+- [Choosing ISO for Astrophotography — Clarkvision](https://clarkvision.com/articles/choosing-iso-for-astrophotography/) — Discusses the effect of ISO/gain on read noise and dynamic range, and ISO invariance.
+- [How to set astronomy CMOS camera gain — Astrojolo](https://astrojolo.com/gears/cmos-gain-settings-part-i/) — Explains the equivalence of gain and ISO, unity gain, quantization error, and the two components of read noise.
+- [Smart Histogram — SharpCap](https://www.sharpcap.co.uk/sharpcap/features/smart-histogram) — Quantifies the sky-limited criterion with color zones, explaining the relationship between the read-noise share and the optimal single-frame duration.
+- [ISO Invariance Explained — Photography Life](https://photographylife.com/iso-invariance-explained) — Explains upstream/downstream read noise, the definition of ISO invariance, and its low-light applications.

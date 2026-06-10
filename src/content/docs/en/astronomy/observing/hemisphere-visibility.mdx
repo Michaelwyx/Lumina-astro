@@ -1,0 +1,60 @@
+---
+title: Hemisphere Visibility Principles
+description: Use your latitude φ and an object's declination Dec to decide whether it is visible at all, and whether it stays up all night (circumpolar). Includes an interactive calculator.
+difficulty: beginner
+pillar: astronomy
+prerequisites:
+  - /astronomy/foundations/celestial-coordinates/
+sidebar:
+  order: 2
+---
+
+import HemisphereViz from '@/components/diagrams/HemisphereViz.astro';
+import Fig from '@/components/Fig.astro';
+
+Why are some objects invisible from a given location? Why are Chile and Hawaii good places to build observatories? Answering questions like these mainly requires two numbers: your **latitude φ** (positive in the northern hemisphere) and the object's **declination Dec**.
+
+## The rule in one sentence
+
+Over the course of a day, an object traces a small circle centered on the celestial pole. Whether it rises above the horizon and whether it sets depends only on Dec and φ:
+
+- **Will rise (visible)**: in the northern hemisphere you need `Dec > φ − 90°`. Example: at latitude 40° N, you can only see objects with `Dec > −50°` → **the Carina Nebula at declination −59° is never visible**.
+- **Stays up all night (circumpolar)**: objects with `Dec > 90° − φ` circle the pole without setting. Example: at 40° N → objects with `Dec > +50°` are circumpolar (around Ursa Major).
+- **Near the equator (φ ≈ 0)**: in theory the entire sky is visible — this is exactly why **low-latitude dark skies** are so prized, letting you image both the northern classics and southern-exclusive targets.
+
+The southern hemisphere is perfectly symmetric: just swap the "north celestial pole" for the "south celestial pole" and mirror the direction of the inequalities.
+
+## Try it interactively
+
+Drag the slider to set your latitude and see which declinations are circumpolar and which never rise:
+
+<HemisphereViz />
+
+:::tip[How to read this chart]
+The vertical axis is the object's declination (+90° at the top, −90° at the bottom). Blue = circumpolar, up all night; cyan = rises and sets; purple = never rises. Drag the slider to the equator (0°) and you'll see both purple and blue disappear — at low latitudes you can see almost the entire sky.
+:::
+
+## Practical conclusions
+
+- **Northern-hemisphere observers** (most of China, Europe, and North America): targets such as M31, M42, M45, M13, and M51 have good visibility; but **the Magellanic Clouds, the Carina Nebula, ω Centauri, and the Southern Cross** are essentially invisible.
+- **Southern-hemisphere observers** (or those renting southern remote rigs): can observe southern targets such as the Magellanic Clouds, the Carina Nebula, and ω Centauri, and the galactic center reaches a higher altitude; the trade-off is losing some northern circumpolar objects.
+
+This is also one reason why **iTelescope / Telescope Live offer rigs in both hemispheres**, and why Chile has become an important observatory site. If you want to image southern targets but live in the northern hemisphere, consider using the southern-hemisphere equipment on a [remote platform](/en/astrophotography/remote-platforms/overview/).
+
+<div class="cols2">
+  <Fig name="carina" alt="Carina Nebula" caption="NGC 3372 Carina Nebula (Dec −59°) · never visible at 40° N" />
+  <Fig name="lmc" alt="Large Magellanic Cloud" caption="Large Magellanic Cloud (Dec −69°) · a satellite galaxy of the Milky Way visible only from the southern hemisphere" />
+</div>
+
+## Transit altitude: more than just "can I see it"
+
+Even if an object does rise, its maximum altitude above the horizon at **upper transit (crossing the meridian)** determines image quality — the lower it is, the more atmosphere you must look through, and the worse the seeing and extinction:
+
+> **h_max = 90° − |φ − Dec|**
+
+Example: from 40° N imaging the Lagoon Nebula at Dec −24°, `h_max = 90 − |40 − (−24)| = 26°`, hugging the horizon — far inferior to the southern hemisphere. **Every object's detail page has already computed this altitude for you for Beijing (40°N) and Chile (30°S)** — see 〔[Object Catalog](/en/reference/catalog/)〕.
+
+## Further reading
+
+- Unsure about right ascension and declination? Start with 〔[The Celestial Sphere and Coordinate Systems](/en/astronomy/foundations/celestial-coordinates/)〕.
+- Why do site surveys favor low latitude plus high altitude? See 〔[Famous Observatories](/en/reference/observatories/)〕 and 〔[Atmosphere and Observing Conditions](/en/astronomy/observing/conditions/)〕.

@@ -1,0 +1,179 @@
+---
+title: Dwarf Planets · Comets · Meteors
+description: A systematic introduction to the IAU definition of dwarf planets and their five members, the asteroid belt and near-Earth objects, the Kuiper belt and Oort cloud, cometary structure and orbital classification, meteoroids and meteor showers, plus zodiacal light and the gegenschein.
+difficulty: intermediate
+pillar: astronomy
+sidebar:
+  order: 4
+---
+
+import { Aside, CardGrid, Card, LinkCard } from '@astrojs/starlight/components';
+import Fig from '@/components/Fig.astro';
+
+Small Solar System bodies are objects that orbit the Sun directly, other than planets and moons, including dwarf planets, asteroids, comets, meteoroids, and the meteor phenomena produced by their debris. They preserve the primordial material from the formation of the Solar System some 4.6 billion years ago; their distribution, orbits, and composition are important evidence for studying the origin and evolution of the Solar System, and they are also common targets for astronomical observation and astrophotography. This page lays out the definitions, classification, structure, and typical figures for these small bodies, and explains how they relate to observation.
+
+<Fig name="fig-solar-system" alt="Schematic of the structure of the Solar System, marking the planets, the asteroid belt, and outer bodies" caption="The main regions where small Solar System bodies are distributed: the asteroid belt between Mars and Jupiter, the Kuiper belt and scattered disc beyond Neptune, and the Oort cloud in the outermost layer." />
+
+## Dwarf planet
+
+Resolution 5 of the International Astronomical Union (IAU) in 2006 provided the definitions of a planet and a dwarf planet. A **planet** must simultaneously satisfy three conditions: it orbits the Sun, its self-gravity is sufficient to reach hydrostatic equilibrium and assume a nearly spherical shape, and it has **cleared the neighbourhood** around its orbit. A **dwarf planet** satisfies the first two but has not cleared its orbit, and is not a satellite. The third condition, "clearing the orbit," is the key dividing line between a dwarf planet and a planet, and was the direct reason Pluto was reclassified from a planet to a dwarf planet in 2006.
+
+The IAU currently formally recognizes five dwarf planets. Apart from Ceres, which lies in the asteroid belt, the other four all lie beyond Neptune's orbit in the Kuiper belt or scattered disc, and are trans-Neptunian objects (TNOs).
+
+| Dwarf planet | Region | Mean diameter (km) | Number of moons | Year discovered | Main features |
+| --- | --- | --- | --- | --- | --- |
+| Ceres | Asteroid belt | 939 | 0 | 1801 | The only one in the inner Solar System, the largest object in the asteroid belt, once regarded as a planet |
+| Pluto | Kuiper belt | 2377 | 5 | 1930 | Largest moon Charon; flown by New Horizons in 2015 |
+| Eris | Scattered disc | 2326 | 1 | 2005 | The most massive dwarf planet (about 1.64×10²² kg); its discovery directly triggered the debate over Pluto's classification |
+| Haumea | Kuiper belt | ~1560 | 2 | 2004 | Extremely fast rotation (about 3.9 hours), stretched into a markedly ellipsoidal shape, known to have rings |
+| Makemake | Kuiper belt | 1430 | 1 | 2005 | Surface rich in methane ice, high albedo |
+
+<Aside type="note" title="Candidate dwarf planets">
+The IAU estimates that there may be hundreds of as-yet-unconfirmed dwarf planets in the Solar System. Trans-Neptunian objects such as Gonggong (about 1230 km), Quaoar (about 1100 km), Sedna (about 900 km), and Orcus (about 900 km) are regarded by most astronomers as very likely to meet the dwarf planet criteria, but have not yet been formally named dwarf planets by the IAU. Determining whether hydrostatic equilibrium has been reached requires sufficiently precise shape and mass data, which is the main reason confirmation is difficult.
+</Aside>
+
+## The asteroid belt and near-Earth objects
+
+### The asteroid belt
+
+The asteroid belt lies between the orbits of Mars and Jupiter, at about 2.1–3.3 astronomical units (AU) from the Sun, and is home to millions of rocky and metallic small bodies. Despite their enormous number, the total mass of all material in the belt is only about 3%–4% of the Moon's, with Ceres alone accounting for about one third of it. Jupiter's gravitational perturbations create the Kirkwood gaps within the belt and prevent the material from coalescing into a single large planet.
+
+By composition, main-belt asteroids fall roughly into three classes:
+
+| Type | Proportion (approx.) | Composition | Albedo | Examples |
+| --- | --- | --- | --- | --- |
+| C-type (carbonaceous) | ~75% | Rich in carbon and hydrated minerals | Low | Ceres |
+| S-type (silicaceous) | ~17% | Silicates and nickel-iron | Medium | Vesta, Eunomia |
+| M-type (metallic) | The rest | Predominantly nickel-iron | Medium to high | Psyche |
+
+Vesta (diameter about 525 km) and Pallas are the largest main-belt objects besides Ceres, but neither has reached the spherical shape of hydrostatic equilibrium, so neither is a dwarf planet.
+
+### Near-Earth objects (NEOs)
+
+Near-Earth objects (NEOs) are small Solar System bodies with a perihelion distance less than 1.3 AU; the vast majority are near-Earth asteroids (NEAs), with a small number of near-Earth comets. Based on the geometry of their orbits relative to Earth's orbit (semi-major axis 1 AU), near-Earth asteroids are divided into four groups:
+
+| Group | Naming origin | Orbital characteristics | Proportion (approx.) |
+| --- | --- | --- | --- |
+| Amor | (1221) Amor | Orbit entirely outside Earth's orbit (perihelion 1.017–1.3 AU) | ~35% |
+| Apollo | (1862) Apollo | Semi-major axis > 1 AU, can cross Earth's orbit | ~57% |
+| Aten | (2062) Aten | Semi-major axis < 1 AU, can cross Earth's orbit | ~8% |
+| Atira | (163693) Atira | Orbit entirely inside Earth's orbit | &lt;0.1% |
+
+Objects posing a potential threat are singled out as **potentially hazardous asteroids (PHAs)**, which must simultaneously satisfy: a minimum orbit intersection distance (MOID) with Earth's orbit ≤ 0.05 AU (about 7.5 million km), and an absolute magnitude H ≤ 22 (corresponding to a diameter of roughly 140 m or more).
+
+<Aside type="caution" title="Impact risk and planetary defense">
+Recorded impact events in history include the 1908 Tunguska event (an object about 60 m exploding in mid-air, with an energy of about 10–15 megatons of TNT, flattening about 2000 square kilometers of forest) and the 2013 Chelyabinsk event (an object about 20 m, with an energy of about 400,000–500,000 tons of TNT, whose shock wave shattered glass and injured over a thousand people). Impact risk is assessed using the **Torino scale (an integer from 0 to 10)** and the **Palermo scale (logarithmic)**. In 2022 NASA's DART mission successfully altered the orbit of the moon of asteroid Didymos by means of a kinetic impact, the first empirically verified demonstration of planetary defense technology. For the relationship between an object's absolute magnitude and its brightness, see [/astronomy/foundations/magnitude/](/en/astronomy/foundations/magnitude/).
+</Aside>
+
+## Outer reservoirs: the Kuiper belt, scattered disc, and Oort cloud
+
+Beyond Neptune's orbit (about 30 AU) there exist three tiers of small-body reservoirs, which are the sources of different types of comets.
+
+| Region | Distance from Sun (AU) | Geometry | Main members | Source relationship |
+| --- | --- | --- | --- | --- |
+| Kuiper belt | ~30–50 | Flattened ring, close to the ecliptic plane | Pluto, Haumea, Makemake, and numerous TNOs | Jupiter-family short-period comets |
+| Scattered disc | ~30 to several hundred | Highly eccentric, highly inclined orbits | Eris and others | Some short-period comets |
+| Oort cloud | ~2000 to over 100,000 | Spherical shell enveloping the Solar System | Inferred only from theory and cometary orbits | Long-period comets |
+
+The Kuiper belt is composed of icy bodies and is the main source of short-period comets (especially Jupiter-family comets). The Oort cloud is a hypothetical spherical shell of icy bodies whose outer edge may extend to about half a light-year, approaching the gravitational sphere of influence of neighboring stars; perturbations from passing stars, interstellar clouds, and galactic tidal forces can push objects within it toward the inner Solar System, forming long-period comets. To this day there is no direct observational evidence for the Oort cloud; it is inferred entirely from the orbital distribution of long-period comets.
+
+<Aside type="note" title="The astronomical unit (AU)">
+1 astronomical unit (AU) ≈ the mean Earth–Sun distance, about 149.6 million km. Neptune is about 30 AU from the Sun, the main body of the Kuiper belt is about 30–50 AU, while the outer edge of the Oort cloud may reach the order of 100,000 AU (about half a light-year). These scales illustrate that the gravitational domain of the Solar System extends far beyond the region occupied by the eight planets.
+</Aside>
+
+## Comet
+
+A comet is a small body composed of ice, dust, and rock, often vividly called a "dirty snowball." When it approaches the Sun and is heated, the volatile ices sublimate and erupt, unfolding a coma and tail around the solid nucleus, and its brightness can vary dramatically over a few weeks.
+
+<Fig name="fig-comet-structure" alt="Schematic of cometary structure, marking the nucleus, coma, ion tail, and dust tail" caption="The basic structure of a comet: the central nucleus, the coma enveloping the nucleus, and the dust tail (yellowish, slightly curved) and ion tail (bluish, straight) extending away from the Sun." />
+
+### Structure
+
+| Component | Material | Typical scale | Color / visibility |
+| --- | --- | --- | --- |
+| Nucleus | Water ice and volatile ices such as CO₂, CO, methane, and ammonia, mixed with silicate dust and rock | A few hundred meters to about 30 km; mean density about 0.6 g/cm³ | Solid, inactive when far from the Sun |
+| Coma | An atmosphere of sublimated gas and dust | Thousands to over a million kilometers, can exceed the Sun's diameter | A bright cloud, visible to the naked eye / telescope |
+| Hydrogen envelope | Neutral hydrogen produced by the photodissociation of water molecules | Can reach millions of kilometers | Detectable only in the ultraviolet, invisible to the naked eye |
+| Ion tail | Gas ionized by the solar wind (such as CO⁺) | Can reach hundreds of millions of kilometers | Bluish, **straight**, pointing along the solar magnetic field |
+| Dust tail | Micron-scale dust pushed away by radiation pressure | Can reach tens of millions of kilometers | Yellowish-white, **slightly curved**, due to the influence of orbital motion |
+
+The nucleus of Halley's Comet (1P/Halley) is about 15×8×8 km, and that of Comet 67P/Churyumov–Gerasimenko is about 4.1×3.3×1.8 km, both irregular in shape and confirmed by close-up observation from spacecraft.
+
+<Aside type="tip" title="The direction of comet tails and their differences">
+Whether a comet is rushing toward or away from the Sun, both tails extend **away from the Sun**, rather than trailing behind its path of motion—because they are "blown" out by the solar wind and solar radiation pressure. The ion tail is extremely light and responds almost instantaneously to the solar wind, so its direction points strictly away from the Sun and is straight; the dust tail particles are heavier and retain part of their orbital velocity after being released, so they are flung behind the comet to form a curved arc. As a result an active comet often displays two forked tails of different colors.
+</Aside>
+
+### Orbital classification
+
+By orbital period, comets are divided into two broad classes, short-period and long-period, which have different origins.
+
+| Class | Period | Source | Orbital characteristics | Examples |
+| --- | --- | --- | --- | --- |
+| Jupiter-family (JFC) | < 20 years | Kuiper belt / scattered disc | Low inclination (≤30°), aphelion near Jupiter's orbit | 67P, Encke's Comet 2P |
+| Halley-type (HTC) | 20–200 years | Kuiper belt / scattered disc | Broad range of inclinations, can be retrograde | Halley's Comet 1P (about 76 years) |
+| Long-period (LPC) | > 200 years | Oort cloud | High eccentricity, arriving from all directions over the celestial sphere | Hale–Bopp C/1995 O1, Hyakutake C/1996 B2, NEOWISE C/2020 F3 |
+
+Each time a comet approaches the Sun and brightens is called an **apparition**. Short-period comets have predictable apparitions; for example Halley's Comet has returned accurately many times in history (1531, 1607, 1682, 1759, etc.), with its most recent perihelion passage in 1986 and the next expected in 2061. Long-period comets can have orbital periods of thousands or even over a million years, and are usually observed only once in a lifetime. Bright comets can be enjoyed with the naked eye or an entry-level telescope; for observing tips see [/astronomy/observing/visual-techniques/](/en/astronomy/observing/visual-techniques/), while imaging and visibility are also affected by atmospheric and light-pollution conditions, see [/astronomy/observing/conditions/](/en/astronomy/observing/conditions/).
+
+## Meteoroids, meteors, and meteorites
+
+Three terms describe the same material in different stages and must be strictly distinguished:
+
+| Term | Definition | Location |
+| --- | --- | --- |
+| Meteoroid | A rocky/metallic fragment in interplanetary space (scale from microns to meters) | Outside the atmosphere |
+| Meteor | The phenomenon of a meteoroid entering the atmosphere at high speed and glowing as friction with the gas ionizes it (commonly called a "shooting star") | Within the atmosphere, typically at an altitude of about 75–100 km |
+| Meteorite | The residual solid that survives without being fully ablated and falls to the surface | On the ground |
+
+The speed at which meteoroids enter the atmosphere is about 11–72 km per second; an extremely bright meteor that is brighter than Venus (about magnitude −4 or above) is called a **fireball**, which sometimes bursts apart in the air accompanied by a persistent train and sound; such a bursting event is also called a **bolide**.
+
+### Meteor shower
+
+When the Earth passes through a stream of dust left behind along the orbit of a comet (or certain asteroids), large numbers of meteoroids pour into the atmosphere along nearly parallel paths, forming a meteor shower.
+
+<Fig name="fig-meteor-radiant" alt="Schematic of a meteor shower radiant, with multiple meteor trails diverging from one point in all directions" caption="The meteors of the same shower appear, due to perspective, to diverge from a single point in the sky, which is the radiant; the true paths of the meteoroids are parallel to one another." />
+
+- **Radiant**: meteors of the same shower appear to diverge from a single point on the celestial sphere in all directions, which is a perspective effect of parallel paths; the constellation (or nearby star) where the radiant lies is the source of the shower's name.
+- **ZHR (zenithal hourly rate)**: the extrapolated number of meteors a single observer can see per hour under the ideal conditions of the darkest Bortle level and the radiant at the zenith. The actual number seen is usually lower than the ZHR, decreasing as the radiant's altitude drops and the sky brightens.
+- **Parent body**: the object that left behind the dust stream, mostly a comet, occasionally an asteroid (possibly an "extinct" comet).
+
+| Meteor shower | Peak date (approx.) | Radiant constellation | Parent body | ZHR (approx.) | Features |
+| --- | --- | --- | --- | --- | --- |
+| Quadrantids | Jan 3–4 | Boötes | Asteroid 2003 EH₁ (suspected extinct comet) | 110 | Sharp peak, lasting only a few hours |
+| Perseids | Aug 12–13 | Perseus | Comet Swift–Tuttle 109P | 100 | A classic of Northern Hemisphere summer nights, with relatively many fireballs |
+| Geminids | Dec 13–14 | Gemini | Asteroid 3200 Phaethon | 150 | The most reliable and abundant of the year, with an asteroid as parent body |
+
+The Quadrantids are named after a now-defunct constellation, Quadrans Muralis, whose radiant now lies in Boötes. The Quadrantids and the Geminids are the only two major meteor showers whose parent body is an asteroid rather than a comet.
+
+<Aside type="caution" title="Tips for observing meteor showers">
+Observing a meteor shower requires no equipment at all. The key points are: get away from light pollution, give your eyes about 20–30 minutes for dark adaptation, avoid nights with strong moonlight, and choose the latter half of the night when the radiant has risen to a higher position. Your field of view should be aimed about 30°–60° away from the radiant, so as to catch longer meteor trails. For the relationship between dark-sky level and the number of visible objects, see [/astronomy/observing/conditions/](/en/astronomy/observing/conditions/).
+</Aside>
+
+## Zodiacal light and the gegenschein
+
+**Zodiacal light** is a diffuse faint glow formed by interplanetary dust scattering sunlight. This dust is concentrated near the ecliptic plane, forming a lens-shaped dust cloud centered on the Sun, so the zodiacal light appears as a cone-shaped column of light along the ecliptic, brighter near the horizon and fading upward, and tilting along the ecliptic. It is the accumulation over hundreds of millions of years of collisions among small bodies and material shed by comets, namely interplanetary dust.
+
+The best conditions for observing the zodiacal light:
+
+- At mid-latitudes, it is more easily seen in the **western sky after sunset in spring** or the **eastern sky before sunrise in autumn** (for the Northern Hemisphere); the zodiacal light before sunrise is commonly called the "false dawn."
+- A dark sky of Bortle 1–3 is required, and moonlight and light pollution must be avoided.
+
+**Gegenschein (counterglow)** is another phenomenon formed by interplanetary dust back-scattering sunlight, appearing near the **antisolar point** directly opposite the Sun, manifesting as a small, slightly brighter oval patch of light, fainter and harder to discern than the zodiacal light. The extremely faint band of light that connects the zodiacal light and the gegenschein and extends along the entire ecliptic is called the **zodiacal band**, visible only under excellent dark skies.
+
+<Fig name="milkyway" alt="The arch of the Milky Way under a dark night" caption="Under a dark sky far from light pollution, the Milky Way, zodiacal light, and meteors can appear together, forming a complete starry-night scene." />
+
+<CardGrid>
+  <LinkCard title="Visual observing techniques" href="/en/astronomy/observing/visual-techniques/" description="Dark adaptation, averted vision, and tips for enjoying meteor showers" />
+  <LinkCard title="Observing conditions and dark skies" href="/en/astronomy/observing/conditions/" description="Light pollution, the Bortle scale, and atmospheric transparency" />
+  <LinkCard title="Solar System planets" href="/en/astronomy/solar-system/planets/" description="Compare the definitions and characteristics of the major planets and small bodies" />
+  <LinkCard title="Glossary" href="/en/reference/glossary/" description="Look up terms such as AU, ZHR, and radiant" />
+</CardGrid>
+
+## References
+
+- [Dwarf planet — Wikipedia](https://en.wikipedia.org/wiki/Dwarf_planet): The IAU 2006 definition of a dwarf planet and the diameter, mass, and orbital data of the five members.
+- [Comet — Wikipedia](https://en.wikipedia.org/wiki/Comet): Cometary structure, the origin of comet tails, the short-period and long-period classification, and famous comets.
+- [Near-Earth object — Wikipedia](https://en.wikipedia.org/wiki/Near-Earth_object): The definition of NEOs, the grouping of near-Earth asteroids, PHA criteria, and impact events.
+- [Zodiacal light — Wikipedia](https://en.wikipedia.org/wiki/Zodiacal_light): The origin and observing conditions of the zodiacal light, gegenschein, and zodiacal band.
+- [Pluto & Dwarf Planets — NASA Science](https://science.nasa.gov/dwarf-planets/): An overview of dwarf planets and notes on candidate objects.
+- [Quadrantids / Geminids — Wikipedia](https://en.wikipedia.org/wiki/Quadrantids): The radiants, parent bodies, and ZHR figures of the major meteor showers.

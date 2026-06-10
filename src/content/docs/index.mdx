@@ -1,0 +1,81 @@
+---
+title: 拾光记
+description: 面向中文读者的天文与天文摄影知识库,覆盖基础概念、观测规划、深空目标、远程成像和后期处理。
+template: splash
+hero:
+  title: "拾光记 Lumina"
+  tagline: 收集星光,记录星空 · 天文与天文摄影知识库
+  actions:
+    - text: 开始阅读
+      link: /start/
+      icon: right-arrow
+      variant: primary
+    - text: 浏览天体目录
+      link: /reference/catalog/
+      icon: open-book
+      variant: secondary
+    - text: 学习路径
+      link: /reference/learning-paths/
+      icon: list-format
+      variant: minimal
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+import Fig from '@/components/Fig.astro';
+
+## 为什么仰望星空
+
+一百三十八亿年前,宇宙在一场大爆炸中开始,并随着膨胀慢慢冷却。约三十八万年后,它终于变得透明,第一缕光得以自由穿行,那就是我们今天仍能接收到的宇宙微波背景。此后是漫长的黑暗年代,气体在引力下聚拢、坍缩,直到核聚变被点燃,第一代恒星照亮了虚空。
+
+恒星在炉膛里把氢与氦熔成更重的元素;当它们燃尽、化作超新星,或在中子星并合中迸裂,这些物质被抛回宇宙,又汇入下一代的恒星与行星。一轮又一轮,我们身上的碳、氧与铁,都来自某颗早已熄灭的恒星。我们的身体,本身就是一段被宇宙写下的时间。
+
+所以当我们抬头仰望,看到的并非与己无关的远方,而是自己的来处。这个站就是为这份好奇与归属而建:从认识一颗星、读懂一张星图,到亲手拍下深空的微光,愿它陪你慢慢读懂星空,也读懂我们所在的宇宙,成为宇宙认识它自己的一种方式。
+
+<div class="pillars">
+  <a class="pillar-card" href="/astronomy/foundations/celestial-coordinates/">
+    <h3>天文知识</h3>
+    <p>天球坐标、时间系统、星等、太阳系、恒星、深空天体、宇宙学与观测条件。</p>
+  </a>
+  <a class="pillar-card" href="/astrophotography/remote-platforms/overview/">
+    <h3>天文摄影</h3>
+    <p>光学、传感器、曝光、校准帧、深空与行星拍摄、远程成像和后期处理流程。</p>
+  </a>
+</div>
+
+## 知识索引
+
+<CardGrid>
+  <LinkCard title="天体目录" href="/reference/catalog/" description="Messier / NGC / IC 目标索引,包含位置、星等、半球、季节和推荐焦距。" />
+  <LinkCard title="著名天文台" href="/reference/observatories/" description="科研级天文台、主要设备和台址条件说明。" />
+  <LinkCard title="术语表" href="/reference/glossary/" description="天文和天文摄影常见术语的中英对照解释。" />
+  <LinkCard title="软件索引" href="/reference/software/" description="规划、拍摄、导星、叠加和后期处理工具清单。" />
+  <LinkCard title="远程平台对比" href="/astrophotography/remote-platforms/platforms-comparison/" description="AstroBin、iTelescope 和 SkyShare 的定位、费用和适用场景。" />
+  <LinkCard title="学习路径" href="/reference/learning-paths/" description="按目标整理的阅读顺序,适合从入口页开始查找下一篇。" />
+</CardGrid>
+
+## 先从这里开始
+
+<CardGrid>
+  <LinkCard
+    title="零基础观测 →"
+    href="/astronomy/observing/hemisphere-visibility/"
+    description="先了解纬度和季节如何决定你能看到哪些目标(半球可见性),再到天球坐标学习目标定位。"
+  />
+  <LinkCard
+    title="深空摄影入门 →"
+    href="/astrophotography/remote-platforms/overview/"
+    description="从远程成像入门了解数据获取方式,再到叠加处理完成基础后期。"
+  />
+</CardGrid>
+
+## 图廊一瞥
+
+站内图片来自 NASA、ESO、ESA/Hubble 和 Wikimedia Commons 等公共版权或开放许可来源。点击下面任意处,前往「常见深空天体导览」浏览全部图片。
+
+<a class="gallery-link" href="/astronomy/deep-sky/notable-objects/#obj-m31-andromeda">
+  <div class="cols2">
+    <Fig name="m42-orion" alt="猎户座大星云 M42" caption="M42 猎户座大星云,北半球冬季常见的明亮发射星云。" />
+    <Fig name="carina" alt="船底座星云" caption="NGC 3372 船底座星云,南天大型发射星云和恒星形成区。" />
+  </div>
+  <span class="gallery-cta">浏览全部常见深空天体 →</span>
+</a>

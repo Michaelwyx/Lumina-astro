@@ -1,0 +1,175 @@
+---
+title: "'Noise and Signal-to-Noise Ratio: Why We Stack'"
+description: A systematic treatment of signal and the four classes of noise in astrophotography, the definition and formula for signal-to-noise ratio (SNR), how random noise falls as √N while SNR ∝ √N under stacking, the decisive role of total integration time, and how dithering, dark skies, and narrowband boost SNR.
+difficulty: intermediate
+pillar: astrophotography
+sidebar:
+  order: 4
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import SNRChart from '@/components/diagrams/SNRChart.astro';
+
+Deep-sky objects are extremely faint; in a single exposure the target signal is often at the same level as the noise, or even buried beneath it. The signal-to-noise ratio (SNR) is the single most fundamental physical quantity for gauging imaging quality—it directly determines how clean and refined the final image is, and it explains why astrophotography requires capturing dozens or even hundreds of sub-frames and then stacking them. This page lays out the sources of signal and noise, the definition and formula of SNR, the statistical principle behind stacking, and the practical avenues for raising SNR during a shoot.
+
+## Signal and Noise
+
+**Signal** refers to the number of electrons recorded on the sensor after the photons from the target object undergo photoelectric conversion, usually counted in electrons (e⁻). The longer the exposure, the larger the aperture, the higher the quantum efficiency (QE), and the darker the sky, the more signal electrons accumulate. Signal is deterministic: for the same target under the same conditions, every sub-frame records the same expected signal.
+
+**Noise** is the random fluctuation superimposed on the signal, manifesting as graininess in the image and color speckle in the shadows. The statistical measure of noise is the standard deviation of the signal fluctuation, likewise in electrons (e⁻). Unlike signal, noise differs from one sub-frame to the next, being a manifestation of a random process.
+
+Noise in astronomical imaging comes mainly from the following four sources:
+
+| Noise source | English | Physical nature | Magnitude of noise | Main countermeasure |
+| --- | --- | --- | --- | --- |
+| 光子散粒噪声 | shot noise / photon noise | Photon arrivals follow a Poisson distribution; the count itself fluctuates | √(target signal) | Extend total integration time, increase aperture |
+| 天光背景噪声 | sky background noise | Shot noise from background photons due to light pollution, moonlight, airglow, etc. | √(background signal) | Dark skies, narrowband filters, light-pollution filters |
+| 暗电流噪声 | dark current noise | Thermally excited stray electrons in the sensor; the count likewise follows a Poisson distribution | √(dark-current electrons) | Cooling, dark-frame calibration |
+| 读出噪声 | read noise | Electronic noise introduced when charge is converted to voltage and through analog-to-digital conversion | Fixed rms value, independent of exposure length | Make single exposures long enough to "swamp" it |
+
+### Photon Shot Noise
+
+Shot noise is the most fundamental class of noise. Photons arrive from independent, random emission events with a constant average arrival rate, and their count follows a Poisson distribution. A core property of the Poisson distribution is that **the standard deviation equals the square root of the mean**. Therefore, if a pixel records an average of `S` signal electrons, its shot noise is:
+
+```
+N_shot = √S
+```
+
+From this, the SNR when limited only by shot noise (shot-noise-limited) is:
+
+```
+SNR = S / √S = √S
+```
+
+For example, if a pixel records 100 electrons, the shot noise is about 10 electrons and the SNR is about 10. This relationship shows that shot noise cannot be eliminated by improving the camera, because it stems from the randomness of photon arrival itself. It is both the reason shot noise is proportional to the square root of the signal and the physical root of the √N stacking law discussed later.
+
+Sky-background photons (light pollution, moonlight, airglow) obey the same statistics as target photons, so their shot noise is `√(background signal)`. It is worth noting that the **signal** of the background can be subtracted in post-processing, but the **shot noise** carried by the background cannot be subtracted—this is precisely why light pollution severely degrades image quality.
+
+<Aside type="note" title="The fundamental nature of shot noise">
+Shot noise is an intrinsic property of the physical process; it cannot be eliminated even with a perfect sensor. When the target signal is strong enough (the total electron count far exceeds the square of the read noise), imaging enters the "shot-noise-limited" regime, where camera performance is at its best and SNR can be improved further only by increasing total integration time or lowering the sky background.
+</Aside>
+
+### Dark-Current Noise and Read Noise
+
+**Dark current** consists of the stray electrons generated thermally within the silicon when the sensor is unilluminated, usually expressed in "electrons/pixel/second" and increasing with temperature (empirically, dark current halves for roughly every 5–9 °C of cooling). The electrons accumulated from dark current also follow Poisson statistics, so their noise is `√(number of dark-current electrons)`. The **fixed-bias** part of dark current can be subtracted via dark-frame calibration, but its **shot noise** cannot be removed and can only be reduced by cooling.
+
+**Read noise** is the electronic noise introduced each time the sensor is read out—when charge is converted to voltage and undergoes analog-to-digital conversion—originating from the white noise and 1/f flicker noise of the on-chip amplifier and so on. It is independent of exposure length: **each readout introduces one fixed dose of rms noise**. The read noise of modern cooled cameras is typically 1–5 e⁻, while early CCDs were around 3–5 e⁻. Read noise is itself already an rms value, so it enters the SNR formula in squared form (see below).
+
+## Definition and Formula of SNR
+
+SNR is defined as the ratio of signal to total noise:
+
+```
+SNR = signal / total noise
+```
+
+Because the noise sources above are mutually uncorrelated, they combine into total noise in **quadrature** (added in squares, then square-rooted). For a single sub-frame, the SNR formula incorporating all noise sources is:
+
+```
+SNR = S_obj / √(S_obj + S_sky + D·t + RN²)
+```
+
+where each quantity (all in electrons e⁻, or electron counts after conversion) means the following:
+
+| Symbol | Meaning | Role in the formula |
+| --- | --- | --- |
+| `S_obj` | Number of target signal electrons | Numerator; also enters the denominator as its own shot-noise term |
+| `S_sky` | Number of sky-background signal electrons | Enters the denominator only (adds noise but no useful signal) |
+| `D·t` | Number of dark-current electrons (dark current D × exposure length t) | Enters the denominator |
+| `RN` | Read noise (rms) | Enters the denominator as `RN²` |
+
+In engineering practice, usability is often gauged by the numerical value of SNR: a per-pixel SNR of about 5∶1 is generally considered the bare minimum for recognizability, and the higher the value the clearer the image. Raising the SNR—rather than merely chasing a "brighter image"—is the true goal of exposure and post-processing. For the trade-off between read noise and single-exposure length, see [Exposure and Gain](/en/astrophotography/fundamentals/exposure/); for the concepts of brightness and limiting magnitude, see [The Magnitude System](/en/astronomy/foundations/magnitude/).
+
+<Aside type="caution" title="Common pitfall: treating 'subtracting the background' as 'removing noise'">
+Pulling down the background in post-processing and subtracting vignetting removes the **signal** of the background (the systematic component); it does not remove the **shot noise** brought by background photons. Under light pollution, sky shot noise can far exceed the target's own shot noise, and once this random noise enters a sub-frame it cannot be removed afterward—it can only be suppressed at the source through dark skies, filters, or longer total integration time.
+</Aside>
+
+## Why Stacking Works: SNR ∝ √N
+
+Signal is deterministic (the same target has the same expected value in every sub-frame), but random noise differs from one sub-frame to the next. When averaging N sub-frames (or summing then normalizing):
+
+- the signal stays unchanged;
+- the mutually uncorrelated random noise falls because it partially cancels, by a factor of `1 / √N`.
+
+Dividing the two yields the most important rule of thumb in astrophotography:
+
+```
+SNR ∝ √N
+```
+
+where N is the number of sub-frames included in the stack. Applied to the single-frame formula above, stacking N frames gives approximately:
+
+```
+SNR_stack = (N · S_obj) / √(N · (S_obj + S_sky + D·t + RN²)) = √N · SNR_single
+```
+
+<SNRChart />
+
+A few typical waypoints on the returns curve:
+
+| Number of stacked sub-frames N | SNR improvement factor (√N) | Note |
+| --- | --- | --- |
+| 4 | 2× | Each doubling requires multiplying the frame count by 4 |
+| 16 | 4× | Doubled again relative to 4 frames |
+| 64 | 8× | Doubled again relative to 16 frames |
+| 100 | 10× | A common "one night's worth" amount |
+| 400 | 20× | Requires the total investment of several nights |
+
+<Aside type="caution" title="Diminishing returns">
+Because of the square-root relationship, the gains diminish as the frame count grows. Going from 4 frames to 16 frames doubles the SNR; but to double it again on top of that, you must go to 64 frames. In other words, **every time you double the SNR, the required number of sub-frames must be multiplied by 4**. This explains why "shooting one more night" is almost always worthwhile, while the marginal return of "shooting forever" gradually declines.
+</Aside>
+
+## The Decisive Role of Total Integration Time
+
+To restate the rule above: what determines the quality of the final image is not how beautiful any single frame is, but the **total integration time = number of sub-frames × single-exposure length**. Accumulating 4 hours of total integration over a night far outperforms a single extreme long exposure (which also risks losing the entire frame to tracking errors, satellite trails, or cosmic-ray hits). This explains the basic workflow of astrophotography—"shoot many sub-frames, then stack":
+
+1. Make each exposure long enough that the shot noise produced by the target and sky signals exceeds the read noise, i.e. "swamp" the read noise;
+2. but not so long as to overexpose bright stars or waste the whole night on a few frames, so as to spread the risk of losing an entire frame;
+3. on that basis, win through the number of sub-frames, trading stacking for SNR.
+
+### The Relationship Between Sub-Frame Length and Read Noise
+
+Read noise is introduced once per readout, so **the shorter the sub-frames and the more of them there are, the larger the proportion of accumulated read noise**. Read noise appears in the formula in squared form (e.g. 5 e⁻ of read noise squared is 25 e⁻²), and shooting a large number of short frames amplifies this penalty. The sensible approach is to make each exposure long enough that the sky-background shot noise dominates the read noise, i.e. to enter the "sky-limited" regime:
+
+| Shooting environment | Sky background | Single-exposure strategy | Typical number of sub-frames |
+| --- | --- | --- | --- |
+| Dark night (dark sky) | Low | Longer single frames are possible; histogram peak about 1/4–1/3 from the left | Dozens of frames suffice |
+| Light-polluted city | High | Forced to shorten single frames (e.g. 30–60 s) to avoid overexposure | Hundreds of frames needed; read-noise proportion rises |
+
+A simple criterion: when a single exposure makes read noise negligible relative to sky shot noise, the marginal benefit of further lengthening the single frame shrinks, and at that point increasing the **number of frames** is equivalent to increasing total integration time. For the quantitative calculation of exposure length, see [Exposure and Gain](/en/astrophotography/fundamentals/exposure/); for the assessment of observing conditions and dark skies, see [Observing Conditions](/en/astronomy/observing/conditions/).
+
+## Dithering and Fixed-Pattern Noise
+
+Shooting many sub-frames brings another, often overlooked benefit: **dithering**. Every few frames, the equatorial mount is randomly shifted by a few pixels across the sky, so that fixed hot pixels, hot spots, column/row offsets, and other defects on the sensor fall on different celestial positions.
+
+- **Fixed-pattern noise**: sensor defects (hot spots, bad columns, etc.) that are independent of the exposure content and fixed in position from frame to frame. Without dithering, these defects recur at the same pixel in every sub-frame, and stacking cannot average them out.
+- **Walking noise**: when fixed-pattern noise is present and there is only a small systematic drift between frames (e.g. slow movement caused by periodic error or polar-alignment error), the defects "walk" along a fixed direction in the stacked result, forming diagonal streaks or trails.
+
+By introducing random displacements between frames, dithering converts these **position-fixed** systematic flaws into components that are **randomly distributed** relative to the celestial scene; combined with sigma-rejection algorithms (such as sigma clipping or Winsorized sigma clipping) during stacking, they can be rejected as outliers while the real signal (always aligned on the target) is preserved. This same mechanism also erases satellite and aircraft trails and cosmic-ray hits. In practice, it is advisable to dither every 1–2 frames with a displacement of a few pixels; dithering is especially important in narrowband imaging, where the OIII and SII signals are weaker and the noise more conspicuous.
+
+<Aside type="tip" title="Practical takeaways">
+- Plan around **total integration time**, rather than agonizing over how well any single frame turns out;
+- Set the lower bound of single-exposure length at "swamping the read noise / entering the sky-limited regime", and the upper bound at "no overexposure, no wasting the whole night";
+- **Be sure to enable dithering**, and use sigma-type rejection during stacking to clear fixed-pattern noise, walking noise, and trails;
+- Dark, flat, and bias frames handle the subtraction of calibratable systematic components, while random noise is reduced by stacking according to √N.
+</Aside>
+
+## Boosting SNR with Dark Skies and Narrowband
+
+Because the sky-background shot noise `√(S_sky)` enters the denominator of the SNR formula and cannot be subtracted afterward, lowering the sky background is one of the most effective ways to raise SNR.
+
+- **Dark sky**: moving to a dark-sky site with little light pollution can improve sky brightness from about 18–19 mag/arcsec² in the suburbs to about 21 mag/arcsec² at a dark site. A lower sky background means longer single frames without overexposure, lowering both `S_sky` and the read-noise proportion, while also recording fainter stars and nebular structure.
+- **Light-pollution filter (LP/UHC filter)**: suppresses artificial light pollution in specific bands, equivalent to roughly 1–2 stops of effective gain, at relatively low cost—but offers limited gain for broadband continuum objects (such as galaxies and reflection nebulae).
+- **Narrowband filter**: passes only very narrow bands (typically 3–7 nm) near emission lines such as Hα, OIII, and SII, blocking the vast majority of skyglow and moonlight out. This makes it possible to image emission nebulae even under urban light pollution, at the cost of very little transmitted light flux, requiring longer single frames (often 15 minutes or more) to ensure the signal swamps the read noise.
+
+For the radiative mechanisms of various objects and the emission-line background, see [Stars and Astrophysics](/en/astronomy/deep-sky/stellar-physics/); for a glossary of terms, see [Glossary](/en/reference/glossary/).
+
+Calibration and stacking together serve to raise the SNR: use [calibration frames](/en/astrophotography/calibration/calibration-frames/) to subtract **systematic** errors such as dark-current bias, vignetting, and offset, then use [stacking](/en/astrophotography/processing/stacking/) to reduce **random** noise according to √N. Only with both working together can numerous sub-frames be combined into a deep-sky image with lower noise and richer detail.
+
+## References
+
+- [CCD Noise Sources and Signal-to-Noise Ratio (Hamamatsu / Florida State University)](https://hamamatsu.magnet.fsu.edu/articles/ccdsnr.html) — Definitions of shot noise, dark-current noise, and read noise, plus the complete SNR formula via quadrature combination and typical values.
+- [Photons, Shot Noise and Poisson Processes (Strolls with my Dog)](https://www.strollswithmydog.com/photons-poisson-shot-noise/) — The physical details of deriving shot noise σ = √S and SNR = √S from Poisson statistics.
+- [Astrophotography Basics: SNR (Jon Rista)](https://jonrista.com/the-astrophotographers-guide/astrophotography-basics/snr/) — The combination of the four noise classes in astronomical imaging, the √N stacking law, and the trade-off between sub-frame length and read noise.
+- [What is Dithering in Astrophotography? (AstroBackyard)](https://astrobackyard.com/dithering-astrophotography/) — How dithering removes fixed-pattern noise and walking noise, and how it works together with sigma rejection.
+- [Understanding Signal-To-Noise-Ratio in Astrophotography (AstroBackyard)](https://astrobackyard.com/signal-to-noise-ratio-astrophotography/) — Basic SNR concepts, target SNR thresholds, and the effect of dark skies/filters on background noise.

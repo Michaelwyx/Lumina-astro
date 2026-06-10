@@ -1,0 +1,148 @@
+---
+title: External Resources
+description: A categorized index of commonly used books, forums and communities, databases and sky surveys, online calculators, public-domain image sources, and attribution conventions for astronomy and astrophotography.
+difficulty: beginner
+pillar: index
+sidebar:
+  order: 6
+---
+
+import { Aside, LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+This page collects commonly used **external resources** organized by purpose: introductory and advanced books, forums and communities, celestial object databases and sky survey image libraries, online calculators and planning tools, as well as public-domain image sources usable for teaching, notes, and blogs. All entries are third-party sites, and their features, pricing, and licensing terms may change over time, **so always defer to each site's official pages**. This page is only an index and does not reproduce their content.
+
+## Classic Books
+
+Systematic books remain irreplaceable for building a complete knowledge framework and verifying details. The table below lists titles long cited in the English-language community, organized by **purpose** and **difficulty**. Common Chinese translations are given for reference; actual publication information should follow the copyright page.
+
+| Title (English) | Author | Difficulty | Topics and Use Cases |
+| --- | --- | --- | --- |
+| *NightWatch: A Practical Guide to Viewing the Universe* | Terence Dickinson | Visual, no prior knowledge | Recognizing the night sky, seasonal star charts, an introduction to choosing equipment; often recommended as a first book |
+| *Turn Left at Orion* | Guy Consolmagno & Dan Davis | Pure visual introduction | "Star-hopping" to locate classic objects with a small telescope, with eyepiece field-of-view illustrations |
+| *The Backyard Astronomer's Guide* | Terence Dickinson & Alan Dyer | Beginner to advanced | A comprehensive handbook covering backyard observing, equipment selection, and both visual and photographic work |
+| *Making Every Photon Count* | Steve Richards | Introduction to deep-sky imaging | Equipment selection and acquisition workflow for deep-sky imaging; the standard introductory read in the English-language community |
+| *The Astrophotography Manual* | Chris Woodhouse | Advanced imaging | A complete technical reference from acquisition to post-processing, including calibration and algorithm details |
+| *Astrophotography* | Thierry Legault | Advanced imaging | Written by a renowned astrophotographer; a systematic treatment of deep-sky and planetary imaging techniques |
+| *Annals of the Deep Sky* (multi-volume set) | Jeff Kanipe & Dennis Webb | Advanced deep-sky | Deep-sky object data organized constellation by constellation; suited to in-depth planning and verification |
+
+<Aside type="tip" title="Suggested Reading Order">
+For a visual introduction, start with *NightWatch* or *Turn Left at Orion*. If you plan to purchase deep-sky imaging equipment, first read *Making Every Photon Count* to build an overall understanding, then fill in the technical details with *The Astrophotography Manual* or Legault's *Astrophotography*, and organize your own acquisition and post-processing workflow against this site's [Software and Tools](/en/reference/software/).
+</Aside>
+
+## Forums and Communities
+
+Communities are well suited to troubleshooting specific issues, viewing real-world imaging examples, exchanging equipment experience, and finding second-hand information. When you run into a problem, search first with the **equipment model + error keywords**; most common issues have already been discussed by someone.
+
+| Community | Language | Focus and Use Cases |
+| --- | --- | --- |
+| Cloudy Nights | English | The world's largest forum for astronomy equipment and techniques, with complete sections for visual, imaging, and DIY |
+| Stargazers Lounge | English (UK) | A friendly atmosphere with a low barrier for visual and beginner imaging questions |
+| AstroBin | English | An astrophotography image-hosting platform; most images include equipment and acquisition parameters |
+| r/astrophotography, r/telescopes | English | Reddit communities that update quickly with timely feedback, suited to fast help |
+| Mufu Astronomy Forum and domestic communities | Chinese | Long-established Chinese astronomy communities, rich in equipment discussion, organized imaging sessions, and localized experience |
+
+<Aside type="note" title="How to Search AstroBin">
+AstroBin supports filtering by target (e.g., M31), equipment focal length, camera, filter, and other criteria. Examining the framing, total exposure time, and filter combinations used in comparable configurations can serve as a reference when planning a shoot; entry pages usually publish the full acquisition parameters. Note that works on the platform **retain copyright by default**, so confirm the license before using them in your own work. Combine this with this site's [Remote Platform Comparison](/en/astrophotography/remote-platforms/platforms-comparison/) to evaluate options when you lack dark skies.
+</Aside>
+
+## Celestial Databases and Sky Survey Image Libraries
+
+For planning and identifying objects and for verifying coordinates and magnitudes, the following databases and survey tools are the most commonly used. Of these, **SIMBAD**, **VizieR**, and **Aladin** are all maintained by the Strasbourg astronomical Data Center (Centre de Données astronomiques de Strasbourg, CDS) and are core services of the Virtual Observatory ecosystem.
+
+| Resource | Type | Maintained by | Description |
+| --- | --- | --- | --- |
+| SIMBAD | Celestial object database | CDS | Records identifiers, coordinates, magnitudes, proper motions, parallaxes, spectral types, and references for objects outside the Solar System; updated every working day, exceeding 20 million entries as of November 2024 |
+| VizieR | Catalog service | CDS | Online access to a vast collection of published star catalogs and observation tables, with batch data export |
+| Aladin Sky Atlas | Sky survey browser | CDS | An interactive sky atlas that overlays multi-wavelength survey imagery (HiPS) and links with SIMBAD/VizieR to query objects within the field of view; available as desktop and web versions |
+| SDSS (Sloan Digital Sky Survey) | Survey image library | SDSS Collaboration | High-quality visible-light survey imagery and large-scale spectroscopic data |
+| DSS (Digitized Sky Survey) | Survey image library | STScI and others | All-sky imagery from digitized classic photographic plates, often used for framing checks and historical comparison |
+
+<Aside type="note" title="SIMBAD's Identifier System">
+The same object often has multiple names across different catalogs (e.g., M31, NGC 224, and Andromeda Galaxy all refer to the same target). SIMBAD aggregates all identifiers and basic measurements found in the literature, making it ideal for confirming a target's **precise coordinates, magnitude, and object type** before imaging, avoiding confusion from duplicate names. For converting between coordinates and hour angle, see this site's [Celestial Coordinate Systems](/en/astronomy/foundations/celestial-coordinates/) and [Time Systems](/en/astronomy/foundations/time-systems/).
+</Aside>
+
+## Online Calculators and Planning Tools
+
+The following tools are used for field-of-view simulation, dark-sky site selection, and weather assessment before heading out, as well as for satellite pass forecasting.
+
+| Tool | Type | Description |
+| --- | --- | --- |
+| Telescopius | Field-of-view calculator | Enter camera and telescope parameters to simulate the target's framing, composition, and camera rotation within the frame |
+| Stellarium / Stellarium Web | Virtual planetarium | Renders the real-time sky for a given time and location, including positions of stars, deep-sky objects, planets, and satellite passes; the web version requires no installation |
+| Light Pollution Map | Light pollution map | Look up the Bortle class and brightness value at a location to aid dark-sky site selection |
+| Clear Outside | Weather forecast | Hourly observing-specific forecasts of cloud cover, transparency, seeing, and more |
+| Heavens-Above | Satellite pass forecast | Forecasts visible pass times and sky paths for satellites such as the International Space Station, Hubble, and Starlink trains |
+
+<Aside type="tip" title="Planning Order Before Heading Out">
+Before imaging, proceed in this order: use **Telescopius** or **Stellarium** to confirm framing and composition, use **Light Pollution Map** to choose a dark-sky site, and use **Clear Outside** to assess cloud cover, transparency, and seeing. For the relationship between deep-sky target visibility and season, see this site's [Hemisphere Visibility](/en/astronomy/observing/hemisphere-visibility/) and [Observing Conditions](/en/astronomy/observing/conditions/); for quick target lookup, see the [Celestial Object Catalog](/en/reference/catalog/).
+</Aside>
+
+## Public-Domain Image Sources and Attribution Conventions
+
+The celestial photographs in this site's main text come from the following **public-domain or openly licensed** image sources. When creating presentations, notes, or blog references, you must still confirm the license page and attribution requirements **for each individual image** and cannot apply them uniformly.
+
+<CardGrid>
+  <LinkCard
+    title="NASA Image Library"
+    href="https://images.nasa.gov/"
+    description="Most NASA imagery is not protected by copyright in the United States (public domain) and may be used for educational and informational purposes; citing the source is recommended."
+  />
+  <LinkCard
+    title="ESO Image Library"
+    href="https://www.eso.org/public/images/"
+    description="European Southern Observatory; imagery is licensed under CC BY 4.0 and the attribution must be retained in full."
+  />
+  <LinkCard
+    title="ESA/Hubble"
+    href="https://esahubble.org/images/"
+    description="The official Hubble image library; the main content is CC BY 4.0 and may be freely used with attribution."
+  />
+  <LinkCard
+    title="NOIRLab"
+    href="https://noirlab.edu/public/images/"
+    description="The U.S. National Optical-Infrared Astronomy Research Laboratory; its public image library is mostly CC BY 4.0."
+  />
+</CardGrid>
+
+License and attribution rules differ across sources, so check the license page for each image before use:
+
+| Source | License Type | Attribution Requirement | Main Restrictions |
+| --- | --- | --- | --- |
+| NASA public imagery | Public domain (US) | Recommended but usually not mandatory; stating the source is advised | Must not imply NASA endorsement; logos/identifying marks are protected; imagery containing people or third-party material has additional restrictions |
+| ESO / ESA-Hubble / NOIRLab | CC BY 4.0 | A complete, clear attribution is required, and the attribution text must not be altered | Institutional logos require separate authorization; papers, code, music, etc. may fall outside the CC BY scope |
+| APOD (Astronomy Picture of the Day) | Varies by image | Per the specific author's requirements | Most images are copyrighted by individuals or institutions and are **not all public domain**; verify each image |
+
+The standard way to write a CC BY 4.0 attribution is "author/institution, license name", optionally with a link to the license, for example: `ESO/José Francisco, CC BY 4.0` or `NASA, ESA, Hubble`. Derivative work (cropping, color adjustment, compositing) is generally permitted, but you must **retain the original attribution and indicate that it has been modified**. For online references, the attribution should be clearly visible and not hidden, and links should remain valid.
+
+<Aside type="caution" title="Judging the Default Copyright Status">
+Most works on news media, by individual photographers, and on AstroBin and APOD **retain all rights by default (All Rights Reserved)** unless the author has explicitly marked an open license. When you see an image you like, look for a license indicator first: with no indicator, treat it as copyrighted and obtain the author's permission; never assume "if it can be found in search, it can be used." Commercial use and imagery containing recognizable people are subject to stricter restrictions.
+</Aside>
+
+## Further Reading
+
+<CardGrid>
+  <LinkCard
+    title="Software and Tools"
+    href="/en/reference/software/"
+    description="A list of acquisition, guiding, post-processing, and planning software, to be used alongside the online tools on this page."
+  />
+  <LinkCard
+    title="Celestial Object Catalog"
+    href="/en/reference/catalog/"
+    description="A quick reference for classic Messier and NGC targets, to be used with databases and calculators for planning a shoot."
+  />
+  <LinkCard
+    title="Remote Platform Comparison"
+    href="/en/astrophotography/remote-platforms/platforms-comparison/"
+    description="No dark skies? Compare the leading remote-observatory rental platforms."
+  />
+</CardGrid>
+
+## References
+
+- [SIMBAD - Wikipedia](https://en.wikipedia.org/wiki/SIMBAD) — Definition of the SIMBAD database, its maintainer CDS, and its coverage (20 million entries).
+- [SIMBAD: Introduction (CDS official)](https://simbad.u-strasbg.fr/Pages/guide/ch02.htx) — Official documentation of SIMBAD's content fields and update mechanism.
+- [Aladin Sky Atlas - Wikipedia](https://en.wikipedia.org/wiki/Aladin_Sky_Atlas) — Aladin's features, its CDS maintainer, and the desktop/web versions' linkage with SIMBAD/VizieR.
+- [Astronomy Picture of the Day - Wikipedia](https://en.wikipedia.org/wiki/Astronomy_Picture_of_the_Day) — APOD's operators (NASA/MTU) and the licensing characteristic that "images are often copyrighted."
+- [ESO Copyright Notice (official)](https://www.eso.org/public/outreach/copyright/) — Attribution requirements and exception clauses for ESO imagery under CC BY 4.0.
+- [NASA Images and Media Guidelines (official)](https://www.nasa.gov/nasa-brand-center/images-and-media/) — The public-domain status of NASA imagery, attribution recommendations, and logo/person restrictions.

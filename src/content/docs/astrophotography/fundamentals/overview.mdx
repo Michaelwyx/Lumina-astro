@@ -1,0 +1,20 @@
+---
+title: "摄影基础 · 概览"
+description: 从光学、曝光、传感器到信噪比,理解器材与成像背后的原理,为深空摄影打好地基。
+sidebar:
+  label: 概览
+  order: 0
+---
+
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+本章介绍天文摄影涉及的基础物理:光学(焦距、口径、焦比与采样)、曝光与增益、传感器类型,以及噪声与信噪比。它是整条学习路径的起点,后续的拍摄、校准与后期处理均建立在这些概念之上。
+
+## 本章涵盖
+
+<CardGrid>
+  <LinkCard title="光学基础" href="/astrophotography/fundamentals/optics/" description="焦距、口径、焦比、视场与采样率,衍射极限与各类望远镜结构。" />
+  <LinkCard title="曝光、增益与 ISO" href="/astrophotography/fundamentals/exposure/" description="曝光约束、增益与 ISO 的等价、读出噪声、动态范围与背景受限曝光。" />
+  <LinkCard title="传感器:CMOS / CCD / 单色 / OSC" href="/astrophotography/fundamentals/sensors/" description="CMOS 与 CCD 的取舍、单色配滤镜轮与彩色 OSC,以及量子效率等关键指标。" />
+  <LinkCard title="噪声与信噪比:为什么要叠加" href="/astrophotography/fundamentals/snr/" description="信号与四类噪声、SNR 按 √N 提升的规律,以及总积分时长的决定作用。" />
+</CardGrid>

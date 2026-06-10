@@ -1,0 +1,176 @@
+---
+title: Narrowband Imaging
+description: Use Hα, OIII, and SII narrowband filters to capture only the discrete emission lines of emission nebulae, suppressing light pollution and moonlight. Covers emission-line physics, the SHO/HOO palettes, dual/triple narrowband filters, and per-channel exposure ratios.
+difficulty: advanced
+pillar: astrophotography
+sidebar:
+  order: 4
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+import Fig from '@/components/Fig.astro';
+import SHOPalette from '@/components/diagrams/SHOPalette.astro';
+
+Narrowband imaging is a technique that captures only the light emitted by an object on a few specific **emission lines**, while keeping the rest of the continuous spectrum off the sensor. Ionized gas in an emission nebula, once excited, radiates only at a handful of discrete wavelengths; narrowband filters exploit this by selectively transmitting these lines through an extremely narrow passband, so that the structure of a nebula's ionized gas can still be recorded even under urban light pollution and moonlit conditions. It complements broadband RGB imaging—which captures the broad continuous spectrum of stars—rather than replacing it.
+
+<Fig name="eagle-pillars" alt="Narrowband composite of the Pillars of Creation in the Eagle Nebula" caption="The Pillars of Creation in the Eagle Nebula (M16): imaged separately on the three lines Hα, OIII, and SII, then mapped to the R, G, and B channels for compositing—this color scheme is the Hubble palette (SHO)" />
+
+## How narrowband filters work
+
+An ordinary broadband filter can have a passband hundreds of nanometers wide, collecting the stellar continuum, the airglow, and the radiation from all kinds of artificial light sources at once; a narrowband filter, by contrast, compresses the passband to cover only an extremely narrow interval around the target line.
+
+A filter's passband is described by two parameters:
+
+- **Central wavelength (CWL)**: the peak transmission wavelength of the passband, which must be aligned to the target emission line.
+- **Full width at half maximum (FWHM)**: the width in wavelength at which transmission drops to half its peak value—that is, the "bandwidth" of the passband. The FWHM of astronomical narrowband filters is typically **3–7 nm**, with some products offering wider specifications such as 12 nm.
+
+Because the energy of light pollution (street lights, scattered moonlight, airglow) is spread across a very broad band while the target line occupies only a tiny sliver of it, the narrower the passband, the less background light falls onto the sensor and the higher the target's signal-to-noise ratio relative to that background. The trade-off is that a narrow passband also transmits less of the target's own light flux, requiring longer exposures to accumulate sufficient signal; at the same time, the narrower the passband, the more sensitive it becomes to "blue shift" of the filter in fast-focal-ratio optical paths (see the pitfalls section below).
+
+<Aside type="note" title="Narrowband is not zoom or gain">
+A narrowband filter improves the contrast and detectability of the target relative to the background; it does not make the target itself brighter, nor does it create detail "out of nowhere." Its value lies in separating the faint emission lines drowned out by light pollution from the noise background.
+</Aside>
+
+## The three main emission lines
+
+The three lines most commonly used in narrowband imaging come from specific ionization states of hydrogen, oxygen, and sulfur. The table below gives their wavelengths, physical origins, and signal characteristics.
+
+| Filter | Element / Line | Wavelength in air | Nature of the line | Signal characteristics |
+| --- | --- | --- | --- | --- |
+| Hα | Hydrogen-alpha | 656.28 nm (deep red) | Allowed transition in the Balmer series; electron drops from n=3 to n=2 | The strongest line in almost every emission nebula; a tracer of ionized hydrogen (HII) regions |
+| OIII | Doubly ionized oxygen | 500.7 nm (cyan-green; also 495.9 nm) | Forbidden line | Strong in planetary nebulae, shock fronts, and low-density gas; relatively sensitive to moonlight |
+| SII | Singly ionized sulfur | 671.6 nm (deep red) | Forbidden line | Usually the weakest of the three; traces dense ionization fronts and shock regions |
+
+For how these lines arise during star formation and ionization, return to the <a href="/en/astronomy/deep-sky/stellar-physics/">Stellar Physics</a> and <a href="/en/astronomy/deep-sky/nebulae/">Nebulae</a> chapters.
+
+<Fig name="fig-emission-lines" alt="Diagram of the positions of the emission lines on the visible spectrum" caption="Hα (656 nm) and SII (672 nm) lie at the red end, while OIII (501 nm) lies at the cyan-green end; the passband of a narrowband filter covers only an extremely narrow interval around each line" />
+
+<Aside type="note" title="Forbidden lines and 'nebulium'">
+OIII and SII are forbidden lines: they hardly ever appear in the high-density gas of a ground-based laboratory, and only in an environment as extremely rarefied as a nebula do the relevant states live long enough for the transition to occur. In the 19th century, because they could not be matched to any known element, they were attributed to a hypothetical "nebulium," and it was not until 1927 that they were identified as the forbidden-line radiation of a doubly ionized oxygen plasma. This also explains why narrowband imaging is exclusive to rarefied ionized gas, rather than stars or dense objects.
+</Aside>
+
+### Hα (hydrogen-alpha)
+
+The deep-red line at 656.28 nm (in air; about 656.46 nm in vacuum, equivalent to 6563 Å) is the first line of the Balmer series, corresponding to the hydrogen atom's electron transitioning from the third energy level to the second. It is the most convenient means of tracing the ionized-hydrogen content of a gas cloud, and it is the strongest signal in the vast majority of emission nebulae and HII regions, so it usually serves as the workhorse channel and luminance reference of a narrowband workflow.
+
+### OIII (doubly ionized oxygen)
+
+With a primary line at 500.7 nm and a secondary line at 495.9 nm, appearing cyan-green to blue-green, it is a forbidden line. OIII is relatively strong in planetary nebulae, supernova-remnant shock regions, and low-density, highly excited gas, but it is comparatively faint and rather sensitive to moonlight and sky gradients, often requiring more integration time.
+
+### SII (singly ionized sulfur)
+
+The deep-red forbidden line at 671.6 nm is close in wavelength to Hα but shifted further toward the red. In most nebulae SII is the weakest of the three, mainly outlining dense ionization fronts and shock structures; in Hubble-palette composites it carries the red channel and is key to distinguishing the distribution of elements, so it often needs additional exposure to bring its signal-to-noise ratio in line with the others.
+
+## Palettes: mapping lines to RGB channels
+
+Each of the three lines produces a single-color grayscale image, and each must be mapped to one of the red, green, and blue display channels before a color image can be composited. Because the true colors of these lines (deep red, cyan-green) cannot directly reproduce the nebula "as seen by the eye," this mapping is essentially a **representative-color / false-color** assignment, and different mapping conventions are different "palettes."
+
+<SHOPalette />
+
+| Palette | Channel mapping | Filters used | Characteristics |
+| --- | --- | --- | --- |
+| SHO (Hubble palette) | SII→red, Hα→green, OIII→blue | Hα + OIII + SII | Distinguishes the spatial distribution of the three elements, producing the characteristic golden/cyan-green tones; mapping Hα→green makes the image lean green overall, requiring green removal in post |
+| HOO (bi-color) | Hα→red, OIII→green and blue | Hα + OIII | Uses only two filters; the red hydrogen regions and cyan-green oxygen regions are clearly distinct, the color is closer to a natural appearance, and the workflow is simpler |
+
+- **SHO (Hubble palette)**: maps sulfur to red, hydrogen to green, and oxygen to blue. It is the color scheme used by many famous Hubble Space Telescope images, and it can distinguish the distribution of the three elements within a single image. But because the strongest line, Hα, is placed in the green channel, the composite often leans green overall, so post-processing usually requires green removal (remove green / SCNR) and separate handling of star colors.
+- **HOO (bi-color)**: places Hα in the red channel and OIII in both the green and blue channels. It needs only two filters and yields red hydrogen structures and cyan-green oxygen structures, with colors closer to true color, making it well suited to dual-narrowband filters and one-shot color (OSC) camera workflows.
+
+For the specific channel blending, green removal, and star-handling techniques, see <a href="/en/astrophotography/processing/techniques/">Processing Techniques</a>.
+
+<Aside type="tip" title="There is no 'correct' palette">
+SHO, HOO, and CFHT (which returns Hα to the red channel), among others, are all conventions serving different expressive purposes—emphasizing the distribution of elements, approximating natural color, or highlighting a particular structure. The choice depends on the line distribution of the target and the author's intent, not on right or wrong.
+</Aside>
+
+## Monochrome cameras and color cameras
+
+Narrowband can be done along two paths: a monochrome (mono) camera with a filter wheel, or a color (OSC) camera with a multi-narrowband filter.
+
+- **Monochrome camera + filter wheel**: cycling through filters to capture Hα, OIII, and SII one at a time, each line recorded using all pixels. This offers high spatial resolution, high acquisition efficiency, and good channel purity, and is the mainstream narrowband approach. For the underlying principles, see <a href="/en/astrophotography/fundamentals/sensors/">Sensors</a>.
+- **Color camera (OSC) + dual / triple / quad narrowband filter**: a single filter passes multiple lines simultaneously, relying on the Bayer array to separate channels, so a single exposure can capture several signals without a filter wheel. The trade-off is that, owing to the Bayer array, effective resolution and channel purity are slightly lower, and channel crosstalk exists, making separation in post more complex.
+
+OSC multi-narrowband filters are classified by the number of lines they transmit, as follows:
+
+| Type | Lines transmitted | Common composite |
+| --- | --- | --- |
+| Dual-band / duo-band | Hα (656 nm) + OIII (501 nm) | HOO bi-color |
+| Tri-band | Hα + OIII + (Hβ or the additional OIII 495.9 nm) | HOO and enhanced oxygen channel |
+| Quad-band | Hα + OIII + SII + Hβ | Can approximate SHO-style composites |
+
+<Aside type="note" title="Dual-narrowband filters and OSC cameras">
+A dual-narrowband filter lets a color camera record Hα and OIII simultaneously in one shot, commonly used for HOO composites, and is suitable for users who already own a color camera and are not yet using a monochrome camera and filter wheel. While significantly suppressing light pollution, it lowers the equipment barrier to a single OSC camera plus one filter.
+</Aside>
+
+## Acquisition strategy and exposure ratios
+
+Narrowband signals are faint, so **each sub-exposure needs to be longer** (mono narrowband commonly uses 300–600 seconds, i.e. 5–10 minutes), and the total integration time is also far higher than for broadband—often several to ten times that of broadband RGB—and must be allocated according to the strength of each channel.
+
+<Steps>
+
+1. **Prioritize Hα**. In most emission nebulae Hα is the strongest, so first ensure that this channel has ample total exposure, and use it as the primary reference for luminance and detail.
+
+2. **Adjust the ratio for the target**. The table below gives common starting ratios for SHO; in practice, fine-tune them based on the target's line distribution:
+
+   | Target type | Hα : OIII : SII |
+   | --- | --- |
+   | Most emission nebulae | 2 : 1.5 : 1 |
+   | OIII-rich (planetary nebulae / supernova remnants) | 1.5 : 2 : 1 |
+   | Weak SII, needs reinforcement | 2 : 1 : 1.5 |
+
+3. **Give OIII / SII more integration**. These two lines are usually fainter, so increase the number of frames or lengthen each sub-exposure as appropriate to bring their signal-to-noise ratio in line. For how signal-to-noise ratio accumulates with integration time, see <a href="/en/astrophotography/fundamentals/snr/">SNR</a>.
+
+4. **Calibrate each channel independently**. Dark frames and flat frames must be acquired and applied per channel, to avoid contamination of the result by optical-path differences between filters. See <a href="/en/astrophotography/calibration/calibration-frames/">Calibration Frames</a> for details.
+
+5. **Plan channels around the moon phase**. Hα and SII are little affected by moonlight and can still be acquired around full moon; OIII is more sensitive to moonlight and is best scheduled for when the sky is darker or the target is high overhead. For light-pollution grading and sky conditions, see <a href="/en/astronomy/observing/conditions/">Observing Conditions</a>.
+
+</Steps>
+
+<Aside type="tip" title="Usable on moonlit nights and in the city">
+A narrowband passband is extremely narrow and is almost unaffected by the moon's continuous spectrum, so Hα, SII, and OIII can still be acquired around full moon and under urban light pollution. Dark new-moon nights are better reserved for broadband RGB and faint galaxies.
+</Aside>
+
+## Star handling
+
+Stars radiate a broad continuous spectrum, of which only a small slice passes through each of the three discrete narrowband lines, so the stars in a narrowband image are often miscolored—in SHO composites they frequently appear magenta, pink, or purple, and they are bloated and easily steal the show. Common countermeasures:
+
+- **Shoot RGB stars separately**: capture a separate set of short broadband RGB exposures and, in post, replace the narrowband stars with natural-color ones.
+- **Star removal and recombination**: use star-removal tools to strip the stars out separately, process the nebula and the stars individually, and then merge them.
+- **Saturation / hue adjustment**: in HSL, desaturate or color-correct the purple/magenta region to reduce the miscoloring.
+
+<Aside type="caution" title="Star miscoloring is inherent">
+Narrowband star miscoloring arises from the principle of "sampling a continuous spectrum with three discrete lines," not from an equipment fault. The goal of processing is to make star colors look natural and not distract from the nebula, not to eliminate them entirely.
+</Aside>
+
+## Suitable and unsuitable targets
+
+Narrowband imaging works only on ionized gas that emits on lines such as Hα, OIII, and SII; it is nearly powerless against objects that radiate a continuous spectrum.
+
+| Suitable (emission-line objects) | Unsuitable (continuum objects) |
+| --- | --- |
+| Emission nebulae / HII regions (Orion, Lagoon, North America, Rosette) | Reflection nebulae (scatter blue light, no emission lines) |
+| Planetary nebulae (Ring, Dumbbell) | Galaxies (mainly stellar continuum; only local HII regions show Hα) |
+| Supernova remnants (Crab, Veil) | Open / globular clusters (stellar continuum) |
+| Wolf–Rayet bubbles, shock structures | Comets, planets, wide-field star fields |
+
+<Aside type="caution" title="Do not use pure narrowband on reflection nebulae and galaxies">
+Reflection nebulae rely on dust scattering the continuous light of nearby stars, and the main body of a galaxy is the continuous spectrum of countless stars; they have almost no signal within a narrowband passband. Forcing pure narrowband on them yields only an extremely dim and distorted result. The Hα regions in a galaxy can serve as an accent channel for broadband LRGB, but the main body must still rely on broadband imaging.
+</Aside>
+
+<div class="cols2"><Fig name="carina" alt="Narrowband image of the Carina Nebula" caption="The Carina Nebula (NGC 3372): a large emission nebula rich in Hα, OIII, and SII, a classic target for practicing different channel ratios and palettes" /><Fig name="eagle-pillars" alt="Narrowband detail of part of the Eagle Nebula" caption="The ionization fronts of the Eagle Nebula are especially clear in the SII channel, demonstrating narrowband's ability to outline dense structures" /></div>
+
+## Common pitfalls
+
+- **"Narrowband can shoot any deep-sky object"**: it works only on emission-line objects; reflection nebulae and galaxies are unsuitable (see the table above).
+- **"The narrower the bandwidth, the better"**: a narrower passband suppresses light pollution more strongly, but transmits less of the target's light and requires longer exposures; moreover, in fast-focal-ratio (e.g. f/2–f/4) optical paths, oblique incidence blue-shifts the passband away from the line, actually losing signal—in which case a slightly wider specification is often chosen.
+- **"SHO is the true color"**: both SHO and HOO are representative-color mappings, presenting the distribution of elements rather than the true color seen by the eye.
+- **"Narrowband star miscoloring means a bad frame"**: miscoloring is the inherent result of discretely sampling a continuous spectrum and can simply be tempered through star handling.
+- **"OIII is as easy to shoot as Hα"**: OIII is usually fainter and sensitive to moonlight, requiring more integration and better sky conditions.
+
+Once familiar with the narrowband fundamentals, you can choose targets such as the North America Nebula, the Rosette Nebula, the Veil Nebula, and the Carina Nebula to practice different channel ratios and the SHO/HOO palettes. For the visibility and seasonal scheduling of more deep-sky objects, see <a href="/en/astronomy/observing/hemisphere-visibility/">Hemisphere Visibility</a>.
+
+## References
+
+- [Hubble palette — Wikipedia](https://en.wikipedia.org/wiki/Hubble_palette): The SHO palette's SII→red, Hα→green, OIII→blue channel-mapping convention.
+- [H-alpha — Wikipedia](https://en.wikipedia.org/wiki/H-alpha): The wavelength of the Hα line (656.28 nm), its Balmer-series transition, and its astronomical significance as a tracer of ionized hydrogen.
+- [Doubly ionized oxygen — Wikipedia](https://en.wikipedia.org/wiki/Doubly_ionized_oxygen): The wavelengths of the OIII forbidden lines (500.7 / 495.9 nm), the history of "nebulium," and the conditions under which they arise.
+- [Narrowband Imaging Primer — AstroBackyard](https://astrobackyard.com/narrowband-imaging/): Narrowband filter bandwidth selection, light-pollution suppression, exposure length, and handling of star miscoloring.
+- [Narrowband Astrophotography: Ha, OIII, SII Guide — Optical Mechanics](https://www.opticalmechanics.com/narrowband-astrophotography-ha-oiii-sii-guide/): SII signal characteristics, the HOO mapping, dual/triple/quad narrowband filters, and suitable targets.
+- [Narrowband Filters Explained — Nordic Astronomy Shop](https://www.nordicastro.com/2026/03/14/narrowband-filters-explained-ha-oiii-sii-and-dual-band-options/): The wavelengths of the three lines, the 3–7 nm bandwidth, and the light-pollution suppression of OSC dual-narrowband filters.

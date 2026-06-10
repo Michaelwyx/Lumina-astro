@@ -1,0 +1,141 @@
+---
+/**
+ * 数据驱动的天体目录:可按类型 / 半球 / 季节筛选 + 关键词搜索。中英双语。
+ * 数据来自 src/data/objects.yaml(objects 集合)。
+ */
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import { objImage } from '../lib/assets';
+
+interface Props { lang?: 'zh' | 'en'; }
+const { lang = 'zh' } = Astro.props;
+const en = lang === 'en';
+
+const objects = (await getCollection('objects')).sort((a, b) => {
+  const order = { Messier: 0, NGC: 1, IC: 2, Caldwell: 3, Other: 4 } as Record<string, number>;
+  return (
+    (order[a.data.catalog] ?? 9) - (order[b.data.catalog] ?? 9) ||
+    a.data.id.localeCompare(b.data.id, undefined, { numeric: true })
+  );
+});
+
+const TYPE_ZH: Record<string, string> = {
+  galaxy: '星系', 'dwarf-galaxy': '矮星系', 'emission-nebula': '发射星云',
+  'reflection-nebula': '反射星云', 'planetary-nebula': '行星状星云', 'dark-nebula': '暗星云',
+  'supernova-remnant': '超新星遗迹', 'open-cluster': '疏散星团', 'globular-cluster': '球状星团', 'star-cloud': '星云团',
+};
+const TYPE_EN: Record<string, string> = {
+  galaxy: 'Galaxy', 'dwarf-galaxy': 'Dwarf galaxy', 'emission-nebula': 'Emission nebula',
+  'reflection-nebula': 'Reflection nebula', 'planetary-nebula': 'Planetary nebula', 'dark-nebula': 'Dark nebula',
+  'supernova-remnant': 'Supernova remnant', 'open-cluster': 'Open cluster', 'globular-cluster': 'Globular cluster', 'star-cloud': 'Star cloud',
+};
+const TYPE = en ? TYPE_EN : TYPE_ZH;
+const HEMI: Record<string, string> = en
+  ? { north: 'Northern', south: 'Southern', both: 'Both' }
+  : { north: '北天', south: '南天', both: '南北皆宜' };
+const SEASON: Record<string, string> = en
+  ? { spring: 'Spring', summer: 'Summer', autumn: 'Autumn', winter: 'Winter', all: 'All year' }
+  : { spring: '春', summer: '夏', autumn: '秋', winter: '冬', all: '全年' };
+const T = en
+  ? { type: 'Type', hemi: 'Hemisphere', season: 'Season', all: 'All', search: 'Search by number / name…', unit: 'objects',
+      north: 'Northern', south: 'Southern', both: 'Both', spr: 'Spring', sum: 'Summer', aut: 'Autumn', win: 'Winter', allyr: 'All year' }
+  : { type: '类型', hemi: '半球', season: '季节', all: '全部', search: '搜索编号 / 名称…', unit: '个天体',
+      north: '北天', south: '南天', both: '南北皆宜', spr: '春', sum: '夏', aut: '秋', win: '冬', allyr: '全年' };
+
+const base = en ? '/en/reference/catalog/' : '/reference/catalog/';
+const types = [...new Set(objects.map((o) => o.data.type))];
+---
+
+<div class="cat-filters" data-cat-filters>
+  <label>{T.type}</label>
+  <select data-f="type">
+    <option value="">{T.all}</option>
+    {types.map((t) => <option value={t}>{TYPE[t]}</option>)}
+  </select>
+  <label>{T.hemi}</label>
+  <select data-f="hemisphere">
+    <option value="">{T.all}</option>
+    <option value="north">{T.north}</option>
+    <option value="south">{T.south}</option>
+    <option value="both">{T.both}</option>
+  </select>
+  <label>{T.season}</label>
+  <select data-f="season">
+    <option value="">{T.all}</option>
+    <option value="spring">{T.spr}</option>
+    <option value="summer">{T.sum}</option>
+    <option value="autumn">{T.aut}</option>
+    <option value="winter">{T.win}</option>
+    <option value="all">{T.allyr}</option>
+  </select>
+  <input type="search" data-f="q" placeholder={T.search} />
+  <span class="cat-count" data-count data-unit={T.unit}>{objects.length} {T.unit}</span>
+</div>
+
+<div class="cat-grid" data-cat-grid>
+  {
+    objects.map((o) => {
+      const d = o.data;
+      const img = objImage(d.image);
+      const primary = en ? d.nameEn : d.name;
+      const secondary = en ? d.name : d.nameEn;
+      return (
+        <a
+          class="obj-card"
+          href={`${base}${d.id}/`}
+          data-type={d.type}
+          data-hemisphere={d.hemisphere}
+          data-season={d.season}
+          data-text={`${d.id} ${d.name} ${d.nameEn} ${d.constellation}`.toLowerCase()}
+        >
+          {img ? (
+            <Image class="obj-card__img" src={img} alt={primary} width={420} height={280} />
+          ) : (
+            <div class="obj-card__noimg">✦</div>
+          )}
+          <div class="obj-card__body">
+            <div class="obj-card__id">{d.id} · {secondary}</div>
+            <h3 class="obj-card__name">{primary}</h3>
+            <div class="obj-card__tags">
+              <span class="tagk">{TYPE[d.type]}</span>
+              <span class={`tagk hemi-${d.hemisphere}`}>{HEMI[d.hemisphere]}</span>
+              <span class="tagk">{SEASON[d.season]}</span>
+              {d.magnitude != null && <span class="tagk">{d.magnitude}ᵐ</span>}
+            </div>
+            <p class="obj-card__sum">{en ? (d.summaryEn ?? d.summary) : d.summary}</p>
+          </div>
+        </a>
+      );
+    })
+  }
+</div>
+
+<script>
+  const root = document.querySelector('[data-cat-filters]');
+  const grid = document.querySelector('[data-cat-grid]');
+  const countEl = document.querySelector('[data-count]') as HTMLElement | null;
+  if (root && grid && countEl) {
+    const unit = countEl.dataset.unit || '';
+    const cards = Array.from(grid.querySelectorAll<HTMLElement>('.obj-card'));
+    const selects = root.querySelectorAll<HTMLSelectElement | HTMLInputElement>('[data-f]');
+    const apply = () => {
+      const f: Record<string, string> = {};
+      selects.forEach((s) => (f[s.dataset.f!] = s.value.trim().toLowerCase()));
+      let n = 0;
+      cards.forEach((c) => {
+        const ok =
+          (!f.type || c.dataset.type === f.type) &&
+          (!f.hemisphere || c.dataset.hemisphere === f.hemisphere) &&
+          (!f.season || c.dataset.season === f.season) &&
+          (!f.q || (c.dataset.text || '').includes(f.q));
+        c.hidden = !ok;
+        if (ok) n++;
+      });
+      countEl.textContent = `${n} ${unit}`;
+    };
+    selects.forEach((s) => {
+      s.addEventListener('change', apply);
+      s.addEventListener('input', apply);
+    });
+  }
+</script>

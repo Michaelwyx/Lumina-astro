@@ -1,0 +1,179 @@
+---
+title: Key Post-Processing Techniques
+description: A systematic walkthrough of the principles, parameters, and typical values for gradient removal, color calibration, stretching, deconvolution, noise reduction, star reduction, and planetary sharpening, with guidance on avoiding artifacts caused by over-processing.
+difficulty: advanced
+pillar: astrophotography
+sidebar:
+  order: 3
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+import Fig from '@/components/Fig.astro';
+
+The master light produced by stacking is only the starting point for post-processing. The goal of post-processing is to faithfully reveal the information already recorded in the data, not to manufacture detail out of nothing. This page breaks down, item by item, several key techniques in deep-sky and planetary processing, giving the principles, operational essentials, typical parameters, and common pitfalls. We recommend first reading through the [processing workflow](/en/astrophotography/processing/workflow/) to build an understanding of the overall sequence, then returning here to dive into each step.
+
+There are fixed ordering constraints between the steps: **deconvolution, color calibration, and the like must be done in the linear stage**, whereas aggressive stretching, star reduction, and local sharpening are mostly performed in the non-linear stage. Doing things out of order often amplifies noise or destroys color.
+
+<Fig name="m51-whirlpool" alt="The Whirlpool Galaxy M51 and its companion galaxy NGC 5195" caption="The Whirlpool Galaxy M51: well-executed post-processing can render the layered structure of the spiral arms, dust lanes, and tidal bridge without introducing artifacts." />
+
+## Linear and Non-Linear Stages
+
+The image straight out of stacking is a **linear image**, in which pixel values are proportional to the number of photons reaching the sensor. Deep-sky targets span an enormous dynamic range: a star's core may be thousands of times brighter than a faint nebula, while the nebula itself is only slightly above the background noise. As a result, the histogram of a linear image is almost entirely crammed against the darkest end, appearing nearly all black on screen.
+
+| Stage | Meaning of pixel values | Histogram shape | Suitable processing |
+| --- | --- | --- | --- |
+| Linear | Proportional to photon count | All crammed on the left | Gradient removal, color calibration, deconvolution, preliminary noise reduction |
+| Non-linear | Compressed by a mapping for display | Spread toward the right | Finalizing the stretch, star reduction, sharpening / local contrast, final noise reduction |
+
+<Aside type="note" title="Why order matters">
+Both color calibration and deconvolution rely on the linear relationship between pixel values and light intensity. Once a stretch is applied, this relationship is destroyed and is difficult to correct afterward. These two steps must therefore be scheduled before the stretch.
+</Aside>
+
+## Gradient Removal
+
+Light pollution, moonlight, zodiacal light, and airglow superimpose uneven brightness and color gradients on the frame, making the background brighter on one side and darker or tinted on the other. Lens **vignetting** can also leave the edges darkened when flat correction is incomplete. This is the most common defect in broadband imaging.
+
+### Sources of Gradients
+
+| Source | Characteristics | Mitigation |
+| --- | --- | --- |
+| Light pollution | Brighter toward the city, often tinted orange-red | Dark sites, light pollution filters, gradient removal |
+| Moonlight | Large-scale smooth gradient, varies with lunar phase | Avoid full moon, image regions far from the Moon |
+| Zodiacal light / airglow | Faint glow along the ecliptic or near the horizon | Hard to avoid, handled by gradient removal |
+| Vignetting | Symmetric darkening of the four corners | Proper flat correction |
+
+### Sampling and Fitting
+
+The general idea of gradient removal: place sample points at locations judged to be "pure background" → the software fits a smooth background model surface → subtract that surface from the original image so the background becomes uniform.
+
+- **DBE (Dynamic Background Extraction)**: PixInsight's interactive tool, which lets the user manually place sample points and uses a **surface spline** to interpolate the background model, offering high flexibility.
+- **ABE (Automatic Background Extraction)**: samples automatically and fits the background with a **polynomial least-squares** fit of a given order; simple to use but unable to distinguish target from background well, prone to errors at the edges of large targets.
+- **GraXpert / Siril Background Extraction**: includes both AI and spline algorithms, performs well on complex backgrounds and wide-field star-rich fields, and is suitable for frames where DBE/ABE struggle to find clean background.
+
+<Aside type="caution" title="Common pitfall">
+Sample points must avoid real signal such as nebulae, galaxies, and comet tails; otherwise the target itself gets treated as "background" and subtracted, causing loss of faint structure. When the frame is filled with a star-rich field or a large target, favor AI-based tools or reduce the fitting order.
+</Aside>
+
+## Color Calibration
+
+The goal of color calibration is to return the colors of stars and the target to physical reality, rather than eyeballing a white balance. It **must be performed on the linear image**, because calibration depends on the linear proportionality between each channel and light intensity.
+
+- **Traditional white balance**: assumes the overall background is close to neutral gray, or uses a star of known color temperature as a white reference. The Sun's spectral type is G2V, so G2V-type stars are often used as the "white" reference. This method is simple but is significantly affected by the chosen selection and residual light pollution.
+- **Photometric Color Calibration (PCC)**: the software identifies stars in the frame, compares their photometric color indices against a star catalog (such as Gaia), and back-calculates the correct weights for the three channels.
+- **Spectrophotometric Color Calibration (SPCC)**: building on PCC, it incorporates the **BP/RP low-resolution spectra from Gaia DR3** and accounts for the spectral response of the filters and sensor, achieving the highest color accuracy and now the mainstream choice.
+
+Narrowband data does not follow natural-color logic; instead it assigns channels according to a palette (such as SHO/HOO), as detailed in [narrowband imaging](/en/astrophotography/capture/narrowband/). For the relationship between star color and spectral type or temperature, see [stellar physics](/en/astronomy/deep-sky/stellar-physics/).
+
+## Stretching
+
+Stretching applies a **non-linear** intensity mapping to the linear image: brightening the shadows substantially to pull nebulae out from the noise floor, while compressing the highlights to keep star cores from blowing out to dead white. In essence it uses a deliberate non-linear compression to fit an enormous dynamic range into the limited range a screen can display.
+
+### Common Stretching Methods
+
+| Method | Mathematical form | Characteristics |
+| --- | --- | --- |
+| HistogramTransformation | Power-law mapping with a midpoint | Classic and intuitive, easily over-brightens the background |
+| Arcsinh (inverse hyperbolic sine) | `y ∝ asinh(x)` | Protects star colors, gentler lift of the shadows |
+| Masked Stretch | Multiple small stretches + automatic masking | Controls star bloat, flatter background |
+| GHS (Generalized Hyperbolic Stretch) | Generalized hyperbolic family with multiple adjustable degrees of freedom | Precisely specifies "which brightness range to lift," offering the most control |
+
+GHS was proposed by David Payne in 2021 and implemented as scripts and processing modules together with Mike Cranfield; it is now available in both PixInsight and Siril. HistogramTransformation is in fact a special case of the generalized hyperbolic equation when the exponent equals 1, so GHS can be viewed as a generalization and unification of the former.
+
+<Aside type="note" title="Practical tip">
+After stretching, the background median is often set around 0.10 (normalized brightness, with 1.0 being full scale), which both holds down the sky noise and leaves room for shadow detail. Rather than stretching all the way at once, using GHS or Arcsinh to stretch in stages and reversibly better preserves highlight gradation and star colors.
+</Aside>
+
+## Deconvolution
+
+Atmospheric seeing and optical diffraction "smear" a point source into a blur spot of finite size; this blur kernel is called the **point spread function (PSF)**. Imaging can be regarded as the convolution of the true signal with the PSF; deconvolution attempts to invert this convolution process, "recovering" the detail that was blurred away, making stars more compact and the structures of galaxies and nebulae sharper.
+
+- The commonly used algorithm is the **regularized Richardson–Lucy iterative method**, which generally gives the best results for deep-sky images; Wiener deconvolution is a non-iterative method that explicitly incorporates noise statistics. The blur from the Hubble Space Telescope's early primary-mirror aberration was partly corrected precisely with the help of deconvolution.
+- **It must be used in the linear stage, on high signal-to-noise regions.** Deconvolution amplifies noise (dividing by small values in the frequency domain), and low-SNR regions become dominated by noise and distorted.
+- It requires an accurate **PSF** (which can be obtained by fitting unsaturated stars in the frame), together with a **star mask / local deringing support image (LDSI)** to protect bright stars.
+- Applying too much force produces **dark rings** and **ringing artifacts** around stars — a telltale sign of over-processing, especially likely on bright stars.
+- AI tools such as BlurXTerminator have greatly lowered the barrier and can handle a spatially varying PSF, but restraint is still required to avoid generating "false detail" that does not exist in the original data.
+
+## Noise Reduction and Signal-to-Noise Ratio
+
+Understanding noise reduction first requires understanding the **signal-to-noise ratio (SNR)**: the signal is the light from the target, and the noise is the random fluctuation superimposed on it.
+
+### Sources of Noise
+
+| Noise type | Source | Accumulates with exposure? |
+| --- | --- | --- |
+| Shot noise | Poisson fluctuation in photon arrival, equal to the square root of the signal | Yes, the stronger the signal the larger its absolute value |
+| Read noise | Introduced each time the sensor is read out, a fixed value | No, but accumulates with more frames stacked |
+| Dark current noise | Thermally induced pixel leakage, increasing with temperature | Yes, its bias can be corrected with dark frames |
+| Light pollution noise | Shot noise of the sky background | Yes, and **the noise remains even after subtracting the signal** |
+
+The key conclusion: noise reduction **cannot raise SNR out of nothing**; it merely **smooths** the noise spatially. True SNR comes from the total exposure — stacking N frames raises SNR by about a factor of `√N`, so stacking 100 frames raises it roughly tenfold. To bring detail that is half as bright up to the same SNR requires about four times as many frames, with clearly diminishing returns. The signal of light pollution can be subtracted by gradient removal, but its **noise remains permanently**, so a dark-sky environment is fundamentally superior to after-the-fact noise reduction.
+
+### Noise Reduction Strategies
+
+- **Multiscale / wavelet noise reduction**: decomposes the image into layers of different scales. Most random noise is concentrated at the smallest scale (the first layer), while star and nebula structures are distributed across larger scales, so noise reduction can focus on the small-scale layers while leaving the large-scale layers containing real structure largely untouched.
+- **AI noise reduction** (such as NoiseXTerminator, GraXpert Denoise): based on trained models that distinguish noise texture from structure, highly efficient, but likewise capable of "smoothing away" real faint detail.
+- **Treating regions differently**: apply more reduction to the dark background and less to bright areas with structure, avoiding smoothing real detail into a plastic-like appearance.
+
+<Aside type="tip" title="Where noise reduction fits in the workflow">
+Recommended order: first gradient removal, then color calibration, (in the linear stage) deconvolution, finalizing the stretch, and finally light noise reduction in the non-linear stage. Noise reduction is a remedial measure, not a substitute for insufficient exposure.
+</Aside>
+
+## Star Reduction and Star Handling
+
+In star-dense regions, a screen full of stars can overwhelm faint diffuse nebulosity. Star reduction shrinks and dims the stars to make nebula structure stand out; meanwhile, processing stars and nebula on **separate layers** lets each receive the most appropriate stretch and noise reduction strength.
+
+<Steps>
+
+1. Use tools such as StarXTerminator / StarNet to **separate** the stars and the starless background into two layers (starless and stars-only).
+2. Freely stretch, sharpen, and reduce noise on the starless layer, without worrying about stars bloating or being tinted along with it.
+3. After shrinking the star layer, blend it back onto the starless layer with an additive blend mode such as "screen," controlling the number and brightness of the stars.
+
+</Steps>
+
+<Aside type="caution" title="Signs of over-reduced stars">
+Over-reduction makes stars look unnatural: cores disappear, dark depressions or "donut"-shaped holes appear, and the proportion between bright and faint stars becomes imbalanced. Stars should retain a reasonable brightness gradient rather than being compressed into uniform little dots.
+</Aside>
+
+## Sharpening and Local Contrast
+
+The aim of sharpening is to enhance contrast at small to medium scales, making structural edges clearer. In deep-sky work, **multiscale methods** are common: in a wavelet or multiscale linear transform, the contrast of specific scale layers is selectively amplified, rather than applying uniform sharpening to the whole image. **HDR Multiscale Transform (HDRMT)** is used to compress the local contrast of high-dynamic-range targets (such as the M42 core or galactic nuclei), making the internal structure of over-bright regions visible again. Sharpening should be done in the non-linear stage and combined with masks to limit its scope, avoiding amplification of background noise.
+
+## Planetary Post-Processing
+
+Planetary targets follow the **lucky imaging** route: atmospheric turbulence changes from moment to moment, but occasionally a moment of excellent seeing occurs. One therefore captures tens of thousands of short-exposure video frames (single frames often ≤100 milliseconds), then picks out the sharpest small fraction to stack. This idea originates in professional astronomy — when rigorously applied, lucky imaging can bring a 2.5-meter aperture telescope close to its diffraction limit, improving resolution roughly fivefold over conventional imaging.
+
+<Steps>
+
+1. **Frame selection and stacking (AutoStakkert!)**: automatically aligns frames, ranks them by quality (sharpness/contrast), and stacks only the best certain percentage. In amateur practice the top 10% is often retained, dropping to as low as 1%–5% under excellent conditions.
+2. **Wavelet sharpening (RegiStax / WaveSharp / AstroSurface)**: uses **wavelets** to decompose the image into multiple scales, extracting and enhancing layer by layer details such as Jupiter's cloud belts, Saturn's ring divisions, and Martian surface features.
+3. **Moderate finishing**: apply appropriate noise reduction and color balancing. Over-sharpening produces mosaic-like noise specks, concentric rings, and false textures.
+
+</Steps>
+
+For camera, sampling rate, and seeing techniques on the capture side, see [planetary imaging](/en/astrophotography/capture/planetary/); for observing conditions and seeing assessment, see [observing conditions](/en/astronomy/observing/conditions/).
+
+## Avoiding Over-Processing
+
+The most common failure in post-processing is not processing "too little" but processing "too much." The table below summarizes several typical artifacts and their causes.
+
+| Artifact | Appearance | Main cause |
+| --- | --- | --- |
+| Dead-black background | Shadows clipped to pure black, faint structure lost | Black point set too high during stretching |
+| Star dark rings / ringing | Dark rings or concentric patterns around bright stars | Excessive deconvolution or sharpening without a star mask |
+| Plastic appearance | Over-smoothing, detail looks waxy | Too much noise reduction, mistakenly removing real small-scale structure |
+| Fluorescent-colored stars | Distorted, oversaturated star colors | Missing color calibration or saturation maxed out |
+| Star-reduction holes | Sunken star cores, donut shapes | Excessive amount of star reduction |
+| False planetary textures | Mosaic patches, concentric false rings | Too much gain on wavelet sharpening layers |
+
+<Aside type="caution" title="Self-check on processing strength">
+At every step, ask yourself: was this detail **already present** in the data, or did I **create** it? Keeping before-and-after comparisons, keeping steps reversible, and erring on the conservative side are all effective constraints. Do not enhance noise as if it were signal.
+</Aside>
+
+## References
+
+- [Deconvolution — Wikipedia](https://en.wikipedia.org/wiki/Deconvolution) — General principles of deconvolution, the PSF, the Richardson–Lucy and Wiener algorithms, and ringing/noise amplification.
+- [Lucky imaging — Wikipedia](https://en.wikipedia.org/wiki/Lucky_imaging) — Definition of lucky imaging, frame selection percentages, and approaching the diffraction limit.
+- [Spectrophotometric Color Calibration — Siril documentation](https://siril.readthedocs.io/en/latest/processing/color-calibration/spcc.html) — The principles of SPCC color calibration based on Gaia DR3 spectra and its requirement for a linear image.
+- [Generalised Hyperbolic Stretch — PixInsight reference documentation](https://www.ghsastro.co.uk/doc/tools/GeneralizedHyperbolicStretch/GeneralizedHyperbolicStretch.html) — The mathematical background of the GHS stretch and its relationship to HistogramTransformation.
+- [PixInsight Background/Gradient Removal — astrofoto.org](https://astrofoto.org/2022/09/13/pixinsight-background-gradient-removal/) — The sampling and fitting differences between DBE and ABE and their applicable scenarios.
+- [Astrophotography Basics: SNR — jonrista.com](https://jonrista.com/the-astrophotographers-guide/astrophotography-basics/snr/) — The composition of SNR, the various types of noise, and the √N stacking law.

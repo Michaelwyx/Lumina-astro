@@ -1,0 +1,189 @@
+---
+title: 学习路径
+description: 按学习目标整理的推荐阅读顺序,把跨主题的页面串成有序路线,覆盖观测基础、远程深空、自有器材、行星摄影与窄带深空。
+difficulty: beginner
+pillar: index
+sidebar:
+  order: 5
+---
+
+import { Aside, Card, CardGrid, Steps } from '@astrojs/starlight/components';
+import Fig from '@/components/Fig.astro';
+import Capture from '@/components/Capture.astro';
+import CoordSphere from '@/components/diagrams/CoordSphere.astro';
+import SNRChart from '@/components/diagrams/SNRChart.astro';
+import SHOPalette from '@/components/diagrams/SHOPalette.astro';
+
+本站内容按主题树组织(天文基础、观测、深空天体、天文摄影、参考),但学习一项技能通常需要按特定顺序阅读分散在不同分支下的页面。本页把这些页面串成五条有序的学习路径,作为导航中枢:每条路径对应一个明确目标,列出依次阅读的页面与站内链接,并说明各步骤要解决的问题。
+
+路径只列关键页面,用于判断"下一步该读什么";页内的延伸概念由各页自身的链接继续展开。五条路径之间可以串联:走完观测基础后,可直接进入任一条天文摄影路径。
+
+<Aside type="tip" title="如何选择起点">
+先确定当前目标后再选路径:仅用肉眼或双筒认识夜空,选路径一;没有器材但想获得深空图像,选路径二;已购置赤道仪与相机,选路径三;想拍行星、月球、太阳,选路径四;想在光污染下拍发射星云并做通道合成,选路径五。无法确定时,先读[入门导航](/start/)。
+</Aside>
+
+## 五条路径概览
+
+下表给出五条路径的目标、所需器材与产出,便于横向比较。
+
+| 路径 | 目标 | 所需器材 | 主要产出 |
+| --- | --- | --- | --- |
+| 一 观测基础 | 识别夜空、理解视运动与可见性 | 无(可选双筒) | 方位感与观测计划能力 |
+| 二 远程深空 | 不购置器材获取深空数据 | 无(租用远程平台) | 一张经处理的深空图像 |
+| 三 自有器材深空 | 用赤道仪与相机建立完整流程 | 赤道仪、望远镜、相机 | 自主采集与处理的深空图像 |
+| 四 行星摄影 | 记录行星、月球、太阳表面细节 | 长焦镜、巴罗镜、高速相机 | 高分辨率行星/月面图像 |
+| 五 窄带深空 | 在光污染下拍发射星云并调色 | 单色相机、滤轮、窄带滤镜 | SHO/HOO 合成的星云图像 |
+
+<CardGrid>
+  <Card title="路径一 观测基础" icon="star">
+    星座、视运动、星等、坐标与半球可见性。不需要望远镜或相机,是其余路径的共同前置。
+  </Card>
+  <Card title="路径二 远程深空" icon="camera">
+    租用远程平台获取原始数据,重点学习选目标、交付 FITS、校准与叠加,绕开器材与天气。
+  </Card>
+  <Card title="路径三 自有器材深空" icon="setting">
+    按光学、传感器、曝光、采集、校准、叠加、后期建立从采集到成片的完整流程。
+  </Card>
+  <Card title="路径四 行星摄影" icon="moon">
+    幸运成像(lucky imaging)流程:超长等效焦距取景、高帧率录像、选帧叠加与小波锐化。
+  </Card>
+  <Card title="路径五 窄带深空" icon="puzzle">
+    窄带滤镜、单色相机、分通道采集与 SHO/HOO 通道合成。
+  </Card>
+</CardGrid>
+
+## 路径一:观测基础
+
+目标:能识别常见星座,理解天体的视运动、星等、坐标与可见性。不需要任何器材,双筒望远镜可作为可选辅助。这条路径是后续四条路径的共同基础:选目标、判断"今晚能不能拍"都依赖这里的概念。
+
+<Steps>
+
+1. [认识星座](/astronomy/foundations/constellations/) —— 用亮星与星座建立方位感,理解 88 个国际天文学联合会(IAU)星座如何划分全天。
+2. [天体视运动](/astronomy/foundations/apparent-motion/) —— 周日运动(地球自转,约 23h56m 恒星日)与周年运动(地球公转),解释天体为何东升西落、星空为何随季节变化。
+3. [星等系统](/astronomy/foundations/magnitude/) —— 视星等(apparent magnitude, m)为对数标度,数值越小越亮,差 5 等亮度差 100 倍;肉眼极限约 6 等,用于判断目标可见性。
+4. [天球坐标](/astronomy/foundations/celestial-coordinates/) —— 赤经(right ascension, RA)与赤纬(declination, Dec)构成赤道坐标系,是定位天体的"经纬度";配合时角与高度方位角理解天体在天空中的位置。
+5. [半球可见性](/astronomy/observing/hemisphere-visibility/) —— 由观测纬度 φ 与目标赤纬 δ 判断天体能否升起:`δ > 90° − φ` 为拱极星(永不落),`δ < φ − 90°` 为永不升起。
+6. [目视观测技巧](/astronomy/observing/visual-techniques/) —— 暗适应(约 20–30 分钟)、余光瞥视(averted vision)、记录方法与星图使用。
+
+</Steps>
+
+<CoordSphere caption="赤道坐标系:赤经/赤纬如同天空的经纬度,是路径一第 4 步与所有选目标操作的核心。" />
+
+<Aside type="note" title="时间系统的位置">
+若需要精确推算天体何时过中天、何时升落,可在本路径后补读[时间系统](/astronomy/foundations/time-systems/),理解恒星时(sidereal time)与地方时的换算;它是制定[观测计划](/astronomy/observing/planning/)的基础。
+</Aside>
+
+## 路径二:远程深空(无器材)
+
+目标:在不购置望远镜的前提下,通过远程平台租用专业级器材采集深空原始数据,并完成从选目标到成片的处理。这条路径绕开了器材购置、调试、极轴校准、暗空地点与天气值守,适合先验证兴趣、快速获得第一张深空图像。
+
+<Steps>
+
+1. [远程平台入门](/astrophotography/remote-platforms/overview/) —— 理解"在云端租望远镜"的运作方式:平台在暗空台址部署设备,用户在线下达拍摄任务并下载数据。
+2. [平台对比](/astrophotography/remote-platforms/platforms-comparison/) —— 按预算、器材规格、台址 Bortle 等级与计费模式选择服务商。
+3. [天体目录选目标](/reference/catalog/) —— 从梅西耶(Messier, M)、NGC、IC 等目录中选一个当季可见、对初学者友好的目标(如 M31、M42、M45)。
+4. **提交拍摄任务** —— 按平台要求设置目标坐标、滤镜、单张曝光时长与张数,等待原始子帧(raw frames,通常为 FITS 格式)交付。多数平台已完成跟踪与导星,用户主要负责曝光参数。
+5. [预处理与叠加](/astrophotography/processing/stacking/) —— 将数十张子帧配准(registration)后用 sigma 裁剪等方法叠加(integration),剔除卫星、飞机等离群信号,提升信噪比。
+6. [后期处理流程](/astrophotography/processing/workflow/) —— 在叠加主图上做背景梯度校正、非线性拉伸(stretch)、色彩校准与降噪。
+
+</Steps>
+
+<Aside type="note" title="为什么推荐从远程开始">
+远程平台把器材与天气问题交给运营方,初学者可以先专注于目标选择、数据质量判断与后期处理这三项最依赖经验的环节,再决定是否投入自有器材。其代价是灵活性与对全流程的掌控较低,且按时间或按张计费。
+</Aside>
+
+## 路径三:自有器材深空
+
+目标:使用赤道仪(equatorial mount)与相机,建立从采集到处理的完整深空摄影流程。相比远程路径,这条路径需要逐项掌握器材原理与现场操作,换来对全流程的完全掌控。
+
+<Steps>
+
+1. [光学基础](/astrophotography/fundamentals/optics/) —— 焦距(focal length)、口径(aperture)与焦比(`f-ratio = 焦距 ÷ 口径`)决定视场、集光力与所需曝光;像场大小决定能容纳的目标范围。
+2. [传感器基础](/astrophotography/fundamentals/sensors/) —— CMOS 像素尺寸、量子效率(QE)、读出噪声(read noise)与满阱容量;彩色(OSC)与单色(mono)相机的取舍。
+3. [曝光与增益](/astrophotography/fundamentals/exposure/) —— 单张曝光时长、增益(gain)与子帧数量的权衡;目标是让背景信号足以淹没读出噪声,同时避免亮星过曝。
+4. [DSO 拍摄实操](/astrophotography/capture/dso-basics/) —— 极轴校准(polar alignment)、构图取景、巴氏面具(Bahtinov mask)对焦、自动导星(autoguiding, 如 PHD2)与抖动(dithering)采集序列。
+5. [校准帧](/astrophotography/calibration/calibration-frames/) —— 暗场(dark)去除热噪声与暗电流,平场(flat)校正渐晕与灰尘暗影,偏置帧(bias)记录读出基底,用于在叠加前标定每张子帧。
+6. [叠加](/astrophotography/processing/stacking/) —— 将校准后的子帧配准并积分为单张高信噪比主图。
+7. [后期处理流程](/astrophotography/processing/workflow/) —— 背景校正、拉伸、色彩平衡、星点处理与降噪,得到成片。
+
+</Steps>
+
+<Aside type="caution" title="赤道仪与极轴是基础投资">
+深空长曝的清晰度首先取决于跟踪精度。赤道仪需要先做极轴校准,使其旋转轴对准天极,以抵消地球自转;欠佳的极轴或跟踪会导致星点拖线,任何后期都无法挽回。在器材投入中,赤道仪通常比镜头或相机更值得优先保证。
+</Aside>
+
+<Capture name="m31-andromeda" alt="仙女座星系 M31 示例图像" target="M31 仙女座星系" scope="William Optics RedCat 51 (250mm f/4.9)" mount="赤道仪 ZWO AM5" camera="ZWO ASI2600MC Pro" filters="L-Pro 光害滤镜" exposure="80×180s (4h)" location="高山暗夜营地" bortle="3" date="2025-09" software="APP + PixInsight" />
+
+## 路径四:行星摄影进阶
+
+目标:记录土星环、木星云带、月面环形山与太阳表面细节。行星摄影与深空摄影在方法上相反:目标明亮但角直径小,需要超长等效焦距与高放大率,并采用幸运成像(lucky imaging)——录制高帧率视频,再用软件按清晰度筛选并叠加少数最清晰的帧,以对抗大气视宁度造成的抖动。
+
+<Steps>
+
+1. [光学:焦距与巴罗镜](/astrophotography/fundamentals/optics/) —— 行星需要很高的有效焦比(常用 `f/15` 至 `f/30`),通过巴罗镜(Barlow)或加倍镜延长等效焦距;目标亮度高,放大不必担心曝光不足。
+2. [行星/月球/太阳拍摄](/astrophotography/capture/planetary/) —— 高帧率录像(数十至上百 fps)、ROI 裁切只读出目标区域以提速、抓住大气稳定的短窗口;太阳须配专用太阳滤镜或赫歇尔棱镜。
+3. **关键后期** —— 用 AutoStakkert! 自动评分并选取最清晰的一批帧叠加,再用小波(wavelet)锐化(如 RegiStax 或 PixInsight 的相应工具)逐层提取细节;木星自转快,长序列需做去自转(derotation)处理。详见[后期技术](/astrophotography/processing/techniques/)。
+
+</Steps>
+
+<div class="cols2">
+  <Fig name="saturn" alt="土星图像,可见光环与本体" caption="土星:环与本体亮度差明显,小波锐化需控制层级强度以避免伪影与噪声放大。" />
+  <Fig name="jupiter" alt="木星图像,可见云带与大红斑" caption="木星:自转周期约 9.9 小时,云带细节多,常用于练习幸运成像与去自转叠加。" />
+</div>
+
+<Aside type="caution" title="视宁度是行星分辨率的上限">
+影响行星清晰度的首要因素是大气视宁度(seeing),即大气湍流对星像的扰动。口径与焦距决定理论分辨率,但视宁度差时无法稳定呈现细节;幸运成像正是为筛掉湍流恶化的帧而生。拍摄前应判断观测条件,详见[观测条件](/astronomy/observing/conditions/)。太阳拍摄涉及不可逆的失明风险,务必使用经认证的专用滤镜。
+</Aside>
+
+## 路径五:窄带深空精通
+
+目标:使用窄带滤镜采集发射星云的特定发射线(Hα、OIII、SII),在光污染环境中获取高对比度信号,并掌握分通道合成与 SHO/HOO 调色。这条路径建立在路径三的器材与流程之上,是对发射星云目标的专门深化。
+
+<Steps>
+
+1. [信噪比(SNR)](/astrophotography/fundamentals/snr/) —— 理解 `SNR ∝ √N`:信噪比随有效子帧数 N 的平方根增长。窄带滤镜透过带宽窄(常为 3–7 nm),信号微弱,这是其需要很长总曝光的理论根基。
+2. [传感器(单色 mono)](/astrophotography/fundamentals/sensors/) —— 窄带通常用单色相机配电动滤轮分通道采集;单色传感器无拜耳阵列,灵敏度与分辨率高于同型彩色相机。
+3. [窄带成像](/astrophotography/capture/narrowband/) —— 分别采集 Hα(656.3 nm,电离氢,信号最强)、OIII(约 500.7 nm,双电离氧,蓝绿色)、SII(约 671.6 nm,单电离硫,信号最弱);月光与城市光污染对窄带影响小,可在非新月期拍摄。
+4. [星云](/astronomy/deep-sky/nebulae/) —— 了解发射星云、行星状星云与超新星遗迹的物理机制与典型窄带目标。
+5. [后期关键技术](/astrophotography/processing/techniques/) —— SHO 通道映射(SII→R、Hα→G、OIII→B,即"哈勃色")与 HOO 映射、绿色溢出抑制(SCNR)、星点分离与通道合成。
+
+</Steps>
+
+<SNRChart caption="信噪比随子帧数 N 以平方根增长。这解释了窄带成像(尤其是信号最弱的 SII)通常需要很长的累计曝光时间。" />
+
+<SHOPalette caption="窄带 SHO 调色:把 SII / Hα / OIII 映射到 R / G / B,得到标志性的哈勃色;HOO 则把 Hα 映射到红、OIII 映射到绿与蓝。" />
+
+<Aside type="note" title="SII 通道的噪声问题">
+在 SHO 合成中,SII 几乎总是最弱的信号,被映射到红通道;若 SII 曝光不足,红通道会出现明显颗粒噪声。Hα 通常最强且被映射到绿通道,合成后常需用绿色溢出抑制(SCNR)去除整体绿偏。规划曝光时应给 SII 留出更多时间。
+</Aside>
+
+## 路径之后
+
+走完任意一条路径后,以下索引页用于持续深入与横向拓展。
+
+<CardGrid>
+  <Card title="目标选择" icon="list-format">
+    在[天体目录](/reference/catalog/)中按季节、赤纬与难度挑选下一个目标。
+  </Card>
+  <Card title="工具与软件" icon="laptop">
+    [软件索引](/reference/software/)汇总选星、采集、导星与后期的常用工具。
+  </Card>
+  <Card title="术语速查" icon="open-book">
+    遇到不熟悉的术语,查[术语表](/reference/glossary/)。
+  </Card>
+  <Card title="更多资源" icon="external">
+    [资源与社区](/reference/resources/)收录进阶教程与交流渠道。
+  </Card>
+</CardGrid>
+
+<Aside type="tip" title="路径间的衔接">
+观测基础(路径一)是其余四条路径的共同前置;窄带深空(路径五)以自有器材流程(路径三)为基础。若目标尚不明确,可先读[入门导航](/start/)再选择路径。
+</Aside>
+
+## 参考资料
+
+- [Astrophotography — Wikipedia](https://en.wikipedia.org/wiki/Astrophotography) —— 天文摄影的分类、跟踪与导星、叠加、幸运成像与窄带滤镜的概述。
+- [Deep-Sky Astrophotography Walkthrough(AstroBackyard)](https://astrobackyard.com/deep-sky-astrophotography-walkthrough/) —— 从极轴校准、对焦、导星到采集与处理的完整深空流程步骤。
+- [Narrowband Imaging Primer(AstroBackyard)](https://astrobackyard.com/narrowband-imaging/) —— Hα/OIII/SII 滤镜、单色相机配滤轮与哈勃调色板的入门说明。
+- [AutoStakkert! — Lucky Imaging Stacking Software](https://www.autostakkert.com/) —— 行星幸运成像的选帧与叠加工具,行星后期的核心环节。
+- [A Free Tool for Lucky Imaging(Sky & Telescope)](https://skyandtelescope.org/astronomy-resources/astrophotography-tips/a-free-tool-for-lucky-imaging/) —— 高帧率录像、选帧叠加与小波锐化的行星成像方法说明。

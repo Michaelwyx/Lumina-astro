@@ -1,0 +1,12 @@
+---
+import { getCollection } from 'astro:content';
+import ObjectDetail from '@/components/ObjectDetail.astro';
+
+export async function getStaticPaths() {
+  const objects = await getCollection('objects');
+  return objects.map((o) => ({ params: { id: o.data.id }, props: { o } }));
+}
+const { o } = Astro.props;
+---
+
+<ObjectDetail o={o} lang="zh" />

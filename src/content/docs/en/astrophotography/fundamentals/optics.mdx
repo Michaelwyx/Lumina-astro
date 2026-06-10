@@ -1,0 +1,192 @@
+---
+title: Optics Fundamentals
+description: A systematic treatment of the definitions, formulas, and typical values of focal length, aperture, focal ratio, field of view, and pixel scale, along with the diffraction limit and the Dawes/Rayleigh criteria, plus the structure, aberrations, and corrector lenses of refracting, reflecting, and catadioptric telescopes.
+difficulty: beginner
+pillar: astrophotography
+sidebar:
+  order: 1
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import Fig from '@/components/Fig.astro';
+import FocalFOV from '@/components/diagrams/FocalFOV.astro';
+
+The imaging performance of a telescope or lens is determined by a set of interrelated yet individually independent optical parameters. Among them, **focal length, aperture, focal ratio, field of view (FoV), and pixel scale** are central to selecting astrophotography equipment and planning framing. This page presents the definitions, units, value ranges, typical values, and calculation formulas for these quantities, and reviews the criteria for diffraction-limited resolution as well as the structure, aberrations, and correction schemes of the three major telescope categories: refractors, reflectors, and catadioptrics. Once you understand these parameters, you can carry out complete planning by combining the angular concepts from [Celestial Coordinate Systems](/en/astronomy/foundations/celestial-coordinates/) with the pixel data from [Sensor Fundamentals](/en/astrophotography/fundamentals/sensors/).
+
+## Focal Length
+
+Focal length is the distance over which parallel light is converged to a focus by the objective or primary mirror, measured in millimeters (mm). In astrophotography, focal length determines the **image scale**, that is, the physical size of an object at the focal plane:
+
+```
+linear size at focal plane (mm) = focal length (mm) × tan(object angular diameter)
+```
+
+For the small angles common in astronomy, `tan θ ≈ θ` (in radians), so image size is approximately proportional to focal length. The main effects of focal length:
+
+- **Longer focal length** — larger image scale, narrower field of view; suited to targets with small angular diameter (planets, small galaxies, planetary nebulae, globular clusters).
+- **Shorter focal length** — wider field of view; suited to targets with large angular diameter (large nebulae, the Milky Way, constellations, nightscape astrophotography).
+
+Focal length is an intrinsic parameter of the optical system, but the effective focal length can be altered with accessories: a **Barlow lens** or teleconverter magnifies focal length (commonly 2× or 3×), while a **focal reducer** shortens it (commonly 0.5×–0.8×).
+
+<FocalFOV caption="With the same sensor, different focal lengths correspond to different fields of view: the longer the focal length, the smaller the framed region of sky and the larger the target's image." />
+
+## Aperture
+
+Aperture is the effective clear diameter of the objective or primary mirror, measured in millimeters (mm) and denoted D. It governs two performance characteristics that are independent of focal length:
+
+| Performance | Dependence | Notes |
+| --- | --- | --- |
+| Light-gathering power | Proportional to the square of aperture (∝ D², i.e., clear area) | Doubling the aperture quadruples the amount of light collected |
+| Resolution (diffraction limit) | Inversely proportional to aperture (∝ 1/D) | The larger the aperture, the smaller the angular separation that can be resolved |
+
+Light-gathering power determines how faint a target can be recorded. Relative to the human pupil (about 6–7 mm when dark-adapted), the collecting area of a 200 mm aperture telescope is roughly (200/7)² ≈ 800 times that of the eye. Light-gathering power can also be quantified, in comparison with the human eye, as a gain in limiting magnitude, which relates directly to the [Magnitude System](/en/astronomy/foundations/magnitude/).
+
+### Diffraction Limit and Resolution Criteria
+
+Light passing through a circular aperture undergoes diffraction, imaging a point source as an **Airy disk** — a bright central disk surrounded by a series of concentric diffraction rings. Whether two adjacent point sources can be separated depends on how much their diffraction patterns overlap, as described by the following criteria:
+
+| Criterion | Formula (visible light) | Meaning |
+| --- | --- | --- |
+| Rayleigh criterion | `θ(rad) = 1.22 × λ / D`; `θ(″) ≈ 138 / D(mm)` | The center of one star's diffraction pattern falls on the first dark ring of the other; about a 26% dip between the two peaks |
+| Dawes' limit | `θ(″) ≈ 116 / D(mm)` (original form 4.56 / D, with D in inches) | An empirical value based on double-star observations; about a 5% dip between the two peaks, slightly better than Rayleigh |
+
+Here λ is the wavelength (taken as about 550 nm for visible light), D is the aperture, and θ is the minimum resolvable angle. Both formulas give a resolution angle that increases with wavelength and decreases with aperture. Key conclusions:
+
+- **Resolution depends only on aperture and wavelength; it is independent of focal length and magnification.** Magnification merely enlarges existing detail and cannot exceed the diffraction limit.
+- The physical diameter of the Airy disk on the sensor is `2.44 × λ × (f-number)`, so the larger the focal ratio, the larger the diffraction pattern at the focal plane.
+
+<Aside type="note" title="Independence of Aperture and Focal Length">
+Aperture determines "how much light can be collected and how fine a structure can be resolved"; focal length determines "how large the target appears in the frame." The two are mutually independent: a short focal length with a large aperture is both bright and wide-field, making it the ideal configuration for imaging extended sources (nebulae); a long focal length with a large aperture combines high resolution with a large image scale, suiting planets and small galaxies.
+</Aside>
+
+## Focal Ratio
+
+Focal ratio is the ratio of focal length to aperture — the f-number marked on a camera lens:
+
+```
+f-number = focal length (mm) ÷ aperture (mm)
+```
+
+For example, a focal length of 500 mm with an aperture of 100 mm gives a focal ratio of `f/5`. The focal ratio combines focal length and aperture and directly determines the luminous flux per unit area (illuminance) received at the focal plane, that is, the **surface brightness**.
+
+- The illuminance of an extended source at the focal plane is proportional to `1 / (f-number)²`. Each time the focal ratio decreases by a factor of 1/√2 (e.g., f/5.6 → f/4), the illuminance of an extended source doubles, halving the integration time needed to reach the same signal-to-noise ratio. This is the origin of the saying "the smaller the focal ratio, the faster."
+- The focal ratio affects only the surface brightness of **extended/area sources** (nebulae, galaxies); it does not affect the total brightness of **point sources** (stars) — the total brightness of a star is determined solely by aperture (collecting area).
+
+| Focal ratio range | Relative "speed" | Typical use | Common telescope types |
+| --- | --- | --- | --- |
+| f/2 – f/4 | Very fast | Wide-field nebulae, surveys, short integrations | Fast Newtonians, Hyperstar, wide-angle refractors |
+| f/5 – f/7 | Moderate | General-purpose deep-sky | APO/ED refractors, Newtonian reflectors |
+| f/8 – f/15 | Slower | Planets, the lunar surface, small high-brightness targets | SCT, RC, Maksutov |
+
+<Aside type="caution" title="The Difference Between Point Sources and Extended Sources">
+"The smaller the f-number, the faster" describes the surface brightness of **extended sources**, because the light of an extended source is spread over a certain area, and the larger the image scale (the longer the focal length), the darker each unit of area becomes. For **point sources** (stars), the area of the diffraction pattern is extremely small and the total collected light is determined only by aperture, so the focal ratio does not change a star's total brightness. This is the most common misconception among beginners: at a given aperture, shortening the focal length (reducing the focal ratio) lets nebulae come out faster, but it does not make stars brighter.
+</Aside>
+
+## Field of View
+
+The field of view is the angular extent of sky actually framed by the sensor, determined jointly by sensor size and focal length. The larger the sensor and the shorter the focal length, the wider the field of view. The calculation formula (small-angle approximation):
+
+```
+field of view (degrees) ≈ 57.296 × sensor side length (mm) ÷ focal length (mm)
+```
+
+Here 57.296 = 180/π is the coefficient for converting radians to degrees. For example, a full-frame sensor (36 × 24 mm) with a 200 mm focal length gives a long-side field of view of about `57.296 × 36 / 200 ≈ 10.3°`. When planning framing, first look up the target's angular diameter (you can refer to the recommended focal lengths in the [Object Catalog](/en/reference/catalog/)), then work backward to the focal length so that the target occupies an appropriate proportion of the frame (usually 1/3 to 1/2).
+
+## Pixel Scale
+
+Pixel scale (also called pixel scale, in arcsec per pixel) represents the angular distance on the sky corresponding to each pixel, in arcseconds per pixel (arcsec/px), and truly links the optical focal length to the sensor's pixels:
+
+```
+pixel scale (″/px) = 206.265 × pixel size (µm) ÷ focal length (mm)
+```
+
+The constant 206.265 comes from the conversion 1 radian = 206264.8 arcseconds and already incorporates the "µm to mm" unit conversion. For example, a pixel of 3.8 µm with a focal length of 500 mm gives a pixel scale of `206.265 × 3.8 / 500 ≈ 1.57 ″/px`.
+
+### Matching Sampling to Seeing
+
+The ideal pixel scale should match the **seeing** — the diameter of the star-image blur caused by atmospheric turbulence — so that each seeing disk is covered by about 2–3 pixels (the Nyquist sampling concept).
+
+| State | Pixel scale characteristic | Consequence |
+| --- | --- | --- |
+| Undersampling | Pixel scale too large (often >3 ″/px) | Stars span only 1–2 pixels, appearing blocky, with detail lost; partly remediable with dithering + drizzle |
+| Adequate sampling | Matches seeing, about 1–2 ″/px | Stars appear round, recording all the detail the atmosphere allows |
+| Oversampling | Pixel scale too small (often &lt;1 ″/px) | Resolution is limited by seeing rather than pixels; adds noise, shrinks the field of view, and lengthens exposures for no benefit |
+
+Under typical ground-based seeing (2″–4″), the comfortable range for deep-sky imaging is **1″–2″/px**; the smallest pixel scale attainable under amateur conditions is usually about 0.5″/px, below which there is no further benefit. Pixel size depends on the specific camera sensor — see [Sensor Fundamentals](/en/astrophotography/fundamentals/sensors/) — and during actual imaging you must also assess seeing in light of the [Observing Conditions](/en/astronomy/observing/conditions/) on the night.
+
+## Telescope Types and Aberrations
+
+Telescopes are divided by their imaging element into three major categories: refractors (lenses), reflectors (mirrors), and catadioptrics (a combination of lenses and mirrors). Each makes its own trade-offs in aberrations, focal ratio, weight, and price.
+
+<Fig name="fig-telescopes" alt="Schematic of telescope optical structures" caption="Schematic of telescope light paths: different designs converge light to form an image using lenses or mirrors." />
+
+### Refracting Telescopes
+
+A refractor converges light with a group of lenses. Simple in construction, sealed and maintenance-free, with sharp star images and no central obstruction, it is a common choice for wide-field deep-sky imaging; its main drawbacks are **chromatic aberration** and a cost per aperture that rises rapidly with size (a practical upper limit of about 1 meter).
+
+| Type | Lens configuration | Chromatic correction | Notes |
+| --- | --- | --- | --- |
+| Achromat | Crown + flint glass doublet | Red and blue brought to a common focus | Common in inexpensive refractors; residual purple fringing on bright stars |
+| Apochromat (APO) | Includes ED glass or fluorite | Red, green, and blue brought to a common focus | Residual chromatic aberration about an order of magnitude lower than an achromat; the first choice for imaging |
+
+ED (extra-low dispersion) glass and fluorite materials have lower dispersion and are the key to an APO achieving a three-color common focus.
+
+### Reflecting Telescopes
+
+A reflector forms an image with a reflective surface, free of chromatic aberration, with low cost per unit aperture, making it well suited to large apertures.
+
+- **Newtonian reflector**: a parabolic primary mirror plus a 45° secondary mirror, with a focal ratio commonly f/4–f/6 and excellent value; its inherent **coma** makes star images at the field edge appear comet-shaped, so wide-field imaging requires a **coma corrector**.
+- **Ritchey-Chrétien (RC)**: a hyperbolic primary mirror plus a hyperbolic secondary mirror, eliminating spherical aberration and coma over a flat field, suited to wide-field imaging, and the mainstream design for professional research telescopes (including Hubble); typically around f/8, with residual field curvature requiring a field flattener.
+
+### Catadioptric Telescopes
+
+A catadioptric adds a corrector lens at the front of the tube and, together with a spherical or aspherical mirror, achieves a long focal length within a compact tube.
+
+| Type | Corrector element | Main aberration | Typical focal ratio | Characteristics |
+| --- | --- | --- | --- | --- |
+| Schmidt-Cassegrain (SCT) | Schmidt corrector plate | Residual coma, field curvature | f/10 | Short tube, good value per aperture, highly versatile; needs a field flattener for imaging |
+| Maksutov-Cassegrain | Meniscus corrector lens | Almost no chromatic aberration, high image quality | f/12–f/15 | Sealed and free of collimation, sharp images; long focal ratio and narrow field of view, leaning toward planetary/lunar work |
+| Dall-Kirkham | Ellipsoidal primary + spherical secondary | Heavier off-axis coma | ≥ f/15 | Easy to manufacture, but image quality degrades quickly off-axis |
+
+### Aberrations and Corrector Lenses
+
+The main aberrations of concern in astrophotography and their correction schemes:
+
+| Aberration | Appearance | Common source | Correction scheme |
+| --- | --- | --- | --- |
+| Chromatic aberration | Colored fringes (purple/blue halos) on bright stars | Inexpensive refractors | ED/fluorite glass, APO designs |
+| Spherical aberration | Star-image blur across the whole field, soft focus | Uncorrected spherical mirror | Schmidt plate, meniscus lens, aspherical primary |
+| Coma | Edge star images appear comet- or wedge-shaped | Newtonian, classical Cassegrain | Coma corrector, RC design |
+| Field curvature | Edges blur when the center is in focus | SCT, refractor, RC | Field flattener |
+
+<Aside type="tip" title="Correctors and Reducers">
+A **field flattener** corrects field curvature so that the corner stars of a large sensor come into focus; a **reducer/flattener** corrects field curvature while also shortening the focal length and reducing the focal ratio, both widening the field of view and increasing "speed" (commonly 0.7×–0.8×). A dedicated corrector matched to a specific telescope tube performs better than a generic part.
+</Aside>
+
+## Focal Length Ranges and Suitable Targets
+
+The table below maps focal length ranges to typical targets, as a quick reference for choosing a telescope and planning framing. The actual image scale must still be judged in combination with sensor size (field of view) and pixels (pixel scale).
+
+| Focal length range | Field characteristics | Suitable targets | Common equipment |
+| --- | --- | --- | --- |
+| 14–50 mm | Extremely wide angle | Milky Way arch, constellations, nightscape astrophotography | Wide-angle lenses |
+| 50–135 mm | Wide angle | Large nebula regions, North America Nebula, the Pleiades | Medium-focal-length lenses, small refractors |
+| 200–500 mm | Medium focal length | Andromeda Galaxy M31, the Lagoon Nebula, large nebulae | APO/ED refractors |
+| 600–1200 mm | Long focal length | Most Messier galaxies/nebulae, globular cluster M13 | Large refractors, Newtonians, SCT |
+| 1500–3000 mm | Very long focal length | Small galaxies M51/M104, the Ring Nebula M57 | SCT, RC, Maksutov |
+| Above 3000 mm (with a Barlow) | Extremely long focal length | Planets, lunar surface detail, planetary nebulae | SCT/Maksutov + Barlow |
+
+<Aside type="tip" title="Planning Order">
+First determine the target's angular diameter, then in turn determine the focal length (image scale), the sensor (field of view), and the pixels and seeing (pixel scale), rather than blindly chasing a long focal length. Wide angles correspond to large nebulae, and long focal lengths to small galaxies and planets — this is a summary of that logic.
+</Aside>
+
+Once you have mastered the five parameters above and the telescope types, the next step is to combine them with camera pixels and seeing for complete planning — continue reading [Sensor Fundamentals](/en/astrophotography/fundamentals/sensors/), or choose an appropriate focal length for your target in the [Object Catalog](/en/reference/catalog/). For terminology, see the [Glossary](/en/reference/glossary/).
+
+## References
+
+- [Angular resolution — Wikipedia](https://en.wikipedia.org/wiki/Angular_resolution): Standard formulas and constants for the Rayleigh criterion, Dawes' limit, the Airy disk, and diffraction-limited resolution.
+- [F-number — Wikipedia](https://en.wikipedia.org/wiki/F-number): The definition of focal ratio and its differing effects on the surface brightness of extended sources and the brightness of point sources.
+- [Refracting telescope — Wikipedia](https://en.wikipedia.org/wiki/Refracting_telescope): Refractor structure, chromatic aberration, achromats and apochromats (APO), and ED/fluorite glass.
+- [Cassegrain reflector — Wikipedia](https://en.wikipedia.org/wiki/Cassegrain_reflector): The optical structures and aberration characteristics of the Cassegrain family (RC, SCT, Maksutov, Dall-Kirkham).
+- [Image Scale in Astrophotography — AstroBackyard](https://astrobackyard.com/image-scale-astrophotography/): A practical guide to the pixel scale formula, oversampling/undersampling, and matching to seeing.
+- [Types of Telescopes — High Point Scientific](https://www.highpointscientific.com/astronomy-hub/post/astronomy-101/types-of-telescopes): A comparison of the pros and cons of refracting, reflecting, and catadioptric telescopes for imaging.

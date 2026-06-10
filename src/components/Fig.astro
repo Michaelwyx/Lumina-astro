@@ -1,0 +1,58 @@
+---
+/**
+ * Fig — 带说明与版权署名的配图。
+ * 用法:<Fig name="m42-orion" alt="猎户座大星云" caption="哈勃拍摄的 M42 核心" />
+ * name 对应 src/assets/images/<name>.jpg,署名自动取自 src/data/credits.json。
+ */
+import { Image } from 'astro:assets';
+import creditsData from '../data/credits.json';
+
+const credits = creditsData as Record<
+  string,
+  { artist?: string; license?: string; title?: string }
+>;
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '../assets/images/*.{jpg,jpeg,png,webp}',
+  { eager: true }
+);
+
+interface Props {
+  name: string;
+  alt: string;
+  caption?: string;
+  width?: number;
+  /** 是否撑满栏宽(默认 true);设 false 则居中、最大 520px */
+  full?: boolean;
+}
+
+const { name, alt, caption, width = 1100, full = true } = Astro.props;
+
+const entry =
+  images[`../assets/images/${name}.jpg`] ??
+  images[`../assets/images/${name}.jpeg`] ??
+  images[`../assets/images/${name}.png`] ??
+  images[`../assets/images/${name}.webp`];
+const img = entry?.default;
+const cr = credits[name];
+---
+
+{
+  img ? (
+    <figure class:list={['fig', { 'fig--narrow': !full }]}>
+      <Image src={img} alt={alt} width={width} densities={[1, 2]} loading="lazy" />
+      {(caption || cr) && (
+        <figcaption>
+          {caption && <span class="fig__cap">{caption}</span>}
+          {cr?.artist && (
+            <span class="fig__credit">
+              图源 {cr.artist}
+              {cr.license ? ` · ${cr.license}` : ''}
+            </span>
+          )}
+        </figcaption>
+      )}
+    </figure>
+  ) : (
+    <div class="fig fig--missing">缺图:{name}</div>
+  )
+}

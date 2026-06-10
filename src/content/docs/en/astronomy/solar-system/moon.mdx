@@ -1,0 +1,167 @@
+---
+title: The Moon
+description: "A systematic overview of the Moon's basic parameters and orbit, the causes of lunar phases and the synodic month, the 59% of the lunar surface visible thanks to libration, the terrain of maria and craters, the causes of lunar eclipses and the blood moon and how they differ from solar eclipses, supermoons, and the influence of lunar age on deep-sky imaging."
+difficulty: beginner
+pillar: astronomy
+sidebar:
+  order: 2
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import Fig from '@/components/Fig.astro';
+
+The Moon is Earth's only natural satellite and one of the largest moons in the Solar System relative to its parent planet. It is the most easily observed and detail-rich object in the night sky, and its phases, motion, and orbital regularities are both foundational topics for beginner astronomy and direct influences on the timing of [deep-sky imaging](/en/astronomy/observing/conditions/). This page proceeds in the order of basic parameters, the phase cycle, libration, lunar terrain, lunar eclipses, supermoons, and the impact on imaging.
+
+<Fig name="moon" alt="Photograph of a full moon" caption="Full moon: with the Sun nearly facing the lunar surface head-on, crater shadows are at their shortest and the contrast between the dark maria and the bright highlands is at its clearest" />
+
+## Basic Parameters and Orbit
+
+The Moon revolves around Earth in a slightly eccentric elliptical orbit and, due to tidal locking, always presents the same face toward Earth. The table below lists the main physical and orbital parameters (values taken from astronomical measurements).
+
+| Parameter | Value | Notes |
+| --- | --- | --- |
+| Mean distance | about 384,400 km | Earth's center to the Moon's center, roughly 30 times Earth's diameter, or 1.3 light-seconds |
+| Perigee | about 363,300 km | Closest point of the orbit |
+| Apogee | about 405,500 km | Farthest point of the orbit |
+| Orbital eccentricity | 0.055 | The eccentricity is small, but enough to cause about a 14% variation in apparent diameter |
+| Equatorial diameter | 3,474 km | About 1/4 of Earth's diameter |
+| Mean radius | 1,737.4 km | — |
+| Mass | 7.35×10²² kg | About 1.2% of Earth's mass |
+| Surface gravity | 1.62 m/s² | About 1/6 that of Earth (0.165 g) |
+| Geometric albedo | about 0.12 | The lunar surface is overall quite dark, with a reflectivity close to that of asphalt |
+| Sidereal month | 27.32 days | One revolution relative to the background stars |
+| Synodic month | 29.53 days | One full cycle of phases (detailed below) |
+| Surface temperature | about −173 ℃ to 127 ℃ | With no atmosphere to moderate it, the day-night temperature swing is extreme |
+
+<Aside type="note" title="The Long-Term Change in the Earth-Moon Distance">
+Laser ranging experiments (using the retroreflectors left on the lunar surface by the Apollo program) have measured the Moon receding from Earth at about 3.8 cm per year. This is the result of tidal interactions gradually transferring Earth's rotational angular momentum to the Moon's orbit, an extremely slow process.
+</Aside>
+
+Regarding the Moon's origin, the current mainstream theory is the **giant-impact hypothesis**: about 4.5 billion years ago, a Mars-sized body, "Theia," struck the primordial Earth, and the ejected material accumulated in Earth orbit to form the Moon. This explains observed facts such as the Moon's relatively low density, its small iron core, and its isotopic composition being similar to Earth's.
+
+## The Causes and Cycle of Lunar Phases
+
+The essence of the lunar phases is this: an observer sees the portion, facing Earth, of the Moon's hemisphere that is illuminated by the Sun. The Moon does not shine on its own; as it revolves around Earth, the angle subtended among the Sun, Earth, and Moon (called the phase angle) continually changes, and the visible fraction of the illuminated portion as seen from Earth (the illuminated fraction) changes accordingly. The variation of the phases has nothing to do with the Moon's distance or brightness along its orbit; it depends solely on the relative geometric positions of the three bodies.
+
+<Fig name="fig-moon-phases" alt="Diagram of the changing lunar phases" caption="The phase sequence: as the angle subtended among the Sun, Earth, and Moon changes, the portion of the illuminated hemisphere facing Earth waxes and wanes in turn, completing one synodic month" />
+
+A complete phase cycle comprises eight stages. The lunar age (the number of days counted from the new moon) and the rise/set periods are shown in the table below (approximate values for the Northern Hemisphere, with the Moon near the celestial equator):
+
+| Phase | Illuminated Fraction | Lunar Age (days) | Rise / Transit / Set (approx.) |
+| --- | --- | --- | --- |
+| New Moon | 0% | 0 | 6:00 / 12:00 / 18:00, rises and sets with the Sun, almost invisible |
+| Waxing Crescent | 1%–49% | about 3.7 | Rises in the morning, visible low in the western sky at dusk |
+| First Quarter | 50% | about 7.4 | 12:00 / 18:00 / 0:00, visible in the first half of the night |
+| Waxing Gibbous | 51%–99% | about 11 | Rises in the afternoon, sets in the west before the second half of the night |
+| Full Moon | 100% | about 14.8 | 18:00 / 0:00 / 6:00, rises in the east at sunset and sets in the west at sunrise, visible all night |
+| Waning Gibbous | 99%–51% | about 18 | Rises after nightfall, still in the sky in the early morning |
+| Last Quarter | 50% | about 22 | 0:00 / 6:00 / 12:00, visible in the second half of the night |
+| Waning Crescent | 49%–1% | about 26 | Visible low in the eastern sky before dawn |
+
+### The Difference Between the Synodic Month and the Sidereal Month
+
+From one new moon to the next is called one **synodic month = 29.53 days**; one revolution of the Moon relative to the distant background stars is called the **sidereal month = 27.32 days**. The synodic month is about 2.2 days longer than the sidereal month, because: during the Moon's revolution, Earth (carrying the Moon along) has also advanced some distance in its orbit around the Sun, so the Moon must turn an additional roughly 27 degrees to catch up again to the same phase angle of the Sun-Earth-Moon configuration. In other words, the Moon revolves around Earth about 13.4 times per year, but only returns to the same Sun-Earth-Moon phase position about 12.4 times.
+
+<Aside type="tip" title="Determining the Direction of Waxing and Waning">
+For Northern Hemisphere observers: **bright on the right = waxing** (lunar age increasing, heading toward full moon); bright on the left = waning (heading toward new moon); in the Southern Hemisphere it is reversed. During the waxing crescent and waning crescent stages, you can often see the dark side of the Moon faintly lit by sunlight reflected off Earth, called **earthshine**, colloquially "the new moon in the old moon's arms."
+</Aside>
+
+## Libration and the Visible Lunar Surface
+
+The Moon is tidally locked to Earth, with its rotation period exactly equal to its revolution period (a 1:1 spin-orbit resonance), so it always faces Earth with "the same face." If one strictly considered only a hemisphere, the visible lunar surface would be 50%. But because of **libration**—the small periodic oscillations of the lunar surface relative to the direction of Earth's line of sight—about **59%** of the lunar surface is visible over time, roughly 9% more than under rigid locking. Libration is divided into the following categories:
+
+| Type | Amplitude | Cause |
+| --- | --- | --- |
+| Libration in longitude | about ±7.9° | The orbit is elliptical, so the angular velocity of revolution varies (now fast, now slow) while rotation is uniform, causing the lunar face to "nod" in the east-west direction and alternately reveal the eastern and western edges |
+| Libration in latitude | about ±6.7° | The Moon's rotation axis is inclined about 6.7° relative to its orbital plane, alternately bringing the regions near the north and south poles into view |
+| Diurnal libration | less than 1° | Earth's rotation shifts the observer's viewing angle from moonrise to moonset (a parallax effect), revealing a small amount of the edge |
+
+The above three belong to **optical libration**, which is a visual effect caused by observing geometry. In addition, there is **physical libration** of extremely small amplitude, arising from the Moon's actual oscillation produced by gravitational torque; from Earth it is less than 1 arcsecond. Note: libration lets us see a cumulative 59% of the lunar surface, but about 41% of the Moon can still never be observed directly from Earth—the so-called "far side" of the Moon (which is not "permanently dark"; the far side receives sunlight just the same).
+
+## Lunar Terrain
+
+A pair of binoculars or a small telescope is enough to distinguish the main terrain units on the lunar surface. The table below lists the common types:
+
+| Terrain | English | Characteristics |
+| --- | --- | --- |
+| 月海 | maria | Vast dark plains, actually formed from cooled basaltic lava flows of ancient volcanic eruptions, high in iron and low in albedo; e.g., Mare Imbrium and Mare Tranquillitatis (the Apollo 11 landing site) |
+| 月陆 / 高地 | highlands / terrae | Bright, ancient highlands densely covered with impact craters, composed mainly of anorthosite, with high albedo |
+| 环形山 / 撞击坑 | craters | Circular pits formed by meteorite impacts, ranging in size from meters to hundreds of kilometers, often with a central peak and terraced walls |
+| 辐射纹 | rays | Bright streaks splashed outward from young impact craters, which can extend hundreds to over a thousand kilometers and are most prominent at full moon (e.g., the crater Tycho) |
+| 月溪 | rilles | Winding or linear grooves, some formed by collapsed lava tubes or tectonic faulting |
+| 山脉与峭壁 | montes / rupes | Mostly the uplifted rims of impact basins |
+
+The maria formed mainly during a period of volcanic activity about 3.3 to 3.7 billion years ago and are concentrated on the near side of the Moon; the highlands are much older. The lunar surface lacks an atmosphere and liquid water, so impact craters are preserved over the long term, and their density can be used to estimate the age of the surface.
+
+<Aside type="note" title="The Best Time to Observe the Lunar Surface">
+At full moon, sunlight strikes the lunar surface almost perpendicularly, leaving few shadows, so the terrain appears flat. To observe three-dimensional features such as craters and mountain ranges, it is best to do so **around the first quarter or last quarter**, along the **terminator (the line dividing light and dark)**, when the low-angle illumination casts long shadows for the strongest sense of relief. Rays, conversely, are clearest at full moon.
+</Aside>
+
+## Lunar Eclipses and the Blood Moon
+
+A **lunar eclipse** occurs when a **full moon** happens to move into Earth's shadow. At this time the Sun, Earth, and Moon are nearly in a straight line, and Earth blocks the direct sunlight reaching the Moon. Earth's shadow has two layers:
+
+- **Umbra**: the central dark region where sunlight is completely blocked.
+- **Penumbra**: the surrounding transitional zone where sunlight is partially blocked.
+
+Depending on how far the Moon enters the shadow region, lunar eclipses are divided into three types:
+
+| Type | English | Phenomenon |
+| --- | --- | --- |
+| 半影月食 | penumbral | The Moon enters only the penumbra and merely dims slightly overall, hard to notice with the naked eye |
+| 月偏食 | partial | The Moon partially enters the umbra, showing a distinct dark notch |
+| 月全食 | total | The Moon fully enters the umbra; the lunar surface darkens overall and often turns a deep red |
+
+### The Cause of the Blood Moon
+
+During a total lunar eclipse the lunar surface is not completely black but often appears a deep red—the so-called "**blood moon**." The reason is that Earth's atmosphere **refracts and scatters** part of the sunlight into the umbra: as sunlight passes through Earth's thick atmosphere, the shorter-wavelength blue light is largely scattered away by Rayleigh scattering, while the longer-wavelength red light penetrates and is refracted onto the lunar surface—the same origin as the reddening of the sky at sunrise and sunset. The exact color and brightness of a total lunar eclipse depend on the dust and cloud amount in Earth's atmosphere and can be quantitatively described by the **Danjon scale (L = 0 to 4)**, ranging from nearly all black (L = 0) to a bright copper-red (L = 4).
+
+### Why Not Every Full Moon Brings an Eclipse
+
+The Moon's orbital plane is inclined about 5° relative to the ecliptic (Earth's orbital plane), so at most full moons the Moon passes above or below Earth's shadow and does not enter the umbra. Only when a full moon happens to occur near a node (the orbital crossing point) during an "eclipse season" are the three bodies sufficiently collinear for a lunar eclipse to occur. In the 21st century there are on average about 2.28 lunar eclipses per year.
+
+<Aside type="caution" title="The Difference Between Lunar and Solar Eclipses">
+- **Phase of occurrence**: a lunar eclipse occurs only at **full moon**, a solar eclipse only at **new moon**.
+- **Body being obscured**: a lunar eclipse is Earth's shadow falling on the Moon; a solar eclipse is the Moon's shadow falling on Earth.
+- **Visible range**: during a lunar eclipse, anyone on the **entire night hemisphere** where the Moon is above the horizon can watch it, and it can last more than an hour (the total phase can be as long as about 107 minutes); the path of totality of a solar eclipse (especially a total solar eclipse) is very narrow, visible only along a specific narrow strip, and lasts only a few minutes.
+- **Observing safety**: a lunar eclipse can be viewed directly with the naked eye; the solar phase of a solar eclipse **must be viewed through a dedicated solar filter**, as looking at it directly causes permanent eye damage.
+</Aside>
+
+## Supermoons
+
+A **supermoon** refers to a full moon (or new moon) occurring at or near **perigee**, termed in technical language a "perigee syzygy," where syzygy refers to the Sun, Earth, and Moon lining up. Because the Moon is then closer to Earth, the apparent diameter and brightness of the lunar surface are slightly greater than average:
+
+- A perigee full moon is about **14%** larger in apparent diameter and about **30%** brighter than an apogee full moon.
+- A supermoon is about **7%** larger and about **15%** brighter than an **average full moon**—a difference that is not significant to the naked eye and is easily overestimated.
+- Conversely, a full moon near apogee is called a **micromoon**, smaller in apparent diameter and brightness.
+
+It should be noted that "the Moon looking especially large when it first rises" is mainly the psychological-visual phenomenon known as the **moon illusion** and has nothing to do with the supermoon; measured apparent diameters are nearly identical whether the Moon is rising or high in the sky. For concepts such as phases and apparent diameter, see [Apparent Magnitude and Brightness](/en/astronomy/foundations/magnitude/) and [The Diurnal Apparent Motion of Celestial Objects](/en/astronomy/foundations/apparent-motion/).
+
+## Tides and the Earth-Moon System
+
+The gravity of the Moon (and the Sun) produces tidal bulges on Earth. Because different points on Earth are at different distances from the Moon, the difference in gravitational pull (the tidal force) causes the ocean water to bulge simultaneously on both the sides facing toward and away from the Moon, and Earth's rotation makes most coastlines experience about two rises and falls per day. The Sun's tidal force is about half that of the Moon: when the Sun, Earth, and Moon are nearly collinear (new moon, full moon), the two add together, forming **spring tides**; at first and last quarter the Sun's and Moon's tides partially cancel, forming **neap tides**. Tidal friction also gradually slows Earth's rotation and gradually moves the Moon's orbit outward, which is precisely a manifestation of the long-term evolution of the Earth-Moon system's angular momentum.
+
+## The Influence of Lunar Age on Deep-Sky Imaging
+
+For deep-sky imaging, moonlight is the main source of **light pollution** second only to artificial light. Near full moon, bright moonlight scattered by the atmosphere greatly raises the brightness of the sky background, drowning out the faint signals of nebulae and galaxies and significantly lowering the signal-to-noise ratio. Lunar age, the times of moonrise and moonset, and the lunar illuminated fraction are therefore key variables in scheduling:
+
+| Period | Moonlight Conditions | Suitable Targets |
+| --- | --- | --- |
+| Around new moon (the dark-moon window) | almost no moonlight | Faint galaxies, broadband (RGB / LRGB) nebulae |
+| First quarter / last quarter | half moon, moonless for part of the night | Image deep-sky objects using the window after moonset or before moonrise |
+| Around full moon | strong moonlight, bright all night | The Moon and planets; or use **narrowband filters** to pass the Hα, OIII, and SII emission lines and reduce the effect of moonlight |
+
+<Aside type="tip" title="Scheduling Advice">
+Before planning a deep-sky shoot, first check the target's lunar age, lunar illuminated fraction, and moonrise/moonset times for that night, and try to arrange for the target to transit **after moonset and before astronomical twilight** to obtain the lowest sky background. Narrowband filters can still work near full moon, but they are of limited help for continuum-spectrum targets such as reflection nebulae and galaxies. For reading the relevant periods and sky conditions, see [Observing Conditions](/en/astronomy/observing/conditions/).
+</Aside>
+
+If you want to capture the Moon itself sharply, the lunar surface is a high-resolution, planetary-grade imaging target; for capture and processing methods, see [Planetary and Lunar Imaging](/en/astrophotography/capture/planetary/).
+
+## References
+
+- [Moon — Wikipedia](https://en.wikipedia.org/wiki/Moon): a comprehensive entry on the Moon's basic physical and orbital parameters, terrain, and origin.
+- [Lunar phase — Wikipedia](https://en.wikipedia.org/wiki/Lunar_phase): the phase sequence, lunar age, the difference between the synodic and sidereal months, and an explanation of earthshine.
+- [Libration — Wikipedia](https://en.wikipedia.org/wiki/Libration): the causes and amplitudes of libration in longitude, latitude, diurnal, and physical libration, and the 59% visible lunar surface.
+- [Lunar eclipse — Wikipedia](https://en.wikipedia.org/wiki/Lunar_eclipse): umbra/penumbra, eclipse classification, the cause of the blood moon, the Danjon scale, and the difference from solar eclipses.
+- [Supermoon — Wikipedia](https://en.wikipedia.org/wiki/Supermoon): the definition of perigee syzygy and the apparent-diameter and brightness changes of supermoons and micromoons.
+- [Moon Facts — NASA Science](https://science.nasa.gov/moon/facts/): fact-checking of key lunar parameters and tides, the evolution of the Earth-Moon distance, and more, provided by NASA.

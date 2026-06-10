@@ -1,0 +1,183 @@
+---
+title: Remote Imaging Platform Comparison
+description: A comparison of leading remote-imaging and image-library platforms—AstroBin, iTelescope, SkyShare, Telescope Live, Slooh, ChileScope, Deep Sky Chile, Insight Observatory—covering their category, equipment, sites, billing models, and best-fit use cases.
+difficulty: beginner
+pillar: astrophotography
+sidebar:
+  order: 2
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import Fig from '@/components/Fig.astro';
+
+Remote astrophotography means imaging through the internet with telescopes installed at premium sites (dark skies, high clear-night rates, good seeing), or directly downloading data those telescopes have already collected. It lets an observer obtain raw data on deep-sky targets without owning equipment or traveling to the site. This page compares the leading platforms by category, walking through each one's category, equipment, hemisphere and site, billing model, target audience, and pros and cons.
+
+Before comparing, we first need to distinguish the categories: these services are not all the same kind of product—they solve problems at different stages.
+
+| Category | Meaning | Representative platforms |
+| --- | --- | --- |
+| Image library / community / database | Host, showcase, and search images; query equipment and acquisition parameters; **does not rent telescopes** | AstroBin |
+| Remote telescope network | Multiple telescopes across multiple sites, with **real-time control** of imaging and data download | iTelescope, Slooh, ChileScope |
+| Remote telescope (single / few units) | Imaging service built around one or two setups, offered **per night or per request** | SkyShare Astro |
+| Datasets + remote hybrid | You can both request imaging and **download calibrated datasets the platform has already captured** | Telescope Live |
+| Remote hosting | Set up **your own equipment** at the provider's site and have them operate it for you | Deep Sky Chile, Insight Observatory (includes remote imaging) |
+
+<Aside type="note" title="Scope note">
+This page covers only "remote imaging / image library" services. Sky-Watcher, ZWO, and the like are **hardware manufacturers** of telescopes and cameras, relevant to "building your own backyard or portable setup," not remote platforms, so they are not included in the comparison (their products may, however, appear as equipment at certain remote sites—for example, the Sky-Watcher Esprit 100ED used by SkyShare).
+</Aside>
+
+## Concepts common to remote imaging
+
+Before comparing specific platforms, let's clarify a few terms and billing elements that run throughout this page.
+
+- **Telescope-time billing**: Most network platforms charge by "telescope usage time," commonly in units of **points** or **hours**. The conversion between points and dollars varies by platform (for example, ChileScope uses roughly 1 point = 1 USD), and actual consumption depends on the telescope chosen, exposure length, and frame count.
+- **Subscription + telescope time**: Many platforms use a two-tier structure of "monthly subscription (for discounted telescope time and features) + points deducted per use"; the higher the subscription tier, the larger the per-unit discount on telescope time and the more bundled points.
+- **One-Click / datasets**: Some platforms offer "one-click" access to **already-captured** calibrated or uncalibrated data, with no need to schedule your own imaging—ideal for jumping straight into [post-processing stacking](/en/astrophotography/processing/stacking/) practice.
+- **Delivery format**: Research-grade and advanced platforms usually deliver **16-bit FITS** raw frames along with **calibration frames** (darks, flats, biases); beginner- / education-oriented platforms may deliver only preview images (JPEG / PNG).
+- **Hemisphere and site**: Southern-hemisphere sites (Chile, Australia) can capture southern-sky targets invisible from the northern hemisphere (such as the Large and Small Magellanic Clouds and the Carina Nebula); the **Bortle scale** (light-pollution classification, with class 1 the darkest) and **seeing (in arcseconds)** directly determine the faintest targets and the resolution attainable.
+
+<Aside type="caution" title="Common misconceptions">
+- **AstroBin cannot be used to take pictures**: it is an image library and equipment database, only for storing, browsing, and querying parameters.
+- **Prices and configurations change**: the figures below are order-of-magnitude references based on each platform's public information at the time of writing; always defer to the official site.
+- **Telescope-time fees stack up**: under a network platform's "subscription + telescope time" structure, the total cost of a long-exposure, large project can far exceed the monthly subscription itself.
+</Aside>
+
+## AstroBin
+
+- **Category**: Astrophotography image-hosting platform + community + equipment / object database + secondhand marketplace. **It does not rent telescopes and cannot itself take pictures.**
+- **Equipment / site**: None (it does not operate telescopes). However, it lists 20-plus remote sites as partners, and you can search the site for sample images captured by their equipment.
+- **Core features**: Image hosting, forums, an equipment database (search telescopes / cameras / filters by model), automatic plate-solving and object identification, and image search across multiple dimensions.
+- **Billing (annual subscription)**:
+
+| Tier | Positioning | Key capabilities |
+| --- | --- | --- |
+| Free | Trial / browsing | Limited upload quota (about 10 images); browse the whole site and forums |
+| Premium | Suits most people | Ample upload quota, full hosting and showcasing |
+| Ultimate | Most commonly purchased | PixInsight-powered advanced plate-solving (larger catalogs, identification of planets and asteroids, detailed finding-chart generation), and unlocks all search filters: right ascension/declination (RA/Dec), focal length, aperture, camera pixel size, Bortle, lunar phase, acquisition month, and more |
+
+- **Best for**: People who need to **store / showcase results**, **see how others imaged a given object**, or **check equipment and acquisition parameters**. It pairs with any remote-imaging platform, serving as a parameter reference and a portfolio archive.
+- **Pros**: A well-developed equipment and object search system; the free tier already allows browsing and limited uploads; plate-solving results can link directly to objects in the [catalog](/en/reference/catalog/).
+- **Cons**: Provides no imaging capability at all; advanced search and advanced plate-solving require Ultimate.
+
+We recommend first using a free account to get familiar with target search and the "acquisition" pages, then deciding whether to upgrade.
+
+## iTelescope
+
+- **Category**: A veteran remote telescope rental **network**, operating since 2006.
+- **Equipment / site**: Around 20-plus networked telescopes distributed across multiple sites including the **USA (New Mexico), Australia (Siding Spring), and Spain / La Palma**, **spanning both the northern and southern hemispheres**; focal lengths range from wide-field refractors to long-focus reflectors, suitable for small galaxies / planets (long focus) and large nebulae (wide field).
+- **Billing (subscription + telescope time)**: A monthly subscription (28-day cycle, from about $39.95, with top tiers around $160) **+ points / time charged by telescope usage**. Subscribers also receive about **30 minutes free** telescope time per session; different telescopes have different "points / hour" rates by tier, with the top-end large scopes costing more.
+- **Usage mode**: **Real-time control** (set coordinates, choose filters, set exposures, schedule), with downloads available minutes after imaging; a "one-click" image service is also offered to lower the barrier to entry.
+- **Best for**: Deep-sky LRGB / narrowband imaging, as well as **scientific uses**—photometry, exoplanets, comets, asteroids / near-Earth objects (NEOs), supernovae, variable stars, and the like.
+- **Pros**: Diverse equipment, dual-hemisphere access to southern-sky-only targets; real-time control with fast image turnaround; a strong community and tutorials; supports scientific research.
+- **Cons**: Subscription and telescope time stack up, so large projects are costly; the interface is fairly traditional, with a learning curve.
+
+**Best for**: People who want target variety, dual-hemisphere coverage, real-time control, and a future path into scientific observation.
+
+## SkyShare Astro
+
+- **Category**: A newer remote-rental service built around **a single high-end wide-field setup**, offering imaging per night / per request.
+- **Equipment / site**: A **Sky-Watcher Esprit 100ED** (550mm, f/5.5 APO triplet apochromatic refractor) + a multi-position filter wheel (LRGB plus narrowband Hα/OIII/SII), set up under **Bortle 1–2 ultra-dark skies** near **El Sauce Observatory** in Chile.
+- **Billing (flat per-night fee, no points)**: A flat price per night (public tiers around Student $69, Discovery first-order $79, and Standard $99 levels, with multi-night packages offering better value).
+- **Delivery**: A download link within about **24 hours**, including **16-bit FITS raw frames + calibration frames + a processed JPEG preview**.
+- **Weather guarantee**: If weather prevents acquisition, you get a **reschedule or refund**; cloudy nights are not billed.
+- **Pros**: A simple workflow and predictable pricing; the 550mm wide field suits **large-field bright nebulae** (M42, M31, the North America Nebula, the Heart / Soul Nebulae); the weather guarantee reduces the risk of wasted imaging; it delivers ready-to-process FITS directly.
+- **Cons**: **A single setup** (only one 550mm wide-field)—not suited to small galaxies, planets, or small targets; a night usually serves only one target; the platform is new and its reputation is still being built.
+
+**Best for**: People trying remote deep-sky for the first time, who want to reduce operational complexity and mainly image wide-field large nebulae.
+
+## Telescope Live
+
+- **Category**: A remote robotic telescope platform combining **real-time / scheduled imaging** with **downloadable datasets**.
+- **Equipment / site**: Multiple sites worldwide (**Chile, Spain, Australia**), with telescope apertures ranging from about **100mm refractors to 1-meter (1000mm)-class reflectors**, covering wide-field to long-focus needs and spanning both hemispheres.
+- **Billing (subscription + points)**: Tiered monthly subscriptions, each granting a different monthly point allotment—for example Bronze (about 5 points) / Silver (about 20 points) / Gold (about 50 points) / Platinum (about 100 points) / Diamond (about 250 points); prices range from about €6/month at the lowest tier to about €299/month at the highest. A free trial of about four weeks is offered.
+- **Data-acquisition modes**:
+  - **One-Click Observations**: Browse and download datasets of targets the platform has previously imaged (raw or calibrated), with the downloadable range determined by subscription tier.
+  - **Advanced Requests**: Customize the target, filters, and exposures, and schedule imaging on a chosen telescope.
+- **Pros**: An intuitive interface and quick onboarding; the dataset mode lets beginners **get practice data without scheduling**; a wide aperture range and dual hemispheres.
+- **Cons**: Under the points system, heavy use requires a higher subscription tier; advanced requests are subject to queues and weather.
+
+**Best for**: People who want both quick ready-made data to practice post-processing and a gradual transition to custom imaging.
+
+## Slooh
+
+- **Category**: An online telescope platform and community aimed at **education and beginners**, emphasizing in-browser "live viewing" and celestial-event livestreams. Founded in 2002.
+- **Equipment / site**: Sites including **Mount Teide, Tenerife, Spain (about 2300m)** and **Chile** (as well as Siding Spring, Australia), with several telescopes total (including a high-magnification 14-inch Schmidt–Cassegrain and wide-field scopes).
+- **Billing (tiered membership)**: Tiered subscriptions for individuals / students / families / educational institutions (commonly two tiers: the entry "Apprentice" tier allows observing about 500 popular targets; the advanced "Astronomer" tier allows observing more obscure targets).
+- **Usage mode**: Reserve telescopes online in a queue for personal observation; the platform also organizes **celestial-event livestreams** for solar eclipses, lunar eclipses, comets, and the like; it has well-developed courses and learning resources.
+- **Pros**: An extremely low barrier to entry, strong community and educational focus, and the ability to take part in live celestial events; sites in both hemispheres.
+- **Cons**: Limited equipment scale and customizability, **not suited to advanced users seeking high-quality deep-sky imaging** or research-grade data.
+
+**Best for**: Pure beginners, classroom teaching, and people who value "seeing and participating" over "the ultimate image."
+
+## ChileScope
+
+- **Category**: A **large-aperture** remote telescope service in Chile, focused on excellent seeing.
+- **Equipment / site**: Located on the southern edge of the Chilean Andes / Atacama at an altitude of about **1560m**, about 20 km from Cerro Pachón. Three main setups: a **1-meter f/8 Ritchey–Chrétien** (alt-az direct drive) and **two 0.5-meter (500mm) f/3.8 Newtonians** (equatorial mounts), equipped with FLI ProLine 16803 large-format cameras and 8–10-position filter wheels.
+- **Seeing**: Averaging **better than 1 arcsecond**, and about **0.6–0.8 arcseconds** on good nights—a high-resolution site within reach of amateurs.
+- **Billing (points system)**: Charged in points (about **1 point ≈ 1 USD**), deducted in real time at the chosen telescope's "points / frame" rate; a web scheduling system lets you customize target, camera, filters, and exposure, with data downloaded automatically.
+- **Pros**: **Large aperture + sub-arcsecond seeing**, suited to small galaxies, galaxy detail, faint targets, and high-resolution narrowband; a southern-sky site.
+- **Cons**: High per-unit telescope-time price on the large scope, so deep imaging is costly; aimed at experienced imagers, requiring you to master the scheduling parameters yourself.
+
+**Best for**: Intermediate / advanced imagers pursuing high resolution and faint small targets, willing to pay for a premium site.
+
+## Deep Sky Chile
+
+- **Category**: A Chilean remote **hosting** and remote-operations service—the core is setting up **your own equipment** at the provider's site, rather than renting their scopes by the night.
+- **Equipment / site**: Located on a flat-topped mountain in Chile's **Río Hurtado valley** at an altitude of about **1700m**, with extremely low light pollution and an average **seeing better than 1 arcsecond**; its clear-night rate ranks among the best in Chile and the world. Hosting has been offered since 2019.
+- **Infrastructure**: Fully automated roll-off-roof / dome observatories, solar power, an about **100Mbps low-latency** network (with a 40Mbps 4G backup), and security and alert systems; you can choose to move into a shared roll-off-roof observatory or build a private one.
+- **Billing**: Charged for hosting (pier slot / dome rental + operation), not by points / telescope time; specifics depend on equipment size and plan.
+- **Pros**: "Migrate" your own equipment to dark southern skies, with low marginal cost over long-term use and full ownership and control; top-tier site conditions.
+- **Cons**: **Requires buying and shipping your own equipment**, with upfront investment and operating responsibility—a higher barrier than "renting a scope by telescope time"; not suited to users who only want to capture a few images occasionally.
+
+**Best for**: Experienced enthusiasts or teams who already have a mature imaging system and want long-term access to dark southern skies and stable operation.
+
+## Insight Observatory
+
+- **Category**: An **education-oriented** remote telescope and image service, operating the ATEO (Astronomical Telescopes for Educational Outreach) portal.
+- **Equipment / site**: Since 2017 it has integrated **15+ affiliated remote telescopes** into the ATEO portal, with sites distributed across New Mexico, Lijiang (China), and elsewhere.
+- **Billing (per request / per minute)**: It offers three types of "image requests"—Basic / Advanced / Educational—billed by **imaging minutes** (educational-price example: about $0.36–0.65 / minute, with a processed final image about $25–50); it also has a subscription image library "Starbase" where you can purchase and download high-quality finished images.
+- **Usage mode**: Mainly "submit a target request → the platform images it for you → deliver data / finished image," aimed at K-12 classrooms, libraries, and other public-education settings.
+- **Pros**: Friendly to teachers / students, with educational pricing and classroom image requests (EIR); multiple sites to choose from.
+- **Cons**: Leans toward education and proxy imaging; real-time control and high-end customization are weaker than professional network platforms.
+
+**Best for**: Schools, educational institutions, and users who want to complete outreach / teaching imaging tasks at low cost.
+
+## Overview comparison
+
+| Platform | Category | Hemisphere / site | Billing model | Delivery | Best for |
+| --- | --- | --- | --- | --- | --- |
+| AstroBin | Image library / community / database | — | Annual subscription (Free/Premium/Ultimate) | No imaging (store / query images) | Storing images, learning, checking parameters |
+| iTelescope | Remote telescope network | South + North (USA / AUS / Spain) | Monthly subscription + telescope time | FITS, real-time download | Diverse targets · dual hemispheres · science |
+| SkyShare Astro | Remote single setup | Single dark-sky site (Chile) | Flat per-night fee | 16-bit FITS + calibration + preview, 24h | First-time wide-field large nebulae |
+| Telescope Live | Network + datasets | South + North (Chile / Spain / AUS) | Monthly subscription + points | Datasets / custom requests | Ready-made data to practice post-processing + customization |
+| Slooh | Education / community network | South + North (Tenerife / Chile) | Tiered membership | Online viewing / simple imaging | Pure beginners · classroom · event livestreams |
+| ChileScope | Large-aperture remote network | South (Chile) | Points (≈$1/point) | FITS, automatic download | High-resolution small targets · narrowband |
+| Deep Sky Chile | Remote hosting | South (Chile) | Hosting / pier-slot rental | Data from your own equipment | "Migrating" your own equipment to the southern sky |
+| Insight Observatory | Education / remote network | Multiple sites | Per minute / subscription | Data / finished images | Schools · educational imaging |
+
+## Selection advice
+
+Platform choice depends on "what stage you're at, what you want to image, and your budget and energy." A progression from easy to advanced:
+
+1. **Check parameters (any stage)**: Use **AstroBin** to search for your target and sample images at similar focal lengths, referencing exposures, filters, and composition, and to archive your results.
+2. **Zero-experience taste test**: Use the One-Click datasets of **Slooh** or **Telescope Live** to first "see" at a low barrier and get ready-made data to practice [post-processing stacking](/en/astrophotography/processing/stacking/).
+3. **First time imaging wide-field deep-sky yourself**: Use a per-night platform like **SkyShare Astro**—a simple workflow with a weather guarantee, delivering FITS directly.
+4. **Need more equipment and hemispheres**: Use the advanced requests of **iTelescope** or **Telescope Live**, choosing longer focal lengths, a different hemisphere, or special filter configurations; for scientific needs, prefer iTelescope.
+5. **Pursuing high-resolution small targets**: Use a large-aperture + sub-arcsecond-seeing site such as **ChileScope**.
+6. **Long-term / owning your own equipment**: Use a hosting service such as **Deep Sky Chile** to set up your equipment under dark southern skies for long-term operation.
+7. **Education / classroom**: Use the educational plans of **Insight Observatory** or **Slooh**.
+
+<Aside type="tip" title="Distinguish the purpose">
+**Imaging to obtain data** relies on iTelescope / SkyShare / Telescope Live / ChileScope and the like; **storing, showcasing, and checking parameters** relies on AstroBin. The two are usually used together: first check target parameters on AstroBin, then obtain FITS from a remote platform, and after processing return to AstroBin to archive.
+</Aside>
+
+Next you can read [Getting started with remote imaging](/en/astrophotography/remote-platforms/overview/) to understand the workflow, feed the FITS data you obtain into [post-processing stacking](/en/astrophotography/processing/stacking/), and consult the [astronomical catalog](/en/reference/catalog/) to pick targets suited to each platform's field of view.
+
+## References
+
+- [iTelescope.Net](https://www.itelescope.net/) — The official site of the veteran remote telescope network, describing its multi-site equipment, subscription tiers, and telescope-time billing.
+- [Telescope Live](https://astroforumspace.com/telescope-live-review-remote-vs-backyard-astrophotography/) — A third-party review that lays out Telescope Live's sites, subscription points, and One-Click dataset mechanism.
+- [AstroBin — Choose your plan](https://welcome.astrobin.com/plans) and [Remote astrophotography partner-site list](https://welcome.astrobin.com/remote-astrophotography) — Official explanations of the Free/Premium/Ultimate tiers and advanced plate-solving, with a list of partner remote sites.
+- [Slooh — Wikipedia](https://en.wikipedia.org/wiki/Slooh) — Slooh's history, its Tenerife / Chile sites, and educational positioning.
+- [CHILESCOPE — Wikipedia](https://en.wikipedia.org/wiki/CHILESCOPE) and [ChileScope official pricing](http://www.chilescope.com/services-and-pricing/pricing) — Site altitude, equipment specs, seeing, and points billing.
+- [SkyShare Astro](https://www.skyshare-astro.com/) and [Deep Sky Chile](https://www.deepskychile.com/en/) — Describing per-night FITS delivery + weather guarantee, and the conditions of the Chilean remote-hosting site, respectively.

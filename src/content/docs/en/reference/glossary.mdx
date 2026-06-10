@@ -1,0 +1,168 @@
+---
+title: Glossary
+description: A quick-reference Chinese–English glossary of common terms in astronomy and astrophotography, grouped by topic, with a concise definition, units and typical values for each, plus links to the relevant main pages.
+difficulty: beginner
+pillar: index
+sidebar:
+  order: 3
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+This page collects the more commonly used terms in astronomical observation and astrophotography, grouped by topic. Each entry gives a one-sentence definition, with units, value ranges, typical values or formulas where helpful; for systematic study, follow the link to the corresponding main page. Beginners can start with the [Getting Started guide](/en/start/).
+
+<Aside type="tip" title="How to use">
+Formulas are given as inline code or code blocks; the meaning of each variable is fully derived on the corresponding main page. The same term may carry subtle differences in different contexts—defer to the definition on the linked page.
+</Aside>
+
+## Coordinates and Time
+
+| Term | English / Abbreviation | Definition and notes |
+| --- | --- | --- |
+| 赤经 | Right Ascension, RA | A coordinate measured eastward from the vernal equinox along the celestial equator, analogous to longitude; expressed in hours, minutes and seconds (0h–24h, with each 1h corresponding to 15°). See [Celestial coordinate systems](/en/astronomy/foundations/celestial-coordinates/). |
+| 赤纬 | Declination, Dec | The angular distance of an object from the celestial equator, analogous to latitude; ranges from −90° (south celestial pole) to +90° (north celestial pole), with the celestial equator at 0°. |
+| 地平高度 | Altitude, Alt | The elevation angle of an object relative to the horizon, from −90° (nadir) to +90° (zenith), with 0° on the horizon. |
+| 方位角 | Azimuth, Az | The directional angle measured along the horizon, usually clockwise from due north; 90° is due east and 180° is due south. |
+| 时角 | Hour Angle, HA | The angular distance of an object from the local meridian, measured in hours; `HA = local sidereal time − right ascension`, equal to 0 at transit. |
+| 黄道 | Ecliptic | The path of the Sun's apparent annual motion across the celestial sphere, inclined about 23.44° to the celestial equator (the obliquity of the ecliptic). |
+| 春分点 | Vernal Equinox / First Point of Aries | The ascending node of the ecliptic and the celestial equator, serving as the zero point from which right ascension is measured. |
+| 中天 | Culmination / Meridian Transit | The moment an object crosses the local meridian and reaches its highest altitude. See [Diurnal apparent motion](/en/astronomy/foundations/apparent-motion/). |
+| 岁差 | Precession | The slow gyration of Earth's axis that causes the vernal equinox to drift westward and the coordinate epoch to change, with a period of about 25,800 years. |
+| 历元 | Epoch | The specific reference instant to which coordinates are referred; the current standard is J2000.0. |
+| 恒星时 | Sidereal Time | Time referenced to the stars, numerically equal to the right ascension of the star currently transiting the meridian. See [Time systems](/en/astronomy/foundations/time-systems/). |
+| 当地恒星时 | Local Sidereal Time, LST | The sidereal time at the observer's longitude, equal to the right ascension currently on the meridian. |
+| 协调世界时 | Coordinated Universal Time, UTC | The globally unified civil time standard; astronomical records and plans are often labeled in UTC. |
+| 儒略日 | Julian Date, JD | A continuous count of days since 4713 BC, convenient for computing precise time intervals; the JD count begins at noon. |
+
+## Celestial Objects and Physical Quantities
+
+| Term | English / Abbreviation | Definition and notes |
+| --- | --- | --- |
+| 视星等 | Apparent Magnitude, m | A logarithmic scale of an object's brightness as seen from Earth, where smaller values are brighter; the Sun is about −26.8 and the naked-eye limit about +6.5. See [Magnitude and brightness](/en/astronomy/foundations/magnitude/). |
+| 绝对星等 | Absolute Magnitude, M | The apparent magnitude an object would have if placed at 10 parsecs, reflecting its intrinsic luminosity. |
+| 普森比 | Pogson Ratio | The conversion between magnitude and brightness: a difference of 1 magnitude is about a factor of 2.512, and a difference of 5 magnitudes is exactly a factor of 100, with `brightness ratio = 10^(0.4·Δm)`. |
+| 面亮度 | Surface Brightness | The brightness per unit area of an extended source, measured in magnitudes per square arcsecond, which determines the visibility of diffuse objects. |
+| 极限星等 | Limiting Magnitude | The faintest magnitude detectable with a given setup and under given sky conditions. |
+| 光度 | Luminosity, L | The total energy an object radiates per unit time in all directions, measured in watts (W) and often expressed in units of the solar luminosity L☉. |
+| 秒差距 | Parsec, pc | The distance at which the annual parallax is 1 arcsecond, about 3.26 light-years. |
+| 视差 | Parallax | The periodic shift in the position of a nearby star caused by Earth's orbital motion, used for trigonometric distance measurement. |
+| 自行 | Proper Motion | The angular rate of a star's motion across the celestial sphere perpendicular to the line of sight, measured in arcseconds per year. |
+| 红移 | Redshift, z | The shift of spectral lines toward longer wavelengths, `z = Δλ/λ`, reflecting recession velocity or cosmic expansion. See [Cosmology overview](/en/astronomy/cosmology/overview/). |
+| 光谱型 | Spectral Type | The sequence of stellar classification ordered by surface temperature O B A F G K M (from hot to cool). |
+| 赫罗图 | Hertzsprung–Russell Diagram, H–R | A plot of stellar luminosity against temperature (or spectral type) that reveals evolutionary stages. See [Stellar physics](/en/astronomy/deep-sky/stellar-physics/). |
+| 主序 | Main Sequence | The principal band on the H–R diagram formed by stars fusing hydrogen in their cores; the Sun lies on it. |
+| 角直径 | Angular Diameter | The angle an object subtends in the sky, measured in arcminutes or arcseconds; the full Moon is about 31 arcminutes. |
+
+## Observing Conditions
+
+| Term | English / Abbreviation | Definition and notes |
+| --- | --- | --- |
+| 视宁度 | Seeing | The jitter and blurring of star images caused by atmospheric turbulence, measured by the full width at half maximum (FWHM) of the star image in arcseconds; 1″ or better is good, and the finest sites can reach below 0.4″. See [Observing conditions](/en/astronomy/observing/conditions/). |
+| 透明度 | Transparency | The clarity with which the atmosphere transmits starlight, affected by clouds, humidity and aerosols, which determines the faintest magnitude visible. |
+| 大气消光 | Atmospheric Extinction | The dimming of starlight as it is absorbed and scattered passing through the atmosphere, increasing with airmass; more pronounced for low-altitude targets. |
+| 气团数 | Airmass | A relative measure of the thickness of atmosphere along the line of sight, equal to 1.0 at the zenith and increasing with zenith distance. |
+| 闪烁 | Scintillation | The rapid fluctuation in a star's brightness caused by atmospheric turbulence—the naked-eye "twinkling" of stars. |
+| 波特尔暗空分级 | Bortle Scale | A classification of night-sky light pollution into levels 1–9, with level 1 being an extremely dark pristine sky and level 9 the inner city. |
+| 天空背景亮度 | Sky Background / SQM | The background brightness of the night sky, often quantified with an SQM (magnitudes per square arcsecond), where larger values mean a darker sky. |
+| 暗适应 | Dark Adaptation | The process by which the eyes gradually gain sensitivity in darkness, taking about 20–30 minutes. See [Visual techniques](/en/astronomy/observing/visual-techniques/). |
+| 余光视觉 | Averted Vision | Observing faint targets with peripheral vision, exploiting the higher sensitivity of the rod cells. |
+| 可见性 | Visibility / Observability | Whether a target rises high enough at a given time and latitude. See [Hemisphere visibility](/en/astronomy/observing/hemisphere-visibility/). |
+
+## Equipment and Optics
+
+| Term | English / Abbreviation | Definition and notes |
+| --- | --- | --- |
+| 焦距 | Focal Length, FL | The distance over which an optical system brings parallel light to a focus, measured in millimeters, which determines magnification and field of view. See [Optics fundamentals](/en/astrophotography/fundamentals/optics/). |
+| 口径 | Aperture | The effective diameter of the primary mirror or objective lens, which determines light-gathering power (proportional to area) and diffraction-limited resolution. |
+| 焦比 | Focal Ratio, f/ | `f/ = focal length ÷ aperture`; smaller values are "faster" and give higher surface brightness at the same exposure. |
+| 视场 | Field of View, FoV | The angular extent of sky captured in a single image, determined jointly by focal length and sensor size. |
+| 分辨率 / 角分辨率 | Resolution / Dawes Limit | The smallest angular separation that can be resolved, limited by diffraction at the aperture; the Dawes limit is about `116″ ÷ aperture(mm)`. |
+| 采样率 | Sampling / Image Scale | The arcseconds per pixel, `"/px ≈ 206.265 × pixel size(µm) ÷ focal length(mm)`, which should be matched to the seeing. |
+| 出瞳 | Exit Pupil | The diameter of the light beam emerging from the eyepiece, `exit pupil = aperture ÷ magnification`, a key parameter for the visual experience. |
+| 赤道仪 | Equatorial Mount, EQ | A mount with one axis aligned to the celestial pole, able to track on a single axis to cancel the diurnal motion, suited to long exposures. |
+| 经纬仪 | Alt-Azimuth Mount, AltAz | A mount that moves about an altitude axis and an azimuth axis, simple in construction but producing field rotation. |
+| 极轴校准 | Polar Alignment | The process of precisely aligning an equatorial mount's polar axis with the celestial pole, which directly affects tracking accuracy. |
+| 平场镜 / 减焦镜 | Flattener / Reducer | An optical accessory that corrects field curvature, or shortens the focal length to widen the field of view and lower the focal ratio. |
+
+## Cameras and Sensors
+
+| Term | English / Abbreviation | Definition and notes |
+| --- | --- | --- |
+| CMOS / CCD | CMOS / CCD | Two classes of imaging sensor; astronomy today mostly uses CMOS for its low read noise and high frame rate. See [Sensors](/en/astrophotography/fundamentals/sensors/). |
+| 单色 / 彩色 | Mono / One-Shot Color, OSC | Mono cameras shoot per-channel through filters; color cameras carry a Bayer array and produce color in a single shot. |
+| 量子效率 | Quantum Efficiency, QE | The fraction of incident photons a sensor converts into electrons, expressed as a percentage; higher is more sensitive. |
+| 读出噪声 | Read Noise | The inherent number of noise electrons introduced each time a pixel is read out, affecting short exposures and shadow signal-to-noise; lower is better. |
+| 增益 | Gain | The amplification factor from analog signal to digital value (ADU); raising the gain usually lowers read noise but compresses the dynamic range. |
+| 满阱容量 | Full Well Capacity | The maximum number of electrons a single pixel can hold before saturation, setting the upper limit of dynamic range. |
+| 动态范围 | Dynamic Range | The ratio between the brightest and faintest signals that can be recorded simultaneously, often expressed in bits or stops. |
+| 暗电流 | Dark Current | The flow of thermally excited electrons generated without illumination, increasing with temperature and introducing thermal noise. |
+| 制冷 | Cooling | Active cooling (commonly stated as ΔT below ambient) to suppress dark current and thermal noise, beneficial for long-exposure deep-sky imaging. |
+| 像素尺寸 | Pixel Size | The physical edge length of a single pixel (µm), which together with focal length determines the sampling rate. |
+| 位深 | Bit Depth | The number of bits used to quantize each pixel (e.g., 12/14/16 bit), determining the number of grayscale levels. |
+
+## Capture Techniques
+
+| Term | English / Abbreviation | Definition and notes |
+| --- | --- | --- |
+| 子帧 | Sub / Light Frame | A single unstacked raw exposure; many are stacked to improve signal-to-noise. See [Deep-sky basics](/en/astrophotography/capture/dso-basics/). |
+| 总积分时间 | Integration Time | The sum of the exposure durations of all usable subframes, often measured in hours for deep-sky imaging. |
+| 抖动 | Dithering | Slightly shifting the framing between exposures so that hot pixels and fixed-pattern noise are randomized and suppressed during stacking. |
+| 跟踪 | Tracking | The mount rotating with the celestial diurnal motion so the target stays stationary during the exposure. |
+| 导星 | Guiding | Using a guide scope or off-axis guider to measure and correct tracking errors in real time, keeping star images round during long exposures. |
+| 离轴导星 | Off-Axis Guiding, OAG | Splitting off a small beam from the main scope's light path for guiding, avoiding differential flexure between the main and guide scopes. |
+| 幸运成像 | Lucky Imaging | Capturing a large number of short frames at high speed and stacking only the best to overcome seeing, commonly used for planets. See [Planetary photography](/en/astrophotography/capture/planetary/). |
+| 感兴趣区域 | Region of Interest, ROI | Reading out only part of the sensor to increase frame rate, commonly used for planetary and high-speed imaging. |
+| 视频堆栈 | Video / SER Stacking | The workflow of recording video for planetary imaging, then sorting and stacking frame by frame. |
+| 巴特尼夫掩膜 | Bahtinov Mask | A tool placed in front of the optics that produces diffraction spikes to aid precise focusing. |
+
+## Filters
+
+| Term | English / Abbreviation | Definition and notes |
+| --- | --- | --- |
+| 窄带 | Narrowband | Filters that pass only specific emission lines (typical bandwidth 3–12 nm), cutting through light pollution to highlight nebulae. See [Narrowband imaging](/en/astrophotography/capture/narrowband/). |
+| Hα | Hydrogen-Alpha | The red emission line of ionized hydrogen (656.3 nm), tracing the main structure of emission nebulae and supernova remnants. |
+| OIII | Oxygen-III | The blue-green emission line of doubly ionized oxygen (about 500.7 nm), prominent in planetary nebulae and hot regions. |
+| SII | Sulfur-II | The deep-red emission line of singly ionized sulfur (about 672 nm), close to Hα and often tracing shock fronts and the outer edges of nebulae. |
+| SHO / HOO | SHO / HOO Palette | Two common palettes mapping narrowband channels to RGB; SHO is the "Hubble palette." |
+| 双窄带 | Dual Narrowband | A single filter that passes Hα+OIII simultaneously, suited to color cameras shooting under urban light pollution. |
+| 宽带 / RGB | Broadband / RGB | Red, green and blue filters that pass relatively wide bands, used for natural-color imaging. |
+| 光害滤镜 | Light Pollution Filter | A broadband filter that suppresses the characteristic spectral lines of artificial lighting to improve nebula contrast. |
+| UV/IR 截止 | UV/IR Cut | A filter that blocks ultraviolet and infrared to ensure a consistent visible-light focus and accurate color. |
+
+## Post-Processing
+
+| Term | English / Abbreviation | Definition and notes |
+| --- | --- | --- |
+| 叠加 | Stacking | Aligning and combining multiple subframes to improve signal-to-noise. See [Stacking](/en/astrophotography/processing/stacking/). |
+| 配准 | Registration | Aligning each frame by matching star positions so they overlap precisely before stacking. |
+| 信噪比 | Signal-to-Noise Ratio, SNR | The ratio of signal to noise; it grows with the number of frames roughly as `SNR ∝ √N`. See [Signal-to-noise ratio](/en/astrophotography/fundamentals/snr/). |
+| 拉伸 | Stretch | Nonlinearly brightening the shadows to convert linear data into a viewable image. |
+| 去渐变 | Gradient Removal | Removing uneven background brightness caused by light pollution or moonlight. |
+| 反卷积 | Deconvolution | Mathematical sharpening based on the point-spread function to recover blurred detail. |
+| 降噪 | Noise Reduction | Smoothing random noise while preserving detail as much as possible. |
+| 缩星 | Star Reduction | Shrinking overly bright star images to emphasize nebula and galaxy structure. |
+| 色彩校准 | Color Calibration | Neutralizing the background and setting white balance using stars or a star field as reference. |
+| 通道合成 | Channel Combination | The step of merging separate channels (such as LRGB or SHO) into a color image. |
+
+## Calibration Frames
+
+| Term | English / Abbreviation | Definition and notes |
+| --- | --- | --- |
+| 暗场 | Dark Frame, Darks | A dark (light-blocked) frame at the same temperature, gain and exposure, used to subtract dark-current thermal noise and hot pixels. See [Calibration frames](/en/astrophotography/calibration/calibration-frames/). |
+| 平场 | Flat Frame, Flats | A frame shot under uniform illumination, used to correct vignetting and dust shadows. |
+| 偏置场 | Bias / Offset Frame | A very short dark frame that records the sensor's read-out pedestal for subtraction. |
+| 暗平场 | Flat Dark / Dark Flat | A dark frame at the same exposure time as the flats, used to calibrate the flat frames. |
+| 主校准帧 | Master Frame | A standard, lower-noise frame produced by combining many calibration frames of the same type. |
+
+<Aside type="note" title="Further reference">
+To look up a specific target or object designation, see [Object catalog](/en/reference/catalog/); searching deep-sky objects by Messier, NGC and similar designations is also on that page. For software terms or workflows, see [Software tools](/en/reference/software/); to study systematically along a route, see [Learning paths](/en/reference/learning-paths/).
+</Aside>
+
+## References
+
+- [Right ascension — Wikipedia](https://en.wikipedia.org/wiki/Right_ascension) — Definition of right ascension, its units (hours, minutes, seconds) and conversion relations.
+- [Apparent magnitude — Wikipedia](https://en.wikipedia.org/wiki/Apparent_magnitude) — Apparent magnitude, absolute magnitude, the Pogson ratio and typical values.
+- [Astronomical seeing — Wikipedia](https://en.wikipedia.org/wiki/Astronomical_seeing) — The FWHM definition of seeing, typical arcsecond values and the Fried parameter.
+- [Right Ascension & Declination: Celestial Coordinates for Beginners — Sky & Telescope](https://skyandtelescope.org/astronomy-resources/right-ascension-declination-celestial-coordinates/) — A plain-language explanation of right ascension, declination and their relationship to sidereal time.
+- [Quantum Efficiency, Read Noise, and why they are important — Altair Astro](https://www.altairastro.help/info-instructions/cmos/quantum-efficiency-read-noise-and-why-they-are-important/) — Engineering definitions of quantum efficiency, read noise and gain.
+- [The Ultimate Guide to Calibration Frames for Astrophotography — Celestron](https://www.celestron.com/blogs/knowledgebase/the-ultimate-guide-to-calibration-frames/) — The role of dark, flat and bias frames and key points for shooting them.

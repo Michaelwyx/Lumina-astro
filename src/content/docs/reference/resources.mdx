@@ -1,0 +1,148 @@
+---
+title: 外部资源
+description: 天文与天文摄影常用书籍、论坛社区、数据库与巡天、在线计算器、公共版权图源及署名规范的分类索引。
+difficulty: beginner
+pillar: index
+sidebar:
+  order: 6
+---
+
+import { Aside, LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+本页按用途分类汇总常用的**外部资源**:入门与进阶书籍、论坛社区、天体数据库与巡天图库、在线计算器与规划工具,以及可用于教学、笔记与博客的公共版权图源。所有条目均为第三方站点,功能、价格与许可条款可能随时间变化,**以各站点官方页面为准**。本页只做索引,不复制其内容。
+
+## 经典书籍
+
+系统化书籍在建立完整知识框架、查证细节方面仍不可替代。下表按**用途**与**难度**列出英文社区长期引用的书目。书名给出常见中译参考,实际出版信息以版权页为准。
+
+| 书名(英文) | 作者 | 难度定位 | 主题与适用场景 |
+| --- | --- | --- | --- |
+| *NightWatch: A Practical Guide to Viewing the Universe* | Terence Dickinson | 零基础目视 | 星空认知、季节星图、设备选购入门,常被推荐为第一本 |
+| *Turn Left at Orion* | Guy Consolmagno & Dan Davis | 纯入门目视 | 用小型望远镜「按图索骥」定位经典天体,含目镜视场示意 |
+| *The Backyard Astronomer's Guide* | Terence Dickinson & Alan Dyer | 入门到进阶 | 后院观测、器材选择、目视与摄影全面覆盖的综合手册 |
+| *Making Every Photon Count* | Steve Richards | 深空摄影入门 | 深空摄影器材选型与采集流程,英文社区入门标准读物 |
+| *The Astrophotography Manual* | Chris Woodhouse | 摄影进阶 | 从采集到后期处理的完整技术参考,含校准与算法细节 |
+| *Astrophotography* | Thierry Legault | 摄影进阶 | 作者为知名天文摄影师,系统讲解深空与行星摄影技术 |
+| *Annals of the Deep Sky*(多卷套装) | Jeff Kanipe & Dennis Webb | 深空进阶 | 逐星座编排的深空天体资料,适合深度规划与查证 |
+
+<Aside type="tip" title="阅读顺序建议">
+目视入门可先读《NightWatch》或《Turn Left at Orion》。若计划购置深空摄影设备,建议先读《Making Every Photon Count》建立全局认知,再用《The Astrophotography Manual》或 Legault 的《Astrophotography》补充技术细节,并对照本站[软件与工具](/reference/software/)整理自己的采集与后期流程。
+</Aside>
+
+## 论坛社区
+
+社区适合排查具体故障、查看实际拍摄案例、交流器材经验与获取二手信息。遇到问题时,优先用**设备型号 + 报错关键词**搜索,多数常见问题已有人讨论过。
+
+| 社区 | 语言 | 定位与适用场景 |
+| --- | --- | --- |
+| Cloudy Nights | 英文 | 全球规模最大的天文器材与技术论坛,目视、摄影、DIY 板块齐全 |
+| Stargazers Lounge | 英文(英国) | 氛围友好,目视与入门摄影提问门槛低 |
+| AstroBin | 英文 | 天文摄影图片托管平台,多数图片附带器材与采集参数 |
+| r/astrophotography、r/telescopes | 英文 | Reddit 社群,更新快、反馈及时,适合快速求助 |
+| 牧夫天文论坛及国内社群 | 中文 | 国内老牌天文社区,器材交流、约拍组织与本地化经验丰富 |
+
+<Aside type="note" title="AstroBin 的检索用法">
+AstroBin 支持按目标(如 M31)、器材焦距、相机、滤镜等条件筛选。查看相近配置下的构图、曝光总时长与滤镜组合,可作为制定拍摄方案的参考;条目页通常公开完整的采集参数。注意平台上的作品**默认保留版权**,作图前需确认许可。可结合本站[远程平台对比](/astrophotography/remote-platforms/platforms-comparison/)评估没有暗空时的方案。
+</Aside>
+
+## 天体数据库与巡天图库
+
+规划与识别天体、核对坐标与星等时,以下数据库与巡天工具最常用。其中 **SIMBAD**、**VizieR**、**Aladin** 均由法国斯特拉斯堡天文数据中心(Centre de Données astronomiques de Strasbourg, CDS)维护,是虚拟天文台(Virtual Observatory)体系的核心服务。
+
+| 资源 | 类型 | 维护方 | 用途说明 |
+| --- | --- | --- | --- |
+| SIMBAD | 天体数据库 | CDS | 收录太阳系外天体的标识、坐标、星等、自行、视差、光谱型与文献,逐工作日更新,2024 年 11 月已超过 2000 万条目 |
+| VizieR | 星表服务 | CDS | 在线检索海量已发表星表与观测目录,可批量导出数据 |
+| Aladin Sky Atlas | 巡天浏览器 | CDS | 交互式星图,叠加多波段巡天影像(HiPS),并联动 SIMBAD/VizieR 查询视场内天体;提供桌面版与网页版 |
+| SDSS(斯隆数字巡天) | 巡天图库 | SDSS 合作组 | 高质量可见光巡天影像与大规模光谱数据 |
+| DSS(Digitized Sky Survey) | 巡天图库 | STScI 等 | 经典照相底片数字化的全天影像,常用于构图核对与历史比对 |
+
+<Aside type="note" title="SIMBAD 的标识符体系">
+同一天体在不同星表中常有多个名称(如 M31、NGC 224、Andromeda Galaxy 指同一目标)。SIMBAD 汇总了文献中的全部标识符与基础测量,适合在拍摄前确认目标的**精确坐标、星等与天体类型**,避免重名混淆。坐标与时角的换算可参考本站[天球坐标系](/astronomy/foundations/celestial-coordinates/)与[时间系统](/astronomy/foundations/time-systems/)。
+</Aside>
+
+## 在线计算器与规划工具
+
+下列工具用于出门前的视场模拟、暗空选址与天气评估,以及卫星过境预报。
+
+| 工具 | 类型 | 用途说明 |
+| --- | --- | --- |
+| Telescopius | 视场计算器 | 输入相机与镜子参数,模拟目标在画面中的取景、构图与机位旋转 |
+| Stellarium / Stellarium Web | 虚拟天象仪 | 按时间与地点渲染实时星空,含恒星、深空天体、行星位置与卫星过境;网页版无需安装 |
+| Light Pollution Map | 光污染地图 | 查询所在地的波特尔(Bortle)等级与亮度数值,辅助暗空选址 |
+| Clear Outside | 天气预报 | 按小时给出云量、透明度、视宁度(seeing)等观测专用预报 |
+| Heavens-Above | 卫星过境预报 | 预报国际空间站、哈勃、Starlink 列车等卫星的可见过境时间与天区路径 |
+
+<Aside type="tip" title="出行前的规划顺序">
+拍摄前可依次:用 **Telescopius** 或 **Stellarium** 确认构图取景,用 **Light Pollution Map** 选择暗空点位,用 **Clear Outside** 评估云量、透明度与视宁度。深空目标可见性与季节关系见本站[半球可见性](/astronomy/observing/hemisphere-visibility/)与[观测条件](/astronomy/observing/conditions/);目标速查见[天体目录](/reference/catalog/)。
+</Aside>
+
+## 公共版权图源与署名规范
+
+本站正文中的天体照片来自以下**公有领域(public domain)或开放许可**图源。制作演示、笔记或博客引用时,仍需**逐图**确认许可页面与署名要求,不可一概套用。
+
+<CardGrid>
+  <LinkCard
+    title="NASA 图库"
+    href="https://images.nasa.gov/"
+    description="多数 NASA 影像在美国不受版权保护(公有领域),可用于教育与信息用途,建议注明来源。"
+  />
+  <LinkCard
+    title="ESO 图库"
+    href="https://www.eso.org/public/images/"
+    description="欧洲南方天文台,影像以 CC BY 4.0 授权,需完整保留署名。"
+  />
+  <LinkCard
+    title="ESA/Hubble"
+    href="https://esahubble.org/images/"
+    description="哈勃官方图库,主体内容 CC BY 4.0,署名后可自由使用。"
+  />
+  <LinkCard
+    title="NOIRLab"
+    href="https://noirlab.edu/public/images/"
+    description="美国国家光学红外天文研究室,公共图库多为 CC BY 4.0。"
+  />
+</CardGrid>
+
+不同来源的许可与署名(attribution)规则不同,使用前请逐图核对许可页面:
+
+| 来源 | 许可类型 | 署名要求 | 主要限制 |
+| --- | --- | --- | --- |
+| NASA 公共影像 | 公有领域(美国) | 建议但通常非强制,推荐写明来源 | 不得暗示 NASA 背书;徽标/识别标志受保护;含人像或第三方素材另有限制 |
+| ESO / ESA-Hubble / NOIRLab | CC BY 4.0 | 必须完整、清晰署名,且不得修改署名文本 | 机构徽标需单独授权;论文、代码、音乐等可能不在 CC BY 范围内 |
+| APOD(每日天文一图) | 因图而异 | 视具体作者要求 | 多数图片由个人或机构持有版权,**并非全部公有领域**,逐图核实 |
+
+CC BY 4.0 的署名规范写法为「作者/机构, 许可名」,可附许可链接,例如:`ESO/José Francisco, CC BY 4.0` 或 `NASA, ESA, Hubble`。二次加工(裁切、调色、合成)一般允许,但需**保留原署名并注明已修改**。在线引用时,署名应清晰可见、不可隐藏,链接应保持有效。
+
+<Aside type="caution" title="默认版权状态的判断">
+新闻媒体、个人摄影师、AstroBin 与 APOD 上的多数作品**默认保留全部版权(All Rights Reserved)**,除非作者明确标注了开放许可。看到喜欢的图,先查找许可标识:无标识即应视为受版权保护,需联系作者授权,切勿默认「能搜到=能用」。商业用途与含可识别人像的影像,限制更严格。
+</Aside>
+
+## 延伸阅读
+
+<CardGrid>
+  <LinkCard
+    title="软件与工具"
+    href="/reference/software/"
+    description="采集、导星、后期与规划软件清单,与本页在线工具配合使用。"
+  />
+  <LinkCard
+    title="天体目录"
+    href="/reference/catalog/"
+    description="梅西耶与 NGC 经典目标速查,配合数据库与计算器规划拍摄。"
+  />
+  <LinkCard
+    title="远程平台对比"
+    href="/astrophotography/remote-platforms/platforms-comparison/"
+    description="没有暗空?对比主流远程天文台租用平台。"
+  />
+</CardGrid>
+
+## 参考资料
+
+- [SIMBAD - Wikipedia](https://en.wikipedia.org/wiki/SIMBAD) — SIMBAD 数据库的定义、维护方 CDS 与收录范围(2000 万条目)。
+- [SIMBAD: Introduction(CDS 官方)](https://simbad.u-strasbg.fr/Pages/guide/ch02.htx) — SIMBAD 的内容字段与更新机制的官方说明。
+- [Aladin Sky Atlas - Wikipedia](https://en.wikipedia.org/wiki/Aladin_Sky_Atlas) — Aladin 的功能、CDS 维护方及桌面/网页版与 SIMBAD/VizieR 联动。
+- [Astronomy Picture of the Day - Wikipedia](https://en.wikipedia.org/wiki/Astronomy_Picture_of_the_Day) — APOD 的运营方(NASA/MTU)与「图片常受版权保护」的许可特点。
+- [ESO Copyright Notice(官方)](https://www.eso.org/public/outreach/copyright/) — ESO 影像采用 CC BY 4.0 的署名要求与例外条款。
+- [NASA Images and Media Guidelines(官方)](https://www.nasa.gov/nasa-brand-center/images-and-media/) — NASA 影像的公有领域状态、署名建议与徽标/人像限制。

@@ -1,0 +1,28 @@
+---
+title: 天体目录
+description: Messier / NGC / IC 深空天体的可筛选索引,包含位置、星等、类型、可见半球、季节和推荐焦距。
+difficulty: beginner
+pillar: index
+sidebar:
+  order: 1
+---
+
+import ObjectCatalog from '@/components/ObjectCatalog.astro';
+
+这是数据驱动的深空天体索引。每个天体一页,记录**所在星座、赤经赤纬(RA/Dec)、星等、类型、可见半球、季节、推荐焦距**和简要说明。新增天体只需修改数据文件,详情页和下方筛选索引会自动更新。
+
+:::tip[怎么用]
+用筛选器按**类型 / 半球 / 季节**缩小范围,或直接搜索编号(M42)、名称(猎户)或星座。详情页会按纬度估算目标可见性。半球原理见[半球可见性](/astronomy/observing/hemisphere-visibility/)。
+:::
+
+<ObjectCatalog />
+
+---
+
+### 编号体系速记
+
+- **M(梅西耶)**——110 个较明亮的深空天体,常作为入门观测和拍摄目标。
+- **NGC / IC(星云星团新总表 + 补编)**——约 7840 + 5386 个,覆盖更全。
+- **Caldwell**——补 Messier 没收录的亮天体(尤其南天)。
+
+> 坐标与星等为常用近似值(J2000)。正式入库建议以 [SIMBAD](https://simbad.u-strasbg.fr/) / Stellarium 数据为准。

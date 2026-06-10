@@ -1,0 +1,83 @@
+---
+title: Getting Started
+description: "An overview of this site's content structure: astronomy knowledge, astrophotography, index pages, and a recommended reading order."
+difficulty: beginner
+pillar: index
+sidebar:
+  order: 0
+---
+
+import { Aside, CardGrid, LinkCard } from '@astrojs/starlight/components';
+import Fig from '@/components/Fig.astro';
+
+<div class="hero-fig">
+  <Fig name="milkyway" alt="An arch of the Milky Way spanning the night sky" caption="The Milky Way arch — its structure under dark skies, and the most classic subject of wide-angle astrophotography." />
+</div>
+
+This site is aimed at readers of Chinese and compiles the foundational concepts, common workflows, and reference indexes for astronomical observation and astrophotography. You don't need to read through the table of contents in order; you can pick an entry point based on your goal first, then fill in the related concepts.
+
+## Content Organization
+
+The site is divided into two topic areas and one index area:
+
+- **Astronomy**: coordinates and time, the Solar System, stars and deep-sky objects, cosmology, observing conditions, and observation planning.
+- **Astrophotography**: optics and exposure, sensors, capture control, calibration frames, stacking, post-processing workflows, and remote imaging platforms.
+- **Reference**: glossary, object catalogs, observatories, software, learning paths, and external resources.
+
+## Where to Start
+
+Choose an entry point based on your current goal:
+
+<CardGrid>
+  <LinkCard
+    title="Start with the observing basics"
+    href="/en/astronomy/observing/hemisphere-visibility/"
+    description="First understand how latitude, season, and altitude above the horizon affect which targets are visible, then learn the celestial coordinate system."
+  />
+  <LinkCard
+    title="Start with deep-sky imaging"
+    href="/en/astrophotography/remote-platforms/overview/"
+    description="First learn about remote imaging and how to acquire raw data, then study calibration, stacking, and basic post-processing."
+  />
+  <LinkCard
+    title="Look up a target object"
+    href="/en/reference/catalog/"
+    description="Look up Messier / NGC numbers, coordinates, the best observing season, hemisphere, and imaging recommendations."
+  />
+  <LinkCard
+    title="Read along a path"
+    href="/en/reference/learning-paths/"
+    description="View the recommended reading order by goal, useful when you're not sure which article to read next."
+  />
+</CardGrid>
+
+<Aside type="note" title="The three most common beginner pathways">
+1. Learning the sky as a beginner: [Hemisphere visibility](/en/astronomy/observing/hemisphere-visibility/) → [Celestial coordinates](/en/astronomy/foundations/celestial-coordinates/) → [Constellations](/en/astronomy/foundations/constellations/).
+2. Imaging deep-sky objects: [Remote platforms overview](/en/astrophotography/remote-platforms/overview/) → [DSO imaging basics](/en/astrophotography/capture/dso-basics/) → [Stacking](/en/astrophotography/processing/stacking/).
+3. Looking things up and preparing: [Object catalog](/en/reference/catalog/) ↔ [Glossary](/en/reference/glossary/) ↔ [Software](/en/reference/software/).
+</Aside>
+
+## Three Categories of Entry Points
+
+### Astronomy
+
+The foundations cover [celestial coordinates](/en/astronomy/foundations/celestial-coordinates/), [time systems](/en/astronomy/foundations/time-systems/), and [magnitude](/en/astronomy/foundations/magnitude/). After that you can read about the [Solar System](/en/astronomy/solar-system/planets/), [stellar physics](/en/astronomy/deep-sky/stellar-physics/), [deep-sky objects](/en/astronomy/deep-sky/nebulae/), and a [cosmology overview](/en/astronomy/cosmology/overview/). Before heading out to observe, it is recommended that you first check the [observing conditions](/en/astronomy/observing/conditions/) and [observation planning](/en/astronomy/observing/planning/).
+
+### Astrophotography
+
+The photography section begins with [optics](/en/astrophotography/fundamentals/optics/), [exposure](/en/astrophotography/fundamentals/exposure/), [sensors](/en/astrophotography/fundamentals/sensors/), and [signal-to-noise ratio](/en/astrophotography/fundamentals/snr/), then moves on to [wide-angle](/en/astrophotography/capture/widefield/), [deep-sky](/en/astrophotography/capture/dso-basics/), [planetary](/en/astrophotography/capture/planetary/), and [narrowband](/en/astrophotography/capture/narrowband/) imaging. The data processing section covers [calibration frames](/en/astrophotography/calibration/calibration-frames/) and the [post-processing workflow](/en/astrophotography/processing/workflow/).
+
+### Reference
+
+| Index | Purpose |
+| --- | --- |
+| [Object catalog](/en/reference/catalog/) | Look up a target's coordinates, season, and recommended focal length by number |
+| [Glossary](/en/reference/glossary/) | Quickly look up any term you don't understand |
+| [Observatories](/en/reference/observatories/) | Reference for famous sites and remote setups |
+| [Software](/en/reference/software/) | Tools for planning, capture, stacking, and post-processing |
+| [Learning paths](/en/reference/learning-paths/) | Systematic, progressive routes |
+| [Resources](/en/reference/resources/) | Quality books, websites, and communities |
+
+<Aside type="tip" title="Recommendation">
+If you don't have a clear goal for now, start by reading [Hemisphere visibility](/en/astronomy/observing/hemisphere-visibility/) and [Celestial coordinates](/en/astronomy/foundations/celestial-coordinates/), then go to the [Object catalog](/en/reference/catalog/) to pick a target for the current season.
+</Aside>

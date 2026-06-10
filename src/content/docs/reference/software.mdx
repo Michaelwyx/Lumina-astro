@@ -1,0 +1,130 @@
+---
+title: 软件索引
+description: 天文观测与天文摄影常用软件分类速查:规划星图、拍摄控制与导星、叠加预处理、后期处理、社区与数据库,逐项标注用途、平台与价格。
+difficulty: beginner
+pillar: index
+sidebar:
+  order: 4
+---
+
+import { Aside, LinkCard } from '@astrojs/starlight/components';
+
+本页按工作流环节分类整理天文观测与天文摄影(astrophotography)常用软件。每个工具给出一句话用途、运行平台,以及价格性质(免费 / 付费 / 部分功能付费)。完整的处理流程见 [后期处理工作流](/astrophotography/processing/workflow/);若使用托管设备,各远程平台已内置其中多数采集与控制软件,见 [远程平台对比](/astrophotography/remote-platforms/platforms-comparison/)。
+
+价格与平台信息会随版本更新而变化,下表为撰写时(2026 年)的概况,采购或下载前请以官网为准。
+
+<Aside type="tip" title="一条入门免费链路">
+入门阶段不必安装全部软件。一条完整且全部免费的链路是:Stellarium(选目标、查可见性)→ N.I.N.A. + PHD2(自动采集与导星)→ Siril(校准与叠加)→ GraXpert + StarNet++(去渐变与缩星后期)。熟悉流程后再按需引入 PixInsight、BlurXTerminator 等专业 / 付费工具。
+</Aside>
+
+## 软件分类与工作流位置
+
+天文摄影软件可按其在工作流中的位置划分为五类。各类之间存在交叉:部分软件(如 Siril、PixInsight)同时覆盖叠加与后期,部分掌上设备(如 ASIAIR)在硬件中整合了规划、采集与导星。
+
+| 环节 | 主要任务 | 代表软件 |
+| --- | --- | --- |
+| 规划与星图 | 选目标、查可见性、评估光污染与天气 | Stellarium、SkySafari、Telescopius、Clear Outside |
+| 拍摄控制与导星 | 控制相机 / 赤道仪、自动序列、导星 | N.I.N.A.、ASIAIR、SharpCap、PHD2、FireCapture |
+| 叠加(预处理) | 校准、对齐、叠加子帧以提升信噪比 | DeepSkyStacker、Siril、AutoStakkert!、PixInsight |
+| 后期处理 | 拉伸、去渐变、降噪、缩星、锐化、调色 | PixInsight、Photoshop、GraXpert、StarNet++ |
+| 社区与数据库 | 图像托管、参数查询、目标检索 | AstroBin、Telescopius |
+
+## 规划与星图
+
+观测或拍摄前用于选定目标、模拟取景、查询天体可见性,以及评估光污染与天气窗口。该环节与 [观测规划](/astronomy/observing/planning/) 配合使用;其中的可见性判断可结合 [南北半球可见性](/astronomy/observing/hemisphere-visibility/) 与 [天球坐标](/astronomy/foundations/celestial-coordinates/) 一并理解。
+
+| 名称 | 用途 | 平台 | 价格 |
+| --- | --- | --- | --- |
+| Stellarium | 开源桌面虚拟星空,模拟任意时间、地点的天象、星图与取景框,可控制 GoTo 赤道仪 | Win / Mac / Linux | 免费(GPLv2) |
+| Stellarium Mobile | 手机端星图,功能为桌面版子集 | iOS / Android | 免费 / 付费(Plus 版) |
+| SkySafari | 手机 / 平板星图,支持望远镜 GoTo 控制与实时跟踪 | iOS / Android / Mac | 免费 / 付费(按版本) |
+| Cartes du Ciel(SkyChart) | 开源星图,支持 Gaia、UCAC 等大量星表,可经 ASCOM / INDI 控制赤道仪 | Win / Mac / Linux | 免费(GPLv2) |
+| Telescopius | 在线深空目标库与构图工具(Telescope Simulator),按尺寸、高度、月距等条件筛选并生成目标列表 | 网页 / iOS / Android | 免费 / 付费(进阶) |
+| Light Pollution Map | 在线光污染地图,叠加 SQM、VIIRS 数据查询 [波特尔等级](/astronomy/observing/conditions/) | 网页 | 免费 |
+| Clear Outside | 为天文观测设计的逐时天气预报,提供云量(低 / 中 / 高 / 总量)、月相、日月出没与中天时间 | 网页 / iOS / Android | 免费 |
+
+<Aside type="note" title="星图软件的共性能力">
+桌面端星图(Stellarium、Cartes du Ciel)与手机端星图(SkySafari)在功能上高度重叠:都能按时间地点渲染星空、显示行星与深空天体位置、并通过 ASCOM / INDI / 厂商协议控制 GoTo 赤道仪指向。差别主要在交互方式(键鼠 vs 触屏)、星表规模与离线可用性。选一款熟悉即可,不必同时学多款。
+</Aside>
+
+## 拍摄控制与导星
+
+控制相机、滤镜轮、电动调焦座与赤道仪,执行自动化采集序列;导星软件则实时监测一颗参考星,补偿赤道仪的周期误差(periodic error)与极轴偏差,从而延长单帧曝光时间。深空(长曝光、少帧)与行星 / 月面 / 太阳(短曝光、高帧率视频)对软件的需求显著不同。
+
+| 名称 | 用途 | 平台 | 价格 |
+| --- | --- | --- | --- |
+| N.I.N.A.(Nighttime Imaging 'N' Astronomy) | 深空全自动采集:序列编排、自动对焦、中天翻转(meridian flip)、板解(plate solving)、构图助手 | Win | 免费(开源) |
+| ASIAIR | ZWO 生态的一体化掌上控制盒(内置 Raspberry Pi),App 操控相机、赤道仪、导星、极轴校准与板解 | iOS / Android(含硬件) | 付费(随硬件) |
+| SharpCap | 实时取流、电子辅助观测(EAA)实时叠加、行星采集、基于传感器的极轴校准 | Win | 免费 / 付费(Pro) |
+| APT(Astro Photography Tool) | 单反 / 天文相机的采集自动化套件,与 PHD2 联动实现抖动(dithering) | Win | 付费(低价单许可) |
+| PHD2 Guiding | 开源自动导星(Push Here Dummy),补偿跟踪误差以延长曝光,支持抖动 | Win / Mac / Linux | 免费(开源) |
+| FireCapture | 行星 / 月面 / 太阳高帧率视频采集,广泛兼容 ZWO、QHY、Altair 等相机 | Win / Mac / Linux | 免费 |
+
+<Aside type="caution" title="平台与生态绑定">
+拍摄控制软件常与硬件生态绑定。N.I.N.A. 通过 ASCOM 驱动支持多数品牌设备,但仅运行于 Windows;ASIAIR 操作便捷却基本只兼容 ZWO 自家相机与受支持的赤道仪。选型前应先确认软件是否支持你的相机、滤镜轮与赤道仪接口(ASCOM / INDI / 厂商专有协议),避免买到无法联动的组合。
+</Aside>
+
+## 叠加(预处理)
+
+把数十至数百张子帧经校准(暗场 dark、平场 flat、偏置 bias)后对齐叠加,以提升信噪比(signal-to-noise ratio, SNR)——叠加 N 帧理论上使随机噪声降低约 `sqrt(N)` 倍,原理见 [信噪比](/astrophotography/fundamentals/snr/)。深空采用长曝光多帧叠加,行星 / 月面则从高帧率视频中抽取质量最高的部分帧叠加,即幸运成像(lucky imaging)。
+
+| 名称 | 用途 | 平台 | 价格 |
+| --- | --- | --- | --- |
+| DeepSkyStacker(DSS) | 深空叠加入门工具,流程直观,适合单次拍摄数据集 | Win | 免费 |
+| Siril | 开源深空校准 + 叠加 + 基础后期,支持脚本自动化与马赛克拼接 | Win / Mac / Linux | 免费(开源) |
+| AstroPixelProcessor(APP) | 从校准到成片的一体化工具,擅长马赛克拼接与背景 / 渐变校正 | Win / Mac / Linux | 付费(订阅或买断) |
+| AutoStakkert!(AS!3) | 行星 / 月面视频抽帧与多点对齐叠加(lucky imaging),为行星成像主流 | Win | 免费 |
+| PixInsight WBPP | PixInsight 内置的批处理脚本(WeightedBatchPreprocessing),自动完成校准、配准与加权叠加 | Win / Mac / Linux | 付费(随 PixInsight) |
+
+<Aside type="note" title="叠加质量取决于参数而非软件">
+PixInsight、Siril、APP 三者在叠加质量上没有绝对高下;PixInsight 的优势在于可调参数极多,熟练者可针对数据精细调校。常见做法是用 Siril 或 DSS 快速得到叠加结果,再转入 PixInsight、APP 或 Photoshop 做后期。初学时优先选流程简单的 DSS 或 Siril。
+</Aside>
+
+## 后期处理
+
+叠加后的处理:非线性拉伸(stretch)、去除背景渐变 / 光污染梯度、降噪、缩星(便于单独处理星云)、锐化与色彩平衡。深空与行星的后期路线不同——深空侧重渐变与降噪,行星侧重小波(wavelet)与反卷积(deconvolution)锐化。
+
+| 名称 | 用途 | 平台 / 宿主 | 价格 |
+| --- | --- | --- | --- |
+| PixInsight | 专业天文图像处理平台,覆盖校准、叠加到深空后期全流程,可调参数丰富 | Win / Mac / Linux | 付费(买断) |
+| Photoshop | 通用图像编辑,常用于深空最终润色与图层合成 | Win / Mac | 付费(订阅) |
+| GraXpert | AI 去渐变 / 去光污染梯度,并含 AI 降噪,可独立运行或作插件 | Win / Mac / Linux | 免费 |
+| StarNet++ | AI 缩星 / 抠星,便于单独处理星云细节,常作 PixInsight 插件 | Win / Mac / Linux | 免费 |
+| StarXTerminator | AI 缩星,对星云结构保留更佳 | PixInsight / Photoshop / Affinity | 付费 |
+| BlurXTerminator | 基于深度神经网络的反卷积,锐化恒星与细节、校正像差 | 仅 PixInsight 插件 | 付费 |
+| RegiStax | 行星 / 月面小波锐化经典工具(现已基本停更) | Win | 免费 |
+| AstroSurface | 行星 / 月面 / 太阳一体化处理,整合 PIPP + AutoStakkert + RegiStax 流程,含小波与 RL 反卷积 | Win | 免费 |
+
+<Aside type="caution" title="付费插件的宿主限制与常见误区">
+RC Astro 出品的 X-Terminator 系列宿主要求不同:BlurXTerminator 仅能作为 PixInsight 进程模块运行;StarXTerminator 与 NoiseXTerminator 同时支持 PixInsight 与 Photoshop(Photoshop 版亦可用于 Affinity Photo)。购买前需先确认你已有相应宿主软件。
+
+常见误区:反卷积锐化(BlurXTerminator)与缩星(StarXTerminator)是两类不同操作,不可混用;AI 工具能改善结果,但无法弥补曝光不足或跟踪不良的原始数据,信噪比仍由采集环节决定,见 [信噪比](/astrophotography/fundamentals/snr/)。
+</Aside>
+
+## 社区与数据库
+
+用于托管成片、查询他人采集参数、检索深空目标。AstroBin 既是图像社区,也是事实上的器材与拍摄参数数据库;Telescopius 兼具目标检索与构图功能(已列于「规划与星图」)。
+
+| 名称 | 用途 | 平台 | 价格 |
+| --- | --- | --- | --- |
+| AstroBin | 天文摄影图像托管社区,可公开 / 查看完整器材、曝光与处理参数,内置板解 | 网页 | 免费(有限上传)/ 付费(Lite / Premium / Ultimate 分级) |
+| Telescopius | 在线深空目标库,支持按星表、坐标与可见性检索,生成观测 / 构图计划 | 网页 / iOS / Android | 免费 / 付费(进阶) |
+
+<Aside type="note" title="远程拍摄无需自备全部软件">
+若没有自己的设备,许多远程天文台平台已内置上述采集、导星与控制软件,你只需远程下达拍摄计划并下载原始数据,再在本地完成叠加与后期。各平台工具链与定价对比见 [远程平台对比](/astrophotography/remote-platforms/platforms-comparison/)。
+</Aside>
+
+<LinkCard
+  title="后期处理工作流"
+  href="/astrophotography/processing/workflow/"
+  description="把上面这些软件串成一条从子帧到成片的完整流水线。"
+/>
+
+## 参考资料
+
+- [Stellarium — Wikipedia](https://en.wikipedia.org/wiki/Stellarium_(software)) — 开源星图软件的许可、平台(含 Stellarium Mobile)与渲染特性。
+- [Cartes du Ciel — Wikipedia](https://en.wikipedia.org/wiki/Cartes_du_Ciel) — 开源星图的星表支持与 ASCOM / INDI 望远镜控制说明。
+- [Astrophotography Image Stacking Software — AstroBackyard](https://astrobackyard.com/astrophotography-image-stacking-software/) — DeepSkyStacker、Siril、PixInsight、APP 等叠加工具的用途与平台对比。
+- [BlurXTerminator / StarXTerminator / NoiseXTerminator — RC Astro](https://www.rc-astro.com/) — X-Terminator 系列 AI 插件的功能与宿主(PixInsight / Photoshop / Affinity)限制。
+- [AstroBin Pricing](https://welcome.astrobin.com/pricing) — AstroBin 免费额度与 Lite / Premium / Ultimate 订阅分级。
+- [Clear Outside Forecast](https://clearoutside.com/forecast/) — 面向天文观测的逐时天气、云量与月相预报数据来源。

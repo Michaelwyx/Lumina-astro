@@ -1,0 +1,120 @@
+---
+title: 著名天文台
+description: 全球科研级地面天文台一览,按北/南半球分列名称、地点、纬度、海拔与招牌设备,并系统说明暗、稳、晴三项选址要素及阿塔卡马沙漠的特殊地位。
+difficulty: beginner
+pillar: index
+sidebar:
+  order: 2
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import Fig from '@/components/Fig.astro';
+
+本页汇总全球主要的**科研级地面天文台(professional ground-based observatory)**:由大学、国家机构或国际联盟运营、面向天文学前沿研究的大型观测设施。讨论范围限于地面光学/红外与射电(含毫米/亚毫米波)天文台,不包括空间望远镜,也不包括面向爱好者出租机时的商业远程拍摄场地——后者的辨析见本页末尾的消歧说明。
+
+每座天文台用四项关键信息描述:地理**纬度(latitude, φ)**决定它能覆盖的天区(参见[天体坐标系](/astronomy/foundations/celestial-coordinates/)与[半球可见性](/astronomy/observing/hemisphere-visibility/));**海拔(elevation/altitude)**决定头顶残留的大气与水汽量;**招牌设备**通常以主镜**口径(aperture, D)**衡量集光能力,口径越大、集光面积越大(正比于 `D²`),能探测的天体越暗。
+
+<div class="cols2">
+  <Fig name="vlt" alt="帕瑞纳尔甚大望远镜的四台单元望远镜" caption="智利帕瑞纳尔甚大望远镜(VLT)的四台 8.2 m 单元望远镜" />
+  <Fig name="alma" alt="查南托高原上的 ALMA 毫米波天线阵列" caption="智利查南托高原的 ALMA 毫米/亚毫米波天线阵列" />
+</div>
+
+## 北半球主要天文台
+
+北半球的顶级大镜集中在三类高海拔干旱站址:夏威夷莫纳克亚、加那利群岛拉帕尔马,以及美国西南部(亚利桑那、加州、新墨西哥)的山地。下表纬度取北纬正值,海拔为概数。
+
+| 天文台 | 地点 / 海拔 | 纬度 | 招牌设备 |
+| --- | --- | --- | --- |
+| 莫纳克亚(Mauna Kea) | 美国夏威夷大岛,约 4205 m | +19.8° | Keck 双 10 m;Subaru 8.2 m;Gemini North 8.1 m;CFHT 3.6 m;JCMT 15 m(亚毫米波) |
+| 罗克德洛斯穆查丘斯(Roque de los Muchachos) | 西班牙拉帕尔马岛,约 2400 m | +28.8° | GTC / GranTeCan 10.4 m(现役最大单口径光学镜);WHT 4.2 m;MAGIC 切伦科夫望远镜 |
+| 基特峰(Kitt Peak) | 美国亚利桑那,约 2100 m | +32.0° | Mayall 4 m(现承载 DESI 暗能量巡天光谱仪);多台中小镜聚集的国家天文台园区 |
+| 帕洛玛(Palomar) | 美国加州,约 1712 m | +33.4° | 海尔(Hale)200 吋 / 5.1 m;48 吋施密特镜(现承载 ZTF 暂现源巡天) |
+| 阿帕奇点(Apache Point) | 美国新墨西哥,约 2788 m | +32.8° | SDSS 斯隆数字巡天 2.5 m 专用巡天望远镜 |
+
+补充说明:
+
+- **莫纳克亚**是北半球综合条件最好的光学/红外台址,也是世界级亚毫米波站点之一。其优势来自高海拔、低湿度、夜空黑暗、上方常年有逆温层抑制湍流。除上表外还集中了 UKIRT、IRTF、SMA 等十余台设备。
+- **拉帕尔马**通常被视为北半球仅次于莫纳克亚的光学/红外台址,坐落在迎风山脊上、云层之上,大气稳定。GTC(加那利大望远镜)10.4 m 主镜由 36 块六边形子镜拼接,是目前现役**单口径最大**的光学望远镜。
+- **基特峰**与 **CTIO**(见下文)同属美国国家光学红外天文研究实验室(NOIRLab),Mayall 4 m 当前的核心任务是用 DESI 测量数千万星系红移、研究暗能量。
+- **帕洛玛**的海尔望远镜见下方提示;阿帕奇点的 SDSS 2.5 m 是巡天专用机,以宽视场系统性绘制北天星图而著称。
+
+<Aside type="note" title="海尔 200 吋的历史地位">
+帕洛玛海尔望远镜 1949 年首光,主镜口径 5.08 m(200 吋)。它自首光起到 1976 年苏联 BTA-6(6 m)建成、并在有效观测能力上长期保持到 1990 年代凯克望远镜出现为止,都是世界上最重要的光学望远镜之一,主导了 20 世纪中叶的星系与类星体研究。它由天文学家乔治·埃勒里·海尔(George Ellery Hale)倡议建造。
+</Aside>
+
+## 南半球主要天文台
+
+南半球科研观测的核心是**智利北部的阿塔卡马沙漠(Atacama Desert)**,当今世界相当一部分顶级大镜与新建超大望远镜都集中于此;此外澳大利亚与南非也各有重要台站。下表纬度取南纬负值。
+
+| 天文台 | 地点 / 海拔 | 纬度 | 招牌设备 |
+| --- | --- | --- | --- |
+| 帕瑞纳尔(Paranal / VLT) | 智利阿塔卡马(Cerro Paranal),约 2635 m | −24.6° | VLT 四台 8.2 m 单元望远镜(可干涉联合);邻近 Cerro Armazones 在建 ELT 39 m |
+| ALMA | 智利查南托高原(Llano de Chajnantor),约 5000 m | −23.0° | 66 台毫米/亚毫米波天线(54 台 12 m + 12 台 7 m) |
+| 拉斯坎帕纳斯(Las Campanas) | 智利阿塔卡马,约 2380 m | −29.0° | 麦哲伦双 6.5 m(Baade、Clay);在建 GMT 巨型麦哲伦望远镜 ~25 m |
+| 拉西拉(La Silla) | 智利,约 2400 m | −29.3° | ESO 3.6 m(承载 HARPS 系外行星视向速度光谱仪);NTT 3.58 m |
+| 塞罗托洛洛(CTIO) | 智利,约 2200 m | −30.2° | Blanco 4 m(承载 DECam 暗能量相机);邻近 Cerro Pachón 有 Gemini South 与 Rubin 天文台 |
+| 赛丁泉(Siding Spring) | 澳大利亚新南威尔士,约 1165 m | −31.3° | 英澳望远镜(AAT)3.9 m |
+| 萨瑟兰(SAAO Sutherland) | 南非北开普省,约 1798 m | −32.4° | SALT 11 m(南半球最大单口径光学镜) |
+
+补充说明:
+
+- **帕瑞纳尔 VLT** 由欧洲南方天文台(ESO)运营,四台 8.2 m 单元望远镜分别命名为 Antu、Kueyen、Melipal、Yepun,既可单独工作,也可与四台 1.8 m 辅助望远镜组成 VLT 干涉仪(VLTI)。约 20 km 外的 Cerro Armazones(海拔约 3046 m)正在建设**极大望远镜(Extremely Large Telescope, ELT)**,主镜 39 m,由近 800 块六边形子镜拼接,建成后将成为地面最大的光学/红外望远镜。
+- **ALMA**(Atacama Large Millimeter/submillimeter Array)是 ESO、美国 NSF/NRAO 与日本 NAOJ 等的国际合作项目,工作波长约 0.32–3.6 mm(频率 31–1000 GHz)。它由 66 面天线组成可重构干涉阵列,基线可在数百米到 16 km 间变化,以合成大口径的角分辨率。选址 5000 m 高的查南托高原,正是为了把头顶水汽降到最低——水汽对毫米/亚毫米波有强烈吸收。
+- **拉斯坎帕纳斯**由卡内基科学研究所运营,麦哲伦双 6.5 m 望远镜以 1987A 超新星及 GW170817 引力波事件光学对应体的观测闻名;在建的**巨型麦哲伦望远镜(Giant Magellan Telescope, GMT)**由七块 8.4 m 子镜组成,等效口径约 24.5 m。
+- **拉西拉**是 ESO 在智利的第一处台址,ESO 3.6 m 上的 HARPS 是低质量系外行星视向速度探测的代表性仪器;NTT 3.58 m 则首创了主动光学(active optics)技术。
+- **CTIO**(塞罗托洛洛美洲际天文台)同属 NOIRLab,Blanco 4 m 承载的 DECam 完成了暗能量巡天(DES)。邻近的 Cerro Pachón 还安置了 Gemini South 8.1 m 与新建的**Vera C. Rubin 天文台**(LSST 8.4 m 巡天镜)。
+- **赛丁泉**位于澳大利亚瓦伦邦格尔国家公园,英澳望远镜(AAT)3.9 m 长期是南半球重要的光谱巡天平台。**SAAO 萨瑟兰**的 SALT(南非大望远镜)采用类似海尔–玻波镜(Hobby–Eberly)的固定俯仰角设计,11.1 m × 9.8 m 的球面拼接主镜使其成为南半球最大的单口径光学望远镜。
+
+<div class="cols2">
+  <Fig name="lasergstar" alt="望远镜射出激光导星指向银心方向" caption="激光导星(LGS):为自适应光学提供人造参考星,实时补偿大气抖动" />
+  <Fig name="milkyway" alt="南半球可见的银河拱桥与银心" caption="南半球台站可在高仰角观测银河系核心方向" />
+</div>
+
+<Aside type="note" title="提升角分辨率的两类技术">
+表中"招牌设备"反复出现两类关键技术:**自适应光学(adaptive optics, AO)**用形变镜实时抵消大气湍流引入的波前畸变,常配合激光导星(laser guide star, LGS)产生人造参考点,使单台大镜逼近衍射极限;**干涉(interferometry)**则把多台望远镜/天线的信号相干合并,等效口径由最长基线决定,VLTI 与 ALMA 即依靠干涉获得远超单镜的角分辨率。
+</Aside>
+
+## 选址三要素:暗、稳、晴
+
+科研级光学/红外天文台的台址选择,主要围绕三项相互独立又同等重要的条件展开。它们共同决定了同口径设备能达到的极限星等(参见[星等系统](/astronomy/foundations/magnitude/))与影像锐度。
+
+| 要素 | 物理含义 | 关键指标 | 有利条件 |
+| --- | --- | --- | --- |
+| 暗(dark sky) | 夜天光背景越低,越能在暗弱天体与背景间分辨信噪 | 天顶夜天光面亮度(mag/arcsec²) | 远离城市光污染、无月、低气溶胶、低大气辉光 |
+| 稳(seeing) | 大气湍流使星点弥散、影像模糊 | 视宁度(seeing,单位角秒″),顶级站可达约 0.6″–0.8″ | 高海拔、平滑层流、稳定逆温层、地形上风顺畅 |
+| 晴(clear & dry) | 晴夜决定可用观测时间;低水汽决定红外/毫米波透过率 | 年可用晴夜数(顶级站约 300 夜以上)、可降水量(PWV) | 干旱气候、常年下沉气流、远离海洋湿气 |
+
+三者的内在联系:
+
+- **海拔同时改善"稳"与"晴"**。望远镜越高,头顶残留的大气质量、湍流层与水汽柱越薄。莫纳克亚(约 4205 m)与查南托高原(约 5000 m)之所以分别成为顶级光学/红外与毫米波站点,核心原因即在此——它们"站在大半个大气层之上"。
+- **"暗"主要靠远离人类活动**。极低的人口密度与无工业照明,使阿塔卡马、拉帕尔马、澳洲内陆等地拥有近乎自然的夜天光背景。
+- **"晴"对不同波段权重不同**。光学观测看晴夜数;近红外、毫米/亚毫米波则对可降水量(PWV)极其敏感,因为水汽会强烈吸收这些波段,这正是 ALMA 必须建在极干高原的原因。
+
+<Aside type="caution" title="阿塔卡马为何集中了顶级大镜">
+智利北部的阿塔卡马沙漠是地球上最干旱的非极地沙漠之一,长年受副热带高压控制、盛行稳定下沉气流,具备高海拔、极低湿度、极少云量、极低人口密度等条件,同时满足暗、稳、晴三要素。因此 VLT、ALMA、麦哲伦、拉西拉、CTIO 等现役设施,以及在建的 ELT(39 m)、GMT(~25 m)与 Rubin 天文台都集中于此。可以说,21 世纪地面光学/红外天文学的重心明显向智利北部倾斜。需要提醒:即便条件优越,这些站址对人体而言海拔偏高(ALMA 工作区接近 5000 m),现场作业需要防高原反应。
+</Aside>
+
+## 与"远程成像平台"的区别
+
+中文里"观测站/天文台"容易与天文摄影圈的"远程平台"混为一谈,二者性质完全不同,需要明确区分。
+
+| 对比项 | 科研天文台(本页) | 远程成像平台 |
+| --- | --- | --- |
+| 运营方 | 大学、国家机构、国际联盟 | 商业公司或暗空托管基地 |
+| 主要目的 | 前沿天文学研究 | 为天文摄影爱好者出租机时 |
+| 典型口径 | 多为 4–10 m,乃至在建的 25–39 m | 多为厘米到几十厘米级望远镜 |
+| 使用方式 | 通过竞争性观测时间申请,普通爱好者无法预约 | 付费即可远程控制、获取自己的成像数据 |
+| 数据归属 | 公开科研数据 / 巡天产品 | 用户个人作品 |
+
+如果你的目标是亲手拍出深空照片,应当了解的是后者——选址逻辑(同样追求暗、稳、晴)与设备规模都与科研大镜截然不同,详见[远程平台对比](/astrophotography/remote-platforms/platforms-comparison/)。
+
+要进一步理解纬度如何决定"在某地能看到哪片星空",可结合[天体坐标系](/astronomy/foundations/celestial-coordinates/)与[半球可见性](/astronomy/observing/hemisphere-visibility/);想系统了解影响成像的天气与视宁度因素,见[观测条件](/astronomy/observing/conditions/)。
+
+## 参考资料
+
+- [Mauna Kea Observatories — Wikipedia](https://en.wikipedia.org/wiki/Mauna_Kea_Observatories):莫纳克亚台址坐标、海拔与各望远镜口径清单。
+- [Paranal Observatory — Wikipedia](https://en.wikipedia.org/wiki/Paranal_Observatory):VLT 四台单元望远镜、辅助望远镜及邻近 ELT 的概况。
+- [Location | ELT | ESO](https://elt.eso.org/about/location/):极大望远镜(39 m)在 Cerro Armazones 的选址与海拔。
+- [Atacama Large Millimeter Array — Wikipedia](https://en.wikipedia.org/wiki/Atacama_Large_Millimeter_Array):ALMA 的 66 面天线配置、波长范围与高原选址原因。
+- [Roque de los Muchachos Observatory — Wikipedia](https://en.wikipedia.org/wiki/Roque_de_los_Muchachos_Observatory):GTC 10.4 m 等设备及北半球台址排名说明。
+- [Las Campanas Observatory — Wikipedia](https://en.wikipedia.org/wiki/Las_Campanas_Observatory):麦哲伦双 6.5 m 与在建 GMT 的参数。

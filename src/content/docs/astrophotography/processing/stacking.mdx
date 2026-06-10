@@ -1,0 +1,202 @@
+---
+title: 预处理与叠加
+description: 从原始 light 与校准帧到一张干净的 32 位线性叠加图,系统梳理校准、去马赛克、配准、帧筛选、像素剔除与积分的完整原理与参数。
+difficulty: intermediate
+pillar: astrophotography
+sidebar:
+  order: 1
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+import Fig from '@/components/Fig.astro';
+
+预处理(pre-processing)与叠加(stacking,亦称积分 integration)是把一批原始单帧(light frame)与校准帧转换为一张高信噪比线性主图(master light)的标准流程。它包含若干彼此独立、顺序固定的环节:校准(calibration)、去马赛克(debayer,仅彩色相机)、配准(registration)、帧质量筛选、像素级剔除(pixel rejection)与积分。本页逐一说明各环节的原理、参数与典型数值,输出结果是一张待[后期拉伸](/astrophotography/processing/workflow/)的 32 位线性图。
+
+<Fig name="m42-orion" alt="猎户座大星云 M42" caption="M42:多张单帧经校准、配准与积分后,暗弱星云细节的信噪比显著提高。" />
+
+## 叠加的统计学依据
+
+单帧图像中的信号叠加了多种随机噪声:读出噪声(read noise)、暗电流噪声(dark current noise)以及光子本身的散粒噪声(shot noise)。随机噪声在帧间不相关,而目标信号在帧间相关。对 N 帧逐像素求平均时,信号线性累加,噪声只按 N 的平方根累加,因此信噪比(signal-to-noise ratio, SNR)随帧数提升:
+
+```
+SNR ∝ √N
+```
+
+由此可得若干常用结论:
+
+- 叠 4 帧,SNR 翻倍;叠 16 帧,SNR 提升 4 倍。
+- 总积分时间翻倍(帧数翻倍),SNR 约提升 41%(即 √2 − 1 ≈ 0.41)。
+- SNR 增益呈递减规律:从 4 帧到 16 帧的收益,远大于从 100 帧到 112 帧。
+
+这条规律是深空摄影曝光策略的基础,详见[信噪比](/astrophotography/fundamentals/snr/)。除压制随机噪声外,叠加还借助逐像素统计剔除离群值(飞机、卫星轨迹、宇宙射线击中、未被暗场扣净的热点)。
+
+<Aside type="note" title="积分时间参考量级">
+宽带目标(星系、反射星云)常需 6–12 小时总积分;窄带目标(发射星云)常需 10–20 小时以上。单帧时长在郊区天空下宽带约 60–180 秒,窄带约 180–600 秒,具体取决于焦比、相机增益与天空背景。
+</Aside>
+
+## 校准
+
+校准用 bias、dark、flat 三类校准帧扣除传感器与光路引入的**固定(非随机)误差**。各类校准帧的拍法与原理见[校准帧](/astrophotography/calibration/calibration-frames/),此处只讨论它们在叠加流程中的数学作用。
+
+| 校准帧 | 修正对象 | 拍摄要求 | 合成方式 |
+| --- | --- | --- | --- |
+| 偏置帧(bias / offset) | 读出电路的固定偏置电平 | 最短曝光、遮光、相同增益 | 平均或 sigma 裁剪合成 master bias |
+| 暗场(dark) | 暗电流、热点、放大器辉光 | 与 light 相同曝光、增益、温度,遮光 | sigma 裁剪合成 master dark |
+| 平场(flat) | 暗角(vignetting)、灰尘环、像素响应不均 | 相同焦点与光路朝向,均匀照明 | sigma 裁剪合成 master flat |
+| 平场暗场(flat-dark) | 平场曝光对应的暗电流与偏置 | 与平场相同曝光、增益 | 用于标定平场,CMOS 尤为重要 |
+
+校准的核心是逐像素运算。在已扣除各自暗/偏置项之后,标准校准公式为:
+
+```
+calibrated = (light − master_dark) / master_flat
+```
+
+其中减暗用于消除暗电流与热点等加性误差(它们与曝光时间、温度相关,故暗场需与 light 匹配),除平场用于消除暗角与灰尘环等乘性误差(因此平场必须在不改变焦点与器材朝向的前提下拍摄)。CMOS 传感器的暗场通常已包含偏置,故部分流程不单独使用 master bias,而以平场暗场标定平场。
+
+<Aside type="caution" title="校准帧不匹配的后果">
+暗场曝光/温度与 light 不一致会导致减暗过度或不足,残留亮/暗热点;平场朝向或焦点变化会使暗角与灰尘环对不上,除平场后反而引入新的环状渐变。校准帧的匹配比数量更关键。
+</Aside>
+
+## 去马赛克(彩色相机)
+
+彩色单次成像相机(one-shot color, OSC)的传感器覆盖了拜耳滤色阵列(color filter array, CFA / Bayer pattern),每个像素只记录红、绿或蓝其中一个通道。**去马赛克(debayer / demosaicing)** 通过插值由相邻像素重建出每像素的完整 RGB。
+
+去马赛克在流程中的位置取决于是否使用 Bayer Drizzle:
+
+- 常规流程:校准后立即去马赛克,再以彩色图配准、叠加。
+- Bayer Drizzle 流程:校准后**不**去马赛克(保留 CFA 原始排布),颜色重建由 Drizzle 在积分阶段完成,见下文。
+
+单色相机(mono,经滤镜轮分通道拍摄)不涉及去马赛克,各通道分别叠加后于后期合成。
+
+## 配准
+
+跟踪误差、周期误差(periodic error)、风扰与有意施加的抖动(dither)会使每帧星点位置在像素级发生平移甚至旋转。**配准(registration / 对齐)** 通过星点检测与几何匹配,计算各帧相对参考帧的变换(平移、旋转、缩放乃至畸变),再重采样使所有帧逐像素对齐。
+
+- 软件先在每帧探测一组星点,用星点的相对几何(三角形匹配等)建立帧间对应关系。
+- 由对应关系拟合几何变换,常用模型从相似变换到带畸变校正的多项式不等。
+- 良好的配准会自动补偿抖动产生的整帧位移,使后续逐像素统计落在同一天区上。
+
+参考帧通常选质量最高的一帧;视场旋转、镶嵌拼接(mosaic)或多 session 整合需要更复杂的全局配准。
+
+## 帧质量筛选
+
+并非所有单帧都值得保留。云层、阵风、跟踪失锁会产生拖线、失焦或背景骤亮的废帧,把它们纳入叠加会拉低整体质量。**帧筛选(frame selection / culling)** 依据若干客观指标剔除或降权:
+
+| 指标 | 含义 | 偏好方向 |
+| --- | --- | --- |
+| 半高全宽(FWHM) | 星点的锐度(像素或角秒) | 越小越好 |
+| 偏心率(eccentricity / roundness) | 星点的圆度,反映拖线与像差 | 越接近 0 越好 |
+| 背景值(background) | 天空背景亮度,反映云、月光、光污染 | 越低越稳定 |
+| SNR / 噪声 | 单帧信噪比 | 越高越好 |
+| 星点数量 | 可探测星数,反映透明度 | 越多越好 |
+
+经验上剔除最差的约 10%–30% 单帧,往往比保留全部帧得到更干净的结果。更先进的流程不直接剔帧,而是按质量给每帧赋权(weighting),让锐度高、信噪比高的帧在积分中贡献更大,如 PixInsight 的 PSF Signal Weight。
+
+## 像素剔除
+
+剔帧解决的是整帧问题;**像素剔除(pixel rejection)** 解决的是单帧内的局部离群值——飞机/卫星轨迹、宇宙射线击中、未被暗场扣净的热点。它逐像素地在所有帧的同位置像素中做统计,把偏离过大的值排除后再积分,因此**只剔除个别像素,不丢弃整帧**。
+
+在剔除前通常需要**归一化(normalization)**,即把各帧整体亮度缩放到一致,以补偿透明度变化造成的背景差异,否则统计判据会失真。
+
+常见剔除算法:
+
+| 算法 | 机制 | 适用 |
+| --- | --- | --- |
+| Sigma / Kappa-Sigma 裁剪 | 迭代计算均值与标准差,剔除偏离超过 κ 倍标准差的像素 | 通用,擅长卫星/飞机轨迹 |
+| Winsorized Sigma 裁剪 | 先用 Winsor 方法稳健估计统计量再裁剪,对污染更鲁棒 | 帧数有限时优于普通 sigma |
+| 线性拟合裁剪(Linear Fit Clipping) | 对每像素跨帧拟合直线,剔除偏离拟合的值 | 帧数多、存在渐变变化 |
+| GESD / 百分位裁剪 | 广义极端学生化偏差或百分位阈值 | 帧数多且画面较干净 |
+
+Kappa-Sigma 裁剪的判据可写为:对某像素位置的一组帧值,保留满足 `|xi − mean| ≤ κ · σ` 的像素,迭代若干轮直至收敛;κ(kappa)即裁剪阈值,常分设低端 `low_sigma` 与高端 `high_sigma`,需依数据调参。
+
+<Aside type="tip" title="抖动与像素剔除的配合">
+有意抖动(dithering)指每隔若干帧将镜头指向微移数像素,使同一热点或坏点在不同帧落在不同天区像素上。这样它在逐像素统计中表现为离群值而被剔除,同时还能打散固定模式噪声(fixed-pattern noise)。抖动配合 sigma 类剔除,是清除热点与残留坏点的关键手段。
+</Aside>
+
+## 积分
+
+积分(integration)对每个像素位置,把通过剔除后保留下来的所有帧值合成一个最终值。合成方式决定了抗离群能力与信噪比之间的权衡。
+
+| 方法 | 抗离群值 | 信噪比 | 适用场景 |
+| --- | --- | --- | --- |
+| 平均(average) | 差 | 最佳 | 帧数少且画面极干净 |
+| 中值(median) | 好 | 略有损失 | 帧数少(&lt;10)但有少量轨迹 |
+| Kappa-Sigma 裁剪后平均 | 好 | 接近平均 | 多数常规深空项目(≥15–20 帧) |
+| 加权平均(weighted average) | 取决于剔除 | 优于等权 | 各帧质量差异较大时 |
+| 熵加权平均(entropy weighted) | — | — | 用于已叠加的高 SNR 图,生成高动态范围 |
+
+实践中,**先用 sigma 类算法剔除离群像素,再对剩余像素取(加权)平均**,是兼顾抗离群与信噪比的主流做法。中值虽稳健但会损失约 20% 信噪比,通常仅在帧数很少时使用。
+
+<Aside type="tip" title="算法与帧数的匹配">
+帧数 < 10 时,平均或中值更稳妥;帧数 ≥ 10–20 时,优先 Kappa-Sigma 或 Winsorized Sigma 裁剪。GESD 在帧数多且画面干净时表现好,但若飞机/卫星较多,Kappa-Sigma 因只剔除离群像素而非整帧,反而更可靠。
+</Aside>
+
+## Drizzle 与超分辨
+
+Drizzle(可变像素线性重建,variable-pixel linear reconstruction)最初为哈勃深空场(Hubble Deep Field)开发,由空间望远镜科学研究所(STScI)提出,用于由**欠采样(undersampled)** 且经过抖动的多帧重建出更高分辨率的图像。当像元过大、未能充分采样光学系统的分辨能力(欠采样)时,普通插值无法恢复细节,而 Drizzle 在配合抖动的前提下可部分超分辨。
+
+其原理是:把每个输入像素按几何变换"喷洒"(drizzle)到一个比原图更精细的输出网格上,落点由该帧的配准变换决定;有意抖动使不同帧的喷洒落点错开,从而在更细网格上填补信息。关键参数:
+
+| 参数 | 含义 | 取值与影响 |
+| --- | --- | --- |
+| 缩放因子(scale) | 输出网格相对输入的线性放大倍数 | 2.0 即边长 2 倍、像素数 4 倍;越大每输出像素累积的帧越少,噪声越高 |
+| 像素收缩比(pixfrac / drop shrink) | 喷洒前液滴相对原像元的缩小比例 | 0 等价于 interlacing,1 等价于 shift-and-add;经验上约取缩放因子的倒数 |
+| 核函数(kernel) | 液滴形状 | square(默认,保通量)、gaussian(保点扩散函数)、point(相关噪声最小但易留空洞)等 |
+
+对 OSC 相机可使用 **Bayer Drizzle**:校准后保留 CFA 排布(不去马赛克),Drizzle 时按每个像素的滤色把它喷洒到对应输出通道,从而绕开传统去马赛克插值的伪色与分辨率损失。
+
+<Aside type="caution" title="Drizzle 的代价与前提">
+Drizzle 的分辨率增益以噪声为代价:网格越细,每输出像素累积的帧越少,噪声越高,且会引入相邻输出像素间的相关噪声。它要求充分抖动且帧数足够多(一般 10 帧以上,Bayer Drizzle 或更高缩放则需更多),否则会出现空洞像素与摩尔纹。仅在确为欠采样且数据充足时才值得使用。
+</Aside>
+
+## 常用软件
+
+<Steps>
+
+1. **DeepSkyStacker(DSS)** — 免费、Windows。可自动完成校准、去马赛克、配准与叠加,内置平均、中值、Kappa-Sigma、Median Kappa-Sigma、自适应加权平均、熵加权平均等多种合成方式;支持 Drizzle。算法较老、批量与脚本能力弱。
+
+2. **Siril** — 免费、开源、跨平台。算法现代,支持**脚本(.ssf)** 一键跑完整 OSC/单色预处理流程,内置常规与 Bayer Drizzle、多种核函数;并能在后期做背景提取与光度颜色校准,是当前免费方案的主力。
+
+3. **AstroPixelProcessor(APP)** — 付费。多 session 整合、镶嵌拼接、渐变去除出色,适合进阶与大画幅项目。
+
+4. **PixInsight WBPP** — 付费,行业标准。Weighted Batch Preprocessing 自动串联校准、cosmetic 校正、去马赛克、配准、局部归一化、加权、像素剔除、积分、Drizzle 与裁边;默认按 PSF Signal Weight 加权,剔除可选 Winsorized Sigma、Linear Fit、GESD 等,并按帧数自适应选择。
+
+</Steps>
+
+## 输出:32 位线性图
+
+无论使用哪款软件,积分结果都应保存为 **32 位浮点、线性(linear)** 的 FITS 或 TIFF,且**此阶段不做任何拉伸或调色**。原因如下:
+
+- 线性数据保留完整动态范围,避免量化误差在后期被放大。
+- 所有提亮(非线性拉伸)、背景渐变去除、颜色校准、降噪都应在线性主图基础上进行,见[后期工作流](/astrophotography/processing/workflow/)。
+- 8/16 位整数格式在叠加多帧后可能不足以表达细微的低位信息,32 位浮点更稳妥。
+
+<Aside type="tip" title="使用远程平台数据">
+远程天文台平台通常直接提供已校准(有时已去马赛克)的单帧,下载后只需配准与叠加即可,可跳过本地拍摄校准帧的步骤。详见[远程平台概览](/astrophotography/remote-platforms/overview/)。
+</Aside>
+
+## 常见误区
+
+- **多拍单帧 vs 拉长单帧**:在不过曝的前提下,增加帧数比无限拉长单帧更稳妥,既能压制随机噪声又给像素剔除留下统计样本;但单帧也需足够长以使目标信号高于读出噪声。
+- **中值并非总是更好**:中值抗离群但损失信噪比,帧数充足时应改用 Kappa-Sigma 裁剪后平均。
+- **不抖动就用 Drizzle**:无抖动时 Drizzle 无法超分辨,反而徒增噪声与文件体积。
+- **校准帧数量重于匹配**:暗场温度/曝光、平场朝向若不匹配,数量再多也会引入新误差。
+- **叠加阶段调色**:积分输出必须保持线性,任何拉伸/调色都属于后期。
+
+## 小结
+
+- 流程顺序固定:**校准 → (去马赛克) → 配准 → 帧筛选 → 像素剔除 → 积分**。
+- 噪声靠帧数压制,`SNR ∝ √N`,总积分时间翻倍 SNR 约增 41%。
+- 校准扣固定误差(`(light − dark) / flat`),像素剔除配合抖动清除离群值。
+- 常规项目优先 **Kappa-Sigma / Winsorized Sigma 裁剪后平均**,兼顾抗离群与信噪比。
+- 欠采样且数据充足时,Drizzle 可部分超分辨,代价是噪声与文件体积。
+- 输出 **32 位线性图**,把所有拉伸与美化留给后期。
+
+## 参考资料
+
+- [Drizzle (image processing) — Wikipedia](https://en.wikipedia.org/wiki/Drizzle_(image_processing)) — Drizzle/可变像素线性重建的起源(哈勃深空场)、原理与特性。
+- [Drizzle — Siril 文档](https://siril.readthedocs.io/en/latest/preprocessing/drizzle.html) — pixfrac、缩放因子、核函数与 Bayer Drizzle 的实现细节。
+- [DeepSkyStacker Technical / Stacking Methods](http://deepskystacker.free.fr/english/technical.htm) — 平均、中值、Kappa-Sigma 等各合成方式的定义与适用帧数。
+- [Mastering Deep-Sky Astrophotography Processing — Optical Mechanics](https://www.opticalmechanics.com/mastering-deep-sky-astrophotography-processing/) — 校准、配准、剔除、积分的完整流程顺序与参数建议。
+- [Improve Your Astrophotography with Weighted Batch Preprocessing — Utah Desert Remote](https://utahdesertremote.com/improve-your-astrophotography-with-weighted-batch-preprocessing/) — PixInsight WBPP 的步骤、加权与剔除算法。
+- [Siril Script Files — Siril 文档](https://siril.readthedocs.io/en/latest/scripts/Script-files.html) — OSC/单色预处理脚本的目录结构与一键流程。

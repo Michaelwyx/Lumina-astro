@@ -1,0 +1,41 @@
+---
+/** 赫罗图(H–R Diagram):横轴光谱型/温度,纵轴光度。随语言切换标签。 */
+interface Props { caption?: string; }
+const en = Astro.url.pathname.startsWith('/en');
+const L = en
+  ? { cap: 'H–R diagram: most stars lie along the diagonal main sequence; giants upper-right, white dwarfs lower-left.',
+      xaxis: '← hotter (blue O)    spectral type    cooler (red M) →', yaxis: 'Luminosity →',
+      ms: 'Main Sequence', giants: 'Giants / Supergiants', wd: 'White dwarfs', sun: 'Sun (G2V)' }
+  : { cap: '赫罗图:绝大多数恒星落在「主序」对角带上,右上为巨星、左下为白矮星。',
+      xaxis: '← 温度高(蓝 O)　　光谱型　　温度低(红 M)→', yaxis: '光度 →',
+      ms: '主序 Main Sequence', giants: '巨星 / 超巨星', wd: '白矮星', sun: '太阳 (G2V)' };
+const { caption = L.cap } = Astro.props;
+---
+<figure class="diagram">
+  <svg viewBox="0 0 540 380" role="img" aria-label={en ? 'Hertzsprung–Russell diagram' : '赫罗图'}>
+    <rect width="540" height="380" fill="#0a0d1a" rx="12" />
+    <line x1="70" y1="330" x2="510" y2="330" stroke="#3a4690" stroke-width="1.5" />
+    <line x1="70" y1="40" x2="70" y2="330" stroke="#3a4690" stroke-width="1.5" />
+    <text x="250" y="366" fill="#9aa6ff" font-size="13" text-anchor="middle">{L.xaxis}</text>
+    <text x="20" y="200" fill="#9aa6ff" font-size="13" transform="rotate(-90 24 200)">{L.yaxis}</text>
+    {['O','B','A','F','G','K','M'].map((s, i) => (
+      <text x={92 + i * 62} y="348" fill="#6b78c8" font-size="13" text-anchor="middle">{s}</text>
+    ))}
+    <defs>
+      <linearGradient id="ms" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#7fb0ff" />
+        <stop offset="45%" stop-color="#fff4cf" />
+        <stop offset="100%" stop-color="#ff7a5c" />
+      </linearGradient>
+    </defs>
+    <path d="M110 70 Q 250 200 470 320" fill="none" stroke="url(#ms)" stroke-width="16" stroke-linecap="round" opacity="0.55" />
+    <text x="300" y="180" fill="#cdd6ff" font-size="13" transform="rotate(28 300 180)">{L.ms}</text>
+    <ellipse cx="410" cy="120" rx="70" ry="34" fill="#ff8a5c" opacity="0.18" />
+    <text x="410" y="118" fill="#ffb38a" font-size="12" text-anchor="middle">{L.giants}</text>
+    <ellipse cx="170" cy="300" rx="48" ry="22" fill="#9fd0ff" opacity="0.2" />
+    <text x="170" y="304" fill="#bfe0ff" font-size="12" text-anchor="middle">{L.wd}</text>
+    <circle cx="300" cy="234" r="6" fill="#ffd66e" stroke="#fff" stroke-width="1" />
+    <text x="310" y="238" fill="#ffd66e" font-size="12">{L.sun}</text>
+  </svg>
+  <figcaption>{caption}</figcaption>
+</figure>
