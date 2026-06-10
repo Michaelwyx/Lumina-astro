@@ -19,16 +19,20 @@
     '江畔何人初见月？江月何年初照人？人生代代无穷已，江月年年望相似。　——张若虚',
     '天之苍苍，其正色邪？其远而无所至极邪？　——《庄子》',
   ];
+  // Carl Sagan 这句原版即英文,中英模式都保留英文
+  var sagan = 'The cosmos is within us. We are made of star stuff. We are a way for the universe to know itself. — Carl Sagan';
   var phrases = en
     ? zhClassics.concat([
         'The eternal silence of these infinite spaces frightens me. — Pascal',
         'I know nothing with any certainty, but the sight of the stars makes me dream. — Van Gogh',
         'I, a universe of atoms; an atom in the universe. — Richard Feynman',
+        sagan,
       ])
     : zhClassics.concat([
         '这些无限空间的永恒沉默，令我恐惧。　——帕斯卡',
         '我对任何事都没有把握，但群星的景象让我做梦。　——梵高',
         '我，一个由原子构成的宇宙；一个宇宙之中的原子。　——费曼',
+        sagan,
       ]);
 
   el.textContent = '';

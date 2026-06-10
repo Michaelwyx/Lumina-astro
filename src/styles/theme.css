@@ -1710,3 +1710,11 @@ html[data-has-hero] .hero .tagline {
   margin-inline: 0 !important;
   text-align: left !important;
 }
+
+/* ★ v16 — 加宽标语容器并略缩字号,容纳较长英文引言(单行) */
+html[data-has-hero] .hero .stack,
+html[data-has-hero] .hero .copy { max-width: min(80rem, 96vw) !important; }
+html[data-has-hero] .hero .tagline {
+  font-size: clamp(1.05rem, 0.85rem + 0.6vw, 1.35rem) !important;
+  max-width: min(80rem, 96vw) !important;
+}
