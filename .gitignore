@@ -8,7 +8,7 @@ dist/
 .astro/
 
 # dev artifacts
-_design/shots/
+_design/
 *.bak
 
 # environment
