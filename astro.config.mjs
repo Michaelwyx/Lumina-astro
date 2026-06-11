@@ -8,7 +8,7 @@ import remarkGfm from 'remark-gfm';
 // https://astro.build/config
 export default defineConfig({
   // 部署站点 URL(用于 sitemap / canonical)
-  site: 'https://lumina-astro-3xe.pages.dev',
+  site: 'https://lumina-astro-wiki.pages.dev',
   // 显式启用 GFM:@astrojs/mdx 默认不对 .mdx 应用 remark-gfm,
   // 不加这行,.mdx 里的表格不会渲染成 <table>(会变成字面 | --- | 文本)。
   markdown: {

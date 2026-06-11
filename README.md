@@ -1,6 +1,6 @@
 # 拾光记 · Lumina
 
-**🔭 Live site → [English](https://lumina-astro-3xe.pages.dev/en/) · [中文](https://lumina-astro-3xe.pages.dev/)**
+**🔭 Live site → [English](https://lumina-astro-wiki.pages.dev/en/) · [中文](https://lumina-astro-wiki.pages.dev/)**
 
 ## Why we look up at the stars
 
