@@ -1,41 +1,27 @@
 # 拾光记 · Lumina
 
-**An astronomy & astrophotography knowledge base — from learning the night sky to imaging the deep sky.**
+## Why we look up at the stars
 
-Lumina (拾光记) is a bilingual wiki that brings the fundamentals of astronomy and the craft of
-astrophotography together in one place. It is for anyone who looks up and wants to understand a
-little more — whether you are reading a star chart for the first time or capturing the faint
-light of a distant nebula. Every page is available in both **English** (`/en/`) and **中文** (`/`),
-with built-in full-text search.
+The universe began about 13.8 billion years ago and has been cooling ever since. Some 380,000 years
+in, it grew cold enough for electrons to join atomic nuclei and for light to travel freely for the
+first time. That faint afterglow is what we still detect today as the cosmic microwave background.
+Then came long ages of darkness, until gas drew together under gravity, collapsed, and ignited: the
+first stars lit the void.
 
-> When we look up, we are not seeing a distant elsewhere but our own origin.
+Inside stars, hydrogen and helium are forged into heavier elements. When those stars burn out as
+supernovae, or collide as neutron stars, that material is scattered back into space and gathered into
+the next generation of stars and planets. Round after round, the carbon, oxygen, and iron in your
+body all came from some star that died long ago. We are, quite literally, a span of cosmic time made
+flesh.
 
-## What's inside
-
-- **Astronomy** — the celestial sphere and coordinate systems, time, constellations, the apparent
-  motion of the sky, magnitudes, the Solar System, the stars, the deep sky (clusters, nebulae,
-  galaxies), cosmology, and how to observe.
-- **Astrophotography** — optics, exposure and sensors, signal-to-noise, capture techniques
-  (wide-field, deep-sky, planetary, narrowband), calibration frames, and the full post-processing
-  workflow, plus a guide to remote-imaging platforms.
-- **A deep-sky catalog** — a filterable, image-rich gallery of 100+ notable objects
-  (Messier / NGC / IC / Caldwell), each with position, magnitude, best season, visibility, and a
-  short introduction.
-- **Reference** — the object catalog, observatories, a glossary, software and external resources,
-  and goal-based learning paths.
-
-## Image credits
-
-All photographs come from public-domain or openly licensed sources — chiefly **NASA**, **ESO**,
-**ESA/Hubble**, and **Wikimedia Commons**. Each image displays its credit and license. If you reuse
-any image, please honour its original license and attribution.
-
-## License
-
-Written content is shared for learning. Images belong to their respective authors under the
-licenses shown beside them — see those licenses before reusing.
+So when we look up, we are not seeing a distant elsewhere but our own origin. This wiki is built for
+that curiosity and that sense of belonging: from learning a single star and reading a star chart to
+capturing the faint light of the deep sky yourself. It is here to help you come to know the night
+sky, and the universe we are part of.
 
 ---
 
-<sub>Built with [Astro](https://astro.build) and [Starlight](https://starlight.astro.build).
-To run locally: `npm install && npm run dev`.</sub>
+<sub>A bilingual (English / 中文) astronomy & astrophotography knowledge base. Images come from
+public-domain or openly licensed sources (NASA, ESO, ESA/Hubble, Wikimedia Commons); each shows its
+credit and license. Built with [Astro](https://astro.build) and
+[Starlight](https://starlight.astro.build).</sub>

@@ -77,7 +77,7 @@ export default defineConfig({
         {
           icon: 'github',
           label: 'GitHub',
-          href: 'https://github.com/',
+          href: 'https://github.com/Michaelwyx/Lumina-astro',
         },
       ],
       // 难度徽章和分类由 frontmatter 驱动。
