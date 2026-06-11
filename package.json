@@ -3,6 +3,9 @@
   "type": "module",
   "version": "0.1.0",
   "description": "天文 & 天文摄影 Wiki — 双语图文知识库 (Astro + Starlight)",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -13,6 +16,7 @@
   "dependencies": {
     "@astrojs/starlight": "^0.39.3",
     "astro": "^6.4.4",
+    "remark-gfm": "^4.0.1",
     "sharp": "^0.34.5",
     "starlight-image-zoom": "^0.14.2"
   }
