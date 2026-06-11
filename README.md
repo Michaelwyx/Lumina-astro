@@ -1,5 +1,7 @@
 # 拾光记 · Lumina
 
+**🔭 Live site → [English](https://lumina-astro-3xe.pages.dev/en/) · [中文](https://lumina-astro-3xe.pages.dev/)**
+
 ## Why we look up at the stars
 
 The universe began about 13.8 billion years ago and has been cooling ever since. Some 380,000 years
