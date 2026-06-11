@@ -31,6 +31,8 @@ export default defineConfig({
         en: 'Lumina',
       },
       tagline: '拾光成像 · 天文与天文摄影知识库',
+      // 站点图标(浏览器标签/收藏夹):望远镜
+      favicon: '/favicon.svg',
       description:
         '面向中文读者的天文与天文摄影知识库,覆盖天球坐标、深空天体、观测规划、远程成像、校准与后期处理。',
       defaultLocale: 'root',
@@ -39,6 +41,9 @@ export default defineConfig({
         en: { label: 'English', lang: 'en' },
       },
       head: [
+        // 图标兜底:手机主屏(apple-touch)与不支持 SVG 图标的浏览器(SVG 由 favicon 选项注入)
+        { tag: 'link', attrs: { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' } },
+        { tag: 'link', attrs: { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32.png' } },
         // 优质西文字体 Inter(中日韩走系统字体)
         { tag: 'link', attrs: { rel: 'preconnect', href: 'https://fonts.googleapis.com' } },
         { tag: 'link', attrs: { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: true } },

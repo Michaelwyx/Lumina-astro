@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="拾光记 Lumina">
+  <rect width="32" height="32" rx="7.5" fill="#13151d"/>
+  <g stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- tripod -->
+    <path d="M13 17 L10 26 M14 17.6 L17 26" stroke="#7b86b0" stroke-width="2"/>
+    <!-- telescope tube -->
+    <path d="M7.8 22.2 L20.2 9.8" stroke="#aebcff" stroke-width="4.2"/>
+    <!-- aperture rim -->
+    <path d="M18.2 7.8 L22.6 12.2" stroke="#aebcff" stroke-width="2.6"/>
+  </g>
+  <!-- eyepiece -->
+  <circle cx="7.2" cy="22.8" r="1.9" fill="#aebcff"/>
+  <!-- the star it points to -->
+  <path d="M25 5.6 l1 2.7 2.7 1 -2.7 1 -1 2.7 -1 -2.7 -2.7 -1 2.7 -1 z" fill="#dbe2ff"/>
+</svg>
